@@ -83,6 +83,12 @@ When a content-quality problem is found, add a short note here with:
 - why it happened
 - the prompt, importer, validation, or rendering rule that prevents it next time
 
+## Phase Completion Rule
+
+- After a content phase is accepted, update the roadmap, test backlog, release checklist, and operations notes before starting the next phase.
+- Create and verify an external phase backup under `X:\Projects\DarwinLingua.Backup` after docs are updated and before the next content phase begins.
+- The backup must include the shared PostgreSQL logical dump, non-Git source artifacts, validation/planning artifacts, and a separate local config/secret bundle so GitHub plus the backup can restore the exact checkpoint.
+
 ## Logged Content Quality Issues
 
 ### 2026-05-19: Repeated section explanations in generated Grammar Guide topics

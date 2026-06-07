@@ -90,6 +90,30 @@ The report is for content quality and operational readiness only. It must not ex
 
 ---
 
+## Phase Backup And Restore Operations
+
+After every completed content or platform phase, create a restorable backup under `X:\Projects\DarwinLingua.Backup` before starting the next phase.
+
+Each backup folder should be timestamped and phase-labeled, for example `YYYYMMDD-HHMMSS-course-c1-complete-pre-c2`, and should contain:
+
+- logical PostgreSQL dumps for `darwinlingua_shared` and any other local `darwinlingua%` database that is part of the phase
+- PostgreSQL global role metadata captured separately from the database dumps
+- a repo restore overlay for local work that may not yet exist in GitHub, including reviewed content packages, docs, tests, planning artifacts, and validation artifacts
+- a separate local config/secret bundle for ignored environment files, local appsettings, certificates, and keys needed to restore the environment
+- Docker inspect metadata for the PostgreSQL and pgAdmin containers and their named volumes
+- a manifest with timestamp, phase label, git commit, branch, dirty status, key database counts, backup file hashes, and restore commands
+
+Verification rules:
+
+1. run `pg_restore --list` against each custom-format dump
+2. generate SHA256 hashes for backup files and store them in the manifest folder
+3. when feasible, restore the main dump into a temporary PostgreSQL database, compare critical counts, and drop the temporary database afterward
+4. do not treat build outputs, caches, `bin`, `obj`, `.vs`, or transient logs as restore sources
+
+The backup is considered complete only when a fresh checkout from GitHub plus the backup folder can restore the same database state, local config, and non-Git source artifacts for the phase checkpoint.
+
+---
+
 ## Transactional Email Operations
 
 Operational rules:

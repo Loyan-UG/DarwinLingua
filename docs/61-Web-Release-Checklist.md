@@ -24,6 +24,7 @@ Last updated: 2026-05-13.
 - Exercise attempt hardening now separates stateless public evaluation from authenticated persisted attempts, with bounded submitted-answer JSON and endpoint rate limits.
 - Exercise runner input now provides structured controls for initial choice, single-answer, error-correction, sentence-ordering, and matching submissions, with advanced JSON kept as a fallback.
 - Exercise Engine v1 now projects localized helper text for active learner meaning languages while keeping German source text canonical.
+- Course Lessons A1-C1 are generated and imported in local shared PostgreSQL with 5 paths, 44 modules, and 440 lessons (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`). C2 is the next Course content phase.
 - Unified Learning Search now has application-level query limits, a PostgreSQL trigram-index migration, and startup-applied trigram/filter indexes for existing shared database tables.
 - `DarwinLingua.Web` no longer registers or initializes a local SQLite learning/content database; Web user/account state requires PostgreSQL/Npgsql through `WebIdentityDbContext`.
 - WebApi mobile content distribution now supports module-scoped `catalog-module` manifests/downloads for selective mobile first-run content selection.
@@ -135,6 +136,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] security headers verified
 - [ ] logging baseline verified
 - [ ] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed
+- [ ] phase-completion backup created under `X:\Projects\DarwinLingua.Backup` with PostgreSQL dumps, repo restore overlay, separate local config/secret bundle, manifest, restore notes, and checksum verification
 - [ ] production email provider configured
 - [ ] sender address and reply-to address configured
 - [ ] SPF, DKIM, and DMARC verified for the sender domain
@@ -164,7 +166,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] Public exercise evaluation is stateless, rate-limited, and does not persist anonymous progress
 - [ ] Exercise submitted-answer JSON is bounded, shape-checked, and malformed input returns safe validation errors
 - [ ] Course Lessons readiness reviewed: course/module/lesson ordering, linked-content projections, lesson routes, localized helper projections, progress hooks where implemented
-  - Current status: first small A1 pilot imported into `darwinlingua_shared` on 2026-05-31 with zero warnings and now contains 1 path, 1 module, and 5 cumulative lessons. Parser/import tests, PostgreSQL repository localized projection test, admin report test, Web project build, full solution build, and local Course Web/API smoke passed. Smoke covered `/courses`, `/courses/a1-einstieg-in-den-alltag`, `/courses/a1-einstieg-in-den-alltag/a1-begruessung-und-name`, `/courses/a1-einstieg-in-den-alltag/a1-artikel-und-dinge-im-alltag`, `/api/catalog/courses?primaryMeaningLanguageCode=fa`, `/api/catalog/courses/a1-einstieg-in-den-alltag?primaryMeaningLanguageCode=fa`, and `/api/catalog/course-lessons/a1-begruessung-und-name?primaryMeaningLanguageCode=fa`.
+  - Current status: Course Lessons A1-C1 are generated and imported into `darwinlingua_shared` with 5 paths, 44 modules, and 440 lessons (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`). The A1-C1 source packages are present under `content/learning-portal/courses/packages`. C2 remains planned but not generated/imported and must start from `artifacts/planning/course-c2-lesson-candidates.md`.
 - [ ] Exam Prep readiness reviewed: profile taxonomy, filters, linked-content projections, WebApi/Web pages, original authored-content policy
 - [ ] Writing Templates readiness reviewed: variables, sample filled versions, filters, WebApi/Web pages, linked-content behavior
 - [ ] Cultural Notes readiness reviewed: category/context filters, neutral/safe content handling, WebApi/Web pages, linked-content behavior
