@@ -110,28 +110,36 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
         WritingTemplateListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(
         CulturalNoteListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(CancellationToken cancellationToken);
+    Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(
+        string? primaryMeaningLanguageCode,
+        CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(
         ExamPrepListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(
@@ -329,6 +337,12 @@ public interface IWebCatalogApiClient
         throw new NotSupportedException();
 
     Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken);
+
+    Task<AdminLearningPortalIssuesPageViewModel> GetAdminLearningPortalIssuesAsync(
+        string? areaFilter,
+        string? query,
+        int take,
+        CancellationToken cancellationToken);
 
     Task<AdminWordsPageViewModel> GetAdminWordsAsync(
         string? query,
@@ -828,6 +842,7 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
         WritingTemplateListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<WritingTemplateListItemModel>>(
             BuildPath(
@@ -837,17 +852,22 @@ internal sealed class WebCatalogApiClient(
                     new("category", filter.Category),
                     new("register", filter.Register),
                     new("situation", filter.Situation),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<WritingTemplateDetailModel>($"/api/catalog/writing-templates/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<WritingTemplateDetailModel>(
+            BuildPath($"/api/catalog/writing-templates/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(
         CulturalNoteListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<CulturalNoteListItemModel>>(
             BuildPath(
@@ -856,20 +876,29 @@ internal sealed class WebCatalogApiClient(
                     new("cefrLevel", filter.CefrLevel),
                     new("category", filter.Category),
                     new("context", filter.Context),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<CulturalNoteDetailModel>($"/api/catalog/cultural-notes/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<CulturalNoteDetailModel>(
+            BuildPath($"/api/catalog/cultural-notes/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
-    public Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(CancellationToken cancellationToken) =>
-        GetRequiredAsync<IReadOnlyList<ExamProfileModel>>("/api/catalog/exam-profiles", cancellationToken);
+    public Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(
+        string? primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        GetRequiredAsync<IReadOnlyList<ExamProfileModel>>(
+            BuildPath("/api/catalog/exam-profiles", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(
         ExamPrepListFilterModel filter,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ExamPrepUnitListItemModel>>(
             BuildPath(
@@ -880,14 +909,18 @@ internal sealed class WebCatalogApiClient(
                     new("skillFocus", filter.SkillFocus),
                     new("taskType", filter.TaskType),
                     new("section", filter.Section),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(
         string slug,
+        string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<ExamPrepUnitDetailModel>($"/api/catalog/exam-prep/{Uri.EscapeDataString(slug)}", cancellationToken);
+        GetAsync<ExamPrepUnitDetailModel>(
+            BuildPath($"/api/catalog/exam-prep/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            cancellationToken);
 
     public Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(
         UnifiedLearningSearchFilterModel filter,
@@ -1292,6 +1325,38 @@ internal sealed class WebCatalogApiClient(
                     package.InvalidEntries,
                     package.WarningCount,
                     package.CreatedAtUtc))
+                .ToArray());
+    }
+
+    public async Task<AdminLearningPortalIssuesPageViewModel> GetAdminLearningPortalIssuesAsync(
+        string? areaFilter,
+        string? query,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        AdminLearningPortalIssuesResponse response = await GetRequiredAsync<AdminLearningPortalIssuesResponse>(
+            BuildPath(
+                "/api/admin/catalog/learning-portal-issues",
+                [
+                    new("area", areaFilter),
+                    new("q", query),
+                    new("take", take.ToString(System.Globalization.CultureInfo.InvariantCulture)),
+                ]),
+            cancellationToken).ConfigureAwait(false);
+
+        return new AdminLearningPortalIssuesPageViewModel(
+            response.AreaFilter,
+            response.Query,
+            response.Take,
+            response.FilteredCount,
+            response.TotalCount,
+            response.Areas,
+            response.Issues
+                .Select(static issue => new AdminLearningPortalIssueRowViewModel(
+                    issue.Area,
+                    issue.Owner,
+                    issue.Issue,
+                    issue.Target))
                 .ToArray());
     }
 
@@ -2933,6 +2998,10 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int CoursePathsMissingTranslations,
     int CourseModulesMissingTranslations,
     int CourseLessonsMissingTranslations,
+    int PublishedCourseLessonsWithoutActivityBlocks,
+    int CourseLessonsWithMalformedActivityBlocksJson,
+    int CourseActivityBlocksWithUnsupportedTargetType,
+    int CourseActivityBlocksWithUnresolvedTargetSlug,
     int ExercisesMissingTranslations,
     int ExerciseSetsMissingTranslations,
     int ExercisesUnpublishedDrafts,
@@ -2953,6 +3022,14 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExpressionEntriesBlockedOrExplicitAdult,
     int ExpressionEntriesMissingSensitiveUsagePolicy,
     int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+    int ExamPrepProfilesMissingTranslations,
+    int ExamPrepUnitsMissingTranslations,
+    int ExamPrepUnpublishedDrafts,
+    int ExamPrepUnitsWithMalformedStrategyOrChecklist,
+    int ExamPrepUnitsWithoutActiveProfile,
+    int WritingTemplatesMissingTranslations,
+    int WritingTemplatesUnpublishedDrafts,
+    int WritingTemplatesWithMalformedVariables,
     int RoleplayScenariosMissingTranslations,
     int RoleplayScenariosUnpublishedDrafts,
     int RoleplayScenariosMissingRequiredImageAssets,
@@ -2970,6 +3047,15 @@ public sealed record AdminLearningPortalIssueRowResponse(
     string Owner,
     string Issue,
     string? Target);
+
+internal sealed record AdminLearningPortalIssuesResponse(
+    string? AreaFilter,
+    string? Query,
+    int Take,
+    int FilteredCount,
+    int TotalCount,
+    IReadOnlyList<string> Areas,
+    IReadOnlyList<AdminLearningPortalIssueRowResponse> Issues);
 
 internal sealed record AdminCatalogImportsResponse(
     string? StatusFilter,

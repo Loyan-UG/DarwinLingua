@@ -46,19 +46,19 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(WritingTemplateListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(WritingTemplateListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(CulturalNoteListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(CulturalNoteListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(ExamPrepListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(ExamPrepListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(UnifiedLearningSearchFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 
@@ -95,6 +95,8 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
     public virtual Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<AdminLearningPortalIssuesPageViewModel> GetAdminLearningPortalIssuesAsync(string? areaFilter, string? query, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<AdminWordsPageViewModel> GetAdminWordsAsync(string? query, string? statusFilter, string? sort, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
 

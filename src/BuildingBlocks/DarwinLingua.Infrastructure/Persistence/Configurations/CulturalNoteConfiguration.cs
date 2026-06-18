@@ -22,6 +22,14 @@ internal sealed class CulturalNoteConfiguration : IEntityTypeConfiguration<Cultu
         builder.Property(note => note.DoNotesJson).HasColumnType("TEXT").IsRequired();
         builder.Property(note => note.DontNotesJson).HasColumnType("TEXT").IsRequired();
         builder.Property(note => note.SensitivityWarning).HasMaxLength(1000);
+        builder.Property(note => note.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.ShortDescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.ContextTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.SectionsTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.ExamplesTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.DoNotesTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.DontNotesTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(note => note.SensitivityWarningTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(note => note.LinkedDialogueSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(note => note.LinkedExpressionSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(note => note.LinkedWritingTemplateSlugsJson).HasColumnType("TEXT").IsRequired();

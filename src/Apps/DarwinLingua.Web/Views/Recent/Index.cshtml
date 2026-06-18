@@ -34,4 +34,25 @@
     </section>
 }
 
+@if (Model.Recommendations.Count > 0)
+{
+    <section class="panel stack-md">
+        <div>
+            <span class="eyebrow">@T["Personalized practice"]</span>
+            <h2 class="headline-sm">@T["Recommended next steps"]</h2>
+        </div>
+        <div class="grid-two-col">
+            @foreach (var recommendation in Model.Recommendations)
+            {
+                <article class="stack-sm">
+                    <div class="eyebrow">@recommendation.RecommendationType.Replace("-", " ")@(!string.IsNullOrWhiteSpace(recommendation.CefrLevel) ? $" · {recommendation.CefrLevel}" : string.Empty)</div>
+                    <h3 class="headline-sm">@recommendation.Title</h3>
+                    <p class="body-sm">@recommendation.Reason</p>
+                    <a class="button button--secondary button--compact" href="@recommendation.Url">@T["Open"]</a>
+                </article>
+            }
+        </div>
+    </section>
+}
+
 <partial name="_RecentActivityPanel" model="Model" />

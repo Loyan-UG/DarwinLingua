@@ -54,7 +54,29 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Equal(1, report.LearningPortal.RoleplayScenariosWithoutAnswerChoices);
             Assert.Equal(1, report.LearningPortal.RoleplayScenariosWithoutStaticFeedback);
             Assert.Equal(1, report.LearningPortal.RoleplayScenariosWithInvalidPlayableSequence);
+            Assert.Equal(1, report.LearningPortal.ExamPrepProfilesMissingTranslations);
+            Assert.Equal(1, report.LearningPortal.ExamPrepUnitsMissingTranslations);
+            Assert.Equal(2, report.LearningPortal.ExamPrepUnpublishedDrafts);
+            Assert.Equal(1, report.LearningPortal.ExamPrepUnitsWithMalformedStrategyOrChecklist);
+            Assert.Equal(1, report.LearningPortal.ExamPrepUnitsWithoutActiveProfile);
+            Assert.Equal(1, report.LearningPortal.PublishedCourseLessonsWithoutActivityBlocks);
+            Assert.Equal(1, report.LearningPortal.CourseLessonsWithMalformedActivityBlocksJson);
+            Assert.Equal(1, report.LearningPortal.CourseActivityBlocksWithUnsupportedTargetType);
+            Assert.Equal(1, report.LearningPortal.CourseActivityBlocksWithUnresolvedTargetSlug);
             Assert.NotEmpty(report.LearningPortal.SampleIssues);
+
+            AdminLearningPortalIssuesResponse issues = await service.GetLearningPortalIssuesAsync("Grammar linked exercise", "missing", 10, CancellationToken.None);
+            Assert.True(issues.TotalCount >= report.LearningPortal.SampleIssues.Count);
+            Assert.True(issues.FilteredCount >= 1);
+            Assert.Equal("Grammar linked exercise", issues.AreaFilter);
+            Assert.Equal("missing", issues.Query);
+            Assert.Contains(issues.Issues, issue => issue.Area == "Grammar linked exercise" && issue.Target == "missing-exercise");
+
+            AdminLearningPortalIssuesResponse activityIssues = await service.GetLearningPortalIssuesAsync("CourseLesson activity", "missing-activity-exercise", 10, CancellationToken.None);
+            Assert.Contains(activityIssues.Issues, issue =>
+                issue.Area == "CourseLesson activity" &&
+                issue.Owner == "a1-activity-unresolved" &&
+                issue.Target == "exercise:missing-activity-exercise");
         }
         finally
         {
@@ -225,13 +247,183 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             30,
             now);
 
+        ExamProfile examProfile = new(
+            Guid.NewGuid(),
+            "goethe-a2",
+            "Goethe A2",
+            "A2",
+            "Vorbereitung auf die Goethe-A2-Pruefung.",
+            PublicationStatus.Draft,
+            40,
+            now,
+            "[]",
+            "[]");
+
+        ExamPrepUnit examPrepUnit = new(
+            Guid.NewGuid(),
+            "a2-goethe-speaking-roleplay",
+            "goethe-a2",
+            "Strategie fuer das Sprechrollenspiel",
+            "Bereite ein kurzes A2-Rollenspiel vor.",
+            CefrLevel.A2,
+            "speaking",
+            "roleplay",
+            "exam-preparation",
+            "Nutze kurze, klare Fragen und Antworten.",
+            "not-json",
+            JsonSerializer.Serialize(new[] { "Answer the prompt directly." }, new JsonSerializerOptions(JsonSerializerDefaults.Web)),
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            PublicationStatus.Draft,
+            40,
+            now,
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]");
+
+        CoursePath coursePath = new(
+            Guid.NewGuid(),
+            "a1-course",
+            "A1 course",
+            "Course basics.",
+            CefrLevel.A1,
+            null,
+            PublicationStatus.Active,
+            50,
+            now);
+        CourseModule courseModule = new(
+            Guid.NewGuid(),
+            "a1-course",
+            "a1-module",
+            "A1 module",
+            "Module basics.",
+            1,
+            CefrLevel.A1,
+            PublicationStatus.Active,
+            50,
+            now);
+        courseModule.AttachToCoursePath(coursePath.Id);
+        CourseLesson activityReadyLesson = CreateCourseLesson(
+            "a1-activity-ready",
+            1,
+            PublicationStatus.Active,
+            now,
+            JsonSerializer.Serialize(
+                new[]
+                {
+                    new
+                    {
+                        kind = "read",
+                        targetType = "grammar-topic",
+                        targetSlug = "a1-articles",
+                    },
+                },
+                new JsonSerializerOptions(JsonSerializerDefaults.Web)));
+        CourseLesson missingActivityLesson = CreateCourseLesson("a1-activity-missing", 2, PublicationStatus.Active, now, "[]");
+        CourseLesson malformedActivityLesson = CreateCourseLesson("a1-activity-malformed", 3, PublicationStatus.Active, now, "{not-json");
+        CourseLesson unsupportedActivityLesson = CreateCourseLesson(
+            "a1-activity-unsupported",
+            4,
+            PublicationStatus.Active,
+            now,
+            JsonSerializer.Serialize(
+                new[]
+                {
+                    new
+                    {
+                        kind = "practice",
+                        targetType = "unsupported-target",
+                        targetSlug = "a1-anything",
+                    },
+                },
+                new JsonSerializerOptions(JsonSerializerDefaults.Web)));
+        CourseLesson unresolvedActivityLesson = CreateCourseLesson(
+            "a1-activity-unresolved",
+            5,
+            PublicationStatus.Active,
+            now,
+            JsonSerializer.Serialize(
+                new[]
+                {
+                    new
+                    {
+                        kind = "practice",
+                        targetType = "exercise",
+                        targetSlug = "missing-activity-exercise",
+                    },
+                },
+                new JsonSerializerOptions(JsonSerializerDefaults.Web)));
+        activityReadyLesson.AttachToCourseModule(courseModule.Id);
+        missingActivityLesson.AttachToCourseModule(courseModule.Id);
+        malformedActivityLesson.AttachToCourseModule(courseModule.Id);
+        unsupportedActivityLesson.AttachToCourseModule(courseModule.Id);
+        unresolvedActivityLesson.AttachToCourseModule(courseModule.Id);
+
         dbContext.GrammarTopics.Add(grammarTopic);
         dbContext.GrammarTopics.Add(grammarTopicWithoutExercise);
         dbContext.Exercises.Add(exercise);
         dbContext.ExpressionEntries.Add(expression);
         dbContext.RoleplayScenarios.Add(roleplayScenario);
+        dbContext.ExamProfiles.Add(examProfile);
+        dbContext.ExamPrepUnits.Add(examPrepUnit);
+        dbContext.CoursePaths.Add(coursePath);
+        dbContext.CourseModules.Add(courseModule);
+        dbContext.CourseLessons.AddRange(
+            activityReadyLesson,
+            missingActivityLesson,
+            malformedActivityLesson,
+            unsupportedActivityLesson,
+            unresolvedActivityLesson);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
+
+    private static CourseLesson CreateCourseLesson(
+        string slug,
+        int lessonNumber,
+        PublicationStatus publicationStatus,
+        DateTime now,
+        string activityBlocksJson) =>
+        new(
+            Guid.NewGuid(),
+            "a1-course",
+            "a1-module",
+            slug,
+            lessonNumber,
+            "Course activity test",
+            "Short description.",
+            "Narrative for the course activity test.",
+            CefrLevel.A1,
+            8,
+            JsonSerializer.Serialize(new[] { "Learn the route." }, new JsonSerializerOptions(JsonSerializerDefaults.Web)),
+            "[]",
+            null,
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "Review.",
+            null,
+            publicationStatus,
+            10,
+            now,
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            activityBlocksJson);
 
     private static async Task DropTableAsync(
         ServiceProvider serviceProvider,

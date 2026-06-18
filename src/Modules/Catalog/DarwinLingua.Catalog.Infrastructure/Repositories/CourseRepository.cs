@@ -128,6 +128,7 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
                 DeserializeStringArray(lesson.LinkedTalkTopicSlugsJson),
                 DeserializeStringArray(lesson.LinkedExerciseSetSlugsJson),
                 DeserializeStringArray(lesson.LinkedExamPrepSlugsJson),
+                ResolveActivityBlocks(lesson.ActivityBlocksJson, primaryMeaningLanguageCode),
                 lesson.ReviewSummary,
                 ResolveTranslation(lesson.ReviewSummaryTranslationsJson, primaryMeaningLanguageCode),
                 lesson.HomeworkTask,
@@ -185,6 +186,48 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
         }
     }
 
+    private static CourseLessonActivityBlockModel[] ResolveActivityBlocks(string json, string? languageCode)
+    {
+        if (string.IsNullOrWhiteSpace(json) || json == "[]")
+        {
+            return [];
+        }
+
+        try
+        {
+            ActivityBlockRow[] rows = JsonSerializer.Deserialize<ActivityBlockRow[]>(json, JsonOptions) ?? [];
+            return rows
+                .OrderBy(row => row.SortOrder)
+                .Select(row => new CourseLessonActivityBlockModel(
+                    row.Kind ?? string.Empty,
+                    row.Title ?? string.Empty,
+                    ResolveTranslation(row.TitleTranslations, languageCode),
+                    row.Instruction ?? string.Empty,
+                    ResolveTranslation(row.InstructionTranslations, languageCode),
+                    row.TargetType ?? string.Empty,
+                    row.TargetSlug,
+                    row.EstimatedMinutes,
+                    row.SortOrder,
+                    row.IsRequired))
+                .ToArray();
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
+
+    private static string? ResolveTranslation(TranslationRow[]? rows, string? languageCode)
+    {
+        string? normalizedLanguage = Normalize(languageCode);
+        if (normalizedLanguage is null || rows is null || rows.Length == 0)
+        {
+            return null;
+        }
+
+        return rows.FirstOrDefault(row => string.Equals(row.Language, normalizedLanguage, StringComparison.OrdinalIgnoreCase))?.Text;
+    }
+
     private static string[] ResolveTextListTranslation(string json, string? languageCode)
     {
         string? normalizedLanguage = Normalize(languageCode);
@@ -211,4 +254,16 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
     private sealed record TranslationRow(string Language, string Text);
 
     private sealed record TextListTranslationRow(string Language, string[] Texts);
+
+    private sealed record ActivityBlockRow(
+        string? Kind,
+        string? Title,
+        TranslationRow[]? TitleTranslations,
+        string? Instruction,
+        TranslationRow[]? InstructionTranslations,
+        string? TargetType,
+        string? TargetSlug,
+        int EstimatedMinutes,
+        int SortOrder,
+        bool IsRequired);
 }

@@ -71,7 +71,20 @@ public sealed record CourseLessonDetailModel(
     IReadOnlyList<string> LinkedTalkTopicSlugs,
     IReadOnlyList<string> LinkedExerciseSetSlugs,
     IReadOnlyList<string> LinkedExamPrepSlugs,
+    IReadOnlyList<CourseLessonActivityBlockModel> ActivityBlocks,
     string? ReviewSummary,
     string? LearnerLanguageReviewSummary,
     string? HomeworkTask,
     string? LearnerLanguageHomeworkTask);
+
+public sealed record CourseLessonActivityBlockModel(
+    string Kind,
+    string Title,
+    string? LearnerLanguageTitle,
+    string Instruction,
+    string? LearnerLanguageInstruction,
+    string TargetType,
+    string? TargetSlug,
+    int EstimatedMinutes,
+    int SortOrder,
+    bool IsRequired);

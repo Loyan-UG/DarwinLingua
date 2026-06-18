@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 using System.Linq.Expressions;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace DarwinLingua.WebApi.Services;
 
@@ -17,6 +18,12 @@ public interface IWebsiteAdminQueryService
     Task<AdminSystemReportResponse> GetSystemReportAsync(CancellationToken cancellationToken);
 
     Task<AdminCatalogImportsResponse> GetImportsAsync(string? statusFilter, CancellationToken cancellationToken);
+
+    Task<AdminLearningPortalIssuesResponse> GetLearningPortalIssuesAsync(
+        string? areaFilter,
+        string? queryText,
+        int take,
+        CancellationToken cancellationToken);
 
     Task<AdminCatalogWordsResponse> GetWordsAsync(
         string? query,
@@ -39,6 +46,23 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
 {
     private static readonly IReadOnlySet<string> EmptyStringSet = new HashSet<string>(StringComparer.Ordinal);
     private static readonly string[] RequiredLearnerMeaningLanguages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+    private static readonly JsonSerializerOptions WebJsonOptions = new(JsonSerializerDefaults.Web);
+    private static readonly IReadOnlySet<string> SupportedCourseActivityTargetTypes = new HashSet<string>(
+        [
+            "none",
+            "course-lesson",
+            "grammar-topic",
+            "expression",
+            "dialogue",
+            "talk-topic",
+            "exercise-set",
+            "exercise",
+            "roleplay",
+            "writing-template",
+            "life-in-germany",
+            "exam-prep-unit",
+        ],
+        StringComparer.Ordinal);
 
     public async Task<AdminCatalogDashboardResponse> GetDashboardAsync(CancellationToken cancellationToken)
     {
@@ -120,6 +144,67 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             .ConfigureAwait(false);
 
         return new AdminCatalogImportsResponse(normalizedStatusFilter, packages);
+    }
+
+    public async Task<AdminLearningPortalIssuesResponse> GetLearningPortalIssuesAsync(
+        string? areaFilter,
+        string? queryText,
+        int take,
+        CancellationToken cancellationToken)
+    {
+        string? normalizedAreaFilter = NormalizeFilter(areaFilter);
+        string? normalizedQuery = NormalizeFilter(queryText);
+        int normalizedTake = Math.Clamp(take <= 0 ? 250 : take, 1, 1000);
+
+        await using DarwinLinguaDbContext dbContext = await dbContextFactory
+            .CreateDbContextAsync(cancellationToken)
+            .ConfigureAwait(false);
+        IReadOnlyDictionary<string, bool> tableAvailability = await GetLearningPortalTableAvailabilityAsync(dbContext, cancellationToken)
+            .ConfigureAwait(false);
+        LearningPortalQualitySummary qualitySummary = await GetLearningPortalQualitySummaryAsync(
+                dbContext,
+                tableAvailability,
+                int.MaxValue,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        AdminLearningPortalIssueRowResponse[] allIssues = qualitySummary.SampleIssues
+            .OrderBy(static issue => issue.Area, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(static issue => issue.Owner, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(static issue => issue.Issue, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(static issue => issue.Target ?? string.Empty, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+        IReadOnlyList<string> areas = allIssues
+            .Select(static issue => issue.Area)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(static area => area, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        IEnumerable<AdminLearningPortalIssueRowResponse> filteredIssues = allIssues;
+        if (!string.IsNullOrWhiteSpace(normalizedAreaFilter))
+        {
+            filteredIssues = filteredIssues.Where(issue => string.Equals(issue.Area, normalizedAreaFilter, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(normalizedQuery))
+        {
+            filteredIssues = filteredIssues.Where(issue =>
+                issue.Area.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                issue.Owner.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                issue.Issue.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ||
+                (issue.Target?.Contains(normalizedQuery, StringComparison.OrdinalIgnoreCase) ?? false));
+        }
+
+        AdminLearningPortalIssueRowResponse[] filteredIssueArray = filteredIssues.ToArray();
+
+        return new AdminLearningPortalIssuesResponse(
+            normalizedAreaFilter,
+            normalizedQuery,
+            normalizedTake,
+            filteredIssueArray.Length,
+            allIssues.Length,
+            areas,
+            filteredIssueArray.Take(normalizedTake).ToArray());
     }
 
     public async Task<AdminCatalogWordsResponse> GetWordsAsync(
@@ -729,7 +814,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             note => note.Category,
             cancellationToken).ConfigureAwait(false);
 
-        LearningPortalQualitySummary qualitySummary = await GetLearningPortalQualitySummaryAsync(dbContext, tableAvailability, cancellationToken)
+        LearningPortalQualitySummary qualitySummary = await GetLearningPortalQualitySummaryAsync(dbContext, tableAvailability, 30, cancellationToken)
             .ConfigureAwait(false);
 
         return new AdminLearningPortalSystemReportResponse(
@@ -760,6 +845,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.CoursePathsMissingTranslations,
             qualitySummary.CourseModulesMissingTranslations,
             qualitySummary.CourseLessonsMissingTranslations,
+            qualitySummary.PublishedCourseLessonsWithoutActivityBlocks,
+            qualitySummary.CourseLessonsWithMalformedActivityBlocksJson,
+            qualitySummary.CourseActivityBlocksWithUnsupportedTargetType,
+            qualitySummary.CourseActivityBlocksWithUnresolvedTargetSlug,
             qualitySummary.ExercisesMissingTranslations,
             qualitySummary.ExerciseSetsMissingTranslations,
             qualitySummary.ExercisesUnpublishedDrafts,
@@ -780,6 +869,14 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.ExpressionEntriesBlockedOrExplicitAdult,
             qualitySummary.ExpressionEntriesMissingSensitiveUsagePolicy,
             qualitySummary.ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+            qualitySummary.ExamPrepProfilesMissingTranslations,
+            qualitySummary.ExamPrepUnitsMissingTranslations,
+            qualitySummary.ExamPrepUnpublishedDrafts,
+            qualitySummary.ExamPrepUnitsWithMalformedStrategyOrChecklist,
+            qualitySummary.ExamPrepUnitsWithoutActiveProfile,
+            qualitySummary.WritingTemplatesMissingTranslations,
+            qualitySummary.WritingTemplatesUnpublishedDrafts,
+            qualitySummary.WritingTemplatesWithMalformedVariables,
             qualitySummary.RoleplayScenariosMissingTranslations,
             qualitySummary.RoleplayScenariosUnpublishedDrafts,
             qualitySummary.RoleplayScenariosMissingRequiredImageAssets,
@@ -922,6 +1019,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
     private static async Task<LearningPortalQualitySummary> GetLearningPortalQualitySummaryAsync(
         DarwinLinguaDbContext dbContext,
         IReadOnlyDictionary<string, bool> tableAvailability,
+        int issueLimit,
         CancellationToken cancellationToken)
     {
         HashSet<string> wordKeys = (await dbContext.WordEntries
@@ -938,7 +1036,9 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         HashSet<string> exerciseSetSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExerciseSets", dbContext.ExerciseSets.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
         HashSet<string> courseLessonSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "CourseLessons", dbContext.CourseLessons.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
         HashSet<string> examPrepSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> roleplaySlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "RoleplayScenarios", dbContext.RoleplayScenarios.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
         HashSet<string> writingTemplateSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> culturalNoteSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
 
         List<AdminLearningPortalIssueRowResponse> issues = [];
 
@@ -954,7 +1054,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                 .ConfigureAwait(false);
             foreach (GrammarLinkedWord link in grammarLinkedWords)
             {
-                unresolvedWordCount += AddIssueIfMissing(wordKeys, link.WordSlug!, "Grammar linked word", link.GrammarTopicId.ToString(), issues);
+                unresolvedWordCount += AddIssueIfMissing(wordKeys, link.WordSlug!, "Grammar linked word", link.GrammarTopicId.ToString(), issues, issueLimit);
             }
         }
 
@@ -967,17 +1067,17 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                 .ConfigureAwait(false);
             foreach (ExpressionLinkedWord link in expressionLinkedWords)
             {
-                unresolvedWordCount += AddIssueIfMissing(wordKeys, link.WordSlug!, "Expression linked word", link.ExpressionEntryId.ToString(), issues);
+                unresolvedWordCount += AddIssueIfMissing(wordKeys, link.WordSlug!, "Expression linked word", link.ExpressionEntryId.ToString(), issues, issueLimit);
             }
         }
 
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarPrerequisiteLinks", dbContext.Set<GrammarPrerequisiteLink>(), grammarSlugs, "Grammar prerequisite", issues, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarRelatedTopicLinks", dbContext.Set<GrammarRelatedTopicLink>(), grammarSlugs, "Grammar related topic", issues, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedDialogues", dbContext.Set<GrammarLinkedDialogue>(), dialogueSlugs, "Grammar linked dialogue", issues, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedTalkTopics", dbContext.Set<GrammarLinkedTalkTopic>(), talkTopicSlugs, "Grammar linked Talk Topic", issues, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedExercises", dbContext.Set<GrammarLinkedExercise>(), exerciseSlugs, "Grammar linked exercise", issues, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingExpressionLinksAsync(dbContext, tableAvailability, expressionSlugs, exerciseSlugs, issues, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountJsonLinkIssuesAsync(dbContext, tableAvailability, grammarSlugs, expressionSlugs, dialogueSlugs, talkTopicSlugs, exerciseSlugs, exerciseSetSlugs, courseLessonSlugs, examPrepSlugs, writingTemplateSlugs, issues, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarPrerequisiteLinks", dbContext.Set<GrammarPrerequisiteLink>(), grammarSlugs, "Grammar prerequisite", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarRelatedTopicLinks", dbContext.Set<GrammarRelatedTopicLink>(), grammarSlugs, "Grammar related topic", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedDialogues", dbContext.Set<GrammarLinkedDialogue>(), dialogueSlugs, "Grammar linked dialogue", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedTalkTopics", dbContext.Set<GrammarLinkedTalkTopic>(), talkTopicSlugs, "Grammar linked Talk Topic", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedExercises", dbContext.Set<GrammarLinkedExercise>(), exerciseSlugs, "Grammar linked exercise", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingExpressionLinksAsync(dbContext, tableAvailability, expressionSlugs, exerciseSlugs, issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountJsonLinkIssuesAsync(dbContext, tableAvailability, grammarSlugs, expressionSlugs, dialogueSlugs, talkTopicSlugs, exerciseSlugs, exerciseSetSlugs, courseLessonSlugs, examPrepSlugs, roleplaySlugs, writingTemplateSlugs, issues, issueLimit, cancellationToken).ConfigureAwait(false);
 
         int missingTranslationCount =
             await CountIfTableExistsAsync(tableAvailability, "GrammarSections", dbContext.GrammarSections.AsNoTracking().Where(section => !section.Translations.Any()), cancellationToken).ConfigureAwait(false) +
@@ -1012,6 +1112,21 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             ? await dbContext.CourseLessons.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
             : [];
         int lessonsWithoutExerciseSets = lessons.Count(static lesson => ReadStringArray(lesson.LinkedExerciseSetSlugsJson).Count == 0);
+        CourseActivityQualityCounts courseActivityQuality = CountCourseActivityQuality(
+            lessons,
+            grammarSlugs,
+            expressionSlugs,
+            dialogueSlugs,
+            talkTopicSlugs,
+            exerciseSetSlugs,
+            exerciseSlugs,
+            courseLessonSlugs,
+            roleplaySlugs,
+            writingTemplateSlugs,
+            culturalNoteSlugs,
+            examPrepSlugs,
+            issues,
+            issueLimit);
         CourseQualityCounts courseQuality = CountCourseQuality(
             HasTable(tableAvailability, "CoursePaths")
                 ? await dbContext.CoursePaths.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
@@ -1125,34 +1240,54 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         RoleplayQualityCounts roleplayQuality = HasTable(tableAvailability, "RoleplayScenarios")
             ? CountRoleplayQuality(await dbContext.RoleplayScenarios.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
             : new RoleplayQualityCounts(0, 0, 0, 0, 0, 0);
+        ExamPrepQualityCounts examPrepQuality = HasTable(tableAvailability, "ExamProfiles") && HasTable(tableAvailability, "ExamPrepUnits")
+            ? CountExamPrepQuality(
+                await dbContext.ExamProfiles.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false),
+                await dbContext.ExamPrepUnits.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
+            : new ExamPrepQualityCounts(0, 0, 0, 0, 0);
+        WritingTemplateQualityCounts writingTemplateQuality = HasTable(tableAvailability, "WritingTemplates")
+            ? CountWritingTemplateQuality(await dbContext.WritingTemplates.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
+            : new WritingTemplateQualityCounts(0, 0, 0);
 
-        AddQualityIssue(expressionsMissingEligibilityMetadata, "Expression eligibility", "all", "Missing meaningTransparency metadata", issues);
-        AddQualityIssue(ordinaryLiteralLeakage, "Expression eligibility", "published", "Published ordinary-literal expression leakage", issues);
-        AddQualityIssue(expressionsMissingTeachingReason, "Expression eligibility", "all", "Missing teachingReason", issues);
-        AddQualityIssue(expressionsWithFewerThanTwoExamples, "Expression examples", "published", "Fewer than two examples", issues);
-        AddQualityIssue(expressionsMissingWarningsForRiskyContent, "Expression safety", "all", "Missing warning for risky/sensitive expression", issues);
-        AddQualityIssue(expressionsRequiringVerifiedAdult, "Expression safety", "all", "Requires verified adult access but no verified-adult system exists", issues);
-        AddQualityIssue(expressionsBlockedOrExplicitAdult, "Expression safety", "all", "Blocked or explicit-adult entries present", issues);
-        AddQualityIssue(expressionsMissingSensitiveUsagePolicy, "Expression safety", "all", "Sensitive entry missing usagePolicy", issues);
-        AddQualityIssue(expressionsOldRiskyMissingSensitiveMetadata, "Expression safety", "all", "Risky entry missing sensitive metadata", issues);
-        AddQualityIssue(courseQuality.CoursePathsMissingTranslations, "CoursePath quality", "all", "Missing required learner-language translations", issues);
-        AddQualityIssue(courseQuality.CourseModulesMissingTranslations, "CourseModule quality", "all", "Missing required learner-language translations", issues);
-        AddQualityIssue(courseQuality.CourseLessonsMissingTranslations, "CourseLesson quality", "all", "Missing required learner-language translations", issues);
-        AddQualityIssue(exerciseQuality.ExercisesMissingTranslations, "Exercise quality", "all", "Missing required learner-language translations", issues);
-        AddQualityIssue(exerciseQuality.ExerciseSetsMissingTranslations, "ExerciseSet quality", "all", "Missing required learner-language translations", issues);
-        AddQualityIssue(exerciseQuality.ExercisesUnpublishedDrafts, "Exercise quality", "all", "Unpublished draft exercises", issues);
-        AddQualityIssue(exerciseQuality.ExerciseSetsUnpublishedDrafts, "ExerciseSet quality", "all", "Unpublished draft exercise sets", issues);
-        AddQualityIssue(exerciseQuality.ExerciseSetsWithoutItems, "ExerciseSet quality", "published", "Exercise set has no items", issues);
-        AddQualityIssue(exerciseQuality.ExerciseSetsWithUnresolvedExerciseSlugs, "ExerciseSet quality", "all", "Exercise set references missing exercise slug", issues);
-        AddQualityIssue(exerciseQuality.ExercisesWithMalformedPrompt, "Exercise quality", "all", "Malformed prompt JSON", issues);
-        AddQualityIssue(exerciseQuality.ExercisesWithMalformedAnswerKey, "Exercise quality", "all", "Malformed answer key JSON", issues);
-        AddQualityIssue(exerciseQuality.ExercisesMissingExplanations, "Exercise quality", "all", "Missing correct/incorrect explanation", issues);
-        AddQualityIssue(roleplayQuality.MissingTranslations, "RoleplayScenario quality", "all", "Missing required learner-language translations", issues);
-        AddQualityIssue(roleplayQuality.UnpublishedDrafts, "RoleplayScenario quality", "all", "Unpublished draft roleplay scenarios", issues);
-        AddQualityIssue(roleplayQuality.MissingRequiredImageAssets, "RoleplayScenario quality", "all", "Required image slot missing assetPath", issues);
-        AddQualityIssue(roleplayQuality.WithoutAnswerChoices, "RoleplayScenario quality", "published", "No deterministic answer choices", issues);
-        AddQualityIssue(roleplayQuality.WithoutStaticFeedback, "RoleplayScenario quality", "published", "No static feedback", issues);
-        AddQualityIssue(roleplayQuality.InvalidPlayableSequence, "RoleplayScenario quality", "published", "Invalid playable sequence", issues);
+        AddQualityIssue(expressionsMissingEligibilityMetadata, "Expression eligibility", "all", "Missing meaningTransparency metadata", issues, issueLimit);
+        AddQualityIssue(ordinaryLiteralLeakage, "Expression eligibility", "published", "Published ordinary-literal expression leakage", issues, issueLimit);
+        AddQualityIssue(expressionsMissingTeachingReason, "Expression eligibility", "all", "Missing teachingReason", issues, issueLimit);
+        AddQualityIssue(expressionsWithFewerThanTwoExamples, "Expression examples", "published", "Fewer than two examples", issues, issueLimit);
+        AddQualityIssue(expressionsMissingWarningsForRiskyContent, "Expression safety", "all", "Missing warning for risky/sensitive expression", issues, issueLimit);
+        AddQualityIssue(expressionsRequiringVerifiedAdult, "Expression safety", "all", "Requires verified adult access but no verified-adult system exists", issues, issueLimit);
+        AddQualityIssue(expressionsBlockedOrExplicitAdult, "Expression safety", "all", "Blocked or explicit-adult entries present", issues, issueLimit);
+        AddQualityIssue(expressionsMissingSensitiveUsagePolicy, "Expression safety", "all", "Sensitive entry missing usagePolicy", issues, issueLimit);
+        AddQualityIssue(expressionsOldRiskyMissingSensitiveMetadata, "Expression safety", "all", "Risky entry missing sensitive metadata", issues, issueLimit);
+        AddQualityIssue(examPrepQuality.ProfilesMissingTranslations, "ExamPrep quality", "all", "Exam profiles missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(examPrepQuality.UnitsMissingTranslations, "ExamPrep quality", "all", "Exam prep units missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(examPrepQuality.UnpublishedDrafts, "ExamPrep quality", "all", "Unpublished draft exam prep content", issues, issueLimit);
+        AddQualityIssue(examPrepQuality.UnitsWithMalformedStrategyOrChecklist, "ExamPrep quality", "all", "Malformed strategy/checklist JSON", issues, issueLimit);
+        AddQualityIssue(examPrepQuality.UnitsWithoutActiveProfile, "ExamPrep quality", "all", "Exam prep unit references no active exam profile", issues, issueLimit);
+        AddQualityIssue(writingTemplateQuality.MissingTranslations, "WritingTemplate quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(writingTemplateQuality.UnpublishedDrafts, "WritingTemplate quality", "all", "Unpublished draft writing templates", issues, issueLimit);
+        AddQualityIssue(writingTemplateQuality.WithMalformedVariables, "WritingTemplate quality", "all", "Malformed variables or template placeholder JSON", issues, issueLimit);
+        AddQualityIssue(courseQuality.CoursePathsMissingTranslations, "CoursePath quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(courseQuality.CourseModulesMissingTranslations, "CourseModule quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(courseQuality.CourseLessonsMissingTranslations, "CourseLesson quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(courseActivityQuality.PublishedLessonsWithoutActivityBlocks, "CourseLesson activity", "published", "Published course lessons without activity blocks", issues, issueLimit);
+        AddQualityIssue(courseActivityQuality.MalformedActivityBlocksJson, "CourseLesson activity", "all", "Malformed activityBlocks JSON", issues, issueLimit);
+        AddQualityIssue(courseActivityQuality.ActivityBlocksWithUnsupportedTargetType, "CourseLesson activity", "all", "Activity block has unsupported targetType", issues, issueLimit);
+        AddQualityIssue(courseActivityQuality.ActivityBlocksWithUnresolvedTargetSlug, "CourseLesson activity", "all", "Activity block target slug does not resolve", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExercisesMissingTranslations, "Exercise quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExerciseSetsMissingTranslations, "ExerciseSet quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExercisesUnpublishedDrafts, "Exercise quality", "all", "Unpublished draft exercises", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExerciseSetsUnpublishedDrafts, "ExerciseSet quality", "all", "Unpublished draft exercise sets", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExerciseSetsWithoutItems, "ExerciseSet quality", "published", "Exercise set has no items", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExerciseSetsWithUnresolvedExerciseSlugs, "ExerciseSet quality", "all", "Exercise set references missing exercise slug", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExercisesWithMalformedPrompt, "Exercise quality", "all", "Malformed prompt JSON", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExercisesWithMalformedAnswerKey, "Exercise quality", "all", "Malformed answer key JSON", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExercisesMissingExplanations, "Exercise quality", "all", "Missing correct/incorrect explanation", issues, issueLimit);
+        AddQualityIssue(roleplayQuality.MissingTranslations, "RoleplayScenario quality", "all", "Missing required learner-language translations", issues, issueLimit);
+        AddQualityIssue(roleplayQuality.UnpublishedDrafts, "RoleplayScenario quality", "all", "Unpublished draft roleplay scenarios", issues, issueLimit);
+        AddQualityIssue(roleplayQuality.MissingRequiredImageAssets, "RoleplayScenario quality", "all", "Required image slot missing assetPath", issues, issueLimit);
+        AddQualityIssue(roleplayQuality.WithoutAnswerChoices, "RoleplayScenario quality", "published", "No deterministic answer choices", issues, issueLimit);
+        AddQualityIssue(roleplayQuality.WithoutStaticFeedback, "RoleplayScenario quality", "published", "No static feedback", issues, issueLimit);
+        AddQualityIssue(roleplayQuality.InvalidPlayableSequence, "RoleplayScenario quality", "published", "Invalid playable sequence", issues, issueLimit);
 
         return new LearningPortalQualitySummary(
             unresolvedWordCount,
@@ -1164,6 +1299,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             courseQuality.CoursePathsMissingTranslations,
             courseQuality.CourseModulesMissingTranslations,
             courseQuality.CourseLessonsMissingTranslations,
+            courseActivityQuality.PublishedLessonsWithoutActivityBlocks,
+            courseActivityQuality.MalformedActivityBlocksJson,
+            courseActivityQuality.ActivityBlocksWithUnsupportedTargetType,
+            courseActivityQuality.ActivityBlocksWithUnresolvedTargetSlug,
             exerciseQuality.ExercisesMissingTranslations,
             exerciseQuality.ExerciseSetsMissingTranslations,
             exerciseQuality.ExercisesUnpublishedDrafts,
@@ -1184,13 +1323,21 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             expressionsBlockedOrExplicitAdult,
             expressionsMissingSensitiveUsagePolicy,
             expressionsOldRiskyMissingSensitiveMetadata,
+            examPrepQuality.ProfilesMissingTranslations,
+            examPrepQuality.UnitsMissingTranslations,
+            examPrepQuality.UnpublishedDrafts,
+            examPrepQuality.UnitsWithMalformedStrategyOrChecklist,
+            examPrepQuality.UnitsWithoutActiveProfile,
+            writingTemplateQuality.MissingTranslations,
+            writingTemplateQuality.UnpublishedDrafts,
+            writingTemplateQuality.WithMalformedVariables,
             roleplayQuality.MissingTranslations,
             roleplayQuality.UnpublishedDrafts,
             roleplayQuality.MissingRequiredImageAssets,
             roleplayQuality.WithoutAnswerChoices,
             roleplayQuality.WithoutStaticFeedback,
             roleplayQuality.InvalidPlayableSequence,
-            issues.Take(30).ToArray());
+            issues.Take(issueLimit).ToArray());
     }
 
     private static RoleplayQualityCounts CountRoleplayQuality(IReadOnlyList<RoleplayScenario> scenarios)
@@ -1249,6 +1396,91 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             invalidPlayableSequence);
     }
 
+    private static ExamPrepQualityCounts CountExamPrepQuality(
+        IReadOnlyList<ExamProfile> profiles,
+        IReadOnlyList<ExamPrepUnit> units)
+    {
+        HashSet<string> activeProfiles = profiles
+            .Where(static profile => profile.PublicationStatus == PublicationStatus.Active)
+            .Select(static profile => profile.Key)
+            .ToHashSet(StringComparer.Ordinal);
+
+        int profilesMissingTranslations = profiles.Count(static profile =>
+            !TranslationArrayHasRequiredLanguages(profile.DisplayNameTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(profile.DescriptionTranslationsJson));
+
+        int unitsMissingTranslations = units.Count(static unit =>
+            !TranslationArrayHasRequiredLanguages(unit.TitleTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(unit.ShortDescriptionTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(unit.ExplanationTranslationsJson) ||
+            !TextListTranslationArrayHasRequiredLanguages(unit.StrategyNotesTranslationsJson) ||
+            !TextListTranslationArrayHasRequiredLanguages(unit.ChecklistTranslationsJson));
+
+        int unpublishedDrafts =
+            profiles.Count(static profile => profile.PublicationStatus != PublicationStatus.Active) +
+            units.Count(static unit => unit.PublicationStatus != PublicationStatus.Active);
+
+        int malformedStrategyOrChecklist = units.Count(static unit =>
+            !JsonArrayIsReadable(unit.StrategyNotesJson) ||
+            !JsonArrayIsReadable(unit.ChecklistJson) ||
+            !JsonArrayIsReadable(unit.StrategyNotesTranslationsJson) ||
+            !JsonArrayIsReadable(unit.ChecklistTranslationsJson));
+
+        int unitsWithoutActiveProfile = units.Count(unit => !activeProfiles.Contains(unit.ExamProfileKey));
+
+        return new ExamPrepQualityCounts(
+            profilesMissingTranslations,
+            unitsMissingTranslations,
+            unpublishedDrafts,
+            malformedStrategyOrChecklist,
+            unitsWithoutActiveProfile);
+    }
+
+    private static WritingTemplateQualityCounts CountWritingTemplateQuality(IReadOnlyList<WritingTemplate> templates)
+    {
+        int missingTranslations = templates.Count(static template =>
+            !TranslationArrayHasRequiredLanguages(template.TitleTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(template.ShortDescriptionTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(template.SituationTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(template.ExplanationTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(template.TemplateTextTranslationsJson) ||
+            !TranslationArrayHasRequiredLanguages(template.SampleFilledVersionTranslationsJson));
+
+        int unpublishedDrafts = templates.Count(static template => template.PublicationStatus != PublicationStatus.Active);
+        int malformedVariables = templates.Count(static template => !WritingTemplateVariablesAreConsistent(template));
+
+        return new WritingTemplateQualityCounts(missingTranslations, unpublishedDrafts, malformedVariables);
+    }
+
+    private static bool WritingTemplateVariablesAreConsistent(WritingTemplate template)
+    {
+        string[] declared = ReadStringArray(template.VariablesJson).ToArray();
+        HashSet<string> declaredSet = declared.ToHashSet(StringComparer.Ordinal);
+        if (declared.Length != declaredSet.Count)
+        {
+            return false;
+        }
+
+        foreach (string variable in declared)
+        {
+            if (!Regex.IsMatch(variable, "^[a-z0-9]+(-[a-z0-9]+)*$", RegexOptions.CultureInvariant) ||
+                !template.TemplateText.Contains($"{{{{{variable}}}}}", StringComparison.Ordinal))
+            {
+                return false;
+            }
+        }
+
+        foreach (Match match in Regex.Matches(template.TemplateText, "\\{\\{(?<name>[a-z0-9]+(?:-[a-z0-9]+)*)\\}\\}", RegexOptions.CultureInvariant))
+        {
+            if (!declaredSet.Contains(match.Groups["name"].Value))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     private static CourseQualityCounts CountCourseQuality(
         IReadOnlyList<CoursePath> paths,
         IReadOnlyList<CourseModule> modules,
@@ -1271,6 +1503,98 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             (lesson.HomeworkTask is not null && !TranslationArrayHasRequiredLanguages(lesson.HomeworkTaskTranslationsJson)));
 
         return new CourseQualityCounts(pathsMissingTranslations, modulesMissingTranslations, lessonsMissingTranslations);
+    }
+
+    private static CourseActivityQualityCounts CountCourseActivityQuality(
+        IReadOnlyList<CourseLesson> lessons,
+        IReadOnlySet<string> grammarSlugs,
+        IReadOnlySet<string> expressionSlugs,
+        IReadOnlySet<string> dialogueSlugs,
+        IReadOnlySet<string> talkTopicSlugs,
+        IReadOnlySet<string> exerciseSetSlugs,
+        IReadOnlySet<string> exerciseSlugs,
+        IReadOnlySet<string> courseLessonSlugs,
+        IReadOnlySet<string> roleplaySlugs,
+        IReadOnlySet<string> writingTemplateSlugs,
+        IReadOnlySet<string> culturalNoteSlugs,
+        IReadOnlySet<string> examPrepSlugs,
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
+    {
+        int publishedLessonsWithoutActivityBlocks = 0;
+        int malformedActivityBlocksJson = 0;
+        int unsupportedTargetTypes = 0;
+        int unresolvedTargetSlugs = 0;
+
+        foreach (CourseLesson lesson in lessons)
+        {
+            CourseActivityQualityRow[]? activities;
+            try
+            {
+                activities = string.IsNullOrWhiteSpace(lesson.ActivityBlocksJson)
+                    ? []
+                    : JsonSerializer.Deserialize<CourseActivityQualityRow[]>(lesson.ActivityBlocksJson, WebJsonOptions) ?? [];
+            }
+            catch (JsonException)
+            {
+                malformedActivityBlocksJson++;
+                AddDetailedQualityIssue("CourseLesson activity", lesson.Slug, "Malformed activityBlocks JSON", null, issues, issueLimit);
+                continue;
+            }
+
+            if (lesson.PublicationStatus == PublicationStatus.Active && activities.Length == 0)
+            {
+                publishedLessonsWithoutActivityBlocks++;
+                AddDetailedQualityIssue("CourseLesson activity", lesson.Slug, "Published course lesson has no activity blocks", null, issues, issueLimit);
+            }
+
+            foreach (CourseActivityQualityRow activity in activities)
+            {
+                string targetType = (activity.TargetType ?? string.Empty).Trim().ToLowerInvariant();
+                string targetSlug = (activity.TargetSlug ?? string.Empty).Trim().ToLowerInvariant();
+                string target = string.IsNullOrWhiteSpace(targetSlug) ? $"{targetType}:" : $"{targetType}:{targetSlug}";
+
+                if (!SupportedCourseActivityTargetTypes.Contains(targetType))
+                {
+                    unsupportedTargetTypes++;
+                    AddDetailedQualityIssue("CourseLesson activity", lesson.Slug, "Unsupported activity targetType", target, issues, issueLimit);
+                    continue;
+                }
+
+                if (targetType == "none")
+                {
+                    continue;
+                }
+
+                IReadOnlySet<string> validTargets = targetType switch
+                {
+                    "course-lesson" => courseLessonSlugs,
+                    "grammar-topic" => grammarSlugs,
+                    "expression" => expressionSlugs,
+                    "dialogue" => dialogueSlugs,
+                    "talk-topic" => talkTopicSlugs,
+                    "exercise-set" => exerciseSetSlugs,
+                    "exercise" => exerciseSlugs,
+                    "roleplay" => roleplaySlugs,
+                    "writing-template" => writingTemplateSlugs,
+                    "life-in-germany" => culturalNoteSlugs,
+                    "exam-prep-unit" => examPrepSlugs,
+                    _ => EmptyStringSet,
+                };
+
+                if (string.IsNullOrWhiteSpace(targetSlug) || !validTargets.Contains(targetSlug))
+                {
+                    unresolvedTargetSlugs++;
+                    AddDetailedQualityIssue("CourseLesson activity", lesson.Slug, "Unresolved activity target slug", target, issues, issueLimit);
+                }
+            }
+        }
+
+        return new CourseActivityQualityCounts(
+            publishedLessonsWithoutActivityBlocks,
+            malformedActivityBlocksJson,
+            unsupportedTargetTypes,
+            unresolvedTargetSlugs);
     }
 
     private static bool RoleplayScenarioHasMissingTranslations(RoleplayScenario scenario) =>
@@ -1374,6 +1698,19 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         {
             using JsonDocument document = JsonDocument.Parse(json);
             return document.RootElement.ValueKind == JsonValueKind.Array && document.RootElement.GetArrayLength() > 0;
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool JsonArrayIsReadable(string json)
+    {
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            return document.RootElement.ValueKind == JsonValueKind.Array;
         }
         catch (JsonException)
         {
@@ -1683,14 +2020,31 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         string area,
         string owner,
         string issue,
-        List<AdminLearningPortalIssueRowResponse> issues)
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
     {
-        if (count <= 0 || issues.Count >= 30)
+        if (count <= 0 || issues.Count >= issueLimit)
         {
             return;
         }
 
         issues.Add(new AdminLearningPortalIssueRowResponse(area, owner, issue, count.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+    }
+
+    private static void AddDetailedQualityIssue(
+        string area,
+        string owner,
+        string issue,
+        string? target,
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
+    {
+        if (issues.Count >= issueLimit)
+        {
+            return;
+        }
+
+        issues.Add(new AdminLearningPortalIssueRowResponse(area, owner, issue, target));
     }
 
     private static async Task<HashSet<string>> GetSlugSetIfTableExistsAsync(
@@ -1716,7 +2070,8 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         string target,
         string area,
         string owner,
-        List<AdminLearningPortalIssueRowResponse> issues)
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
     {
         string normalizedTarget = target.Trim().ToLowerInvariant();
         if (validTargets.Contains(normalizedTarget))
@@ -1724,7 +2079,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             return 0;
         }
 
-        if (issues.Count < 30)
+        if (issues.Count < issueLimit)
         {
             issues.Add(new AdminLearningPortalIssueRowResponse(area, owner, "Unresolved reference", normalizedTarget));
         }
@@ -1737,6 +2092,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlySet<string> validTargets,
         string area,
         List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit,
         CancellationToken cancellationToken)
         where TLink : GrammarSlugLink
     {
@@ -1744,7 +2100,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int count = 0;
         foreach (TLink link in links)
         {
-            count += AddIssueIfMissing(validTargets, link.TargetSlug, area, link.GrammarTopicId.ToString(), issues);
+            count += AddIssueIfMissing(validTargets, link.TargetSlug, area, link.GrammarTopicId.ToString(), issues, issueLimit);
         }
 
         return count;
@@ -1757,10 +2113,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlySet<string> validTargets,
         string area,
         List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit,
         CancellationToken cancellationToken)
         where TLink : GrammarSlugLink =>
         HasTable(tableAvailability, tableName)
-            ? CountMissingSlugLinksAsync(query, validTargets, area, issues, cancellationToken)
+            ? CountMissingSlugLinksAsync(query, validTargets, area, issues, issueLimit, cancellationToken)
             : Task.FromResult(0);
 
     private static async Task<int> CountMissingExpressionLinksAsync(
@@ -1769,6 +2126,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlySet<string> expressionSlugs,
         IReadOnlySet<string> exerciseSlugs,
         List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit,
         CancellationToken cancellationToken)
     {
         int count = 0;
@@ -1780,7 +2138,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                 .ConfigureAwait(false);
             foreach (RelatedExpressionLink link in relatedExpressions)
             {
-                count += AddIssueIfMissing(expressionSlugs, link.TargetSlug, "Related expression", link.ExpressionEntryId.ToString(), issues);
+                count += AddIssueIfMissing(expressionSlugs, link.TargetSlug, "Related expression", link.ExpressionEntryId.ToString(), issues, issueLimit);
             }
         }
 
@@ -1792,7 +2150,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                 .ConfigureAwait(false);
             foreach (ExpressionLinkedExercise link in linkedExercises)
             {
-                count += AddIssueIfMissing(exerciseSlugs, link.TargetSlug, "Expression linked exercise", link.ExpressionEntryId.ToString(), issues);
+                count += AddIssueIfMissing(exerciseSlugs, link.TargetSlug, "Expression linked exercise", link.ExpressionEntryId.ToString(), issues, issueLimit);
             }
         }
 
@@ -1810,8 +2168,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlySet<string> exerciseSetSlugs,
         IReadOnlySet<string> courseLessonSlugs,
         IReadOnlySet<string> examPrepSlugs,
+        IReadOnlySet<string> roleplaySlugs,
         IReadOnlySet<string> writingTemplateSlugs,
         List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit,
         CancellationToken cancellationToken)
     {
         int count = 0;
@@ -1821,19 +2181,19 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             CourseLesson[] lessons = await dbContext.CourseLessons.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
             foreach (CourseLesson lesson in lessons)
             {
-                count += CountJsonTargets(lesson.LinkedGrammarTopicSlugsJson, grammarSlugs, "Lesson linked grammar", lesson.Slug, issues);
-                count += CountJsonTargets(lesson.LinkedWordSlugsJson, EmptyStringSet, "Lesson linked word", lesson.Slug, issues);
-                count += CountJsonTargets(lesson.LinkedExpressionSlugsJson, expressionSlugs, "Lesson linked expression", lesson.Slug, issues);
-                count += CountJsonTargets(lesson.LinkedDialogueSlugsJson, dialogueSlugs, "Lesson linked dialogue", lesson.Slug, issues);
-                count += CountJsonTargets(lesson.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Lesson linked Talk Topic", lesson.Slug, issues);
-                count += CountJsonTargets(lesson.LinkedExerciseSetSlugsJson, exerciseSetSlugs, "Lesson linked exercise set", lesson.Slug, issues);
-                count += CountJsonTargets(lesson.LinkedExamPrepSlugsJson, examPrepSlugs, "Lesson linked exam prep", lesson.Slug, issues);
+                count += CountJsonTargets(lesson.LinkedGrammarTopicSlugsJson, grammarSlugs, "Lesson linked grammar", lesson.Slug, issues, issueLimit);
+                count += CountJsonTargets(lesson.LinkedWordSlugsJson, EmptyStringSet, "Lesson linked word", lesson.Slug, issues, issueLimit);
+                count += CountJsonTargets(lesson.LinkedExpressionSlugsJson, expressionSlugs, "Lesson linked expression", lesson.Slug, issues, issueLimit);
+                count += CountJsonTargets(lesson.LinkedDialogueSlugsJson, dialogueSlugs, "Lesson linked dialogue", lesson.Slug, issues, issueLimit);
+                count += CountJsonTargets(lesson.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Lesson linked Talk Topic", lesson.Slug, issues, issueLimit);
+                count += CountJsonTargets(lesson.LinkedExerciseSetSlugsJson, exerciseSetSlugs, "Lesson linked exercise set", lesson.Slug, issues, issueLimit);
+                count += CountJsonTargets(lesson.LinkedExamPrepSlugsJson, examPrepSlugs, "Lesson linked exam prep", lesson.Slug, issues, issueLimit);
                 if (!string.IsNullOrWhiteSpace(lesson.NextLessonSlug))
                 {
-                    count += AddIssueIfMissing(courseLessonSlugs, lesson.NextLessonSlug, "Lesson next link", lesson.Slug, issues);
+                    count += AddIssueIfMissing(courseLessonSlugs, lesson.NextLessonSlug, "Lesson next link", lesson.Slug, issues, issueLimit);
                 }
 
-                count += CountJsonTargets(lesson.PrerequisiteLessonSlugsJson, courseLessonSlugs, "Lesson prerequisite", lesson.Slug, issues);
+                count += CountJsonTargets(lesson.PrerequisiteLessonSlugsJson, courseLessonSlugs, "Lesson prerequisite", lesson.Slug, issues, issueLimit);
             }
         }
 
@@ -1842,10 +2202,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             WritingTemplate[] writingTemplates = await dbContext.WritingTemplates.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
             foreach (WritingTemplate template in writingTemplates)
             {
-                count += CountJsonTargets(template.LinkedGrammarTopicSlugsJson, grammarSlugs, "Writing linked grammar", template.Slug, issues);
-                count += CountJsonTargets(template.LinkedWordSlugsJson, EmptyStringSet, "Writing linked word", template.Slug, issues);
-                count += CountJsonTargets(template.LinkedExpressionSlugsJson, expressionSlugs, "Writing linked expression", template.Slug, issues);
-                count += CountJsonTargets(template.LinkedExerciseSlugsJson, exerciseSlugs, "Writing linked exercise", template.Slug, issues);
+                count += CountJsonTargets(template.LinkedGrammarTopicSlugsJson, grammarSlugs, "Writing linked grammar", template.Slug, issues, issueLimit);
+                count += CountJsonTargets(template.LinkedWordSlugsJson, EmptyStringSet, "Writing linked word", template.Slug, issues, issueLimit);
+                count += CountJsonTargets(template.LinkedExpressionSlugsJson, expressionSlugs, "Writing linked expression", template.Slug, issues, issueLimit);
+                count += CountJsonTargets(template.LinkedExerciseSlugsJson, exerciseSlugs, "Writing linked exercise", template.Slug, issues, issueLimit);
+                count += CountJsonTargets(template.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Writing linked course lesson", template.Slug, issues, issueLimit);
             }
         }
 
@@ -1854,11 +2215,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             CulturalNote[] culturalNotes = await dbContext.CulturalNotes.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
             foreach (CulturalNote note in culturalNotes)
             {
-                count += CountJsonTargets(note.LinkedDialogueSlugsJson, dialogueSlugs, "Cultural linked dialogue", note.Slug, issues);
-                count += CountJsonTargets(note.LinkedExpressionSlugsJson, expressionSlugs, "Cultural linked expression", note.Slug, issues);
-                count += CountJsonTargets(note.LinkedWritingTemplateSlugsJson, writingTemplateSlugs, "Cultural linked writing template", note.Slug, issues);
-                count += CountJsonTargets(note.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Cultural linked Talk Topic", note.Slug, issues);
-                count += CountJsonTargets(note.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Cultural linked lesson", note.Slug, issues);
+                count += CountJsonTargets(note.LinkedDialogueSlugsJson, dialogueSlugs, "Cultural linked dialogue", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedExpressionSlugsJson, expressionSlugs, "Cultural linked expression", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedWritingTemplateSlugsJson, writingTemplateSlugs, "Cultural linked writing template", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Cultural linked Talk Topic", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Cultural linked lesson", note.Slug, issues, issueLimit);
             }
         }
 
@@ -1867,13 +2228,14 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             ExamPrepUnit[] examPrepUnits = await dbContext.ExamPrepUnits.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
             foreach (ExamPrepUnit unit in examPrepUnits)
             {
-                count += CountJsonTargets(unit.LinkedDialogueSlugsJson, dialogueSlugs, "Exam linked dialogue", unit.Slug, issues);
-                count += CountJsonTargets(unit.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Exam linked Talk Topic", unit.Slug, issues);
-                count += CountJsonTargets(unit.LinkedGrammarTopicSlugsJson, grammarSlugs, "Exam linked grammar", unit.Slug, issues);
-                count += CountJsonTargets(unit.LinkedExpressionSlugsJson, expressionSlugs, "Exam linked expression", unit.Slug, issues);
-                count += CountJsonTargets(unit.LinkedWritingTemplateSlugsJson, writingTemplateSlugs, "Exam linked writing template", unit.Slug, issues);
-                count += CountJsonTargets(unit.LinkedExerciseSlugsJson, exerciseSlugs, "Exam linked exercise", unit.Slug, issues);
-                count += CountJsonTargets(unit.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Exam linked lesson", unit.Slug, issues);
+                count += CountJsonTargets(unit.LinkedDialogueSlugsJson, dialogueSlugs, "Exam linked dialogue", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Exam linked Talk Topic", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedGrammarTopicSlugsJson, grammarSlugs, "Exam linked grammar", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedExpressionSlugsJson, expressionSlugs, "Exam linked expression", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedWritingTemplateSlugsJson, writingTemplateSlugs, "Exam linked writing template", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedExerciseSlugsJson, exerciseSlugs, "Exam linked exercise", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedRoleplaySlugsJson, roleplaySlugs, "Exam linked roleplay", unit.Slug, issues, issueLimit);
+                count += CountJsonTargets(unit.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Exam linked lesson", unit.Slug, issues, issueLimit);
             }
         }
 
@@ -1885,7 +2247,8 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlySet<string> validTargets,
         string area,
         string owner,
-        List<AdminLearningPortalIssueRowResponse> issues)
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
     {
         if (validTargets.Count == 0 && area.Contains("word", StringComparison.OrdinalIgnoreCase))
         {
@@ -1895,7 +2258,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int count = 0;
         foreach (string target in ReadStringArray(json))
         {
-            count += AddIssueIfMissing(validTargets, target, area, owner, issues);
+            count += AddIssueIfMissing(validTargets, target, area, owner, issues, issueLimit);
         }
 
         return count;
@@ -2117,6 +2480,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int CoursePathsMissingTranslations,
         int CourseModulesMissingTranslations,
         int CourseLessonsMissingTranslations,
+        int PublishedCourseLessonsWithoutActivityBlocks,
+        int CourseLessonsWithMalformedActivityBlocksJson,
+        int CourseActivityBlocksWithUnsupportedTargetType,
+        int CourseActivityBlocksWithUnresolvedTargetSlug,
         int ExercisesMissingTranslations,
         int ExerciseSetsMissingTranslations,
         int ExercisesUnpublishedDrafts,
@@ -2137,6 +2504,14 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int ExpressionEntriesBlockedOrExplicitAdult,
         int ExpressionEntriesMissingSensitiveUsagePolicy,
         int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+        int ExamPrepProfilesMissingTranslations,
+        int ExamPrepUnitsMissingTranslations,
+        int ExamPrepUnpublishedDrafts,
+        int ExamPrepUnitsWithMalformedStrategyOrChecklist,
+        int ExamPrepUnitsWithoutActiveProfile,
+        int WritingTemplatesMissingTranslations,
+        int WritingTemplatesUnpublishedDrafts,
+        int WritingTemplatesWithMalformedVariables,
         int RoleplayScenariosMissingTranslations,
         int RoleplayScenariosUnpublishedDrafts,
         int RoleplayScenariosMissingRequiredImageAssets,
@@ -2158,6 +2533,16 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int CourseModulesMissingTranslations,
         int CourseLessonsMissingTranslations);
 
+    private sealed record CourseActivityQualityCounts(
+        int PublishedLessonsWithoutActivityBlocks,
+        int MalformedActivityBlocksJson,
+        int ActivityBlocksWithUnsupportedTargetType,
+        int ActivityBlocksWithUnresolvedTargetSlug);
+
+    private sealed record CourseActivityQualityRow(
+        string? TargetType,
+        string? TargetSlug);
+
     private sealed record ExerciseQualityCounts(
         int ExercisesMissingTranslations,
         int ExerciseSetsMissingTranslations,
@@ -2168,6 +2553,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int ExercisesWithMalformedPrompt,
         int ExercisesWithMalformedAnswerKey,
         int ExercisesMissingExplanations);
+
+    private sealed record ExamPrepQualityCounts(
+        int ProfilesMissingTranslations,
+        int UnitsMissingTranslations,
+        int UnpublishedDrafts,
+        int UnitsWithMalformedStrategyOrChecklist,
+        int UnitsWithoutActiveProfile);
+
+    private sealed record WritingTemplateQualityCounts(
+        int MissingTranslations,
+        int UnpublishedDrafts,
+        int WithMalformedVariables);
 
     private sealed record RoleplayTurnQualityRow(
         int SortOrder,

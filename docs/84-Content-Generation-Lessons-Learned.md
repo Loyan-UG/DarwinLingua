@@ -286,3 +286,98 @@ When a content-quality problem is found, add a short note here with:
 - Where it appeared: `roleplays-a1-core-06-v1.json` during the first import attempt.
 - Why it happened: The content plan used pedagogical labels that sounded reasonable, but the RoleplayScenario importer accepts only the controlled values already defined for catalog filtering and reporting.
 - Prevention rule: Before importing any RoleplayScenario package, compare `taskType`, `skillFocus`, `interactionMode`, `register`, topics, and exam profiles against the active controlled values from previously accepted packages and the contract. Natural planning labels may be used in notes, but official JSON must use only importer-supported controlled values.
+
+### 2026-06-08: Course helper translations must avoid casual English carryover
+
+- What failed: The final C2 Course batch initially used borrowed English labels such as `feedback`, `register`, and `practice` inside some non-English learner-helper translations. The content was structurally valid, but it weakened the promise that helper translations respect each target language rather than falling back to English terminology.
+- Where it appeared: `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json`, lessons 119-120 during pre-import preflight.
+- Why it happened: These words are common in some multilingual education contexts, so they can slip through as plausible terms unless the preflight checks likely English carryover in recently generated translations.
+- Prevention rule: Course content preflight must scan new lessons for common English carryover terms in non-English helper fields. Borrowed terms are allowed only when they are genuinely the best natural term for that learner language; otherwise use native equivalents such as `بازخورد`, `بۆچوونی گەڕاوە`, `bersiva nirxandinê`, `vlerësim kthyes`, or language-appropriate phrasing.
+
+### 2026-06-08: PostgreSQL retrofit must cover every Web/API learning-portal table
+
+- What failed: WebApi could start with the correct launch profile, but Unified Search returned 500 because the existing shared PostgreSQL database did not yet contain `ExamPrepUnits`. Follow-up schema inspection showed `ExamProfiles`, `WritingTemplates`, and `CulturalNotes` were also missing.
+- Where it appeared: `/api/catalog/search` after the Course A1-C2 content phase, before the post-completion smoke pass.
+- Why it happened: The domain model and content contracts existed, but the startup retrofit for existing PostgreSQL databases covered only some Phase 7 tables. `EnsureCreated` does not retrofit missing tables into an already populated PostgreSQL database.
+- Prevention rule: Before closing any Web/API feature phase, verify both model support and existing-database retrofit support for every table queried by routes, Unified Search, import, admin reports, and publication/export paths. Add structural tests that assert the startup initializer contains the required PostgreSQL `CREATE TABLE IF NOT EXISTS` statements, then run local WebApi smoke against the shared PostgreSQL database.
+
+### 2026-06-08: Exam profile display names still need real helper text
+
+- What failed: The first Exam Prep A1/A2 pilot validation rejected profile `displayNameTranslations` because brand-like names such as `Goethe A1`, `telc A2`, and `DTZ A2-B1` were copied exactly into multiple learner languages.
+- Where it appeared: `exam-prep-a1-a2-pilot-v1.json` during temporary PostgreSQL validation import before writing to `darwinlingua_shared`.
+- Why it happened: Exam profile names are partly proper nouns, so it looked reasonable to repeat them unchanged. The stricter fallback gate correctly treated exact English reuse as a missing localized helper.
+- Prevention rule: For proper-noun content fields, keep the German/source display name unchanged, but make helper translations descriptive in each learner language, such as "Goethe A1 exam profile" translated naturally. Do not bypass fallback checks by assuming brand labels are enough learner help.
+
+### 2026-06-08: Exam Prep titles and helper translations need human-quality review before import
+
+- What failed: The first generated Exam Prep A1/A2 pilot used learner-facing titles that mixed metadata into the title, such as CEFR level and exam section wording that already belonged in `cefrLevel`, `examProfileKey`, `examSection`, and `taskType`. Some helper translations were structurally valid but sounded literal or unnatural, and linked-practice fields were empty despite existing Course, Dialogue, Roleplay, and Exercise content.
+- Where it appeared: `exam-prep-a1-a2-pilot-v1.json` after import review; the package was removed from the official content path and `darwinlingua_shared`.
+- Why it happened: The generation prompt optimized for filling the new contract rather than first building a reviewed level/profile candidate plan and checking learner-facing title style, natural translations, and available linked material.
+- Prevention rule: Before regenerating Exam Prep content, create level/profile planning first. Unit titles must not repeat CEFR/profile/section metadata unless the title is explicitly about comparing a provider format. Helper translations must be meaning-based and natural in each learner language; for example, German `wenn es natuerlich passt` should be rendered in Persian as "if it fits the meaning/context", not as an awkward literal phrase. Linked-practice fields should point to reviewed existing slugs where available, and empty linked fields need a documented reason.
+
+### 2026-06-09: Exam Prep foundation batches must stay small and semantically translated
+
+- What worked: The regenerated Exam Prep foundation batches were accepted when each batch stayed small, titles avoided CEFR/provider/section metadata, linked-practice slugs were verified against PostgreSQL before import, and Persian helper text was reviewed for meaning rather than word-for-word transfer.
+- Where it appeared: `exam-prep-a1-a2-foundation-01-v1.json`, C1/B1 foundation packages, and B2 packages through `exam-prep-b2-foundation-05-v1.json`.
+- Prevention rule: Keep future Exam Prep generation to small reviewed batches. For each unit, run a semantic sample read in Persian and at least spot-check other helper languages before import. Phrases such as `distanzierend`, `Einwand`, `Rueckfrage`, `Stellungnahme`, and `Sprachbausteine` must be translated by function and context, not by a single literal dictionary word.
+
+### 2026-06-09: C2 Exam Prep foundation completed with a final phase backup
+
+- What worked: The Goethe C2 Exam Prep foundation was completed in five small packages, each with three units, verified linked Course/Roleplay slugs, targeted ExamPrep tests, zero-warning import, and local/production smoke before closing the phase.
+- Prevention rule: When a reviewed Exam Prep level reaches its planned count, update docs and create the external phase backup immediately before starting another content line. The backup must record live and restored `ExamProfiles`, `ExamPrepUnits`, and level-specific counts.
+
+### 2026-06-12: Exam Prep depth content exposed doc drift and semantic-translation risk
+
+- What failed: After the Exam Prep depth cycle continued beyond the original foundation count, roadmap and checklist docs still recorded the older `ExamPrepUnits=95` state while the live database contained 246 units. Some earlier helper translations also showed the recurring risk of literal wording, such as translating `distanzierend` as an opaque word instead of explaining the function as distance, non-alignment, or lack of empathy with the source position.
+- Where it appeared: Exam Prep C2 depth batches and pre-Writing-Templates phase planning.
+- Why it happened: The content loop optimized for small successful imports and smoke checks, but did not make docs/count synchronization and semantic translation review a required phase gate after the accepted depth cycle.
+- Prevention rule: Before starting a new content family, sync docs to live PostgreSQL counts, run a phase backup, and add the current mistakes to this lessons-learned file. For Writing Templates, titles must not repeat CEFR/provider/section metadata, helper translations must be meaning-based in every learner language, and linked-practice fields may be empty only when related content truly does not exist.
+
+### 2026-06-13: Writing Template text blocks and RTL helper text need rendering gates
+
+- What failed: Long `templateText` and `sampleFilledVersion` values initially rendered like unwrapped single-line text blocks, creating horizontal page overflow. RTL helper translations also needed explicit direction handling so Persian, Arabic, and Sorani content read naturally.
+- Where it appeared: Writing Template detail pages during A1-C2 content generation and live UI review.
+- Why it happened: The content was structurally valid, but the UI container treated learner-facing letter text too much like code/preformatted text without enough wrapping constraints and direction metadata.
+- Prevention rule: Before closing any content family with long prose fields, smoke-test at least one short beginner item and one long advanced item in Web detail pages. Long text containers must use bounded width and wrapping behavior, and RTL helper languages must render with `dir=rtl` or equivalent direction-aware markup.
+
+### 2026-06-13: Writing Template difficulty must grow with CEFR level
+
+- What failed: Early Writing Template batches risked making higher-level email/text samples too close in length and complexity to A1/A2 templates.
+- Where it appeared: Writing Templates B1-C2 review before finalizing the full A1-C2 baseline.
+- Why it happened: Small-batch generation kept content manageable, but without a level-length rule it could underuse the discourse complexity expected at B1, B2, C1, and C2.
+- Prevention rule: For practical writing content, increase text length, sentence complexity, register control, argument structure, and revision guidance by CEFR level. A1/A2 templates should stay short and scaffolded; B1 should add clearer reasons and connected sentences; B2 should add paragraph-level control; C1/C2 should support nuance, synthesis, and style decisions without becoming generic essays.
+
+### 2026-06-13: Life in Germany requires culturally aware helper translations
+
+- What can fail: Cultural explanations can become misleading if helper translations are word-for-word or if examples assume one cultural background for all speakers of a language.
+- Where it applies: Life in Germany notes from the first A1 pilot onward, using the current `CulturalNote` backing store.
+- Why it matters: Life in Germany notes teach German communication norms, civic/legal concepts, and everyday systems, but learners understand them through their own language and social expectations. A literal helper translation may hide the practical contrast the learner needs.
+- Prevention rule: Keep the German source note canonical, but write helper translations semantically. When a comparison helps, adapt the explanation to the target language audience in a careful, non-stereotyping way, such as "in some familiar informal contexts..." rather than broad claims about a whole country or language community. RTL helper languages must render with explicit direction metadata in Web views.
+
+### 2026-06-13: Life in Germany is broader than culture notes
+
+- What changed: The former public Cultural Notes feature was too narrow for the next content phase. Learners also need civic, legal, social-system, geography, and Orientierungskurs/Leben-in-Deutschland knowledge in their own languages.
+- Where it applies: The renamed `Life in Germany` feature and all future packages using the `culturalNotes` backing store.
+- Why it matters: Many learners memorize the fixed German test questions but do not understand the underlying concepts. The product should teach the concepts clearly and safely, not just reproduce a question bank.
+- Prevention rule: Treat official LiD/Einbuergerungstest material as source orientation, not as bulk copied app content. Write original explanatory notes, keep legal topics as general education rather than individual legal advice, and use target-language helper translations to make the German civic/social concept understandable without stereotyping.
+
+### 2026-06-13: Life in Germany B1+ notes need real explanatory depth
+
+- What failed: The first B1 Life in Germany drafts were structurally correct, but the main explanations were too short for learners who need to understand civic and legal concepts behind Orientierungskurs/Leben-in-Deutschland topics.
+- Where it appeared: B1 foundation notes before expanding the German `context` and adding fuller explanatory `sections`.
+- Why it happened: The generation pass treated B1 as only slightly longer than A1/A2, while the learner need at B1 is conceptual clarity, not just everyday action guidance.
+- Prevention rule: For Life in Germany B1 and higher, keep the German `context` substantial while respecting the validation/storage limit, and use `sections` for the fuller explanation. Helper translations must explain the concept in the learner language, not compress it into vague abstract wording. B2+ should increase precision and nuance without turning content into legal advice or copied official question-bank material.
+
+### 2026-06-16: Course activity-flow backfill needs slug verification before writing
+
+- What could fail: Course `activityBlocks` can look correct in JSON while pointing learners to old or invented target slugs. That would turn the book-like flow into broken navigation even when import validation passes.
+- Where it appeared: A1 activity-flow backfill planning, where candidate grammar/dialogue/exercise links needed to be checked against the current PostgreSQL content before being written into the cumulative A1 package.
+- Why it matters: `activityBlocks` are now learner-facing navigation, not internal metadata. A broken target is more visible than a missing legacy linked slug because it appears as an explicit next step in the lesson flow.
+- Prevention rule: Before writing activity targets, query the live content inventory and use only confirmed slugs. If a target is uncertain, convert the activity to `targetType: none` or choose another verified resource. After import, run admin unresolved-target diagnostics and a representative Web/API smoke before closing the backfill batch.
+
+### 2026-06-16: Content import must not depend on a broken EF pending-model state
+
+- What failed: The standard `DarwinLingua.ImportTool` currently runs the database initializer before importing and stops on EF pending-model changes. The A2 Module 1 content import had to use the existing `ImportNoInit` helper after schema verification.
+- Where it appeared: Course A2 Module 1 activity-flow import.
+- Why it matters: `ImportNoInit` is acceptable for a content-only repair when the target schema is already present, but it should not become the normal path. A broken primary import tool creates operational uncertainty and hides migration/snapshot drift.
+- Prevention rule: Before each Course backfill batch, verify that `dotnet ef migrations has-pending-model-changes` is clean and that the standard shared ImportTool can process the cumulative package. If a diagnostic migration suggests adding a column that already exists in both an older hand-written migration and PostgreSQL, inspect the snapshot/designer files and use an idempotent sync migration rather than accepting a duplicate unsafe migration.

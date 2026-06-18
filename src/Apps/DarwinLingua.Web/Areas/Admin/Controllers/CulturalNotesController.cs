@@ -14,7 +14,7 @@ public sealed class CulturalNotesController(IWebCatalogApiClient catalogApiClien
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<CulturalNoteListItemModel> notes = await catalogApiClient
-            .GetCulturalNotesAsync(new CulturalNoteListFilterModel(null, null, null, null), cancellationToken)
+            .GetCulturalNotesAsync(new CulturalNoteListFilterModel(null, null, null, null), null, cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminCulturalNotesPageViewModel(notes));

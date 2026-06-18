@@ -46,8 +46,11 @@ Latest local Web verification:
 - 2026-05-25: Second C2 Everyday Expressions package `expressions-c2-core-02-v1.json` was created with 40 published high-context idiom/rhetorical/cultural entries, including 11 mild-rude/social-risk entries with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 12 packages. Import into `darwinlingua_shared` succeeded with 40 content items and 0 warnings. Public-routed smoke returned HTTP 200 for `/expressions`, `/expressions/den-gordischen-knoten-durchschlagen`, `/expressions/auf-toenernen-fuessen-stehen`, `/api/catalog/expressions`, `/api/catalog/expressions/den-gordischen-knoten-durchschlagen?primaryMeaningLanguageCode=fa`, `/api/catalog/search?q=Gordischen&resultType=expression`, and `/api/admin/catalog/system-report`. Admin report showed 417 Expression records, 412 active records, 80 active C2 records, missing translations 0, unresolved linked words/content references 0, and zero Expressions quality counters.
 - 2026-05-25: Mixed Everyday Expressions supplement `expressions-mixed-supplement-01-v1.json` was created with 14 additional A2-C1 idiom/cultural/social expressions that were absent from the existing packages, including 1 social-risk entry with warning metadata and no explicit-adult content. Package validation and `tools/Content/Audit-ExpressionContentQuality.js` passed with 0 issues across 13 packages. Import into `darwinlingua_shared` succeeded with 14 content items and 0 warnings. Public-routed learner/API smoke returned HTTP 200 for `/expressions`, `/expressions/hals-und-beinbruch`, `/expressions/die-faeden-ziehen`, `/api/catalog/expressions/hals-und-beinbruch?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Groschen&resultType=expression`. The admin endpoint returned 401 without credentials as expected; `WebsiteAdminQueryServiceLearningPortalReportTests` passed 2/2 and the strict audit reported zero Expressions quality issues.
 - 2026-05-25: Web legal/compliance baseline added public `/legal`/`/impressum`, `/cookies`/`/cookie-policy`, and `/contact` pages, footer links, `docs/86-Web-Legal-Compliance-Baseline.md`, and `artifacts/validation/web-cookie-storage-inventory.md`. Structural tests cover routes, footer links, registration acknowledgements, policy acceptance records, Sensitive Educational Language settings copy, and the no-banner cookie/storage decision for the current strictly necessary/preference-storage baseline.
-- 2026-05-31: Course Lessons v1 foundation added learner-helper translations, PostgreSQL-backed Course persistence/projection support, admin translation quality counters, and the first A1 pilot package. The original A1 pilot evidence covered 1 path, 1 module, and 5 cumulative lessons with targeted parser/import, PostgreSQL repository, admin report tests, Web project build, full solution build, and local Course Web/API smoke. This is now superseded by the 2026-06-07 A1-C1 imported baseline below.
-- 2026-06-07: Course Lessons A1-C1 are the current imported Course baseline in shared PostgreSQL: 5 paths, 44 modules, 440 lessons total (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`). C2 remains planned only in `artifacts/planning/course-c2-lesson-candidates.md`. Before C2 content generation starts, verify the A1-C1 backup checkpoint under `X:\Projects\DarwinLingua.Backup`.
+- 2026-05-31: Course Lessons v1 foundation added learner-helper translations, PostgreSQL-backed Course persistence/projection support, admin translation quality counters, and the first A1 pilot package. The original A1 pilot evidence covered 1 path, 1 module, and 5 cumulative lessons with targeted parser/import, PostgreSQL repository, admin report tests, Web project build, full solution build, and local Course Web/API smoke. This is now superseded by the 2026-06-08 A1-C2 imported baseline below.
+- 2026-06-08: Course Lessons A1-C2 are the current imported Course baseline in shared PostgreSQL: 6 paths, 56 modules, 560 lessons total (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`). The C2 source package `content/learning-portal/courses/packages/course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` imported with zero warnings after C2 batch 24. Local Web smoke returned HTTP 200 for `/`, `/courses`, `/courses/c2-stil-souveraenitaet-und-komplexer-diskurs`, and `/courses/c2-stil-souveraenitaet-und-komplexer-diskurs/c2-abschluss-und-meisterschaftspflege`. Local WebApi smoke returned HTTP 200 for course list/detail, Persian lesson detail, and course-lesson search. `WebsiteAdminQueryServiceLearningPortalReportTests` passed 2/2 because the local admin endpoint correctly returns 401 without credentials. PostgreSQL counts are `A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`.
+- 2026-06-16: Course lesson reading-flow UI uses `activityBlocks` when present and keeps legacy linked-content fallback for lessons not yet backfilled. Structural tests cover the Razor activity flow, wrapping CSS classes, RTL helper text, required/optional badges, and target URL mapping. Admin diagnostics cover published lessons without activity blocks, malformed activity JSON, unsupported activity target types, and unresolved activity target slugs.
+- 2026-06-09/12: Reviewed Exam Prep foundation and depth content is imported for A1/A2/DTZ, C1, B1, B2, and Goethe C2. Current shared PostgreSQL counts are `ExamProfiles=17`, `ExamPrepUnits=246`, and `GoetheC2Units=86`, with C2 distributed as reading 17, listening 17, speaking 17, writing 17, strategy 17, and overview 1. Targeted ExamPrep ContentOps tests passed during content batches, imports completed with zero warnings, public API/search/Web smoke returned HTTP 200 where public routes are exposed, and the phase backup was created at `X:\Projects\DarwinLingua.Backup\20260612-142146-exam-prep-complete-pre-writing-templates`.
+- 2026-06-13: Writing Templates A1-C2 are generated and imported into `darwinlingua_shared` with `WritingTemplates=120`, distributed as 20 templates per CEFR level. Targeted WritingTemplate ContentOps tests passed. Local Web/API smoke returned HTTP 200 for `/writing-templates`, A1 detail, C2 detail, Persian API detail, and `/api/catalog/search?q=Abschlussstatement&resultType=writing-template`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 talking about plans and conditions topic.
 - 2026-05-17: development smoke returned HTTP 200 for `/api/catalog/grammar/b1-talking-about-plans-and-conditions?primaryMeaningLanguageCode=fa`, `/grammar/b1-talking-about-plans-and-conditions`, and `/grammar`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` added parser and import/query coverage for the official B1 talking about plans and conditions topic.
@@ -570,45 +573,57 @@ Latest local Web verification:
 - [x] Parser/import validation covers Course learner-helper translations and `learningGoalsTranslations`.
 - [x] PostgreSQL repository coverage verifies Course list/detail search and localized helper projection.
 - [x] Admin report coverage includes Course translation quality counters.
-- [x] Lesson/module/course ordering is stable for the imported A1-C1 Course baseline.
+- [x] Admin report coverage includes Course activity-flow quality counters and drilldown issue rows.
+- [x] Lesson/module/course ordering is stable for the imported A1-C2 Course baseline.
+- [ ] Backfill `activityBlocks` for A1 Module 1 in a small cumulative package and smoke one activity-enabled lesson page.
 - [ ] Linked content rendering covers grammar, words, expressions, dialogues, Talk Topics, and exercises.
-- [x] Prerequisite and next-lesson navigation resolves for the imported A1-C1 Course baseline.
+- [x] Prerequisite and next-lesson navigation resolves for the imported A1-C2 Course baseline.
 - [ ] WebApi list/detail endpoint coverage exists.
 - [ ] Progress tracking works where implemented.
 - [x] Browser smoke coverage exists for `/courses`, `/courses/{slug}`, and `/courses/{courseSlug}/{lessonSlug}` after reviewed Course imports.
-- [ ] Run a broader Course Web/API/admin smoke pass after C2 is fully generated/imported.
+- [x] Run a broader Course Web/API/admin smoke pass after C2 is fully generated/imported.
+  - 2026-06-08 evidence: Web and WebApi were restarted locally after repairing PostgreSQL startup retrofit for `ExamProfiles`, `ExamPrepUnits`, `WritingTemplates`, and `CulturalNotes`. Course Web routes, WebApi course list/detail/lesson/search routes, and service-level admin report tests passed. The anonymous admin endpoint returns 401 as expected.
 
 ### Exam Preparation
 
 - [x] Parser coverage exists for the Exam Prep content contract shape.
-- [x] Import validation covers supported profile taxonomy.
+- [x] Import validation covers supported profile taxonomy, controlled unit fields, active learner-language helper translations, and exact English fallback rejection.
 - [x] Navigation/localization shell includes Exam Prep.
 - [x] Release route hardening covers `/exam-prep`, exam profile, and exam prep list/detail route registrations.
-- [ ] Exam profile taxonomy validates supported profiles and task types in Web API coverage.
-- [ ] Exam unit linking resolves dialogues, exercises, grammar, writing templates, and Talk Topics.
-- [ ] Exam filter behavior covers profile, CEFR, and task type.
-- [ ] Sample task rendering works for initial exam-prep units.
+- [x] Exam profile taxonomy validates supported profiles and task types in targeted ContentOps coverage.
+- [x] Exam unit linking resolves reviewed Course, Dialogue, Roleplay, Exercise, Grammar, Expression, Writing Template, and Talk Topic slugs without invented future links for the imported foundation packages.
+- [x] Exam filter behavior covers profile, CEFR, skill focus, task type, section, and query in PostgreSQL repository coverage.
+- [x] Regenerated Exam Prep pilot/foundation rendering works after the rejected A1/A2 pilot was rebuilt from reviewed planning.
+- [x] Exam Prep content preflight flags titles that repeat CEFR/profile/section metadata and helper translations that are literal but unnatural in Persian or other learner languages.
+- [x] Unified Search returns `exam-prep` result type from seeded PostgreSQL repository coverage.
+- [x] Admin report service coverage includes Exam Prep missing translations, unpublished drafts, malformed strategy/checklist JSON, and units without an active profile.
+  - 2026-06-09 evidence: reviewed packages through `exam-prep-c2-foundation-05-v1.json` imported into `darwinlingua_shared` with zero warnings. Local and production-routed smoke passed, and the C2 completion backup records matching live and restored counts.
 
 ### Writing Templates
 
 - [x] Parser coverage exists for the WritingTemplate content contract shape.
 - [x] Variable validation requires declared placeholders to exist in template text.
+- [x] Variable validation rejects placeholders used in template text but missing from the declared variable list.
+- [x] Helper translation validation rejects missing active learner languages, unsupported/duplicate languages, and exact English fallback in non-English helper fields.
 - [x] Release route hardening covers `/writing-templates` and writing-template list/detail route registrations.
-- [ ] Variable rendering substitutes supported placeholders safely.
-- [ ] Sample filled version rendering works for published templates.
-- [ ] Linked grammar/words/exercises render where available.
-- [ ] WebApi list/detail endpoint coverage exists.
+- [x] Sample filled version rendering works for published templates.
+- [x] Linked grammar/words/exercises/course lessons render where available.
+- [x] WebApi list/detail structural coverage exists.
+- [x] PostgreSQL repository coverage verifies filters, search, and learner helper projection.
+- [x] Imported A1-C2 baseline has live Web/API smoke coverage for list/detail, Persian helper projection, and Unified Search.
+- [ ] Variable rendering substitutes supported placeholders safely in an interactive editor flow.
 
-### Cultural Notes
+### Life in Germany
 
 - [x] Parser coverage exists for the CulturalNote content contract shape.
-- [x] Navigation/localization shell includes Cultural Notes.
-- [x] Release route hardening covers `/cultural-notes` and cultural-note list/detail route registrations.
-- [ ] List/detail queries return published cultural notes in stable order.
-- [ ] Filtering covers CEFR/category/context where supported.
-- [ ] WebApi list/detail endpoint coverage exists.
-- [ ] Web list/detail rendering coverage exists.
-- [ ] Linked content rendering covers dialogues, expressions, writing templates, and course lessons.
+- [x] Navigation/localization shell includes Life in Germany.
+- [x] Release route hardening covers public `/life-in-germany` Web routes and internal cultural-note API registrations.
+- [x] List/detail queries return published cultural notes in stable order.
+- [x] Filtering covers CEFR/category/context where supported.
+- [x] WebApi list/detail endpoint coverage exists for the internal `/api/catalog/cultural-notes` API.
+- [x] Web list/detail rendering coverage exists for `/life-in-germany`.
+- [x] Linked content rendering covers dialogues, expressions, writing templates, Talk Topics, and course lessons.
+  - Evidence: `CulturalNoteRouteStructuralTests` covers public route naming, helper-language rendering, RTL direction hooks, and linked-content surface; `CulturalNotePostgresRepositoryTests` covers PostgreSQL filtering, stable ordering, localized helper projection, detail links, and Unified Search URL projection.
 
 ### Unified Search
 
@@ -619,28 +634,40 @@ Latest local Web verification:
 - [x] `/api/catalog/search` is covered by rate-limiting structural checks.
 - [x] PostgreSQL trigram and filter-index migration coverage exists for the bulk-content search path.
 - [x] Shared database startup applies PostgreSQL trigram/filter indexes for existing search tables and skips not-yet-created Phase 7 tables safely.
-- [ ] Result type projection distinguishes words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, cultural notes, events, and organizers with seeded data.
-- [ ] Ranking behavior is deterministic for the same indexed content in repository/WebApi coverage.
-- [ ] CEFR/content type/category filters return expected mixed results.
-- [ ] WebApi endpoint coverage exists for `/api/catalog/search`.
-- [ ] Web rendering coverage exists for learning result cards and filters.
-- [ ] Missing content references fail safely.
-- [ ] Seeded performance coverage verifies bounded result counts and acceptable query plans before bulk content generation.
+- [x] Result type projection distinguishes current Web learning types with seeded data.
+- [x] Ranking behavior is deterministic for the same indexed content in repository/WebApi coverage.
+- [x] CEFR/content type/category filters return expected mixed results.
+- [x] WebApi endpoint coverage exists for `/api/catalog/search`.
+- [x] Web rendering coverage exists for learning result cards and filters.
+- [x] Missing content references fail safely.
+- [x] Seeded performance coverage verifies bounded result counts and acceptable query plans before bulk content generation.
+  - Evidence: Unified Search structural tests cover endpoint/query/filter/card behavior; PostgreSQL repository tests cover cross-type ranking/filter/URL projection and seeded bulk-corpus bounds across Course, Grammar, Writing Templates, and Life in Germany.
 
 ### Progress And Personalization
 
 - [x] Domain tests cover supported owner types and progress state transitions.
 - [x] Application tests cover viewed/completed updates, summary counts, and deterministic recommendation exclusion for completed content.
 - [x] Release route hardening covers progress summary/update and recommendations route registrations.
-- [ ] WebApi endpoint coverage exists for authenticated `/api/learning/progress/summary`.
-- [ ] WebApi endpoint coverage exists for authenticated `/api/learning/progress/content`.
-- [ ] WebApi endpoint coverage exists for `/api/learning/recommendations`.
-- [ ] Anonymous Web users fall back to existing guest actor behavior without breaking recent activity.
-- [ ] Course lesson pages render viewed/completed state where progress exists.
-- [ ] Recent activity dashboard renders cross-content progress summary.
-- [ ] Recommendations remain deterministic and do not use AI ranking.
+- [x] WebApi endpoint coverage exists for authenticated `/api/learning/progress/summary`.
+- [x] WebApi endpoint coverage exists for authenticated `/api/learning/progress/content`.
+- [x] WebApi endpoint coverage exists for `/api/learning/recommendations`.
+- [x] Anonymous Web users fall back to existing guest actor behavior without breaking recent activity.
+- [x] Course lesson pages render viewed/completed state where progress exists.
+- [x] Recent activity dashboard renders cross-content progress summary.
+- [x] Recommendations remain deterministic and do not use AI ranking.
+  - Evidence: Learning progress structural tests cover authenticated endpoint registrations, `GetRequiredUserId`, course progress chips, recent progress summary, weak-exercise recommendations, difficult-word recommendations, and deterministic recommendation reader signals.
 
-### Mobile Parity Tracking
+### 2026-06-14 Web Readiness Manual Smoke
+
+- [x] Desktop in-app Chromium smoke covers `/courses`, `/courses/a1-einstieg-in-den-alltag`, `/exercises`, `/exam-prep`, `/exam-prep/profile/goethe-c1`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, `/writing-templates`, `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/search?q=Demokratie&resultType=cultural-note`, and `/recent`.
+- [x] Account/admin anonymous smoke covers `/Identity/Account/Login`, `/Identity/Account/Register`, `/account`, `/admin`, `/admin/reports`, and `/admin/reports/learning-portal-issues`; protected routes redirect to Login with a local `ReturnUrl`.
+- [x] Narrow 390px viewport smoke covers the long-text pages `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, and `/search?q=Demokratie&resultType=cultural-note` with no horizontal overflow.
+- [x] Local API smoke covers Persian helper projection for Life in Germany, Writing Templates, and Exam Prep detail endpoints plus Unified Search result types `cultural-note` and `writing-template`.
+- [x] Shared PostgreSQL content counts match the Web-readiness baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`).
+
+### Deferred Mobile Parity Tracking
+
+Mobile is outside the active Web-readiness path. These items remain post-Web work and should not block Web tester onboarding.
 
 - [x] Web sign-off is recorded before MAUI parity starts.
 - [x] Mobile package export structural coverage confirms Phase 7 arrays are present in full/catalog-full packages.
@@ -653,7 +680,8 @@ Latest local Web verification:
 - [ ] Add first-run onboarding UI automation for choose/skip flows.
 - [ ] Add seeded mobile package export tests that import a package with all Phase 7 module types into a local SQLite database.
 - [ ] Add MAUI smoke coverage for opening Learning Portal list/detail/search pages on target devices.
-- [ ] Add manual mobile validation worksheet entries for Phase 7 offline behavior and local package update behavior.
+- [x] Add manual mobile validation worksheet entries for Phase 7 offline behavior and local package update behavior.
+  - Evidence: `artifacts/validation/phase7-mobile-validation-worksheet.md` covers device matrix, first-run module selection, module-scoped package updates, offline behavior, Phase 7 content surfaces, and progress/account boundaries.
 
 ## Manual Validation Backlog
 

@@ -1,6 +1,10 @@
 @model DarwinLingua.Web.Models.WritingTemplateIndexPageViewModel
 @{
     ViewData["Title"] = T["Writing Templates"];
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
+        ? "ltr"
+        : TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
@@ -43,12 +47,46 @@ else
     <section class="grid-two-col">
         @foreach (var template in Model.Templates)
         {
+            var primaryTemplate = template.Template;
+            var secondaryTemplate = template.SecondaryLanguageTemplate;
             <article class="panel stack-md">
-                <span class="eyebrow">@template.CefrLevel · @T[template.Category] · @T[template.Register == "workplace" ? "Workplace" : template.Register]</span>
-                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@template.Slug">@template.Title</a></h2>
-                <p>@template.ShortDescription</p>
-                <p>@template.Situation</p>
-                <a class="button button--secondary" asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@template.Slug">@T["Open writing template"]</a>
+                <span class="eyebrow">@primaryTemplate.CefrLevel · @T[primaryTemplate.Category] · @T[primaryTemplate.Register == "workplace" ? "Workplace" : primaryTemplate.Register]</span>
+                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@primaryTemplate.Title</a></h2>
+                <p>@primaryTemplate.ShortDescription</p>
+                @if (!string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageTitle) ||
+                    !string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageShortDescription) ||
+                    !string.IsNullOrWhiteSpace(secondaryTemplate?.LearnerLanguageTitle) ||
+                    !string.IsNullOrWhiteSpace(secondaryTemplate?.LearnerLanguageShortDescription))
+                {
+                    <div class="learning-helper">
+                        @if (!string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageTitle))
+                        {
+                            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> <strong>@primaryTemplate.LearnerLanguageTitle</strong></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageShortDescription))
+                        {
+                            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @primaryTemplate.LearnerLanguageShortDescription</p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(secondaryTemplate?.LearnerLanguageTitle))
+                        {
+                            <p class="meaning-line" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> <strong>@secondaryTemplate.LearnerLanguageTitle</strong></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(secondaryTemplate?.LearnerLanguageShortDescription))
+                        {
+                            <p class="meaning-line" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @secondaryTemplate.LearnerLanguageShortDescription</p>
+                        }
+                    </div>
+                }
+                <p>@primaryTemplate.Situation</p>
+                @if (!string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageSituation))
+                {
+                    <p class="meaning-line text-muted" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @primaryTemplate.LearnerLanguageSituation</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(secondaryTemplate?.LearnerLanguageSituation))
+                {
+                    <p class="meaning-line text-muted" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @secondaryTemplate.LearnerLanguageSituation</p>
+                }
+                <a class="button button--secondary" asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@T["Open writing template"]</a>
             </article>
         }
     </section>

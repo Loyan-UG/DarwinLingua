@@ -302,6 +302,28 @@ function configureSpeechShortcut() {
     });
 }
 
+function configureCourseModules(rootElement) {
+    const root = rootElement || document;
+    const modules = Array.from(root.querySelectorAll("[data-course-module]"));
+    if (modules.length <= 1) {
+        return;
+    }
+
+    modules.forEach((module) => {
+        module.addEventListener("toggle", () => {
+            if (!module.open) {
+                return;
+            }
+
+            modules.forEach((otherModule) => {
+                if (otherModule !== module) {
+                    otherModule.open = false;
+                }
+            });
+        });
+    });
+}
+
 window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     deferredInstallPrompt = event;
@@ -425,4 +447,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     configureGlobalSpeech(document);
     configureSpeechShortcut();
+    configureCourseModules(document);
 });

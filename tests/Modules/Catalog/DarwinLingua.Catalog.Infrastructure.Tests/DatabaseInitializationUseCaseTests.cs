@@ -61,7 +61,7 @@ public sealed class DatabaseInitializationUseCaseTests
     /// Verifies that server startup retrofits Expressions tables for existing PostgreSQL databases.
     /// </summary>
     [Fact]
-    public void DatabaseInitializer_ShouldRetainPostgresExpressionEntryRetrofitSchema()
+    public void DatabaseInitializer_ShouldRetainPostgresLearningPortalRetrofitSchema()
     {
         string sourcePath = Path.Combine(
             FindRepositoryRoot(),
@@ -77,6 +77,11 @@ public sealed class DatabaseInitializationUseCaseTests
         Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExpressionMeanings\"", source, StringComparison.Ordinal);
         Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExpressionExampleTranslations\"", source, StringComparison.Ordinal);
         Assert.Contains("CREATE UNIQUE INDEX IF NOT EXISTS \"IX_ExpressionEntries_Slug\"", source, StringComparison.Ordinal);
+        Assert.Contains("EnsureLearningPortalExtensionSchemaAsync", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExamProfiles\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExamPrepUnits\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"WritingTemplates\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"CulturalNotes\"", source, StringComparison.Ordinal);
     }
 
     /// <summary>

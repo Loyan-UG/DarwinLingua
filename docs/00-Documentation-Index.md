@@ -201,13 +201,13 @@ If you are new to the project, read the documents in this order:
 - `73-Transactional-Email-And-Account-Communication-Backlog.md` defines the release-critical transactional email, account recovery, email confirmation, provider, diagnostics, localization, and security backlog.
 - `75-Stripe-Billing-Validation-Playbook.md` defines the local and staging validation flow for Stripe Checkout, webhooks, Premium entitlement, Customer Portal, billing diagnostics, and billing notification emails.
 - `74-Talk-Topic-Content-Package-Contract.md` defines the Talk Topics JSON contract, controlled content types, CEFR article-length validation, vocabulary-reference rules, speaking goals, sensitivity metadata, and reusable future support-content ideas.
-- `76-Learning-Portal-Roadmap-And-Backlog.md` defines the Web-first roadmap and backlog for Grammar Guide, Everyday Expressions, Exercise Engine, Course Lessons, Exam Prep, Writing Templates, Cultural Notes, Unified Search, Progress/Personalization, Admin Operations, and later Mobile parity. It includes the current implementation snapshot for Grammar A1-C2 validation, post-Grammar Conversation audit repair, Conversation Starter/Event Preparation baseline content, Roleplay blockers, and Brevo transactional email status.
+- `76-Learning-Portal-Roadmap-And-Backlog.md` defines the Web-first roadmap and backlog for Grammar Guide, Everyday Expressions, Exercise Engine, Course Lessons, Exam Prep, Writing Templates, Life in Germany, Unified Search, Progress/Personalization, Admin Operations, and deferred Mobile parity. It includes the current implementation snapshot for Grammar A1-C2 validation, post-Grammar Conversation audit repair, Conversation Starter/Event Preparation baseline content, Roleplay blockers, and Brevo transactional email status.
 - `77-Grammar-Content-Package-Contract.md` defines the Phase 7 Grammar Guide JSON contract now that the dynamic GrammarTopic implementation has started.
 - `78-Expression-Content-Package-Contract.md` defines the Phase 7 Everyday Expressions JSON contract now that the dynamic ExpressionEntry implementation has started.
 - `79-Exercise-Content-Package-Contract.md` defines the Phase 7 reusable Exercise Engine JSON contract now that deterministic exercises and exercise sets have started.
 - `80-Course-Content-Package-Contract.md` defines the Phase 7 Course Lessons and CEFR Learning Paths JSON contract now that dynamic course implementation has started.
 - `81-Writing-Template-Content-Package-Contract.md` defines the Phase 7 Writing Templates JSON contract now that dynamic template implementation has started.
-- `82-Cultural-Note-Content-Package-Contract.md` defines the Phase 7 Cultural Notes JSON contract now that dynamic cultural-note implementation has started.
+- `82-Cultural-Note-Content-Package-Contract.md` defines the Phase 7 Life in Germany JSON contract using the current `CulturalNote` backing store.
 - `83-Exam-Prep-Content-Package-Contract.md` defines the Phase 7 Exam Preparation JSON contract now that dynamic exam-prep implementation has started.
 - `84-Content-Generation-Lessons-Learned.md` records prompt, localization, import, rendering, and validation lessons that must be checked before future bulk content generation.
 - `85-Sensitive-Educational-Language-Policy.md` defines the product, content, filtering, privacy, and release policy for warning-labeled rude/slang/romantic/social educational language without allowing pornographic or explicit adult content.
@@ -217,7 +217,7 @@ If you are new to the project, read the documents in this order:
 ### Learning Portal Planning Rule
 
 - `76-Learning-Portal-Roadmap-And-Backlog.md` is the single roadmap/backlog source for Phase 7.
-- Do not create extra planning documents for individual Phase 7 modules such as Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, or Cultural Notes.
+- Do not create extra planning documents for individual Phase 7 modules such as Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, or Life in Germany.
 - Dedicated content-contract documents should be created only when implementation starts for that module; `77-Grammar-Content-Package-Contract.md`, `78-Expression-Content-Package-Contract.md`, `79-Exercise-Content-Package-Contract.md`, `80-Course-Content-Package-Contract.md`, `81-Writing-Template-Content-Package-Contract.md`, `82-Cultural-Note-Content-Package-Contract.md`, and `83-Exam-Prep-Content-Package-Contract.md` are implementation contract examples.
 
 ### Numbering Cleanup Follow-Up

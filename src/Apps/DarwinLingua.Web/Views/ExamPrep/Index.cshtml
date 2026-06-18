@@ -1,12 +1,30 @@
 @model DarwinLingua.Web.Models.ExamPrepIndexPageViewModel
 @{
-    ViewData["Title"] = T["Exam Prep"];
+    var selectedProfile = Model.Profiles.FirstOrDefault(profile => string.Equals(Model.SelectedProfile, profile.Key, StringComparison.OrdinalIgnoreCase));
+    ViewData["Title"] = selectedProfile is null ? T["Exam Prep"].Value : $"{selectedProfile.DisplayName} - {T["Exam Prep"].Value}";
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
-    <span class="eyebrow">@T["Prepare"]</span>
-    <h1 class="headline-md">@T["Exam Prep"]</h1>
-    <p class="body-lg">@T["Original German exam-preparation units linked to practice, dialogues, grammar, writing templates, and speaking topics."]</p>
+    <span class="eyebrow">@(selectedProfile is null ? T["Prepare"].Value : $"{T["Prepare"].Value} · {selectedProfile.CefrRange}")</span>
+    @if (selectedProfile is null)
+    {
+        <h1 class="headline-md">@T["Exam Prep"]</h1>
+        <p class="body-lg">@T["Original German exam-preparation units linked to practice, dialogues, grammar, writing templates, and speaking topics."]</p>
+    }
+    else
+    {
+        <h1 class="headline-md">@selectedProfile.DisplayName</h1>
+        @if (!string.IsNullOrWhiteSpace(selectedProfile.LearnerLanguageDisplayName))
+        {
+            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @selectedProfile.LearnerLanguageDisplayName</p>
+        }
+        <p class="body-lg">@selectedProfile.Description</p>
+        @if (!string.IsNullOrWhiteSpace(selectedProfile.LearnerLanguageDescription))
+        {
+            <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @selectedProfile.LearnerLanguageDescription</p>
+        }
+    }
     <form class="search-form" method="get" asp-controller="ExamPrep" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search exam prep"]" aria-label="@T["Search exam prep"]" />
         <select class="search-input" name="examProfile" aria-label="@T["Exam profile"]">
@@ -41,7 +59,7 @@
     </form>
 </section>
 
-@if (Model.Profiles.Count > 0)
+@if (selectedProfile is null && Model.Profiles.Count > 0)
 {
     <section class="grid-two-col">
         @foreach (var profile in Model.Profiles)
@@ -49,7 +67,15 @@
             <article class="panel stack-md">
                 <span class="eyebrow">@profile.CefrRange</span>
                 <h2 class="headline-sm"><a asp-controller="ExamPrep" asp-action="Profile" asp-route-examProfileKey="@profile.Key">@profile.DisplayName</a></h2>
+                @if (!string.IsNullOrWhiteSpace(profile.LearnerLanguageDisplayName))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @profile.LearnerLanguageDisplayName</p>
+                }
                 <p>@profile.Description</p>
+                @if (!string.IsNullOrWhiteSpace(profile.LearnerLanguageDescription))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @profile.LearnerLanguageDescription</p>
+                }
             </article>
         }
     </section>
@@ -67,7 +93,15 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@unit.CefrLevel · @unit.ExamProfileKey · @T[unit.ExamSection]</span>
                 <h2 class="headline-sm"><a asp-controller="ExamPrep" asp-action="Detail" asp-route-slug="@unit.Slug">@unit.Title</a></h2>
+                @if (!string.IsNullOrWhiteSpace(unit.LearnerLanguageTitle))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @unit.LearnerLanguageTitle</p>
+                }
                 <p>@unit.ShortDescription</p>
+                @if (!string.IsNullOrWhiteSpace(unit.LearnerLanguageShortDescription))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @unit.LearnerLanguageShortDescription</p>
+                }
                 <p>@T[unit.TaskType] · @T[unit.SkillFocus]</p>
                 <a class="button button--secondary" asp-controller="ExamPrep" asp-action="Detail" asp-route-slug="@unit.Slug">@T["Open exam prep"]</a>
             </article>

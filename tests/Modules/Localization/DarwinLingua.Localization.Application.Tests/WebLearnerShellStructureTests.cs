@@ -72,7 +72,8 @@ public sealed class WebLearnerShellStructureTests
         AssertControllerRoute(webControllersPath, "CoursesController.cs", "[Route(\"courses\")");
         AssertControllerRoute(webControllersPath, "ExamPrepController.cs", "[Route(\"exam-prep\")");
         AssertControllerRoute(webControllersPath, "WritingTemplatesController.cs", "[Route(\"writing-templates\")");
-        AssertControllerRoute(webControllersPath, "CulturalNotesController.cs", "[Route(\"cultural-notes\")");
+        AssertControllerRoute(webControllersPath, "CulturalNotesController.cs", "[Route(\"life-in-germany\")");
+        AssertControllerDoesNotContainRoute(webControllersPath, "CulturalNotesController.cs", "[Route(\"cultural-notes\")");
         AssertControllerRoute(webControllersPath, "SearchController.cs", "[Route(\"search\")");
 
         string[] expectedApiRoutes =
@@ -176,6 +177,7 @@ public sealed class WebLearnerShellStructureTests
             "Exam Prep",
             "Writing Templates",
             "Cultural Notes",
+            "Life in Germany",
             "Learning Portal",
             "Unified learning search",
             "Learning progress",
@@ -194,6 +196,13 @@ public sealed class WebLearnerShellStructureTests
         string source = File.ReadAllText(Path.Combine(controllersPath, fileName));
 
         Assert.Contains(expectedRoute, source, StringComparison.Ordinal);
+    }
+
+    private static void AssertControllerDoesNotContainRoute(string controllersPath, string fileName, string unexpectedRoute)
+    {
+        string source = File.ReadAllText(Path.Combine(controllersPath, fileName));
+
+        Assert.DoesNotContain(unexpectedRoute, source, StringComparison.Ordinal);
     }
 
     private static IReadOnlySet<string> ReadResourceKeys(string path)

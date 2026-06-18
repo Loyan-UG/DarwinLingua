@@ -1,35 +1,60 @@
 @model DarwinLingua.Web.Models.ExamPrepDetailPageViewModel
 @{
     ViewData["Title"] = Model.Unit.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
     <span class="eyebrow">@Model.Unit.CefrLevel · @Model.Unit.ExamProfileKey · @T[Model.Unit.ExamSection] · @T[Model.Unit.TaskType]</span>
     <h1 class="headline-md">@Model.Unit.Title</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.Unit.LearnerLanguageTitle))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Unit.LearnerLanguageTitle</p>
+    }
     <p class="body-lg">@Model.Unit.ShortDescription</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Unit.LearnerLanguageShortDescription))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Unit.LearnerLanguageShortDescription</p>
+    }
 </section>
 
 <section class="panel stack-md">
     <h2 class="headline-sm">@T["Task explanation"]</h2>
     <p>@Model.Unit.Explanation</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Unit.LearnerLanguageExplanation))
+    {
+        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Unit.LearnerLanguageExplanation</p>
+    }
 </section>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Strategy notes"]</h2>
         <ul>
-            @foreach (string note in Model.Unit.StrategyNotes)
+            @for (int index = 0; index < Model.Unit.StrategyNotes.Count; index++)
             {
-                <li>@note</li>
+                <li>
+                    <span>@Model.Unit.StrategyNotes[index]</span>
+                    @if (index >= 0 && index < Model.Unit.LearnerLanguageStrategyNotes.Count && !string.IsNullOrWhiteSpace(Model.Unit.LearnerLanguageStrategyNotes[index]))
+                    {
+                        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Unit.LearnerLanguageStrategyNotes[index]</p>
+                    }
+                </li>
             }
         </ul>
     </article>
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Scoring checklist"]</h2>
         <ul>
-            @foreach (string item in Model.Unit.Checklist)
+            @for (int index = 0; index < Model.Unit.Checklist.Count; index++)
             {
-                <li>@item</li>
+                <li>
+                    <span>@Model.Unit.Checklist[index]</span>
+                    @if (index >= 0 && index < Model.Unit.LearnerLanguageChecklist.Count && !string.IsNullOrWhiteSpace(Model.Unit.LearnerLanguageChecklist[index]))
+                    {
+                        <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Unit.LearnerLanguageChecklist[index]</p>
+                    }
+                </li>
             }
         </ul>
     </article>
@@ -42,6 +67,7 @@
         <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Unit.LinkedWritingTemplateSlugs)' />
         <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Grammar Guide"].Value, Model.Unit.LinkedGrammarTopicSlugs)' />
         <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Exercises"].Value, Model.Unit.LinkedExerciseSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Roleplays"].Value, Model.Unit.LinkedRoleplaySlugs)' />
         <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Unit.LinkedTalkTopicSlugs)' />
         <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Unit.LinkedExpressionSlugs)' />
         <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Unit.LinkedCourseLessonSlugs)' />

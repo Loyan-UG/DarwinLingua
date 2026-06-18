@@ -484,6 +484,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ActivityBlocksJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("CefrLevel")
                         .IsRequired()
                         .HasMaxLength(8)
@@ -507,7 +511,15 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("HomeworkTaskTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LearningGoalsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LearningGoalsTranslationsJson")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -552,6 +564,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("NarrativeTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("NextLessonSlug")
                         .HasMaxLength(128)
                         .HasColumnType("TEXT");
@@ -569,9 +585,17 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ReviewSummaryTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ShortDescription")
                         .IsRequired()
                         .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ShortDescriptionTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Slug")
@@ -585,6 +609,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")
@@ -629,6 +657,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DescriptionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("ModuleNumber")
                         .HasColumnType("INTEGER");
 
@@ -648,6 +680,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")
@@ -686,6 +722,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DescriptionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("PublicationStatus")
                         .IsRequired()
                         .HasMaxLength(32)
@@ -702,6 +742,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")
@@ -737,6 +781,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(512)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ContextTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("TEXT");
 
@@ -744,11 +792,23 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DoNotesTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("DontNotesJson")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DontNotesTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ExamplesJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExamplesTranslationsJson")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -781,13 +841,25 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("SectionsTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("SensitivityWarning")
                         .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SensitivityWarningTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ShortDescription")
                         .IsRequired()
                         .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ShortDescriptionTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Slug")
@@ -801,6 +873,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")
@@ -1679,6 +1755,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ChecklistTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("TEXT");
 
@@ -1693,6 +1773,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Explanation")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExplanationTranslationsJson")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -1716,6 +1800,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("LinkedRoleplaySlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LinkedTalkTopicSlugsJson")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -1732,6 +1820,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("ShortDescription")
                         .IsRequired()
                         .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ShortDescriptionTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SkillFocus")
@@ -1751,6 +1843,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("StrategyNotesTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("TaskType")
                         .IsRequired()
                         .HasMaxLength(96)
@@ -1759,6 +1855,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")
@@ -1792,9 +1892,17 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DescriptionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("DisplayName")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DisplayNameTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Key")
@@ -1909,9 +2017,17 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("CommonMistakeNoteTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("CorrectExplanation")
                         .IsRequired()
                         .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CorrectExplanationTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAtUtc")
@@ -1926,14 +2042,26 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("HintTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("IncorrectExplanation")
                         .IsRequired()
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("IncorrectExplanationTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Instruction")
                         .IsRequired()
                         .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("InstructionTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerSlug")
@@ -1972,6 +2100,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("TEXT");
 
@@ -2005,6 +2137,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("DescriptionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("OwnerSlug")
                         .HasMaxLength(128)
                         .HasColumnType("TEXT");
@@ -2030,6 +2166,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")
@@ -4830,6 +4970,14 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ExplanationTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LinkedCourseLessonSlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LinkedExerciseSlugsJson")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -4860,14 +5008,26 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("SampleFilledVersionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ShortDescription")
                         .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ShortDescriptionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Situation")
                         .IsRequired()
                         .HasMaxLength(512)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SituationTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Slug")
@@ -4882,9 +5042,17 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TemplateTextTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAtUtc")

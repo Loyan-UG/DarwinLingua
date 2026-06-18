@@ -27,12 +27,12 @@
 }
 else
 {
-    <section class="grid-two-col">
+    <section class="course-level-grid">
         @foreach (var course in Model.Courses)
         {
-            <article class="panel stack-md">
-                <span class="eyebrow">@(course.CefrLevel ?? course.CefrRange)</span>
-                <h2 class="headline-sm"><a asp-controller="Courses" asp-action="Detail" asp-route-slug="@course.Slug">@course.Title</a></h2>
+            <a class="course-level-card panel" asp-controller="Courses" asp-action="Detail" asp-route-slug="@course.Slug">
+                <span class="course-level-card__level">@(course.CefrLevel ?? course.CefrRange)</span>
+                <h2 class="headline-sm">@course.Title</h2>
                 @if (!string.IsNullOrWhiteSpace(course.LearnerLanguageTitle))
                 {
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @course.LearnerLanguageTitle</p>
@@ -42,9 +42,8 @@ else
                 {
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @course.LearnerLanguageDescription</p>
                 }
-                <p>@T["{0} modules", course.ModuleCount] · @T["{0} lessons", course.LessonCount]</p>
-                <a class="button button--secondary" asp-controller="Courses" asp-action="Detail" asp-route-slug="@course.Slug">@T["Open course"]</a>
-            </article>
+                <span class="course-level-card__meta">@T["{0} modules", course.ModuleCount] · @T["{0} lessons", course.LessonCount]</span>
+            </a>
         }
     </section>
 }

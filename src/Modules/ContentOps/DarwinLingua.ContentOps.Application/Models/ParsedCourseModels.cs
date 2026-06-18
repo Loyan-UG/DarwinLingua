@@ -47,6 +47,7 @@ public sealed record ParsedCourseLessonModel(
     IReadOnlyList<string> LinkedTalkTopicSlugs,
     IReadOnlyList<string> LinkedExerciseSetSlugs,
     IReadOnlyList<string> LinkedExamPrepSlugs,
+    IReadOnlyList<ParsedCourseLessonActivityBlockModel> ActivityBlocks,
     string? ReviewSummary,
     IReadOnlyList<ParsedContentMeaningModel> ReviewSummaryTranslations,
     string? HomeworkTask,
@@ -57,3 +58,15 @@ public sealed record ParsedCourseLessonModel(
 public sealed record ParsedCourseTextListTranslationModel(
     string Language,
     IReadOnlyList<string> Texts);
+
+public sealed record ParsedCourseLessonActivityBlockModel(
+    string Kind,
+    string Title,
+    IReadOnlyList<ParsedContentMeaningModel> TitleTranslations,
+    string Instruction,
+    IReadOnlyList<ParsedContentMeaningModel> InstructionTranslations,
+    string TargetType,
+    string? TargetSlug,
+    int EstimatedMinutes,
+    int SortOrder,
+    bool IsRequired);

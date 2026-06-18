@@ -186,7 +186,7 @@ internal sealed class UnifiedLearningSearchRepository(IDbContextFactory<DarwinLi
         if (cefrLevel.HasValue) items = items.Where(item => item.CefrLevel == cefrLevel.Value);
         if (category is not null) items = items.Where(item => item.Category == category);
         items = items.Where(item => EF.Functions.ILike(item.Title, $"%{query}%") || EF.Functions.ILike(item.ShortDescription, $"%{query}%") || EF.Functions.ILike(item.Context, $"%{query}%") || EF.Functions.ILike(item.Slug, $"%{query}%"));
-        return await items.OrderBy(item => item.SortOrder).Take(MaxResultsPerType).Select(item => new UnifiedLearningSearchResultModel("cultural-note", item.Title, item.ShortDescription, item.CefrLevel.ToString(), item.Category, Array.Empty<string>(), $"/cultural-notes/{item.Slug}", Score(query, item.Title, item.Slug, item.ShortDescription, item.SortOrder), MatchFields(query, item.Title, item.Slug, item.ShortDescription))).ToListAsync(cancellationToken).ConfigureAwait(false);
+        return await items.OrderBy(item => item.SortOrder).Take(MaxResultsPerType).Select(item => new UnifiedLearningSearchResultModel("cultural-note", item.Title, item.ShortDescription, item.CefrLevel.ToString(), item.Category, Array.Empty<string>(), $"/life-in-germany/{item.Slug}", Score(query, item.Title, item.Slug, item.ShortDescription, item.SortOrder), MatchFields(query, item.Title, item.Slug, item.ShortDescription))).ToListAsync(cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchEventsAsync(DarwinLinguaDbContext dbContext, string query, CefrLevel? cefrLevel, string? category, CancellationToken cancellationToken)

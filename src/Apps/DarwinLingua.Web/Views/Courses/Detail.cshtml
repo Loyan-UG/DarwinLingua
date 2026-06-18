@@ -21,43 +21,49 @@
 <section class="stack-lg">
     @foreach (var module in Model.Course.Modules)
     {
-        <article class="panel stack-md">
-            <span class="eyebrow">@T["Module"] @module.ModuleNumber · @module.CefrLevel</span>
-            <h2 class="headline-sm">@module.Title</h2>
-            @if (!string.IsNullOrWhiteSpace(module.LearnerLanguageTitle))
-            {
-                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @module.LearnerLanguageTitle</p>
-            }
-            <p>@module.Description</p>
-            @if (!string.IsNullOrWhiteSpace(module.LearnerLanguageDescription))
-            {
-                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @module.LearnerLanguageDescription</p>
-            }
-            @if (module.Lessons.Count == 0)
-            {
-                <p>@T["No lessons have been imported for this module yet."]</p>
-            }
-            else
-            {
-                <ol class="stack-sm">
-                    @foreach (var lesson in module.Lessons)
+        <details class="course-module-card panel" data-course-module>
+            <summary class="course-module-card__summary">
+                <span class="course-module-card__number">@T["Module"] @module.ModuleNumber</span>
+                <span class="course-module-card__intro">
+                    <span class="headline-sm">@module.Title</span>
+                    @if (!string.IsNullOrWhiteSpace(module.LearnerLanguageTitle))
                     {
-                        <li>
-                            <a asp-controller="Courses" asp-action="Lesson" asp-route-courseSlug="@lesson.CoursePathSlug" asp-route-lessonSlug="@lesson.Slug">@lesson.LessonNumber. @lesson.Title</a>
-                            <small>@lesson.CefrLevel · @T["{0} minutes", lesson.EstimatedMinutes]</small>
-                            @if (!string.IsNullOrWhiteSpace(lesson.LearnerLanguageTitle))
-                            {
-                                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @lesson.LearnerLanguageTitle</p>
-                            }
-                            <p>@lesson.ShortDescription</p>
-                            @if (!string.IsNullOrWhiteSpace(lesson.LearnerLanguageShortDescription))
-                            {
-                                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @lesson.LearnerLanguageShortDescription</p>
-                            }
-                        </li>
+                        <span class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @module.LearnerLanguageTitle</span>
                     }
-                </ol>
-            }
-        </article>
+                    <span class="body-sm">@module.Description</span>
+                    @if (!string.IsNullOrWhiteSpace(module.LearnerLanguageDescription))
+                    {
+                        <span class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @module.LearnerLanguageDescription</span>
+                    }
+                </span>
+            </summary>
+            <div class="course-module-card__content">
+                @if (module.Lessons.Count == 0)
+                {
+                    <p>@T["No lessons have been imported for this module yet."]</p>
+                }
+                else
+                {
+                    <ol class="course-lesson-list">
+                        @foreach (var lesson in module.Lessons)
+                        {
+                            <li class="course-lesson-list__item">
+                                <a class="course-lesson-list__title" asp-controller="Courses" asp-action="Lesson" asp-route-courseSlug="@lesson.CoursePathSlug" asp-route-lessonSlug="@lesson.Slug">@lesson.LessonNumber. @lesson.Title</a>
+                                <small>@lesson.CefrLevel · @T["{0} minutes", lesson.EstimatedMinutes]</small>
+                                @if (!string.IsNullOrWhiteSpace(lesson.LearnerLanguageTitle))
+                                {
+                                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @lesson.LearnerLanguageTitle</p>
+                                }
+                                <p>@lesson.ShortDescription</p>
+                                @if (!string.IsNullOrWhiteSpace(lesson.LearnerLanguageShortDescription))
+                                {
+                                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @lesson.LearnerLanguageShortDescription</p>
+                                }
+                            </li>
+                        }
+                    </ol>
+                }
+            </div>
+        </details>
     }
 </section>

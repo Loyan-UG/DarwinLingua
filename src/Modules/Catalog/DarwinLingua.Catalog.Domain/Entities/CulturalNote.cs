@@ -24,6 +24,14 @@ public sealed class CulturalNote
         DoNotesJson = "[]";
         DontNotesJson = "[]";
         SensitivityWarning = string.Empty;
+        TitleTranslationsJson = "[]";
+        ShortDescriptionTranslationsJson = "[]";
+        ContextTranslationsJson = "[]";
+        SectionsTranslationsJson = "[]";
+        ExamplesTranslationsJson = "[]";
+        DoNotesTranslationsJson = "[]";
+        DontNotesTranslationsJson = "[]";
+        SensitivityWarningTranslationsJson = "[]";
         LinkedDialogueSlugsJson = "[]";
         LinkedExpressionSlugsJson = "[]";
         LinkedWritingTemplateSlugsJson = "[]";
@@ -51,7 +59,15 @@ public sealed class CulturalNote
         string linkedCourseLessonSlugsJson,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string titleTranslationsJson = "[]",
+        string shortDescriptionTranslationsJson = "[]",
+        string contextTranslationsJson = "[]",
+        string sectionsTranslationsJson = "[]",
+        string examplesTranslationsJson = "[]",
+        string doNotesTranslationsJson = "[]",
+        string dontNotesTranslationsJson = "[]",
+        string sensitivityWarningTranslationsJson = "[]")
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Cultural note id is required.") : id;
         Slug = NormalizeKebabKey(slug, "Cultural note slug");
@@ -65,6 +81,14 @@ public sealed class CulturalNote
         DoNotesJson = RequireText(doNotesJson, "Cultural note do notes JSON", 12000);
         DontNotesJson = RequireText(dontNotesJson, "Cultural note don't notes JSON", 12000);
         SensitivityWarning = NormalizeOptionalText(sensitivityWarning, 1000);
+        TitleTranslationsJson = RequireText(titleTranslationsJson, "Cultural note title translations JSON", 12000);
+        ShortDescriptionTranslationsJson = RequireText(shortDescriptionTranslationsJson, "Cultural note short description translations JSON", 12000);
+        ContextTranslationsJson = RequireText(contextTranslationsJson, "Cultural note context translations JSON", 12000);
+        SectionsTranslationsJson = RequireText(sectionsTranslationsJson, "Cultural note sections translations JSON", 24000);
+        ExamplesTranslationsJson = RequireText(examplesTranslationsJson, "Cultural note examples translations JSON", 24000);
+        DoNotesTranslationsJson = RequireText(doNotesTranslationsJson, "Cultural note do notes translations JSON", 16000);
+        DontNotesTranslationsJson = RequireText(dontNotesTranslationsJson, "Cultural note don't notes translations JSON", 16000);
+        SensitivityWarningTranslationsJson = RequireText(sensitivityWarningTranslationsJson, "Cultural note sensitivity warning translations JSON", 12000);
         LinkedDialogueSlugsJson = RequireText(linkedDialogueSlugsJson, "Linked dialogues JSON", 12000);
         LinkedExpressionSlugsJson = RequireText(linkedExpressionSlugsJson, "Linked expressions JSON", 12000);
         LinkedWritingTemplateSlugsJson = RequireText(linkedWritingTemplateSlugsJson, "Linked writing templates JSON", 12000);
@@ -88,6 +112,14 @@ public sealed class CulturalNote
     public string DoNotesJson { get; private set; }
     public string DontNotesJson { get; private set; }
     public string? SensitivityWarning { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
+    public string ShortDescriptionTranslationsJson { get; private set; }
+    public string ContextTranslationsJson { get; private set; }
+    public string SectionsTranslationsJson { get; private set; }
+    public string ExamplesTranslationsJson { get; private set; }
+    public string DoNotesTranslationsJson { get; private set; }
+    public string DontNotesTranslationsJson { get; private set; }
+    public string SensitivityWarningTranslationsJson { get; private set; }
     public string LinkedDialogueSlugsJson { get; private set; }
     public string LinkedExpressionSlugsJson { get; private set; }
     public string LinkedWritingTemplateSlugsJson { get; private set; }

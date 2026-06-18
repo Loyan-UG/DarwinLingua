@@ -23,6 +23,7 @@
     </div>
     <nav class="admin-anchor-nav" aria-label="Import sections">
         <a href="#imports-filter">Filter</a>
+        <a href="#imports-module-summary">Module summaries</a>
         <a href="#imports-table">Packages</a>
     </nav>
     <form id="imports-filter" class="search-form" method="get" asp-action="Index">
@@ -38,6 +39,50 @@
         <button type="submit" class="button button--secondary">Filter</button>
     </form>
     <div id="imports-indicator" class="eyebrow htmx-indicator">Updating imports…</div>
+</section>
+
+<section class="panel stack-lg">
+    <h2 id="imports-module-summary" class="headline-sm">Import validation summary by module</h2>
+    <p class="body-sm">Grouped view of the currently shown package import counters. Use it to spot module-level validation warnings before opening individual package rows.</p>
+    @if (Model.ModuleSummaries.Count == 0)
+    {
+        <p class="body-sm">No module summaries are available for the current filter.</p>
+    }
+    else
+    {
+        <div class="table-scroll">
+            <table class="data-table admin-data-grid">
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Packages</th>
+                        <th>Completed</th>
+                        <th>Warnings</th>
+                        <th>Failed</th>
+                        <th>Entries</th>
+                        <th>Last import</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var summary in Model.ModuleSummaries)
+                    {
+                        <tr>
+                            <td>
+                                <strong>@summary.DisplayName</strong>
+                                <div>@summary.ModuleKey</div>
+                            </td>
+                            <td>@summary.PackageCount</td>
+                            <td>@summary.CompletedPackageCount</td>
+                            <td>@summary.WarningPackageCount packages · @summary.WarningCount warnings · @summary.InvalidEntries invalid</td>
+                            <td>@summary.FailedPackageCount</td>
+                            <td>@summary.InsertedEntries / @summary.TotalEntries</td>
+                            <td>@summary.LastImportAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 </section>
 
 <div id="imports-table">

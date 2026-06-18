@@ -1267,6 +1267,7 @@ public sealed class CatalogPackagePublisher(
             ParseStringArray(unit.LinkedExpressionSlugsJson),
             ParseStringArray(unit.LinkedWritingTemplateSlugsJson),
             ParseStringArray(unit.LinkedExerciseSlugsJson),
+            ParseStringArray(unit.LinkedRoleplaySlugsJson),
             ParseStringArray(unit.LinkedCourseLessonSlugsJson),
             true,
             unit.SortOrder);
@@ -1926,6 +1927,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<string> LinkedExpressionSlugs,
         IReadOnlyList<string> LinkedWritingTemplateSlugs,
         IReadOnlyList<string> LinkedExerciseSlugs,
+        IReadOnlyList<string> LinkedRoleplaySlugs,
         IReadOnlyList<string> LinkedCourseLessonSlugs,
         bool IsPublished,
         int SortOrder);

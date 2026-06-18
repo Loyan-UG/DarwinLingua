@@ -99,7 +99,25 @@ public sealed class CoursePostgresRepositoryTests
                     JsonSerializer.Serialize(Translations("In this lesson you combine short German sentences with known dialogues and exercises.", "در این درس جمله‌های کوتاه آلمانی را با دیالوگ‌ها و تمرین‌های شناخته‌شده ترکیب می‌کنی."), JsonOptions),
                     JsonSerializer.Serialize(TextListTranslations(["Greet someone", "Say your own name"], ["به کسی سلام کنی", "نام خودت را بگویی"]), JsonOptions),
                     JsonSerializer.Serialize(Translations("Repeat the greeting.", "سلام‌کردن را تکرار کن."), JsonOptions),
-                    JsonSerializer.Serialize(Translations("Write two short sentences.", "دو جمله کوتاه بنویس."), JsonOptions));
+                    JsonSerializer.Serialize(Translations("Write two short sentences.", "دو جمله کوتاه بنویس."), JsonOptions),
+                    JsonSerializer.Serialize(
+                        new[]
+                        {
+                            new
+                            {
+                                kind = "read",
+                                title = "Den Einstieg lesen",
+                                titleTranslations = Translations("Read the introduction", "مقدمه را بخوان"),
+                                instruction = "Lies den kurzen Einstieg und achte auf die Situation.",
+                                instructionTranslations = Translations("Read the short introduction and notice the situation.", "مقدمه کوتاه را بخوان و به موقعیت توجه کن."),
+                                targetType = "none",
+                                targetSlug = (string?)null,
+                                estimatedMinutes = 4,
+                                sortOrder = 10,
+                                isRequired = true,
+                            },
+                        },
+                        JsonOptions));
                 lesson.AttachToCourseModule(module.Id);
 
                 dbContext.CoursePaths.Add(path);
@@ -127,6 +145,21 @@ public sealed class CoursePostgresRepositoryTests
             Assert.NotNull(lessonDetail);
             Assert.Equal("سلام و نام", lessonDetail.LearnerLanguageTitle);
             Assert.Equal("به کسی سلام کنی", lessonDetail.LearnerLanguageLearningGoals[0]);
+            CourseLessonActivityBlockModel activity = Assert.Single(lessonDetail.ActivityBlocks);
+            Assert.Equal("read", activity.Kind);
+            Assert.Equal("مقدمه را بخوان", activity.LearnerLanguageTitle);
+            Assert.Equal("مقدمه کوتاه را بخوان و به موقعیت توجه کن.", activity.LearnerLanguageInstruction);
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """UPDATE "CourseLessons" SET "ActivityBlocksJson" = '{{not-json' WHERE "Slug" = 'a1-begruessung-und-name';""",
+                    CancellationToken.None);
+            }
+
+            CourseLessonDetailModel? malformedLessonDetail = await repository.GetPublishedCourseLessonBySlugAsync("a1-begruessung-und-name", "fa", CancellationToken.None);
+            Assert.NotNull(malformedLessonDetail);
+            Assert.Empty(malformedLessonDetail.ActivityBlocks);
         }
         finally
         {

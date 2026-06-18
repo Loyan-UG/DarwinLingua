@@ -94,7 +94,7 @@ The report is for content quality and operational readiness only. It must not ex
 
 After every completed content or platform phase, create a restorable backup under `X:\Projects\DarwinLingua.Backup` before starting the next phase.
 
-Each backup folder should be timestamped and phase-labeled, for example `YYYYMMDD-HHMMSS-course-c1-complete-pre-c2`, and should contain:
+Each backup folder should be timestamped and phase-labeled, for example `YYYYMMDD-HHMMSS-course-c2-complete`, and should contain:
 
 - logical PostgreSQL dumps for `darwinlingua_shared` and any other local `darwinlingua%` database that is part of the phase
 - PostgreSQL global role metadata captured separately from the database dumps
@@ -111,6 +111,36 @@ Verification rules:
 4. do not treat build outputs, caches, `bin`, `obj`, `.vs`, or transient logs as restore sources
 
 The backup is considered complete only when a fresh checkout from GitHub plus the backup folder can restore the same database state, local config, and non-Git source artifacts for the phase checkpoint.
+
+Latest verified phase checkpoint:
+
+- `X:\Projects\DarwinLingua.Backup\20260609-125945-exam-prep-b2-foundation-complete`
+- Scope: Exam Prep foundation through B2, with `ExamProfiles=16`, `ExamPrepUnits=80`, and `B2Units=15`.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260609-140831-exam-prep-c2-foundation-complete`
+- Scope: Exam Prep foundation through Goethe C2, with `ExamProfiles=17`, `ExamPrepUnits=95`, and `C2Units=15`.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260612-142146-exam-prep-complete-pre-writing-templates`
+- Scope: closed Exam Prep phase before Writing Templates, with `ExamProfiles=17`, `ExamPrepUnits=246`, `GoetheC2Units=86`, and `WritingTemplates=0` at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260613-132057-writing-templates-complete-pre-cultural-notes`
+- Scope: closed Writing Templates phase before Cultural Notes, with `WritingTemplates=120` (`A1=20`, `A2=20`, `B1=20`, `B2=20`, `C1=20`, `C2=20`) and `CulturalNotes=0` at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260613-220312-life-in-germany-a1-b1-foundation-complete`
+- Scope: Life in Germany A1-B1 foundation checkpoint, with `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`) at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260614-214709-web-readiness-pre-user-testing`
+- Scope: Web readiness checkpoint before external tester onboarding, with `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`) at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260616-190633-course-a1-activity-flow-complete-pre-a2-activity-flow`
+- Scope: Course A1 activity-flow checkpoint before A2 backfill, with `CourseLessons=560`, `A1ActivityEnabled=60`, `TotalActivityEnabled=60`, `PublishedLessonsWithoutActivityBlocks=500`, and zero unresolved activity targets at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260617-153803-course-a2-activity-flow-complete-pre-b1-activity-flow`
+- Scope: Course A2 activity-flow checkpoint before B1 backfill, with `CourseLessons=560`, `A1ActivityEnabled=60`, `A2ActivityEnabled=80`, `TotalActivityEnabled=140`, `ActiveLessonsWithoutActivityBlocks=420`, and zero unresolved A2 activity targets at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260617-171229-course-b1-activity-flow-complete-pre-b2-activity-flow`
+- Scope: Course B1 activity-flow checkpoint before B2 backfill, with `CourseLessons=560`, `A1ActivityEnabled=60`, `A2ActivityEnabled=80`, `B1ActivityEnabled=100`, `TotalActivityEnabled=240`, `ActiveLessonsWithoutActivityBlocks=320`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30` at backup time.
+- Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
 
 ---
 
@@ -198,3 +228,75 @@ The local Cloudflare-routed public domains require the same ports used by the ch
 - `DarwinLingua.WebApi`: `https://0.0.0.0:53944` and `http://0.0.0.0:53945`
 
 For private local-only smoke, `http://localhost:5192` and `http://localhost:5099` may still be used when Web is configured to call the API on `5099`. For public-routed smoke through `lingua.vafadar.pro` and `linguaapi.vafadar.pro`, start the launch-profile ports or ensure the tunnel ingress points at the active local ports. A public `502 Bad Gateway` with healthy localhost responses usually means the tunnel origin port is not running or the Web host is calling a local API port that is not active.
+
+## Phase Backup Register
+
+### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260617-183717-course-b2-activity-flow-complete-pre-c1-activity-flow`
+
+Scope:
+
+- Course activity-flow backfill completed through B2: A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`.
+- Shared PostgreSQL counts: `CourseLessons=560`, `B2ActivityEnabled=80`, `TotalActivityEnabled=320`, `ActiveLessonsWithoutActivityBlocks=240`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`.
+- Runtime schema repair included: `UserContentProgress` exists in the live database and in the refreshed restore dump.
+
+Verification evidence:
+
+- `db/darwinlingua_shared_20260617-183717.dump` refreshed after the `UserContentProgress` repair.
+- `db/darwinlingua_shared_20260617-183717.restore-list.txt` generated with `pg_restore --list`.
+- `verification/live-counts.txt` and `verification/restore-dry-run-counts.txt` match, including `has_user_content_progress=t`.
+- Temporary dry-run database `darwinlingua_restore_check_20260617183717` was restored and dropped.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present.
+
+Restore note:
+
+If restoring from an older pre-B2 or pre-progress checkpoint, verify that `UserContentProgress` exists before running Web learner pages that track lesson views or `/recent`. If it is missing, use the current migration/initializer path or create the table and indexes before public smoke.
+
+### 2026-06-17 Course C1 Activity Flow Complete / Pre-C2
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260617-210237-course-c1-activity-flow-complete-pre-c2-activity-flow`
+
+Scope:
+
+- Course activity-flow backfill completed through C1: A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`, C1 `120/120`.
+- Shared PostgreSQL counts: `CourseLessons=560`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`.
+- C1 Module 12 unresolved activity target count is zero.
+
+Verification evidence:
+
+- `db/darwinlingua_shared_20260617-210237.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260617-210237.restore-list.txt` generated with `pg_restore --list`.
+- `verification/live-counts.txt` and `verification/restore-counts.txt` match.
+- Temporary dry-run database `darwinlingua_restore_check_20260617_210237` was restored and dropped.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present.
+
+### 2026-06-18 Course C2 Activity Flow Complete / Pre User Testing
+
+Backup status:
+
+- Restore-ready staging backup exists at `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`.
+- Required final external target is still `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`.
+- At creation time, `X:` was disconnected from `\\MYCLOUD-GXS39C\shahramvafadar` with Windows reporting the mapped drive as `Reconnecting`; sync to `X:` remains pending.
+
+Scope:
+
+- Course activity-flow backfill completed through C2: A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`, C1 `120/120`, C2 `120/120`.
+- Shared PostgreSQL counts: `CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `UserContentProgress=true`.
+- C2 unresolved activity target count is zero.
+
+Verification evidence in staging:
+
+- `db/darwinlingua_shared_20260618-073641.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260618-073641.restore-list.txt` generated with `pg_restore --list`.
+- `verification/live-counts.txt` and `verification/restore-counts.txt` match.
+- Temporary dry-run restore database was restored and dropped.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present.
+
+Operational follow-up:
+
+- After reconnecting `X:`, copy the full staging folder to `X:\Projects\DarwinLingua.Backup\` and verify `manifest.md`, `checksums.sha256`, and the database dump exist at the external target before treating this phase backup as closed.

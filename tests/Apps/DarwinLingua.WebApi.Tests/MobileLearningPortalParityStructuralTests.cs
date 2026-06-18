@@ -61,7 +61,8 @@ public sealed class MobileLearningPortalParityStructuralTests
         string projectSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "DarwinLingua.Web.csproj"));
         string bootstrapperSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Services", "WebUserStateDatabaseBootstrapper.cs"));
 
-        Assert.DoesNotContain("AddDarwinLinguaInfrastructure", programSource, StringComparison.Ordinal);
+        Assert.Contains("AddDarwinLinguaInfrastructureForPostgres", programSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("AddDarwinLinguaInfrastructure(", programSource, StringComparison.Ordinal);
         Assert.DoesNotContain("IDatabaseInitializer", programSource, StringComparison.Ordinal);
         Assert.DoesNotContain("UseSqlite", programSource, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("Microsoft.EntityFrameworkCore.Sqlite", projectSource, StringComparison.Ordinal);
@@ -82,6 +83,24 @@ public sealed class MobileLearningPortalParityStructuralTests
         Assert.Contains("LearningPortalGroupSpeak", resourcesSource);
         Assert.Contains("LearningPortalGroupPrepare", resourcesSource);
         Assert.Contains("LearningPortalGroupResources", resourcesSource);
+    }
+
+    [Fact]
+    public void MobileValidationWorksheet_ShouldTrackPhase7OfflineAndModuleUpdateChecks()
+    {
+        string worksheet = File.ReadAllText(ResolveRepositoryPath("artifacts", "validation", "phase7-mobile-validation-worksheet.md"));
+        string roadmap = File.ReadAllText(ResolveRepositoryPath("docs", "76-Learning-Portal-Roadmap-And-Backlog.md"));
+        string testBacklog = File.ReadAllText(ResolveRepositoryPath("docs", "71-Web-Test-Backlog.md"));
+        string releaseChecklist = File.ReadAllText(ResolveRepositoryPath("docs", "61-Web-Release-Checklist.md"));
+
+        Assert.Contains("First-Run Module Selection", worksheet, StringComparison.Ordinal);
+        Assert.Contains("Module-Scoped Package Update", worksheet, StringComparison.Ordinal);
+        Assert.Contains("Offline Behavior", worksheet, StringComparison.Ordinal);
+        Assert.Contains("Phase 7 Content Surfaces", worksheet, StringComparison.Ordinal);
+        Assert.Contains("Mobile exercise runner implementation.", worksheet, StringComparison.Ordinal);
+        Assert.Contains("phase7-mobile-validation-worksheet.md", roadmap, StringComparison.Ordinal);
+        Assert.Contains("phase7-mobile-validation-worksheet.md", testBacklog, StringComparison.Ordinal);
+        Assert.Contains("phase7-mobile-validation-worksheet.md", releaseChecklist, StringComparison.Ordinal);
     }
 
     private static string ResolveRepositoryPath(params string[] segments)

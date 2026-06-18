@@ -1875,8 +1875,31 @@ public sealed class ContentImportServiceApplicationTests
         ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep.json"), CancellationToken.None);
 
         Assert.True(result.IsSuccess);
-        Assert.Equal("goethe-a2", Assert.Single(repository.ImportedExamProfiles).Key);
-        Assert.Equal("a2-goethe-speaking-roleplay", Assert.Single(repository.ImportedExamPrepUnits).Slug);
+        ExamProfile profile = Assert.Single(repository.ImportedExamProfiles);
+        Assert.Equal("goethe-a2", profile.Key);
+        Assert.Contains("\"language\":\"fa\"", profile.DisplayNameTranslationsJson, StringComparison.Ordinal);
+        ExamPrepUnit unit = Assert.Single(repository.ImportedExamPrepUnits);
+        Assert.Equal("a2-goethe-speaking-roleplay", unit.Slug);
+        Assert.Contains("\"language\":\"fa\"", unit.TitleTranslationsJson, StringComparison.Ordinal);
+        Assert.Contains("\"texts\"", unit.StrategyNotesTranslationsJson, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportExamPrep_WhenCommonC1ProfileIsUsed()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExamPrep(
+            CreateValidExamProfile() with { Key = "telc-c1-hochschule", DisplayName = "telc C1 Hochschule", CefrRange = "C1" },
+            CreateValidExamPrepUnit() with { Slug = "c1-telc-hochschule-schreibstrategie", ExamProfileKey = "telc-c1-hochschule", CefrLevel = "C1" });
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep-c1.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal("telc-c1-hochschule", Assert.Single(repository.ImportedExamProfiles).Key);
+        Assert.Equal("c1-telc-hochschule-schreibstrategie", Assert.Single(repository.ImportedExamPrepUnits).Slug);
     }
 
     [Fact]
@@ -1893,6 +1916,120 @@ public sealed class ContentImportServiceApplicationTests
 
         Assert.False(result.IsSuccess);
         Assert.Contains(result.Issues, issue => issue.Message.Contains("Exam profile key 'bad-profile' is not supported.", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExamPrep_WhenTranslationLanguageIsNotActive()
+    {
+        ParsedExamPrepUnitModel unit = CreateValidExamPrepUnit() with
+        {
+            TitleTranslations = ExamPrepTranslations("Sprechstrategie", ("zz", "Bad language")),
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExamPrep(CreateValidExamProfile(), unit);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Exam prep unit titleTranslations", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExamPrep_WhenRequiredTranslationIsMissing()
+    {
+        ParsedExamProfileModel profile = CreateValidExamProfile() with
+        {
+            DescriptionTranslations = [new ParsedContentMeaningModel("en", "Goethe A2 exam preparation helper.")],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExamPrep(profile, CreateValidExamPrepUnit());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Exam profile descriptionTranslations is missing active meaning language 'fa'", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectExamPrep_WhenNonEnglishTranslationFallsBackToEnglish()
+    {
+        ParsedExamPrepUnitModel unit = CreateValidExamPrepUnit() with
+        {
+            ExplanationTranslations = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+                .Select(language => new ParsedContentMeaningModel(language, "Use short, clear questions and answers."))
+                .ToArray(),
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExamPrep(CreateValidExamProfile(), unit);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exam-prep.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("appears to reuse the English helper text", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportWritingTemplate_WhenTranslatedContractIsValid()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithWritingTemplate(CreateValidWritingTemplate());
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("writing-templates.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        WritingTemplate template = Assert.Single(repository.ImportedWritingTemplates);
+        Assert.Equal("a1-kurze-vorstellung-nachricht", template.Slug);
+        Assert.Contains("\"language\":\"fa\"", template.TitleTranslationsJson, StringComparison.Ordinal);
+        Assert.Contains("\"a1-eine-kurze-vorstellung-bauen\"", template.LinkedCourseLessonSlugsJson, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectWritingTemplate_WhenVariableContractIsBroken()
+    {
+        ParsedWritingTemplateModel template = CreateValidWritingTemplate() with
+        {
+            ReplaceableVariables = ["name", "unused-variable"],
+            TemplateText = "Hallo, ich heisse {{name}} und wohne in {{stadt}}.",
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithWritingTemplate(template);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("writing-templates.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("variable 'unused-variable' is not used", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("uses undeclared variable 'stadt'", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectWritingTemplate_WhenNonEnglishHelperFallsBackToEnglish()
+    {
+        ParsedWritingTemplateModel template = CreateValidWritingTemplate() with
+        {
+            ExplanationTranslations = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+                .Select(language => new ParsedContentMeaningModel(language, "Use the message to introduce yourself briefly."))
+                .ToArray(),
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithWritingTemplate(template);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("writing-templates.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("appears to reuse the English helper text", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -1965,6 +2102,137 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains("\"language\":\"fa\"", course.TitleTranslationsJson, StringComparison.Ordinal);
         CourseLesson lesson = Assert.Single(repository.ImportedCourseLessons);
         Assert.Contains("\"texts\"", lesson.LearningGoalsTranslationsJson, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldImportCourseActivityBlocks_WhenProvided()
+    {
+        ParsedCourseLessonModel lesson = CreateValidCourseLesson() with
+        {
+            ActivityBlocks =
+            [
+                CreateValidCourseActivityBlock(),
+                CreateValidCourseActivityBlock() with
+                {
+                    Kind = "practice",
+                    Title = "Kurze Antworten ueben",
+                    Instruction = "Bearbeite die verlinkte Uebung.",
+                    TargetType = "exercise-set",
+                    TargetSlug = "a1-core-practice",
+                    SortOrder = 20,
+                },
+            ],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCourse(lesson);
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("course.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess);
+        CourseLesson importedLesson = Assert.Single(repository.ImportedCourseLessons);
+        Assert.Contains("\"kind\":\"read\"", importedLesson.ActivityBlocksJson, StringComparison.Ordinal);
+        Assert.Contains("\"targetSlug\":\"a1-core-practice\"", importedLesson.ActivityBlocksJson, StringComparison.Ordinal);
+    }
+
+    [Theory]
+    [InlineData("bad-kind", "none", null, 10, "kind is invalid")]
+    [InlineData("read", "bad-target", null, 10, "targetType is invalid")]
+    [InlineData("read", "exercise-set", null, 10, "targetSlug is required")]
+    [InlineData("read", "none", "a1-core-practice", 10, "targetSlug must be empty")]
+    [InlineData("read", "none", null, 0, "estimatedMinutes must be positive")]
+    public async Task ImportAsync_ShouldRejectCourseActivityBlocks_WhenShapeIsInvalid(
+        string kind,
+        string targetType,
+        string? targetSlug,
+        int estimatedMinutes,
+        string expectedIssue)
+    {
+        ParsedCourseLessonModel lesson = CreateValidCourseLesson() with
+        {
+            ActivityBlocks =
+            [
+                CreateValidCourseActivityBlock() with
+                {
+                    Kind = kind,
+                    TargetType = targetType,
+                    TargetSlug = targetSlug,
+                    EstimatedMinutes = estimatedMinutes,
+                },
+            ],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCourse(lesson);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("course.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains(expectedIssue, StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectCourseActivityBlocks_WhenTranslationsAreInvalidOrSortOrderDuplicates()
+    {
+        ParsedCourseLessonModel lesson = CreateValidCourseLesson() with
+        {
+            ActivityBlocks =
+            [
+                CreateValidCourseActivityBlock() with
+                {
+                    TitleTranslations =
+                    [
+                        new ParsedContentMeaningModel("fa", "خواندن مقدمه"),
+                        new ParsedContentMeaningModel("fa", "تکراری"),
+                    ],
+                },
+                CreateValidCourseActivityBlock() with
+                {
+                    Kind = "practice",
+                    TargetType = "exercise-set",
+                    TargetSlug = "a1-core-practice",
+                },
+            ],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCourse(lesson);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("course.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("titleTranslations", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("sortOrder must be unique", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldRejectCourseActivityBlocks_WhenNoReadOrReviewActivityExists()
+    {
+        ParsedCourseLessonModel lesson = CreateValidCourseLesson() with
+        {
+            ActivityBlocks =
+            [
+                CreateValidCourseActivityBlock() with
+                {
+                    Kind = "practice",
+                    TargetType = "exercise-set",
+                    TargetSlug = "a1-core-practice",
+                },
+            ],
+        };
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCourse(lesson);
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("course.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("must include at least one read or review", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -2099,12 +2367,26 @@ public sealed class ContentImportServiceApplicationTests
             ["a1-greetings"],
             ["a1-core-practice"],
             [],
+            [],
             "Wiederhole die Begruessung und den Namen laut.",
             RequiredMeaningTranslations("Repeat the greeting and the name aloud."),
             "Schreibe drei kurze Saetze ueber dich.",
             RequiredMeaningTranslations("Write three short sentences about yourself."),
             true,
             10);
+
+    private static ParsedCourseLessonActivityBlockModel CreateValidCourseActivityBlock() =>
+        new(
+            "read",
+            "Den Einstieg lesen",
+            RequiredMeaningTranslations("Read the introduction"),
+            "Lies den kurzen Einstieg und achte auf die Situation.",
+            RequiredMeaningTranslations("Read the short introduction and notice the situation."),
+            "none",
+            null,
+            4,
+            10,
+            true);
 
     private static IReadOnlyList<ParsedCourseTextListTranslationModel> RequiredMeaningListTranslations(IReadOnlyList<string> texts) =>
         ContentLanguageRequirements.RequiredMeaningLanguageCodes
@@ -2271,7 +2553,7 @@ public sealed class ContentImportServiceApplicationTests
             "cultural-note-test-package",
             "Cultural Note Test Package",
             "Manual",
-            ["en"],
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
             [],
             [])
         {
@@ -2281,11 +2563,55 @@ public sealed class ContentImportServiceApplicationTests
 
     private static ParsedContentPackageModel CreatePackageWithExamPrep(ParsedExamProfileModel profile, ParsedExamPrepUnitModel unit)
     {
-        return new ParsedContentPackageModel("1.0", "exam-prep-test-package", "Exam Prep Test Package", "Manual", ["en"], [], [])
+        return new ParsedContentPackageModel("1.0", "exam-prep-test-package", "Exam Prep Test Package", "Manual", ContentLanguageRequirements.RequiredMeaningLanguageCodes, [], [])
         {
             ExamProfiles = [profile],
             ExamPrepUnits = [unit],
         };
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithWritingTemplate(ParsedWritingTemplateModel template)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "writing-template-test-package",
+            "Writing Template Test Package",
+            "Manual",
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [],
+            [])
+        {
+            WritingTemplates = [template],
+        };
+    }
+
+    private static ParsedWritingTemplateModel CreateValidWritingTemplate()
+    {
+        return new ParsedWritingTemplateModel(
+            "a1-kurze-vorstellung-nachricht",
+            "Kurze Vorstellung",
+            ExamPrepTranslations("Short introduction", ("fa", "معرفی کوتاه")),
+            "Eine einfache Nachricht, um dich vorzustellen.",
+            ExamPrepTranslations("A simple message for introducing yourself.", ("fa", "یک پیام ساده برای معرفی کردن خودت.")),
+            "A1",
+            "email-to-school",
+            "Du schreibst einer Kursleitung und stellst dich kurz vor.",
+            ExamPrepTranslations("You write to a course teacher and introduce yourself briefly.", ("fa", "به مدرس یا مسئول کلاس می‌نویسی و خودت را کوتاه معرفی می‌کنی.")),
+            "neutral",
+            "Hallo, ich heisse {{name}}. Ich komme aus {{land}}. Ich lerne Deutsch im Kurs.",
+            ExamPrepTranslations("Hello, my name is {{name}}. I come from {{country}}. I am learning German in the course.", ("fa", "سلام، نام من {{name}} است. من از {{country}} می‌آیم. در کلاس آلمانی یاد می‌گیرم.")),
+            "Nutze kurze Saetze und nenne nur die wichtigsten Informationen.",
+            ExamPrepTranslations("Use short sentences and mention only the most important information.", ("fa", "از جمله‌های کوتاه استفاده کن و فقط اطلاعات اصلی را بنویس.")),
+            ["name", "land"],
+            "Hallo, ich heisse Sara. Ich komme aus Iran. Ich lerne Deutsch im Kurs.",
+            ExamPrepTranslations("Hello, my name is Sara. I come from Iran. I am learning German in the course.", ("fa", "سلام، نام من سارا است. من از ایران می‌آیم. در کلاس آلمانی یاد می‌گیرم.")),
+            ["a1-verb-position-in-simple-sentences"],
+            [],
+            [],
+            ["a1-vorstellung-korrigieren"],
+            ["a1-eine-kurze-vorstellung-bauen"],
+            true,
+            10);
     }
 
     private static ParsedExpressionEntryModel CreateValidExpression()
@@ -2422,15 +2748,25 @@ public sealed class ContentImportServiceApplicationTests
         return new ParsedCulturalNoteModel(
             "a2-du-vs-sie-at-work",
             "Du vs. Sie at work",
+            TestTranslations("Du vs. Sie at work", "تو یا شما در محیط کار"),
             "A practical note about address forms.",
+            TestTranslations("A practical note about address forms.", "یادداشتی کاربردی درباره شکل خطاب کردن دیگران."),
             "A2",
             "du-vs-sie",
             "Workplace introductions",
+            TestTranslations("Workplace introductions", "معرفی در محیط کار"),
             ["Use Sie until a colleague offers du."],
-            [new ParsedCulturalNoteExampleModel("Sollen wir uns duzen?", "A polite question about switching to du.")],
+            CulturalListTranslations("Use Sie until a colleague offers du."),
+            [new ParsedCulturalNoteExampleModel(
+                "Sollen wir uns duzen?",
+                "A polite question about switching to du.",
+                TestTranslations("A polite question about switching to du.", "پرسشی محترمانه برای اینکه آیا می‌توانید از du استفاده کنید."))],
             ["Start with Sie in formal settings."],
+            CulturalListTranslations("Start with Sie in formal settings."),
             ["Do not switch to du automatically."],
+            CulturalListTranslations("Do not switch to du automatically."),
             "Address forms can feel personal in hierarchical contexts.",
+            TestTranslations("Address forms can feel personal in hierarchical contexts.", "در موقعیت‌های سلسله‌مراتبی، شکل خطاب کردن می‌تواند جنبه شخصی پیدا کند."),
             ["a2-workplace-introduction"],
             ["sollen-wir-uns-duzen"],
             ["a2-formal-work-email"],
@@ -2440,9 +2776,26 @@ public sealed class ContentImportServiceApplicationTests
             10);
     }
 
+    private static ParsedCulturalNoteListTranslationModel[] CulturalListTranslations(params string[] englishItems) =>
+        ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(languageCode => new ParsedCulturalNoteListTranslationModel(
+                languageCode,
+                englishItems
+                    .Select(item => languageCode == "fa" ? $"فارسی: {item}" : $"{item} ({languageCode})")
+                    .ToArray()))
+            .ToArray();
+
     private static ParsedExamProfileModel CreateValidExamProfile()
     {
-        return new ParsedExamProfileModel("goethe-a2", "Goethe A2", "A2", "Goethe A2 preparation.", true, 10);
+        return new ParsedExamProfileModel(
+            "goethe-a2",
+            "Goethe A2",
+            ExamPrepTranslations("Goethe A2"),
+            "A2",
+            "Vorbereitung auf die Goethe-A2-Pruefung.",
+            ExamPrepTranslations("Goethe A2 exam preparation"),
+            true,
+            10);
     }
 
     private static ParsedExamPrepUnitModel CreateValidExamPrepUnit()
@@ -2450,25 +2803,57 @@ public sealed class ContentImportServiceApplicationTests
         return new ParsedExamPrepUnitModel(
             "a2-goethe-speaking-roleplay",
             "goethe-a2",
-            "Speaking roleplay strategy",
-            "Prepare a short A2 roleplay.",
+            "Strategie fuer das Sprechrollenspiel",
+            "Bereite ein kurzes A2-Rollenspiel vor.",
             "A2",
             "speaking",
             "roleplay",
             "exam-preparation",
-            "Use short, clear questions and answers.",
+            "Nutze kurze, klare Fragen und Antworten.",
+            ExamPrepTranslations("Speaking roleplay strategy"),
+            ExamPrepTranslations("Prepare a short A2 roleplay"),
+            ExamPrepTranslations("Use short, clear questions and answers"),
             ["Ask for clarification when needed."],
+            ExamPrepListTranslations(["Ask for clarification when needed"]),
             ["Answer the prompt directly."],
+            ExamPrepListTranslations(["Answer the prompt directly"]),
             ["a2-appointment-roleplay"],
             ["a2-appointments"],
             ["a2-question-word-order"],
             ["koennten-sie-bitte"],
             ["a2-appointment-reschedule"],
             ["a2-speaking-roleplay-practice"],
+            ["a2-termin-verschieben-am-telefon"],
             ["a2-appointments-lesson"],
             true,
             20);
     }
+
+    private static IReadOnlyList<ParsedContentMeaningModel> ExamPrepTranslations(
+        string english,
+        params (string Language, string Text)[] overrides)
+    {
+        Dictionary<string, string> byLanguage = overrides.ToDictionary(item => item.Language, item => item.Text, StringComparer.Ordinal);
+
+        List<ParsedContentMeaningModel> translations = ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(language => new ParsedContentMeaningModel(
+                language,
+                byLanguage.TryGetValue(language, out string? text) ? text : $"{english} [{language}]"))
+            .ToList();
+
+        translations.AddRange(overrides
+            .Where(item => !ContentLanguageRequirements.RequiredMeaningLanguageCodes.Contains(item.Language, StringComparer.Ordinal))
+            .Select(item => new ParsedContentMeaningModel(item.Language, item.Text)));
+
+        return translations;
+    }
+
+    private static IReadOnlyList<ParsedExamPrepTextListTranslationModel> ExamPrepListTranslations(IReadOnlyList<string> englishTexts) =>
+        ContentLanguageRequirements.RequiredMeaningLanguageCodes
+            .Select(language => new ParsedExamPrepTextListTranslationModel(
+                language,
+                englishTexts.Select(text => $"{text} [{language}]").ToArray()))
+            .ToArray();
 
     private static ParsedContentEntryModel CreateValidEntry(string word, string topicKey)
     {
@@ -2725,6 +3110,8 @@ public sealed class ContentImportServiceApplicationTests
 
         public IReadOnlyList<RoleplayScenario> ImportedRoleplayScenarios { get; private set; } = [];
 
+        public IReadOnlyList<WritingTemplate> ImportedWritingTemplates { get; private set; } = [];
+
         public Task<IReadOnlyDictionary<string, Topic>> GetActiveTopicsByKeyAsync(CancellationToken cancellationToken)
         {
             Topic topic = new(Guid.NewGuid(), "shopping", 10, true, DateTime.UtcNow);
@@ -2801,6 +3188,7 @@ public sealed class ContentImportServiceApplicationTests
             ImportedCoursePaths = importedCoursePaths;
             ImportedCourseModules = importedCourseModules;
             ImportedCourseLessons = importedCourseLessons;
+            ImportedWritingTemplates = importedWritingTemplates;
             ImportedRoleplayScenarios = importedRoleplayScenarios;
             return Task.CompletedTask;
         }

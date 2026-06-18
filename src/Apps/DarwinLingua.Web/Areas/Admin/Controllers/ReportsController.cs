@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace DarwinLingua.Web.Areas.Admin.Controllers;
 
@@ -18,14 +19,36 @@ public sealed class ReportsController(
     UserManager<DarwinLinguaIdentityUser> userManager) : Controller
 {
     [HttpGet("", Name = "Admin_Reports_Index")]
-    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(
+        string? learningPortalIssueArea,
+        string? learningPortalIssueSearch,
+        string? export,
+        CancellationToken cancellationToken)
     {
         Task<AdminSystemReportResponse> reportTask = catalogApiClient.GetAdminSystemReportAsync(cancellationToken);
+        AdminSystemReportResponse report = await reportTask.ConfigureAwait(false);
+        IReadOnlyList<AdminLearningPortalIssueRowResponse> filteredLearningPortalIssues = FilterLearningPortalIssues(
+            report.LearningPortal.SampleIssues,
+            learningPortalIssueArea,
+            learningPortalIssueSearch);
+        IReadOnlyList<string> learningPortalIssueAreas = report.LearningPortal.SampleIssues
+            .Select(static issue => issue.Area)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(static area => area, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        if (string.Equals(export, "learning-portal-issues", StringComparison.OrdinalIgnoreCase))
+        {
+            string csv = BuildLearningPortalIssueCsv(filteredLearningPortalIssues);
+            byte[] csvBytes = Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(csv)).ToArray();
+
+            return File(csvBytes, "text/csv", "learning-portal-issues.csv");
+        }
+
         int identityUserCount = await userManager.Users.CountAsync(cancellationToken).ConfigureAwait(false);
         EmailDeliverySummary emailSummary = await emailDeliveryLogRepository
             .GetSummarySinceAsync(DateTimeOffset.UtcNow.AddHours(-24), cancellationToken)
             .ConfigureAwait(false);
-        AdminSystemReportResponse report = await reportTask.ConfigureAwait(false);
 
         return View(new AdminSystemReportPageViewModel(
             report.GeneratedAtUtc,
@@ -37,11 +60,106 @@ public sealed class ReportsController(
             BuildEmailMetrics(emailSummary),
             BuildLearningPortalQualityMetrics(report.LearningPortal),
             report.LearningPortal,
+            filteredLearningPortalIssues,
+            learningPortalIssueAreas,
+            learningPortalIssueArea,
+            learningPortalIssueSearch,
             analyticsService.GetSummary()
                 .OrderByDescending(item => item.Count)
                 .ThenBy(item => item.EventName, StringComparer.Ordinal)
                 .Take(20)
                 .ToArray()));
+    }
+
+    [HttpGet("learning-portal-issues", Name = "Admin_Reports_LearningPortalIssues")]
+    public async Task<IActionResult> LearningPortalIssues(
+        string? area,
+        string? q,
+        int? take,
+        string? export,
+        CancellationToken cancellationToken)
+    {
+        AdminLearningPortalIssuesPageViewModel model = await catalogApiClient
+            .GetAdminLearningPortalIssuesAsync(area, q, take ?? 250, cancellationToken)
+            .ConfigureAwait(false);
+
+        if (string.Equals(export, "csv", StringComparison.OrdinalIgnoreCase))
+        {
+            AdminLearningPortalIssueRowResponse[] rows = model.Issues
+                .Select(static issue => new AdminLearningPortalIssueRowResponse(
+                    issue.Area,
+                    issue.Owner,
+                    issue.Issue,
+                    issue.Target))
+                .ToArray();
+            string csv = BuildLearningPortalIssueCsv(rows);
+            byte[] csvBytes = Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(csv)).ToArray();
+
+            return File(csvBytes, "text/csv", "learning-portal-issues.csv");
+        }
+
+        return View(model);
+    }
+
+    private static IReadOnlyList<AdminLearningPortalIssueRowResponse> FilterLearningPortalIssues(
+        IReadOnlyList<AdminLearningPortalIssueRowResponse> issues,
+        string? areaFilter,
+        string? search)
+    {
+        IEnumerable<AdminLearningPortalIssueRowResponse> filtered = issues;
+
+        if (!string.IsNullOrWhiteSpace(areaFilter))
+        {
+            filtered = filtered.Where(issue => string.Equals(issue.Area, areaFilter, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            string normalizedSearch = search.Trim();
+            filtered = filtered.Where(issue =>
+                issue.Area.Contains(normalizedSearch, StringComparison.OrdinalIgnoreCase) ||
+                issue.Owner.Contains(normalizedSearch, StringComparison.OrdinalIgnoreCase) ||
+                issue.Issue.Contains(normalizedSearch, StringComparison.OrdinalIgnoreCase) ||
+                (issue.Target?.Contains(normalizedSearch, StringComparison.OrdinalIgnoreCase) ?? false));
+        }
+
+        return filtered
+            .OrderBy(static issue => issue.Area, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(static issue => issue.Owner, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(static issue => issue.Issue, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(static issue => issue.Target ?? string.Empty, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+    }
+
+    private static string BuildLearningPortalIssueCsv(IReadOnlyList<AdminLearningPortalIssueRowResponse> issues)
+    {
+        StringBuilder builder = new();
+        builder.AppendLine("Area,Owner,Issue,Target");
+
+        foreach (AdminLearningPortalIssueRowResponse issue in issues)
+        {
+            builder
+                .Append(CsvEscape(issue.Area))
+                .Append(',')
+                .Append(CsvEscape(issue.Owner))
+                .Append(',')
+                .Append(CsvEscape(issue.Issue))
+                .Append(',')
+                .Append(CsvEscape(issue.Target ?? ""))
+                .AppendLine();
+        }
+
+        return builder.ToString();
+    }
+
+    private static string CsvEscape(string value)
+    {
+        if (value.Contains('"') || value.Contains(',') || value.Contains('\n') || value.Contains('\r'))
+        {
+            return $"\"{value.Replace("\"", "\"\"", StringComparison.Ordinal)}\"";
+        }
+
+        return value;
     }
 
     private static IReadOnlyList<AdminSystemReportMetricViewModel> BuildCatalogMetrics(AdminCatalogSystemReportResponse catalog) =>
@@ -63,6 +181,8 @@ public sealed class ReportsController(
             new("Grammar without exercises", learningPortal.GrammarTopicsMissingExercises.ToString(), "Grammar topics without linked exercises."),
             new("Lessons without exercise sets", learningPortal.CourseLessonsMissingExerciseSets.ToString(), "Course lessons without linked exercise sets."),
             new("Course translation gaps", (learningPortal.CoursePathsMissingTranslations + learningPortal.CourseModulesMissingTranslations + learningPortal.CourseLessonsMissingTranslations).ToString(), "Course paths, modules, or lessons missing required learner-language helper translations."),
+            new("Course activity gaps", (learningPortal.PublishedCourseLessonsWithoutActivityBlocks + learningPortal.CourseLessonsWithMalformedActivityBlocksJson + learningPortal.CourseActivityBlocksWithUnsupportedTargetType + learningPortal.CourseActivityBlocksWithUnresolvedTargetSlug).ToString(), "Course lessons missing activity flow data or containing malformed/unresolved activity targets."),
+            new("Exam prep quality gaps", (learningPortal.ExamPrepProfilesMissingTranslations + learningPortal.ExamPrepUnitsMissingTranslations + learningPortal.ExamPrepUnpublishedDrafts + learningPortal.ExamPrepUnitsWithMalformedStrategyOrChecklist + learningPortal.ExamPrepUnitsWithoutActiveProfile).ToString(), "Exam prep profiles or units missing translations, active profiles, or valid strategy/checklist data."),
             new("Sensitive opt-in expressions", learningPortal.ExpressionEntriesRequiringSensitiveOptIn.ToString(), "Expression entries hidden unless Sensitive Educational Language is enabled."),
             new("Verified-adult blocked expressions", learningPortal.ExpressionEntriesRequiringVerifiedAdult.ToString(), "Expression entries requiring verified adult access; these remain hidden because no verified-adult system exists."),
             new("Blocked or explicit expressions", learningPortal.ExpressionEntriesBlockedOrExplicitAdult.ToString(), "Expression entries classified as blocked-illegal, explicit-adult, or blocked usage policy."),

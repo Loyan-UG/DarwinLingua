@@ -37,8 +37,31 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
 
         Assert.Contains("MapGet(", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/catalog/search\"", program, StringComparison.Ordinal);
+        Assert.Contains("string? q", program, StringComparison.Ordinal);
+        Assert.Contains("string? cefrLevel", program, StringComparison.Ordinal);
+        Assert.Contains("string? resultType", program, StringComparison.Ordinal);
+        Assert.Contains("string? category", program, StringComparison.Ordinal);
+        Assert.Contains("string? topicKey", program, StringComparison.Ordinal);
+        Assert.Contains("bool? includeSensitiveEducationalLanguage", program, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"CatalogSearch\")", program, StringComparison.Ordinal);
         Assert.Contains("AddPolicy(\"CatalogSearch\"", program, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void SearchViews_ShouldRenderLearningContentFiltersAndResultCards()
+    {
+        string indexView = File.ReadAllText(GetSearchIndexViewPath());
+        string resultsView = File.ReadAllText(GetSearchResultsViewPath());
+
+        Assert.Contains("name=\"resultType\"", indexView, StringComparison.Ordinal);
+        Assert.Contains("name=\"cefrLevel\"", indexView, StringComparison.Ordinal);
+        Assert.Contains("hx-get=\"@Url.Action(\"Results\", \"Search\")\"", indexView, StringComparison.Ordinal);
+        Assert.Contains("Learning results", resultsView, StringComparison.Ordinal);
+        Assert.Contains("result.Url", resultsView, StringComparison.Ordinal);
+        Assert.Contains("result.ResultType", resultsView, StringComparison.Ordinal);
+        Assert.Contains("result.CefrLevel", resultsView, StringComparison.Ordinal);
+        Assert.Contains("result.Category", resultsView, StringComparison.Ordinal);
+        Assert.Contains("result.MatchedFields", resultsView, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -115,6 +138,26 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
             "Views",
             "Exercises",
             "Detail.cshtml");
+
+    private static string GetSearchIndexViewPath() =>
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "Apps",
+            "DarwinLingua.Web",
+            "Views",
+            "Search",
+            "Index.cshtml");
+
+    private static string GetSearchResultsViewPath() =>
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "Apps",
+            "DarwinLingua.Web",
+            "Views",
+            "Search",
+            "_SearchResults.cshtml");
 
     private static string FindRepositoryRoot()
     {

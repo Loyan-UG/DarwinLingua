@@ -2,15 +2,13 @@
 
 ## Purpose
 
-This document defines the initial JSON import contract for Web-first Writing Templates.
-
-Writing Templates help learners write practical German messages and exam texts. Templates are dynamic content and must not be hardcoded in Razor views.
+Writing Templates teach learners how to produce practical German messages and exam-ready short texts. The German source is canonical. Helper translations explain the situation, structure, template, and sample in the learner's selected meaning language; they never replace the German template text as the target output.
 
 ## Root Array
 
 - `writingTemplates`
 
-## Required Fields
+## Required Source Fields
 
 - `slug`
 - `title`
@@ -25,13 +23,32 @@ Writing Templates help learners write practical German messages and exam texts. 
 - `sampleFilledVersion`
 - `sortOrder`
 
-Optional linked-content fields:
+All source fields above must be German-first, except controlled metadata values and slugs.
+
+## Required Helper Translation Fields
+
+Each template must include complete helper translations for active learner languages: `en`, `fa`, `ar`, `tr`, `ru`, `ckb`, `kmr`, `pl`, `ro`, `sq`.
+
+- `titleTranslations`
+- `shortDescriptionTranslations`
+- `situationTranslations`
+- `explanationTranslations`
+- `templateTextTranslations`
+- `sampleFilledVersionTranslations`
+
+Translation rows use this shape:
+
+```json
+{ "language": "fa", "text": "..." }
+```
+
+## Optional Linked Content Fields
 
 - `linkedGrammarTopicSlugs`
 - `linkedWordSlugs`
 - `linkedExpressionSlugs`
 - `linkedExerciseSlugs`
-- `isPublished`
+- `linkedCourseLessonSlugs`
 
 ## Controlled Categories
 
@@ -60,16 +77,23 @@ Optional linked-content fields:
 
 ## Validation Rules
 
-- slugs must be lowercase kebab-case
-- CEFR levels must be valid
-- category and register must use controlled values
-- `templateText` is required
-- every declared variable must appear in `templateText` as `{{variable-name}}`
-- `sampleFilledVersion` is required for release-quality content
-- linked slugs must use lowercase kebab-case
+- slugs and linked slugs must be lowercase kebab-case.
+- CEFR levels must be valid.
+- category and register must use controlled values.
+- every declared variable must appear in `templateText` as `{{variable-name}}`.
+- every placeholder used in `templateText` must be declared in `replaceableVariables`.
+- `sampleFilledVersion` must be concrete and must not be empty.
+- translation languages must be active learner meaning languages.
+- duplicate translation language rows are rejected.
+- every required translation field must cover all active learner meaning languages.
+- non-English translations must not reuse English helper text.
 
-## No Duplication Rule
+## Quality Rules
 
-Writing Templates may link to grammar topics, words, expressions, and exercises. They must not duplicate word meanings, full grammar explanations, expression explanations, or exercise answer keys.
+- Titles must not repeat metadata such as CEFR, provider, section, or exam type when those are already stored in metadata.
+- Helper translations must be semantic and natural. Avoid word-by-word renderings when they obscure the learner-facing meaning.
+- Keep A1/A2 templates short, usable, and explicit. Higher levels may use more complex structure, but should still remain a reusable template rather than a full lesson.
+- Linked practice may be empty only when no genuinely related content exists; otherwise link to existing Course, Grammar, Expression, or Exercise slugs.
+- Do not duplicate full grammar explanations, vocabulary entries, expression articles, or exercise answer keys inside a template.
 
-Bulk writing-template content generation must not start until this contract, validation, Web API, Web rendering, and admin inspection are stable.
+Bulk generation must not start until this contract, validation, Web API, Web rendering, admin inspection, and a small validated pilot are stable.

@@ -2,6 +2,9 @@
 @{
     ViewData["Title"] = Model.Lesson.Title;
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    var activityBlocks = Model.Lesson.ActivityBlocks
+        .OrderBy(static activity => activity.SortOrder)
+        .ToArray();
 }
 
 <section class="panel stack-lg">
@@ -28,6 +31,52 @@
         <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Lesson.LearnerLanguageNarrative</p>
     }
 </section>
+
+@if (activityBlocks.Length > 0)
+{
+    <section class="panel lesson-flow stack-md" aria-labelledby="lesson-flow-title">
+        <div class="lesson-flow__header">
+            <div>
+                <span class="eyebrow">@T["Lesson"]</span>
+                <h2 id="lesson-flow-title" class="headline-sm">@T["Lesson flow"]</h2>
+            </div>
+            <span class="chip-link chip-link--static">@T["{0} activities", activityBlocks.Length]</span>
+        </div>
+        <ol class="lesson-flow__list">
+            @for (int index = 0; index < activityBlocks.Length; index++)
+            {
+                var activity = activityBlocks[index];
+                string? targetHref = CourseActivityTargetLinkResolver.ResolveHref(activity, Model.Lesson.CoursePathSlug);
+                <li class="lesson-flow__item">
+                    <div class="lesson-flow__step" aria-label="@T["Step {0}", index + 1]">@(index + 1)</div>
+                    <div class="lesson-flow__body">
+                        <div class="lesson-flow__meta">
+                            <span class="lesson-flow__kind">@activity.Kind</span>
+                            <span>@T["{0} minutes", activity.EstimatedMinutes]</span>
+                            <span class="lesson-flow__badge @(activity.IsRequired ? "lesson-flow__badge--required" : "lesson-flow__badge--optional")">
+                                @(activity.IsRequired ? T["Required"] : T["Optional"])
+                            </span>
+                        </div>
+                        <h3 class="lesson-flow__title">@activity.Title</h3>
+                        @if (!string.IsNullOrWhiteSpace(activity.LearnerLanguageTitle))
+                        {
+                            <p class="meaning-line lesson-flow__translation" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @activity.LearnerLanguageTitle</p>
+                        }
+                        <p class="lesson-flow__instruction">@activity.Instruction</p>
+                        @if (!string.IsNullOrWhiteSpace(activity.LearnerLanguageInstruction))
+                        {
+                            <p class="meaning-line lesson-flow__translation" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @activity.LearnerLanguageInstruction</p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(targetHref))
+                        {
+                            <a class="button button--secondary button--compact lesson-flow__action" href="@targetHref">@T["Open activity"]</a>
+                        }
+                    </div>
+                </li>
+            }
+        </ol>
+    </section>
+}
 
 <section class="grid-two-col">
     <article class="panel stack-md">
@@ -64,17 +113,20 @@
     </article>
 </section>
 
-<section class="panel stack-md">
-    <h2 class="headline-sm">@T["Linked content"]</h2>
-    <div class="grid-two-col">
-        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "Grammar")' />
-        <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "Browse")' />
-        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "Expressions")' />
-        <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "Dialogues")' />
-        <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "TalkTopics")' />
-        <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "Exercises")' />
-    </div>
-</section>
+@if (activityBlocks.Length == 0)
+{
+    <section class="panel stack-md">
+        <h2 class="headline-sm">@T["Linked content"]</h2>
+        <div class="grid-two-col">
+            <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "Grammar")' />
+            <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "Browse")' />
+            <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "Expressions")' />
+            <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "Dialogues")' />
+            <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "TalkTopics")' />
+            <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "Exercises")' />
+        </div>
+    </section>
+}
 
 <nav class="pagination-nav" aria-label="@T["Lesson navigation"]">
     @if (Model.Lesson.PrerequisiteLessonSlugs.Count > 0)

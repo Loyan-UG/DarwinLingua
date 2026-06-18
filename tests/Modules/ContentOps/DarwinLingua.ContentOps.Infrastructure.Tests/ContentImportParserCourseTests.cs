@@ -67,6 +67,20 @@ public sealed class ContentImportParserCourseTests
                   "linkedDialogueSlugs": ["a1-introductions"],
                   "linkedTalkTopicSlugs": ["a1-greetings"],
                   "linkedExerciseSetSlugs": ["a1-greetings-practice"],
+                  "activityBlocks": [
+                    {
+                      "kind": "read",
+                      "title": "Den Einstieg lesen",
+                      "titleTranslations": [{ "language": "en", "text": "Read the introduction" }],
+                      "instruction": "Lies den kurzen Einstieg.",
+                      "instructionTranslations": [{ "language": "en", "text": "Read the short introduction." }],
+                      "targetType": "none",
+                      "targetSlug": null,
+                      "estimatedMinutes": 4,
+                      "sortOrder": 10,
+                      "isRequired": true
+                    }
+                  ],
                   "reviewSummary": "Wiederhole die Begruessung.",
                   "reviewSummaryTranslations": [{ "language": "en", "text": "Repeat the greeting." }],
                   "homeworkTask": "Schreibe zwei kurze Saetze.",
@@ -86,5 +100,10 @@ public sealed class ContentImportParserCourseTests
         Assert.Equal("a1-first-steps", lesson.Slug);
         Assert.Equal("Jemanden begruessen", lesson.LearningGoals[0]);
         Assert.Equal("Greet someone", Assert.Single(lesson.LearningGoalsTranslations).Texts[0]);
+        ParsedCourseLessonActivityBlockModel activity = Assert.Single(lesson.ActivityBlocks);
+        Assert.Equal("read", activity.Kind);
+        Assert.Equal("Den Einstieg lesen", activity.Title);
+        Assert.Equal("Read the introduction", Assert.Single(activity.TitleTranslations).Text);
+        Assert.Equal("none", activity.TargetType);
     }
 }

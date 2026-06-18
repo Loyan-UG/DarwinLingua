@@ -85,6 +85,7 @@ internal sealed class CourseLessonConfiguration : IEntityTypeConfiguration<Cours
         builder.Property(lesson => lesson.LinkedTalkTopicSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.LinkedExerciseSetSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.LinkedExamPrepSlugsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(lesson => lesson.ActivityBlocksJson).HasColumnType("TEXT").IsRequired();
         builder.Property(lesson => lesson.ReviewSummary).HasMaxLength(2000);
         builder.Property(lesson => lesson.HomeworkTask).HasMaxLength(2000);
         builder.Property(lesson => lesson.ReviewSummaryTranslationsJson).HasColumnType("TEXT").IsRequired();

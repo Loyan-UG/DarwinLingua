@@ -24,10 +24,17 @@ public sealed class WritingTemplate
         Explanation = string.Empty;
         VariablesJson = "[]";
         SampleFilledVersion = string.Empty;
+        TitleTranslationsJson = "[]";
+        ShortDescriptionTranslationsJson = "[]";
+        SituationTranslationsJson = "[]";
+        ExplanationTranslationsJson = "[]";
+        TemplateTextTranslationsJson = "[]";
+        SampleFilledVersionTranslationsJson = "[]";
         LinkedGrammarTopicSlugsJson = "[]";
         LinkedWordSlugsJson = "[]";
         LinkedExpressionSlugsJson = "[]";
         LinkedExerciseSlugsJson = "[]";
+        LinkedCourseLessonSlugsJson = "[]";
     }
 
     public WritingTemplate(
@@ -47,9 +54,16 @@ public sealed class WritingTemplate
         string linkedWordSlugsJson,
         string linkedExpressionSlugsJson,
         string linkedExerciseSlugsJson,
+        string linkedCourseLessonSlugsJson,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string titleTranslationsJson = "[]",
+        string shortDescriptionTranslationsJson = "[]",
+        string situationTranslationsJson = "[]",
+        string explanationTranslationsJson = "[]",
+        string templateTextTranslationsJson = "[]",
+        string sampleFilledVersionTranslationsJson = "[]")
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Writing template id is required.") : id;
         Slug = NormalizeKebabKey(slug, "Writing template slug");
@@ -63,10 +77,17 @@ public sealed class WritingTemplate
         Explanation = RequireText(explanation, "Writing template explanation", 4000);
         VariablesJson = RequireText(variablesJson, "Writing template variables JSON", 12000);
         SampleFilledVersion = RequireText(sampleFilledVersion, "Writing template sample filled version", 12000);
+        TitleTranslationsJson = RequireText(titleTranslationsJson, "Writing template title translations JSON", 12000);
+        ShortDescriptionTranslationsJson = RequireText(shortDescriptionTranslationsJson, "Writing template short description translations JSON", 12000);
+        SituationTranslationsJson = RequireText(situationTranslationsJson, "Writing template situation translations JSON", 12000);
+        ExplanationTranslationsJson = RequireText(explanationTranslationsJson, "Writing template explanation translations JSON", 12000);
+        TemplateTextTranslationsJson = RequireText(templateTextTranslationsJson, "Writing template text translations JSON", 24000);
+        SampleFilledVersionTranslationsJson = RequireText(sampleFilledVersionTranslationsJson, "Writing template sample filled version translations JSON", 24000);
         LinkedGrammarTopicSlugsJson = RequireText(linkedGrammarTopicSlugsJson, "Linked grammar topics JSON", 12000);
         LinkedWordSlugsJson = RequireText(linkedWordSlugsJson, "Linked words JSON", 12000);
         LinkedExpressionSlugsJson = RequireText(linkedExpressionSlugsJson, "Linked expressions JSON", 12000);
         LinkedExerciseSlugsJson = RequireText(linkedExerciseSlugsJson, "Linked exercises JSON", 12000);
+        LinkedCourseLessonSlugsJson = RequireText(linkedCourseLessonSlugsJson, "Linked course lessons JSON", 12000);
         PublicationStatus = publicationStatus;
         SortOrder = Math.Max(0, sortOrder);
         CreatedAtUtc = timestampUtc;
@@ -85,10 +106,17 @@ public sealed class WritingTemplate
     public string Explanation { get; private set; }
     public string VariablesJson { get; private set; }
     public string SampleFilledVersion { get; private set; }
+    public string TitleTranslationsJson { get; private set; }
+    public string ShortDescriptionTranslationsJson { get; private set; }
+    public string SituationTranslationsJson { get; private set; }
+    public string ExplanationTranslationsJson { get; private set; }
+    public string TemplateTextTranslationsJson { get; private set; }
+    public string SampleFilledVersionTranslationsJson { get; private set; }
     public string LinkedGrammarTopicSlugsJson { get; private set; }
     public string LinkedWordSlugsJson { get; private set; }
     public string LinkedExpressionSlugsJson { get; private set; }
     public string LinkedExerciseSlugsJson { get; private set; }
+    public string LinkedCourseLessonSlugsJson { get; private set; }
     public PublicationStatus PublicationStatus { get; private set; }
     public int SortOrder { get; private set; }
     public DateTime CreatedAtUtc { get; private set; }

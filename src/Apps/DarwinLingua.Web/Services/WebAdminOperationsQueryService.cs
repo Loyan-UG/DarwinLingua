@@ -6,6 +6,12 @@ public interface IWebAdminOperationsQueryService
 {
     Task<AdminImportsPageViewModel> GetImportsAsync(string? statusFilter, CancellationToken cancellationToken);
 
+    Task<AdminLearningPortalIssuesPageViewModel> GetLearningPortalIssuesAsync(
+        string? areaFilter,
+        string? query,
+        int take,
+        CancellationToken cancellationToken);
+
     Task<AdminWordsPageViewModel> GetWordsAsync(
         string? query,
         string? statusFilter,
@@ -208,6 +214,13 @@ internal sealed class WebAdminOperationsQueryService(IWebCatalogApiClient catalo
 {
     public Task<AdminImportsPageViewModel> GetImportsAsync(string? statusFilter, CancellationToken cancellationToken) =>
         catalogApiClient.GetAdminImportsAsync(statusFilter, cancellationToken);
+
+    public Task<AdminLearningPortalIssuesPageViewModel> GetLearningPortalIssuesAsync(
+        string? areaFilter,
+        string? query,
+        int take,
+        CancellationToken cancellationToken) =>
+        catalogApiClient.GetAdminLearningPortalIssuesAsync(areaFilter, query, take, cancellationToken);
 
     public Task<AdminWordsPageViewModel> GetWordsAsync(
         string? query,

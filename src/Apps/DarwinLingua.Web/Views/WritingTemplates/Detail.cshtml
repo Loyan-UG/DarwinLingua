@@ -1,6 +1,10 @@
 @model DarwinLingua.Web.Models.WritingTemplateDetailPageViewModel
 @{
     ViewData["Title"] = Model.Template.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
+        ? "ltr"
+        : TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
@@ -8,16 +12,66 @@
     <h1 class="headline-md">@Model.Template.Title</h1>
     <p class="body-lg">@Model.Template.ShortDescription</p>
     <p><strong>@T["Situation"]:</strong> @Model.Template.Situation</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageTitle) ||
+        !string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageShortDescription) ||
+        !string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageSituation) ||
+        !string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageTitle) ||
+        !string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageShortDescription) ||
+        !string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageSituation))
+    {
+        <div class="learning-helper">
+            @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageTitle))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> <strong>@Model.Template.LearnerLanguageTitle</strong></p>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageShortDescription))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Template.LearnerLanguageShortDescription</p>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageSituation))
+            {
+                <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Template.LearnerLanguageSituation</p>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageTitle))
+            {
+                <p class="meaning-line" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> <strong>@Model.SecondaryLanguageTemplate.LearnerLanguageTitle</strong></p>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageShortDescription))
+            {
+                <p class="meaning-line" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @Model.SecondaryLanguageTemplate.LearnerLanguageShortDescription</p>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageSituation))
+            {
+                <p class="meaning-line" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @Model.SecondaryLanguageTemplate.LearnerLanguageSituation</p>
+            }
+        </div>
+    }
 </section>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Template text"]</h2>
         <pre class="content-code">@Model.Template.TemplateText</pre>
+        @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageTemplateText))
+        {
+            <pre class="content-code" dir="@primaryMeaningDirection">@Model.Template.LearnerLanguageTemplateText</pre>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageTemplateText))
+        {
+            <pre class="content-code" dir="@secondaryMeaningDirection">@Model.SecondaryLanguageTemplate.LearnerLanguageTemplateText</pre>
+        }
     </article>
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Sample filled version"]</h2>
         <pre class="content-code">@Model.Template.SampleFilledVersion</pre>
+        @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageSampleFilledVersion))
+        {
+            <pre class="content-code" dir="@primaryMeaningDirection">@Model.Template.LearnerLanguageSampleFilledVersion</pre>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageSampleFilledVersion))
+        {
+            <pre class="content-code" dir="@secondaryMeaningDirection">@Model.SecondaryLanguageTemplate.LearnerLanguageSampleFilledVersion</pre>
+        }
     </article>
 </section>
 
@@ -41,6 +95,20 @@
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Explanation"]</h2>
         <p>@Model.Template.Explanation</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageExplanation) ||
+            !string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageExplanation))
+        {
+            <div class="learning-helper">
+                @if (!string.IsNullOrWhiteSpace(Model.Template.LearnerLanguageExplanation))
+                {
+                    <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @Model.Template.LearnerLanguageExplanation</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.SecondaryLanguageTemplate?.LearnerLanguageExplanation))
+                {
+                    <p class="meaning-line" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @Model.SecondaryLanguageTemplate.LearnerLanguageExplanation</p>
+                }
+            </div>
+        }
     </article>
 </section>
 
@@ -51,5 +119,6 @@
         <partial name="_SlugList" model='(T["Words"].Value, Model.Template.LinkedWordSlugs)' />
         <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Template.LinkedExpressionSlugs)' />
         <partial name="_SlugList" model='(T["Exercises"].Value, Model.Template.LinkedExerciseSlugs)' />
+        <partial name="_SlugList" model='(T["Course Lessons"].Value, Model.Template.LinkedCourseLessonSlugs)' />
     </div>
 </section>

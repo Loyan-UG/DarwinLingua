@@ -22,10 +22,17 @@ internal sealed class WritingTemplateConfiguration : IEntityTypeConfiguration<Wr
         builder.Property(template => template.Explanation).HasMaxLength(4000).IsRequired();
         builder.Property(template => template.VariablesJson).HasColumnType("TEXT").IsRequired();
         builder.Property(template => template.SampleFilledVersion).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.ShortDescriptionTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.SituationTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.ExplanationTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.TemplateTextTranslationsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.SampleFilledVersionTranslationsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(template => template.LinkedGrammarTopicSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(template => template.LinkedWordSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(template => template.LinkedExpressionSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(template => template.LinkedExerciseSlugsJson).HasColumnType("TEXT").IsRequired();
+        builder.Property(template => template.LinkedCourseLessonSlugsJson).HasColumnType("TEXT").IsRequired();
         builder.Property(template => template.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
         builder.Property(template => template.SortOrder).IsRequired();
         builder.Property(template => template.CreatedAtUtc).IsRequired();

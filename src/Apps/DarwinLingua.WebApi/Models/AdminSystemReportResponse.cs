@@ -68,6 +68,10 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int CoursePathsMissingTranslations,
     int CourseModulesMissingTranslations,
     int CourseLessonsMissingTranslations,
+    int PublishedCourseLessonsWithoutActivityBlocks,
+    int CourseLessonsWithMalformedActivityBlocksJson,
+    int CourseActivityBlocksWithUnsupportedTargetType,
+    int CourseActivityBlocksWithUnresolvedTargetSlug,
     int ExercisesMissingTranslations,
     int ExerciseSetsMissingTranslations,
     int ExercisesUnpublishedDrafts,
@@ -88,6 +92,14 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExpressionEntriesBlockedOrExplicitAdult,
     int ExpressionEntriesMissingSensitiveUsagePolicy,
     int ExpressionEntriesOldRiskyMissingSensitiveMetadata,
+    int ExamPrepProfilesMissingTranslations,
+    int ExamPrepUnitsMissingTranslations,
+    int ExamPrepUnpublishedDrafts,
+    int ExamPrepUnitsWithMalformedStrategyOrChecklist,
+    int ExamPrepUnitsWithoutActiveProfile,
+    int WritingTemplatesMissingTranslations,
+    int WritingTemplatesUnpublishedDrafts,
+    int WritingTemplatesWithMalformedVariables,
     int RoleplayScenariosMissingTranslations,
     int RoleplayScenariosUnpublishedDrafts,
     int RoleplayScenariosMissingRequiredImageAssets,
@@ -105,3 +117,12 @@ public sealed record AdminLearningPortalIssueRowResponse(
     string Owner,
     string Issue,
     string? Target);
+
+public sealed record AdminLearningPortalIssuesResponse(
+    string? AreaFilter,
+    string? Query,
+    int Take,
+    int FilteredCount,
+    int TotalCount,
+    IReadOnlyList<string> Areas,
+    IReadOnlyList<AdminLearningPortalIssueRowResponse> Issues);

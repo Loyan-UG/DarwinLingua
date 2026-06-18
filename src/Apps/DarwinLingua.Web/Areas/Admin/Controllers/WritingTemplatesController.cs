@@ -14,7 +14,7 @@ public sealed class WritingTemplatesController(IWebCatalogApiClient catalogApiCl
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<WritingTemplateListItemModel> templates = await catalogApiClient
-            .GetWritingTemplatesAsync(new WritingTemplateListFilterModel(null, null, null, null, null), cancellationToken)
+            .GetWritingTemplatesAsync(new WritingTemplateListFilterModel(null, null, null, null, null), null, cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminWritingTemplatesPageViewModel(templates));

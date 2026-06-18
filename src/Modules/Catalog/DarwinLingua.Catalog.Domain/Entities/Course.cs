@@ -215,6 +215,7 @@ public sealed class CourseLesson
         LinkedTalkTopicSlugsJson = "[]";
         LinkedExerciseSetSlugsJson = "[]";
         LinkedExamPrepSlugsJson = "[]";
+        ActivityBlocksJson = "[]";
         ReviewSummaryTranslationsJson = "[]";
         HomeworkTaskTranslationsJson = "[]";
     }
@@ -250,7 +251,8 @@ public sealed class CourseLesson
         string narrativeTranslationsJson = "[]",
         string learningGoalsTranslationsJson = "[]",
         string reviewSummaryTranslationsJson = "[]",
-        string homeworkTaskTranslationsJson = "[]")
+        string homeworkTaskTranslationsJson = "[]",
+        string activityBlocksJson = "[]")
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course lesson id is required.") : id;
         CoursePathSlug = CoursePath.NormalizeKebabKey(coursePathSlug, "Course path slug");
@@ -276,6 +278,7 @@ public sealed class CourseLesson
         LinkedTalkTopicSlugsJson = CoursePath.RequireText(linkedTalkTopicSlugsJson, "Linked Talk Topics JSON", 12000);
         LinkedExerciseSetSlugsJson = CoursePath.RequireText(linkedExerciseSetSlugsJson, "Linked exercise sets JSON", 12000);
         LinkedExamPrepSlugsJson = CoursePath.RequireText(linkedExamPrepSlugsJson, "Linked exam prep JSON", 12000);
+        ActivityBlocksJson = CoursePath.RequireText(activityBlocksJson, "Course lesson activity blocks JSON", 48000);
         ReviewSummary = CoursePath.NormalizeOptionalText(reviewSummary, 2000, "Course lesson review summary");
         HomeworkTask = CoursePath.NormalizeOptionalText(homeworkTask, 2000, "Course lesson homework task");
         ReviewSummaryTranslationsJson = CoursePath.RequireText(reviewSummaryTranslationsJson, "Course lesson review summary translations JSON", 12000);
@@ -311,6 +314,7 @@ public sealed class CourseLesson
     public string LinkedTalkTopicSlugsJson { get; private set; }
     public string LinkedExerciseSetSlugsJson { get; private set; }
     public string LinkedExamPrepSlugsJson { get; private set; }
+    public string ActivityBlocksJson { get; private set; }
     public string? ReviewSummary { get; private set; }
     public string? HomeworkTask { get; private set; }
     public string ReviewSummaryTranslationsJson { get; private set; }

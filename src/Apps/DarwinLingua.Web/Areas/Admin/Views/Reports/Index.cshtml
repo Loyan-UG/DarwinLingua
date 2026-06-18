@@ -29,7 +29,7 @@
         ("Exam prep units by profile", Model.LearningPortal.ExamPrepByProfile),
         ("Writing templates by category", Model.LearningPortal.WritingTemplatesByCategory),
         ("Writing templates by register", Model.LearningPortal.WritingTemplatesByRegister),
-        ("Cultural notes by category", Model.LearningPortal.CulturalNotesByCategory),
+        ("Life in Germany notes by category", Model.LearningPortal.CulturalNotesByCategory),
     };
 }
 
@@ -117,9 +117,31 @@
 
 <section class="panel stack-lg">
     <h2 id="learning-portal-issues" class="headline-sm">Learning Portal issue samples</h2>
+    <p class="body-sm">Filter reported issue samples by area or text, then export the current result set as CSV for cleanup tracking.</p>
+    <p class="body-sm">
+        <a class="text-link" href="@Url.RouteUrl("Admin_Reports_LearningPortalIssues")">Open full issue drill-down</a>
+    </p>
+    <form method="get" action="@Url.RouteUrl("Admin_Reports_Index")" class="action-row" aria-label="Filter Learning Portal issue samples">
+        <select class="form-select" name="learningPortalIssueArea" aria-label="Issue area">
+            <option value="" selected="@(string.IsNullOrWhiteSpace(Model.LearningPortalIssueAreaFilter))">All areas</option>
+            @foreach (var area in Model.LearningPortalIssueAreas)
+            {
+                <option value="@area" selected="@(string.Equals(Model.LearningPortalIssueAreaFilter, area, StringComparison.OrdinalIgnoreCase))">@area</option>
+            }
+        </select>
+        <input class="search-input" type="search" name="learningPortalIssueSearch" value="@Model.LearningPortalIssueSearch" placeholder="Search area, owner, issue, or target" aria-label="Search Learning Portal issue samples" />
+        <button class="button button--primary button--compact" type="submit">Filter</button>
+        <button class="button button--secondary button--compact" type="submit" name="export" value="learning-portal-issues">Export CSV</button>
+        <a class="button button--secondary button--compact" href="@($"{Url.RouteUrl("Admin_Reports_Index")}#learning-portal-issues")">Reset</a>
+    </form>
+    <p class="body-sm">Showing @Model.FilteredLearningPortalIssues.Count of @Model.LearningPortal.SampleIssues.Count reported samples.</p>
     @if (Model.LearningPortal.SampleIssues.Count == 0)
     {
         <p class="body-sm">No unresolved Learning Portal link samples are currently reported.</p>
+    }
+    else if (Model.FilteredLearningPortalIssues.Count == 0)
+    {
+        <p class="body-sm">No issue samples match the current filter.</p>
     }
     else
     {
@@ -134,7 +156,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var issue in Model.LearningPortal.SampleIssues)
+                    @foreach (var issue in Model.FilteredLearningPortalIssues)
                     {
                         <tr>
                             <td>@issue.Area</td>

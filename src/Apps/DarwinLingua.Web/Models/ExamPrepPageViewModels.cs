@@ -14,10 +14,12 @@ public sealed record ExamPrepIndexPageViewModel(
     string? SelectedSection,
     string? SelectedTaskType,
     string? SelectedSkillFocus,
-    string? Query);
+    string? Query,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record ExamPrepDetailPageViewModel(
-    ExamPrepUnitDetailModel Unit);
+    ExamPrepUnitDetailModel Unit,
+    string PrimaryMeaningLanguageCode);
 
 public sealed record AdminExamPrepPageViewModel(
     IReadOnlyList<ExamProfileModel> Profiles,

@@ -555,6 +555,7 @@ internal sealed class ContentImportParser : IContentImportParser
             (lesson.LinkedTalkTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (lesson.LinkedExerciseSetSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (lesson.LinkedExamPrepSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (lesson.ActivityBlocks ?? []).Select(Map).ToArray(),
             lesson.ReviewSummary,
             MapTranslations(lesson.ReviewSummaryTranslations),
             lesson.HomeworkTask,
@@ -562,23 +563,43 @@ internal sealed class ContentImportParser : IContentImportParser
             lesson.IsPublished ?? true,
             lesson.SortOrder ?? 0);
 
+    private static ParsedCourseLessonActivityBlockModel Map(CourseLessonActivityBlockDocument activity) =>
+        new(
+            activity.Kind ?? string.Empty,
+            activity.Title ?? string.Empty,
+            MapTranslations(activity.TitleTranslations),
+            activity.Instruction ?? string.Empty,
+            MapTranslations(activity.InstructionTranslations),
+            activity.TargetType ?? string.Empty,
+            activity.TargetSlug,
+            activity.EstimatedMinutes ?? 0,
+            activity.SortOrder ?? 0,
+            activity.IsRequired ?? true);
+
     private static ParsedWritingTemplateModel Map(WritingTemplateDocument template) =>
         new(
             template.Slug ?? string.Empty,
             template.Title ?? string.Empty,
+            MapTranslations(template.TitleTranslations),
             template.ShortDescription ?? string.Empty,
+            MapTranslations(template.ShortDescriptionTranslations),
             template.CefrLevel ?? string.Empty,
             template.Category ?? string.Empty,
             template.Situation ?? string.Empty,
+            MapTranslations(template.SituationTranslations),
             template.Register ?? string.Empty,
             template.TemplateText ?? string.Empty,
+            MapTranslations(template.TemplateTextTranslations),
             template.Explanation ?? string.Empty,
+            MapTranslations(template.ExplanationTranslations),
             (template.ReplaceableVariables ?? template.Variables ?? []).Select(item => item ?? string.Empty).ToArray(),
             template.SampleFilledVersion ?? string.Empty,
+            MapTranslations(template.SampleFilledVersionTranslations),
             (template.LinkedGrammarTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (template.LinkedWordSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (template.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (template.LinkedExerciseSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (template.LinkedCourseLessonSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             template.IsPublished ?? true,
             template.SortOrder ?? 0);
 
@@ -586,17 +607,25 @@ internal sealed class ContentImportParser : IContentImportParser
         new(
             note.Slug ?? string.Empty,
             note.Title ?? string.Empty,
+            MapTranslations(note.TitleTranslations),
             note.ShortDescription ?? string.Empty,
+            MapTranslations(note.ShortDescriptionTranslations),
             note.CefrLevel ?? string.Empty,
             note.Category ?? string.Empty,
             note.Context ?? string.Empty,
+            MapTranslations(note.ContextTranslations),
             (note.Sections ?? []).Select(item => item ?? string.Empty).ToArray(),
+            MapListTranslations(note.SectionsTranslations),
             (note.Examples ?? []).Select(example => new ParsedCulturalNoteExampleModel(
                 example.GermanText ?? string.Empty,
-                example.Explanation)).ToArray(),
+                example.Explanation,
+                MapTranslations(example.ExplanationTranslations))).ToArray(),
             (note.DoNotes ?? note.Dos ?? []).Select(item => item ?? string.Empty).ToArray(),
+            MapListTranslations(note.DoNotesTranslations),
             (note.DontNotes ?? note.Donts ?? []).Select(item => item ?? string.Empty).ToArray(),
+            MapListTranslations(note.DontNotesTranslations),
             note.SensitivityWarning,
+            MapTranslations(note.SensitivityWarningTranslations),
             (note.LinkedDialogueSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (note.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (note.LinkedWritingTemplateSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
@@ -609,8 +638,10 @@ internal sealed class ContentImportParser : IContentImportParser
         new(
             profile.Key ?? string.Empty,
             profile.DisplayName ?? string.Empty,
+            MapTranslations(profile.DisplayNameTranslations),
             profile.CefrRange ?? string.Empty,
             profile.Description ?? string.Empty,
+            MapTranslations(profile.DescriptionTranslations),
             profile.IsPublished ?? true,
             profile.SortOrder ?? 0);
 
@@ -625,14 +656,24 @@ internal sealed class ContentImportParser : IContentImportParser
             unit.TaskType ?? string.Empty,
             unit.SkillFocus ?? string.Empty,
             unit.Explanation ?? string.Empty,
+            MapTranslations(unit.TitleTranslations),
+            MapTranslations(unit.ShortDescriptionTranslations),
+            MapTranslations(unit.ExplanationTranslations),
             (unit.StrategyNotes ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.StrategyNotesTranslations ?? []).Select(item => new ParsedExamPrepTextListTranslationModel(
+                item.Language ?? string.Empty,
+                (item.Texts ?? []).Select(text => text ?? string.Empty).ToArray())).ToArray(),
             (unit.Checklist ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.ChecklistTranslations ?? []).Select(item => new ParsedExamPrepTextListTranslationModel(
+                item.Language ?? string.Empty,
+                (item.Texts ?? []).Select(text => text ?? string.Empty).ToArray())).ToArray(),
             (unit.LinkedDialogueSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (unit.LinkedTalkTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (unit.LinkedGrammarTopicSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (unit.LinkedExpressionSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (unit.LinkedWritingTemplateSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (unit.LinkedExerciseSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
+            (unit.LinkedRoleplaySlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             (unit.LinkedCourseLessonSlugs ?? []).Select(item => item ?? string.Empty).ToArray(),
             unit.IsPublished ?? true,
             unit.SortOrder ?? 0);
@@ -827,6 +868,15 @@ internal sealed class ContentImportParser : IContentImportParser
             .Select(translation => new ParsedContentMeaningModel(
                 translation.Language ?? string.Empty,
                 translation.Text ?? string.Empty))
+            .ToArray();
+    }
+
+    private static ParsedCulturalNoteListTranslationModel[] MapListTranslations(CulturalNoteListTranslationDocument[]? translations)
+    {
+        return (translations ?? [])
+            .Select(translation => new ParsedCulturalNoteListTranslationModel(
+                translation.Language ?? string.Empty,
+                (translation.Items ?? []).Select(item => item ?? string.Empty).ToArray()))
             .ToArray();
     }
 
@@ -1628,6 +1678,7 @@ internal sealed class ContentImportParser : IContentImportParser
         public string?[]? LinkedTalkTopicSlugs { get; set; }
         public string?[]? LinkedExerciseSetSlugs { get; set; }
         public string?[]? LinkedExamPrepSlugs { get; set; }
+        public CourseLessonActivityBlockDocument[]? ActivityBlocks { get; set; }
         public string? ReviewSummary { get; set; }
         public ContentMeaningDocument[]? ReviewSummaryTranslations { get; set; }
         public string? HomeworkTask { get; set; }
@@ -1642,24 +1693,45 @@ internal sealed class ContentImportParser : IContentImportParser
         public string?[]? Texts { get; set; }
     }
 
+    private sealed class CourseLessonActivityBlockDocument
+    {
+        public string? Kind { get; set; }
+        public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
+        public string? Instruction { get; set; }
+        public ContentMeaningDocument[]? InstructionTranslations { get; set; }
+        public string? TargetType { get; set; }
+        public string? TargetSlug { get; set; }
+        public int? EstimatedMinutes { get; set; }
+        public int? SortOrder { get; set; }
+        public bool? IsRequired { get; set; }
+    }
+
     private sealed class WritingTemplateDocument
     {
         public string? Slug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? ShortDescription { get; set; }
+        public ContentMeaningDocument[]? ShortDescriptionTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public string? Category { get; set; }
         public string? Situation { get; set; }
+        public ContentMeaningDocument[]? SituationTranslations { get; set; }
         public string? Register { get; set; }
         public string? TemplateText { get; set; }
+        public ContentMeaningDocument[]? TemplateTextTranslations { get; set; }
         public string? Explanation { get; set; }
+        public ContentMeaningDocument[]? ExplanationTranslations { get; set; }
         public string?[]? ReplaceableVariables { get; set; }
         public string?[]? Variables { get; set; }
         public string? SampleFilledVersion { get; set; }
+        public ContentMeaningDocument[]? SampleFilledVersionTranslations { get; set; }
         public string?[]? LinkedGrammarTopicSlugs { get; set; }
         public string?[]? LinkedWordSlugs { get; set; }
         public string?[]? LinkedExpressionSlugs { get; set; }
         public string?[]? LinkedExerciseSlugs { get; set; }
+        public string?[]? LinkedCourseLessonSlugs { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }
     }
@@ -1668,17 +1740,24 @@ internal sealed class ContentImportParser : IContentImportParser
     {
         public string? Slug { get; set; }
         public string? Title { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
         public string? ShortDescription { get; set; }
+        public ContentMeaningDocument[]? ShortDescriptionTranslations { get; set; }
         public string? CefrLevel { get; set; }
         public string? Category { get; set; }
         public string? Context { get; set; }
+        public ContentMeaningDocument[]? ContextTranslations { get; set; }
         public string?[]? Sections { get; set; }
+        public CulturalNoteListTranslationDocument[]? SectionsTranslations { get; set; }
         public CulturalNoteExampleDocument[]? Examples { get; set; }
         public string?[]? DoNotes { get; set; }
         public string?[]? Dos { get; set; }
+        public CulturalNoteListTranslationDocument[]? DoNotesTranslations { get; set; }
         public string?[]? DontNotes { get; set; }
         public string?[]? Donts { get; set; }
+        public CulturalNoteListTranslationDocument[]? DontNotesTranslations { get; set; }
         public string? SensitivityWarning { get; set; }
+        public ContentMeaningDocument[]? SensitivityWarningTranslations { get; set; }
         public string?[]? LinkedDialogueSlugs { get; set; }
         public string?[]? LinkedExpressionSlugs { get; set; }
         public string?[]? LinkedWritingTemplateSlugs { get; set; }
@@ -1692,14 +1771,23 @@ internal sealed class ContentImportParser : IContentImportParser
     {
         public string? GermanText { get; set; }
         public string? Explanation { get; set; }
+        public ContentMeaningDocument[]? ExplanationTranslations { get; set; }
+    }
+
+    private sealed class CulturalNoteListTranslationDocument
+    {
+        public string? Language { get; set; }
+        public string?[]? Items { get; set; }
     }
 
     private sealed class ExamProfileDocument
     {
         public string? Key { get; set; }
         public string? DisplayName { get; set; }
+        public ContentMeaningDocument[]? DisplayNameTranslations { get; set; }
         public string? CefrRange { get; set; }
         public string? Description { get; set; }
+        public ContentMeaningDocument[]? DescriptionTranslations { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }
     }
@@ -1716,14 +1804,20 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? TaskType { get; set; }
         public string? SkillFocus { get; set; }
         public string? Explanation { get; set; }
+        public ContentMeaningDocument[]? TitleTranslations { get; set; }
+        public ContentMeaningDocument[]? ShortDescriptionTranslations { get; set; }
+        public ContentMeaningDocument[]? ExplanationTranslations { get; set; }
         public string?[]? StrategyNotes { get; set; }
+        public CourseTextListTranslationDocument[]? StrategyNotesTranslations { get; set; }
         public string?[]? Checklist { get; set; }
+        public CourseTextListTranslationDocument[]? ChecklistTranslations { get; set; }
         public string?[]? LinkedDialogueSlugs { get; set; }
         public string?[]? LinkedTalkTopicSlugs { get; set; }
         public string?[]? LinkedGrammarTopicSlugs { get; set; }
         public string?[]? LinkedExpressionSlugs { get; set; }
         public string?[]? LinkedWritingTemplateSlugs { get; set; }
         public string?[]? LinkedExerciseSlugs { get; set; }
+        public string?[]? LinkedRoleplaySlugs { get; set; }
         public string?[]? LinkedCourseLessonSlugs { get; set; }
         public bool? IsPublished { get; set; }
         public int? SortOrder { get; set; }

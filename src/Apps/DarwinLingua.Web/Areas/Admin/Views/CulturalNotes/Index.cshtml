@@ -1,20 +1,20 @@
 @model DarwinLingua.Web.Models.AdminCulturalNotesPageViewModel
 @{
-    ViewData["Title"] = T["Cultural Notes"];
+    ViewData["Title"] = T["Life in Germany"];
 }
 
 <section class="admin-panel stack-md">
     <div class="admin-section-heading">
         <div>
             <span class="eyebrow">@T["Content"]</span>
-            <h1>@T["Cultural Notes"]</h1>
+            <h1>@T["Life in Germany"]</h1>
         </div>
         <a class="button button--secondary button--compact" asp-area="" asp-controller="CulturalNotes" asp-action="Index">@T["Open learner view"]</a>
     </div>
 
     @if (Model.Notes.Count == 0)
     {
-        <p>@T["No cultural notes have been imported yet."]</p>
+        <p>@T["No Life in Germany notes have been imported yet."]</p>
     }
     else
     {

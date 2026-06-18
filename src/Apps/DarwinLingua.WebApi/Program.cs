@@ -683,11 +683,13 @@ app.MapGet(
         string? register,
         string? situation,
         string? q,
+        string? primaryMeaningLanguageCode,
         IWritingTemplateQueryService writingTemplateQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await writingTemplateQueryService.GetPublishedWritingTemplatesAsync(
                     new WritingTemplateListFilterModel(cefrLevel, category, register, situation, q),
+                    primaryMeaningLanguageCode,
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -695,10 +697,11 @@ app.MapGet(
     "/api/catalog/writing-templates/{slug}",
     async (
         string slug,
+        string? primaryMeaningLanguageCode,
         IWritingTemplateQueryService writingTemplateQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await writingTemplateQueryService.GetPublishedWritingTemplateBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await writingTemplateQueryService.GetPublishedWritingTemplateBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -708,11 +711,13 @@ app.MapGet(
         string? category,
         string? context,
         string? q,
+        string? primaryMeaningLanguageCode,
         ICulturalNoteQueryService culturalNoteQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await culturalNoteQueryService.GetPublishedCulturalNotesAsync(
                     new CulturalNoteListFilterModel(cefrLevel, category, context, q),
+                    primaryMeaningLanguageCode,
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -720,19 +725,21 @@ app.MapGet(
     "/api/catalog/cultural-notes/{slug}",
     async (
         string slug,
+        string? primaryMeaningLanguageCode,
         ICulturalNoteQueryService culturalNoteQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await culturalNoteQueryService.GetPublishedCulturalNoteBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await culturalNoteQueryService.GetPublishedCulturalNoteBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/exam-profiles",
     async (
+        string? primaryMeaningLanguageCode,
         IExamPrepQueryService examPrepQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await examPrepQueryService.GetPublishedExamProfilesAsync(cancellationToken).ConfigureAwait(false))
+                async () => await examPrepQueryService.GetPublishedExamProfilesAsync(primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -744,11 +751,13 @@ app.MapGet(
         string? taskType,
         string? section,
         string? q,
+        string? primaryMeaningLanguageCode,
         IExamPrepQueryService examPrepQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await examPrepQueryService.GetPublishedExamPrepUnitsAsync(
                     new ExamPrepListFilterModel(examProfile, cefrLevel, skillFocus, taskType, section, q),
+                    primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -756,10 +765,11 @@ app.MapGet(
     "/api/catalog/exam-prep/{slug}",
     async (
         string slug,
+        string? primaryMeaningLanguageCode,
         IExamPrepQueryService examPrepQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await examPrepQueryService.GetPublishedExamPrepUnitBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await examPrepQueryService.GetPublishedExamPrepUnitBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -1100,6 +1110,13 @@ app.MapGet(
     async (string? status, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await adminQueryService.GetImportsAsync(status, cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/learning-portal-issues",
+    async (string? area, string? q, int? take, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await adminQueryService.GetLearningPortalIssuesAsync(area, q, take ?? 250, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(

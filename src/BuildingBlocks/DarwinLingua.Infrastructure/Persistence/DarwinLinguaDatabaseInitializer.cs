@@ -731,8 +731,178 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         await EnsureGrammarRichContentSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureExpressionEntrySchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureExerciseEngineSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureLearningPortalExtensionSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureCourseLocalizationSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureRoleplayScenarioSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureLearningPortalExtensionSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "ExamProfiles" (
+                "Id" uuid NOT NULL,
+                "Key" character varying(96) NOT NULL,
+                "DisplayName" character varying(256) NOT NULL,
+                "DisplayNameTranslationsJson" text NOT NULL DEFAULT '[]',
+                "CefrRange" character varying(64) NOT NULL,
+                "Description" character varying(1000) NOT NULL,
+                "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExamProfiles" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "ExamPrepUnits" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "ExamProfileKey" character varying(96) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "ShortDescription" character varying(1000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "ExamSection" character varying(64) NOT NULL,
+                "TaskType" character varying(96) NOT NULL,
+                "SkillFocus" character varying(64) NOT NULL,
+                "Explanation" text NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ExplanationTranslationsJson" text NOT NULL DEFAULT '[]',
+                "StrategyNotesJson" text NOT NULL,
+                "StrategyNotesTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ChecklistJson" text NOT NULL,
+                "ChecklistTranslationsJson" text NOT NULL DEFAULT '[]',
+                "LinkedDialogueSlugsJson" text NOT NULL,
+                "LinkedTalkTopicSlugsJson" text NOT NULL,
+                "LinkedGrammarTopicSlugsJson" text NOT NULL,
+                "LinkedExpressionSlugsJson" text NOT NULL,
+                "LinkedWritingTemplateSlugsJson" text NOT NULL,
+                "LinkedExerciseSlugsJson" text NOT NULL,
+                "LinkedRoleplaySlugsJson" text NOT NULL DEFAULT '[]',
+                "LinkedCourseLessonSlugsJson" text NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_ExamPrepUnits" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "WritingTemplates" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "ShortDescription" character varying(1000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "Category" character varying(96) NOT NULL,
+                "Situation" character varying(512) NOT NULL,
+                "Register" character varying(64) NOT NULL,
+                "TemplateText" text NOT NULL,
+                "Explanation" character varying(4000) NOT NULL,
+                "VariablesJson" text NOT NULL,
+                "SampleFilledVersion" text NOT NULL,
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "SituationTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ExplanationTranslationsJson" text NOT NULL DEFAULT '[]',
+                "TemplateTextTranslationsJson" text NOT NULL DEFAULT '[]',
+                "SampleFilledVersionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "LinkedGrammarTopicSlugsJson" text NOT NULL,
+                "LinkedWordSlugsJson" text NOT NULL,
+                "LinkedExpressionSlugsJson" text NOT NULL,
+                "LinkedExerciseSlugsJson" text NOT NULL,
+                "LinkedCourseLessonSlugsJson" text NOT NULL DEFAULT '[]',
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_WritingTemplates" PRIMARY KEY ("Id")
+            );
+
+            CREATE TABLE IF NOT EXISTS "CulturalNotes" (
+                "Id" uuid NOT NULL,
+                "Slug" character varying(128) NOT NULL,
+                "Title" character varying(256) NOT NULL,
+                "ShortDescription" character varying(1000) NOT NULL,
+                "CefrLevel" character varying(8) NOT NULL,
+                "Category" character varying(96) NOT NULL,
+                "Context" character varying(512) NOT NULL,
+                "SectionsJson" text NOT NULL,
+                "ExamplesJson" text NOT NULL,
+                "DoNotesJson" text NOT NULL,
+                "DontNotesJson" text NOT NULL,
+                "SensitivityWarning" character varying(1000),
+                "TitleTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ContextTranslationsJson" text NOT NULL DEFAULT '[]',
+                "SectionsTranslationsJson" text NOT NULL DEFAULT '[]',
+                "ExamplesTranslationsJson" text NOT NULL DEFAULT '[]',
+                "DoNotesTranslationsJson" text NOT NULL DEFAULT '[]',
+                "DontNotesTranslationsJson" text NOT NULL DEFAULT '[]',
+                "SensitivityWarningTranslationsJson" text NOT NULL DEFAULT '[]',
+                "LinkedDialogueSlugsJson" text NOT NULL,
+                "LinkedExpressionSlugsJson" text NOT NULL,
+                "LinkedWritingTemplateSlugsJson" text NOT NULL,
+                "LinkedTalkTopicSlugsJson" text NOT NULL,
+                "LinkedCourseLessonSlugsJson" text NOT NULL,
+                "PublicationStatus" character varying(32) NOT NULL,
+                "SortOrder" integer NOT NULL,
+                "CreatedAtUtc" timestamp with time zone NOT NULL,
+                "UpdatedAtUtc" timestamp with time zone NOT NULL,
+                CONSTRAINT "PK_CulturalNotes" PRIMARY KEY ("Id")
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExamProfiles_Key"
+                ON "ExamProfiles" ("Key");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExamPrepUnits_Slug"
+                ON "ExamPrepUnits" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ExamPrepUnits_ExamProfileKey_CefrLevel_ExamSection"
+                ON "ExamPrepUnits" ("ExamProfileKey", "CefrLevel", "ExamSection");
+
+            ALTER TABLE "ExamProfiles" ADD COLUMN IF NOT EXISTS "DisplayNameTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamProfiles" ADD COLUMN IF NOT EXISTS "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamPrepUnits" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamPrepUnits" ADD COLUMN IF NOT EXISTS "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamPrepUnits" ADD COLUMN IF NOT EXISTS "ExplanationTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamPrepUnits" ADD COLUMN IF NOT EXISTS "StrategyNotesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamPrepUnits" ADD COLUMN IF NOT EXISTS "ChecklistTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "ExamPrepUnits" ADD COLUMN IF NOT EXISTS "LinkedRoleplaySlugsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "SituationTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "ExplanationTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "TemplateTextTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "SampleFilledVersionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "LinkedCourseLessonSlugsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "ContextTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "SectionsTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "ExamplesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "DoNotesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "DontNotesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "SensitivityWarningTranslationsJson" text NOT NULL DEFAULT '[]';
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WritingTemplates_Slug"
+                ON "WritingTemplates" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_WritingTemplates_CefrLevel_Category_Register"
+                ON "WritingTemplates" ("CefrLevel", "Category", "Register");
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CulturalNotes_Slug"
+                ON "CulturalNotes" ("Slug");
+            CREATE INDEX IF NOT EXISTS "IX_CulturalNotes_CefrLevel_Category"
+                ON "CulturalNotes" ("CefrLevel", "Category");
+            """,
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task EnsureCourseLocalizationSchemaAsync(
@@ -848,6 +1018,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "LearningGoalsTranslationsJson" text NOT NULL DEFAULT '[]';
             ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "ReviewSummaryTranslationsJson" text NOT NULL DEFAULT '[]';
             ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "HomeworkTaskTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CourseLessons" ADD COLUMN IF NOT EXISTS "ActivityBlocksJson" text NOT NULL DEFAULT '[]';
             """,
             cancellationToken).ConfigureAwait(false);
     }

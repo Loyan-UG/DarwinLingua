@@ -12,6 +12,10 @@ public sealed record AdminSystemReportPageViewModel(
     IReadOnlyList<AdminSystemReportMetricViewModel> EmailMetrics,
     IReadOnlyList<AdminSystemReportMetricViewModel> LearningPortalQualityMetrics,
     AdminLearningPortalSystemReportResponse LearningPortal,
+    IReadOnlyList<AdminLearningPortalIssueRowResponse> FilteredLearningPortalIssues,
+    IReadOnlyList<string> LearningPortalIssueAreas,
+    string? LearningPortalIssueAreaFilter,
+    string? LearningPortalIssueSearch,
     IReadOnlyList<WebProductAnalyticsSummaryItem> AnalyticsItems);
 
 public sealed record AdminSystemReportMetricViewModel(

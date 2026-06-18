@@ -12,11 +12,11 @@ It covers:
 - Course Lessons and structured CEFR learning paths
 - Exam Preparation
 - Writing Templates and real-life communication support
-- Cultural Notes and German-in-Germany guidance
+- Life in Germany guidance backed by the current CulturalNote store
 - unified learning search
 - learning progress and personalization
 - admin and content operations
-- Web-first implementation followed by mobile parity
+- Web-first implementation; mobile parity is deferred until the Web product is mature after tester feedback
 - documentation consolidation rules
 
 This is the single planning source for the learning-portal expansion. Do not create separate roadmap documents for each feature unless implementation proves that a dedicated contract document is required.
@@ -25,7 +25,7 @@ This is the single planning source for the learning-portal expansion. Do not cre
 
 ## Current Implementation Snapshot
 
-Last updated: 2026-05-25.
+Last updated: 2026-06-14.
 
 - Grammar Guide A1-C2 content is generated and validated against the official syllabus and package contract. The latest validation report is `artifacts/validation/grammar-a1-c2-validation-report.md` and records 225 topics with zero issues.
 - Post-Grammar Conversation audit blockers are repaired. The latest conversation audit report is `artifacts/validation/conversation-content-audit-report.md` and records zero P0 blockers, zero unresolved Dialogue word references, and zero unresolved Talk Topic word references.
@@ -50,20 +50,27 @@ Last updated: 2026-05-25.
 - The reviewed Everyday Expressions packages imported into `darwinlingua_shared` on 2026-05-25 with zero import warnings. After the first mixed supplement import, the shared database contains 431 Expression records: 426 active and 5 draft ordinary-literal archive findings. Public-routed Web/API smoke returned HTTP 200 for `/expressions`, `/expressions/hals-und-beinbruch`, `/expressions/die-faeden-ziehen`, `/api/catalog/expressions`, `/api/catalog/expressions/hals-und-beinbruch?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Groschen&resultType=expression`. The public admin report endpoint now requires credentials and returns 401 without them; admin report query tests and the strict content audit remain green, with zero ordinary-literal leakage, zero missing eligibility metadata, zero low example counts, zero missing translations, zero unresolved word/content links, and zero missing risky-content warnings.
 - Roleplay terminology is now split into three surfaces: Dialogue-derived Roleplay at `/dialogues/{slug}/roleplay`, Event Preparation `roleplayPrompts`, and standalone `RoleplayScenario` packages at `/roleplays`. Standalone RoleplayScenario infrastructure now has a Web-first pilot-ready implementation slice: parser support, import validation, shared-content persistence, Web API list/detail routes, Web list/detail pages, Unified Search result support, and admin count visibility. The first standalone pilot package exists at `content/learning-portal/roleplays/packages/roleplays-a1-b2-pilot-v1.json` with 10 A1-B2 scenarios, deterministic answer choices/static feedback, and safe image placeholders. It imported into `darwinlingua_shared` on 2026-05-25 with zero warnings and local Web/API/search smoke passed. Bulk roleplay generation remains blocked.
 - Exercise Engine is complete-for-v1 on Web/API. Its first small real package at `content/learning-portal/exercises/packages/exercises-a1-a2-core-01-v1.json` contains 12 deterministic A1/A2 exercises and one exercise set covering all initial exercise shapes. It now includes learner-helper translations for `en`, `fa`, `ar`, `tr`, `ru`, `ckb`, `kmr`, `pl`, `ro`, and `sq`; it imported into `darwinlingua_shared` on 2026-05-31 with zero warnings after the PostgreSQL shared-database Exercise retrofit and localization columns were added.
-- Course Lessons now have a Web/API v1 foundation with German-first source fields, learner-helper translations, PostgreSQL retrofit support, Web/API localized projection, and admin quality counters for missing course translations. The shared PostgreSQL database now contains the completed and imported Course levels A1-C1: 5 course paths, 44 modules, and 440 lessons total (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`). The current source packages are `content/learning-portal/courses/packages/course-a1-foundation-pilot-v1.json`, `course-a2-alltag-und-integration-v1.json`, `course-b1-selbststaendig-im-alltag-v1.json`, `course-b2-kompetent-argumentieren-und-handeln-v1.json`, and `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json`. Course planning exists for every CEFR level through C2; C2 content generation is the next Course content phase and must use `artifacts/planning/course-c2-lesson-candidates.md` as the source of truth. Because Course imports replace an existing path tree, follow-up batches for the same path are cumulative and must retain earlier reviewed lessons.
+- Course Lessons now have a Web/API v1 foundation with German-first source fields, learner-helper translations, PostgreSQL retrofit support, Web/API localized projection, and admin quality counters for missing course translations. The Course lesson reading-flow UI uses `activityBlocks` as the primary lesson flow, with legacy linked-content fallback retained only for compatibility. Admin diagnostics report published lessons without activity blocks, malformed activity JSON, unsupported target types, and unresolved activity target slugs. The shared PostgreSQL database now contains the completed and imported Course levels A1-C2: 6 course paths, 56 modules, and 560 lessons total (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`). Controlled activity-flow backfill is complete for all Course levels: A1 `60/60` lessons with 297 ordered activities, A2 `80/80` with 400, B1 `100/100` with 500, B2 `80/80` with 400, C1 `120/120` with 600, and C2 `120/120` with 600. Current PostgreSQL verification reports `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, zero unresolved C2 activity targets, and the runtime progress table `UserContentProgress` present. The standard ImportTool pending-model blocker was resolved by syncing the EF migration snapshot through an idempotent PostgreSQL migration. The current source packages are `content/learning-portal/courses/packages/course-a1-foundation-pilot-v1.json`, `course-a2-alltag-und-integration-v1.json`, `course-b1-selbststaendig-im-alltag-v1.json`, `course-b2-kompetent-argumentieren-und-handeln-v1.json`, `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json`, and `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json`. Course planning exists for every CEFR level through C2 and is now fully materialized for the first Web Course baseline. Public Web/API smoke passed for the final C2 lesson and Persian helper projection after the C2 Module 12 import. The current external restore checkpoint is still `X:\Projects\DarwinLingua.Backup\20260617-210237-course-c1-activity-flow-complete-pre-c2-activity-flow`; a new restore-ready checkpoint must be created for `course-c2-activity-flow-complete-pre-user-testing` before the Course activity-flow phase is considered operationally closed. Because Course imports replace an existing path tree, any follow-up repair batch for the same path must be cumulative and must retain earlier reviewed lessons.
+- Exam Prep Web/API v1 is German-first and learner-language aware. Reviewed foundation and depth content is now generated and imported for A1/A2/DTZ, C1, B1, B2, and Goethe C2: 17 exam profiles and 246 exam-prep units total. Goethe C2 currently has 86 units with a balanced depth cycle: reading 17, listening 17, speaking 17, writing 17, strategy 17, and overview 1. Source packages live under `content/learning-portal/exam-prep/packages`, with level/profile planning under `artifacts/planning`. The current external restore checkpoint is `X:\Projects\DarwinLingua.Backup\20260612-142146-exam-prep-complete-pre-writing-templates`.
+- Writing Templates now have a German-first, learner-language-aware v1 infrastructure slice and a complete first Web content baseline. `WritingTemplate` supports helper translations for title, short description, situation, explanation, template text, and sample filled version. ContentOps validates active helper languages, duplicate/unsupported translation languages, English fallback, CEFR/category/register values, declared/used variables in both directions, and linked slug shapes. Reviewed packages under `content/learning-portal/writing-templates/packages` are imported into `darwinlingua_shared` with `WritingTemplates=120`, distributed evenly across A1-C2 (`20` templates per CEFR level). Local Web/API smoke passed for list, A1 detail, C2 detail, Persian API detail, and Unified Search `resultType=writing-template` on 2026-06-13.
+- Life in Germany has replaced the public Cultural Notes surface. The canonical Web route is `/life-in-germany`; the current internal backing store and import root remain `CulturalNotes` / `culturalNotes` until a deliberate internal migration is scheduled. The first imported content baseline covers practical A1/A2 orientation and B1 civic/orientation-course concepts: 30 notes total in `darwinlingua_shared` (`A1=10`, `A2=10`, `B1=10`). Source packages live under `content/learning-portal/life-in-germany/packages`. The content teaches German everyday systems, civic/legal basics, Orientierungskurs/Leben-in-Deutschland concepts, and social expectations in original explanatory notes, not by copying the official question bank.
+- The Web readiness checkpoint for the current Learning Portal baseline is closed locally. On 2026-06-14, targeted Web/WebApi builds and Phase 7 tests passed; in-app Chromium manual smoke covered learner routes, account/admin authorization redirects, Unified Search, `/recent`, and a 390px mobile viewport without horizontal overflow. Shared PostgreSQL counts matched the baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30`.
 - Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, and suppression handling. Production launch still requires operational Brevo configuration outside source control, verified sender domain, SPF/DKIM/DMARC, webhook secret, and provider DPA review.
-- Mobile/MAUI parity remains later-stage work. Do not modify mobile learning content surfaces until Web/API contracts, imports, rendering, search, admin visibility, and tests are stable.
+- Mobile/MAUI parity is no longer part of the active implementation path. It remains explicitly deferred until the Web product is validated with real testers and follow-up Web improvements are complete.
 - Web and WebApi production persistence is PostgreSQL-only. SQLite is allowed only for mobile/local surfaces where SQLite is the actual runtime store; it must not drive Web/API production query behavior.
 
 Immediate next order:
 
-1. Keep validation reports green after any content repair.
-2. Keep the Web-side Sensitive Educational Language and registration/legal acknowledgement gates covered by tests before adding more sensitive content.
-3. Generate any further Everyday Expressions content only as a small reviewed batch after re-running the strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
-4. Review the first RoleplayScenario pilot in Web and keep any further standalone Roleplay content to small reviewed batches with import and smoke gates.
-5. Start the C2 Course content phase from `artifacts/planning/course-c2-lesson-candidates.md` only after the A1-C1 docs/backup checkpoint is complete; continue Course Lessons only as small reviewed cumulative batches with German source, learner-helper translations, import, count verification, and admin report checks.
-6. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
-7. After every completed Course phase, update docs and create a restorable external backup under `X:\Projects\DarwinLingua.Backup` before moving to the next phase.
+1. Sync the restore-ready staged C2 activity-flow backup from `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing` to `X:\Projects\DarwinLingua.Backup` as soon as the mapped network drive is reachable again.
+2. Keep validation reports green after any content repair.
+3. Keep the Web-side Sensitive Educational Language and registration/legal acknowledgement gates covered by tests before adding more sensitive content.
+4. Start controlled Web tester onboarding and capture feedback against the current public-routed Web baseline before new bulk content work.
+5. During tester feedback, only repair broken links, missing translations, route mismatches, smoke blockers, and clear UX/content issues.
+6. Treat Course `activityBlocks` backfill as complete for the first Web baseline: A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`, C1 `120/120`, and C2 `120/120`.
+7. Generate any further Everyday Expressions, RoleplayScenario, Exam Prep, Writing Templates, or Life in Germany content only as small reviewed batches after an explicit plan, strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
+8. Consider Life in Germany B2+ expansion only after the current Web readiness/user-testing checkpoint is closed or a tester/content review identifies a concrete gap.
+9. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
+10. After every completed Web/content phase, update docs and create a restorable external backup under `X:\Projects\DarwinLingua.Backup` before moving to the next phase.
 
 ---
 
@@ -421,7 +428,7 @@ Follow-up backlog:
 - [x] exclude sensitive educational entries from mobile package export until mobile has equivalent opt-in filtering and warning rendering
 - [x] add admin quality counts for meaning transparency, safety rating, adult-only count, missing teaching reasons, ordinary-literal leakage, and missing warnings
 - [ ] add user-eligible list/search/detail filtering once legal adult-access policy is approved
-- [ ] ensure mobile export excludes adult-only Expressions until mobile eligibility enforcement is ready
+- [x] track adult-only Expression mobile export as deferred until mobile work resumes
 - [ ] add future legal/AVS gate before any explicit adult content is considered
 
 ---
@@ -640,6 +647,16 @@ Exam Prep helps learners prepare for recognized German exams and exam-like speak
 - mock exam placeholders
 - linked practice sets
 
+### Current Exam Prep v1 Status
+
+- 2026-06-08: Exam Prep infrastructure is German-first and learner-language aware for Web/API v1. `ExamProfile` now supports helper translations for `displayName` and `description`; `ExamPrepUnit` supports helper translations for `title`, `shortDescription`, `explanation`, `strategyNotes`, and `checklist`.
+- API list/detail endpoints accept `primaryMeaningLanguageCode` and return German source plus localized helper fields. Web list/detail renders learner helper text from the learner profile language where available.
+- ContentOps validation enforces active learner-language coverage, duplicate/unsupported translation language rejection, controlled profile/section/task/skill values, and exact English fallback rejection for non-English helper text.
+- PostgreSQL repository coverage verifies Exam Prep filters and `exam-prep` Unified Search with PostgreSQL-native `ILike`.
+- The first generated A1/A2 pilot was rejected on 2026-06-08 because titles repeated metadata, some helper translations were not natural enough, and linked-practice fields were empty despite available related content. The rejected package was removed from the official content path and `darwinlingua_shared`.
+- Reviewed replacement content is now imported for A1/A2/DTZ, C1, B1, B2, and Goethe C2. Current shared PostgreSQL counts are `ExamProfiles=17`, `ExamPrepUnits=246`, and `GoetheC2Units=86`; the Goethe C2 section distribution is reading 17, listening 17, speaking 17, writing 17, strategy 17, and overview 1. The closed Exam Prep checkpoint is backed up at `X:\Projects\DarwinLingua.Backup\20260612-142146-exam-prep-complete-pre-writing-templates`.
+- Exam Prep content generation must continue from level/profile planning, clean learner-facing titles, natural helper translations, and reviewed links to existing Course, Dialogue, Roleplay, and Exercise content where applicable. Writing Template links stay empty until Writing Template content exists.
+
 ---
 
 ## Module 6: Writing Templates
@@ -670,25 +687,39 @@ Writing Templates help learners produce practical German texts for real-life sit
 
 - slug
 - title
+- title helper translations
 - CEFR level
 - category
 - situation
+- situation helper translations
 - register
 - template text
+- template text helper translations
 - explanation
+- explanation helper translations
 - replaceable variables
 - sample filled version
+- sample filled version helper translations
 - linked grammar topics
 - linked words
 - linked exercises
 
+### Current Writing Templates v1 Status
+
+- 2026-06-12: Writing Templates infrastructure is German-first and learner-language aware for Web/API v1. API list/detail accepts `primaryMeaningLanguageCode`; Web list/detail renders learner helper fields from the selected content language.
+- PostgreSQL retrofit, import validation, repository localized projection, admin quality counters, and Unified Search result type `writing-template` are implemented.
+- 2026-06-13: Writing Templates A1-C2 content is complete for the first Web baseline. Planning files exist for A1, A2, B1, B2, C1, and C2 under `artifacts/planning`; package files exist under `content/learning-portal/writing-templates/packages`.
+- Current shared PostgreSQL count: `WritingTemplates=120`, distributed as `A1=20`, `A2=20`, `B1=20`, `B2=20`, `C1=20`, and `C2=20`.
+- Latest verification: targeted WritingTemplate ContentOps tests passed; local Web/API smoke returned HTTP 200 for `/writing-templates`, A1 detail, C2 detail, Persian API detail, and `/api/catalog/search?q=Abschlussstatement&resultType=writing-template`.
+- Next content step: start `Life in Germany` planning and content generation. This feature replaces the narrow public Cultural Notes scope while keeping the existing `CulturalNotes` backing store for now.
+
 ---
 
-## Module 7: Cultural Notes
+## Module 7: Life in Germany
 
 ### Product Purpose
 
-Cultural Notes teach German communication behavior, social expectations, and context-specific language use.
+Life in Germany teaches German communication behavior, social expectations, everyday systems, basic legal/civic knowledge, and context-specific language use. It also covers important concepts behind Orientierungskurs, Test Leben in Deutschland, and Einbuergerungstest, without copying the official question bank as product-owned test content.
 
 ### Initial Categories
 
@@ -705,14 +736,26 @@ Cultural Notes teach German communication behavior, social expectations, and con
 - complaints
 - bureaucracy
 - conversation-cafe-etiquette
+- law-and-rights
+- democracy-and-state
+- history-and-responsibility
+- society-and-family
+- education-and-work
+- religion-and-tolerance
+- equality-and-non-discrimination
+- federal-states-and-geography
+- political-participation
+- social-system
+- exam-orientation
 
 ### Suggested Aggregate
 
-- `CulturalNote`
+- Public feature: `Life in Germany`
+- Current backing aggregate: `CulturalNote`
 
 ### Relationship Rules
 
-Cultural Notes may link to:
+Life in Germany notes may link to:
 
 - dialogues
 - grammar topics
@@ -809,7 +852,7 @@ The portal should track learner progress across content types without mixing use
 
 - [x] define shared learning portal navigation structure
   - Progress: Web learner navigation is grouped as Learn, Practice, Speak, Prepare, and Resources using only implemented routes.
-- [ ] add content-type taxonomy for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Cultural Notes
+- [ ] add content-type taxonomy for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Life in Germany
 - [ ] define cross-content linking model
 - [ ] define reusable linked-word reference model
 - [x] define unified CEFR/category/topic filter conventions
@@ -858,7 +901,7 @@ The portal should track learner progress across content types without mixing use
 - [x] add deeper RoleplayScenario admin quality counters for missing translations, unpublished drafts, missing image assets, and invalid playable sequence after more reviewed packages exist
   - Progress: system report now counts RoleplayScenario missing translations, unpublished drafts, missing required image assets, missing answer choices/static feedback, and invalid playable sequences; WebApi admin report tests cover the counters.
 - [ ] add broader validation coverage for every rich block type after more reviewed pilot packages are available
-- [ ] keep mobile parity tracked after Web sign-off
+- [x] keep mobile parity tracked as deferred until Web tester feedback is complete
 
 ### Phase 7.3: Everyday Expressions
 
@@ -875,7 +918,7 @@ The portal should track learner progress across content types without mixing use
 - [x] document expression content contract in `78-Expression-Content-Package-Contract.md`
 - [x] add broader validation, query, Web API, and Web rendering coverage after first real expression content package is available
   - Progress: the first pilot package imports into shared PostgreSQL, `/expressions`, `/expressions/alles-klar`, `/api/catalog/expressions`, `/api/catalog/expressions/alles-klar`, `/api/catalog/search`, and `/api/admin/catalog/system-report` smoke successfully against local Web/API services. Admin reporting now treats not-yet-created Phase 7 module tables as empty instead of failing the entire report.
-- [ ] keep mobile parity tracked after Web sign-off
+- [x] keep mobile parity tracked as deferred until Web tester feedback is complete
 
 ### Phase 7.4: Exercise Engine
 
@@ -907,7 +950,120 @@ The portal should track learner progress across content types without mixing use
 - [x] add admin/import support
 - [x] add initial tests for course content parsing and Web navigation/localization
 - [x] document course content contract in `80-Course-Content-Package-Contract.md`
+- [x] implement and render Course lesson `activityBlocks` as the primary lesson reading flow when present
+- [x] complete controlled A1 activity-flow backfill
+  - Progress: all 60 A1 lessons in `course-a1-foundation-pilot-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A1ActivityEnabled=60`, `TotalActivityEnabled=60`, and zero unresolved activity targets. The remaining 500 Course lessons are tracked as planned backfill, not hidden debt.
 - [ ] add broader linked-content projection, Web API, persistence, and progress coverage after the first real course package is available
+- [x] complete controlled A2 Module 1 activity-flow backfill
+  - Progress: the first 10 A2 lessons in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module1ActivityEnabled=10`, `TotalActivityEnabled=70`, and zero unresolved activity targets for the new batch.
+- [x] resolve the standard ImportTool/EF pending-model check before the next Course content import
+  - Progress: `dotnet ef migrations has-pending-model-changes` reports no model changes, `DarwinLingua.ImportTool` builds, and the standard shared import path processed the cumulative A2 package with zero warnings.
+- [x] complete controlled A2 Module 2 activity-flow backfill
+  - Progress: lessons 11-20 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module2ActivityEnabled=10`, `TotalActivityEnabled=80`, and zero unresolved activity targets for A2 Modules 1-2.
+- [x] complete controlled A2 Module 3 activity-flow backfill
+  - Progress: lessons 21-30 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module3ActivityEnabled=10`, `TotalActivityEnabled=90`, `PublishedLessonsWithoutActivityBlocks=470`, and zero unresolved activity targets for A2 Modules 1-3.
+- [x] complete controlled A2 Module 4 activity-flow backfill
+  - Progress: lessons 31-40 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module4ActivityEnabled=10`, `TotalActivityEnabled=100`, `PublishedLessonsWithoutActivityBlocks=460`, and zero unresolved activity targets for A2 Modules 1-4.
+- [x] complete controlled A2 Module 5 activity-flow backfill
+  - Progress: lessons 41-50 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module5ActivityEnabled=10`, `TotalActivityEnabled=110`, `PublishedLessonsWithoutActivityBlocks=450`, and zero unresolved activity targets for A2 Modules 1-5.
+- [x] complete controlled A2 Module 6 activity-flow backfill
+  - Progress: lessons 51-60 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module6ActivityEnabled=10`, `TotalActivityEnabled=120`, `PublishedLessonsWithoutActivityBlocks=440`, and zero unresolved activity targets for A2 Modules 1-6.
+- [x] complete controlled A2 Module 7 activity-flow backfill
+  - Progress: lessons 61-70 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2Module7ActivityEnabled=10`, `TotalActivityEnabled=130`, `PublishedLessonsWithoutActivityBlocks=430`, and zero unresolved activity targets for A2 Modules 1-7.
+- [x] complete controlled A2 Module 8 activity-flow backfill
+  - Progress: lessons 71-80 in `course-a2-alltag-und-integration-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `A2ActivityEnabled=80`, `TotalActivityEnabled=140`, `PublishedLessonsWithoutActivityBlocks=420`, and zero unresolved A2 activity targets.
+- [x] complete controlled B1 Module 1 activity-flow backfill
+  - Progress: lessons 1-10 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module1ActivityEnabled=10`, `B1ActivityEnabled=10`, `TotalActivityEnabled=150`, `ActiveLessonsWithoutActivityBlocks=410`, and zero unresolved B1 Module 1 activity targets.
+- [x] complete controlled B1 Module 2 activity-flow backfill
+  - Progress: lessons 11-20 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module2ActivityEnabled=10`, `B1ActivityEnabled=20`, `TotalActivityEnabled=160`, `ActiveLessonsWithoutActivityBlocks=400`, and zero unresolved B1 Module 2 activity targets.
+- [x] complete controlled B1 Module 3 activity-flow backfill
+  - Progress: lessons 21-30 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module3ActivityEnabled=10`, `B1ActivityEnabled=30`, `TotalActivityEnabled=170`, `ActiveLessonsWithoutActivityBlocks=390`, and zero unresolved B1 Module 3 activity targets.
+- [x] complete controlled B1 Module 4 activity-flow backfill
+  - Progress: lessons 31-40 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module4ActivityEnabled=10`, `B1ActivityEnabled=40`, `TotalActivityEnabled=180`, `ActiveLessonsWithoutActivityBlocks=380`, and zero unresolved B1 Module 4 activity targets.
+- [x] complete controlled B1 Module 5 activity-flow backfill
+  - Progress: lessons 41-50 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module5ActivityEnabled=10`, `B1ActivityEnabled=50`, `TotalActivityEnabled=190`, `ActiveLessonsWithoutActivityBlocks=370`, and zero unresolved B1 Module 5 activity targets.
+- [x] complete controlled B1 Module 6 activity-flow backfill
+  - Progress: lessons 51-60 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module6ActivityEnabled=10`, `B1ActivityEnabled=60`, `TotalActivityEnabled=200`, `ActiveLessonsWithoutActivityBlocks=360`, and zero unresolved B1 Module 6 activity targets.
+- [x] complete controlled B1 Module 7 activity-flow backfill
+  - Progress: lessons 61-70 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module7ActivityEnabled=10`, `B1ActivityEnabled=70`, `TotalActivityEnabled=210`, `ActiveLessonsWithoutActivityBlocks=350`, and zero unresolved B1 Module 7 activity targets.
+- [x] complete controlled B1 Module 8 activity-flow backfill
+  - Progress: lessons 71-80 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module8ActivityEnabled=10`, `B1ActivityEnabled=80`, `TotalActivityEnabled=220`, `ActiveLessonsWithoutActivityBlocks=340`, and zero unresolved B1 Module 8 activity targets.
+- [x] complete controlled B1 Module 9 activity-flow backfill
+  - Progress: lessons 81-90 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module9ActivityEnabled=10`, `B1ActivityEnabled=90`, `TotalActivityEnabled=230`, `ActiveLessonsWithoutActivityBlocks=330`, and zero unresolved B1 Module 9 activity targets.
+- [x] complete controlled B1 Module 10 activity-flow backfill
+  - Progress: lessons 91-100 in `course-b1-selbststaendig-im-alltag-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B1Module10ActivityEnabled=10`, `B1ActivityEnabled=100`, `TotalActivityEnabled=240`, `ActiveLessonsWithoutActivityBlocks=320`, and zero unresolved B1 Module 10 activity targets.
+- [x] create `course-b1-activity-flow-complete-pre-b2-activity-flow` phase backup
+  - Evidence: `X:\Projects\DarwinLingua.Backup\20260617-171229-course-b1-activity-flow-complete-pre-b2-activity-flow` contains PostgreSQL dump, globals, restore list, dry-run restore counts matching live counts, repo overlay, separate local config/secret bundle, Docker metadata, manifest, and SHA256 checksums.
+- [x] complete controlled B2 Module 1 activity-flow backfill
+  - Progress: lessons 1-10 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module1ActivityEnabled=10`, `B2ActivityEnabled=10`, `TotalActivityEnabled=250`, `ActiveLessonsWithoutActivityBlocks=310`, and zero unresolved B2 Module 1 activity targets.
+- [x] complete controlled B2 Module 2 activity-flow backfill
+  - Progress: lessons 11-20 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module2ActivityEnabled=10`, `B2ActivityEnabled=20`, `TotalActivityEnabled=260`, `ActiveLessonsWithoutActivityBlocks=300`, and zero unresolved B2 Modules 1-2 activity targets.
+- [x] complete controlled B2 Module 3 activity-flow backfill
+  - Progress: lessons 21-30 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module3ActivityEnabled=10`, `B2ActivityEnabled=30`, `TotalActivityEnabled=270`, `ActiveLessonsWithoutActivityBlocks=290`, and zero unresolved B2 Modules 1-3 activity targets.
+- [x] complete controlled B2 Module 4 activity-flow backfill
+  - Progress: lessons 31-40 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module4ActivityEnabled=10`, `B2ActivityEnabled=40`, `TotalActivityEnabled=280`, `ActiveLessonsWithoutActivityBlocks=280`, and zero unresolved B2 Modules 1-4 activity targets.
+- [x] complete controlled B2 Module 5 activity-flow backfill
+  - Progress: lessons 41-50 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module5ActivityEnabled=10`, `B2ActivityEnabled=50`, `TotalActivityEnabled=290`, `ActiveLessonsWithoutActivityBlocks=270`, and zero unresolved B2 Modules 1-5 activity targets.
+- [x] complete controlled B2 Module 6 activity-flow backfill
+  - Progress: lessons 51-60 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module6ActivityEnabled=10`, `B2ActivityEnabled=60`, `TotalActivityEnabled=300`, `ActiveLessonsWithoutActivityBlocks=260`, and zero unresolved B2 Modules 1-6 activity targets.
+- [x] complete controlled B2 Module 7 activity-flow backfill
+  - Progress: lessons 61-70 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module7ActivityEnabled=10`, `B2ActivityEnabled=70`, `TotalActivityEnabled=310`, `ActiveLessonsWithoutActivityBlocks=250`, and zero unresolved B2 Modules 1-7 activity targets.
+- [x] complete controlled B2 Module 8 activity-flow backfill
+  - Progress: lessons 71-80 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module8ActivityEnabled=10`, `B2ActivityEnabled=80`, `TotalActivityEnabled=320`, `ActiveLessonsWithoutActivityBlocks=240`, and zero unresolved B2 activity targets.
+- [x] create `course-b2-activity-flow-complete-pre-c1-activity-flow` phase backup
+  - Progress: restore-ready checkpoint created at `X:\Projects\DarwinLingua.Backup\20260617-183717-course-b2-activity-flow-complete-pre-c1-activity-flow`. Verification includes refreshed `darwinlingua_shared` custom dump, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `B2ActivityEnabled=80`, `TotalActivityEnabled=320`, `ActiveLessonsWithoutActivityBlocks=240`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `UserContentProgress=true`), repo overlay, separate secret bundle, docker metadata, manifest, and SHA256 checksums.
+- [x] complete controlled C1 Module 1 activity-flow backfill
+  - Progress: lessons 1-10 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module1ActivityEnabled=10`, `C1ActivityEnabled=10`, `TotalActivityEnabled=330`, `ActiveLessonsWithoutActivityBlocks=230`, and zero unresolved C1 Module 1 activity targets.
+- [x] complete controlled C1 Module 2 activity-flow backfill
+  - Progress: lessons 11-20 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module2ActivityEnabled=10`, `C1ActivityEnabled=20`, `TotalActivityEnabled=340`, `ActiveLessonsWithoutActivityBlocks=220`, and zero unresolved C1 Module 2 activity targets.
+- [x] complete controlled C1 Module 3 activity-flow backfill
+  - Progress: lessons 21-30 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module3ActivityEnabled=10`, `C1ActivityEnabled=30`, `TotalActivityEnabled=350`, `ActiveLessonsWithoutActivityBlocks=210`, and zero unresolved C1 Module 3 activity targets.
+- [x] complete controlled C1 Module 4 activity-flow backfill
+  - Progress: lessons 31-40 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module4ActivityEnabled=10`, `C1ActivityEnabled=40`, `TotalActivityEnabled=360`, `ActiveLessonsWithoutActivityBlocks=200`, and zero unresolved C1 Module 4 activity targets.
+- [x] complete controlled C1 Module 5 activity-flow backfill
+  - Progress: lessons 41-50 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module5ActivityEnabled=10`, `C1ActivityEnabled=50`, `TotalActivityEnabled=370`, `ActiveLessonsWithoutActivityBlocks=190`, and zero unresolved C1 Module 5 activity targets.
+- [x] complete controlled C1 Module 6 activity-flow backfill
+  - Progress: lessons 51-60 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module6ActivityEnabled=10`, `C1ActivityEnabled=60`, `TotalActivityEnabled=380`, `ActiveLessonsWithoutActivityBlocks=180`, and zero unresolved C1 Module 6 activity targets.
+- [x] complete controlled C1 Module 7 activity-flow backfill
+  - Progress: lessons 61-70 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module7ActivityEnabled=10`, `C1ActivityEnabled=70`, `TotalActivityEnabled=390`, `ActiveLessonsWithoutActivityBlocks=170`, and zero unresolved C1 Module 7 activity targets.
+- [x] complete controlled C1 Module 8 activity-flow backfill
+  - Progress: lessons 71-80 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module8ActivityEnabled=10`, `C1ActivityEnabled=80`, `TotalActivityEnabled=400`, `ActiveLessonsWithoutActivityBlocks=160`, and zero unresolved C1 Module 8 activity targets.
+- [x] complete controlled C1 Module 9 activity-flow backfill
+  - Progress: lessons 81-90 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module9ActivityEnabled=10`, `C1ActivityEnabled=90`, `TotalActivityEnabled=410`, `ActiveLessonsWithoutActivityBlocks=150`, and zero unresolved C1 Module 9 activity targets.
+- [x] complete controlled C1 Module 10 activity-flow backfill
+  - Progress: lessons 91-100 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module10ActivityEnabled=10`, `C1ActivityEnabled=100`, `TotalActivityEnabled=420`, `ActiveLessonsWithoutActivityBlocks=140`, and zero unresolved C1 Module 10 activity targets.
+- [x] complete controlled C1 Module 11 activity-flow backfill
+  - Progress: lessons 101-110 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module11ActivityEnabled=10`, `C1ActivityEnabled=110`, `TotalActivityEnabled=430`, `ActiveLessonsWithoutActivityBlocks=130`, and zero unresolved C1 Module 11 activity targets.
+- [x] complete controlled C1 Module 12 activity-flow backfill
+  - Progress: lessons 111-120 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module12ActivityEnabled=10`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, and zero unresolved C1 Module 12 activity targets.
+- [x] create `course-c1-activity-flow-complete-pre-c2-activity-flow` phase backup
+  - Evidence: `X:\Projects\DarwinLingua.Backup\20260617-210237-course-c1-activity-flow-complete-pre-c2-activity-flow` contains the refreshed `darwinlingua_shared` custom dump, globals, database inventory, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`), repo overlay, separate secret bundle, docker metadata, manifest, and SHA256 checksums.
+- [x] complete controlled C2 Module 1 activity-flow backfill
+  - Progress: lessons 1-10 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module1ActivityEnabled=10`, `C2ActivityEnabled=10`, `TotalActivityEnabled=450`, `ActiveLessonsWithoutActivityBlocks=110`, and zero unresolved C2 Module 1 activity targets.
+- [x] complete controlled C2 Module 2 activity-flow backfill
+  - Progress: lessons 11-20 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module2ActivityEnabled=10`, `C2ActivityEnabled=20`, `TotalActivityEnabled=460`, `ActiveLessonsWithoutActivityBlocks=100`, and zero unresolved C2 Modules 1-2 activity targets.
+- [x] complete controlled C2 Module 3 activity-flow backfill
+  - Progress: lessons 21-30 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module3ActivityEnabled=10`, `C2ActivityEnabled=30`, `TotalActivityEnabled=470`, `ActiveLessonsWithoutActivityBlocks=90`, and zero unresolved C2 Modules 1-3 activity targets.
+- [x] complete controlled C2 Module 4 activity-flow backfill
+  - Progress: lessons 31-40 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module4ActivityEnabled=10`, `C2ActivityEnabled=40`, `TotalActivityEnabled=480`, `ActiveLessonsWithoutActivityBlocks=80`, and zero unresolved C2 Modules 1-4 activity targets.
+- [x] complete controlled C2 Module 5 activity-flow backfill
+  - Progress: lessons 41-50 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module5ActivityEnabled=10`, `C2ActivityEnabled=50`, `TotalActivityEnabled=490`, `ActiveLessonsWithoutActivityBlocks=70`, and zero unresolved C2 Modules 1-5 activity targets.
+- [x] complete controlled C2 Module 6 activity-flow backfill
+  - Progress: lessons 51-60 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module6ActivityEnabled=10`, `C2ActivityEnabled=60`, `TotalActivityEnabled=500`, `ActiveLessonsWithoutActivityBlocks=60`, and zero unresolved C2 Modules 1-6 activity targets.
+- [x] complete controlled C2 Module 7 activity-flow backfill
+  - Progress: lessons 61-70 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module7ActivityEnabled=10`, `C2ActivityEnabled=70`, `TotalActivityEnabled=510`, `ActiveLessonsWithoutActivityBlocks=50`, and zero unresolved C2 Modules 1-7 activity targets.
+- [x] complete controlled C2 Module 8 activity-flow backfill
+  - Progress: lessons 71-80 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module8ActivityEnabled=10`, `C2ActivityEnabled=80`, `TotalActivityEnabled=520`, `ActiveLessonsWithoutActivityBlocks=40`, and zero unresolved C2 Modules 1-8 activity targets.
+- [x] complete controlled C2 Module 9 activity-flow backfill
+  - Progress: lessons 81-90 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module9ActivityEnabled=10`, `C2ActivityEnabled=90`, `TotalActivityEnabled=530`, `ActiveLessonsWithoutActivityBlocks=30`, and zero unresolved C2 Modules 1-9 activity targets.
+- [x] complete controlled C2 Module 10 activity-flow backfill
+  - Progress: lessons 91-100 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification after import reported `C2Module10ActivityEnabled=10`, `C2ActivityEnabled=100`, `TotalActivityEnabled=540`, `ActiveLessonsWithoutActivityBlocks=20`, and zero unresolved C2 Modules 1-10 activity targets.
+- [x] complete controlled C2 Module 11 activity-flow backfill
+  - Progress: lessons 101-110 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification after import reported `C2ActivityEnabled=110`, `TotalActivityEnabled=550`, `ActiveLessonsWithoutActivityBlocks=10`, and zero unresolved C2 Modules 1-11 activity targets.
+- [x] complete controlled C2 Module 12 activity-flow backfill
+  - Progress: lessons 111-120 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification after import reports `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, and zero unresolved C2 activity targets. Public smoke passed for `/courses/c2-stil-souveraenitaet-und-komplexer-diskurs/c2-abschluss-und-meisterschaftspflege`; API detail with `primaryMeaningLanguageCode=fa` returns 5 activity blocks.
+- [ ] create `course-c2-activity-flow-complete-pre-user-testing` phase backup
+  - Progress: restore-ready staging backup created at `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing` with PostgreSQL dump, globals, database inventory, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `UserContentProgress=true`), repo overlay, separate secret bundle, Docker metadata, manifest, and SHA256 checksums. Final sync to `X:\Projects\DarwinLingua.Backup` is still pending because the mapped `X:` drive is disconnected/reconnecting.
 
 ### Phase 7.6: Exam Preparation
 
@@ -928,16 +1084,18 @@ The portal should track learner progress across content types without mixing use
 - [x] add Web list/detail pages
 - [x] add initial tests for template parsing, navigation, and localization
 - [x] document writing template content contract in `81-Writing-Template-Content-Package-Contract.md`
-- [ ] add broader template rendering, Web API, and linked-content coverage after first real writing-template package is available
+- [x] add broader template rendering, Web API, and linked-content coverage after first real writing-template package is available
+  - Progress: Writing Templates A1-C2 are generated and imported with `WritingTemplates=120`; local Web/API smoke covers list/detail, Persian helper projection, and Unified Search result type `writing-template`. The remaining template-specific backlog is an interactive variable-substitution editor flow, tracked in the Web Test Backlog.
 
-### Phase 7.8: Cultural Notes
+### Phase 7.8: Life in Germany
 
 - [x] implement cultural note model
 - [x] add Web list/detail pages
 - [x] link to dialogues, expressions, writing templates, Talk Topics, and course lessons
 - [x] add initial tests for cultural-note parsing, navigation, and localization
 - [x] document cultural note content contract in `82-Cultural-Note-Content-Package-Contract.md`
-- [ ] add broader filtering, Web API, Web rendering, and linked-content coverage after first real cultural-note package is available
+- [x] add broader filtering, Web API, Web rendering, and linked-content coverage after first real cultural-note package is available
+  - Progress: the public feature is now `Life in Germany` at `/life-in-germany`, with the internal `CulturalNote` aggregate retained. A1/A2 and B1 foundation packages are generated and imported with `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`). PostgreSQL repository coverage now verifies stable list/detail filtering, helper translation projection, and Unified Search URLs. The next expansion should start with B2 planning/content only after this Web readiness checkpoint is closed.
 
 ### Phase 7.9: Unified Learning Search
 
@@ -950,8 +1108,10 @@ The portal should track learner progress across content types without mixing use
 - [x] apply PostgreSQL trigram/filter indexes during shared database startup for existing search tables
 - [x] rate-limit the public search endpoint
 - [x] add initial tests for query validation, result projection, route hardening, and search-index migration coverage
-- [ ] add seeded repository, WebApi, Web rendering, and ranking coverage
-- [ ] add seeded performance coverage before bulk content generation starts
+- [x] add seeded repository, WebApi, Web rendering, and ranking coverage
+  - Progress: 2026-06-13 added PostgreSQL seeded Unified Search repository coverage for cross-type ranking/filter/URL projection across Life in Germany, Course Lessons, Grammar, and Writing Templates, plus structural WebApi/Web assertions for search query parameters, result filters, and learning-result cards.
+- [x] add seeded performance coverage before bulk content generation starts
+  - Progress: 2026-06-13 added a PostgreSQL seeded bulk-corpus performance guard for Unified Search. The test seeds 30 matching Course, Grammar, Writing Template, and Life in Germany records, verifies bounded cross-type result counts, positive relevance scores, and a conservative execution-time ceiling before larger bulk content runs.
 
 ### Phase 7.10: Progress And Personalization
 
@@ -965,9 +1125,12 @@ The portal should track learner progress across content types without mixing use
   - Progress: recommendation service suggests next incomplete course lessons and grammar topics without AI ranking.
 - [x] add tests for progress state transitions
   - Progress: domain/application tests cover state transitions, owner validation, summaries, and completed-content exclusion.
-- [ ] add WebApi endpoint tests for authenticated progress workflows
-- [ ] add Web rendering tests for progress indicators
-- [ ] add weak-exercise and difficult-word recommendation signals
+- [x] add WebApi endpoint tests for authenticated progress workflows
+  - Progress: 2026-06-13 added structural endpoint coverage for authenticated progress summary, content progress update, and recommendation routes, including `GetRequiredUserId` usage.
+- [x] add Web rendering tests for progress indicators
+  - Progress: 2026-06-13 added structural Web view coverage for course lesson progress chips and recent-activity progress summary indicators.
+- [x] add weak-exercise and difficult-word recommendation signals
+  - Progress: 2026-06-13 recommendations now prioritize weak exercises when the learner's latest saved attempt is incorrect, include difficult-word review signals from learner word state, keep deterministic Course/Grammar fallback recommendations, and surface recommendations on the Web Recent page.
 
 ### Phase 7.11: Admin And Operations
 
@@ -979,10 +1142,14 @@ The portal should track learner progress across content types without mixing use
   - Progress: system report summarizes unresolved linked words, unresolved cross-content references, missing translations, unpublished drafts, grammar topics without exercises, lessons without exercise sets, and RoleplayScenario quality counters for missing translations, unpublished drafts, missing required image assets, missing answer choices/static feedback, and invalid playable sequences.
 - [x] add seed coverage reports per CEFR/module
   - Progress: coverage tables include CEFR and course-module counts for implemented modules.
-- [ ] add import validation summaries per Phase 7 module package after import diagnostics are expanded
-- [ ] add full unresolved-link drill-down pages with filters and export
+- [x] add import validation summaries per Phase 7 module package after import diagnostics are expanded
+  - Progress: 2026-06-13 Admin Imports now groups the currently shown package import counters by module family, including package count, completed/warning/failed package counts, inserted/total entries, invalid entries, warning count, and last import timestamp.
+- [x] add full unresolved-link drill-down pages with filters and export
+  - Progress: 2026-06-13 Admin Reports now has a filtered, searchable Learning Portal issue-sample table with CSV export plus a dedicated full drill-down page at `/admin/reports/learning-portal-issues`. The drill-down uses the same Learning Portal issue pipeline with a larger bounded result set, server-side area/search filters, row-limit selection, total/filtered counts, and CSV export.
 
-### Phase 7.12: Mobile Parity
+### Phase 7.12: Deferred Mobile Parity
+
+Mobile/MAUI work is deferred until the Web product has been validated with tester feedback and the resulting Web improvements are complete. Do not treat the open mobile items below as active Web-readiness blockers.
 
 - [x] define mobile navigation update after Web sign-off
   - Progress: MAUI shell now aligns the primary learner navigation around Learn, Practice, Speak, Prepare, and Resources.
@@ -998,8 +1165,8 @@ The portal should track learner progress across content types without mixing use
   - Progress: mobile has dynamic list/detail surfaces backed by local Catalog query services for the implemented Learning Portal modules, plus unified learning search.
 - [ ] add mobile exercise runner where appropriate
 - [ ] add mobile progress sync where account support is ready
-- [ ] add mobile validation worksheets after Web implementation is stable
-  - Note: current work adds structural test coverage; target-device validation worksheets still need explicit Phase 7 checklist rows.
+- [x] add mobile validation worksheets after Web implementation is stable
+  - Progress: 2026-06-13 added `artifacts/validation/phase7-mobile-validation-worksheet.md` for target-device validation of first-run module selection, module-scoped package updates, offline behavior, local search/detail surfaces, and progress/account boundaries. Mobile exercise runner and account-bound progress sync remain separate deferred feature work.
 
 ---
 
@@ -1014,10 +1181,10 @@ Recommended build order:
 5. Course Lessons
 6. Exam Preparation
 7. Writing Templates
-8. Cultural Notes
+8. Life in Germany
 9. Unified Search
 10. Progress and personalization
-11. Mobile parity
+11. Deferred mobile parity
 12. Content generation for new modules
 
 Content generation for new modules should start only after the module contracts, validation rules, and Web rendering are stable.
@@ -1066,10 +1233,10 @@ After this roadmap is accepted, implementation prompts should be produced in thi
 5. Course Lessons implementation prompt
 6. Exam Prep implementation prompt
 7. Writing Templates implementation prompt
-8. Cultural Notes implementation prompt
+8. Life in Germany implementation prompt
 9. Unified Search implementation prompt
 10. Progress/personalization implementation prompt
-11. Mobile parity prompt
+11. Deferred mobile parity prompt
 12. Grammar content generation prompt
 13. Expressions content generation prompt
 14. Exercise content generation prompt
