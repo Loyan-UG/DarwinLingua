@@ -111,3 +111,43 @@
         }
     </article>
 </section>
+
+<section class="panel stack-lg">
+    <span class="eyebrow">@T["Privacy"]</span>
+    <h2 class="headline-sm">@T["Account data"]</h2>
+    <p class="body-sm">@T["You can export your account and learning data, correct your profile details, or delete your account from this workspace. Export your data before deletion if you need a copy."]</p>
+    <div class="grid-two-col">
+        <article class="account-action-card stack-md">
+            <h3 class="headline-xs">@T["Export data"]</h3>
+            <p class="body-sm">@T["Download a machine-readable JSON file with account, preference, progress, practice, billing-summary, and operational email-log data connected to your user id."]</p>
+            <a class="button button--primary" asp-controller="Account" asp-action="ExportData">@T["Download JSON export"]</a>
+        </article>
+        <article class="account-action-card stack-md">
+            <h3 class="headline-xs">@T["Correct data"]</h3>
+            <p class="body-sm">@T["Use the profile, language, email, and password settings above to correct account data directly. For data that is not editable here, contact support from the legal contact page."]</p>
+            <div class="action-row">
+                <a class="button button--secondary" asp-controller="Settings" asp-action="Index">@T["Language preferences"]</a>
+                <a class="button button--secondary" asp-controller="LearnerConversationProfiles" asp-action="Edit">@T["Profile details"]</a>
+                <a class="button button--secondary" asp-area="Identity" asp-page="/Account/Manage/Email">@T["Change email"]</a>
+                <a class="button button--secondary" asp-controller="Home" asp-action="Contact">@T["Contact support"]</a>
+            </div>
+        </article>
+    </div>
+    <article class="panel panel--danger stack-md">
+        <h3 class="headline-xs">@T["Delete account"]</h3>
+        <p class="body-sm">@T["Deleting your account removes or anonymizes learning progress, preferences, conversation profile data, partner requests, and identity access. Some billing, email-delivery, policy-acceptance, security, and backup records may be retained where legal or operational duties require it."]</p>
+        <form method="post" asp-controller="Account" asp-action="Delete" class="stack-md">
+            @Html.AntiForgeryToken()
+            <label class="form-field">
+                <span>@T["Current password"]</span>
+                <input type="password" name="currentPassword" autocomplete="current-password" />
+            </label>
+            <label class="form-field">
+                <span>@T["Type DELETE to confirm"]</span>
+                <input name="confirmationPhrase" autocomplete="off" inputmode="latin" maxlength="16" />
+            </label>
+            <p class="body-xs">@T["Confirmation phrase"]: <code>@Model.DeleteConfirmationPhrase</code></p>
+            <button type="submit" class="button button--danger">@T["Delete my account"]</button>
+        </form>
+    </article>
+</section>

@@ -281,7 +281,10 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
             normalizedCulture,
             ApplyValues(template.Subject, mergedValues, encodeHtml: false),
             ApplyValues(template.PlainTextBody, mergedValues, encodeHtml: false),
-            ApplyValues(template.HtmlBody, mergedValues, encodeHtml: true));
+            BuildHtmlDocument(
+                ApplyValues(template.Subject, mergedValues, encodeHtml: false),
+                ApplyValues(template.HtmlBody, mergedValues, encodeHtml: true),
+                options.Value));
     }
 
     private static string NormalizeCulture(string? culture)
@@ -316,6 +319,68 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
         }
 
         return rendered;
+    }
+
+    private static string BuildHtmlDocument(
+        string subject,
+        string htmlBody,
+        TransactionalEmailOptions emailOptions)
+    {
+        string safeSubject = WebUtility.HtmlEncode(subject);
+        string safeProductName = WebUtility.HtmlEncode(emailOptions.ProductName);
+        string safeSupportEmail = WebUtility.HtmlEncode(emailOptions.SupportEmail);
+
+        return $$"""
+            <!doctype html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <meta name="color-scheme" content="light dark">
+              <meta name="supported-color-schemes" content="light dark">
+              <title>{{safeSubject}}</title>
+              <style>
+                @media (prefers-color-scheme: dark) {
+                  body, .email-shell { background: #111827 !important; }
+                  .email-card { background: #1f2937 !important; border-color: #374151 !important; }
+                  .email-title, .email-content, .email-footer { color: #f9fafb !important; }
+                  .email-muted { color: #d1d5db !important; }
+                }
+              </style>
+            </head>
+            <body style="margin:0;padding:0;background:#f3f4f6;color:#111827;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;">
+              <div class="email-shell" style="width:100%;background:#f3f4f6;padding:32px 12px;">
+                <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">{{safeSubject}}</div>
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                  <tr>
+                    <td align="center">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:640px;">
+                        <tr>
+                          <td style="padding:0 0 16px 0;text-align:left;">
+                            <div style="font-size:13px;line-height:20px;color:#4b5563;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">{{safeProductName}}</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="email-card" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 14px 40px rgba(17,24,39,.08);">
+                            <h1 class="email-title" style="margin:0 0 20px 0;color:#111827;font-size:24px;line-height:32px;font-weight:800;">{{safeSubject}}</h1>
+                            <div class="email-content" style="color:#1f2937;font-size:16px;line-height:26px;">
+                              {{htmlBody}}
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="email-footer" style="padding:20px 4px 0 4px;color:#6b7280;font-size:13px;line-height:20px;">
+                            <p class="email-muted" style="margin:0;">This is a transactional service email from {{safeProductName}}. Need help? Contact {{safeSupportEmail}}.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </body>
+            </html>
+            """;
     }
 
     private sealed record EmailTemplateDefinition(string Subject, string PlainTextBody, string HtmlBody);

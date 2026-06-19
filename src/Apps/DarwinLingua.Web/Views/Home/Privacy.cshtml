@@ -21,6 +21,18 @@
     </article>
 
     <article class="panel stack-md">
+        <h2 class="headline-sm">@T["Your data controls"]</h2>
+        <ul class="feature-list">
+            <li>@T["Signed-in users can download an account-data export from the Account page. The export includes account, learning, entitlement, support, and safe operational email-delivery summaries."]</li>
+            <li>@T["Signed-in users can request correction by updating account settings and learner profile settings, or by contacting support for data that cannot be edited directly."]</li>
+            <li>@T["Signed-in users can delete their account from the Account page. Password accounts must confirm the current password and type DELETE before deletion."]</li>
+            <li>@T["Deletion removes account-linked learning state where possible and detaches or anonymizes operational audit records that may need to be retained for legal, accounting, security, or abuse-prevention reasons."]</li>
+            <li>@T["Backups are restored and expired under the operational backup policy; they are not edited record by record."]</li>
+        </ul>
+        <p class="body-sm"><a asp-controller="Account" asp-action="Index">@T["Open account data controls"]</a></p>
+    </article>
+
+    <article class="panel stack-md">
         <h2 class="headline-sm">@T["Transactional emails"]</h2>
         <ul class="feature-list">
             <li>@T["Darwin Lingua sends transactional emails for registration confirmation, password reset, email change, organizer claims, RSVP confirmations, partner-request outcomes, moderation alerts, and account security events."]</li>

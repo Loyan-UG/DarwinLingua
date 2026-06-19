@@ -128,6 +128,18 @@ Verification rules:
 
 The backup is considered complete only when a fresh checkout from GitHub plus the backup folder can restore the same database state, local config, and non-Git source artifacts for the phase checkpoint.
 
+Current helper scripts:
+
+- `tools/Web/New-WebReadinessPhaseBackup.ps1` creates a timestamped Web phase backup folder with PostgreSQL dump/restore-list where PostgreSQL client tools or the configured Docker container are available, repo overlay, local secret bundle, Docker inspect metadata, manifest, and SHA256 checksums.
+- `tools/Web/Invoke-WebReadinessRollback.ps1` is intentionally dry-run by default. It prints the selected backup, dump, and restore actions. It restores the repo overlay or database only when the operator passes `-ApplyRepoOverlay` and/or `-ApplyDatabaseRestore` together with `-ConfirmRollback`.
+
+Rollback owner:
+
+- During Web testing, the operator/release owner is the rollback owner.
+- Before any destructive rollback, create a fresh pre-rollback backup with `New-WebReadinessPhaseBackup.ps1`.
+- Stop Web/WebApi processes, restore only from a verified backup folder, then run local Web/WebApi smoke before re-opening the public tunnel.
+- Database rollback is a PostgreSQL restore operation and may overwrite current data. Do not run it without an explicit restore target and operator confirmation.
+
 Latest verified phase checkpoint:
 
 - `X:\Projects\DarwinLingua.Backup\20260609-125945-exam-prep-b2-foundation-complete`
@@ -148,6 +160,10 @@ Latest verified phase checkpoint:
 - `X:\Projects\DarwinLingua.Backup\20260614-214709-web-readiness-pre-user-testing`
 - Scope: Web readiness checkpoint before external tester onboarding, with `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`) at backup time.
 - Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
+- `X:\Projects\DarwinLingua.Backup\20260619-222010-web-readiness-account-legal-pwa-pre-user-testing`
+- Scope: Web readiness checkpoint after account self-service, legal/compliance research update, designed transactional email HTML, Brevo runbook, PWA console cleanup, and rollback helper scripts.
+- Verification: custom PostgreSQL dump and restore list exist, dry-run restore to temporary database reported `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30`, repo overlay patch and dirty-file snapshot are present, separate local config/secret bundle and Docker metadata are present, and SHA256 checksums were regenerated after dry-run evidence was written.
+- Note: `X:\Projects\DarwinLingua.Backup\20260619-221410-web-readiness-account-legal-pwa-pre-user-testing` is explicitly marked incomplete because the first backup run was stopped while mirroring the full repo overlay directly to `X:`.
 - `X:\Projects\DarwinLingua.Backup\20260616-190633-course-a1-activity-flow-complete-pre-a2-activity-flow`
 - Scope: Course A1 activity-flow checkpoint before A2 backfill, with `CourseLessons=560`, `A1ActivityEnabled=60`, `TotalActivityEnabled=60`, `PublishedLessonsWithoutActivityBlocks=500`, and zero unresolved activity targets at backup time.
 - Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.
@@ -209,6 +225,7 @@ Before production release:
 - re-run the cookie/storage inventory after script, telemetry, billing, PWA, authentication, or analytics changes
 - keep non-essential cookies/storage disabled until opt-in if they are introduced
 - define the data-subject request owner, identity confirmation process, response timeline, and export/deletion tooling status
+- verify `/account` export/delete remains available after any identity, billing, or learning-state schema changes
 - review breach triage responsibilities against GDPR Articles 33 and 34 expectations
 - review transactional email provider processing and DPA status before enabling production provider mode
 - review Stripe provider, subscription, cancellation/refund, and legal text before enabling billing

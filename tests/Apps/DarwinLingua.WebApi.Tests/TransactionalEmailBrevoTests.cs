@@ -254,10 +254,16 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("https://lingua.example/confirm?code=<unsafe>", english.PlainTextBody, StringComparison.Ordinal);
         Assert.Contains("Darwin &lt;Lingua&gt;", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("code=&lt;unsafe&gt;", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("<!doctype html>", english.HtmlBody, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("email-card", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("box-shadow", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("prefers-color-scheme: dark", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("transactional service email", english.HtmlBody, StringComparison.Ordinal);
 
         Assert.Equal("de", german.Culture);
         Assert.Contains("Bestatige deine Darwin Lingua E-Mail", german.Subject, StringComparison.Ordinal);
         Assert.Contains("Dieser Link lauft", german.PlainTextBody, StringComparison.Ordinal);
+        Assert.Contains("E-Mail bestatigen", german.HtmlBody, StringComparison.Ordinal);
 
         Assert.Equal("en", fallback.Culture);
         Assert.Equal(english.Subject, fallback.Subject);

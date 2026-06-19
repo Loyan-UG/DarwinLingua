@@ -9,4 +9,5 @@ public sealed record AccountPageViewModel(
     IReadOnlyList<string> Roles,
     UserLearningProfileModel Profile,
     UserEntitlementSnapshot Entitlement,
-    IReadOnlyList<UserEntitlementAuditEventModel> EntitlementAuditEvents);
+    IReadOnlyList<UserEntitlementAuditEventModel> EntitlementAuditEvents,
+    string DeleteConfirmationPhrase);

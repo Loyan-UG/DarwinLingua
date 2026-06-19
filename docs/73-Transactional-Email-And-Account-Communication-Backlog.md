@@ -58,12 +58,69 @@ The public product must not be released without at least:
 The web app now has a production-provider path for transactional email:
 
 - `TransactionalEmail:Mode=BrevoApi` sends through Brevo's transactional API.
+- Transactional email templates now render a designed HTML document with a branded card layout, inline email-safe styling, a plain-text alternative, and dark-mode readability hints.
 - Brevo sandbox mode sends the `X-Sib-Sandbox: drop` request header and payload header so staging tests can avoid real delivery.
 - Delivery logs store provider message ids and webhook events for diagnostics.
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
 - Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
 
 Operational work still required before production launch: configure a real Brevo API key and webhook secret outside source control, verify the sender domain, set SPF/DKIM/DMARC, configure the Brevo transactional webhook URL, and review the provider DPA.
+
+## Brevo Production Setup Runbook
+
+The application is ready to use Brevo, but the operator must complete the provider-side setup before real production sending.
+
+### Brevo dashboard tasks
+
+1. Create or select the production Brevo account owned by the Darwin Lingua operator.
+2. Add and verify the production sender identity, for example `no-reply@<production-domain>` with a human-readable sender name such as `Darwin Lingua`.
+3. Add the sending domain in Brevo domain authentication.
+4. Copy the exact SPF, DKIM, and DMARC-related DNS records Brevo gives you and publish them in the DNS zone for the sending domain. Do not guess these values; they are account/domain-specific.
+5. Wait until Brevo shows the domain and sender as verified.
+6. Create a transactional API key dedicated to Darwin Lingua. Store it only in the production secret store or the local secret bundle used for the target environment; never commit it.
+7. Create a strong random webhook secret for Darwin Lingua.
+8. Configure the Brevo transactional webhook URL:
+   - URL: `https://<public-domain>/webhooks/brevo/transactional-email`
+   - Method: `POST`
+   - Secret header: `X-DarwinLingua-Brevo-Webhook-Secret`
+   - Header value: the same value configured as `TransactionalEmail:BrevoWebhookSecret`
+9. Select transactional events needed for diagnostics and suppression handling: delivered/sent, soft bounce, hard bounce, blocked, invalid email, spam, complaint, and other provider failure events Brevo exposes for transactional email.
+10. Review and accept the required Brevo data-processing terms/DPA for EU/GDPR operation.
+
+### Darwin Lingua configuration
+
+Set these values outside source control for the target environment:
+
+```json
+{
+  "TransactionalEmail": {
+    "Mode": "BrevoApi",
+    "PublicBaseUrl": "https://lingua.vafadar.pro",
+    "ProductName": "Darwin Lingua",
+    "FromEmail": "no-reply@<verified-domain>",
+    "FromName": "Darwin Lingua",
+    "ReplyToEmail": "support@<verified-domain>",
+    "SupportEmail": "support@<verified-domain>",
+    "BrevoApiBaseUrl": "https://api.brevo.com",
+    "BrevoApiKey": "<secret-from-brevo>",
+    "BrevoWebhookSecret": "<strong-random-secret>",
+    "BrevoSandboxMode": false,
+    "BrevoAllowQuerySecretFallback": false
+  }
+}
+```
+
+During the current development phase, `lingua.vafadar.pro` is the temporary public base URL. When Web is mature and moved to the main domain, update `PublicBaseUrl`, sender/domain DNS, legal pages, and the Brevo webhook URL together.
+
+### Verification checklist
+
+- Send one email-confirmation message to a real inbox.
+- Send one password-reset message to a real inbox.
+- Confirm that both HTML and plain-text alternatives render correctly.
+- Confirm that action links use the configured `PublicBaseUrl`.
+- Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.
+- Confirm hard bounce/spam/complaint events create internal recipient suppression.
+- Confirm `BrevoSandboxMode=false` only after sender/domain verification is complete.
 
 ---
 

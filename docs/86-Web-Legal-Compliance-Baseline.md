@@ -20,12 +20,35 @@ Mobile compliance is deferred until the Web product, Web API, content model, reg
 Review these primary sources during production legal review:
 
 - GDPR Regulation (EU) 2016/679: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng
+- GDPR Article 12, transparent information and response timing: https://gdpr-info.eu/art-12-gdpr/
+- GDPR Article 15, access: https://gdpr-info.eu/art-15-gdpr/
+- GDPR Article 17, erasure: https://gdpr-info.eu/art-17-gdpr/
+- GDPR Article 20, portability: https://gdpr-info.eu/art-20-gdpr/
+- GDPR Article 83, administrative fines: https://gdpr-info.eu/art-83-gdpr/
 - TDDDG section 25, terminal-device storage/access: https://www.gesetze-im-internet.de/ttdsg/__25.html
 - DDG section 5, provider information / Impressum duties: https://www.gesetze-im-internet.de/ddg/__5.html
+- DDG section 33, fines: https://www.gesetze-im-internet.de/ddg/__33.html
+- BGB section 312k, cancellation button for consumer subscriptions: https://www.gesetze-im-internet.de/bgb/__312k.html
+- StGB section 86a, unconstitutional and terrorist-organization symbols: https://www.gesetze-im-internet.de/stgb/__86a.html
+- StGB section 184, pornographic content: https://www.gesetze-im-internet.de/stgb/__184.html
+- StGB section 184b, child-pornographic content: https://www.gesetze-im-internet.de/stgb/__184b.html
+- StGB section 184c, youth-pornographic content: https://www.gesetze-im-internet.de/stgb/__184c.html
 - KJM development-impairing content: https://www.kjm-online.de/themen/technischer-jugendmedienschutz/entwicklungsbeeintraechtigung/
 - KJM impermissible content and age-verification systems: https://www.kjm-online.de/themen/technischer-jugendmedienschutz/unzulaessige-inhalte/
 - KJM pornography supervision notes: https://www.kjm-online.de/themen/aufsicht-internet/pornografie/
 - Stripe legal terms and privacy/provider documentation: https://stripe.com/legal
+
+## Legal Research Snapshot 2026-06-19
+
+This snapshot is an engineering review of current official sources. It is not final legal advice and must be reviewed by the operator or qualified counsel before production launch.
+
+- DDG section 5 is the current German provider-information baseline for the public legal notice / Anbieterkennzeichnung. `/legal` and `/impressum` must not go production with placeholder operator data.
+- DDG section 33 defines fines for violations of DDG duties. The release checklist must treat missing or incorrect provider information as a production blocker.
+- TDDDG section 25 remains the terminal-device storage/access reference. The current cookie/storage position is: strictly necessary authentication and anti-forgery cookies, culture preference storage, session-scoped learner navigation storage, and first-party PWA cache; no marketing or analytics storage is active.
+- GDPR Articles 12, 15, 17, and 20 require transparent handling of access, deletion, and portability. Article 12 response timing is normally without undue delay and within one month, with possible extension for complex requests. The new self-service export/delete controls reduce support-only dependency but do not remove the need for an operator escalation process.
+- GDPR Article 83 defines administrative fines, including a higher tier for data-subject-rights failures. Broken export/delete/rectification handling is therefore not just a UX issue.
+- BGB section 312k becomes relevant when public paid consumer subscriptions are enabled online. Because public billing is disabled during Web testing and premium is manual, this is deferred but must be re-opened before self-service paid subscriptions are exposed.
+- StGB sections 86a, 184, 184b, and 184c and KJM youth-media guidance are the current content-risk reference points for illegal symbols/propaganda and pornographic or minor-related sexual content. Darwin Lingua must keep explicit adult/pornographic, exploitative, minor-related, extremist propaganda, hate-inciting, and harm-facilitating content blocked. The current "Sensitive Educational Language" feature is not age verification and must not be used as a bypass for verified-adult content.
 
 ## Required Public Pages
 
@@ -120,12 +143,20 @@ The Privacy and Contact pages must give a practical request path for:
 - portability
 - complaint to a supervisory authority
 
-Before production, the operator must define:
+Current implementation:
+
+- Signed-in users can export their account data from `/account/export-data`.
+- Signed-in users can delete their account from `/account` after password verification where applicable and exact `DELETE` confirmation.
+- `/account` links users to editable account and learner settings and to support/contact for rectification that cannot be completed self-service.
+- Export includes identity/account state, roles, web preferences, favorites, policy acceptances, entitlement/billing state, safe email-delivery summaries, learning profiles, progress, attempts, partner/community records, and retention notes.
+- Deletion removes account-linked learning state where possible, anonymizes conversation profiles and word suggestions tied to email, and detaches operational audit records that may need retention for legal, accounting, security, fraud-prevention, or abuse-prevention reasons.
+- Backups are not edited record by record; restoration and expiry follow the operational backup policy.
+
+Before production, the operator must still define:
 
 - request intake owner
 - identity confirmation process
 - response timelines
-- export/deletion tooling status
 - retention and backup-deletion boundaries
 - escalation path for difficult requests
 
@@ -145,6 +176,13 @@ Release rules:
 - admin reports may show aggregate counts but not private learner preferences
 
 The current product must not generate pornographic, arousing, graphic sexual, exploitative, coercive, minor-related, illegal, hate-inciting, Nazi-propaganda, or harm-facilitating content.
+
+Crime/fine review notes:
+
+- Do not add content that instructs users to commit fraud, evade legal obligations, bypass security systems, or misuse government/identity processes.
+- Do not add extremist propaganda, unconstitutional-symbol promotion, hate-inciting content, or content that normalizes violence against protected or vulnerable groups.
+- Do not add pornographic, arousing, explicit adult, exploitative, coercive, or minor-related sexual content. If adult-only educational content is ever reconsidered, it requires a separate verified-adult access system and legal review first.
+- Keep Life in Germany content educational and explanatory; it may help learners understand everyday civic, social, and administrative topics but must not present itself as official legal, immigration, or government advice.
 
 ## Admin And Operator Access
 
@@ -189,17 +227,21 @@ Before public release:
 - no non-essential storage runs before consent
 - transactional email provider/DPA reviewed
 - billing provider/legal text reviewed if billing is enabled
-- data-subject request process documented
+- self-service account export/delete verified
+- data-subject request escalation process documented
 - breach triage process documented
 - mobile compliance remains deferred until the mobile phase
 
 ## Current Evidence
 
-As of 2026-05-25:
+As of 2026-06-19:
 
 - `/terms`, `/privacy`, `/legal`, `/impressum`, `/cookies`, `/cookie-policy`, and `/contact` are implemented in Web.
 - Registration requires Terms acceptance and Privacy notice acknowledgement.
 - Versioned `WebPolicyAcceptances` records are created during registration.
+- `/account` exposes self-service account data export, rectification links, and account deletion.
 - Sensitive Educational Language is disabled by default and controlled from Settings.
 - Current checked-in Web assets do not use third-party analytics or marketing cookies.
+- Public billing remains disabled during Web testing; premium access can be granted manually by an operator.
+- The temporary development domain is `lingua.vafadar.pro`; final production domain migration is deferred until Web maturity and user-testing feedback.
 - Mobile/MAUI implementation remains unchanged and deferred.
