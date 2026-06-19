@@ -622,13 +622,17 @@ public sealed class ContentImportServiceApplicationTests
                     "introduction",
                     ["missing-topic"],
                     1,
-                    ["bad-dialogue"],
+                    ["bad dialogue"],
                     [],
                     [
                         new ParsedConversationStarterPhraseModel(
                             "Hallo.",
                             "opening phrase",
-                            [new ParsedContentMeaningModel("en", "Hello.")],
+                            [
+                                new ParsedContentMeaningModel("en", "Hello."),
+                                new ParsedContentMeaningModel("en", "Duplicate hello."),
+                                new ParsedContentMeaningModel("zz", "Unsupported language.")
+                            ],
                             null,
                             "neutral",
                             1,
@@ -658,6 +662,16 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
             issue.Message.Contains("missing-topic", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("linkedDialogueSlugs", StringComparison.Ordinal) &&
+            issue.Message.Contains("kebab-case", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("Duplicate meaning language 'en'", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("Meaning language 'zz' is not supported", StringComparison.Ordinal));
     }
 
     /// <summary>
@@ -718,6 +732,22 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue =>
             issue.Severity == "Error" &&
             issue.Message.Contains("linkedVocabulary", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("linkedConversationStarterPackSlugs", StringComparison.Ordinal) &&
+            issue.Message.Contains("kebab-case", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("openingPrompts", StringComparison.Ordinal) &&
+            issue.Message.Contains("cannot contain empty items", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("roleplayPrompts", StringComparison.Ordinal) &&
+            issue.Message.Contains("cannot contain empty items", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("reviewPrompts", StringComparison.Ordinal) &&
+            issue.Message.Contains("cannot contain empty items", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -2086,6 +2116,22 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     [Fact]
+    public async Task ImportAsync_ShouldRejectExerciseSet_WhenOwnerSlugIsMalformed()
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithExercises(
+            CreateValidExercise(),
+            CreateValidExerciseSet() with { OwnerSlug = "A1 Articles" });
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("exercises.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Exercise set ownerSlug must use lowercase kebab-case", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public async Task ImportAsync_ShouldImportCourse_WhenTranslatedContractIsValid()
     {
         ParsedContentPackageModel parsedPackage = CreatePackageWithCourse();
@@ -2253,6 +2299,65 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains(result.Issues, issue => issue.Message.Contains("learningGoalsTranslations", StringComparison.Ordinal));
     }
 
+    /// <summary>
+    /// Verifies that every supported Grammar rich block type is accepted by the application validation path.
+    /// </summary>
+    [Fact]
+    public async Task ImportAsync_ShouldAcceptEverySupportedGrammarRichBlockType()
+    {
+        string validBlocksJson =
+            """
+            [
+              { "type": "paragraph", "text": "Read the short rule first." },
+              { "type": "table", "caption": "Article forms", "columns": ["Form", "Use"], "rows": [["der", "masculine"], ["die", "feminine"]] },
+              { "type": "callout", "style": "tip", "text": "Learn the article together with the noun." },
+              { "type": "rule-list", "items": ["Use der with masculine nouns.", "Use die with feminine nouns."] },
+              { "type": "example-list", "items": ["der Kaffee", "die Tasche"] },
+              { "type": "mistake-pair", "wrong": "die Kaffee", "correct": "der Kaffee" },
+              { "type": "image-slot", "imageSlotKey": "article-cards" }
+            ]
+            """;
+        ParsedContentPackageModel parsedPackage = CreatePackageWithGrammarTopic(CreateGrammarTopicWithBlocks(validBlocksJson));
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("grammar-rich-blocks.json"), CancellationToken.None);
+
+        Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+        GrammarTopic importedTopic = Assert.Single(repository.ImportedGrammarTopics);
+        GrammarSection section = Assert.Single(importedTopic.Sections);
+        Assert.Contains("\"mistake-pair\"", section.LocalizedBlocksJson, StringComparison.Ordinal);
+        Assert.Contains("\"image-slot\"", section.LocalizedBlocksJson, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Verifies that each supported Grammar rich block type enforces its required shape.
+    /// </summary>
+    [Theory]
+    [InlineData("""[{ "type": "paragraph" }]""", ".text is required")]
+    [InlineData("""[{ "type": "table", "columns": ["Form"], "rows": [["der"]] }]""", ".caption is required")]
+    [InlineData("""[{ "type": "callout", "text": "Remember this." }]""", ".style is required")]
+    [InlineData("""[{ "type": "rule-list", "items": [] }]""", ".items must be a non-empty array")]
+    [InlineData("""[{ "type": "example-list" }]""", ".items must be a non-empty array")]
+    [InlineData("""[{ "type": "mistake-pair", "wrong": "die Kaffee" }]""", ".correct is required")]
+    [InlineData("""[{ "type": "image-slot" }]""", "requires assetKey or imageSlotKey")]
+    public async Task ImportAsync_ShouldRejectGrammarRichBlockTypes_WhenRequiredShapeIsMissing(
+        string invalidBlocksJson,
+        string expectedIssueText)
+    {
+        ParsedContentPackageModel parsedPackage = CreatePackageWithGrammarTopic(CreateGrammarTopicWithBlocks(invalidBlocksJson));
+        await using ServiceProvider serviceProvider = BuildServiceProvider(new StubFileReader("ignored"), new StubParser(_ => parsedPackage), new FakeRepository());
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(new ImportContentPackageRequest("grammar-rich-blocks-invalid.json"), CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Contains(result.Issues, issue => issue.Message.Contains(expectedIssueText, StringComparison.Ordinal));
+    }
+
     private static ServiceProvider BuildServiceProvider(
         IContentImportFileReader fileReader,
         IContentImportParser parser,
@@ -2280,6 +2385,60 @@ public sealed class ContentImportServiceApplicationTests
         {
             ExpressionEntries = [expression],
         };
+    }
+
+    private static ParsedContentPackageModel CreatePackageWithGrammarTopic(ParsedGrammarTopicModel topic)
+    {
+        return new ParsedContentPackageModel(
+            "1.0",
+            "grammar-rich-block-test-package",
+            "Grammar Rich Block Test Package",
+            "Manual",
+            ["en"],
+            [],
+            [])
+        {
+            GrammarTopics = [topic],
+        };
+    }
+
+    private static ParsedGrammarTopicModel CreateGrammarTopicWithBlocks(string localizedBlocksJson)
+    {
+        ParsedContentMeaningModel[] englishMeaning = [new("en", "English helper text.")];
+        ParsedGrammarSectionTranslationModel[] sectionTranslations = [new("en", "Rich block section", "Review the supported rich block shapes.")];
+
+        return new ParsedGrammarTopicModel(
+            "a1-rich-block-validation",
+            null,
+            "Rich Block Validation",
+            "A compact test topic for Grammar rich block validation.",
+            new Dictionary<string, string> { ["en"] = "Rich Block Validation" },
+            new Dictionary<string, string> { ["en"] = "A compact test topic for Grammar rich block validation." },
+            "A1",
+            "articles",
+            ["shopping"],
+            true,
+            10,
+            [
+                new ParsedGrammarSectionModel(
+                    "rich-block-section",
+                    "Rich block section",
+                    "Review the supported rich block shapes.",
+                    sectionTranslations,
+                    new Dictionary<string, string> { ["en"] = localizedBlocksJson },
+                    10),
+            ],
+            [new ParsedGrammarExampleModel("Der Kaffee ist heiss.", null, englishMeaning, 10)],
+            [new ParsedGrammarTextItemModel("Learn the article together with the noun.", englishMeaning, 10)],
+            [new ParsedGrammarCommonMistakeModel("die Kaffee", "der Kaffee", "Kaffee is masculine.", englishMeaning, 10)],
+            [],
+            [],
+            [],
+            [new ParsedGrammarLinkedWordModel("der Kaffee", "der-kaffee", 10)],
+            [],
+            [],
+            [],
+            null);
     }
 
     private static ParsedContentPackageModel CreatePackageWithExercises(
@@ -3088,6 +3247,8 @@ public sealed class ContentImportServiceApplicationTests
     {
         public IReadOnlyList<TalkTopic> ImportedTalkTopics { get; private set; } = [];
 
+        public IReadOnlyList<GrammarTopic> ImportedGrammarTopics { get; private set; } = [];
+
         public IReadOnlyList<WordCollection> ImportedCollections { get; private set; } = [];
 
         public IReadOnlyList<ExpressionEntry> ImportedExpressions { get; private set; } = [];
@@ -3178,6 +3339,7 @@ public sealed class ContentImportServiceApplicationTests
             CancellationToken cancellationToken)
         {
             ImportedTalkTopics = importedTalkTopics;
+            ImportedGrammarTopics = importedGrammarTopics;
             ImportedCollections = importedCollections;
             ImportedExpressions = importedExpressions;
             ImportedCulturalNotes = importedCulturalNotes;

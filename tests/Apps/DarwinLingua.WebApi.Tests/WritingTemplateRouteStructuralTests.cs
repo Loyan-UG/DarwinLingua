@@ -23,7 +23,11 @@ public sealed class WritingTemplateRouteStructuralTests
         string controllerSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Controllers", "WritingTemplatesController.cs"));
         string indexSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "WritingTemplates", "Index.cshtml"));
         string detailSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "WritingTemplates", "Detail.cshtml"));
+        string slugListSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "WritingTemplates", "_SlugList.cshtml"));
         string viewModelSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Models", "WritingTemplatePageViewModels.cs"));
+        string siteScript = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "wwwroot", "js", "site.js"));
+        string englishResources = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Resources", "Localization", "SharedResource.en.resx"));
+        string germanResources = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Resources", "Localization", "SharedResource.de.resx"));
 
         Assert.Contains("IWebLearningProfileAccessor", controllerSource, StringComparison.Ordinal);
         Assert.Contains("IWebEntitledFeatureAccessService", controllerSource, StringComparison.Ordinal);
@@ -48,6 +52,30 @@ public sealed class WritingTemplateRouteStructuralTests
         Assert.Contains("LearnerLanguageTemplateText", detailSource, StringComparison.Ordinal);
         Assert.Contains("LearnerLanguageExplanation", detailSource, StringComparison.Ordinal);
         Assert.Contains("LinkedCourseLessonSlugs", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LearningContentLinkResolver.ResolveHref", slugListSource, StringComparison.Ordinal);
+        Assert.Contains("\"grammar-topic\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"word\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"expression\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"exercise\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"course-lesson\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("<a href=\"@href\">@slug</a>", slugListSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("<code>@slug</code>", slugListSource, StringComparison.Ordinal);
+        Assert.Contains("data-writing-template-editor", detailSource, StringComparison.Ordinal);
+        Assert.Contains("data-template-text=\"@Model.Template.TemplateText\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("data-template-variable=\"@variable\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("data-writing-template-output", detailSource, StringComparison.Ordinal);
+        Assert.Contains("data-writing-template-reset", detailSource, StringComparison.Ordinal);
+        Assert.Contains("Try this template", detailSource, StringComparison.Ordinal);
+        Assert.Contains("Fill the variables below to preview your own version. Nothing is saved.", detailSource, StringComparison.Ordinal);
+
+        Assert.Contains("function configureWritingTemplateEditors", siteScript, StringComparison.Ordinal);
+        Assert.Contains("renderedText.split(placeholder).join(replacement || placeholder)", siteScript, StringComparison.Ordinal);
+        Assert.Contains("output.textContent = renderedText", siteScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("output.innerHTML", siteScript, StringComparison.Ordinal);
+        Assert.Contains("configureWritingTemplateEditors(document)", siteScript, StringComparison.Ordinal);
+
+        Assert.Contains("<value>Try this template</value>", englishResources, StringComparison.Ordinal);
+        Assert.Contains("<value>Diese Vorlage ausprobieren</value>", germanResources, StringComparison.Ordinal);
     }
 
     private static string ResolveRepositoryPath(params string[] segments)

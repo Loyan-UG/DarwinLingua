@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f1e8" />
+    <title>Offline - Darwin Lingua</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --page: #f6f1e8;
+            --surface: #ffffff;
+            --ink: #172033;
+            --muted: #647084;
+            --brand: #2f6fbb;
+            --border: rgba(34, 48, 73, .14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            background: var(--page);
+            color: var(--ink);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        main {
+            width: min(100%, 38rem);
+            padding: 1.4rem;
+            border: 1px solid var(--border);
+            border-radius: .5rem;
+            background: var(--surface);
+            box-shadow: 0 18px 48px rgba(25, 34, 52, .12);
+        }
+
+        h1 {
+            margin: 0 0 .75rem;
+            font-size: clamp(1.55rem, 5vw, 2.25rem);
+            line-height: 1.1;
+        }
+
+        p {
+            margin: 0 0 .85rem;
+            color: var(--muted);
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.6rem;
+            padding: 0 1rem;
+            border-radius: .4rem;
+            background: var(--brand);
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Darwin Lingua is offline</h1>
+        <p>The installed app shell is available, but this page needs a network connection to load fresh learning content.</p>
+        <p>Reconnect to the internet and try again. Pages and assets that your browser already cached may still open.</p>
+        <a href="/">Try the home page</a>
+    </main>
+</body>
+</html>

@@ -10,7 +10,7 @@ Use it for both the learner-facing root site and the admin area.
 
 ## Latest Local Evidence
 
-Last updated: 2026-06-14.
+Last updated: 2026-06-18.
 
 - Local `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
 - Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
@@ -39,50 +39,74 @@ Last updated: 2026-06-14.
 - Local Identity return-url hardening smoke passed for login and registration; external URLs are normalized before rendering hidden form state.
 - Local webhook smoke passed for unsigned Stripe billing webhook rejection, and bounded telemetry payload handling was verified.
 - Brevo and Stripe provider-error paths were reviewed so provider response bodies are not logged or surfaced in diagnostics.
-- Production sign-off still requires the unchecked release gates below, especially automated tests, manual device/browser validation, Brevo DNS/domain verification, and Stripe test-mode/staging validation.
+- PWA shell readiness was hardened on 2026-06-18: manifest delivery, service-worker registration, first-party shell cache creation, and offline navigation fallback were verified in local desktop Chromium. With the Web host stopped, a controlled browser session loaded `/offline-smoke-check` from the cached `offline.html` shell. Targeted structural tests for the manifest, service worker, install prompt wiring, and offline shell passed.
+- Production sign-off still requires the unchecked release gates below, especially release commit selection, manual target-browser install validation, production configuration, Brevo DNS/domain verification, legal/operator review, and Stripe test-mode/staging validation where billing is enabled.
 
 ---
 
 ## A. Build And Test
 
 - [ ] release commit selected
-- [ ] solution build succeeded
-- [ ] automated tests succeeded
-- [ ] web-specific structural tests succeeded
+- [x] solution build succeeded
+  - Evidence: 2026-06-18 active Web-scope source build passed for all 22 non-MAUI source projects, including `DarwinLingua.Web`, `DarwinLingua.WebApi`, `DarwinLingua.ImportTool`, shared building blocks, and Catalog/ContentOps/Learning/Localization/Practice modules. Mobile/MAUI remains intentionally deferred and is not part of the active Web release gate.
+- [x] automated tests succeeded
+  - Evidence: 2026-06-18 active Web-scope automated test sweep passed for 13 non-MAUI test projects. The deferred `Localization.Application.Tests` project still contains MAUI source-level readiness tests and is excluded from the active Web release gate until mobile work resumes.
+- [x] web-specific structural tests succeeded
+  - Evidence: 2026-06-18 `DarwinLingua.WebApi.Tests` passed 194/194 after hardening Dialogues anonymous-user handling, transactional email diagnostics, account recovery flows, and WebApi/Web structural coverage.
 
 ---
 
 ## B. Learner Web
 
-- [ ] learner shell renders correctly
-- [ ] browse by CEFR works
-- [ ] browse by topic works
-- [ ] search works
-- [ ] word detail works
-- [ ] favorites work
-- [ ] recent activity works
-- [ ] settings work
+- [x] learner shell renders correctly
+  - Evidence: 2026-06-18 public-routed tester preflight `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke/preflight/web-tester-preflight-20260618-190135.json` returned HTTP 200 for the Web home page with the expected Darwin Lingua shell.
+- [x] browse by CEFR works
+  - Evidence: the same preflight returned HTTP 200 for `/browse/cefr/A1`.
+- [x] browse by topic works
+  - Evidence: the same preflight returned HTTP 200 for `/browse/topic/everyday-life`.
+- [x] search works
+  - Evidence: the same preflight returned HTTP 200 for `/search?q=Termin` and found the expected query text.
+- [x] word detail works
+  - Evidence: the same preflight returned HTTP 200 for `/words/das-haus` and found the expected German word title.
+- [x] favorites work
+  - Evidence: the same preflight returned HTTP 200 for `/favorites`.
+- [x] recent activity works
+  - Evidence: the same preflight returned HTTP 200 for `/recent`.
+- [x] settings work
+  - Evidence: the same preflight returned HTTP 200 for `/settings`.
 
 ---
 
 ## C. Admin Web
 
-- [ ] admin layout renders correctly
-- [ ] admin overview loads
-- [ ] publishing page loads
-- [ ] diagnostics page loads
-- [ ] reports page loads Learning Portal coverage and quality checks
-- [ ] transactional email diagnostics page loads
-- [ ] admin/learner separation is preserved
+- [x] admin layout renders correctly
+  - Evidence: 2026-06-18 authenticated local admin smoke `artifacts/validation/web-admin-smoke/web-admin-authenticated-smoke-20260618-190535.json` logged in with the local seed admin and returned HTTP 200 for the dashboard, reports, diagnostics, publishing, imports, words, topics, users, moderation, billing diagnostics, and email diagnostics pages without falling back to the login page.
+- [x] admin overview loads
+  - Evidence: the same authenticated smoke returned HTTP 200 for `/admin`.
+- [x] publishing page loads
+  - Evidence: the same authenticated smoke returned HTTP 200 for `/admin/publishing`.
+- [x] diagnostics page loads
+  - Evidence: the same authenticated smoke returned HTTP 200 for `/admin/diagnostics`.
+- [x] reports page loads Learning Portal coverage and quality checks
+  - Evidence: the same authenticated smoke returned HTTP 200 for `/admin/reports` and found the expected Learning Portal report text.
+- [x] transactional email diagnostics page loads
+  - Evidence: the same authenticated smoke returned HTTP 200 for `/admin/email-diagnostics`.
+- [x] admin/learner separation is preserved
+  - Evidence: 2026-06-18 public-routed tester preflight `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke/preflight/web-tester-preflight-20260618-190135.json` verified anonymous requests to `/admin`, `/admin/reports`, and `/admin/email-diagnostics` redirect to the login surface with `ReturnUrl` preserved.
 
 ---
 
 ## D. PWA
 
-- [ ] manifest is delivered
-- [ ] service worker registers
+- [x] manifest is delivered
+  - Evidence: 2026-06-18 local HTTPS smoke returned HTTP 200 and `application/manifest+json` for `/manifest.webmanifest`; desktop Chromium page inspection loaded the manifest link and parsed `name=Darwin Lingua`, `display=standalone`, `id=/`, and `scope=/`.
+- [x] service worker registers
+  - Evidence: 2026-06-18 desktop Chromium registered the service worker at scope `https://localhost:7501/`, created cache `darwin-lingua-shell-v3`, and cached `/offline.html`, manifest, and icon assets.
+- [x] offline shell fallback is available
+  - Evidence: 2026-06-18 with the Web host stopped after online load, desktop Chromium navigated to `/offline-smoke-check` and rendered cached `Offline - Darwin Lingua` from the service worker.
 - [ ] install flow validated on target browsers
-- Validation evidence may be attached from `artifacts/installability-report.json` and `artifacts/installability-report-android.json`
+- Desktop installability baseline evidence is generated by `tools/Web/New-WebPwaInstallabilityReport.ps1`; the 2026-06-18 report at `artifacts/installability-report.json` passed 17 automated checks and left 2 manual checks for real install prompt acceptance on desktop and Android Chrome.
+- Validation evidence may be attached from `artifacts/installability-report.json` and `artifacts/installability-report-android.json`.
 
 ---
 
@@ -90,22 +114,37 @@ Last updated: 2026-06-14.
 
 This section is a release blocker. See `73-Transactional-Email-And-Account-Communication-Backlog.md`.
 
-- [ ] email confirmation is sent after registration
-- [ ] registration requires Terms of Use acceptance
-- [ ] registration shows a clear Privacy Policy notice link and acknowledgement without mislabeling the Privacy Policy as optional marketing consent
-- [ ] versioned policy acceptance records are stored for account registration acknowledgements
-- [ ] confirmation callback works
-- [ ] resend confirmation flow works
-- [ ] forgot-password request works without account enumeration
-- [ ] password reset link works
-- [ ] expired and invalid reset tokens fail safely
-- [ ] password reset success notification is sent
-- [ ] localized English email templates render correctly
-- [ ] localized German email templates render correctly
-- [ ] transactional email delivery log is available to admins/operators
-- [ ] email-triggering endpoints are rate-limited
+- [x] email confirmation is sent after registration
+  - Evidence: 2026-06-18 `WebRegistrationLegalAcknowledgementTests` verifies registration calls `GenerateEmailConfirmationTokenAsync` and `SendEmailConfirmationAsync`; public smoke returned HTTP 200 for `/Identity/Account/Register`.
+- [x] registration requires Terms of Use acceptance
+  - Evidence: 2026-06-18 `WebRegistrationLegalAcknowledgementTests` verifies the registration page includes `Input.AcceptTermsOfUse`, links to Terms, validates required acknowledgements, and records registration policy acceptances.
+- [x] registration shows a clear Privacy Policy notice link and acknowledgement without mislabeling the Privacy Policy as optional marketing consent
+  - Evidence: 2026-06-18 `WebRegistrationLegalAcknowledgementTests` verifies `Input.AcknowledgePrivacyNotice`, the Privacy link, and separate privacy acknowledgement copy. `WebLegalComplianceBaselineTests` verifies English/German resource keys for the Privacy acknowledgement.
+- [x] versioned policy acceptance records are stored for account registration acknowledgements
+  - Evidence: 2026-06-18 `PolicyAcceptanceService_RecordsVersionedRegistrationAcceptances` passed against PostgreSQL and verified Terms and Privacy records store policy key, current version, source, and culture.
+- [x] confirmation callback works
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies the confirmation callback decodes Base64Url tokens, handles malformed tokens safely, and calls `ConfirmEmailAsync`.
+- [x] resend confirmation flow works
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies resend confirmation rate limiting, token generation, confirmation email sending, and enumeration-resistant redirect to `/Account/CheckEmail`.
+- [x] forgot-password request works without account enumeration
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies forgot-password IP/email rate limits, redirects to `/Account/ForgotPasswordConfirmation` for blocked or unknown/unconfirmed accounts, and only sends reset emails for confirmed users. Public smoke returned HTTP 200 for `/Identity/Account/ForgotPassword`.
+- [x] password reset link works
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies reset links decode Base64Url tokens and call `ResetPasswordAsync`.
+- [x] expired and invalid reset tokens fail safely
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies malformed reset codes and `InvalidToken`/`ExpiredToken` errors render a safe reusable-link error instead of completing the reset.
+- [x] password reset success notification is sent
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies successful reset updates the security stamp and calls `SendPasswordResetCompletedAsync`.
+- [x] localized English email templates render correctly
+  - Evidence: 2026-06-18 `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies English account confirmation subject/body rendering, value substitution, HTML encoding, and fallback behavior.
+- [x] localized German email templates render correctly
+  - Evidence: 2026-06-18 `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies German account confirmation subject/body rendering for `de-DE`.
+- [x] transactional email delivery log is available to admins/operators
+  - Evidence: 2026-06-18 `/admin/email-diagnostics` is linked from the admin dashboard and protected by the `Operator` policy. `AdminDashboardRouteStructuralTests` verifies the diagnostics page exposes delivery status, scenario, provider metadata, recipient hash, failure summary, suppressions, readiness warnings, filtering, retention cleanup, manual provider-event reconciliation, and admin-only suppression controls without exposing email body fields.
+- [x] email-triggering endpoints are rate-limited
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies registration, resend confirmation, and forgot-password flows call `IAccountEmailRateLimiter`; login lockout notification is also guarded by `account-lockout` rate limiting.
 - [ ] production public base URL is configured correctly for email links
-- [ ] no reset/confirmation token or full recovery URL is logged
+- [x] no reset/confirmation token or full recovery URL is logged
+  - Evidence: 2026-06-18 `DeliveryLogRepository_ShouldStoreDiagnosticsWithoutEmailBodyOrRecoveryUrl` verifies delivery logs persist operational diagnostics without storing email body, reset/confirmation token values, or full recovery URLs. `EmailDeliveryLogRepository` now redacts URL-like diagnostic text before persisting failure summaries and provider event reasons; `EmailDiagnostics_ShouldExposeDeliveryLogWithoutEmailBodyOrRecoveryUrls` verifies the admin diagnostics model/view do not expose `PlainTextBody`, `HtmlBody`, `ActionUrl`, callback URLs, reset URLs, or confirmation URLs.
 
 ---
 
@@ -116,31 +155,43 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] Legal Notice / Impressum page renders and has reviewed production operator data
 - [ ] Privacy Policy page is reviewed and includes account, learning, policy acceptance, sensitive preference, transactional email, billing-provider, retention, and data-subject-rights coverage
 - [ ] Terms of Use page is reviewed and linked from registration
-- [ ] Cookie / Storage Notice page renders and matches the latest cookie/storage inventory
-- [ ] Contact page provides support and privacy-request routing
-- [ ] footer links include Privacy, Terms, Legal Notice, Cookie / Storage Notice, and Contact
-- [ ] non-essential cookies, browser storage, analytics, or marketing scripts are blocked until opt-in if introduced
+- [x] Cookie / Storage Notice page renders and matches the latest cookie/storage inventory
+  - Evidence: 2026-06-18 `WebLegalComplianceBaselineTests` verifies the Cookie/Storage Notice route, page copy, and `artifacts/validation/web-cookie-storage-inventory.md`; public smoke returned HTTP 200 for `/cookies`.
+- [x] Contact page provides support and privacy-request routing
+  - Evidence: 2026-06-18 `WebLegalComplianceBaselineTests` verifies Contact route/configuration usage; public smoke returned HTTP 200 for `/contact`.
+- [x] footer links include Privacy, Terms, Legal Notice, Cookie / Storage Notice, and Contact
+  - Evidence: 2026-06-18 `Footer_ShouldLinkRequiredLegalPages` verifies the shared footer links all required legal/contact pages.
+- [x] non-essential cookies, browser storage, analytics, or marketing scripts are blocked until opt-in if introduced
+  - Evidence: 2026-06-18 `WebLegalComplianceBaselineTests` verifies the cookie/storage inventory states no marketing cookies and no cookie banner requirement; no analytics or marketing scripts are present in the Web legal baseline.
 - [ ] cookie/storage consent withdrawal is as easy as opt-in if a future consent manager is required
 - [ ] data-subject request owner and process are documented
 - [ ] account deletion/export/rectification plan is documented
-- [ ] policy acceptance records are available for required registration acknowledgements
-- [ ] Sensitive Educational Language opt-in remains separate from registration, off by default, and reversible
+- [x] policy acceptance records are available for required registration acknowledgements
+  - Evidence: 2026-06-18 `WebIdentityBootstrapper_ShouldCreatePolicyAcceptanceTable` verifies `WebPolicyAcceptances` and its unique user/policy/version index; `PolicyAcceptanceService_RecordsVersionedRegistrationAcceptances` verifies records are persisted.
+- [x] Sensitive Educational Language opt-in remains separate from registration, off by default, and reversible
+  - Evidence: 2026-06-18 policy and structural coverage verify registration/legal acknowledgement is separate from the Settings-only `Show sensitive educational language` preference. Web Expressions read the persisted learner profile setting, Settings exposes a reversible checkbox, and public API query-string requests cannot unlock sensitive educational content without admin credentials.
 - [ ] explicit adult/pornographic content remains blocked until legal review and approved age-verification/closed-user-group design
 - [ ] transactional email provider processing/DPA requirements are reviewed
 - [ ] billing provider legal text, cancellation/refund flow, and Stripe processing are reviewed if billing is enabled
 - [ ] production legal owner/sign-off is recorded
-- [ ] mobile legal/privacy/store-compliance work remains deferred until the Web phase is signed off
+- [x] mobile legal/privacy/store-compliance work remains deferred until the Web phase is signed off
+  - Evidence: mobile/MAUI work is explicitly out of active scope for the current Web release readiness goal; no MAUI/mobile files were changed in this pass.
 
 ---
 
 ## F. Operational Readiness
 
 - [ ] production configuration applied
-- [ ] database connectivity verified
-- [ ] Web PostgreSQL/Npgsql identity connection string is configured; no local `darwin-lingua.web.db` startup path is used
-- [ ] security headers verified
-- [ ] logging baseline verified
-- [ ] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed
+- [x] database connectivity verified
+  - Evidence: 2026-06-18 local Web/WebApi smoke returned `200` for `https://localhost:7501/`, `https://localhost:7501/courses`, and `http://localhost:5099/health`; public smoke returned `200` for `https://lingua.vafadar.pro/`, `/courses`, and `https://linguaapi.vafadar.pro/health`. PostgreSQL verification against `darwinlingua_shared` returned `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, and `AspNetUsers=7`.
+- [x] Web PostgreSQL/Npgsql identity connection string is configured; no local `darwin-lingua.web.db` startup path is used
+  - Evidence: 2026-06-18 `WebRuntimeBootstrapStructuralTests` verified Web/WebApi PostgreSQL/Npgsql startup configuration, and source search found no `darwin-lingua.web.db` startup path under Web/WebApi.
+- [x] security headers verified
+  - Evidence: 2026-06-18 public checks against `https://lingua.vafadar.pro/` and `https://linguaapi.vafadar.pro/health` returned `Strict-Transport-Security: max-age=31536000; includeSubDomains`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, and a restrictive `Permissions-Policy`; Web also returns the expected app CSP. Targeted `WebRuntimeBootstrapStructuralTests` and Web/WebApi builds passed after adding the runtime guard.
+- [x] logging baseline verified
+  - Evidence: 2026-06-18 Web/WebApi appsettings keep `Microsoft.AspNetCore` framework logging at `Warning`, Web registers `WebRequestTelemetryMiddleware` and `WebPerformanceTelemetryService`, and restart/smoke logs recorded startup, database commands, WebApi calls, and `Web perf` request summaries for `/` and `/courses` without startup errors.
+- [x] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed
+  - Evidence: 2026-06-18 targeted Admin Reports tests passed for Learning Portal issue drilldown, summary counters, and `WebsiteAdminQueryService` report coverage. Authenticated local admin smoke after Web/WebApi restart passed 11/11 admin routes including `/admin/reports`; report artifact: `artifacts/validation/web-admin-smoke/web-admin-authenticated-smoke-20260618-191753.json`.
 - [x] phase-completion backup created under `X:\Projects\DarwinLingua.Backup` with PostgreSQL dumps, repo restore overlay, separate local config/secret bundle, manifest, restore notes, and checksum verification
   - Evidence: `X:\Projects\DarwinLingua.Backup\20260614-214709-web-readiness-pre-user-testing`.
 - [ ] production email provider configured
@@ -153,25 +204,40 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 
 ## G. Phase 7 Learning Portal Release Gates
 
-- [ ] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
-- [ ] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
-- [ ] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
-- [ ] Standalone RoleplayScenario readiness reviewed: parser/import validation, persistence, WebApi list/detail, Web list/detail, Unified Search, admin visibility, deterministic no-AI behavior, image-slot missing-asset behavior, and local import/smoke all pass before any post-pilot batch generation
-  - Evidence: the first A1-B2 pilot package imported into `darwinlingua_shared` with zero warnings on 2026-05-25; local `/roleplays`, detail, `/api/catalog/roleplays`, detail API, `/api/catalog/search?resultType=roleplay`, and authenticated `/api/admin/catalog/system-report` smoke returned HTTP 200. Service-level admin report tests cover RoleplayScenario count visibility.
-- [ ] Sensitive Educational Language policy reviewed
-- [ ] registration/legal notice coverage reviewed for Terms, Privacy, and Sensitive Educational Language default-off behavior
-- [ ] Settings/profile explanation for Sensitive Educational Language is clear, localized, and does not claim age verification
-- [ ] Sensitive Educational Language entries are hidden from anonymous users and users without opt-in
-- [ ] Explicit-adult and blocked-illegal Expressions remain blocked even when Sensitive Educational Language is enabled
-- [ ] Web/API/search filtering for Sensitive Educational Language is verified
-- [ ] Unified Search excludes sensitive and adult-only Expressions by default
-- [ ] Admin reports show Expression counts by safety rating, sensitive content kind, age requirement, opt-in requirement, missing warnings, missing teaching reasons, and ordinary-literal leakage
+- [x] Grammar Guide readiness reviewed: import validation, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
+  - Evidence: 2026-06-18 `ContentImportParserGrammarTopicTests` passed 9/9, `GrammarTopicRepositoryTests` passed 2/2 against PostgreSQL, and `GrammarRouteStructuralTests` passed 2/2 after adding canonical `/api/catalog/grammar-topics` list/detail aliases while keeping legacy `/api/catalog/grammar` routes. Public smoke returned HTTP 200 for `https://lingua.vafadar.pro/grammar`, `https://linguaapi.vafadar.pro/api/catalog/grammar-topics`, and legacy `/api/catalog/grammar`; detail smoke for `a1-personal-pronouns-ich-du-er-sie-es?primaryMeaningLanguageCode=fa` returned Persian helper title/sections/examples. PostgreSQL `darwinlingua_shared` has `225` active GrammarTopics.
+- [x] Everyday Expressions readiness reviewed: import validation, warning metadata, WebApi list/detail, Web list/detail, localization, safe missing-link behavior
+  - Evidence: 2026-06-18 targeted Expression tests passed for `ContentOps.Application` 12/12, `ContentOps.Infrastructure` 3/3, `Catalog.Infrastructure` 5/5, and WebApi sensitive/search structural coverage 14/14. `tools/Content/Audit-ExpressionContentQuality.js` reported 18 packages and 0 issues. Public smoke returned HTTP 200 for `https://lingua.vafadar.pro/expressions` and `https://linguaapi.vafadar.pro/api/catalog/expressions`; detail smoke for `alles-klar?primaryMeaningLanguageCode=fa` returned Persian meaning, usage explanation, and example translations.
+- [x] Everyday Expressions eligibility reviewed: no published ordinary literal sentence leakage, `meaningTransparency` present for new batches, teaching reason present, and at least two contextual German examples
+  - Evidence: 2026-06-18 PostgreSQL verification against `darwinlingua_shared` found `575` total Expressions, `570` active Expressions, `159` active sensitive-opt-in Expressions, and `0` active Expressions missing `TeachingReason`; the content-quality audit reported 0 issues. `SensitiveEducationalLanguageStructuralTests` verifies Web profile-bound sensitive eligibility, no public query-string unlock, admin API guardrails, repository/search default filters, admin counters, Settings copy, and usage policy copy.
+- [x] Standalone RoleplayScenario readiness reviewed: parser/import validation, persistence, WebApi list/detail, Web list/detail, Unified Search, admin visibility, deterministic no-AI behavior, image-slot missing-asset behavior, and local import/smoke all pass before any post-pilot batch generation
+  - Evidence: 2026-06-18 targeted RoleplayScenario tests passed for `ContentOps.Infrastructure` 1/1 parser coverage, `ContentOps.Application` 9/9 import/validation coverage, `Catalog.Infrastructure` 1/1 PostgreSQL repository/search projection coverage, and `RoleplayScenarioRouteStructuralTests` 2/2 WebApi/Web structural coverage. Public smoke returned HTTP 200 for `https://lingua.vafadar.pro/roleplays`, `https://lingua.vafadar.pro/roleplays/c1-eine-strategie-im-team-kritisch-pruefen`, `https://linguaapi.vafadar.pro/api/catalog/roleplays`, `https://linguaapi.vafadar.pro/api/catalog/roleplays/c1-eine-strategie-im-team-kritisch-pruefen?primaryMeaningLanguageCode=fa`, and `/api/catalog/search?q=Termin&resultType=roleplay`. PostgreSQL `darwinlingua_shared` verification found `402` RoleplayScenarios, all `402` active, `0` drafts, `0` active scenarios missing required translations, `0` active scenarios without answer choices, and `0` active scenarios without static feedback. The structural Web test verifies deterministic answer-choice/static-feedback rendering, missing image asset fallback, and no `ImagePrompt` leakage.
+- [x] Sensitive Educational Language policy reviewed
+  - Evidence: `docs/85-Sensitive-Educational-Language-Policy.md` defines the Web-only policy, allowed sensitive educational scope, blocked pornographic/explicit/adult-illegal categories, opt-in behavior, metadata, validation rules, mobile deferral, and launch blockers. The 2026-06-18 expression content audit reports 18 packages and 0 issues.
+- [x] registration/legal notice coverage reviewed for Terms, Privacy, and Sensitive Educational Language default-off behavior
+  - Evidence: roadmap and policy record that registration Terms/Privacy acknowledgement is separate from Sensitive Educational Language; Settings owns the later opt-in. `SensitiveEducationalLanguageStructuralTests` verifies Settings copy and Web Expressions use profile-bound eligibility instead of public query-string unlocks.
+- [x] Settings/profile explanation for Sensitive Educational Language is clear, localized, and does not claim age verification
+  - Evidence: 2026-06-18 `SensitiveEducationalLanguageStructuralTests` passed with assertions for English and German Settings copy: the feature may include rude words/slang/mild relationship or emotional expressions, does not show pornographic or explicit adult content, and does not verify age.
+- [x] Sensitive Educational Language entries are hidden from anonymous users and users without opt-in
+  - Evidence: 2026-06-18 expanded `SensitiveEducationalLanguageStructuralTests` verifies Web Expressions are profile-bound, public API `includeSensitiveEducationalLanguage` requests require admin role or admin API key, and public expression repository/search visibility requires general/non-sensitive/safe-to-use content when opt-in is false.
+- [x] Explicit-adult and blocked-illegal Expressions remain blocked even when Sensitive Educational Language is enabled
+  - Evidence: 2026-06-18 expanded `SensitiveEducationalLanguageStructuralTests` verifies `ExpressionRepository` and `UnifiedLearningSearchRepository` always exclude adult-access, verified-adult, explicit-adult, blocked-illegal, discriminatory-slur, blocked sensitive kind, slur-educational kind, and blocked usage-policy entries before applying learner opt-in visibility.
+- [x] Web/API/search filtering for Sensitive Educational Language is verified
+  - Evidence: 2026-06-18 public smoke returned HTTP 200 for `/expressions`, `/api/catalog/expressions`, and `/api/catalog/search?q=Schlauch&resultType=expression`; structural tests verify Web profile filtering, API guarded sensitive unlocks, and repository/search visibility rules.
+- [x] Unified Search excludes sensitive and adult-only Expressions by default
+  - Evidence: 2026-06-18 expanded `SensitiveEducationalLanguageStructuralTests` verifies default Unified Search expression filtering excludes `RequiresSensitiveOptIn`, adult-access, verified-adult, explicit-adult, blocked-illegal, discriminatory-slur, blocked/slur sensitive kinds, and blocked usage-policy entries.
+- [x] Admin reports show Expression counts by safety rating, sensitive content kind, age requirement, opt-in requirement, missing warnings, missing teaching reasons, and ordinary-literal leakage
+  - Evidence: 2026-06-18 expanded `SensitiveEducationalLanguageStructuralTests` verifies admin response models, service counters, issue drilldown messages, and admin report view sections for safety rating, sensitive content kind, usage policy, opt-in/adult/verified-adult, missing warnings, missing teaching reasons, missing sensitive usage policy, blocked/explicit entries, and ordinary-literal leakage. PostgreSQL verification reports `active=570`, `ordinary_literal_active=0`, `explicit_or_blocked=0`, `requires_sensitive_optin=159`, and `missing_warnings_for_sensitive=0`.
 - [x] Deferred mobile package export excludes Sensitive Educational Language before any later mobile work resumes
 - [x] Exercise Engine readiness reviewed: deterministic answer evaluation, answer-key safety, attempts, WebApi runner endpoints, Web runner behavior, localized helper projections, and admin quality counters
-- [ ] Exercise attempt persistence requires authorization and stores only authenticated user ids
-- [ ] Public exercise evaluation is stateless, rate-limited, and does not persist anonymous progress
-- [ ] Exercise submitted-answer JSON is bounded, shape-checked, and malformed input returns safe validation errors
+- [x] Exercise attempt persistence requires authorization and stores only authenticated user ids
+  - Evidence: 2026-06-18 `ExerciseAttemptServiceTests` passed with coverage that persisted attempts trim/store only the authenticated user id supplied by the protected API path and reject missing user ids without saving. `ExerciseAttemptAndSearchHardeningStructuralTests` verifies `/api/learning/exercises/{slug}/attempts` calls `GetRequiredUserId(principal)`, requires authorization, and uses the `ExerciseAttempts` rate-limit policy.
+- [x] Public exercise evaluation is stateless, rate-limited, and does not persist anonymous progress
+  - Evidence: 2026-06-18 `ExerciseAttemptServiceTests` passed with coverage that `EvaluateAttemptAsync` returns an evaluation result and leaves the attempt repository empty. `ExerciseAttemptAndSearchHardeningStructuralTests` verifies `/api/catalog/exercises/{slug}/evaluate` uses `EvaluateAttemptAsync` and applies the shared `ExerciseAttempts` rate-limit policy. The Web learner runner posts to the public evaluate endpoint through `WebCatalogApiClient`, not to the persisted learning-attempt endpoint.
+- [x] Exercise submitted-answer JSON is bounded, shape-checked, and malformed input returns safe validation errors
+  - Evidence: 2026-06-18 `ExerciseAttemptServiceTests` passed with coverage for malformed JSON, oversized JSON, and primitive JSON shape rejection on both persisted submit and stateless public evaluate paths, without saving attempts. The shared WebApi request wrapper catches `DomainRuleException` and returns `400 invalid_request`; the Web runner also validates the generated/advanced answer payload client-side before posting.
 - [x] Course Lessons readiness reviewed: course/module/lesson ordering, linked-content projections, lesson routes, localized helper projections, progress hooks where implemented
+  - Evidence: Course lesson detail pages record `viewed` progress and expose antiforgery-protected controls for `in-progress`, `completed`, and `needs-review`; 2026-06-18 targeted domain and structural tests verified progress state transitions, stale completion timestamp clearing, and Web route/view wiring.
   - Current status: Course Lessons A1-C2 are generated and imported into `darwinlingua_shared` with 6 paths, 56 modules, and 560 lessons (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`). The A1-C2 source packages are present under `content/learning-portal/courses/packages`. C2 import completed with zero warnings. Local Web/WebApi smoke passed after the PostgreSQL startup retrofit was repaired for the remaining Phase 7 extension tables; service-level admin report tests passed and anonymous admin API access correctly returns 401.
 - [x] Course A1 activity-flow checkpoint reviewed
   - Evidence: all 60 A1 lessons now include reviewed `activityBlocks` with 297 ordered activities. PostgreSQL verification after import reports `CourseLessons=560`, `A1ActivityEnabled=60`, `TotalActivityEnabled=60`, `PublishedLessonsWithoutActivityBlocks=500`, and zero unresolved activity targets. API/Web smoke passed for representative A1 lesson details with Persian helper projection. The phase backup is `X:\Projects\DarwinLingua.Backup\20260616-190633-course-a1-activity-flow-complete-pre-a2-activity-flow`.
@@ -182,7 +248,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [x] Course C1 activity-flow checkpoint reviewed
   - Evidence: all 120 C1 lessons now include reviewed `activityBlocks` with 600 ordered activities. PostgreSQL verification after import reports `CourseLessons=560`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, and zero unresolved C1 Module 12 activity targets. API/Web smoke passed for representative C1 lesson details with Persian helper projection. The phase backup is `X:\Projects\DarwinLingua.Backup\20260617-210237-course-c1-activity-flow-complete-pre-c2-activity-flow`.
 - [x] Course C2 activity-flow checkpoint reviewed
-  - Evidence: all 120 C2 lessons now include reviewed `activityBlocks` with 600 ordered activities. PostgreSQL verification after import reports `CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, and zero unresolved C2 activity targets. Public Web smoke passed for the final C2 lesson detail, and API detail with `primaryMeaningLanguageCode=fa` returned 5 activity blocks with Persian helper text. A restore-ready staging backup exists at `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`; final sync to `X:\Projects\DarwinLingua.Backup` remains pending while the mapped network drive is disconnected.
+  - Evidence: all 120 C2 lessons now include reviewed `activityBlocks` with 600 ordered activities. PostgreSQL verification after import reports `CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, and zero unresolved C2 activity targets. Public Web smoke passed for the final C2 lesson detail, and API detail with `primaryMeaningLanguageCode=fa` returned 5 activity blocks with Persian helper text. The phase backup is `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`; file count and byte size match staging with hidden files included (`617` files, `239493739` bytes), and SHA256 verification passed for all `616` listed files.
 - [x] Course A1-C2 restore checkpoint exists after Web/WebApi smoke and PostgreSQL retrofit repair
   - Evidence: `X:\Projects\DarwinLingua.Backup\20260608-154803-course-c2-complete-post-webapi-web-smoke` contains the shared PostgreSQL dump, globals, restore list, dry-run restore Course counts, repo overlay, secret bundle, Docker metadata, manifest, and SHA256 checksums.
 - [x] Exam Prep readiness reviewed: profile taxonomy, filters, linked-content projections, WebApi/Web pages, original authored-content policy, title quality, helper-translation quality, and linked-practice coverage
@@ -193,14 +259,22 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
   - Evidence: Life in Germany A1/A2/B1 foundation packages are imported into `darwinlingua_shared` with `CulturalNotes=30`; public Web route is `/life-in-germany`, API remains `/api/catalog/cultural-notes`, and targeted PostgreSQL repository coverage verifies stable filtering, helper projection, linked slugs, and Unified Search URLs.
 - [x] Unified Search readiness reviewed: deterministic ranking, filters, result-type labels, empty-state behavior, preservation of existing word search
   - Evidence: seeded repository/API/Web structural coverage verifies deterministic ranking, filters, labels, safe missing references, and bounded performance; 2026-06-14 local Web smoke returned results for `/search?q=Demokratie&resultType=cultural-note`, and API smoke returned HTTP 200 for `resultType=cultural-note` and `resultType=writing-template`.
-- [ ] Unified Search rejects empty, too-short, too-long, and unsupported result-type queries consistently
-- [ ] Unified Search PostgreSQL trigram/filter indexes are applied in the target environment, with `pg_trgm` installed or extension-creation privileges available
+- [x] Unified Search rejects empty, too-short, too-long, and unsupported result-type queries consistently
+  - Evidence: 2026-06-18 `UnifiedLearningSearchServiceTests` verifies empty, one-character, over-100-character, and unsupported `resultType` requests throw `DomainRuleException` before repository access; `ExerciseAttemptAndSearchHardeningStructuralTests` verifies `/api/catalog/search` rate limiting plus Web-side one-character query suppression before the learning-content API call.
+- [x] Unified Search PostgreSQL trigram/filter indexes are applied in the target environment, with `pg_trgm` installed or extension-creation privileges available
+  - Evidence: 2026-06-18 `docker exec darwinlingua-postgres psql -U postgres -d darwinlingua_shared` verified `pg_trgm=1` and `41` public trigram/filter search indexes, including Course Lessons, Writing Templates, Life in Germany/CulturalNotes, Exam Prep, Exercises, Expressions, Grammar, Dialogues, Talk Topics, Roleplays, Events, Organizers, and WordEntries.
 - [x] Unified Search seeded performance coverage passes before bulk Phase 7 content generation starts
   - Evidence: PostgreSQL seeded bulk-corpus performance coverage verifies bounded results and positive relevance across Course Lessons, Grammar, Writing Templates, and Life in Germany before larger content runs.
 - [x] Progress readiness reviewed: user state separated from content, authenticated persistence, anonymous fallback, deterministic recommendations
-  - Evidence: structural endpoint coverage verifies authenticated progress summary/update/recommendation routes; Web view coverage verifies course progress indicators, recent activity summary, weak-exercise recommendations, difficult-word recommendations, and deterministic non-AI ranking.
+  - Evidence: structural endpoint coverage verifies authenticated progress summary/update/recommendation routes; Web view coverage verifies course progress indicators, manual lesson progress controls, recent activity summary, weak-exercise recommendations, difficult-word recommendations, and deterministic non-AI ranking.
 - [x] Admin reports readiness reviewed: coverage counts, unresolved links, missing translations, unpublished drafts, missing exercise coverage
   - Evidence: service and structural tests cover Learning Portal counts, quality counters, issue samples, and the full issue drill-down page with filters and CSV export.
+- [x] Controlled Web tester onboarding runbook exists
+  - Evidence: `docs/87-Web-Tester-Onboarding-Runbook.md` defines tester profiles, repeatable pre-test smoke via `tools/Web/Invoke-WebTesterPreflight.ps1`, task scripts for Course flow, helper languages, Writing Templates, Exam Prep, Life in Germany, Search/Recent, feedback fields, triage rules, and completion criteria. The public-routed preflight passed on 2026-06-18 for Web home, Courses, A1/C2 lesson details, Exercises, Exam Prep, Writing Templates, Life in Germany, Search, Recent, API health, Course Persian helper projection, and representative Unified Search queries; the post-search-hardening rerun is recorded at `artifacts/validation/web-tester-preflight/web-tester-preflight-20260618-140534.json`, the post-lesson-progress-control rerun is recorded at `artifacts/validation/web-tester-preflight/web-tester-preflight-20260618-141256.json`, and the post-Talk-Topic-vocabulary-link rerun is recorded at `artifacts/validation/web-tester-preflight/web-tester-preflight-20260618-142345.json`.
+- [x] Controlled Web tester feedback triage helper exists
+  - Evidence: `tools/Web/Convert-WebTesterFeedbackToReport.ps1` validates the tester feedback CSV shape, ignores the template sample row, sorts blocker/major/fix-now issues first, counts RTL-language observations, and writes JSON and Markdown triage reports.
+- [x] Controlled Web tester validation bundle helper exists
+  - Evidence: `tools/Web/New-WebTesterValidationBundle.ps1` creates a timestamped tester-pass folder with the operator runbook, tester quick start, feedback CSV, manifest, README, and optional pass-specific preflight report. A current public-routed tester bundle was generated at `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke` with preflight status `passed` and 25/25 checks green for public learner routes, anonymous admin login redirects, public API health, Course Persian helper projection, and representative search queries. `Convert-WebTesterFeedbackToReport.ps1` also passed a dry-run against the bundle feedback CSV with 0 validation errors.
 - [x] Mobile parity is explicitly deferred and is not required for this Web release
   - Evidence: target-device validation worksheet is tracked at `artifacts/validation/phase7-mobile-validation-worksheet.md`; mobile exercise runner and account-bound progress sync remain deferred post-Web features.
 - [x] Bulk Phase 7 content generation remains blocked until module contracts, validation, rendering, admin reports, and release checks are stable

@@ -67,6 +67,12 @@ public sealed class AdminConversationEventInputModel
     [StringLength(512)]
     public string ScheduleText { get; set; } = string.Empty;
 
+    [StringLength(64)]
+    public string? StartsAtUtc { get; set; }
+
+    [StringLength(64)]
+    public string? EndsAtUtc { get; set; }
+
     [StringLength(256)]
     public string? RecurrenceRule { get; set; }
 

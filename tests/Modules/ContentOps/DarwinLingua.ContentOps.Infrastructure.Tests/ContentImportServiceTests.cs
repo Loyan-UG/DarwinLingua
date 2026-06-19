@@ -12,6 +12,8 @@ using DarwinLingua.Localization.Application.DependencyInjection;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
+using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
@@ -22,6 +24,8 @@ namespace DarwinLingua.ContentOps.Infrastructure.Tests;
 /// </summary>
 public sealed class ContentImportServiceTests
 {
+    private const string DefaultDockerContainerName = "darwinlingua-postgres";
+
     /// <summary>
     /// Verifies that a valid package imports one new word and that the imported word becomes queryable.
     /// </summary>
@@ -1506,6 +1510,107 @@ public sealed class ContentImportServiceTests
             {
                 TryDeleteFile(databasePath);
             }
+        }
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldReplaceSelectedCourseModuleWithoutRemovingUnrelatedModules()
+    {
+        string databaseName = $"darwin_course_slice_{Guid.NewGuid():N}"[..46];
+        string connectionString = BuildPostgresConnectionString(databaseName);
+        string fullPackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-course-full-{Guid.NewGuid():N}.json");
+        string moduleSlicePackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-course-module-slice-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        await CreatePostgresDatabaseAsync(databaseName, CancellationToken.None);
+
+        try
+        {
+            await File.WriteAllTextAsync(
+                fullPackagePath,
+                CreateCourseSlicePackageJson(
+                    "course-module-slice-full",
+                    includeSecondModule: true,
+                    firstModuleTitle: "Erste Kontakte",
+                    firstLessonTitle: "Begruessung und Name",
+                    secondModuleTitle: "Alltag und Termine",
+                    secondLessonTitle: "Einen Termin nennen"));
+            await File.WriteAllTextAsync(
+                moduleSlicePackagePath,
+                CreateCourseSlicePackageJson(
+                    "course-module-slice-update",
+                    includeSecondModule: false,
+                    firstModuleTitle: "Erste Kontakte aktualisiert",
+                    firstLessonTitle: "Begruessung klar aufbauen",
+                    secondModuleTitle: "Alltag und Termine",
+                    secondLessonTitle: "Einen Termin nennen"));
+
+            serviceProvider = BuildPostgresServiceProvider(connectionString);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult fullImportResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(fullPackagePath), CancellationToken.None);
+            Assert.True(fullImportResult.IsSuccess, string.Join(Environment.NewLine, fullImportResult.Issues.Select(issue => issue.Message)));
+
+            ImportContentPackageResult sliceImportResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(moduleSlicePackagePath), CancellationToken.None);
+            Assert.True(sliceImportResult.IsSuccess, string.Join(Environment.NewLine, sliceImportResult.Issues.Select(issue => issue.Message)));
+
+            await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
+                .GetRequiredService<IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
+                .CreateDbContext();
+
+            Assert.Equal(1, await dbContext.CoursePaths.CountAsync(course => course.Slug == "a1-slice-safe-course"));
+            Assert.Equal(2, await dbContext.CourseModules.CountAsync(module => module.CoursePathSlug == "a1-slice-safe-course"));
+            Assert.Equal(2, await dbContext.CourseLessons.CountAsync(lesson => lesson.CoursePathSlug == "a1-slice-safe-course"));
+
+            Assert.Equal(
+                "Erste Kontakte aktualisiert",
+                await dbContext.CourseModules
+                    .Where(module => module.Slug == "a1-slice-module-one")
+                    .Select(module => module.Title)
+                    .SingleAsync());
+            Assert.Equal(
+                "Begruessung klar aufbauen",
+                await dbContext.CourseLessons
+                    .Where(lesson => lesson.Slug == "a1-slice-lesson-one")
+                    .Select(lesson => lesson.Title)
+                    .SingleAsync());
+
+            Assert.Equal(
+                "Alltag und Termine",
+                await dbContext.CourseModules
+                    .Where(module => module.Slug == "a1-slice-module-two")
+                    .Select(module => module.Title)
+                    .SingleAsync());
+            Assert.Equal(
+                "Einen Termin nennen",
+                await dbContext.CourseLessons
+                    .Where(lesson => lesson.Slug == "a1-slice-lesson-two")
+                    .Select(lesson => lesson.Title)
+                    .SingleAsync());
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(fullPackagePath))
+            {
+                File.Delete(fullPackagePath);
+            }
+
+            if (File.Exists(moduleSlicePackagePath))
+            {
+                File.Delete(moduleSlicePackagePath);
+            }
+
+            await DropPostgresDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
@@ -4412,15 +4517,18 @@ public sealed class ContentImportServiceTests
     [Fact]
     public async Task ImportAsync_ShouldPersistConversationStarterPacks()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string databaseName = $"darwin_starter_import_{Guid.NewGuid():N}"[..46];
+        string connectionString = BuildPostgresConnectionString(databaseName);
         string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
         ServiceProvider? serviceProvider = null;
+
+        await CreatePostgresDatabaseAsync(databaseName, CancellationToken.None);
 
         try
         {
             await File.WriteAllTextAsync(packagePath, CreatePackageWithConversationStarterJson("a1-starter-import-test"));
 
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildPostgresServiceProvider(connectionString);
 
             IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
             await databaseInitializer.InitializeAsync(CancellationToken.None);
@@ -4489,6 +4597,8 @@ public sealed class ContentImportServiceTests
             {
                 File.Delete(packagePath);
             }
+
+            await DropPostgresDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
@@ -4498,15 +4608,18 @@ public sealed class ContentImportServiceTests
     [Fact]
     public async Task ImportAsync_ShouldPersistEventPreparationPacks()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-import-{Guid.NewGuid():N}.db");
+        string databaseName = $"darwin_event_prep_import_{Guid.NewGuid():N}"[..46];
+        string connectionString = BuildPostgresConnectionString(databaseName);
         string packagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-package-{Guid.NewGuid():N}.json");
         ServiceProvider? serviceProvider = null;
+
+        await CreatePostgresDatabaseAsync(databaseName, CancellationToken.None);
 
         try
         {
             await File.WriteAllTextAsync(packagePath, CreatePackageWithEventPreparationJson("a1-event-preparation-import-test"));
 
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildPostgresServiceProvider(connectionString);
 
             IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
             await databaseInitializer.InitializeAsync(CancellationToken.None);
@@ -4572,6 +4685,8 @@ public sealed class ContentImportServiceTests
             {
                 File.Delete(packagePath);
             }
+
+            await DropPostgresDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
@@ -4641,6 +4756,116 @@ public sealed class ContentImportServiceTests
         }
     }
 
+    private static string CreateCourseSlicePackageJson(
+        string packageId,
+        bool includeSecondModule,
+        string firstModuleTitle,
+        string firstLessonTitle,
+        string secondModuleTitle,
+        string secondLessonTitle)
+    {
+        string secondModuleJson = includeSecondModule
+            ? $$"""
+                ,
+                {
+                  "slug": "a1-slice-module-two",
+                  "coursePathSlug": "a1-slice-safe-course",
+                  "title": "{{secondModuleTitle}}",
+                  "titleTranslations": [{ "language": "en", "text": "Everyday life and appointments" }],
+                  "description": "Zweites Modul, das bei einem module-slice Import erhalten bleiben muss.",
+                  "descriptionTranslations": [{ "language": "en", "text": "Second module that must survive a module-slice import." }],
+                  "moduleNumber": 2,
+                  "cefrLevel": "A1",
+                  "sortOrder": 20
+                }
+              """
+            : string.Empty;
+        string secondLessonJson = includeSecondModule
+            ? $$"""
+                ,
+                {
+                  "slug": "a1-slice-lesson-two",
+                  "coursePathSlug": "a1-slice-safe-course",
+                  "moduleSlug": "a1-slice-module-two",
+                  "lessonNumber": 2,
+                  "title": "{{secondLessonTitle}}",
+                  "titleTranslations": [{ "language": "en", "text": "Name an appointment" }],
+                  "shortDescription": "Du nennst eine einfache Uhrzeit.",
+                  "shortDescriptionTranslations": [{ "language": "en", "text": "You name a simple time." }],
+                  "narrative": "Diese zweite Lektion prueft, dass ein spaeterer module-slice Import sie nicht entfernt.",
+                  "narrativeTranslations": [{ "language": "en", "text": "This second lesson proves that a later module-slice import does not remove it." }],
+                  "cefrLevel": "A1",
+                  "estimatedMinutes": 15,
+                  "learningGoals": ["Eine Uhrzeit nennen"],
+                  "learningGoalsTranslations": [{ "language": "en", "texts": ["Name a time"] }],
+                  "reviewSummary": "Wiederhole die Uhrzeit laut.",
+                  "reviewSummaryTranslations": [{ "language": "en", "text": "Repeat the time aloud." }],
+                  "homeworkTask": "Schreibe zwei Uhrzeiten.",
+                  "homeworkTaskTranslations": [{ "language": "en", "text": "Write two times." }],
+                  "sortOrder": 20
+                }
+              """
+            : string.Empty;
+
+        return $$"""
+            {
+              "packageVersion": "1.0",
+              "packageId": "{{packageId}}",
+              "packageName": "Course Module Slice Test",
+              "source": "Automated test fixture",
+              "defaultMeaningLanguages": ["en"],
+              "entries": [],
+              "coursePaths": [
+                {
+                  "slug": "a1-slice-safe-course",
+                  "title": "A1 Slice Safe Course",
+                  "titleTranslations": [{ "language": "en", "text": "A1 slice-safe course" }],
+                  "description": "Ein kleiner Kurs fuer module-slice Importtests.",
+                  "descriptionTranslations": [{ "language": "en", "text": "A small course for module-slice import tests." }],
+                  "cefrLevel": "A1",
+                  "sortOrder": 10
+                }
+              ],
+              "courseModules": [
+                {
+                  "slug": "a1-slice-module-one",
+                  "coursePathSlug": "a1-slice-safe-course",
+                  "title": "{{firstModuleTitle}}",
+                  "titleTranslations": [{ "language": "en", "text": "First contacts" }],
+                  "description": "Erstes Modul, das durch den module-slice Import ersetzt werden soll.",
+                  "descriptionTranslations": [{ "language": "en", "text": "First module that should be replaced by the module-slice import." }],
+                  "moduleNumber": 1,
+                  "cefrLevel": "A1",
+                  "sortOrder": 10
+                }{{secondModuleJson}}
+              ],
+              "courseLessons": [
+                {
+                  "slug": "a1-slice-lesson-one",
+                  "coursePathSlug": "a1-slice-safe-course",
+                  "moduleSlug": "a1-slice-module-one",
+                  "lessonNumber": 1,
+                  "title": "{{firstLessonTitle}}",
+                  "titleTranslations": [{ "language": "en", "text": "Build a greeting clearly" }],
+                  "shortDescription": "Du begruesst jemanden und sagst deinen Namen.",
+                  "shortDescriptionTranslations": [{ "language": "en", "text": "You greet someone and say your name." }],
+                  "narrative": "Diese Lektion wird durch den spaeteren module-slice Import aktualisiert.",
+                  "narrativeTranslations": [{ "language": "en", "text": "This lesson is updated by the later module-slice import." }],
+                  "cefrLevel": "A1",
+                  "estimatedMinutes": 15,
+                  "learningGoals": ["Jemanden begruessen"],
+                  "learningGoalsTranslations": [{ "language": "en", "texts": ["Greet someone"] }],
+                  "reviewSummary": "Wiederhole die Begruessung.",
+                  "reviewSummaryTranslations": [{ "language": "en", "text": "Repeat the greeting." }],
+                  "homeworkTask": "Schreibe eine kurze Begruessung.",
+                  "homeworkTaskTranslations": [{ "language": "en", "text": "Write a short greeting." }],
+                  "sortOrder": 10
+                }{{secondLessonJson}}
+              ]
+            }
+            """;
+    }
+
     private static ServiceProvider BuildServiceProvider(string databasePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databasePath);
@@ -4656,6 +4881,94 @@ public sealed class ContentImportServiceTests
             .AddLocalizationInfrastructure();
 
         return services.BuildServiceProvider();
+    }
+
+    private static ServiceProvider BuildPostgresServiceProvider(string connectionString)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
+
+        ServiceCollection services = new();
+        services
+            .AddDarwinLinguaInfrastructureForPostgres(connectionString)
+            .AddCatalogApplication()
+            .AddCatalogInfrastructure()
+            .AddContentOpsApplication()
+            .AddContentOpsInfrastructure()
+            .AddLocalizationApplication()
+            .AddLocalizationInfrastructure();
+
+        return services.BuildServiceProvider();
+    }
+
+    private static string BuildPostgresConnectionString(string databaseName)
+    {
+        string? configuredTemplate = Environment.GetEnvironmentVariable("DARWINLINGUA_TEST_POSTGRES_APP_CONNECTION_TEMPLATE");
+        if (!string.IsNullOrWhiteSpace(configuredTemplate))
+        {
+            return string.Format(configuredTemplate, databaseName);
+        }
+
+        NpgsqlConnectionStringBuilder builder = new()
+        {
+            Host = "localhost",
+            Port = 5432,
+            Database = databaseName,
+            Username = "darwinlingua_app",
+            Password = "@pP@sS!13;X"
+        };
+
+        return builder.ConnectionString;
+    }
+
+    private static async Task CreatePostgresDatabaseAsync(string databaseName, CancellationToken cancellationToken) =>
+        await RunDockerPsqlAsync($"""CREATE DATABASE "{databaseName}" OWNER darwinlingua_app;""", cancellationToken);
+
+    private static async Task DropPostgresDatabaseAsync(string databaseName, CancellationToken cancellationToken)
+    {
+        await RunDockerPsqlAsync(
+            $"""
+            SELECT pg_terminate_backend(pid)
+            FROM pg_stat_activity
+            WHERE datname = '{databaseName}'
+              AND pid <> pg_backend_pid();
+            """,
+            cancellationToken);
+        await RunDockerPsqlAsync($"""DROP DATABASE IF EXISTS "{databaseName}";""", cancellationToken);
+    }
+
+    private static async Task RunDockerPsqlAsync(string sql, CancellationToken cancellationToken)
+    {
+        string containerName = Environment.GetEnvironmentVariable("DARWINLINGUA_TEST_POSTGRES_CONTAINER") ?? DefaultDockerContainerName;
+        ProcessStartInfo startInfo = new()
+        {
+            FileName = "docker",
+            RedirectStandardError = true,
+            RedirectStandardOutput = true,
+        };
+        startInfo.ArgumentList.Add("exec");
+        startInfo.ArgumentList.Add(containerName);
+        startInfo.ArgumentList.Add("psql");
+        startInfo.ArgumentList.Add("-U");
+        startInfo.ArgumentList.Add("postgres");
+        startInfo.ArgumentList.Add("-d");
+        startInfo.ArgumentList.Add("postgres");
+        startInfo.ArgumentList.Add("-v");
+        startInfo.ArgumentList.Add("ON_ERROR_STOP=1");
+        startInfo.ArgumentList.Add("-c");
+        startInfo.ArgumentList.Add(sql);
+
+        using Process process = Process.Start(startInfo)
+            ?? throw new InvalidOperationException("Could not start Docker PostgreSQL helper process.");
+
+        string standardOutput = await process.StandardOutput.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+        string standardError = await process.StandardError.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+        await process.WaitForExitAsync(cancellationToken).ConfigureAwait(false);
+
+        if (process.ExitCode != 0)
+        {
+            throw new InvalidOperationException(
+                $"PostgreSQL test database command failed with exit code {process.ExitCode}.{Environment.NewLine}{standardOutput}{Environment.NewLine}{standardError}");
+        }
     }
 
     private static string GetSamplePackagePath()

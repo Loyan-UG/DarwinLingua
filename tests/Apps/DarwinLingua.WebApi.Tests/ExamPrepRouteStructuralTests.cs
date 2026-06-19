@@ -25,6 +25,7 @@ public sealed class ExamPrepRouteStructuralTests
         string controllerSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Controllers", "ExamPrepController.cs"));
         string indexSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "ExamPrep", "Index.cshtml"));
         string detailSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "ExamPrep", "Detail.cshtml"));
+        string slugListSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "WritingTemplates", "_SlugList.cshtml"));
         string viewModelSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Models", "ExamPrepPageViewModels.cs"));
 
         Assert.Contains("IWebLearningProfileAccessor", controllerSource, StringComparison.Ordinal);
@@ -44,6 +45,15 @@ public sealed class ExamPrepRouteStructuralTests
         Assert.Contains("LearnerLanguageExplanation", detailSource, StringComparison.Ordinal);
         Assert.Contains("LearnerLanguageStrategyNotes", detailSource, StringComparison.Ordinal);
         Assert.Contains("LearnerLanguageChecklist", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LearningContentLinkResolver.ResolveHref", slugListSource, StringComparison.Ordinal);
+        Assert.Contains("\"dialogue\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"writing-template\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"grammar-topic\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"exercise\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"roleplay\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"talk-topic\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"expression\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"course-lesson\"", detailSource, StringComparison.Ordinal);
     }
 
     private static string ResolveRepositoryPath(params string[] segments)

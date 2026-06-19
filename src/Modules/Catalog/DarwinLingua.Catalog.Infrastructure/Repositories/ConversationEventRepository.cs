@@ -63,8 +63,21 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
             query = query.Where(conversationEvent => conversationEvent.HelperLanguages.Any(language => language.LanguageCode == helperLanguageCode));
         }
 
+        if (filter.DateFromUtc.HasValue)
+        {
+            DateTime dateFromUtc = NormalizeDateFilterUtc(filter.DateFromUtc.Value);
+            query = query.Where(conversationEvent => conversationEvent.StartsAtUtc.HasValue && conversationEvent.StartsAtUtc.Value >= dateFromUtc);
+        }
+
+        if (filter.DateToUtc.HasValue)
+        {
+            DateTime dateToUtc = NormalizeDateFilterUtc(filter.DateToUtc.Value);
+            query = query.Where(conversationEvent => conversationEvent.StartsAtUtc.HasValue && conversationEvent.StartsAtUtc.Value <= dateToUtc);
+        }
+
         List<ConversationEvent> events = await query
-            .OrderBy(conversationEvent => conversationEvent.SortOrder)
+            .OrderBy(conversationEvent => conversationEvent.StartsAtUtc ?? DateTime.MaxValue)
+            .ThenBy(conversationEvent => conversationEvent.SortOrder)
             .ThenBy(conversationEvent => conversationEvent.Name)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
@@ -111,6 +124,8 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
                 conversationEvent.ExternalLink,
                 conversationEvent.ContactMethod,
                 conversationEvent.ScheduleText,
+                conversationEvent.StartsAtUtc,
+                conversationEvent.EndsAtUtc,
                 conversationEvent.PriceType,
                 conversationEvent.VerificationStatus,
                 conversationEvent.SourceName,
@@ -137,9 +152,16 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
             conversationEvent.OrganizerName,
             conversationEvent.OrganizerProfileSlug,
             conversationEvent.ScheduleText,
+            conversationEvent.StartsAtUtc,
+            conversationEvent.EndsAtUtc,
             conversationEvent.PriceType,
             conversationEvent.VerificationStatus,
             ResolvePreparationPackSlugs(conversationEvent));
+
+    private static DateTime NormalizeDateFilterUtc(DateTime value) =>
+        value.Kind == DateTimeKind.Utc
+            ? value
+            : value.ToUniversalTime();
 
     private static string[] ResolveLevels(ConversationEvent conversationEvent) =>
         conversationEvent.SupportedLevels

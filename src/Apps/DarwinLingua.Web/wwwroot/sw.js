@@ -1,5 +1,7 @@
-const shellCacheName = "darwin-lingua-shell-v2";
+const shellCacheName = "darwin-lingua-shell-v3";
+const offlineShellUrl = "/offline.html";
 const shellAssets = [
+    offlineShellUrl,
     "/manifest.webmanifest",
     "/icons/favicon.svg",
     "/icons/icon-192.svg",
@@ -27,7 +29,10 @@ self.addEventListener("fetch", (event) => {
     }
 
     if (event.request.mode === "navigate") {
-        event.respondWith(fetch(event.request));
+        event.respondWith(
+            fetch(event.request).catch(() =>
+                caches.match(offlineShellUrl).then((cachedResponse) => cachedResponse ?? Response.error()))
+        );
         return;
     }
 

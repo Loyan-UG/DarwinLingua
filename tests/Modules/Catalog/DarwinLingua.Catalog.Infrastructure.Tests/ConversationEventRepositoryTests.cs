@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
@@ -9,20 +10,25 @@ using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
 
 namespace DarwinLingua.Catalog.Infrastructure.Tests;
 
 public sealed class ConversationEventRepositoryTests
 {
+    private const string DefaultDockerContainerName = "darwinlingua-postgres";
+
     [Fact]
     public async Task GetPublishedEventsAsync_ShouldFilterVisibleEvents()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-events-{Guid.NewGuid():N}.db");
+        string databaseName = $"darwin_events_test_{Guid.NewGuid():N}"[..48];
+        string connectionString = BuildAppConnectionString(databaseName);
         ServiceProvider? serviceProvider = null;
+        await CreateDatabaseAsync(databaseName, CancellationToken.None);
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(connectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
 
             IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
@@ -30,6 +36,7 @@ public sealed class ConversationEventRepositoryTests
 
             await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
             {
+                DateTime startUtc = new(2026, 6, 18, 18, 0, 0, DateTimeKind.Utc);
                 dbContext.ConversationEvents.Add(CreateEvent(
                     "berlin-cafe-a1",
                     "Berlin cafe A1",
@@ -39,7 +46,8 @@ public sealed class ConversationEventRepositoryTests
                     PublicationStatus.Active,
                     CefrLevel.A1,
                     "en",
-                    "a1-cafe-first-meeting-prep"));
+                    "a1-cafe-first-meeting-prep",
+                    startUtc));
                 dbContext.ConversationEvents.Add(CreateEvent(
                     "online-club-a2",
                     "Online club A2",
@@ -49,7 +57,28 @@ public sealed class ConversationEventRepositoryTests
                     PublicationStatus.Active,
                     CefrLevel.A2,
                     "en",
-                    "a2-online-practice-meeting-prep"));
+                    "a2-online-practice-meeting-prep",
+                    startUtc.AddDays(2)));
+                dbContext.ConversationEvents.Add(CreateEvent(
+                    "berlin-cafe-paid-a1",
+                    "Berlin cafe paid A1",
+                    "Berlin",
+                    false,
+                    "paid",
+                    PublicationStatus.Active,
+                    CefrLevel.A1,
+                    "en",
+                    "a1-cafe-first-meeting-prep"));
+                dbContext.ConversationEvents.Add(CreateEvent(
+                    "berlin-cafe-a1-de",
+                    "Berlin cafe A1 German helper",
+                    "Berlin",
+                    false,
+                    "free",
+                    PublicationStatus.Active,
+                    CefrLevel.A1,
+                    "de",
+                    "a1-cafe-first-meeting-prep"));
                 dbContext.ConversationEvents.Add(CreateEvent(
                     "draft-berlin-cafe",
                     "Draft Berlin cafe",
@@ -74,6 +103,23 @@ public sealed class ConversationEventRepositoryTests
             Assert.Equal(["A1"], conversationEvent.SupportedLearnerLevels);
             Assert.Equal(["en"], conversationEvent.HelperLanguageCodes);
             Assert.Equal(["a1-cafe-first-meeting-prep"], conversationEvent.LinkedEventPreparationPackSlugs);
+
+            IReadOnlyList<ConversationEventListItemModel> onlineEvents = await repository.GetPublishedEventsAsync(
+                new ConversationEventListFilterModel(null, "A2", "en", true, "paid", null),
+                CancellationToken.None);
+            Assert.Equal("online-club-a2", Assert.Single(onlineEvents).Slug);
+
+            IReadOnlyList<ConversationEventListItemModel> germanHelperEvents = await repository.GetPublishedEventsAsync(
+                new ConversationEventListFilterModel("berlin", "a1", "de", false, "free", "conversation-cafe"),
+                CancellationToken.None);
+            Assert.Equal("berlin-cafe-a1-de", Assert.Single(germanHelperEvents).Slug);
+
+            IReadOnlyList<ConversationEventListItemModel> dateFilteredEvents = await repository.GetPublishedEventsAsync(
+                new ConversationEventListFilterModel(null, null, null, null, null, null, new DateTime(2026, 6, 18, 0, 0, 0, DateTimeKind.Utc), new DateTime(2026, 6, 18, 23, 59, 59, DateTimeKind.Utc)),
+                CancellationToken.None);
+            ConversationEventListItemModel dateFilteredEvent = Assert.Single(dateFilteredEvents);
+            Assert.Equal("berlin-cafe-a1", dateFilteredEvent.Slug);
+            Assert.Equal(new DateTime(2026, 6, 18, 18, 0, 0, DateTimeKind.Utc), dateFilteredEvent.StartsAtUtc);
         }
         finally
         {
@@ -82,19 +128,21 @@ public sealed class ConversationEventRepositoryTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
+            await DropDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
     [Fact]
     public async Task GetPublishedEventBySlugAsync_ShouldReturnDetailWithPreparationLinks()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-event-detail-{Guid.NewGuid():N}.db");
+        string databaseName = $"darwin_event_detail_{Guid.NewGuid():N}"[..48];
+        string connectionString = BuildAppConnectionString(databaseName);
         ServiceProvider? serviceProvider = null;
+        await CreateDatabaseAsync(databaseName, CancellationToken.None);
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(connectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
 
             IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
@@ -126,6 +174,9 @@ public sealed class ConversationEventRepositoryTests
             Assert.Equal(["A1"], detail.SupportedLearnerLevels);
             Assert.Equal(["fa"], detail.HelperLanguageCodes);
             Assert.Equal(["a1-cafe-first-meeting-prep"], detail.LinkedEventPreparationPackSlugs);
+
+            ConversationEventDetailModel? draftDetail = await repository.GetPublishedEventBySlugAsync("missing-event", CancellationToken.None);
+            Assert.Null(draftDetail);
         }
         finally
         {
@@ -134,15 +185,15 @@ public sealed class ConversationEventRepositoryTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
+            await DropDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
-    private static ServiceProvider BuildServiceProvider(string databasePath)
+    private static ServiceProvider BuildServiceProvider(string connectionString)
     {
         ServiceCollection services = new();
         services
-            .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
+            .AddDarwinLinguaInfrastructureForPostgres(connectionString)
             .AddCatalogInfrastructure();
 
         return services.BuildServiceProvider();
@@ -157,7 +208,8 @@ public sealed class ConversationEventRepositoryTests
         PublicationStatus publicationStatus,
         CefrLevel level,
         string helperLanguageCode,
-        string preparationPackSlug)
+        string preparationPackSlug,
+        DateTime? startsAtUtc = null)
     {
         DateTime nowUtc = DateTime.UtcNow;
         ConversationEvent conversationEvent = new(
@@ -179,7 +231,9 @@ public sealed class ConversationEventRepositoryTests
             "reviewed",
             publicationStatus,
             1,
-            nowUtc);
+            nowUtc,
+            startsAtUtc,
+            startsAtUtc?.AddHours(1));
 
         conversationEvent.SetSourceMetadata("test-source", "https://example.local/source", nowUtc);
         conversationEvent.AddSupportedLevel(Guid.NewGuid(), level, 1, nowUtc);
@@ -188,19 +242,73 @@ public sealed class ConversationEventRepositoryTests
         return conversationEvent;
     }
 
-    private static void TryDeleteFile(string path)
+    private static string BuildAppConnectionString(string databaseName)
     {
-        if (!File.Exists(path))
+        string? configuredTemplate = Environment.GetEnvironmentVariable("DARWINLINGUA_TEST_POSTGRES_APP_CONNECTION_TEMPLATE");
+        if (!string.IsNullOrWhiteSpace(configuredTemplate))
         {
-            return;
+            return string.Format(configuredTemplate, databaseName);
         }
 
-        try
+        NpgsqlConnectionStringBuilder builder = new()
         {
-            File.Delete(path);
-        }
-        catch (IOException)
+            Host = "localhost",
+            Port = 5432,
+            Database = databaseName,
+            Username = "darwinlingua_app",
+            Password = "@pP@sS!13;X"
+        };
+
+        return builder.ConnectionString;
+    }
+
+    private static async Task CreateDatabaseAsync(string databaseName, CancellationToken cancellationToken) =>
+        await RunDockerPsqlAsync($"""CREATE DATABASE "{databaseName}" OWNER darwinlingua_app;""", cancellationToken);
+
+    private static async Task DropDatabaseAsync(string databaseName, CancellationToken cancellationToken)
+    {
+        await RunDockerPsqlAsync(
+            $"""
+            SELECT pg_terminate_backend(pid)
+            FROM pg_stat_activity
+            WHERE datname = '{databaseName}'
+              AND pid <> pg_backend_pid();
+            """,
+            cancellationToken);
+        await RunDockerPsqlAsync($"""DROP DATABASE IF EXISTS "{databaseName}";""", cancellationToken);
+    }
+
+    private static async Task RunDockerPsqlAsync(string sql, CancellationToken cancellationToken)
+    {
+        string containerName = Environment.GetEnvironmentVariable("DARWINLINGUA_TEST_POSTGRES_CONTAINER") ?? DefaultDockerContainerName;
+        ProcessStartInfo startInfo = new()
         {
+            FileName = "docker",
+            RedirectStandardError = true,
+            RedirectStandardOutput = true,
+        };
+        startInfo.ArgumentList.Add("exec");
+        startInfo.ArgumentList.Add(containerName);
+        startInfo.ArgumentList.Add("psql");
+        startInfo.ArgumentList.Add("-U");
+        startInfo.ArgumentList.Add("postgres");
+        startInfo.ArgumentList.Add("-d");
+        startInfo.ArgumentList.Add("postgres");
+        startInfo.ArgumentList.Add("-v");
+        startInfo.ArgumentList.Add("ON_ERROR_STOP=1");
+        startInfo.ArgumentList.Add("-c");
+        startInfo.ArgumentList.Add(sql);
+
+        using Process process = Process.Start(startInfo)
+            ?? throw new InvalidOperationException("Could not start Docker PostgreSQL helper process.");
+        string standardOutput = await process.StandardOutput.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+        string standardError = await process.StandardError.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+        await process.WaitForExitAsync(cancellationToken).ConfigureAwait(false);
+
+        if (process.ExitCode != 0)
+        {
+            throw new InvalidOperationException(
+                $"PostgreSQL test database command failed with exit code {process.ExitCode}.{Environment.NewLine}{standardOutput}{Environment.NewLine}{standardError}");
         }
     }
 }

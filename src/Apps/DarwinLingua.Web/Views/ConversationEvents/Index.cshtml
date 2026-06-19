@@ -31,6 +31,14 @@
             <input name="category" value="@Model.Filter.Category" placeholder="@T["conversation-cafe"]" />
         </label>
         <label>
+            <span>@T["From"]</span>
+            <input name="dateFromUtc" type="date" value="@Model.Filter.DateFromUtc?.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture)" />
+        </label>
+        <label>
+            <span>@T["To"]</span>
+            <input name="dateToUtc" type="date" value="@Model.Filter.DateToUtc?.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture)" />
+        </label>
+        <label>
             <span>@T["Mode"]</span>
             <select name="isOnline">
                 <option value="">@T["Any"]</option>
@@ -67,7 +75,13 @@ else
                     </div>
                     <div>
                         <dt>@T["Schedule"]</dt>
-                        <dd>@conversationEvent.ScheduleText</dd>
+                        <dd>
+                            @conversationEvent.ScheduleText
+                            @if (conversationEvent.StartsAtUtc.HasValue)
+                            {
+                                <span class="muted"> · @conversationEvent.StartsAtUtc.Value.ToString("yyyy-MM-dd HH:mm 'UTC'", System.Globalization.CultureInfo.InvariantCulture)</span>
+                            }
+                        </dd>
                     </div>
                     <div>
                         <dt>@T["Price"]</dt>

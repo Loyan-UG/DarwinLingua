@@ -100,6 +100,8 @@ All project documentation should remain in English.
 - `84-Content-Generation-Lessons-Learned.md`
 - `85-Sensitive-Educational-Language-Policy.md`
 - `86-Web-Legal-Compliance-Baseline.md`
+- `87-Web-Tester-Onboarding-Runbook.md`
+- `88-Web-Tester-Quick-Start.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -171,6 +173,8 @@ If you are new to the project, read the documents in this order:
 55. `84-Content-Generation-Lessons-Learned.md`
 56. `85-Sensitive-Educational-Language-Policy.md`
 57. `86-Web-Legal-Compliance-Baseline.md`
+58. `87-Web-Tester-Onboarding-Runbook.md`
+59. `88-Web-Tester-Quick-Start.md`
 
 ---
 
@@ -212,6 +216,8 @@ If you are new to the project, read the documents in this order:
 - `84-Content-Generation-Lessons-Learned.md` records prompt, localization, import, rendering, and validation lessons that must be checked before future bulk content generation.
 - `85-Sensitive-Educational-Language-Policy.md` defines the product, content, filtering, privacy, and release policy for warning-labeled rude/slang/romantic/social educational language without allowing pornographic or explicit adult content.
 - `86-Web-Legal-Compliance-Baseline.md` defines the Web-first legal/compliance baseline for public legal pages, registration acknowledgements, policy records, cookie/storage inventory, GDPR/TDDDG/DDG review gates, Sensitive Educational Language legal boundaries, and deferred mobile compliance.
+- `87-Web-Tester-Onboarding-Runbook.md` defines the controlled real-user Web testing pass, tester tasks, feedback format, triage rules, and completion criteria before mobile work resumes.
+- `88-Web-Tester-Quick-Start.md` defines the short tester-facing task brief that can be shared without the operator runbook.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Learning Portal Planning Rule

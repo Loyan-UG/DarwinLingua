@@ -1,0 +1,106 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "event-preparation-a1-foundation-01-v1",
+  "packageName": "Event Preparation A1 Foundation 01",
+  "source": "Original",
+  "defaultMeaningLanguages": ["en", "fa"],
+  "entries": [],
+  "eventPreparationPacks": [
+    {
+      "slug": "a1-sprachcafe-erster-besuch",
+      "title": "Erster Besuch im Sprachcafe",
+      "description": "Bereite dich auf ein einfaches, freundliches Gespraech im Sprachcafe vor.",
+      "cefrLevel": "A1",
+      "category": "conversation-cafe",
+      "eventType": "conversation-cafe",
+      "topics": ["everyday-life", "social-and-relationships"],
+      "sortOrder": 10,
+      "linkedDialogueSlugs": ["a1-cafe-order"],
+      "linkedConversationStarterPackSlugs": ["a1-im-cafe-ein-gespraech-beginnen"],
+      "linkedVocabulary": [
+        { "word": "Hallo", "partOfSpeech": "Interjection", "cefrLevel": "A1" },
+        { "word": "Kaffee", "partOfSpeech": "Noun", "cefrLevel": "A1" },
+        { "word": "Frage", "partOfSpeech": "Noun", "cefrLevel": "A1" }
+      ],
+      "openingPrompts": [
+        "Hallo, ich heisse ...",
+        "Ich lerne Deutsch.",
+        "Ich moechte gern kurz mitsprechen."
+      ],
+      "roleplayPrompts": [
+        "Begruesse eine Person und sage deinen Namen.",
+        "Bestelle ein Getraenk und stelle eine einfache Frage.",
+        "Beende das Gespraech freundlich mit Danke oder Bis bald."
+      ],
+      "reviewPrompts": [
+        "Welche Begruessung hast du benutzt?",
+        "Welche Frage war leicht?",
+        "Welche Antwort moechtest du naechstes Mal besser verstehen?"
+      ]
+    },
+    {
+      "slug": "a1-arzttermin-vorbereiten",
+      "title": "Einen Arzttermin vorbereiten",
+      "description": "Uebe einfache Saetze fuer einen Termin, eine Absage oder eine neue Uhrzeit.",
+      "cefrLevel": "A1",
+      "category": "appointment",
+      "eventType": "doctor-appointment",
+      "topics": ["appointments-and-health", "healthcare-and-appointments"],
+      "sortOrder": 20,
+      "linkedDialogueSlugs": ["a1-dialogue-appointment-001", "a1-dialogue-doctor-002"],
+      "linkedConversationStarterPackSlugs": ["a1-arzttermin-einfach-klaeren"],
+      "linkedVocabulary": [
+        { "word": "Termin", "partOfSpeech": "Noun", "cefrLevel": "A1" },
+        { "word": "Arzt", "partOfSpeech": "Noun", "cefrLevel": "A1" },
+        { "word": "Dienstag", "partOfSpeech": "Noun", "cefrLevel": "A1" }
+      ],
+      "openingPrompts": [
+        "Guten Tag, ich brauche einen Termin.",
+        "Ich kann am ... kommen.",
+        "Der Termin passt leider nicht."
+      ],
+      "roleplayPrompts": [
+        "Bitte um einen Termin und nenne einen Wochentag.",
+        "Sage hoeflich, dass ein Termin nicht passt.",
+        "Bitte um eine neue Uhrzeit."
+      ],
+      "reviewPrompts": [
+        "Konntest du den Wochentag klar sagen?",
+        "Welche Formulierung fuer Absage war hoeflich?",
+        "Welche Uhrzeit musst du noch ueben?"
+      ]
+    },
+    {
+      "slug": "a1-sprachkurs-aktiv-mitmachen",
+      "title": "Im Sprachkurs aktiv mitmachen",
+      "description": "Uebe kurze Saetze, mit denen du im Unterricht nachfragen und Hilfe bekommen kannst.",
+      "cefrLevel": "A1",
+      "category": "language-course",
+      "eventType": "course-session",
+      "topics": ["education-and-training", "everyday-life"],
+      "sortOrder": 30,
+      "linkedDialogueSlugs": ["a1-dialogue-course-012"],
+      "linkedConversationStarterPackSlugs": ["a1-im-sprachkurs-nachfragen"],
+      "linkedVocabulary": [
+        { "word": "Aufgabe", "partOfSpeech": "Noun", "cefrLevel": "A1" },
+        { "word": "Wort", "partOfSpeech": "Noun", "cefrLevel": "A1" },
+        { "word": "Hilfe", "partOfSpeech": "Noun", "cefrLevel": "A1" }
+      ],
+      "openingPrompts": [
+        "Entschuldigung, ich habe eine Frage.",
+        "Koennen Sie das bitte wiederholen?",
+        "Was bedeutet dieses Wort?"
+      ],
+      "roleplayPrompts": [
+        "Bitte die Lehrkraft, einen Satz zu wiederholen.",
+        "Frage nach der Bedeutung eines Wortes.",
+        "Bitte um Hilfe bei einer Aufgabe."
+      ],
+      "reviewPrompts": [
+        "Welche Frage hast du im Kurs benutzt?",
+        "Hast du die Antwort verstanden?",
+        "Welche Bitte moechtest du zu Hause wiederholen?"
+      ]
+    }
+  ]
+}

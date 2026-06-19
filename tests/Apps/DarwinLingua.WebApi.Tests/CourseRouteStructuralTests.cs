@@ -12,8 +12,12 @@ public sealed class CourseRouteStructuralTests
         string indexSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Courses", "Index.cshtml"));
         string detailSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Courses", "Detail.cshtml"));
         string lessonSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Courses", "Lesson.cshtml"));
+        string slugListSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Courses", "_SlugList.cshtml"));
+        string controllerSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Controllers", "CoursesController.cs"));
         string siteScript = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "wwwroot", "js", "site.js"));
         string styleSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Styles", "tailwind.css"));
+        string programSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.WebApi", "Program.cs"));
+        string webClientSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Services", "WebCatalogApiClient.cs"));
 
         Assert.Contains("course-level-card__level", indexSource, StringComparison.Ordinal);
         Assert.Contains("course-level-card__meta", indexSource, StringComparison.Ordinal);
@@ -27,13 +31,62 @@ public sealed class CourseRouteStructuralTests
         Assert.Contains("Model.Lesson.ActivityBlocks", lessonSource, StringComparison.Ordinal);
         Assert.Contains("lesson-flow__item", lessonSource, StringComparison.Ordinal);
         Assert.Contains("CourseActivityTargetLinkResolver.ResolveHref", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"lessons/{lessonSlug}\"", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("CourseLessons_RedirectBySlug", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("RedirectToAction(nameof(Lesson)", controllerSource, StringComparison.Ordinal);
         Assert.Contains("activityBlocks.Length == 0", lessonSource, StringComparison.Ordinal);
         Assert.Contains("Linked content", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("LearningContentLinkResolver.ResolveHref", slugListSource, StringComparison.Ordinal);
+        Assert.Contains("\"grammar-topic\"", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("\"word\"", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("\"expression\"", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("\"dialogue\"", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("\"talk-topic\"", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("\"exercise-set\"", lessonSource, StringComparison.Ordinal);
+        Assert.Contains("<a href=\"@href\">@slug</a>", slugListSource, StringComparison.Ordinal);
         Assert.Contains("dir=\"@primaryMeaningDirection\"", lessonSource, StringComparison.Ordinal);
         Assert.Contains(".lesson-flow__item", styleSource, StringComparison.Ordinal);
         Assert.Contains("overflow-wrap: anywhere", styleSource, StringComparison.Ordinal);
         Assert.Contains(".lesson-flow__badge--required", styleSource, StringComparison.Ordinal);
         Assert.Contains(".lesson-flow__badge--optional", styleSource, StringComparison.Ordinal);
+        Assert.Contains("\"/api/catalog/courses\"", programSource, StringComparison.Ordinal);
+        Assert.Contains("\"/api/catalog/courses/{slug}\"", programSource, StringComparison.Ordinal);
+        Assert.Contains("\"/api/catalog/course-lessons/{slug}\"", programSource, StringComparison.Ordinal);
+        Assert.Contains("CoursePathListFilterModel(cefrLevel, q)", programSource, StringComparison.Ordinal);
+        Assert.Contains("GetPublishedCoursePathBySlugAsync(slug, primaryMeaningLanguageCode ?? \"en\"", programSource, StringComparison.Ordinal);
+        Assert.Contains("GetPublishedCourseLessonBySlugAsync(slug, primaryMeaningLanguageCode ?? \"en\"", programSource, StringComparison.Ordinal);
+        Assert.Contains("/api/catalog/courses", webClientSource, StringComparison.Ordinal);
+        Assert.Contains("/api/catalog/course-lessons/", webClientSource, StringComparison.Ordinal);
+    }
+
+    [Theory]
+    [InlineData("grammar-topic", "a1-artikel", null, "/grammar/a1-artikel")]
+    [InlineData("word", "der-kurs", null, "/words/der-kurs")]
+    [InlineData("expression", "alles-klar", null, "/expressions/alles-klar")]
+    [InlineData("dialogue", "a1-begruessung", null, "/dialogues/a1-begruessung")]
+    [InlineData("talk-topic", "a1-vorstellen", null, "/talk-topics/a1-vorstellen")]
+    [InlineData("exercise-set", "a1-set", null, "/exercises/sets/a1-set")]
+    [InlineData("exercise", "a1-frage", null, "/exercises/a1-frage")]
+    [InlineData("roleplay", "a1-im-kurs", null, "/roleplays/a1-im-kurs")]
+    [InlineData("writing-template", "a1-termin", null, "/writing-templates/a1-termin")]
+    [InlineData("life-in-germany", "b1-demokratie", null, "/life-in-germany/b1-demokratie")]
+    [InlineData("exam-prep-unit", "goethe-a1-ueberblick", null, "/exam-prep/goethe-a1-ueberblick")]
+    [InlineData("course-lesson", "a1-next", "a1-course", "/courses/a1-course/a1-next")]
+    [InlineData("course-lesson", "a1-next", null, "/courses/lessons/a1-next")]
+    public void LearningContentLinkResolver_ShouldMapReusableLinkedContentTargets(
+        string contentType,
+        string slug,
+        string? currentCourseSlug,
+        string expectedHref)
+    {
+        Assert.Equal(expectedHref, LearningContentLinkResolver.ResolveHref(contentType, slug, currentCourseSlug));
+    }
+
+    [Fact]
+    public void LearningContentLinkResolver_ShouldFailClosedForUnsupportedOrIncompleteTargets()
+    {
+        Assert.Null(LearningContentLinkResolver.ResolveHref("unsupported", "a1-test"));
+        Assert.Null(LearningContentLinkResolver.ResolveHref("exercise", null));
     }
 
     [Theory]

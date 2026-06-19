@@ -15,6 +15,13 @@ public sealed class CoursesController(
     IUserContentProgressService progressService,
     ILogger<CoursesController> logger) : Controller
 {
+    private static readonly IReadOnlySet<string> LearnerSelectableLessonProgressStates = new HashSet<string>(StringComparer.Ordinal)
+    {
+        "in-progress",
+        "completed",
+        "needs-review",
+    };
+
     [HttpGet("", Name = "Courses_Index")]
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Index(string? cefrLevel, string? q, CancellationToken cancellationToken)
@@ -45,6 +52,20 @@ public sealed class CoursesController(
         return course is null ? NotFound() : View(new CourseDetailPageViewModel(course, primaryMeaningLanguageCode ?? "en"));
     }
 
+    [HttpGet("lessons/{lessonSlug}", Name = "CourseLessons_RedirectBySlug")]
+    public async Task<IActionResult> LessonBySlug(string lessonSlug, CancellationToken cancellationToken)
+    {
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
+        CourseLessonDetailModel? lesson = await catalogApiClient.GetCourseLessonBySlugAsync(lessonSlug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        if (lesson is null)
+        {
+            return NotFound();
+        }
+
+        return RedirectToAction(nameof(Lesson), new { courseSlug = lesson.CoursePathSlug, lessonSlug = lesson.Slug });
+    }
+
     [HttpGet("{courseSlug}/{lessonSlug}", Name = "CourseLessons_Detail")]
     public async Task<IActionResult> Lesson(string courseSlug, string lessonSlug, CancellationToken cancellationToken)
     {
@@ -72,5 +93,38 @@ public sealed class CoursesController(
         }
 
         return View(new CourseLessonPageViewModel(lesson, progress, primaryMeaningLanguageCode ?? "en"));
+    }
+
+    [HttpPost("{courseSlug}/{lessonSlug}/progress", Name = "CourseLessons_UpdateProgress")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> UpdateLessonProgress(
+        string courseSlug,
+        string lessonSlug,
+        string state,
+        CancellationToken cancellationToken)
+    {
+        string normalizedState = string.IsNullOrWhiteSpace(state) ? string.Empty : state.Trim().ToLowerInvariant();
+        if (!LearnerSelectableLessonProgressStates.Contains(normalizedState))
+        {
+            return BadRequest();
+        }
+
+        var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            await progressService
+                .UpdateContentProgressAsync(
+                    profile.UserId,
+                    new UpdateUserContentProgressRequestModel("course-lesson", lessonSlug, normalizedState),
+                    cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested)
+        {
+            logger.LogWarning(ex, "Course lesson progress could not be updated for {LessonSlug}.", lessonSlug);
+            return BadRequest();
+        }
+
+        return RedirectToAction(nameof(Lesson), new { courseSlug, lessonSlug });
     }
 }

@@ -48,6 +48,35 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
     }
 
     [Fact]
+    public void UnifiedLearningSearchService_ShouldRejectInvalidQueryInput()
+    {
+        string searchService = File.ReadAllText(GetUnifiedLearningSearchServicePath());
+        string normalized = NormalizeWhitespace(searchService);
+
+        Assert.Contains("MinimumQueryLength = 2", searchService, StringComparison.Ordinal);
+        Assert.Contains("MaximumQueryLength = 100", searchService, StringComparison.Ordinal);
+        Assert.Contains("Search query must be at least", searchService, StringComparison.Ordinal);
+        Assert.Contains("Search query must be {MaximumQueryLength} characters or fewer", searchService, StringComparison.Ordinal);
+        Assert.Contains("Search result type", searchService, StringComparison.Ordinal);
+        Assert.Contains("is not supported", searchService, StringComparison.Ordinal);
+        Assert.Contains("throw new DomainRuleException", searchService, StringComparison.Ordinal);
+        Assert.Contains("return normalizedFilter.Query is null ? Task.FromResult<IReadOnlyList<UnifiedLearningSearchResultModel>>([]) : searchRepository.SearchAsync(normalizedFilter, cancellationToken);", normalized, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void SearchController_ShouldAvoidCallingLearningSearch_ForTooShortQuery()
+    {
+        string controller = File.ReadAllText(GetSearchControllerPath());
+        string normalized = NormalizeWhitespace(controller);
+
+        Assert.Contains("MinLearningSearchQueryLength = 2", controller, StringComparison.Ordinal);
+        Assert.Contains("query.Length < MinLearningSearchQueryLength", controller, StringComparison.Ordinal);
+        Assert.Contains("return [];", controller, StringComparison.Ordinal);
+        Assert.Contains("SearchLearningSafelyAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("catalogApiClient.SearchLearningContentAsync", normalized, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void SearchViews_ShouldRenderLearningContentFiltersAndResultCards()
     {
         string indexView = File.ReadAllText(GetSearchIndexViewPath());
@@ -119,6 +148,25 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
             "Persistence",
             "Migrations",
             "20260512143000_AddUnifiedLearningSearchIndexes.cs");
+
+    private static string GetUnifiedLearningSearchServicePath() =>
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "Modules",
+            "Catalog",
+            "DarwinLingua.Catalog.Application",
+            "Services",
+            "UnifiedLearningSearchService.cs");
+
+    private static string GetSearchControllerPath() =>
+        Path.Combine(
+            FindRepositoryRoot(),
+            "src",
+            "Apps",
+            "DarwinLingua.Web",
+            "Controllers",
+            "SearchController.cs");
 
     private static string GetDatabaseInitializerPath() =>
         Path.Combine(

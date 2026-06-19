@@ -16,6 +16,9 @@ public interface IModerationService
 
     Task<IReadOnlyList<UserReportResponse>> GetReportsAsync(
         string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ModerationDecisionAuditResponse>> GetDecisionAuditsAsync(

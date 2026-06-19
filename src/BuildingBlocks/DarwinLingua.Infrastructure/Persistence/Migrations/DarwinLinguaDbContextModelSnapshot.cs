@@ -55,6 +55,9 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("EndsAtUtc")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ExternalLink")
                         .HasMaxLength(1024)
                         .HasColumnType("TEXT");
@@ -114,6 +117,9 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(1024)
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("StartsAtUtc")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("TEXT");
 
@@ -130,6 +136,8 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.HasIndex("Category", "PublicationStatus");
+
+                    b.HasIndex("StartsAtUtc", "PublicationStatus");
 
                     b.HasIndex("City", "IsOnline", "PriceType");
 

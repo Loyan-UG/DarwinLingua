@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "description": "Web readiness operational seed fixture manifest for user-testing and admin smoke validation. tools/Server/Initialize-LocalWebOperationalSeeds.ps1 applies these records through the public/admin WebApi endpoints.",
+  "contentReferences": {
+    "dialogues": [
+      "a1-dialogue-appointment-001",
+      "a1-cafe-order"
+    ],
+    "conversationStarterPacks": [
+      "a1-im-cafe-ein-gespraech-beginnen",
+      "a1-arzttermin-einfach-klaeren"
+    ],
+    "eventPreparationPacks": [
+      "a1-sprachcafe-erster-besuch",
+      "a1-arzttermin-vorbereiten"
+    ]
+  },
+  "organizerProfiles": [
+    {
+      "slug": "berlin-language-club",
+      "displayName": "Berlin Language Club",
+      "organizerType": "club",
+      "description": "A reviewed community organizer for beginner-friendly German conversation meetups in Berlin.",
+      "cityRegion": "Berlin",
+      "isOnlineAvailable": false,
+      "supportedLearnerLevels": [ "A1", "A2", "B1" ],
+      "helperLanguageCodes": [ "en", "fa", "ar" ],
+      "websiteUrl": "https://example.local/berlin-language-club",
+      "publicContactMethod": "club-owner.seed@example.local",
+      "verificationStatus": "verified",
+      "planKey": "community-organizer",
+      "historicalEventCount": 12
+    },
+    {
+      "slug": "online-deutsch-treff",
+      "displayName": "Online Deutsch Treff",
+      "organizerType": "club",
+      "description": "A reviewed online group for structured German speaking practice with clear safety expectations.",
+      "cityRegion": "Germany",
+      "isOnlineAvailable": true,
+      "supportedLearnerLevels": [ "A1", "A2", "B1", "B2" ],
+      "helperLanguageCodes": [ "en", "fa", "tr", "ru" ],
+      "websiteUrl": "https://example.local/online-deutsch-treff",
+      "publicContactMethod": "online-owner.seed@example.local",
+      "verificationStatus": "reviewed",
+      "planKey": "free-organizer",
+      "historicalEventCount": 6
+    }
+  ],
+  "organizerProfileOwners": [
+    {
+      "organizerProfileSlug": "berlin-language-club",
+      "ownerEmail": "club-owner.seed@example.local",
+      "assignedBy": "operator@example.local"
+    },
+    {
+      "organizerProfileSlug": "online-deutsch-treff",
+      "ownerEmail": "online-owner.seed@example.local",
+      "assignedBy": "operator@example.local"
+    }
+  ],
+  "conversationEvents": [
+    {
+      "slug": "berlin-sprachcafe-a1",
+      "name": "Berlin Sprachcafe A1",
+      "description": "A small in-person meetup for greetings, introductions, and simple everyday questions.",
+      "organizerProfileSlug": "berlin-language-club",
+      "organizerName": "Berlin Language Club",
+      "city": "Berlin",
+      "countryRegion": "DE-BE",
+      "approximateLocation": "Central Berlin",
+      "category": "conversation-cafe",
+      "supportedLearnerLevels": [ "A1", "A2" ],
+      "helperLanguageCodes": [ "en", "fa" ],
+      "isOnline": false,
+      "externalLink": "https://example.local/events/berlin-sprachcafe-a1",
+      "contactMethod": "club-owner.seed@example.local",
+      "scheduleText": "Every Wednesday evening",
+      "startsAtUtc": "2030-01-09T18:00:00Z",
+      "endsAtUtc": "2030-01-09T19:30:00Z",
+      "priceType": "free",
+      "verificationStatus": "reviewed",
+      "sourceName": "manual-operator-review",
+      "sourceUrl": "https://example.local/events/berlin-sprachcafe-a1",
+      "lastVerifiedAtUtc": "2026-06-18T00:00:00Z",
+      "recurrenceRule": "FREQ=WEEKLY;BYDAY=WE",
+      "capacity": 12,
+      "linkedEventPreparationPackSlugs": [ "a1-sprachcafe-erster-besuch" ]
+    },
+    {
+      "slug": "online-arzttermin-uebung-a1",
+      "name": "Online Arzttermin Uebung A1",
+      "description": "A guided online practice session for simple appointment calls and polite clarification questions.",
+      "organizerProfileSlug": "online-deutsch-treff",
+      "organizerName": "Online Deutsch Treff",
+      "city": null,
+      "countryRegion": "DE",
+      "approximateLocation": "Online",
+      "category": "online-meeting",
+      "supportedLearnerLevels": [ "A1", "A2" ],
+      "helperLanguageCodes": [ "en", "fa", "ar" ],
+      "isOnline": true,
+      "externalLink": "https://example.local/events/online-arzttermin-uebung-a1",
+      "contactMethod": "online-owner.seed@example.local",
+      "scheduleText": "Every second Monday evening",
+      "startsAtUtc": "2030-01-14T17:00:00Z",
+      "endsAtUtc": "2030-01-14T18:00:00Z",
+      "priceType": "donation",
+      "verificationStatus": "reviewed",
+      "sourceName": "manual-operator-review",
+      "sourceUrl": "https://example.local/events/online-arzttermin-uebung-a1",
+      "lastVerifiedAtUtc": "2026-06-18T00:00:00Z",
+      "recurrenceRule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=MO",
+      "capacity": 20,
+      "linkedEventPreparationPackSlugs": [ "a1-arzttermin-vorbereiten" ]
+    }
+  ],
+  "eventRsvps": [
+    {
+      "eventSlug": "berlin-sprachcafe-a1",
+      "participantName": "Sara Test",
+      "participantEmail": "sara.seed@example.local",
+      "status": "going"
+    },
+    {
+      "eventSlug": "online-arzttermin-uebung-a1",
+      "participantName": "Omid Test",
+      "participantEmail": "omid.seed@example.local",
+      "status": "interested"
+    }
+  ],
+  "organizerClaims": [
+    {
+      "organizerProfileSlug": "berlin-language-club",
+      "requesterName": "Mina Coordinator",
+      "requesterEmail": "club-owner.seed@example.local",
+      "relationshipToOrganizer": "coordinator",
+      "evidenceText": "I coordinate the weekly beginner table and can confirm the listed event details.",
+      "status": "submitted"
+    },
+    {
+      "organizerProfileSlug": "online-deutsch-treff",
+      "requesterName": "Arman Moderator",
+      "requesterEmail": "online-owner.seed@example.local",
+      "relationshipToOrganizer": "moderator",
+      "evidenceText": "I moderate the online sessions and maintain the current schedule.",
+      "status": "reviewing"
+    }
+  ],
+  "learnerProfiles": [
+    {
+      "key": "learner-sara",
+      "ownerEmail": "sara.seed@example.local",
+      "displayName": "Sara",
+      "cityRegion": "Berlin",
+      "interactionPreference": "both",
+      "germanLevel": "A2",
+      "helperLanguageCodes": [ "fa", "en" ],
+      "practiceGoals": [ "daily-conversation", "appointments" ],
+      "conversationGoals": "I want to practise short everyday conversations and appointment situations.",
+      "availabilityNotes": "Weekday evenings after 18:00.",
+      "visibility": "public",
+      "hasConfirmedAdult": true
+    },
+    {
+      "key": "learner-omid",
+      "ownerEmail": "omid.seed@example.local",
+      "displayName": "Omid",
+      "cityRegion": "Hamburg",
+      "interactionPreference": "online",
+      "germanLevel": "B1",
+      "helperLanguageCodes": [ "fa", "tr", "en" ],
+      "practiceGoals": [ "speaking-confidence", "workplace-german" ],
+      "conversationGoals": "I want to become more confident in workplace German and polite corrections.",
+      "availabilityNotes": "Online practice on weekends.",
+      "visibility": "request-only",
+      "hasConfirmedAdult": true
+    }
+  ],
+  "partnerRequests": [
+    {
+      "key": "sara-to-omid",
+      "requesterProfileKey": "learner-sara",
+      "targetProfileKey": "learner-omid",
+      "openerTemplateKey": "practice-goals",
+      "practiceGoal": "appointments",
+      "note": "Can we practise a simple appointment call for ten minutes?",
+      "status": "pending"
+    },
+    {
+      "key": "omid-to-sara",
+      "requesterProfileKey": "learner-omid",
+      "targetProfileKey": "learner-sara",
+      "openerTemplateKey": "online-practice",
+      "practiceGoal": "daily-conversation",
+      "note": "I can help with polite small talk and short workplace phrases.",
+      "status": "accepted"
+    }
+  ],
+  "userReports": [
+    {
+      "key": "report-event-location",
+      "reporterEmail": "sara.seed@example.local",
+      "targetType": "conversation-event",
+      "targetKey": "berlin-sprachcafe-a1",
+      "reason": "inaccurate-listing",
+      "details": "The location needs one more organizer confirmation before learners rely on it.",
+      "status": "reviewed"
+    },
+    {
+      "key": "report-partner-contact",
+      "reporterEmail": "omid.seed@example.local",
+      "targetType": "partner-request",
+      "targetKey": "sara-to-omid",
+      "reportedUserEmail": "sara.seed@example.local",
+      "reason": "unsafe-contact",
+      "details": "The learner asked to move contact outside the platform too quickly.",
+      "status": "action-taken"
+    },
+    {
+      "key": "report-organizer-profile",
+      "reporterEmail": "sara.seed@example.local",
+      "targetType": "organizer-profile",
+      "targetKey": "online-deutsch-treff",
+      "reportedUserEmail": "online-owner.seed@example.local",
+      "reason": "other",
+      "details": "The organizer profile should be reviewed again after user-testing feedback.",
+      "status": "pending"
+    }
+  ],
+  "userBlocks": [
+    {
+      "blockerProfileKey": "learner-sara",
+      "blockedProfileKey": "learner-omid",
+      "reason": "No further contact requested."
+    },
+    {
+      "blockerProfileKey": "learner-omid",
+      "blockedProfileKey": "learner-sara",
+      "sourcePartnerRequestKey": "omid-to-sara",
+      "reason": "Practice request closed by learner."
+    }
+  ],
+  "moderationAudits": [
+    {
+      "userReportKey": "report-partner-contact",
+      "decisionStatus": "action-taken",
+      "decidedBy": "admin@example.local",
+      "decisionNote": "Contact safety issue handled and block recorded."
+    },
+    {
+      "userReportKey": "report-event-location",
+      "decisionStatus": "reviewed",
+      "decidedBy": "operator@example.local",
+      "decisionNote": "Listing needs organizer confirmation before event day."
+    }
+  ]
+}

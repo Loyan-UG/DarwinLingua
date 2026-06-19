@@ -16,6 +16,8 @@ public sealed record AdminSaveConversationEventRequest(
     string? ExternalLink,
     string? ContactMethod,
     string ScheduleText,
+    DateTime? StartsAtUtc,
+    DateTime? EndsAtUtc,
     string PriceType,
     string VerificationStatus,
     string? SourceName,

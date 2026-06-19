@@ -4,8 +4,13 @@ namespace DarwinLingua.Web.Services;
 
 internal static class WebUserIdentity
 {
-    public static string? TryGetEmail(ClaimsPrincipal user)
+    public static string? TryGetEmail(ClaimsPrincipal? user)
     {
+        if (user is null)
+        {
+            return null;
+        }
+
         string? candidate = user.FindFirstValue(ClaimTypes.Email)
             ?? user.Identity?.Name;
 

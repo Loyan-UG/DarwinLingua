@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
@@ -9,20 +10,25 @@ using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
 
 namespace DarwinLingua.Catalog.Infrastructure.Tests;
 
 public sealed class OrganizerProfileRepositoryTests
 {
+    private const string DefaultDockerContainerName = "darwinlingua-postgres";
+
     [Fact]
     public async Task GetPublishedOrganizerProfilesAsync_ShouldReturnVisibleProfilesWithActiveEventCounts()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-organizers-{Guid.NewGuid():N}.db");
+        string databaseName = $"darwin_organizer_test_{Guid.NewGuid():N}"[..48];
+        string connectionString = BuildAppConnectionString(databaseName);
         ServiceProvider? serviceProvider = null;
+        await CreateDatabaseAsync(databaseName, CancellationToken.None);
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(connectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
 
             IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
@@ -54,19 +60,21 @@ public sealed class OrganizerProfileRepositoryTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
+            await DropDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
     [Fact]
     public async Task GetPublishedOrganizerProfileBySlugAsync_ShouldReturnLinkedActiveEvents()
     {
-        string databasePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-organizer-detail-{Guid.NewGuid():N}.db");
+        string databaseName = $"darwin_organizer_detail_{Guid.NewGuid():N}"[..48];
+        string connectionString = BuildAppConnectionString(databaseName);
         ServiceProvider? serviceProvider = null;
+        await CreateDatabaseAsync(databaseName, CancellationToken.None);
 
         try
         {
-            serviceProvider = BuildServiceProvider(databasePath);
+            serviceProvider = BuildServiceProvider(connectionString);
             await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
 
             IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
@@ -88,6 +96,9 @@ public sealed class OrganizerProfileRepositoryTests
             ConversationEventListItemModel linkedEvent = Assert.Single(detail.ActiveEvents);
             Assert.Equal("berlin-cafe-a1", linkedEvent.Slug);
             Assert.Equal("berlin-language-club", linkedEvent.OrganizerProfileSlug);
+
+            OrganizerProfileDetailModel? missingDetail = await repository.GetPublishedOrganizerProfileBySlugAsync("missing-club", CancellationToken.None);
+            Assert.Null(missingDetail);
         }
         finally
         {
@@ -96,15 +107,15 @@ public sealed class OrganizerProfileRepositoryTests
                 await serviceProvider.DisposeAsync();
             }
 
-            TryDeleteFile(databasePath);
+            await DropDatabaseAsync(databaseName, CancellationToken.None);
         }
     }
 
-    private static ServiceProvider BuildServiceProvider(string databasePath)
+    private static ServiceProvider BuildServiceProvider(string connectionString)
     {
         ServiceCollection services = new();
         services
-            .AddDarwinLinguaInfrastructure(options => options.DatabasePath = databasePath)
+            .AddDarwinLinguaInfrastructureForPostgres(connectionString)
             .AddCatalogInfrastructure();
 
         return services.BuildServiceProvider();
@@ -168,19 +179,73 @@ public sealed class OrganizerProfileRepositoryTests
         return conversationEvent;
     }
 
-    private static void TryDeleteFile(string path)
+    private static string BuildAppConnectionString(string databaseName)
     {
-        if (!File.Exists(path))
+        string? configuredTemplate = Environment.GetEnvironmentVariable("DARWINLINGUA_TEST_POSTGRES_APP_CONNECTION_TEMPLATE");
+        if (!string.IsNullOrWhiteSpace(configuredTemplate))
         {
-            return;
+            return string.Format(configuredTemplate, databaseName);
         }
 
-        try
+        NpgsqlConnectionStringBuilder builder = new()
         {
-            File.Delete(path);
-        }
-        catch (IOException)
+            Host = "localhost",
+            Port = 5432,
+            Database = databaseName,
+            Username = "darwinlingua_app",
+            Password = "@pP@sS!13;X"
+        };
+
+        return builder.ConnectionString;
+    }
+
+    private static async Task CreateDatabaseAsync(string databaseName, CancellationToken cancellationToken) =>
+        await RunDockerPsqlAsync($"""CREATE DATABASE "{databaseName}" OWNER darwinlingua_app;""", cancellationToken);
+
+    private static async Task DropDatabaseAsync(string databaseName, CancellationToken cancellationToken)
+    {
+        await RunDockerPsqlAsync(
+            $"""
+            SELECT pg_terminate_backend(pid)
+            FROM pg_stat_activity
+            WHERE datname = '{databaseName}'
+              AND pid <> pg_backend_pid();
+            """,
+            cancellationToken);
+        await RunDockerPsqlAsync($"""DROP DATABASE IF EXISTS "{databaseName}";""", cancellationToken);
+    }
+
+    private static async Task RunDockerPsqlAsync(string sql, CancellationToken cancellationToken)
+    {
+        string containerName = Environment.GetEnvironmentVariable("DARWINLINGUA_TEST_POSTGRES_CONTAINER") ?? DefaultDockerContainerName;
+        ProcessStartInfo startInfo = new()
         {
+            FileName = "docker",
+            RedirectStandardError = true,
+            RedirectStandardOutput = true,
+        };
+        startInfo.ArgumentList.Add("exec");
+        startInfo.ArgumentList.Add(containerName);
+        startInfo.ArgumentList.Add("psql");
+        startInfo.ArgumentList.Add("-U");
+        startInfo.ArgumentList.Add("postgres");
+        startInfo.ArgumentList.Add("-d");
+        startInfo.ArgumentList.Add("postgres");
+        startInfo.ArgumentList.Add("-v");
+        startInfo.ArgumentList.Add("ON_ERROR_STOP=1");
+        startInfo.ArgumentList.Add("-c");
+        startInfo.ArgumentList.Add(sql);
+
+        using Process process = Process.Start(startInfo)
+            ?? throw new InvalidOperationException("Could not start Docker PostgreSQL helper process.");
+        string standardOutput = await process.StandardOutput.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+        string standardError = await process.StandardError.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
+        await process.WaitForExitAsync(cancellationToken).ConfigureAwait(false);
+
+        if (process.ExitCode != 0)
+        {
+            throw new InvalidOperationException(
+                $"PostgreSQL test database command failed with exit code {process.ExitCode}.{Environment.NewLine}{standardOutput}{Environment.NewLine}{standardError}");
         }
     }
 }

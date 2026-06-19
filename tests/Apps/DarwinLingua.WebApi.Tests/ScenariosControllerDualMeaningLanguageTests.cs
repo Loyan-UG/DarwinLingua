@@ -72,6 +72,70 @@ public sealed class DialoguesControllerDualMeaningLanguageTests
         Assert.False(catalogApiClient.EventPreparationPacksWereRequested);
     }
 
+    [Fact]
+    public async Task Roleplay_ShouldSkipLearnerPromptsAndPairNonLearnerPromptsWithNextLearnerAnswer()
+    {
+        CapturingCatalogApiClient catalogApiClient = new(CreateDialogueWithRoleplaySequence());
+        DialoguesController controller = new(
+            catalogApiClient,
+            new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
+            new StaticFeatureAccessService("fa"),
+            new TestStringLocalizer(),
+            NullLogger<DialoguesController>.Instance);
+
+        IActionResult actionResult = await controller.Roleplay("at-the-pharmacy", CancellationToken.None);
+
+        ViewResult viewResult = Assert.IsType<ViewResult>(actionResult);
+        DialogueRoleplayPageViewModel viewModel = Assert.IsType<DialogueRoleplayPageViewModel>(viewResult.Model);
+        Assert.Equal("en", catalogApiClient.PrimaryMeaningLanguageCode);
+        Assert.Equal("fa", catalogApiClient.SecondaryMeaningLanguageCode);
+        Assert.Equal(2, viewModel.Steps.Count);
+
+        DialogueRoleplayStepViewModel firstStep = viewModel.Steps[0];
+        Assert.Equal(1, firstStep.SortOrder);
+        Assert.Equal("staff", firstStep.PromptRole);
+        Assert.Equal("Wie kann ich Ihnen helfen?", firstStep.PromptText);
+        Assert.Equal("learner", firstStep.LearnerRole);
+        Assert.Equal("Ich brauche Hilfe.", firstStep.ModelAnswerText);
+
+        DialogueRoleplayStepViewModel secondStep = viewModel.Steps[1];
+        Assert.Equal(2, secondStep.SortOrder);
+        Assert.Equal("pharmacist", secondStep.PromptRole);
+        Assert.Equal("Haben Sie ein Rezept?", secondStep.PromptText);
+        Assert.Equal("learner", secondStep.LearnerRole);
+        Assert.Equal("Nein, ich habe kein Rezept.", secondStep.ModelAnswerText);
+    }
+
+    [Fact]
+    public async Task Detail_ShouldReturnNotFound_WhenDialogueIsUnknown()
+    {
+        DialoguesController controller = new(
+            new CapturingCatalogApiClient(null),
+            new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
+            new StaticFeatureAccessService("fa"),
+            new TestStringLocalizer(),
+            NullLogger<DialoguesController>.Instance);
+
+        IActionResult actionResult = await controller.Detail("missing-dialogue", CancellationToken.None);
+
+        Assert.IsType<NotFoundResult>(actionResult);
+    }
+
+    [Fact]
+    public async Task Roleplay_ShouldReturnNotFound_WhenDialogueIsUnknown()
+    {
+        DialoguesController controller = new(
+            new CapturingCatalogApiClient(null),
+            new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
+            new StaticFeatureAccessService("fa"),
+            new TestStringLocalizer(),
+            NullLogger<DialoguesController>.Instance);
+
+        IActionResult actionResult = await controller.Roleplay("missing-dialogue", CancellationToken.None);
+
+        Assert.IsType<NotFoundResult>(actionResult);
+    }
+
     private static DialogueLessonDetailModel CreateDialogue() =>
         new(
             "at-the-pharmacy",
@@ -96,7 +160,21 @@ public sealed class DialoguesControllerDualMeaningLanguageTests
             [new DialoguePhraseModel("Ich habe Kopfschmerzen.", "I have a headache.", "من سردرد دارم.", null)],
             [new DialogueQuestionModel("What do you need?", "What do you need?", "چه چیزی لازم داری؟", [new DialogueAnswerModel("Hilfe", "help", "کمک", true, null)])]);
 
-    private sealed class CapturingCatalogApiClient(DialogueLessonDetailModel dialogue) : UnsupportedWebCatalogApiClient
+    private static DialogueLessonDetailModel CreateDialogueWithRoleplaySequence() =>
+        CreateDialogue() with
+        {
+            DialogueTurns =
+            [
+                new DialogueTurnModel("learner", "Guten Tag.", "Good day.", "روز بخیر."),
+                new DialogueTurnModel("staff", "Wie kann ich Ihnen helfen?", "How can I help you?", "چطور می‌توانم کمک کنم؟"),
+                new DialogueTurnModel("learner", "Ich brauche Hilfe.", "I need help.", "من کمک لازم دارم."),
+                new DialogueTurnModel("pharmacist", "Haben Sie ein Rezept?", "Do you have a prescription?", "آیا نسخه دارید؟"),
+                new DialogueTurnModel("learner", "Nein, ich habe kein Rezept.", "No, I do not have a prescription.", "نه، نسخه ندارم."),
+                new DialogueTurnModel("staff", "Noch eine Frage?", "One more question?", "یک سؤال دیگر؟")
+            ]
+        };
+
+    private sealed class CapturingCatalogApiClient(DialogueLessonDetailModel? dialogue) : UnsupportedWebCatalogApiClient
     {
         public string? Slug { get; private set; }
 
@@ -120,7 +198,7 @@ public sealed class DialoguesControllerDualMeaningLanguageTests
 
         public override Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken) => Task.FromResult<IReadOnlyList<ConversationStarterPackListItemModel>>([]);
 
-        public override Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken)
+        public override Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, string actorEmail, CancellationToken cancellationToken)
         {
             EventPreparationPacksWereRequested = true;
             return Task.FromResult<IReadOnlyList<EventPreparationPackListItemModel>>([]);

@@ -6,7 +6,9 @@ public sealed record ConversationEventListFilterModel(
     string? HelperLanguageCode,
     bool? IsOnline,
     string? PriceType,
-    string? Category);
+    string? Category,
+    DateTime? DateFromUtc = null,
+    DateTime? DateToUtc = null);
 
 public sealed record ConversationEventListItemModel(
     string Slug,
@@ -21,6 +23,8 @@ public sealed record ConversationEventListItemModel(
     string OrganizerName,
     string? OrganizerProfileSlug,
     string ScheduleText,
+    DateTime? StartsAtUtc,
+    DateTime? EndsAtUtc,
     string PriceType,
     string VerificationStatus,
     IReadOnlyList<string> LinkedEventPreparationPackSlugs);
@@ -41,6 +45,8 @@ public sealed record ConversationEventDetailModel(
     string? ExternalLink,
     string? ContactMethod,
     string ScheduleText,
+    DateTime? StartsAtUtc,
+    DateTime? EndsAtUtc,
     string PriceType,
     string VerificationStatus,
     string? SourceName,

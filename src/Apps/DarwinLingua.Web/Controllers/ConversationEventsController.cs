@@ -1,3 +1,4 @@
+using System.Globalization;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
@@ -29,6 +30,8 @@ public sealed class ConversationEventsController(
         bool? isOnline,
         string? priceType,
         string? category,
+        string? dateFromUtc,
+        string? dateToUtc,
         CancellationToken cancellationToken)
     {
         ConversationEventListFilterModel filter = new(
@@ -37,7 +40,9 @@ public sealed class ConversationEventsController(
             NormalizeLanguageCode(helperLanguageCode),
             isOnline,
             NormalizePriceType(priceType),
-            NormalizeFilter(category));
+            NormalizeFilter(category),
+            NormalizeDateFilter(dateFromUtc, endOfDay: false),
+            NormalizeDateFilter(dateToUtc, endOfDay: true));
         IReadOnlyList<ConversationEventListItemModel> events;
 
         try
@@ -217,8 +222,14 @@ public sealed class ConversationEventsController(
             return [];
         }
 
+        string? actorEmail = WebUserIdentity.TryGetEmail(User);
+        if (string.IsNullOrWhiteSpace(actorEmail))
+        {
+            return [];
+        }
+
         Task<EventPreparationPackDetailModel?>[] packTasks = preparationPackSlugs
-            .Select(preparationPackSlug => catalogApiClient.GetEventPreparationPackBySlugAsync(preparationPackSlug, cancellationToken))
+            .Select(preparationPackSlug => catalogApiClient.GetEventPreparationPackBySlugAsync(preparationPackSlug, actorEmail, cancellationToken))
             .ToArray();
         EventPreparationPackDetailModel?[] packs = await Task.WhenAll(packTasks).ConfigureAwait(false);
 
@@ -307,5 +318,29 @@ public sealed class ConversationEventsController(
                 character == '-')
             ? trimmed
             : null;
+    }
+
+    private static DateTime? NormalizeDateFilter(string? value, bool endOfDay)
+    {
+        if (string.IsNullOrWhiteSpace(value) || value.Length > MaxFilterLength)
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        if (!DateTime.TryParse(
+                trimmed,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
+                out DateTime parsed))
+        {
+            return null;
+        }
+
+        DateTime utc = DateTime.SpecifyKind(parsed, DateTimeKind.Utc);
+        bool isDateOnly = !trimmed.Contains('T', StringComparison.Ordinal) && !trimmed.Contains(':', StringComparison.Ordinal);
+        return endOfDay && isDateOnly
+            ? utc.Date.AddDays(1).AddTicks(-1)
+            : utc;
     }
 }

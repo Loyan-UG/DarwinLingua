@@ -13319,6 +13319,7 @@ public sealed class ContentImportParserGrammarTopicTests
         [
             "paragraph", "table", "callout", "rule-list", "example-list", "mistake-pair", "image-slot",
         ];
+        HashSet<string> officialPackageBlockTypesSeen = new(StringComparer.Ordinal);
         Dictionary<string, int> expectedCountsByLevel = new()
         {
             ["A1"] = 35,
@@ -13395,20 +13396,40 @@ public sealed class ContentImportParserGrammarTopicTests
                     {
                         string blockType = block.GetProperty("type").GetString() ?? string.Empty;
                         Assert.Contains(blockType, knownBlockTypes);
-                        if (blockType == "table")
+                        officialPackageBlockTypesSeen.Add(blockType);
+                        switch (blockType)
                         {
-                            int columnCount = block.GetProperty("columns").GetArrayLength();
-                            Assert.True(columnCount > 0);
-                            foreach (JsonElement row in block.GetProperty("rows").EnumerateArray())
-                            {
-                                Assert.Equal(JsonValueKind.Array, row.ValueKind);
-                                Assert.Equal(columnCount, row.GetArrayLength());
-                            }
+                            case "paragraph":
+                                Assert.False(string.IsNullOrWhiteSpace(block.GetProperty("text").GetString()));
+                                break;
+                            case "table":
+                                Assert.False(string.IsNullOrWhiteSpace(block.GetProperty("caption").GetString()));
+                                int columnCount = block.GetProperty("columns").GetArrayLength();
+                                Assert.True(columnCount > 0);
+                                foreach (JsonElement row in block.GetProperty("rows").EnumerateArray())
+                                {
+                                    Assert.Equal(JsonValueKind.Array, row.ValueKind);
+                                    Assert.Equal(columnCount, row.GetArrayLength());
+                                }
+
+                                break;
+                            case "callout":
+                                Assert.False(string.IsNullOrWhiteSpace(block.GetProperty("style").GetString()));
+                                Assert.False(string.IsNullOrWhiteSpace(block.GetProperty("text").GetString()));
+                                break;
+                            case "rule-list":
+                            case "example-list":
+                                Assert.True(block.GetProperty("items").GetArrayLength() > 0);
+                                break;
                         }
                     }
                 }
             }
         }
+
+        Assert.True(
+            new[] { "paragraph", "table", "callout", "rule-list", "example-list" }.All(officialPackageBlockTypesSeen.Contains),
+            $"Official Grammar packages did not exercise expected rich block types. Seen: {string.Join(", ", officialPackageBlockTypesSeen.OrderBy(item => item, StringComparer.Ordinal))}");
     }
 
     private static string ResolveRepositoryRoot()

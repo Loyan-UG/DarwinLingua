@@ -49,16 +49,21 @@ internal sealed class UnifiedLearningSearchService(IUnifiedLearningSearchReposit
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            return null;
+            throw new DomainRuleException("Search query is required.");
         }
 
         string trimmed = value.Trim();
+        if (trimmed.Length < MinimumQueryLength)
+        {
+            throw new DomainRuleException($"Search query must be at least {MinimumQueryLength} characters.");
+        }
+
         if (trimmed.Length > MaximumQueryLength)
         {
             throw new DomainRuleException($"Search query must be {MaximumQueryLength} characters or fewer.");
         }
 
-        return trimmed.Length < MinimumQueryLength ? null : trimmed;
+        return trimmed;
     }
 
     private static string? NormalizeResultType(string? value)

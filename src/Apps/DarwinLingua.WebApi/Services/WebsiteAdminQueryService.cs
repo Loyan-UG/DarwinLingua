@@ -855,6 +855,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             qualitySummary.ExerciseSetsUnpublishedDrafts,
             qualitySummary.ExerciseSetsWithoutItems,
             qualitySummary.ExerciseSetsWithUnresolvedExerciseSlugs,
+            qualitySummary.ExerciseSetsWithUnresolvedOwnerReferences,
             qualitySummary.ExercisesWithMalformedPrompt,
             qualitySummary.ExercisesWithMalformedAnswerKey,
             qualitySummary.ExercisesMissingExplanations,
@@ -1141,8 +1142,17 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                 HasTable(tableAvailability, "ExerciseSets")
                     ? await dbContext.ExerciseSets.AsNoTracking().Include(static set => set.Items).ToArrayAsync(cancellationToken).ConfigureAwait(false)
                     : [],
-                exerciseSlugs)
-            : new ExerciseQualityCounts(0, 0, 0, 0, 0, 0, 0, 0, 0);
+                exerciseSlugs,
+                wordKeys,
+                grammarSlugs,
+                expressionSlugs,
+                dialogueSlugs,
+                talkTopicSlugs,
+                courseLessonSlugs,
+                examPrepSlugs,
+                issues,
+                issueLimit)
+            : new ExerciseQualityCounts(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         int expressionsMissingEligibilityMetadata = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
@@ -1279,6 +1289,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         AddQualityIssue(exerciseQuality.ExerciseSetsUnpublishedDrafts, "ExerciseSet quality", "all", "Unpublished draft exercise sets", issues, issueLimit);
         AddQualityIssue(exerciseQuality.ExerciseSetsWithoutItems, "ExerciseSet quality", "published", "Exercise set has no items", issues, issueLimit);
         AddQualityIssue(exerciseQuality.ExerciseSetsWithUnresolvedExerciseSlugs, "ExerciseSet quality", "all", "Exercise set references missing exercise slug", issues, issueLimit);
+        AddQualityIssue(exerciseQuality.ExerciseSetsWithUnresolvedOwnerReferences, "ExerciseSet quality", "all", "Exercise set owner target is unresolved", issues, issueLimit);
         AddQualityIssue(exerciseQuality.ExercisesWithMalformedPrompt, "Exercise quality", "all", "Malformed prompt JSON", issues, issueLimit);
         AddQualityIssue(exerciseQuality.ExercisesWithMalformedAnswerKey, "Exercise quality", "all", "Malformed answer key JSON", issues, issueLimit);
         AddQualityIssue(exerciseQuality.ExercisesMissingExplanations, "Exercise quality", "all", "Missing correct/incorrect explanation", issues, issueLimit);
@@ -1309,6 +1320,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             exerciseQuality.ExerciseSetsUnpublishedDrafts,
             exerciseQuality.ExerciseSetsWithoutItems,
             exerciseQuality.ExerciseSetsWithUnresolvedExerciseSlugs,
+            exerciseQuality.ExerciseSetsWithUnresolvedOwnerReferences,
             exerciseQuality.ExercisesWithMalformedPrompt,
             exerciseQuality.ExercisesWithMalformedAnswerKey,
             exerciseQuality.ExercisesMissingExplanations,
@@ -1610,7 +1622,16 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
     private static ExerciseQualityCounts CountExerciseQuality(
         IReadOnlyList<Exercise> exercises,
         IReadOnlyList<ExerciseSet> exerciseSets,
-        IReadOnlySet<string> knownExerciseSlugs)
+        IReadOnlySet<string> knownExerciseSlugs,
+        IReadOnlySet<string> knownWordSlugs,
+        IReadOnlySet<string> knownGrammarSlugs,
+        IReadOnlySet<string> knownExpressionSlugs,
+        IReadOnlySet<string> knownDialogueSlugs,
+        IReadOnlySet<string> knownTalkTopicSlugs,
+        IReadOnlySet<string> knownCourseLessonSlugs,
+        IReadOnlySet<string> knownExamPrepSlugs,
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
     {
         int exercisesMissingTranslations = 0;
         int exerciseSetsMissingTranslations = 0;
@@ -1618,6 +1639,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int exerciseSetsUnpublishedDrafts = 0;
         int exerciseSetsWithoutItems = 0;
         int exerciseSetsWithUnresolvedExerciseSlugs = 0;
+        int exerciseSetsWithUnresolvedOwnerReferences = 0;
         int exercisesWithMalformedPrompt = 0;
         int exercisesWithMalformedAnswerKey = 0;
         int exercisesMissingExplanations = 0;
@@ -1678,6 +1700,32 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             {
                 exerciseSetsWithUnresolvedExerciseSlugs++;
             }
+
+            if (!string.IsNullOrWhiteSpace(set.OwnerSlug))
+            {
+                IReadOnlySet<string>? validOwnerTargets = GetExerciseOwnerTargets(
+                    set.OwnerType,
+                    knownWordSlugs,
+                    knownGrammarSlugs,
+                    knownExpressionSlugs,
+                    knownDialogueSlugs,
+                    knownTalkTopicSlugs,
+                    knownCourseLessonSlugs,
+                    knownExamPrepSlugs);
+
+                string normalizedOwnerSlug = set.OwnerSlug.Trim().ToLowerInvariant();
+                if (validOwnerTargets is not null && !validOwnerTargets.Contains(normalizedOwnerSlug))
+                {
+                    exerciseSetsWithUnresolvedOwnerReferences++;
+                    AddDetailedQualityIssue(
+                        "ExerciseSet owner",
+                        set.Slug,
+                        "Unresolved owner target",
+                        $"{set.OwnerType}:{normalizedOwnerSlug}",
+                        issues,
+                        issueLimit);
+                }
+            }
         }
 
         return new ExerciseQualityCounts(
@@ -1687,10 +1735,32 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             exerciseSetsUnpublishedDrafts,
             exerciseSetsWithoutItems,
             exerciseSetsWithUnresolvedExerciseSlugs,
+            exerciseSetsWithUnresolvedOwnerReferences,
             exercisesWithMalformedPrompt,
             exercisesWithMalformedAnswerKey,
             exercisesMissingExplanations);
     }
+
+    private static IReadOnlySet<string>? GetExerciseOwnerTargets(
+        string ownerType,
+        IReadOnlySet<string> knownWordSlugs,
+        IReadOnlySet<string> knownGrammarSlugs,
+        IReadOnlySet<string> knownExpressionSlugs,
+        IReadOnlySet<string> knownDialogueSlugs,
+        IReadOnlySet<string> knownTalkTopicSlugs,
+        IReadOnlySet<string> knownCourseLessonSlugs,
+        IReadOnlySet<string> knownExamPrepSlugs) =>
+        ownerType.Trim().ToLowerInvariant() switch
+        {
+            "word" => knownWordSlugs,
+            "grammar-topic" => knownGrammarSlugs,
+            "expression" => knownExpressionSlugs,
+            "dialogue" => knownDialogueSlugs,
+            "talk-topic" => knownTalkTopicSlugs,
+            "course-lesson" => knownCourseLessonSlugs,
+            "exam-prep-unit" => knownExamPrepSlugs,
+            _ => null,
+        };
 
     private static bool JsonArrayHasItems(string json)
     {
@@ -2490,6 +2560,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int ExerciseSetsUnpublishedDrafts,
         int ExerciseSetsWithoutItems,
         int ExerciseSetsWithUnresolvedExerciseSlugs,
+        int ExerciseSetsWithUnresolvedOwnerReferences,
         int ExercisesWithMalformedPrompt,
         int ExercisesWithMalformedAnswerKey,
         int ExercisesMissingExplanations,
@@ -2550,6 +2621,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int ExerciseSetsUnpublishedDrafts,
         int ExerciseSetsWithoutItems,
         int ExerciseSetsWithUnresolvedExerciseSlugs,
+        int ExerciseSetsWithUnresolvedOwnerReferences,
         int ExercisesWithMalformedPrompt,
         int ExercisesWithMalformedAnswerKey,
         int ExercisesMissingExplanations);

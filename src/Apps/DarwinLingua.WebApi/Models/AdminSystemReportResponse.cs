@@ -78,6 +78,7 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExerciseSetsUnpublishedDrafts,
     int ExerciseSetsWithoutItems,
     int ExerciseSetsWithUnresolvedExerciseSlugs,
+    int ExerciseSetsWithUnresolvedOwnerReferences,
     int ExercisesWithMalformedPrompt,
     int ExercisesWithMalformedAnswerKey,
     int ExercisesMissingExplanations,

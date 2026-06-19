@@ -324,6 +324,56 @@ function configureCourseModules(rootElement) {
     });
 }
 
+function configureWritingTemplateEditors(rootElement) {
+    const root = rootElement || document;
+    root.querySelectorAll("[data-writing-template-editor]").forEach((editor) => {
+        if (editor.dataset.templateEditorBound === "true") {
+            return;
+        }
+
+        editor.dataset.templateEditorBound = "true";
+        const templateText = editor.getAttribute("data-template-text") || "";
+        const output = editor.querySelector("[data-writing-template-output]");
+        const inputs = Array.from(editor.querySelectorAll("[data-template-variable]"));
+        const resetButton = editor.querySelector("[data-writing-template-reset]");
+
+        if (!output || inputs.length === 0) {
+            return;
+        }
+
+        const renderPreview = () => {
+            let renderedText = templateText;
+            inputs.forEach((input) => {
+                const variableName = input.getAttribute("data-template-variable") || "";
+                if (!variableName) {
+                    return;
+                }
+
+                const placeholder = `{{${variableName}}}`;
+                const replacement = (input.value || "").trim();
+                renderedText = renderedText.split(placeholder).join(replacement || placeholder);
+            });
+
+            output.textContent = renderedText;
+        };
+
+        inputs.forEach((input) => {
+            input.addEventListener("input", renderPreview);
+        });
+
+        if (resetButton) {
+            resetButton.addEventListener("click", () => {
+                inputs.forEach((input) => {
+                    input.value = "";
+                });
+                renderPreview();
+            });
+        }
+
+        renderPreview();
+    });
+}
+
 window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     deferredInstallPrompt = event;
@@ -448,4 +498,5 @@ document.addEventListener("DOMContentLoaded", () => {
     configureGlobalSpeech(document);
     configureSpeechShortcut();
     configureCourseModules(document);
+    configureWritingTemplateEditors(document);
 });

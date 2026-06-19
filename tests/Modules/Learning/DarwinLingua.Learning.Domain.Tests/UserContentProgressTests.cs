@@ -53,6 +53,23 @@ public sealed class UserContentProgressTests
     }
 
     [Fact]
+    public void ApplyState_ShouldClearCompletedAt_WhenStateChangesAwayFromCompleted()
+    {
+        UserContentProgress progress = new(
+            Guid.NewGuid(),
+            "user-1",
+            "course-lesson",
+            "a1-lesson",
+            DateTime.UtcNow);
+
+        progress.ApplyState("completed", DateTime.UtcNow.AddMinutes(1));
+        progress.ApplyState("needs-review", DateTime.UtcNow.AddMinutes(2));
+
+        Assert.Equal("needs-review", progress.State);
+        Assert.Null(progress.CompletedAtUtc);
+    }
+
+    [Fact]
     public void ApplyState_ShouldRejectUnsupportedState()
     {
         UserContentProgress progress = new(

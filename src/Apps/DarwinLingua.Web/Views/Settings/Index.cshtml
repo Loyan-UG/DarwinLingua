@@ -33,7 +33,7 @@
             <label class="field">
                 <span>@T["Secondary meaning language"]</span>
                 <select asp-for="Input.SecondaryMeaningLanguageCode" asp-items="Model.SecondaryMeaningLanguageOptions" disabled="@(!Model.CanUseDualMeaningLanguage)"></select>
-                <small class="body-sm">@T["Optional second meaning column for comparison."]</small>
+                <small class="body-sm">@T["Optional second meaning column for comparison. It appears beside the primary helper language on supported learning pages."]</small>
                 @if (!Model.CanUseDualMeaningLanguage && !string.IsNullOrWhiteSpace(Model.DualMeaningLanguageLockedMessage))
                 {
                     <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">@T["View billing"]</a></span>

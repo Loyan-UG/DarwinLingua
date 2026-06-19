@@ -38,6 +38,20 @@
             <dt>@T["Schedule"]</dt>
             <dd>@Model.Event.ScheduleText</dd>
         </div>
+        @if (Model.Event.StartsAtUtc.HasValue)
+        {
+            <div>
+                <dt>@T["Start"]</dt>
+                <dd>@Model.Event.StartsAtUtc.Value.ToString("yyyy-MM-dd HH:mm 'UTC'", System.Globalization.CultureInfo.InvariantCulture)</dd>
+            </div>
+        }
+        @if (Model.Event.EndsAtUtc.HasValue)
+        {
+            <div>
+                <dt>@T["End"]</dt>
+                <dd>@Model.Event.EndsAtUtc.Value.ToString("yyyy-MM-dd HH:mm 'UTC'", System.Globalization.CultureInfo.InvariantCulture)</dd>
+            </div>
+        }
         @if (!string.IsNullOrWhiteSpace(Model.Event.RecurrenceRule))
         {
             <div>

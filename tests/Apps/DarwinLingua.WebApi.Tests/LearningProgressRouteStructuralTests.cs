@@ -37,11 +37,22 @@ public sealed class LearningProgressRouteStructuralTests
     public void WebViews_ShouldRenderCourseAndRecentProgressIndicators()
     {
         string courseLessonView = File.ReadAllText(GetCourseLessonViewPath());
+        string coursesController = File.ReadAllText(GetCoursesControllerPath());
         string recentView = File.ReadAllText(GetRecentViewPath());
         string recentController = File.ReadAllText(GetRecentControllerPath());
+        string normalizedCoursesController = NormalizeWhitespace(coursesController);
 
         Assert.Contains("Learning progress", courseLessonView, StringComparison.Ordinal);
         Assert.Contains("Model.Progress.State", courseLessonView, StringComparison.Ordinal);
+        Assert.Contains("asp-action=\"UpdateLessonProgress\"", courseLessonView, StringComparison.Ordinal);
+        Assert.Contains("Html.AntiForgeryToken", courseLessonView, StringComparison.Ordinal);
+        Assert.Contains("name=\"state\" value=\"in-progress\"", courseLessonView, StringComparison.Ordinal);
+        Assert.Contains("name=\"state\" value=\"completed\"", courseLessonView, StringComparison.Ordinal);
+        Assert.Contains("name=\"state\" value=\"needs-review\"", courseLessonView, StringComparison.Ordinal);
+        Assert.Contains("[ValidateAntiForgeryToken]", coursesController, StringComparison.Ordinal);
+        Assert.Contains("\"{courseSlug}/{lessonSlug}/progress\"", coursesController, StringComparison.Ordinal);
+        Assert.Contains("LearnerSelectableLessonProgressStates.Contains(normalizedState)", normalizedCoursesController, StringComparison.Ordinal);
+        Assert.Contains("UpdateContentProgressAsync( profile.UserId, new UpdateUserContentProgressRequestModel(\"course-lesson\", lessonSlug, normalizedState), cancellationToken)", normalizedCoursesController, StringComparison.Ordinal);
         Assert.Contains("Learning progress", recentView, StringComparison.Ordinal);
         Assert.Contains("Model.LearningProgress", recentView, StringComparison.Ordinal);
         Assert.Contains("Completed", recentView, StringComparison.Ordinal);
@@ -70,6 +81,9 @@ public sealed class LearningProgressRouteStructuralTests
 
     private static string GetCourseLessonViewPath() =>
         Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Views", "Courses", "Lesson.cshtml");
+
+    private static string GetCoursesControllerPath() =>
+        Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Controllers", "CoursesController.cs");
 
     private static string GetRecentViewPath() =>
         Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Views", "Recent", "Index.cshtml");

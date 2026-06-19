@@ -376,18 +376,71 @@ internal sealed class ContentImportRepository : IContentImportRepository
 
         if (importedCoursePaths.Count > 0)
         {
-            string[] importedSlugs = importedCoursePaths.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<CoursePath> existingCourses = await dbContext.CoursePaths.Where(course => importedSlugs.Contains(course.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
-            if (existingCourses.Count > 0)
+            Dictionary<string, Guid> courseIdsBySlug = new(StringComparer.OrdinalIgnoreCase);
+            foreach (CoursePath importedCourse in importedCoursePaths)
             {
-                dbContext.CoursePaths.RemoveRange(existingCourses);
-                await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+                CoursePath? existingCourse = await dbContext.CoursePaths
+                    .SingleOrDefaultAsync(course => course.Slug == importedCourse.Slug, cancellationToken)
+                    .ConfigureAwait(false);
+
+                if (existingCourse is null)
+                {
+                    dbContext.CoursePaths.Add(importedCourse);
+                    courseIdsBySlug[importedCourse.Slug] = importedCourse.Id;
+                }
+                else
+                {
+                    existingCourse.UpdateDetails(
+                        importedCourse.Title,
+                        importedCourse.Description,
+                        importedCourse.CefrLevel,
+                        importedCourse.CefrRange,
+                        importedCourse.PublicationStatus,
+                        importedCourse.SortOrder,
+                        importedCourse.UpdatedAtUtc,
+                        importedCourse.TitleTranslationsJson,
+                        importedCourse.DescriptionTranslationsJson);
+                    courseIdsBySlug[existingCourse.Slug] = existingCourse.Id;
+                }
             }
 
-            dbContext.CoursePaths.AddRange(importedCoursePaths);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
-            Dictionary<string, Guid> courseIdsBySlug = importedCoursePaths.ToDictionary(course => course.Slug, course => course.Id, StringComparer.OrdinalIgnoreCase);
+            string[] importedModuleSlugs = importedCourseModules.Select(module => module.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            if (importedModuleSlugs.Length > 0)
+            {
+                Dictionary<string, int[]> importedModuleNumbersByCourseSlug = importedCourseModules
+                    .GroupBy(module => module.CoursePathSlug, StringComparer.OrdinalIgnoreCase)
+                    .ToDictionary(
+                        group => group.Key,
+                        group => group.Select(module => module.ModuleNumber).Distinct().ToArray(),
+                        StringComparer.OrdinalIgnoreCase);
+
+                List<CourseModule> existingModules = await dbContext.CourseModules
+                    .Where(module => importedModuleSlugs.Contains(module.Slug))
+                    .ToListAsync(cancellationToken)
+                    .ConfigureAwait(false);
+
+                foreach ((string courseSlug, int[] moduleNumbers) in importedModuleNumbersByCourseSlug)
+                {
+                    if (!courseIdsBySlug.TryGetValue(courseSlug, out Guid coursePathId))
+                    {
+                        continue;
+                    }
+
+                    existingModules.AddRange(await dbContext.CourseModules
+                        .Where(module => module.CoursePathId == coursePathId && moduleNumbers.Contains(module.ModuleNumber) && !importedModuleSlugs.Contains(module.Slug))
+                        .ToListAsync(cancellationToken)
+                        .ConfigureAwait(false));
+                }
+
+                if (existingModules.Count > 0)
+                {
+                    dbContext.CourseModules.RemoveRange(existingModules.DistinctBy(module => module.Id));
+                    await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+                }
+            }
+
             foreach (CourseModule module in importedCourseModules)
             {
                 module.AttachToCoursePath(courseIdsBySlug[module.CoursePathSlug]);

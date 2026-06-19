@@ -566,6 +566,8 @@ public sealed class OrganizerDashboardController(
                         TrimToNull(input.ExternalLink),
                         TrimToNull(input.ContactMethod),
                         input.ScheduleText.Trim(),
+                        null,
+                        null,
                         input.PriceType,
                         existingEvent?.VerificationStatus ?? "reviewed",
                         "organizer-dashboard",

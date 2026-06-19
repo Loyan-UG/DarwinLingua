@@ -63,13 +63,13 @@
 <section class="panel stack-md">
     <h2 class="headline-sm">@T["Linked practice materials"]</h2>
     <div class="grid-two-col">
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Dialogues"].Value, Model.Unit.LinkedDialogueSlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Unit.LinkedWritingTemplateSlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Grammar Guide"].Value, Model.Unit.LinkedGrammarTopicSlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Exercises"].Value, Model.Unit.LinkedExerciseSlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Roleplays"].Value, Model.Unit.LinkedRoleplaySlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Unit.LinkedTalkTopicSlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Unit.LinkedExpressionSlugs)' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Unit.LinkedCourseLessonSlugs)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Dialogues"].Value, Model.Unit.LinkedDialogueSlugs, "dialogue")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Unit.LinkedWritingTemplateSlugs, "writing-template")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Grammar Guide"].Value, Model.Unit.LinkedGrammarTopicSlugs, "grammar-topic")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Exercises"].Value, Model.Unit.LinkedExerciseSlugs, "exercise")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Roleplays"].Value, Model.Unit.LinkedRoleplaySlugs, "roleplay")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Unit.LinkedTalkTopicSlugs, "talk-topic")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Unit.LinkedExpressionSlugs, "expression")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Unit.LinkedCourseLessonSlugs, "course-lesson")' />
     </div>
 </section>

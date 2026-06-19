@@ -85,6 +85,55 @@ public sealed class ExerciseAttemptServiceTests
     }
 
     [Fact]
+    public async Task EvaluateAttemptAsync_ShouldRejectMalformedJsonWithoutPersisting()
+    {
+        FakeExerciseRepository repository = new(CreateExercise());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
+        IExerciseAttemptService service = serviceProvider.GetRequiredService<IExerciseAttemptService>();
+
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.EvaluateAttemptAsync(
+            "a1-article-choice",
+            new ExerciseAttemptRequestModel("{ nope"),
+            "en",
+            CancellationToken.None));
+
+        Assert.Empty(repository.Attempts);
+    }
+
+    [Fact]
+    public async Task SubmitAttemptAsync_ShouldRejectPrimitiveJsonShape()
+    {
+        FakeExerciseRepository repository = new(CreateExercise());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
+        IExerciseAttemptService service = serviceProvider.GetRequiredService<IExerciseAttemptService>();
+
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.SubmitAttemptAsync(
+            "a1-article-choice",
+            new ExerciseAttemptRequestModel("\"der\""),
+            "user-123",
+            "en",
+            CancellationToken.None));
+
+        Assert.Empty(repository.Attempts);
+    }
+
+    [Fact]
+    public async Task EvaluateAttemptAsync_ShouldRejectPrimitiveJsonShapeWithoutPersisting()
+    {
+        FakeExerciseRepository repository = new(CreateExercise());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
+        IExerciseAttemptService service = serviceProvider.GetRequiredService<IExerciseAttemptService>();
+
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.EvaluateAttemptAsync(
+            "a1-article-choice",
+            new ExerciseAttemptRequestModel("\"der\""),
+            "en",
+            CancellationToken.None));
+
+        Assert.Empty(repository.Attempts);
+    }
+
+    [Fact]
     public async Task SubmitAttemptAsync_ShouldRejectOversizedJson()
     {
         FakeExerciseRepository repository = new(CreateExercise());
@@ -95,6 +144,22 @@ public sealed class ExerciseAttemptServiceTests
             "a1-article-choice",
             new ExerciseAttemptRequestModel($$"""{ "answer": "{{new string('a', 4097)}}" }"""),
             "user-123",
+            "en",
+            CancellationToken.None));
+
+        Assert.Empty(repository.Attempts);
+    }
+
+    [Fact]
+    public async Task EvaluateAttemptAsync_ShouldRejectOversizedJsonWithoutPersisting()
+    {
+        FakeExerciseRepository repository = new(CreateExercise());
+        await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
+        IExerciseAttemptService service = serviceProvider.GetRequiredService<IExerciseAttemptService>();
+
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.EvaluateAttemptAsync(
+            "a1-article-choice",
+            new ExerciseAttemptRequestModel($$"""{ "answer": "{{new string('a', 4097)}}" }"""),
             "en",
             CancellationToken.None));
 

@@ -90,10 +90,7 @@ public sealed class BillingController(
             billingOptions.EnableStripe && !string.IsNullOrWhiteSpace(billingProfile?.ProviderCustomerId),
             billingProfile?.Status,
             billingProfile?.CurrentPeriodEndsAtUtc,
-            billingOptions.EnableStripe &&
-                !string.IsNullOrWhiteSpace(billingOptions.StripeSecretKey) &&
-                !string.IsNullOrWhiteSpace(billingOptions.StripeWebhookSecret) &&
-                !string.IsNullOrWhiteSpace(billingOptions.StripePremiumMonthlyPriceId),
+            IsStripeConfigured(billingOptions),
             billingProfile?.ProviderCustomerId,
             billingProfile?.ProviderSubscriptionId,
             recentEvents));
@@ -108,6 +105,11 @@ public sealed class BillingController(
         if (!billingOptions.EnableStripe)
         {
             TempData["BillingStatus"] = localizer["Stripe billing is not enabled for this environment."].Value;
+            return RedirectToAction(nameof(Index));
+        }
+        if (!IsStripeConfigured(billingOptions))
+        {
+            TempData["BillingStatus"] = localizer["Stripe billing is not fully configured for this environment."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -164,6 +166,11 @@ public sealed class BillingController(
         if (!billingOptions.EnableStripe)
         {
             TempData["BillingStatus"] = localizer["Stripe billing is not enabled for this environment."].Value;
+            return RedirectToAction(nameof(Index));
+        }
+        if (!IsStripeConfigured(billingOptions))
+        {
+            TempData["BillingStatus"] = localizer["Stripe billing is not fully configured for this environment."].Value;
             return RedirectToAction(nameof(Index));
         }
 
@@ -242,4 +249,10 @@ public sealed class BillingController(
 
         return $"{Request.Scheme}://{Request.Host}".TrimEnd('/');
     }
+
+    private static bool IsStripeConfigured(BillingOptions billingOptions) =>
+        billingOptions.EnableStripe &&
+        !string.IsNullOrWhiteSpace(billingOptions.StripeSecretKey) &&
+        !string.IsNullOrWhiteSpace(billingOptions.StripeWebhookSecret) &&
+        !string.IsNullOrWhiteSpace(billingOptions.StripePremiumMonthlyPriceId);
 }

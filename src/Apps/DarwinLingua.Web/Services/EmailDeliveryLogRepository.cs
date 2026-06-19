@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using DarwinLingua.Web.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -103,6 +104,9 @@ public sealed record EmailSuppressionSummary(
 public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
     : IEmailDeliveryLogRepository
 {
+    private static readonly Regex UrlPattern = new(@"https?://\S+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+    private static readonly Regex QueryTokenPattern = new(@"([?&](?:code|token|resetToken|confirmationToken)=)[^&\s]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
     public async Task<WebEmailDeliveryLog> AddQueuedAsync(
         TransactionalEmailMessage message,
         string providerName,
@@ -214,7 +218,7 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
 
         log.Status = WebEmailDeliveryStatus.Failed;
         log.FailureCode = Truncate(failureCode, 128);
-        log.FailureMessageSummary = Truncate(failureMessageSummary, 512);
+        log.FailureMessageSummary = TruncateDiagnosticText(failureMessageSummary, 512);
         log.RetryCount += 1;
         log.LastAttemptAtUtc = DateTimeOffset.UtcNow;
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
@@ -244,7 +248,7 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
         string storedProviderEvent = normalizedEvent.ToLowerInvariant();
         log.ProviderLastEvent = Truncate(storedProviderEvent, 64);
         log.ProviderLastEventAtUtc = providerEventAtUtc.ToUniversalTime();
-        log.ProviderLastEventReason = Truncate(reason, 512);
+        log.ProviderLastEventReason = TruncateDiagnosticText(reason, 512);
         log.LastAttemptAtUtc = DateTimeOffset.UtcNow;
 
         if (IsSuccessfulProviderEvent(normalizedEvent))
@@ -258,7 +262,7 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
         {
             log.Status = WebEmailDeliveryStatus.Failed;
             log.FailureCode = Truncate("brevo:" + normalizedEvent, 128);
-            log.FailureMessageSummary = Truncate(reason, 512);
+            log.FailureMessageSummary = TruncateDiagnosticText(reason, 512);
 
             if (IsPermanentSuppressionEvent(normalizedEvent))
             {
@@ -508,6 +512,19 @@ public sealed class EmailDeliveryLogRepository(WebIdentityDbContext dbContext)
         }
 
         return value.Length <= maxLength ? value : value[..maxLength];
+    }
+
+    private static string? TruncateDiagnosticText(string? value, int maxLength)
+    {
+        string? truncated = Truncate(value, maxLength);
+        if (string.IsNullOrWhiteSpace(truncated))
+        {
+            return null;
+        }
+
+        string withoutUrls = UrlPattern.Replace(truncated, "[redacted-url]");
+        string withoutTokens = QueryTokenPattern.Replace(withoutUrls, "$1[redacted]");
+        return withoutTokens.Length <= maxLength ? withoutTokens : withoutTokens[..maxLength];
     }
 
     private static bool IsSuccessfulProviderEvent(string providerEvent) =>

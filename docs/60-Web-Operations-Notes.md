@@ -50,6 +50,22 @@ Review rule before release:
 
 ---
 
+## Security Header Baseline
+
+Current Web/WebApi runtime baseline:
+
+- public HTTPS responses send `Strict-Transport-Security: max-age=31536000; includeSubDomains`
+- Web and WebApi send `X-Content-Type-Options: nosniff`
+- Web and WebApi send `X-Frame-Options: DENY`
+- Web and WebApi send `Referrer-Policy: strict-origin-when-cross-origin`
+- Web and WebApi disable camera, microphone, and geolocation through `Permissions-Policy`
+- Web sends the app content security policy for scripts, styles, images, fonts, manifests, forms, frames, and workers
+- localhost and loopback HTTPS requests do not receive HSTS, so local development certificates are not accidentally pinned
+
+Before release, verify the public Web and API hosts after deployment rather than only inspecting local configuration, because reverse proxies and edge providers can change response headers.
+
+---
+
 ## UX Telemetry Direction
 
 Current lightweight telemetry baseline now covers:
@@ -229,6 +245,8 @@ The local Cloudflare-routed public domains require the same ports used by the ch
 
 For private local-only smoke, `http://localhost:5192` and `http://localhost:5099` may still be used when Web is configured to call the API on `5099`. For public-routed smoke through `lingua.vafadar.pro` and `linguaapi.vafadar.pro`, start the launch-profile ports or ensure the tunnel ingress points at the active local ports. A public `502 Bad Gateway` with healthy localhost responses usually means the tunnel origin port is not running or the Web host is calling a local API port that is not active.
 
+Do not start WebApi with only `--urls http://localhost:5099` when the public `linguaapi.vafadar.pro` tunnel must be tested. That local-only launch leaves the checked-in tunnel origin ports closed and produces public `502` responses even though `http://localhost:5099/health` is healthy. Use the checked-in launch profile for public smoke so WebApi listens on `https://0.0.0.0:53944`, `http://0.0.0.0:53945`, and `http://localhost:5099`.
+
 ## Phase Backup Register
 
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
@@ -280,8 +298,8 @@ Verification evidence:
 Backup status:
 
 - Restore-ready staging backup exists at `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`.
-- Required final external target is still `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`.
-- At creation time, `X:` was disconnected from `\\MYCLOUD-GXS39C\shahramvafadar` with Windows reporting the mapped drive as `Reconnecting`; sync to `X:` remains pending.
+- Final external target is synced at `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`.
+- At creation time, `X:` was disconnected from `\\MYCLOUD-GXS39C\shahramvafadar`, so the backup was first staged locally. After `X:` reconnected, the full staging folder was copied to the external target and verified.
 
 Scope:
 
@@ -289,14 +307,17 @@ Scope:
 - Shared PostgreSQL counts: `CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `UserContentProgress=true`.
 - C2 unresolved activity target count is zero.
 
-Verification evidence in staging:
+Verification evidence:
 
 - `db/darwinlingua_shared_20260618-073641.dump` created from `darwinlingua_shared`.
 - `db/darwinlingua_shared_20260618-073641.restore-list.txt` generated with `pg_restore --list`.
 - `verification/live-counts.txt` and `verification/restore-counts.txt` match.
 - Temporary dry-run restore database was restored and dropped.
-- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present at the external target.
+- `external-sync-verification.md` records the later successful sync because `manifest.md` was created during the initial local staging step while `X:` was unavailable.
+- External target file count and byte size match staging when hidden files are included: `617` files, `239493739` bytes.
+- SHA256 verification at the external target passed for all `616` listed files.
 
 Operational follow-up:
 
-- After reconnecting `X:`, copy the full staging folder to `X:\Projects\DarwinLingua.Backup\` and verify `manifest.md`, `checksums.sha256`, and the database dump exist at the external target before treating this phase backup as closed.
+- This phase backup is closed. Keep the local staging folder until the next phase backup has also been verified, then it may be pruned manually if disk space is needed.

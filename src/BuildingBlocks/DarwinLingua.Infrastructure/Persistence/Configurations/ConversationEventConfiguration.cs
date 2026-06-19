@@ -26,6 +26,8 @@ internal sealed class ConversationEventConfiguration : IEntityTypeConfiguration<
         builder.Property(conversationEvent => conversationEvent.ScheduleText).HasMaxLength(1000).IsRequired();
         builder.Property(conversationEvent => conversationEvent.RecurrenceRule).HasMaxLength(256);
         builder.Property(conversationEvent => conversationEvent.Capacity);
+        builder.Property(conversationEvent => conversationEvent.StartsAtUtc);
+        builder.Property(conversationEvent => conversationEvent.EndsAtUtc);
         builder.Property(conversationEvent => conversationEvent.PriceType).HasMaxLength(64).IsRequired();
         builder.Property(conversationEvent => conversationEvent.VerificationStatus).HasMaxLength(64).IsRequired();
         builder.Property(conversationEvent => conversationEvent.SourceName).HasMaxLength(256);
@@ -39,6 +41,7 @@ internal sealed class ConversationEventConfiguration : IEntityTypeConfiguration<
         builder.HasIndex(conversationEvent => conversationEvent.OrganizerProfileSlug);
         builder.HasIndex(conversationEvent => new { conversationEvent.City, conversationEvent.IsOnline, conversationEvent.PriceType });
         builder.HasIndex(conversationEvent => new { conversationEvent.Category, conversationEvent.PublicationStatus });
+        builder.HasIndex(conversationEvent => new { conversationEvent.StartsAtUtc, conversationEvent.PublicationStatus });
 
         builder.HasMany(conversationEvent => conversationEvent.SupportedLevels)
             .WithOne()

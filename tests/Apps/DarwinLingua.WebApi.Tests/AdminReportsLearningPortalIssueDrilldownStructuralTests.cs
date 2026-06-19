@@ -28,6 +28,22 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
     {
         string viewSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Areas", "Admin", "Views", "Reports", "Index.cshtml"));
 
+        Assert.Contains("learningPortalTables", viewSource, StringComparison.Ordinal);
+        Assert.Contains("learning-portal-coverage", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Learning Portal coverage", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Content count by type", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Content count by CEFR", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Exercises by type", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Exercises by target skill", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Course lessons by course", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Course lessons by module", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Exam prep units by profile", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Writing templates by category", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Life in Germany notes by category", viewSource, StringComparison.Ordinal);
+        Assert.Contains("No rows available yet.", viewSource, StringComparison.Ordinal);
+        Assert.Contains("@foreach (var row in table.Rows)", viewSource, StringComparison.Ordinal);
+        Assert.Contains("@row.Key", viewSource, StringComparison.Ordinal);
+        Assert.Contains("@row.Count", viewSource, StringComparison.Ordinal);
         Assert.Contains("learning-portal-issues", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"learningPortalIssueArea\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"learningPortalIssueSearch\"", viewSource, StringComparison.Ordinal);
@@ -36,6 +52,10 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
         Assert.Contains("Model.FilteredLearningPortalIssues", viewSource, StringComparison.Ordinal);
         Assert.Contains("Showing @Model.FilteredLearningPortalIssues.Count of @Model.LearningPortal.SampleIssues.Count", viewSource, StringComparison.Ordinal);
         Assert.Contains("Admin_Reports_LearningPortalIssues", viewSource, StringComparison.Ordinal);
+        Assert.Contains("<th>Area</th>", viewSource, StringComparison.Ordinal);
+        Assert.Contains("<th>Owner</th>", viewSource, StringComparison.Ordinal);
+        Assert.Contains("<th>Issue</th>", viewSource, StringComparison.Ordinal);
+        Assert.Contains("<th>Target</th>", viewSource, StringComparison.Ordinal);
     }
 
     [Fact]

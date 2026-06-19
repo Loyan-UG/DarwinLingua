@@ -15,21 +15,30 @@ Latest local validation evidence can be captured in:
 
 ## Build Under Test
 
-- Build commit:
-- Validation date:
-- Validator:
-- Browser:
-- OS:
-- Deployment URL:
+- Build commit: `64f46875` plus local working-tree PWA changes
+- Validation date: 2026-06-18
+- Validator: local automated smoke
+- Browser: Google Chrome desktop, headless Chromium via `puppeteer-core`
+- OS: Windows local development machine
+- Deployment URL: `https://localhost:7501`
+
+Latest local evidence:
+
+- `WebPwaInstallStructuralTests` passed `2/2`.
+- `DarwinLingua.Web` build passed after PWA changes.
+- `tools/Web/New-WebPwaInstallabilityReport.ps1` generated `artifacts/installability-report.json` with `17` passed automated checks and `2` manual checks.
+- Local HTTPS smoke returned HTTP 200 for `/`, `/manifest.webmanifest`, `/sw.js`, `/offline.html`, and `/images/logo.png`.
+- Desktop Chromium loaded the home page, parsed the manifest, registered the service worker at `https://localhost:7501/`, created cache `darwin-lingua-shell-v3`, and cached `/offline.html`.
+- With the Web host intentionally stopped after online load, desktop Chromium navigated to `/offline-smoke-check` and rendered cached `Offline - Darwin Lingua`.
 
 ---
 
 ## Preconditions
 
-- [ ] site is reachable over HTTPS
-- [ ] manifest loads successfully
-- [ ] service worker registers successfully
-- [ ] icons are available
+- [x] site is reachable over HTTPS
+- [x] manifest loads successfully
+- [x] service worker registers successfully
+- [x] icons are available
 - [ ] browser supports install prompts for the tested platform
 
 ---
@@ -59,13 +68,13 @@ Latest local validation evidence can be captured in:
 
 ## C. Offline And Cache Behavior
 
-- [ ] load the app once while online
-- [ ] disable network access
+- [x] load the app once while online
+- [x] disable network access
 - [ ] relaunch the installed app
-- [ ] verify the shell still loads
-- [ ] verify previously cached assets do not break navigation
-- Result:
-- Notes:
+- [x] verify the shell still loads
+- [x] verify previously cached assets do not break navigation
+- Result: Passed for service-worker shell fallback in desktop Chromium.
+- Notes: The local smoke stopped the Web host instead of completing a real installed-app relaunch. Install prompt acceptance and installed-window behavior remain part of sections A and B.
 
 ---
 

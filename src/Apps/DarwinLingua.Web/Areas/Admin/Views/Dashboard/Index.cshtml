@@ -16,40 +16,56 @@
 <nav class="admin-anchor-nav" aria-label="@T["Admin overview sections"]">
     <a href="#management">@T["Management"]</a>
     <a href="#catalog">@T["Catalog"]</a>
+    <a href="#learning">@T["Learning Portal"]</a>
     <a href="#social">@T["Social"]</a>
     <a href="#moderation">@T["Moderation"]</a>
+    <a href="#operations">@T["Operations"]</a>
 </nav>
 
 <section class="grid-two-col">
     <article class="panel stack-md">
         <h2 id="management" class="headline-sm">@T["Management areas"]</h2>
         <ul class="feature-list">
-            <li><a asp-area="Admin" asp-controller="Imports" asp-action="Index">@T["Imports"]</a></li>
-            <li><a asp-area="Admin" asp-controller="Drafts" asp-action="Index">@T["Drafts"]</a></li>
-            <li><a asp-area="Admin" asp-controller="Publishing" asp-action="Index">@T["Publishing"]</a></li>
             <li><a asp-area="Admin" asp-controller="Reports" asp-action="Index">@T["System report"]</a></li>
-            <li><a asp-area="Admin" asp-controller="Moderation" asp-action="Index">@T["Moderation"]</a></li>
             <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">@T["Users and entitlements"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Moderation" asp-action="Index">@T["Moderation"]</a></li>
             <li><a asp-area="Admin" asp-controller="BillingDiagnostics" asp-action="Index">@T["Billing diagnostics"]</a></li>
-            <li><a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">@T["Email diagnostics"]</a></li>
         </ul>
     </article>
     <article class="panel stack-md">
         <h2 id="catalog" class="headline-sm">@T["Catalog operations"]</h2>
         <ul class="feature-list">
+            <li><a asp-area="Admin" asp-controller="Words" asp-action="Index">@T["Words"]</a>: @Model.ActiveWordCount @T["active"] / @Model.DraftWordCount @T["draft"]</li>
+            <li><a asp-area="Admin" asp-controller="WordSuggestions" asp-action="Index">@T["Word suggestions"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Topics" asp-action="Index">@T["Topics"]</a>: @Model.TotalTopicCount</li>
+            <li><a asp-area="Admin" asp-controller="Labels" asp-action="Index">@T["Labels"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Collections" asp-action="Index">@T["Collections"]</a></li>
             <li>@T["Draft words"]: @Model.DraftWordCount</li>
-            <li>@T["Topics"]: @Model.TotalTopicCount</li>
             <li>@T["Imported packages"]: @Model.ImportedPackageCount</li>
             <li>@T["Failed imports"]: @Model.FailedPackageCount</li>
             <li>@T["Last import"]: @(Model.LastImportAtUtc?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? T["No imports yet"])</li>
         </ul>
     </article>
     <article class="panel stack-md">
+        <h2 id="learning" class="headline-sm">@T["Learning Portal"]</h2>
+        <ul class="feature-list">
+            <li><a asp-area="Admin" asp-controller="Grammar" asp-action="Index">@T["Grammar"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Expressions" asp-action="Index">@T["Expressions"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Courses" asp-action="Index">@T["Courses"]</a></li>
+            <li><a asp-area="Admin" asp-controller="ExamPrep" asp-action="Index">@T["Exam preparation"]</a></li>
+            <li><a asp-area="Admin" asp-controller="WritingTemplates" asp-action="Index">@T["Writing templates"]</a></li>
+            <li><a asp-area="Admin" asp-controller="CulturalNotes" asp-action="Index">@T["Life in Germany"]</a></li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
         <h2 id="social" class="headline-sm">@T["Social learning"]</h2>
         <ul class="feature-list">
-            <li>@T["Organizer profiles"]: @Model.OrganizerProfileCount</li>
-            <li>@T["Event RSVPs"]: @Model.EventRsvpCount</li>
+            <li><a asp-area="Admin" asp-controller="OrganizerProfiles" asp-action="Index">@T["Organizer profiles"]</a>: @Model.OrganizerProfileCount</li>
+            <li><a asp-area="Admin" asp-controller="ConversationEvents" asp-action="Index">@T["Conversation events"]</a>: @Model.ConversationEventCount</li>
             <li>@T["Pending organizer claims"]: @Model.PendingOrganizerClaimRequestCount</li>
+            <li>@T["Event RSVPs"]: @Model.EventRsvpCount</li>
             <li>@T["Learner conversation profiles"]: @Model.LearnerConversationProfileCount</li>
             <li>@T["Pending partner requests"]: @Model.PendingPartnerRequestCount</li>
         </ul>
@@ -60,6 +76,19 @@
             <li>@T["Pending reports"]: @Model.PendingUserReportCount</li>
             <li>@T["User blocks"]: @Model.UserBlockCount</li>
             <li>@T["Decision audits"]: @Model.ModerationDecisionAuditCount</li>
+        </ul>
+    </article>
+    <article class="panel stack-md">
+        <h2 id="operations" class="headline-sm">@T["Operations"]</h2>
+        <ul class="feature-list">
+            <li><a asp-area="Admin" asp-controller="Imports" asp-action="Index">@T["Imports"]</a>: @Model.ImportedPackageCount</li>
+            <li><a asp-area="Admin" asp-controller="Drafts" asp-action="Index">@T["Drafts"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Publishing" asp-action="Index">@T["Publishing"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Rollback" asp-action="Index">@T["Rollback"]</a></li>
+            <li><a asp-area="Admin" asp-controller="History" asp-action="Index">@T["Publication history"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Analytics" asp-action="Index">@T["Analytics"]</a></li>
+            <li><a asp-area="Admin" asp-controller="Diagnostics" asp-action="Index">@T["Diagnostics"]</a></li>
+            <li><a asp-area="Admin" asp-controller="EmailDiagnostics" asp-action="Index">@T["Email diagnostics"]</a></li>
         </ul>
     </article>
 </section>

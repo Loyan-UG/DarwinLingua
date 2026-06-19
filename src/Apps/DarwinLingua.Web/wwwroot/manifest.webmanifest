@@ -2,11 +2,20 @@
   "name": "Darwin Lingua",
   "short_name": "DarwinLingua",
   "description": "Learner-first web application for Darwin Lingua.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "browser"],
   "background_color": "#08111f",
   "theme_color": "#0f172a",
   "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/icons/icon-192.svg",
       "sizes": "192x192",

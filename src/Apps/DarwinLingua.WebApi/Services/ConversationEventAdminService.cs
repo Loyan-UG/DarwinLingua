@@ -123,7 +123,7 @@ public sealed class ConversationEventAdminService(
             nowUtc);
 
         conversationEvent.SetSourceMetadata(request.SourceName, request.SourceUrl, request.LastVerifiedAtUtc);
-        conversationEvent.SetOperationalDetails(request.RecurrenceRule, request.Capacity, nowUtc);
+        conversationEvent.SetOperationalDetails(request.RecurrenceRule, request.Capacity, nowUtc, request.StartsAtUtc, request.EndsAtUtc);
 
         for (int index = 0; index < levels.Length; index++)
         {
@@ -213,6 +213,8 @@ public sealed class ConversationEventAdminService(
             conversationEvent.ExternalLink,
             conversationEvent.ContactMethod,
             conversationEvent.ScheduleText,
+            conversationEvent.StartsAtUtc,
+            conversationEvent.EndsAtUtc,
             conversationEvent.PriceType,
             conversationEvent.VerificationStatus,
             conversationEvent.PublicationStatus.ToString(),

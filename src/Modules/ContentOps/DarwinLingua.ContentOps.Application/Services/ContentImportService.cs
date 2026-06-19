@@ -4166,6 +4166,8 @@ internal sealed class ContentImportService : IContentImportService
             if (!Enum.TryParse(NormalizeText(set.CefrLevel), true, out CefrLevel _)) errors.Add("Exercise set CEFR level is invalid.");
             string ownerType = NormalizeText(set.OwnerType).ToLowerInvariant();
             if (!ExerciseOwnerTypes.Contains(ownerType)) errors.Add($"Exercise set ownerType '{ownerType}' is not supported.");
+            string? ownerSlug = NormalizeOptionalText(set.OwnerSlug)?.ToLowerInvariant();
+            if (ownerSlug is not null && !ValidateKebabKey(ownerSlug)) errors.Add("Exercise set ownerSlug must use lowercase kebab-case.");
             ValidateOptionalMeaningTranslations(set.TitleTranslations, meaningLanguages, "Exercise set titleTranslations", errors);
             ValidateOptionalMeaningTranslations(set.DescriptionTranslations, meaningLanguages, "Exercise set descriptionTranslations", errors);
             if (set.ExerciseSlugs.Count == 0) errors.Add("Exercise set exerciseSlugs must contain at least one exercise slug.");

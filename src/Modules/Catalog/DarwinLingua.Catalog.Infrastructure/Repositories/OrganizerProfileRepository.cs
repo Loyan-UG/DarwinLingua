@@ -138,6 +138,8 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
             conversationEvent.OrganizerName,
             conversationEvent.OrganizerProfileSlug,
             conversationEvent.ScheduleText,
+            conversationEvent.StartsAtUtc,
+            conversationEvent.EndsAtUtc,
             conversationEvent.PriceType,
             conversationEvent.VerificationStatus,
             conversationEvent.PreparationPackLinks.OrderBy(link => link.SortOrder).Select(link => link.PreparationPackSlug).ToArray());

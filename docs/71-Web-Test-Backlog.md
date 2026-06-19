@@ -49,6 +49,9 @@ Latest local Web verification:
 - 2026-05-31: Course Lessons v1 foundation added learner-helper translations, PostgreSQL-backed Course persistence/projection support, admin translation quality counters, and the first A1 pilot package. The original A1 pilot evidence covered 1 path, 1 module, and 5 cumulative lessons with targeted parser/import, PostgreSQL repository, admin report tests, Web project build, full solution build, and local Course Web/API smoke. This is now superseded by the 2026-06-08 A1-C2 imported baseline below.
 - 2026-06-08: Course Lessons A1-C2 are the current imported Course baseline in shared PostgreSQL: 6 paths, 56 modules, 560 lessons total (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`). The C2 source package `content/learning-portal/courses/packages/course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` imported with zero warnings after C2 batch 24. Local Web smoke returned HTTP 200 for `/`, `/courses`, `/courses/c2-stil-souveraenitaet-und-komplexer-diskurs`, and `/courses/c2-stil-souveraenitaet-und-komplexer-diskurs/c2-abschluss-und-meisterschaftspflege`. Local WebApi smoke returned HTTP 200 for course list/detail, Persian lesson detail, and course-lesson search. `WebsiteAdminQueryServiceLearningPortalReportTests` passed 2/2 because the local admin endpoint correctly returns 401 without credentials. PostgreSQL counts are `A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`.
 - 2026-06-16: Course lesson reading-flow UI uses `activityBlocks` when present and keeps legacy linked-content fallback for lessons not yet backfilled. Structural tests cover the Razor activity flow, wrapping CSS classes, RTL helper text, required/optional badges, and target URL mapping. Admin diagnostics cover published lessons without activity blocks, malformed activity JSON, unsupported activity target types, and unresolved activity target slugs.
+- 2026-06-18: Talk Topic vocabulary references now fail safely. PostgreSQL repository tests verify known vocabulary resolves through the Word Catalog while unresolved vocabulary returns without a public word slug, and Web structural tests verify detail pages only link resolved words with the `wordSlug` route parameter.
+- 2026-06-18: Talk Topic Web localization keys now cover list/detail labels, content types, discussion question types, speaking goals, and sensitivity warnings in English and German. Structural tests verify the complete key set, Web build passes without resource warnings, and public HTML smoke confirms the article content-type label is rendered as localized text instead of raw `article`.
+- 2026-06-18: Web PWA shell readiness now has a real desktop Chromium smoke pass. `/manifest.webmanifest`, `/sw.js`, `/offline.html`, and `/images/logo.png` returned HTTP 200 locally; `WebPwaInstallStructuralTests` passed 2/2; desktop Chromium registered the service worker at `https://localhost:7501/`, created cache `darwin-lingua-shell-v3`, cached `/offline.html`, and rendered `Offline - Darwin Lingua` from the cached shell after the Web host was intentionally stopped.
 - 2026-06-09/12: Reviewed Exam Prep foundation and depth content is imported for A1/A2/DTZ, C1, B1, B2, and Goethe C2. Current shared PostgreSQL counts are `ExamProfiles=17`, `ExamPrepUnits=246`, and `GoetheC2Units=86`, with C2 distributed as reading 17, listening 17, speaking 17, writing 17, strategy 17, and overview 1. Targeted ExamPrep ContentOps tests passed during content batches, imports completed with zero warnings, public API/search/Web smoke returned HTTP 200 where public routes are exposed, and the phase backup was created at `X:\Projects\DarwinLingua.Backup\20260612-142146-exam-prep-complete-pre-writing-templates`.
 - 2026-06-13: Writing Templates A1-C2 are generated and imported into `darwinlingua_shared` with `WritingTemplates=120`, distributed as 20 templates per CEFR level. Targeted WritingTemplate ContentOps tests passed. Local Web/API smoke returned HTTP 200 for `/writing-templates`, A1 detail, C2 detail, Persian API detail, and `/api/catalog/search?q=Abschlussstatement&resultType=writing-template`.
 - 2026-05-17: `DarwinLingua.ContentOps.Infrastructure.Tests` passed 30/30 after adding the official B1 talking about plans and conditions topic.
@@ -345,10 +348,10 @@ Latest local Web verification:
 - [x] Persistence stores German-only article, German-only questions, vocabulary references, speaking goals, content type, and sensitivity fields.
 - [x] Generated Talk Topic package validation checks CEFR character ranges, no article/question translations, required question counts, vocabulary counts, content types, speaking goals, duplicate slugs, and distinct topic groups.
 - [x] List query filters by CEFR level, category, topic, content type, speaking goal, and sensitivity.
-- [ ] Detail query resolves vocabulary references against the Word Catalog where possible.
+- [x] Detail query resolves vocabulary references against the Word Catalog where possible.
 - [x] WebApi list/detail endpoints return successful Talk Topic payloads in smoke coverage.
-- [ ] Web detail rendering does not fail when a vocabulary `wordSlug` cannot be resolved.
-- [ ] German and English localization keys cover Talk Topics, content types, speaking goals, and sensitivity warnings.
+- [x] Web detail rendering does not fail when a vocabulary `wordSlug` cannot be resolved.
+- [x] German and English localization keys cover Talk Topics, content types, speaking goals, and sensitivity warnings.
 - [x] Catalog package export includes Talk Topics where expected.
 - [ ] Mobile UI parity for Talk Topics after the Web flow is signed off.
 
@@ -357,12 +360,16 @@ Latest local Web verification:
 - [x] Dialogue import rejects malformed dialogue packages with clear issue messages for missing metadata, unsupported values, missing useful words, missing speaking prompts, and insufficient sentence counts.
 - [x] Dialogue import persists lesson metadata, topics, dialogue turns, useful phrases, questions, answers, translations, useful words, and speaking prompts.
 - [x] Dialogue list query returns only published dialogues in stable sort order and supports CEFR, category, topic, exam profile, skill focus, task type, interaction mode, register, and search filters.
-- [ ] Dialogue detail query applies primary and secondary meaning-language selection.
+- [x] Dialogue detail query applies primary and secondary meaning-language selection.
+  - Evidence 2026-06-18: `DialogueLessonPostgresRepositoryTests` verifies PostgreSQL detail projection for Persian primary and English secondary meanings across speaking prompts, turns, useful phrases, questions, and answers, including the no-secondary case. Public smoke for `a1-cafe-order` returned Persian primary and English secondary meanings from `/api/catalog/dialogues/{slug}`.
 - [x] Web dialogue detail rendering shows dialogue metadata, useful phrases, useful words, speaking prompts, quick checks, related starter packs, and related preparation packs.
 - [x] Web dialogue list includes prominent CEFR filtering and metadata badges.
-- [ ] Web roleplay sequence builder skips learner prompts and pairs each non-learner prompt with the next learner model answer.
-- [ ] Web roleplay page renders model answers, static feedback, and no-AI behavior.
-- [ ] Empty or unknown dialogue detail payloads return safe 404 behavior instead of Web 500 errors.
+- [x] Web roleplay sequence builder skips learner prompts and pairs each non-learner prompt with the next learner model answer.
+  - Evidence 2026-06-18: `DialoguesControllerDualMeaningLanguageTests.Roleplay_ShouldSkipLearnerPromptsAndPairNonLearnerPromptsWithNextLearnerAnswer` verifies the Web roleplay view model omits learner prompts, pairs staff/pharmacist prompts with the following learner model answers, skips trailing prompts without learner answers, and preserves resolved primary/secondary language codes.
+- [x] Web roleplay page renders model answers, static feedback, and no-AI behavior.
+  - Evidence 2026-06-18: `DialogueRouteStructuralTests` verifies the roleplay view renders `ModelAnswerText`, model answer helper meanings, `StaticFeedback`, German TTS controls, no form/textarea/submitted-answer surface, and no OpenAI/ChatGPT/AI feedback hooks. Public smoke for `/dialogues/a1-cafe-order/roleplay` returned 200 with scripted practice and model-answer feedback text.
+- [x] Empty or unknown dialogue detail payloads return safe 404 behavior instead of Web 500 errors.
+  - Evidence 2026-06-18: `DialoguesControllerDualMeaningLanguageTests` verifies `Detail` and `Roleplay` return `NotFoundResult` when the catalog API returns no dialogue. Public smoke for `/dialogues/unknown-dialogue-for-smoke` returned 404.
 - [ ] Human-review generated Dialogue translations before public launch; current starter generation preserves required language slots for import integrity.
 - [ ] Add full mobile Dialogue metadata/detail parity after Web sign-off.
 
@@ -384,47 +391,76 @@ Latest local Web verification:
 
 ### Conversation Starters
 
-- [ ] Starter import rejects invalid filters, linked dialogue slugs, and invalid dual-language payloads.
-- [ ] Starter list query filters by CEFR level, situation, tone, and conversation goal.
-- [ ] Starter detail query renders primary and optional secondary meaning languages.
-- [ ] Dialogue detail query returns related starter packs for linked dialogues.
-- [ ] Web starter detail page renders phrase alternatives, usage notes, register, common mistakes, and dual-language text.
+- [x] Starter import rejects invalid filters, linked dialogue slugs, and invalid dual-language payloads.
+  - Evidence 2026-06-18: `ImportAsync_ShouldFail_WhenConversationStarterContractIsInvalid` verifies bad starter slug/filter fields, unknown topic references, malformed `linkedDialogueSlugs`, duplicate translation languages, and unsupported translation languages are rejected before persistence.
+- [x] Starter list query filters by CEFR level, situation, tone, and conversation goal.
+  - Evidence 2026-06-18: `ImportAsync_ShouldPersistConversationStarterPacks` now runs against temporary PostgreSQL and verifies a valid starter pack is queryable through `GetPublishedStarterPacksAsync` with CEFR, situation, tone, conversation goal, and topic filters.
+- [x] Starter detail query renders primary and optional secondary meaning languages.
+  - Evidence 2026-06-18: the same PostgreSQL import/query test verifies detail projection resolves Persian primary meanings and English secondary meanings for starter phrases, including alternatives.
+- [x] Dialogue detail query returns related starter packs for linked dialogues.
+  - Evidence 2026-06-18: the PostgreSQL import/query test verifies `GetPublishedStarterPacksForDialogueAsync("doctor-appointment-a1")` returns the linked starter pack.
+- [x] Web starter detail page renders phrase alternatives, usage notes, register, common mistakes, and dual-language text.
+  - Evidence 2026-06-18: `ConversationStarterRouteStructuralTests` verifies Web/API starter routes, list filters, detail phrase alternatives, usage notes, register, common mistakes, primary/secondary meaning rendering, RTL-aware `dir` binding, and linked-dialogue rendering. Imported `conversation-starters-a1-foundation-01-v1.json` to shared PostgreSQL with `ConversationStarterPacks=3`, `ConversationStarterPhrases=12`, and `ConversationStarterPhraseTranslations=120`; public smoke passed for `/conversation-starters`, `/conversation-starters/a1-im-cafe-ein-gespraech-beginnen`, Persian detail, API list, and API detail with `primaryMeaningLanguageCode=fa&secondaryMeaningLanguageCode=en`.
 
 ### Event Preparation Packs
 
-- [ ] Preparation-pack import rejects invalid linked dialogues, vocabulary references, starter links, and prompt types.
-- [ ] Preparation-pack persistence stores prompts, vocabulary references, topic links, dialogue links, and starter-pack links.
-- [ ] Event-to-preparation-pack mapping returns only published packs linked to the active event.
-- [ ] Web event detail renders entitled preparation-pack links.
-- [ ] Web preparation-pack detail renders prompts, vocabulary, related dialogues, and related starter packs.
-- [ ] `Mark prepared` records aggregate completion analytics and redirects back to the preparation-pack detail page.
-- [ ] Direct preparation-pack access is forbidden when the learner lacks the entitlement.
+- [x] Preparation-pack import rejects invalid linked dialogues, vocabulary references, starter links, and prompt payloads.
+  - Evidence 2026-06-18: `ImportAsync_ShouldFail_WhenEventPreparationContractIsInvalid` verifies bad pack slug/metadata, unknown topics, malformed linked starter slugs, invalid vocabulary word/part-of-speech/CEFR, and empty opening/roleplay/review prompt entries are rejected before persistence.
+- [x] Preparation-pack persistence stores prompts, vocabulary references, topic links, dialogue links, and starter-pack links.
+  - Evidence 2026-06-18: `ImportAsync_ShouldPersistEventPreparationPacks` now runs against temporary PostgreSQL and verifies persisted topics, linked dialogues, linked starter packs, linked vocabulary, and opening/roleplay/review prompts. Imported `event-preparation-a1-foundation-01-v1.json` to shared PostgreSQL with `EventPreparationPacks=3`, `EventPreparationPrompts=27`, `EventPreparationVocabularyReferences=9`, `EventPreparationLinkedDialogues=4`, and `EventPreparationLinkedConversationStarterPacks=3`.
+- [x] Event-to-preparation-pack mapping returns only published packs linked to the active event.
+  - Evidence 2026-06-18: `EventPreparationRepository` filters `PublicationStatus.Active`, `ConversationEventRepositoryTests` verifies event detail projection includes linked preparation pack slugs, and `EventPreparationRouteStructuralTests` verifies event detail renders `Model.PreparationPacks` as preparation links.
+- [x] Web event detail renders entitled preparation-pack links.
+  - Evidence 2026-06-18: `EventPreparationRouteStructuralTests` verifies `ConversationEvents/Detail.cshtml` renders `Model.PreparationPacks` with links to `EventPreparationPacks.Detail`. Public smoke for `/conversation-events` returned 200.
+- [x] Web preparation-pack detail renders prompts, vocabulary, related dialogues, and related starter packs.
+  - Evidence 2026-06-18: `EventPreparationRouteStructuralTests` verifies the detail page renders `PreparationPack.Prompts`, `PreparationPack.LinkedVocabulary`, related dialogue links, related starter-pack links, completion banner state, and the Mark prepared form. Local premium API smoke with the dev admin API key and `actorEmail=shahramvafadar@gmail.com` passed for `/api/catalog/event-preparation-packs`, `/api/catalog/event-preparation-packs/a1-sprachcafe-erster-besuch`, and `/api/catalog/dialogues/a1-cafe-order/event-preparation-packs`.
+- [x] `Mark prepared` records aggregate completion analytics and redirects back to the preparation-pack detail page.
+  - Evidence 2026-06-18: `EventPreparationPacksControllerFeatureGateTests.Complete_ShouldRecordCompletionAndRedirectToDetail` verifies completion analytics, `TempData["PreparationPackCompleted"]`, and redirect back to `Detail`.
+- [x] Direct preparation-pack access is forbidden when the learner lacks the entitlement.
+  - Evidence 2026-06-18: `EventPreparationPacksControllerFeatureGateTests` verifies `Detail` and `Complete` return `ForbidResult` without the entitlement and record premium-feature-denied analytics. Anonymous public API smoke for event preparation pack list/detail returns `401`, while anonymous Web detail redirects/renders the sign-in flow; entitled API smoke with the premium actor returns `200`.
 
 ### Event Directory And Organizer Tools
 
-- [ ] Event filtering covers city, online/offline, CEFR level, helper language, price type, date, and publication status.
-- [ ] Event detail respects public/private projection rules.
-- [ ] Organizer ownership rules restrict dashboard event management to assigned owners.
-- [ ] Organizer dashboard enforces active-event limits by organizer plan.
-- [ ] RSVP flow enforces capacity, duplicate registration rules, cancellation, waitlist behavior if enabled, and attendance updates.
-- [ ] Organizer visibility rules hide archived/unpublished/private records from public pages.
+- [x] Event filtering covers city, online/offline, CEFR level, helper language, price type, date, and publication status.
+  - Evidence 2026-06-18: `ConversationEventRepositoryTests` runs against PostgreSQL and verifies city, online/offline, CEFR level, helper language, price type, category, date-range filtering through structured `StartsAtUtc`, and `PublicationStatus.Active` filtering. Web/WebApi now expose `dateFromUtc`/`dateToUtc`, while legacy schedule-text-only events remain visible when no date filter is applied.
+- [x] Event detail respects public/private projection rules.
+  - Evidence 2026-06-18: PostgreSQL `ConversationEventRepositoryTests.GetPublishedEventBySlugAsync_ShouldReturnDetailWithPreparationLinks` verifies detail projection only returns active events and returns null for missing/unpublished slugs.
+- [x] Organizer ownership rules restrict dashboard event management to assigned owners.
+  - Evidence 2026-06-18: `OrganizerDashboardControllerTests` verifies profile edit is forbidden for non-owned organizer profiles and event edit returns `NotFound` when the event is not under the owned profile.
+- [x] Organizer dashboard enforces active-event limits by organizer plan.
+  - Evidence 2026-06-18: `OrganizerDashboardControllerTests` verifies a free organizer at its one-active-event limit is redirected with an explanatory error, while a lite organizer below the limit reaches the new-event edit view.
+- [x] RSVP flow enforces capacity, duplicate registration rules, cancellation, and attendance updates.
+  - Evidence 2026-06-18: PostgreSQL `EventRsvpServiceTests` verifies one RSVP per normalized participant email, status updates, capacity rejection for new/promoted `going` RSVP records, cancellation allowance, admin attendance updates, and draft/unknown event rejection. Waitlist behavior is not marked separately because no waitlist feature is currently enabled in the product model.
+- [x] Organizer visibility rules hide archived/unpublished/private records from public pages.
+  - Evidence 2026-06-18: PostgreSQL `OrganizerProfileRepositoryTests` verifies only active organizer profiles are listed publicly and active linked events are exposed on organizer detail. PostgreSQL `ConversationEventRepositoryTests` verifies draft events are hidden from public event list/detail.
 
 ### Learner Profiles And Partner Matching
 
-- [ ] Public learner profile projection excludes private contact details.
-- [ ] Learner profile anonymization clears public/private profile fields and disables matching.
-- [ ] Partner request transitions cover pending, accepted, declined, cancelled, and blocked states.
-- [ ] Partner request rate limits suppress excessive requests.
-- [ ] Accepted partner requests reveal contact details only after mutual consent.
-- [ ] Blocked users are hidden from matching results and cannot create new requests.
+- [x] Public learner profile projection excludes private contact details.
+  - Evidence 2026-06-18: PostgreSQL `LearnerPartnerMatchingServiceTests` verifies public learner profile responses expose display name, city, practice preferences, language helpers, and goals, while omitting owner email and availability notes.
+- [x] Learner profile anonymization clears public/private profile fields and disables matching.
+  - Evidence 2026-06-18: PostgreSQL `LearnerPartnerMatchingServiceTests` verifies anonymization replaces the public name with a deleted marker, clears city and availability fields, disables visibility, removes adult confirmation, and hides the profile from public listings and partner search.
+- [x] Partner request transitions cover pending, accepted, declined, cancelled, and blocked states.
+  - Evidence 2026-06-18: PostgreSQL `LearnerPartnerMatchingServiceTests` covers pending request creation plus accepted, declined, cancelled, and blocked transitions, including creation of the backing `UserBlock` for blocked requests.
+- [x] Partner request rate limits suppress excessive requests.
+  - Evidence 2026-06-18: PostgreSQL `LearnerPartnerMatchingServiceTests` verifies the service-level daily request limit rejects the sixth new request inside the one-day window. The Web controller also keeps its existing short-window email rate limiter before forwarding requests.
+- [x] Accepted partner requests reveal contact details only after mutual consent.
+  - Evidence 2026-06-18: PostgreSQL `LearnerPartnerMatchingServiceTests` verifies pending, declined, cancelled, and blocked requests do not expose contact email, while an accepted request exposes the other participant's email to both sides.
+- [x] Blocked users are hidden from matching results and cannot create new requests.
+  - Evidence 2026-06-18: PostgreSQL `LearnerPartnerMatchingServiceTests` verifies existing `UserBlock` rows suppress both matching directions and reject new partner requests between the blocked pair.
 
 ### Moderation And Safety
 
-- [ ] User report creation validates target, reason, and reporter context.
-- [ ] User block creation suppresses matching and contact surfaces.
-- [ ] Admin moderation queue filters by status, reason, target type, and assigned state.
-- [ ] Moderation decision audit captures decision type, actor, target, notes, and timestamps.
-- [ ] Report/block visibility rules are enforced in public pages and matching APIs.
+- [x] User report creation validates target, reason, and reporter context.
+  - Evidence 2026-06-18: PostgreSQL `ModerationServiceTests` verifies valid reports normalize reporter/reported emails and invalid target type, invalid reason, and invalid reporter context are rejected.
+- [x] User block creation suppresses matching and contact surfaces.
+  - Evidence 2026-06-18: PostgreSQL `ModerationServiceTests` verifies block creation by learner profile and source partner request, duplicate block idempotency, and suppression from partner matching. PostgreSQL `LearnerPartnerMatchingServiceTests` verifies blocked pairs cannot create new partner requests and accepted contact details are not exposed for blocked/declined/cancelled requests.
+- [x] Admin moderation queue filters by status, reason, target type, and assigned state.
+  - Evidence 2026-06-18: `ModerationServiceTests` verifies filtering by status, reason, target type, `assigned`, and `unassigned`. The Web admin moderation queue now exposes these filters in `/admin/moderation`; `assigned` maps to reports with a recorded decision owner because the product does not have a separate assignment workflow yet.
+- [x] Moderation decision audit captures decision type, actor, target, notes, and timestamps.
+  - Evidence 2026-06-18: PostgreSQL `ModerationServiceTests` verifies decisions update the report status, decision note, decision actor, decision timestamp, and create a `ModerationDecisionAudit` tied to the report id.
+- [x] Report/block visibility rules are enforced in public pages and matching APIs.
+  - Evidence 2026-06-18: Web `ModerationController` validates allowed report/block target shapes before calling the API, and PostgreSQL `ModerationServiceTests`/`LearnerPartnerMatchingServiceTests` verify block effects are enforced by the matching API.
 
 ### Admin Reporting And Seed Coverage
 
@@ -432,57 +468,99 @@ Latest local Web verification:
 - [x] Web Admin Reports page combines system report counts, Identity user count, Web analytics counters, and Learning Portal quality/coverage tables.
 - [x] Admin Reports authorization requires the Admin policy.
 - [x] Learning Portal report test covers content counts, CEFR coverage, unresolved content links, missing translations, and missing exercise coverage.
-- [ ] Admin dashboard links to Reports and the implemented management pages.
-- [ ] Web seed fixtures include multiple records for dialogues, starters, preparation packs, organizers, events, RSVPs, claims, learner profiles, partner requests, reports, blocks, and moderation audits.
-- [ ] Operational seed loading path is validated once a dedicated event-directory/safety seed applier exists.
-- [ ] Web rendering coverage exists for the Learning Portal coverage and issue-sample tables.
+- [x] Admin dashboard links to Reports and the implemented management pages.
+  - Evidence 2026-06-18: `AdminDashboardRouteStructuralTests` verifies `/admin` links to Reports, Users/entitlements, Moderation, Billing Diagnostics, catalog management, Learning Portal management pages, organizer/events management, and operations/diagnostics pages. The dashboard remains protected by the `Operator` policy.
+- [x] Web seed fixtures include multiple records for dialogues, starters, preparation packs, organizers, events, RSVPs, claims, learner profiles, partner requests, reports, blocks, and moderation audits.
+  - Evidence 2026-06-18: `tools/Web/WebReadinessSeedFixtureManifest.json` defines a multi-record Web readiness fixture with content references for dialogues, conversation starter packs, and event preparation packs plus organizer profiles, organizer owners, conversation events, RSVPs, organizer claims, learner profiles, partner requests, user reports, user blocks, and moderation audits. `WebReadinessSeedFixtureManifestTests` passed and validates minimum record counts, required endpoint payload fields, and cross-references for organizer/event/preparation links, RSVPs, owners, claims, partner requests, blocks, and moderation audit report keys.
+- [x] Operational seed loading path is validated once a dedicated event-directory/safety seed applier exists.
+  - Evidence 2026-06-18: `tools/Server/Initialize-LocalWebOperationalSeeds.ps1` now defaults to `tools/Web/WebReadinessSeedFixtureManifest.json`, reads the manifest under strict mode, preserves arrays for one-item JSON payloads, maps learner/profile/report/partner keys to runtime ids, applies organizer profiles/events/owners/claims/RSVPs/learner profiles/partner requests/reports/blocks/audits through the real WebApi endpoints, and skips already-decided moderation audits on repeat runs. Local execution against `http://localhost:5099` completed successfully; a repeat run produced `PartnerRequests: 0` and `UserReports: 0`, confirming duplicate-sensitive records are not recreated. `WebReadinessSeedFixtureManifestTests` passed 2/2.
+- [x] Web rendering coverage exists for the Learning Portal coverage and issue-sample tables.
+  - Evidence: `AdminReportsLearningPortalIssueDrilldownStructuralTests` verifies the Reports index renders Learning Portal coverage tables, empty states, row key/count cells, issue-sample filters, CSV export controls, and Area/Owner/Issue/Target issue columns. Filtered test run passed 3/3.
 
 ### Entitlements And Feature Gates
 
-- [ ] Free, Trial, and Premium entitlement states resolve expected feature flags.
-- [ ] Expired trial and expired premium states fall back to free access.
-- [ ] Web feature gates hide or block premium preparation packs and advanced features.
-- [ ] WebApi feature gates reject direct unauthorized calls.
-- [ ] Admin entitlement changes write audit records and update effective access immediately.
+- [x] Free, Trial, and Premium entitlement states resolve expected feature flags.
+  - Evidence 2026-06-18: `DarwinLinguaIdentityBootstrapperTests.EntitlementStatesResolveExpectedFeatureFlags` verifies Free users keep catalog/search/learner-profile access without paid features, Trial users receive paid feature flags, and Premium users retain paid feature flags including advanced dialogue packs and partner matching.
+- [x] Expired trial and expired premium states fall back to free access.
+  - Evidence 2026-06-18: `DarwinLinguaIdentityBootstrapperTests.ExpiredTrialAndPremiumStatesFallBackToFreeAccess` verifies expired Trial and Premium states normalize to Free, retain only free catalog/search access, remove paid features, and record `trial-expired`/`premium-expired` audit events.
+- [x] Web feature gates hide or block premium preparation packs and advanced features.
+  - Evidence 2026-06-18: `EntitlementFeatureGateStructuralTests` verifies Web routes use feature-gate checks for event preparation packs, partner matching, dialogue preparation-pack access, and dual meaning-language resolution. Existing `EventPreparationPacksControllerFeatureGateTests`, `ScenariosControllerDualMeaningLanguageTests`, and `WordsControllerDualMeaningLanguageTests` cover forbidden/limited behavior at controller level.
+- [x] WebApi feature gates reject direct unauthorized calls.
+  - Evidence 2026-06-18: Event-preparation-pack API endpoints are now protected by the admin API middleware and additionally resolve `X-DarwinLingua-Actor-Email` through `IUserEntitlementService.HasFeatureAsync` before returning premium preparation-pack payloads. `EntitlementFeatureGateStructuralTests` verifies the API hardening, actor-email forwarding, and Web call sites; targeted WebApi tests for entitlement/event-preparation scenarios passed 7/7. Targeted WebApi and Web builds passed after stopping local hosts.
+- [x] Admin entitlement changes write audit records and update effective access immediately.
+  - Evidence 2026-06-18: `EntitlementFeatureGateStructuralTests` verifies Admin Users uses `userEntitlementService.SetTierAsync`, preserves the admin actor as `updatedBy`, loads recent entitlement audit events, and renders entitlement history. `DarwinLinguaIdentityBootstrapperTests.EntitlementStatesResolveExpectedFeatureFlags` verifies effective feature flags change immediately after tier updates.
 
 ### Billing And Payments
 
-- [ ] Billing page renders the current entitlement and disables checkout when Stripe is off.
-- [ ] Billing page starts Stripe Checkout only for authenticated users and only when Stripe is enabled.
-- [ ] Billing page shows Stripe Customer Portal management only after a customer id is linked to the account.
-- [ ] Stripe Customer Portal session creation redirects only for the authenticated user's linked Stripe customer.
-- [ ] `/billing/success` fetches the returned Stripe checkout session and immediately syncs entitlement only when the session belongs to the authenticated user.
-- [ ] `/billing/success` only fulfills completed subscription checkout sessions with paid or no-payment-required status and customer/subscription ids.
-- [ ] `/billing/success` falls back to webhook-based activation when Stripe lookup fails or session is not complete.
-- [ ] `checkout.session.completed` webhook rejects non-subscription, unpaid, or incomplete checkout sessions before granting Premium.
-- [ ] Stripe Checkout, Stripe Customer Portal, and Admin reconciliation enforce bounded rate limits with safe user-facing messages.
-- [ ] Stripe Checkout session creation sends the Darwin Lingua user id in session and subscription metadata.
-- [ ] Stripe Checkout failures show a safe user-facing message and do not leak provider response bodies.
-- [ ] Stripe webhook rejects missing, malformed, expired, or invalid signatures.
-- [ ] Duplicate Stripe webhook event ids are idempotent.
-- [ ] `checkout.session.completed` maps the Stripe session to the correct user and grants Premium.
-- [ ] `customer.subscription.created` and `customer.subscription.updated` persist customer/subscription ids and current period end.
-- [ ] Active or trialing Stripe subscription states keep Premium access.
-- [ ] Cancelled, unpaid, or incomplete-expired Stripe subscription states downgrade the user to Free.
-- [ ] Unmapped Stripe subscription events fail closed and are visible in billing-event diagnostics/logs.
-- [ ] Admin Billing Diagnostics renders Stripe readiness without exposing secret values.
-- [ ] Admin Billing Diagnostics filters billing events by status, event type, user id, customer id, and subscription id.
-- [ ] Admin Billing Diagnostics filters billing profiles by user id, customer id, and subscription id.
-- [ ] Admin-only Stripe subscription reconciliation rejects malformed subscription ids.
-- [ ] Admin-only Stripe subscription reconciliation fetches current Stripe subscription state without storing raw provider payloads.
-- [ ] Admin-only Stripe subscription reconciliation updates billing profile and entitlement for active, trialing, past-due, cancelled, unpaid, and expired states.
-- [ ] Billing notification emails render for Premium activation, payment action needed, Premium ended, and Admin reconciliation completed.
-- [ ] Billing notification emails are logged through the transactional email delivery log without storing Stripe raw payloads.
-- [ ] Billing notification emails are idempotent per scenario, user, subscription, and billing status.
-- [ ] Stripe webhook processing sends user billing emails for checkout completion, payment-action-needed states, and Premium-ended states.
-- [ ] Admin reconciliation sends both user billing status email and admin reconciliation-completed email when recipients are configured.
+- [x] Billing page renders the current entitlement and disables checkout when Stripe is off.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies the billing page renders `Model.Entitlement.Tier`, Stripe-disabled/config-incomplete states, `CanStartCheckout`, and `CanManageStripeSubscription`. `BillingController` now uses the same `IsStripeConfigured` guard for the view model and direct POST actions.
+- [x] Billing page starts Stripe Checkout only for authenticated users and only when Stripe is enabled.
+  - Evidence 2026-06-18: `BillingController` is `[Authorize]`, rejects disabled or incomplete Stripe configuration before provider calls, rate-limits checkout, and calls `CreatePremiumCheckoutSessionAsync(userId, email, ...)` only after those checks. `BillingSafetyStructuralTests` covers these guardrails.
+- [x] Billing page shows Stripe Customer Portal management only after a customer id is linked to the account.
+  - Evidence 2026-06-18: `BillingController` sets `CanManageStripeSubscription` only when Stripe is enabled and `billingProfile.ProviderCustomerId` exists; `Billing/Index.cshtml` renders `Manage in Stripe` only behind that flag. Covered by `BillingSafetyStructuralTests`.
+- [x] Stripe Customer Portal session creation redirects only for the authenticated user's linked Stripe customer.
+  - Evidence 2026-06-18: `OpenStripePortal` loads `WebBillingProfiles` by authenticated `userId`, requires that profile's `ProviderCustomerId`, applies the portal rate limit, and passes only that customer id to `CreateCustomerPortalSessionAsync`. Covered by `BillingSafetyStructuralTests`.
+- [x] `/billing/success` fetches the returned Stripe checkout session and immediately syncs entitlement only when the session belongs to the authenticated user.
+  - Evidence 2026-06-18: `BillingController.Success` calls `FulfillCheckoutSessionAsync(sessionId, GetUserId(), ...)`; `StripeCheckoutFulfillmentService` compares `metadata.darwin_user_id`/`client_reference_id` with the authenticated user before setting Premium. Covered by `BillingSafetyStructuralTests`.
+- [x] `/billing/success` only fulfills completed subscription checkout sessions with paid or no-payment-required status and customer/subscription ids.
+  - Evidence 2026-06-18: `StripeCheckoutFulfillmentService` requires `mode=subscription`, `status=complete`, `payment_status` paid or no-payment-required, and non-empty customer/subscription ids before updating billing profile and Premium entitlement. Covered by `BillingSafetyStructuralTests`.
+- [x] `/billing/success` falls back to webhook-based activation when Stripe lookup fails or session is not complete.
+  - Evidence 2026-06-18: `BillingController.Success` catches Stripe lookup/fulfillment failures and also handles non-fulfilled sessions with a user-facing "will update as soon as Stripe confirms" message instead of granting access. Covered structurally by `BillingSafetyStructuralTests` and controller source review.
+- [x] `checkout.session.completed` webhook rejects non-subscription, unpaid, or incomplete checkout sessions before granting Premium.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies the webhook handler requires completed paid/no-payment-required subscription checkout sessions with customer and subscription ids before Premium is granted.
+- [x] Stripe Checkout, Stripe Customer Portal, and Admin reconciliation enforce bounded rate limits with safe user-facing messages.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies bounded checkout, customer-portal, and admin reconciliation rate limits plus safe user-facing redirect messages.
+- [x] Stripe Checkout session creation sends the Darwin Lingua user id in session and subscription metadata.
+  - Evidence 2026-06-18: `StripeBillingCheckoutService` sends `client_reference_id`, `metadata[darwin_user_id]`, and `subscription_data[metadata][darwin_user_id]` with the authenticated user id. Covered by `BillingSafetyStructuralTests`.
+- [x] Stripe Checkout failures show a safe user-facing message and do not leak provider response bodies.
+  - Evidence 2026-06-18: `StripeBillingCheckoutService` logs only Stripe status/reason phrase on provider failure and throws a generic error; `BillingController.StartStripeCheckout` catches failures and shows "Checkout could not be started. Please try again later." Covered by `BillingSafetyStructuralTests` and targeted Web build.
+- [x] Stripe webhook rejects missing, malformed, expired, or invalid signatures.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests.StripeWebhookVerifier_ShouldAcceptOnlyCurrentValidV1Signatures` verifies valid HMAC-SHA256 v1 Stripe signatures and rejects missing, malformed, tampered, and expired signatures. Controller structural coverage verifies invalid signatures return `Unauthorized` before handler execution.
+- [x] Duplicate Stripe webhook event ids are idempotent.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies `StripeBillingWebhookHandler` returns immediately when a stored `WebBillingEvent` with the same provider event id is already `Processed`; the database has a unique provider-event index.
+- [x] `checkout.session.completed` maps the Stripe session to the correct user and grants Premium.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies checkout-completed handling uses `darwin_user_id`/client reference, persists customer/subscription ids, and sets `DarwinLinguaEntitlementTiers.Premium`.
+- [x] `customer.subscription.created` and `customer.subscription.updated` persist customer/subscription ids and current period end.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies subscription created/updated/deleted events are routed through subscription handling and persist billing profile status/customer/subscription/current-period data.
+- [x] Active or trialing Stripe subscription states keep Premium access.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies entitled subscription status handling maps active/trialing states to Premium.
+- [x] Cancelled, unpaid, or incomplete-expired Stripe subscription states downgrade the user to Free.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies non-entitled subscription status handling maps cancelled, unpaid, and incomplete-expired states to Free.
+- [x] Unmapped Stripe subscription events fail closed and are visible in billing-event diagnostics/logs.
+  - Evidence 2026-06-18: `StripeWebhookSafetyTests` verifies unmapped subscription events throw, mark the billing event as `Failed`, summarize the error, and log a warning; admin diagnostics query persisted billing events for operator review.
+- [x] Admin Billing Diagnostics renders Stripe readiness without exposing secret values.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests.AdminBillingDiagnostics_ShouldExposeReadinessFiltersAndSafeReconciliation` verifies readiness exposes configured/missing booleans for Stripe secret and webhook secret, renders configuration warnings, and does not bind raw secret-value properties into the view.
+- [x] Admin Billing Diagnostics filters billing events by status, event type, user id, customer id, and subscription id.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies Admin Billing Diagnostics accepts and normalizes those filter inputs, applies them to `WebBillingEvents`, bounds `take`, and renders the event filter controls.
+- [x] Admin Billing Diagnostics filters billing profiles by user id, customer id, and subscription id.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies the same normalized user/customer/subscription filters are applied to `WebBillingProfiles` and rendered in the admin diagnostics view.
+- [x] Admin-only Stripe subscription reconciliation rejects malformed subscription ids.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies reconciliation is Admin-only and rejects values that fail `IsAllowedStripeSubscriptionId` before calling Stripe.
+- [x] Admin-only Stripe subscription reconciliation fetches current Stripe subscription state without storing raw provider payloads.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies reconciliation fetches `/v1/subscriptions/{sub_...}`, parses the provider response into bounded local fields, and updates local billing state without a raw payload storage model.
+- [x] Admin-only Stripe subscription reconciliation updates billing profile and entitlement for active, trialing, past-due, cancelled, unpaid, and expired states.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies reconciliation maps active, trialing, and past-due statuses to Premium, all other non-entitled statuses to Free, upserts the billing profile, updates entitlement, and sends user/admin reconciliation notifications.
+- [x] Billing notification emails render for Premium activation, payment action needed, Premium ended, and Admin reconciliation completed.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests.BillingNotificationEmails_ShouldRenderLogAndDeduplicateAllBillingScenarios` verifies all four billing email scenarios exist, have transactional email templates, and are rendered through `IEmailTemplateRenderer`.
+- [x] Billing notification emails are logged through the transactional email delivery log without storing Stripe raw payloads.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies billing notification emails use suppression checks, queued/sent/failed delivery-log paths, and bounded billing-status/subscription metadata instead of storing provider raw payloads.
+- [x] Billing notification emails are idempotent per scenario, user, subscription, and billing status.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies billing notification registration uses `WebBillingNotifications`, unique `NotificationKey`, and keys built from scenario, user, subscription, and billing status.
+- [x] Stripe webhook processing sends user billing emails for checkout completion, payment-action-needed states, and Premium-ended states.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies `StripeBillingWebhookHandler` triggers Premium activated, payment-action-needed, and Premium ended notification paths.
+- [x] Admin reconciliation sends both user billing status email and admin reconciliation-completed email when recipients are configured.
+  - Evidence 2026-06-18: `BillingSafetyStructuralTests` verifies reconciliation triggers user Premium activated/ended messages and `SendAdminReconciliationCompletedAsync` for configured admin recipients.
 
 ### Web Runtime And Bootstrap
 
-- [ ] PostgreSQL startup bootstrap retrofits Phase 6 catalog tables on an existing shared database.
-- [ ] Empty optional Identity and catalog connection strings fall back to the shared server-content database.
-- [ ] WebCatalogApiClient treats empty successful detail responses as `null`.
-- [ ] Local server bootstrap handles both folder imports and single-file imports under `Set-StrictMode`.
+- [x] PostgreSQL startup bootstrap retrofits Phase 6 catalog tables on an existing shared database.
+  - Evidence 2026-06-18: `WebRuntimeBootstrapStructuralTests` verifies `ServerContentDatabaseBootstrapper` runs `EnsureCreatedAsync`, creates missing server-content base tables, applies published-package compatibility columns/tables with `ColumnExistsAsync`/`TableExistsAsync`, and requires the PostgreSQL Npgsql provider.
+- [x] Empty optional Identity and catalog connection strings fall back to the shared server-content database.
+  - Evidence 2026-06-18: `WebRuntimeBootstrapStructuralTests` verifies WebApi falls back SharedCatalog/Identity to ServerContent and Web falls SharedCatalog to ServerContent/WebIdentity, all through Npgsql configuration.
+- [x] WebCatalogApiClient treats empty successful detail responses as `null`.
+  - Evidence 2026-06-18: `WebRuntimeBootstrapStructuralTests` verifies optional `GetAsync<T>` returns default for 404 and empty successful response bodies while required calls still throw on empty payloads.
+- [x] Local server bootstrap handles both folder imports and single-file imports under `Set-StrictMode`.
+  - Evidence 2026-06-18: `WebRuntimeBootstrapStructuralTests` verifies `tools/Server/Initialize-LocalServerContent.ps1` runs under `Set-StrictMode`, supports leaf `.json` files and recursive directory imports, and loops over the normalized content file list. It also verifies operational seed bootstrap runs under `Set-StrictMode` and reads seed JSON safely.
 
 ## Learning Portal Expansion
 
@@ -494,7 +572,8 @@ Latest local Web verification:
 - [x] Phase 7 WebApi route registrations are covered by structural route tests for module list/detail endpoints, exercise attempts, unified search, progress summary/update, and recommendations.
 - [x] Phase 7 English/German localization resource keys are covered by structural tests for the release route surface.
 - [x] Shared CEFR filter conventions expose stable A1-C2 values for reusable Web filters.
-- [ ] Cross-content linking helper coverage once a real Phase 7 module consumes the model.
+- [x] Cross-content linking helper coverage once a real Phase 7 module consumes the model.
+  - Evidence 2026-06-18: Web linked-content rendering now uses shared `LearningContentLinkResolver` instead of raw slug output for Course, Writing Templates, Exam Prep, and Life in Germany linked-content sections. `CourseActivityTargetLinkResolver` delegates to the shared resolver, and `/courses/lessons/{lessonSlug}` redirects course-lesson links from non-Course pages to the canonical course path. Structural tests cover supported content-type mappings, fail-closed unsupported targets, clickable linked-content partials, and Course/Writing/Exam/Life in Germany view wiring. Targeted WebApi structural tests passed (`33/33`), and targeted Web/WebApi builds succeeded.
 - [x] Admin/system report coverage exists for persisted Phase 7 module counts and quality metrics.
 
 ### Grammar Guide
@@ -506,12 +585,17 @@ Latest local Web verification:
 - [x] Release route hardening covers `/grammar` and `/api/catalog/grammar`.
 - [x] Import validation covers required rich section keys, supported block types, localized block language codes, and table/callout block shape.
 - [x] List/detail query coverage includes the first rich pilot topic and localized fallback behavior.
-- [ ] CEFR/category/topic/search filters return expected grammar topics.
+- [x] CEFR/category/topic/search filters return expected grammar topics.
+  - Evidence 2026-06-18: PostgreSQL `GrammarTopicRepositoryTests.GetPublishedGrammarTopicsAsync_ShouldFilterByCefrCategoryTopicAndSearch` verifies CEFR, grammar category, topic-key, case-insensitive search through `ILike`, and draft-topic exclusion using real Npgsql queries.
 - [x] Web/API rendering handles paragraph, table, and callout rich blocks from the official A1 personal-pronouns package.
-- [ ] Add a future reviewed cross-level validation batch after the official A1 core package establishes the production content pattern.
-- [ ] Linked words/dialogues/Talk Topics/exercises render where available.
-- [ ] Localized explanation rendering follows learner language preferences.
-- [ ] Unresolved links fail safely without Web 500 errors.
+- [x] Add a future reviewed cross-level validation batch after the official A1 core package establishes the production content pattern.
+  - Evidence 2026-06-18: `ContentImportParserGrammarTopicTests.ParseAsync_ShouldValidateAllOfficialA1C2GrammarPackagesAgainstSyllabus` now validates all six official Grammar packages (`A1-C2`, 225 topics) against the syllabus, checks localized section coverage, rejects unknown rich block types, verifies table row/column shape, and verifies real official usage of `paragraph`, `table`, `callout`, `rule-list`, and `example-list`. `ContentImportServiceApplicationTests.ImportAsync_ShouldAcceptEverySupportedGrammarRichBlockType` and `ImportAsync_ShouldRejectGrammarRichBlockTypes_WhenRequiredShapeIsMissing` cover application validation for all seven contract block types, including `mistake-pair` and `image-slot`. Targeted ContentOps Application tests passed `8/8`; targeted ContentOps Infrastructure parser validation passed `1/1`.
+- [x] Linked words/dialogues/Talk Topics/exercises render where available.
+  - Evidence 2026-06-18: `GrammarRouteStructuralTests` verifies Grammar detail renders linked words, dialogues, Talk Topics, and exercises through their Web routes. PostgreSQL `GrammarTopicRepositoryTests.GetPublishedGrammarTopicBySlugAsync_ShouldProjectLocalizedTextAndLinksSafely` verifies detail projection returns linked word slugs, dialogue slugs, Talk Topic slugs, and exercise slugs.
+- [x] Localized explanation rendering follows learner language preferences.
+  - Evidence 2026-06-18: PostgreSQL `GrammarTopicRepositoryTests.GetPublishedGrammarTopicBySlugAsync_ShouldProjectLocalizedTextAndLinksSafely` verifies Persian learner-language projection for section heading/explanation, examples, mini rules, common mistakes, and exception notes. `GrammarRouteStructuralTests` verifies the Web controller requests `profile.PreferredMeaningLanguage1` and the detail view applies direction-aware rendering.
+- [x] Unresolved links fail safely without Web 500 errors.
+  - Evidence 2026-06-18: PostgreSQL `GrammarTopicRepositoryTests.GetPublishedGrammarTopicBySlugAsync_ShouldProjectLocalizedTextAndLinksSafely` verifies unresolved linked words can project with `WordSlug=null`. `GrammarRouteStructuralTests` verifies the Web detail page renders unresolved linked words as plain text instead of a broken word-detail route.
 
 ### Everyday Expressions
 
@@ -540,10 +624,13 @@ Latest local Web verification:
 - [x] Unified Search repository coverage returns Expression results from seeded content.
 - [x] Admin report coverage includes Expression counts by type and register.
 - [x] Admin report coverage includes Expression counts by meaning transparency and safety rating plus quality counters for missing metadata, ordinary-literal leakage, missing teaching reasons, low example counts, missing warnings, and adult-access count.
-- [ ] Add authenticated WebApi/profile-bound eligibility tests for Sensitive Educational Language preference instead of relying on explicit query flags.
+- [x] Add authenticated WebApi/profile-bound eligibility tests for Sensitive Educational Language preference instead of relying on explicit query flags.
+  - Evidence: `SensitiveEducationalLanguageStructuralTests` verifies Web expressions read `AllowsRudeSlangContent` from the learner profile, public WebApi requests cannot unlock sensitive educational expressions with a bare query flag, and the Web internal API client supplies the configured admin API header for server-side catalog calls.
 - [ ] Add mobile export tests proving Sensitive Educational Language and adult-only Expressions are excluded until mobile eligibility enforcement exists.
-- [ ] Add settings UI smoke coverage for the English/German Sensitive Educational Language checkbox copy.
-- [ ] Add Web detail rendering coverage for `usagePolicy: understand-only` and `usagePolicy: do-not-use`.
+- [x] Add settings UI smoke coverage for the English/German Sensitive Educational Language checkbox copy.
+  - Evidence: `SensitiveEducationalLanguageStructuralTests` verifies the Settings checkbox binding plus English/German resource copy for Sensitive Educational Language, explicit adult-content exclusion, warning guidance, and the Expressions filter clarification.
+- [x] Add Web detail rendering coverage for `usagePolicy: understand-only` and `usagePolicy: do-not-use`.
+  - Evidence: `SensitiveEducationalLanguageStructuralTests` verifies the expression detail view branches and localized English/German copy for both usage policies.
 - [x] Live Web/API smoke for the imported pilot package remains required before bulk Expressions generation.
   - Evidence: local target/dev services backed by `darwinlingua_shared` returned Expression list/detail/search/admin report data after the pilot import. Public `linguaapi.vafadar.pro`/`lingua.vafadar.pro` returned 502 during this pass and should be checked separately as an environment/reverse-proxy issue.
 
@@ -554,7 +641,8 @@ Latest local Web verification:
 - [x] Exercise type validation rejects unsupported types.
 - [x] Answer key validation rejects missing or malformed deterministic answers.
 - [x] Deterministic feedback returns stable correct/incorrect outcomes.
-- [ ] Exercise set linking resolves valid owner references.
+- [x] Exercise set linking resolves valid owner references.
+  - Evidence: `ContentImportServiceApplicationTests` rejects malformed ExerciseSet `ownerSlug` values before import, and `WebsiteAdminQueryServiceLearningPortalReportTests` reports unresolved ExerciseSet owner targets with drill-down rows such as `course-lesson:missing-owner-lesson`. WebApi/Web builds passed after adding the admin response counter and Web report metric.
 - [x] Exercise runner behavior covers structured choice prompts and malformed prompt fallback.
 - [x] Authenticated attempt persistence stores the authenticated user id and never falls back to an `anonymous` user id.
 - [x] Public exercise evaluation is stateless and does not persist anonymous attempts.
@@ -575,11 +663,15 @@ Latest local Web verification:
 - [x] Admin report coverage includes Course translation quality counters.
 - [x] Admin report coverage includes Course activity-flow quality counters and drilldown issue rows.
 - [x] Lesson/module/course ordering is stable for the imported A1-C2 Course baseline.
-- [ ] Backfill `activityBlocks` for A1 Module 1 in a small cumulative package and smoke one activity-enabled lesson page.
-- [ ] Linked content rendering covers grammar, words, expressions, dialogues, Talk Topics, and exercises.
+- [x] Backfill `activityBlocks` for A1 Module 1 in a small cumulative package and smoke one activity-enabled lesson page.
+  - Evidence: the current Course packages contain activity blocks for every imported lesson, including A1 Module 1 (`10/10` lessons with 5 activities each). Package verification reports A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`, C1 `120/120`, and C2 `120/120` activity-enabled lessons; docs `76`/`80` record the imported Course activity-flow checkpoint and external backup.
+- [x] Linked content rendering covers grammar, words, expressions, dialogues, Talk Topics, and exercises.
+  - Evidence: `_SlugList` now resolves Course fallback linked-content slugs to learner-facing links for Grammar, Words, Expressions, Dialogues, Talk Topics, Exercise sets, and Exercises; `CourseRouteStructuralTests` verifies the mappings and that raw fallback slugs are not rendered as inert code-only rows.
 - [x] Prerequisite and next-lesson navigation resolves for the imported A1-C2 Course baseline.
-- [ ] WebApi list/detail endpoint coverage exists.
-- [ ] Progress tracking works where implemented.
+- [x] WebApi list/detail endpoint coverage exists.
+  - Evidence: `CourseRouteStructuralTests` verifies WebApi registrations for `/api/catalog/courses`, `/api/catalog/courses/{slug}`, and `/api/catalog/course-lessons/{slug}` plus Web client calls with `primaryMeaningLanguageCode`; PostgreSQL repository tests cover localized Course list/detail/lesson projection.
+- [x] Progress tracking works where implemented.
+  - Evidence: `LearningProgressRouteStructuralTests` verifies authenticated progress/recommendation endpoint authorization, course lesson viewed/progress updates, antiforgery-protected manual controls, and recent/recommendation rendering.
 - [x] Browser smoke coverage exists for `/courses`, `/courses/{slug}`, and `/courses/{courseSlug}/{lessonSlug}` after reviewed Course imports.
 - [x] Run a broader Course Web/API/admin smoke pass after C2 is fully generated/imported.
   - 2026-06-08 evidence: Web and WebApi were restarted locally after repairing PostgreSQL startup retrofit for `ExamProfiles`, `ExamPrepUnits`, `WritingTemplates`, and `CulturalNotes`. Course Web routes, WebApi course list/detail/lesson/search routes, and service-level admin report tests passed. The anonymous admin endpoint returns 401 as expected.
@@ -611,7 +703,8 @@ Latest local Web verification:
 - [x] WebApi list/detail structural coverage exists.
 - [x] PostgreSQL repository coverage verifies filters, search, and learner helper projection.
 - [x] Imported A1-C2 baseline has live Web/API smoke coverage for list/detail, Persian helper projection, and Unified Search.
-- [ ] Variable rendering substitutes supported placeholders safely in an interactive editor flow.
+- [x] Variable rendering substitutes supported placeholders safely in an interactive editor flow.
+  - Evidence: `WritingTemplateRouteStructuralTests` verifies the learner detail view renders a client-side variable editor, preview output, reset control, English/German copy, and JavaScript replacement logic that keeps empty placeholders visible and writes preview text via `textContent` rather than `innerHTML`.
 
 ### Life in Germany
 
@@ -627,8 +720,9 @@ Latest local Web verification:
 
 ### Unified Search
 
-- [x] Application-level empty query handling avoids repository calls.
+- [x] Application-level empty query handling rejects invalid API requests before repository calls.
 - [x] Application-level short, long, and unsupported result-type query handling is covered.
+  - Evidence: 2026-06-18 `UnifiedLearningSearchServiceTests` covers empty, one-character, over-100-character, unsupported result type, and normalized valid search behavior; Web structural coverage verifies one-character learning-content queries are not sent from `/search`.
 - [x] Application-level result projection returns repository results unchanged.
 - [x] Release route hardening covers `/search` and `/api/catalog/search`.
 - [x] `/api/catalog/search` is covered by rate-limiting structural checks.
@@ -645,17 +739,17 @@ Latest local Web verification:
 
 ### Progress And Personalization
 
-- [x] Domain tests cover supported owner types and progress state transitions.
+- [x] Domain tests cover supported owner types and progress state transitions, including clearing stale completion timestamps when a completed item moves back to review.
 - [x] Application tests cover viewed/completed updates, summary counts, and deterministic recommendation exclusion for completed content.
 - [x] Release route hardening covers progress summary/update and recommendations route registrations.
 - [x] WebApi endpoint coverage exists for authenticated `/api/learning/progress/summary`.
 - [x] WebApi endpoint coverage exists for authenticated `/api/learning/progress/content`.
 - [x] WebApi endpoint coverage exists for `/api/learning/recommendations`.
 - [x] Anonymous Web users fall back to existing guest actor behavior without breaking recent activity.
-- [x] Course lesson pages render viewed/completed state where progress exists.
+- [x] Course lesson pages render viewed/completed state where progress exists and expose antiforgery-protected manual controls for `in-progress`, `completed`, and `needs-review`.
 - [x] Recent activity dashboard renders cross-content progress summary.
 - [x] Recommendations remain deterministic and do not use AI ranking.
-  - Evidence: Learning progress structural tests cover authenticated endpoint registrations, `GetRequiredUserId`, course progress chips, recent progress summary, weak-exercise recommendations, difficult-word recommendations, and deterministic recommendation reader signals.
+  - Evidence: Learning progress structural tests cover authenticated endpoint registrations, `GetRequiredUserId`, course progress chips, course lesson manual progress update controls, recent progress summary, weak-exercise recommendations, difficult-word recommendations, and deterministic recommendation reader signals.
 
 ### 2026-06-14 Web Readiness Manual Smoke
 
@@ -676,7 +770,8 @@ Mobile is outside the active Web-readiness path. These items remain post-Web wor
 - [x] MAUI route/localization structural coverage confirms Learning Portal list/detail/search routes and Learn/Practice/Speak/Prepare/Resources navigation labels.
 - [x] Full mobile replacement script coverage confirms Phase 7 content tables are copied from remote package imports.
 - [x] Module replacement script coverage confirms MAUI can request and apply selective module packages.
-- [ ] Add seeded module-slice package tests that import one selected module without removing unrelated local modules.
+- [x] Add seeded module-slice package tests that import one selected module without removing unrelated local modules.
+  - Evidence 2026-06-18: `ContentImportRepository` now upserts existing `CoursePath` metadata and replaces only imported `CourseModule` rows plus their child lessons, instead of deleting the whole path. PostgreSQL integration test `ContentImportServiceTests.ImportAsync_ShouldReplaceSelectedCourseModuleWithoutRemovingUnrelatedModules` imports a two-module Course package, then imports a one-module slice for the same path and verifies the touched module/lesson are updated while the unrelated module/lesson remain. Targeted Course test runs passed for ContentOps Infrastructure (`2/2`) and ContentOps Application (`10/10`). `docs/80-Course-Content-Package-Contract.md` now documents module-slice-safe import semantics and the absence of implicit full-delete without a future explicit full-replace mode.
 - [ ] Add first-run onboarding UI automation for choose/skip flows.
 - [ ] Add seeded mobile package export tests that import a package with all Phase 7 module types into a local SQLite database.
 - [ ] Add MAUI smoke coverage for opening Learning Portal list/detail/search pages on target devices.
@@ -687,38 +782,63 @@ Mobile is outside the active Web-readiness path. These items remain post-Web wor
 
 ### Browser And Device Matrix
 
-- [ ] Validate English UI in desktop Chromium.
-- [ ] Validate German UI in desktop Chromium.
-- [ ] Validate responsive layout on narrow mobile viewport.
+- [x] Validate English UI in desktop Chromium.
+  - Evidence 2026-06-18: in-app desktop Chromium smoke covered `/`, `/courses`, `/exercises`, `/exam-prep`, `/writing-templates`, `/life-in-germany`, and `/search` with `?culture=en&ui-culture=en`. Each page returned `html lang="en"`, expected English title/H1/navigation labels, no server error text, no raw localizer markup, and zero captured console errors.
+- [x] Validate German UI in desktop Chromium.
+  - Evidence 2026-06-18: in-app desktop Chromium smoke covered the same routes with `?culture=de&ui-culture=de`. This found and fixed an OutputCache culture-vary bug on `/courses`; after the fix every page returned `html lang="de"`, expected German title/H1/navigation labels, no server error text, no raw localizer markup, and zero captured console errors.
+- [x] Validate responsive layout on narrow mobile viewport.
+  - Evidence 2026-06-18: in-app browser viewport override at 390x844 covered `/`, `/courses`, `/exercises`, `/exam-prep`, `/writing-templates`, `/life-in-germany`, and `/search`. Each page had `scrollWidth == clientWidth`, no horizontal overflow, no server error text, no raw localizer markup, and zero captured console errors. The viewport override was reset after validation.
 - [ ] Validate PWA install flow on Android Chrome.
 - [ ] Validate PWA install flow on desktop Chromium.
-- [ ] Validate offline behavior for installed Web/PWA shell.
+  - Partial evidence 2026-06-18: `tools/Web/New-WebPwaInstallabilityReport.ps1` generated `artifacts/installability-report.json` with 17 passed automated desktop Chromium checks for HTTPS reachability, manifest completeness, standalone display metadata, PNG and maskable icons, service-worker readiness/control, shell cache creation, cached `offline.html`, and direct offline-shell route health. Real browser install prompt acceptance and installed-window behavior remain manual and keep this item open.
+- [x] Validate offline behavior for Web/PWA shell.
+  - Evidence 2026-06-18: `WebPwaInstallStructuralTests` passed 2/2 for manifest/install wiring, service-worker registration script, and offline fallback shape. A desktop Chromium Puppeteer smoke loaded `https://localhost:7501/`, waited for `navigator.serviceWorker.ready`, verified cache `darwin-lingua-shell-v3`, stopped the Web host, then navigated to `/offline-smoke-check`; the service worker returned cached `offline.html` with title `Offline - Darwin Lingua`. Full install prompt acceptance remains covered by the separate Android/Desktop install-flow items.
 
 ### Learner Workflows
 
-- [ ] Browse by CEFR.
-- [ ] Browse by topic.
-- [ ] Search and open word detail.
-- [ ] Favorite/unfavorite word.
-- [ ] Recent activity.
-- [ ] Meaning-language preferences.
-- [ ] Dialogue list/detail.
-- [ ] Dialogue roleplay.
-- [ ] Conversation starter list/detail.
-- [ ] Event directory list/detail.
-- [ ] Event preparation pack detail and `Mark prepared`.
+- [x] Browse by CEFR.
+  - Evidence 2026-06-18: in-app desktop Chromium opened `/browse`, verified the six CEFR chips, then opened `/browse/cefr/a1?culture=en&ui-culture=en`. The page rendered `CEFR A1`, returned word detail links such as `/words/ab`, had no empty state, no server error text, and zero captured console errors.
+- [x] Browse by topic.
+  - Evidence 2026-06-18: in-app desktop Chromium read topic chips from `/browse`, opened `/browse/topic/everyday-life?culture=en&ui-culture=en`, rendered `Topic: Everyday Life`, returned word detail links such as `/words/ab`, had no empty state, no server error text, and zero captured console errors.
+- [x] Search and open word detail.
+  - Evidence 2026-06-18: in-app desktop Chromium opened `/search?q=Termin&culture=en&ui-culture=en`, rendered word results including `/words/termingerecht`, `/words/der-arzttermin`, and `/words/der-termin`, then opened `/words/termingerecht` successfully with no server error text and zero captured console errors.
+- [x] Favorite/unfavorite word.
+  - Evidence 2026-06-18: `WordsControllerDualMeaningLanguageTests` verifies the word detail favorite toggle posts to the safe local return URL when favorites are available and redirects to the Favorites page when the premium-gated feature is locked; the same tests keep dual meaning-language routing intact.
+- [x] Recent activity.
+  - Evidence 2026-06-18: in-app desktop Chromium opened `/recent?culture=en&ui-culture=en`, verified the Recent Activity page, learning progress summary, deterministic recommended next course lessons, a recent word entry after opening search/detail content, no server error text, and zero captured console errors.
+- [x] Meaning-language preferences.
+  - Evidence 2026-06-18: `SettingsControllerLanguagePreferenceTests` verifies Settings update persists the secondary meaning language only when the dual-meaning feature is entitled, omits it when the feature is unavailable, and the Settings UI explains where the secondary helper language appears. PostgreSQL verification for `shahramvafadar@gmail.com` reports `Premium` entitlement with `PrimaryMeaningLanguageCode=fa` and `SecondaryMeaningLanguageCode=en`.
+- [x] Dialogue list/detail.
+  - Evidence 2026-06-18: in-app desktop Chromium opened `/dialogues?culture=en&ui-culture=en`, found dialogue detail links including `/dialogues/a1-dialogue-appointment-001`, opened the detail page, verified title `Einen Termin verschieben (A1)`, dialogue content, useful phrase/word sections, a roleplay link, no server error text, and zero captured console errors.
+- [x] Dialogue roleplay.
+  - Evidence 2026-06-18: in-app desktop Chromium opened `/dialogues/a1-dialogue-appointment-001/roleplay?culture=en&ui-culture=en`, verified the scripted roleplay page with 4 partner/learner steps, German lines, English helper meanings, replay/hear-sentence controls, no prepared-empty state, no server error text, and zero captured console errors.
+- [x] Conversation starter list/detail.
+  - Evidence 2026-06-18: imported `conversation-starters-a1-foundation-01-v1.json` to shared PostgreSQL with 3 packs, 12 phrases, and 120 translations; public Web/API smoke passed for list, detail, Persian detail, API list, and API detail with Persian primary plus English secondary meanings.
+- [x] Event directory list/detail.
+  - Evidence 2026-06-18: in-app desktop Chromium opened `/conversation-events?culture=en&ui-culture=en`, found active event links including `/conversation-events/bamf-integration-course-information`, opened that detail page, verified the event title and RSVP form presence without submitting it, saw no empty state, no server error text, and zero captured console errors.
+- [x] Event preparation pack detail and `Mark prepared`.
+  - Evidence 2026-06-18: imported `event-preparation-a1-foundation-01-v1.json` to shared PostgreSQL with 3 packs, 27 prompts, 9 vocabulary references, 4 dialogue links, and 3 starter links. Targeted parser/persistence tests passed, anonymous public access remains gated, and local premium API smoke passed for list, detail, and dialogue-related preparation packs; controller tests cover Mark prepared completion analytics and redirect.
 
 ### Account And Admin Workflows
 
-- [ ] Register learner.
-- [ ] Sign in/out.
-- [ ] Seeded admin login.
-- [ ] Seeded learner login.
-- [ ] Admin import/drafts/history/publish/rollback.
-- [ ] Admin user entitlement management.
-- [ ] Admin organizer/event management.
-- [ ] Admin moderation queue and decision logging.
-- [ ] Admin reports summary.
+- [x] Register learner.
+  - Evidence 2026-06-18: `WebRegistrationLegalAcknowledgementTests` passed 5/5 and now verifies the registration workflow creates a learner user, assigns the `Learner` role, initializes entitlement state, records versioned Terms/Privacy acceptances, sends confirmation email, and returns the same CheckEmail flow for existing users to avoid account enumeration. Public smoke for `/Identity/Account/Register` returned 200 with the register form, email autocomplete, Terms link, and Privacy link.
+- [x] Sign in/out.
+  - Evidence 2026-06-18: `WebAccountAuthenticationWorkflowTests` passed 2/2 and verifies login clears the external auth cookie, normalizes return URLs, checks confirmed-email state before password sign-in, enables lockout-on-failure, sends lockout notifications through the safe rate-limited path, routes not-allowed users to CheckEmail, and wires sign-out as a POST to the Identity default UI logout page. Public smoke for `/Identity/Account/Login` returned 200 with email/password autocomplete, remember-me, Register, and Forgot password controls.
+- [x] Seeded admin login.
+  - Evidence 2026-06-18: `DarwinLinguaIdentityBootstrapperTests` passed 7/7, covering required seed-account configuration, admin/learner creation, roles, entitlement defaults, and expiry behavior. Public seeded-login smoke used the configured local admin seed account with antiforgery token and session cookie; login redirected successfully and `/admin` returned 200 without a forbidden page.
+- [x] Seeded learner login.
+  - Evidence 2026-06-18: `DarwinLinguaIdentityBootstrapperTests` passed 7/7 for learner seed creation and role assignment. Public seeded-login smoke used the configured local learner seed account with antiforgery token and session cookie; login redirected successfully and `/account` returned 200 with authenticated account chrome and Sign out available.
+- [x] Admin import/drafts/history/publish/rollback.
+  - Evidence 2026-06-18: `AdminOperationsWorkflowStructuralTests` passed 3/3 and verifies the Admin imports, drafts, history, publishing, and rollback controllers/routes, Operator/Admin policies, safe status/query normalization, HTMX table/panel refresh surfaces, publishing summary, protected rollback warning modal, dashboard links, WebApi admin endpoints, and Web client/service wiring. Public seeded-admin smoke returned 200 for `/admin/imports`, `/admin/drafts`, `/admin/history`, `/admin/publishing`, and `/admin/rollback` without falling back to sign-in.
+- [x] Admin user entitlement management.
+  - Evidence 2026-06-18: `EntitlementFeatureGateStructuralTests` passed 3/3 and now verifies Admin-only user list/detail routes, entitlement update validation for supported tiers and UTC expirations, free-tier expiry rejection, future expiry enforcement for trial/premium, audited `updatedBy` resolution, recent entitlement history loading, enabled feature rendering, confirmation-protected update form, and WebApi `/api/admin/identity/users/{userId}/entitlement` management endpoint behavior for unsupported tiers and missing users. Public seeded-admin smoke signed in successfully, `/admin/users` returned 200 with the user table, and a user detail page returned 200 with entitlement controls and entitlement history.
+- [x] Admin organizer/event management.
+  - Evidence 2026-06-18: `AdminOrganizerEventManagementStructuralTests`, `OrganizerProfileAdminServiceTests`, and `ConversationEventAdminServiceTests` passed 7/7. Coverage verifies Operator-protected Admin organizer profile creation/replacement, owner assignment, claim decision flow, organizer plan/status/CEFR/language validation, notification call sites, Admin conversation event creation/replacement, UTC start/end parsing, recurrence/capacity fields, preparation-pack slug validation, Web client methods, and WebApi admin endpoints for organizer profiles, claim requests, owners, conversation events, publication status, and RSVPs. Public seeded-admin smoke returned 200 for `/admin/organizer-profiles` with create, claim, and owner sections and `/admin/conversation-events` with create and published-list sections.
+- [x] Admin moderation queue and decision logging.
+  - Evidence 2026-06-18: `AdminModerationWorkflowStructuralTests` and PostgreSQL `ModerationServiceTests` passed 5/5. Coverage verifies Operator-protected `/admin/moderation`, normalized status/reason/target/assigned filters, admin report queue loading, decision audit loading, allowed decision status validation, decision-note length cap, audited `DecidedBy` request creation, reporter outcome notification call site, Web client query parameters, and WebApi admin endpoints for reports, decisions, and audits. Public seeded-admin smoke returned 200 for `/admin/moderation` with filter, reports, and audit sections.
+- [x] Admin reports summary.
+  - Evidence 2026-06-18: `AdminReportsSummaryStructuralTests`, `AdminReportsLearningPortalIssueDrilldownStructuralTests`, `WebsiteAdminQueryServiceLearningPortalReportTests`, and `AdminReportsAuthorizationTests` passed 7/7. Coverage verifies Admin-only `/admin/reports`, system report API wiring, identity-user count, catalog/social/moderation/operations/email/Learning Portal metric sections, Web analytics counters, Learning Portal quality counters including course activity, exercise set, exam prep, and sensitive-policy gaps, plus issue filtering and CSV export. Public seeded-admin smoke returned 200 for `/admin/reports` with system report, Learning Portal coverage, issue samples, and analytics sections, and `/admin/reports/learning-portal-issues` returned 200 with the issue drilldown.
 
 ## Out Of Scope For This Web Test Backlog
 

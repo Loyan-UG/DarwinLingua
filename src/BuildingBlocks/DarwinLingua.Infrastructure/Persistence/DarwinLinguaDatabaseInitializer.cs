@@ -2220,6 +2220,8 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "ScheduleText" character varying(1000) NOT NULL,
                 "RecurrenceRule" character varying(256),
                 "Capacity" integer,
+                "StartsAtUtc" timestamp with time zone,
+                "EndsAtUtc" timestamp with time zone,
                 "PriceType" character varying(64) NOT NULL,
                 "VerificationStatus" character varying(64) NOT NULL,
                 "SourceName" character varying(256),
@@ -2235,6 +2237,8 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "OrganizerProfileSlug" character varying(128);
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "RecurrenceRule" character varying(256);
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "Capacity" integer;
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "StartsAtUtc" timestamp with time zone;
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "EndsAtUtc" timestamp with time zone;
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "SourceName" character varying(256);
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "SourceUrl" character varying(1024);
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "LastVerifiedAtUtc" timestamp with time zone;
@@ -2428,6 +2432,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_OrganizerProfileSlug" ON "ConversationEvents" ("OrganizerProfileSlug");
             CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_City_IsOnline_PriceType" ON "ConversationEvents" ("City", "IsOnline", "PriceType");
             CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Category_PublicationStatus" ON "ConversationEvents" ("Category", "PublicationStatus");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_StartsAtUtc_PublicationStatus" ON "ConversationEvents" ("StartsAtUtc", "PublicationStatus");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventLevels_ConversationEventId_CefrLevel" ON "ConversationEventLevels" ("ConversationEventId", "CefrLevel");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventHelperLanguages_ConversationEventId_LanguageCode" ON "ConversationEventHelperLanguages" ("ConversationEventId", "LanguageCode");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventPreparationPackLinks_ConversationEventId_PreparationPackSlug" ON "ConversationEventPreparationPackLinks" ("ConversationEventId", "PreparationPackSlug");

@@ -23,6 +23,7 @@ public sealed class CulturalNoteRouteStructuralTests
         string controllerSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Controllers", "CulturalNotesController.cs"));
         string indexSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "CulturalNotes", "Index.cshtml"));
         string detailSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "CulturalNotes", "Detail.cshtml"));
+        string slugListSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "WritingTemplates", "_SlugList.cshtml"));
         string viewModelSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Models", "CulturalNotePageViewModels.cs"));
         string searchRepositorySource = File.ReadAllText(ResolveRepositoryPath("src", "Modules", "Catalog", "DarwinLingua.Catalog.Infrastructure", "Repositories", "UnifiedLearningSearchRepository.cs"));
 
@@ -42,6 +43,12 @@ public sealed class CulturalNoteRouteStructuralTests
         Assert.Contains("LearnerLanguageSections", detailSource, StringComparison.Ordinal);
         Assert.Contains("LinkedWritingTemplateSlugs", detailSource, StringComparison.Ordinal);
         Assert.Contains("LinkedCourseLessonSlugs", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LearningContentLinkResolver.ResolveHref", slugListSource, StringComparison.Ordinal);
+        Assert.Contains("\"dialogue\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"expression\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"writing-template\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"talk-topic\"", detailSource, StringComparison.Ordinal);
+        Assert.Contains("\"course-lesson\"", detailSource, StringComparison.Ordinal);
         Assert.Contains("$\"/life-in-germany/{item.Slug}", searchRepositorySource, StringComparison.Ordinal);
     }
 

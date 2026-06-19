@@ -1,8 +1,10 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Identity;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Web.Controllers;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -63,6 +65,63 @@ public sealed class WordsControllerDualMeaningLanguageTests
         Assert.Null(viewModel.SecondaryMeaningLanguageCode);
     }
 
+    [Fact]
+    public async Task ToggleFavorite_ShouldToggleAndRedirectToSafeReturnUrl()
+    {
+        Guid wordId = Guid.NewGuid();
+        StaticFavoriteWordService favoriteWordService = new(false);
+        WordsController controller = new(
+            new CapturingCatalogApiClient(CreateWordDetail(wordId)),
+            favoriteWordService,
+            new StaticWordStateService(wordId),
+            new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
+            new StaticFeatureAccessService("fa"),
+            new TestStringLocalizer(),
+            NullLogger<WordsController>.Instance)
+        {
+            Url = new StaticUrlHelper("/words/brot"),
+            ControllerContext = new ControllerContext
+            {
+                HttpContext = new DefaultHttpContext()
+            }
+        };
+
+        IActionResult actionResult = await controller.ToggleFavorite(wordId, "/words/brot", CancellationToken.None);
+
+        LocalRedirectResult redirect = Assert.IsType<LocalRedirectResult>(actionResult);
+        Assert.Equal("/words/brot", redirect.Url);
+        Assert.Equal(1, favoriteWordService.ToggleCount);
+    }
+
+    [Fact]
+    public async Task ToggleFavorite_ShouldRedirectToFavorites_WhenFeatureIsLocked()
+    {
+        Guid wordId = Guid.NewGuid();
+        StaticFavoriteWordService favoriteWordService = new(false, throwFeatureDeniedOnToggle: true);
+        WordsController controller = new(
+            new CapturingCatalogApiClient(CreateWordDetail(wordId)),
+            favoriteWordService,
+            new StaticWordStateService(wordId),
+            new StaticLearningProfileAccessor(new UserLearningProfileModel("local", "en", "fa", "en")),
+            new StaticFeatureAccessService(null, canUseFavorites: false),
+            new TestStringLocalizer(),
+            NullLogger<WordsController>.Instance)
+        {
+            Url = new StaticUrlHelper("/words/brot"),
+            ControllerContext = new ControllerContext
+            {
+                HttpContext = new DefaultHttpContext()
+            }
+        };
+
+        IActionResult actionResult = await controller.ToggleFavorite(wordId, "/words/brot", CancellationToken.None);
+
+        RedirectToActionResult redirect = Assert.IsType<RedirectToActionResult>(actionResult);
+        Assert.Equal("Favorites", redirect.ControllerName);
+        Assert.Equal("Index", redirect.ActionName);
+        Assert.Equal(1, favoriteWordService.ToggleCount);
+    }
+
     private static WordDetailModel CreateWordDetail(Guid publicId)
     {
         return new WordDetailModel(
@@ -113,11 +172,19 @@ public sealed class WordsControllerDualMeaningLanguageTests
         public Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken) => Task.FromResult(profile);
     }
 
-    private sealed class StaticFeatureAccessService(string? resolvedSecondaryLanguage) : IWebEntitledFeatureAccessService
+    private sealed class StaticFeatureAccessService(string? resolvedSecondaryLanguage, bool canUseFavorites = true) : IWebEntitledFeatureAccessService
     {
-        public Task<bool> CanUseFavoritesAsync(CancellationToken cancellationToken) => Task.FromResult(true);
+        public Task<bool> CanUseFavoritesAsync(CancellationToken cancellationToken) => Task.FromResult(canUseFavorites);
 
-        public Task EnsureCanUseFavoritesAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+        public Task EnsureCanUseFavoritesAsync(CancellationToken cancellationToken)
+        {
+            if (canUseFavorites)
+            {
+                return Task.CompletedTask;
+            }
+
+            throw new FeatureAccessDeniedException(DarwinLinguaFeatureKeys.Favorites, "Favorites are locked.");
+        }
 
         public Task<bool> CanUseDualMeaningLanguageAsync(CancellationToken cancellationToken) => Task.FromResult(resolvedSecondaryLanguage is not null);
 
@@ -129,11 +196,22 @@ public sealed class WordsControllerDualMeaningLanguageTests
             Task.FromResult(resolvedSecondaryLanguage);
     }
 
-    private sealed class StaticFavoriteWordService(bool isFavorite) : IWebFavoriteWordService
+    private sealed class StaticFavoriteWordService(bool isFavorite, bool throwFeatureDeniedOnToggle = false) : IWebFavoriteWordService
     {
+        public int ToggleCount { get; private set; }
+
         public Task<bool> IsFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(isFavorite);
 
-        public Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.CompletedTask;
+        public Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken)
+        {
+            ToggleCount++;
+            if (throwFeatureDeniedOnToggle)
+            {
+                throw new FeatureAccessDeniedException(DarwinLinguaFeatureKeys.Favorites, "Favorites are locked.");
+            }
+
+            return Task.CompletedTask;
+        }
 
         public Task<IReadOnlySet<Guid>> GetFavoriteWordIdsAsync(IReadOnlyCollection<Guid> wordPublicIds, CancellationToken cancellationToken) =>
             Task.FromResult<IReadOnlySet<Guid>>(isFavorite ? wordPublicIds.ToHashSet() : new HashSet<Guid>());

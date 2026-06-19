@@ -117,6 +117,56 @@ public sealed class TransactionalEmailBrevoTests
     }
 
     [Fact]
+    public async Task DeliveryLogRepository_ShouldStoreDiagnosticsWithoutEmailBodyOrRecoveryUrl()
+    {
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_web_email_contract");
+        DbContextOptions<WebIdentityDbContext> options = new DbContextOptionsBuilder<WebIdentityDbContext>()
+            .UseNpgsql(database.ConnectionString)
+            .Options;
+
+        await using WebIdentityDbContext dbContext = new(options);
+        await new WebUserStateDatabaseBootstrapper(dbContext).InitializeAsync(CancellationToken.None);
+        EmailDeliveryLogRepository repository = new(dbContext);
+        const string recoveryUrl = "https://lingua.example/Identity/Account/ResetPassword?code=secret-reset-token";
+        TransactionalEmailMessage message = new(
+            TransactionalEmailScenarios.AccountPasswordReset,
+            "account.password-reset",
+            "learner@example.com",
+            "user-123",
+            "en",
+            "Reset your password",
+            $"Use this recovery link: {recoveryUrl}",
+            $"<a href=\"{recoveryUrl}\">Reset</a>",
+            "trace-123");
+
+        WebEmailDeliveryLog log = await repository.AddQueuedAsync(message, "brevo-api", CancellationToken.None);
+        await repository.MarkFailedAsync(log.Id, "provider-error", $"Provider rejected payload containing {recoveryUrl}", CancellationToken.None);
+
+        WebEmailDeliveryLog storedLog = await dbContext.EmailDeliveryLogs.SingleAsync();
+        string[] persistedTextValues =
+        [
+            storedLog.ScenarioKey,
+            storedLog.RecipientEmailHash,
+            storedLog.RecipientUserId ?? string.Empty,
+            storedLog.TemplateKey,
+            storedLog.Culture,
+            storedLog.Subject,
+            storedLog.ProviderName,
+            storedLog.ProviderMessageId ?? string.Empty,
+            storedLog.ProviderLastEvent ?? string.Empty,
+            storedLog.ProviderLastEventReason ?? string.Empty,
+            storedLog.FailureCode ?? string.Empty,
+            storedLog.FailureMessageSummary ?? string.Empty,
+            storedLog.CorrelationId ?? string.Empty,
+        ];
+
+        Assert.DoesNotContain(persistedTextValues, value => value.Contains("secret-reset-token", StringComparison.Ordinal));
+        Assert.DoesNotContain(persistedTextValues, value => value.Contains("/ResetPassword", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(persistedTextValues, value => value.Contains(recoveryUrl, StringComparison.Ordinal));
+        Assert.Equal("Provider rejected payload containing [redacted-url]", storedLog.FailureMessageSummary);
+    }
+
+    [Fact]
     public void Validate_BrevoApiModeRequiresApiKeyAndWebhookSecret()
     {
         TransactionalEmailOptions options = CreateBrevoOptions(sandboxMode: false);
@@ -171,6 +221,46 @@ public sealed class TransactionalEmailBrevoTests
         Assert.False(insecureResult.Succeeded);
         Assert.NotNull(insecureResult.Failures);
         Assert.Contains("TransactionalEmail:PublicBaseUrl must use HTTPS in Production.", insecureResult.Failures);
+    }
+
+    [Fact]
+    public void TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely()
+    {
+        TransactionalEmailOptions options = CreateBrevoOptions(sandboxMode: true);
+        options.ProductName = "Darwin <Lingua>";
+        options.SupportEmail = "support@example.com";
+        TransactionalEmailTemplateRenderer renderer = new(Options.Create(options));
+        Dictionary<string, string> values = new(StringComparer.Ordinal)
+        {
+            ["ActionUrl"] = "https://lingua.example/confirm?code=<unsafe>",
+            ["ExpirationText"] = "24 hours",
+        };
+
+        RenderedEmailTemplate english = renderer.Render(
+            TransactionalEmailScenarios.AccountEmailConfirmation,
+            "en-US",
+            values);
+        RenderedEmailTemplate german = renderer.Render(
+            TransactionalEmailScenarios.AccountEmailConfirmation,
+            "de-DE",
+            values);
+        RenderedEmailTemplate fallback = renderer.Render(
+            TransactionalEmailScenarios.AccountEmailConfirmation,
+            "fa",
+            values);
+
+        Assert.Equal("en", english.Culture);
+        Assert.Contains("Confirm your Darwin Lingua email", english.Subject, StringComparison.Ordinal);
+        Assert.Contains("https://lingua.example/confirm?code=<unsafe>", english.PlainTextBody, StringComparison.Ordinal);
+        Assert.Contains("Darwin &lt;Lingua&gt;", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("code=&lt;unsafe&gt;", english.HtmlBody, StringComparison.Ordinal);
+
+        Assert.Equal("de", german.Culture);
+        Assert.Contains("Bestatige deine Darwin Lingua E-Mail", german.Subject, StringComparison.Ordinal);
+        Assert.Contains("Dieser Link lauft", german.PlainTextBody, StringComparison.Ordinal);
+
+        Assert.Equal("en", fallback.Culture);
+        Assert.Equal(english.Subject, fallback.Subject);
     }
 
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()

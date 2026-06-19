@@ -68,17 +68,27 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
 
     public virtual Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, string actorEmail, CancellationToken cancellationToken) => throw new NotSupportedException();
 
-    public virtual Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public virtual Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, string actorEmail, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(ConversationEventListFilterModel filter, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
 
+    public virtual Task<EventRsvpSummaryModel> GetEventRsvpSummaryAsync(string eventSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<EventRsvpModel> SubmitEventRsvpAsync(string eventSlug, SubmitEventRsvpRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<EventRsvpModel>> GetAdminEventRsvpsAsync(string eventSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<EventRsvpModel> SetAdminEventRsvpStatusAsync(string eventSlug, Guid rsvpId, AdminSetEventRsvpStatusRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
+
     public virtual Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(string slug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<OrganizerProfileOwnerModel>> GetOrganizerProfileOwnersByEmailAsync(string ownerEmail, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<IReadOnlyList<WordListItemModel>> GetWordsByTopicPageAsync(string topicKey, string meaningLanguageCode, int skip, int take, CancellationToken cancellationToken) => throw new NotSupportedException();
 
@@ -227,4 +237,8 @@ internal abstract class UnsupportedWebCatalogApiClient : IWebCatalogApiClient
     public virtual Task<ConversationEventDetailModel> SaveAdminConversationEventAsync(AdminSaveConversationEventRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
 
     public virtual Task<OrganizerProfileDetailModel> SaveAdminOrganizerProfileAsync(AdminSaveOrganizerProfileRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<IReadOnlyList<OrganizerManagedConversationEventModel>> GetAdminConversationEventsByOrganizerAsync(string organizerProfileSlug, CancellationToken cancellationToken) => throw new NotSupportedException();
+
+    public virtual Task<OrganizerManagedConversationEventModel> SetAdminConversationEventPublicationStatusAsync(string slug, AdminSetConversationEventPublicationStatusRequest request, CancellationToken cancellationToken) => throw new NotSupportedException();
 }

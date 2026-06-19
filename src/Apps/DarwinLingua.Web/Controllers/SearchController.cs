@@ -17,6 +17,7 @@ public sealed class SearchController(
     ILogger<SearchController> logger,
     IStringLocalizer<SharedResource> localizer) : Controller
 {
+    private const int MinLearningSearchQueryLength = 2;
     private const int MaxSearchQueryLength = 100;
     private static readonly string[] ResultTypes =
     [
@@ -171,7 +172,7 @@ public sealed class SearchController(
         string meaningLanguageCode,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(query))
+        if (string.IsNullOrWhiteSpace(query) || query.Length < MinLearningSearchQueryLength)
         {
             return [];
         }

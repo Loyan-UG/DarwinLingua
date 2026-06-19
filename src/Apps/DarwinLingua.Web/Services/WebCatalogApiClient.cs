@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
@@ -162,10 +163,12 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(
         string dialogueSlug,
+        string actorEmail,
         CancellationToken cancellationToken);
 
     Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
         string slug,
+        string actorEmail,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(
@@ -280,6 +283,9 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<UserReportModel>> GetAdminUserReportsAsync(
         string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
@@ -673,7 +679,7 @@ internal sealed class WebCatalogApiClient(
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<GrammarTopicListItemModel>>(
             BuildPath(
-                "/api/catalog/grammar",
+                "/api/catalog/grammar-topics",
                 [
                     new("cefrLevel", filter.CefrLevel),
                     new("grammarCategory", filter.GrammarCategory),
@@ -688,7 +694,7 @@ internal sealed class WebCatalogApiClient(
         CancellationToken cancellationToken) =>
         GetAsync<GrammarTopicDetailModel>(
             BuildPath(
-                $"/api/catalog/grammar/{Uri.EscapeDataString(slug)}",
+                $"/api/catalog/grammar-topics/{Uri.EscapeDataString(slug)}",
                 [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
             cancellationToken);
 
@@ -976,16 +982,20 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(
         string dialogueSlug,
+        string actorEmail,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<EventPreparationPackListItemModel>>(
             $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/event-preparation-packs",
+            actorEmail,
             cancellationToken);
 
     public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
         string slug,
+        string actorEmail,
         CancellationToken cancellationToken) =>
         GetAsync<EventPreparationPackDetailModel>(
             $"/api/catalog/event-preparation-packs/{Uri.EscapeDataString(slug)}",
+            actorEmail,
             cancellationToken);
 
     public Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(
@@ -1000,7 +1010,9 @@ internal sealed class WebCatalogApiClient(
                     new("helperLanguageCode", filter.HelperLanguageCode),
                     new("isOnline", filter.IsOnline?.ToString()),
                     new("priceType", filter.PriceType),
-                    new("category", filter.Category)
+                    new("category", filter.Category),
+                    new("dateFromUtc", FormatUtc(filter.DateFromUtc)),
+                    new("dateToUtc", FormatUtc(filter.DateToUtc))
                 ]),
             cancellationToken);
 
@@ -1179,9 +1191,19 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<UserReportModel>> GetAdminUserReportsAsync(
         string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<UserReportModel>>(
-            BuildPath("/api/admin/catalog/moderation/reports", [new("status", status)]),
+            BuildPath(
+                "/api/admin/catalog/moderation/reports",
+                [
+                    new("status", status),
+                    new("reason", reason),
+                    new("targetType", targetType),
+                    new("assignedState", assignedState),
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ModerationDecisionAuditModel>> GetAdminModerationDecisionAuditsAsync(
@@ -2879,6 +2901,19 @@ internal sealed class WebCatalogApiClient(
 
         return builder.ToString();
     }
+
+    private static string? FormatUtc(DateTime? value)
+    {
+        if (!value.HasValue)
+        {
+            return null;
+        }
+
+        DateTime utc = value.Value.Kind == DateTimeKind.Utc
+            ? value.Value
+            : value.Value.ToUniversalTime();
+        return utc.ToString("O", CultureInfo.InvariantCulture);
+    }
 }
 
 internal static class WebCatalogApiClientRegistration
@@ -3008,6 +3043,7 @@ public sealed record AdminLearningPortalSystemReportResponse(
     int ExerciseSetsUnpublishedDrafts,
     int ExerciseSetsWithoutItems,
     int ExerciseSetsWithUnresolvedExerciseSlugs,
+    int ExerciseSetsWithUnresolvedOwnerReferences,
     int ExercisesWithMalformedPrompt,
     int ExercisesWithMalformedAnswerKey,
     int ExercisesMissingExplanations,
@@ -3363,6 +3399,8 @@ public sealed record AdminSaveConversationEventRequest(
     string? ExternalLink,
     string? ContactMethod,
     string ScheduleText,
+    DateTime? StartsAtUtc,
+    DateTime? EndsAtUtc,
     string PriceType,
     string VerificationStatus,
     string? SourceName,
@@ -3394,6 +3432,8 @@ public sealed record OrganizerManagedConversationEventModel(
     string? ExternalLink,
     string? ContactMethod,
     string ScheduleText,
+    DateTime? StartsAtUtc,
+    DateTime? EndsAtUtc,
     string PriceType,
     string VerificationStatus,
     string PublicationStatus,

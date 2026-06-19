@@ -192,6 +192,20 @@ await using (AsyncServiceScope bootstrapScope = app.Services.CreateAsyncScope())
 }
 
 app.UseForwardedHeaders();
+app.Use(async (context, next) =>
+{
+    if (ShouldSendStrictTransportSecurity(context))
+    {
+        context.Response.Headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains";
+    }
+
+    context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    context.Response.Headers["Referrer-Policy"] = "strict-origin-when-cross-origin";
+    context.Response.Headers["X-Frame-Options"] = "DENY";
+    context.Response.Headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()";
+
+    await next();
+});
 app.UseAuthentication();
 app.Use(EnforceAdminApiAccessAsync);
 app.UseAuthorization();
@@ -464,13 +478,42 @@ app.MapGet(
     "/api/catalog/grammar/{slug}",
     async (
         string slug,
-        string primaryMeaningLanguageCode,
+        string? primaryMeaningLanguageCode,
         IGrammarTopicQueryService grammarQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
                     slug,
-                    primaryMeaningLanguageCode,
+                    primaryMeaningLanguageCode ?? "en",
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/grammar-topics",
+    async (
+        string? cefrLevel,
+        string? grammarCategory,
+        string? topicKey,
+        string? q,
+        IGrammarTopicQueryService grammarQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await grammarQueryService.GetPublishedGrammarTopicsAsync(
+                    new GrammarTopicListFilterModel(cefrLevel, grammarCategory, topicKey, q),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/catalog/grammar-topics/{slug}",
+    async (
+        string slug,
+        string? primaryMeaningLanguageCode,
+        IGrammarTopicQueryService grammarQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
+                    slug,
+                    primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -834,9 +877,16 @@ app.MapGet(
         string? category,
         string? eventType,
         string? topicKey,
+        HttpContext httpContext,
         IEventPreparationQueryService eventPreparationQueryService,
+        UserManager<DarwinLinguaIdentityUser> userManager,
+        IUserEntitlementService userEntitlementService,
         CancellationToken cancellationToken) =>
-        await ResolveQueryRequestAsync(
+        await ResolveEntitledQueryRequestAsync(
+                httpContext,
+                userManager,
+                userEntitlementService,
+                DarwinLinguaFeatureKeys.EventPreparationPacks,
                 async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksAsync(
                     new EventPreparationListFilterModel(cefrLevel, category, eventType, topicKey),
                     cancellationToken).ConfigureAwait(false))
@@ -844,15 +894,35 @@ app.MapGet(
 
 app.MapGet(
     "/api/catalog/dialogues/{slug}/event-preparation-packs",
-    async (string slug, IEventPreparationQueryService eventPreparationQueryService, CancellationToken cancellationToken) =>
-        await ResolveQueryRequestAsync(
+    async (
+        string slug,
+        HttpContext httpContext,
+        IEventPreparationQueryService eventPreparationQueryService,
+        UserManager<DarwinLinguaIdentityUser> userManager,
+        IUserEntitlementService userEntitlementService,
+        CancellationToken cancellationToken) =>
+        await ResolveEntitledQueryRequestAsync(
+                httpContext,
+                userManager,
+                userEntitlementService,
+                DarwinLinguaFeatureKeys.EventPreparationPacks,
                 async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksForDialogueAsync(slug, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/event-preparation-packs/{slug}",
-    async (string slug, IEventPreparationQueryService eventPreparationQueryService, CancellationToken cancellationToken) =>
-        await ResolveQueryRequestAsync(
+    async (
+        string slug,
+        HttpContext httpContext,
+        IEventPreparationQueryService eventPreparationQueryService,
+        UserManager<DarwinLinguaIdentityUser> userManager,
+        IUserEntitlementService userEntitlementService,
+        CancellationToken cancellationToken) =>
+        await ResolveEntitledQueryRequestAsync(
+                httpContext,
+                userManager,
+                userEntitlementService,
+                DarwinLinguaFeatureKeys.EventPreparationPacks,
                 async () => await eventPreparationQueryService.GetPublishedEventPreparationPackBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -865,11 +935,13 @@ app.MapGet(
         bool? isOnline,
         string? priceType,
         string? category,
+        DateTime? dateFromUtc,
+        DateTime? dateToUtc,
         IConversationEventQueryService conversationEventQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await conversationEventQueryService.GetPublishedEventsAsync(
-                    new ConversationEventListFilterModel(city, cefrLevel, helperLanguageCode, isOnline, priceType, category),
+                    new ConversationEventListFilterModel(city, cefrLevel, helperLanguageCode, isOnline, priceType, category, dateFromUtc, dateToUtc),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -1658,9 +1730,21 @@ app.MapPost(
 
 app.MapGet(
     "/api/admin/catalog/moderation/reports",
-    async (string? status, IModerationService moderationService, CancellationToken cancellationToken) =>
+    async (
+        string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState,
+        IModerationService moderationService,
+        CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await moderationService.GetReportsAsync(status, cancellationToken).ConfigureAwait(false))
+                async () => await moderationService.GetReportsAsync(
+                        status,
+                        reason,
+                        targetType,
+                        assignedState,
+                        cancellationToken)
+                    .ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
@@ -1966,6 +2050,59 @@ static async Task<IResult> ResolveQueryRequestAsync<T>(Func<Task<T>> resolver)
     }
 }
 
+static async Task<IResult> ResolveEntitledQueryRequestAsync<T>(
+    HttpContext context,
+    UserManager<DarwinLinguaIdentityUser> userManager,
+    IUserEntitlementService userEntitlementService,
+    string featureKey,
+    Func<Task<T>> resolver)
+{
+    string? actorUserId = context.User.Identity?.IsAuthenticated == true
+        ? context.User.FindFirstValue(ClaimTypes.NameIdentifier)
+        : null;
+
+    if (string.IsNullOrWhiteSpace(actorUserId))
+    {
+        string actorEmail;
+        try
+        {
+            actorEmail = GetNormalizedEmailParameter(context.Request, "actorEmail");
+        }
+        catch (DomainRuleException exception)
+        {
+            return Results.BadRequest(new
+            {
+                code = "invalid_actor",
+                message = exception.Message,
+            });
+        }
+
+        DarwinLinguaIdentityUser? actor = await userManager.FindByEmailAsync(actorEmail)
+            .ConfigureAwait(false);
+        if (actor is null)
+        {
+            return Results.Unauthorized();
+        }
+
+        actorUserId = actor.Id;
+    }
+
+    if (!await userEntitlementService.HasFeatureAsync(actorUserId, featureKey, context.RequestAborted)
+            .ConfigureAwait(false))
+    {
+        return Results.Json(
+            new
+            {
+                code = "feature_not_entitled",
+                message = "The authenticated actor is not entitled to use this feature.",
+                featureKey,
+            },
+            statusCode: StatusCodes.Status403Forbidden);
+    }
+
+    return await ResolveQueryRequestAsync(resolver).ConfigureAwait(false);
+}
+
 static async Task<IResult> ResolveMutationRequestAsync<T>(Func<Task<T>> resolver, Func<T, bool> isSuccess)
 {
     try
@@ -2211,6 +2348,9 @@ static string NormalizeEmailParameter(string value, string parameterName)
 static bool IsProtectedApiPath(PathString path, string method) =>
     path.StartsWithSegments("/api/admin/catalog", StringComparison.OrdinalIgnoreCase) ||
     path.StartsWithSegments("/api/admin/content/catalog", StringComparison.OrdinalIgnoreCase) ||
+    path.StartsWithSegments("/api/catalog/event-preparation-packs", StringComparison.OrdinalIgnoreCase) ||
+    (path.StartsWithSegments("/api/catalog/dialogues", StringComparison.OrdinalIgnoreCase) &&
+        (path.Value?.Contains("/event-preparation-packs", StringComparison.OrdinalIgnoreCase) ?? false)) ||
     path.StartsWithSegments("/api/catalog/learner-conversation-profiles/me", StringComparison.OrdinalIgnoreCase) ||
     path.StartsWithSegments("/api/catalog/partner-matches", StringComparison.OrdinalIgnoreCase) ||
     path.StartsWithSegments("/api/catalog/partner-requests", StringComparison.OrdinalIgnoreCase) ||
@@ -2233,6 +2373,27 @@ static bool IsMatchingSecret(string? suppliedSecret, string configuredSecret)
     byte[] configuredBytes = Encoding.UTF8.GetBytes(configuredSecret);
     return suppliedBytes.Length == configuredBytes.Length &&
         CryptographicOperations.FixedTimeEquals(suppliedBytes, configuredBytes);
+}
+
+static bool ShouldSendStrictTransportSecurity(HttpContext context)
+{
+    if (!context.Request.IsHttps)
+    {
+        return false;
+    }
+
+    HostString host = context.Request.Host;
+    if (host.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase))
+    {
+        return false;
+    }
+
+    if (IPAddress.TryParse(host.Host, out IPAddress? address))
+    {
+        return !IPAddress.IsLoopback(address);
+    }
+
+    return true;
 }
 
 public sealed class AdminApiAccessOptions

@@ -34,7 +34,9 @@ public sealed partial class ConversationEvent
         string verificationStatus,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        DateTime? startsAtUtc = null,
+        DateTime? endsAtUtc = null)
     {
         if (id == Guid.Empty)
         {
@@ -59,6 +61,7 @@ public sealed partial class ConversationEvent
         VerificationStatus = NormalizeTaxonomyKey(verificationStatus, ConversationEventTaxonomy.VerificationStatuses, "Conversation event verification status");
         PublicationStatus = publicationStatus;
         SortOrder = NormalizeSortOrder(sortOrder);
+        SetEventTiming(startsAtUtc, endsAtUtc);
         CreatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
         UpdatedAtUtc = CreatedAtUtc;
     }
@@ -95,6 +98,10 @@ public sealed partial class ConversationEvent
 
     public int? Capacity { get; private set; }
 
+    public DateTime? StartsAtUtc { get; private set; }
+
+    public DateTime? EndsAtUtc { get; private set; }
+
     public string PriceType { get; private set; } = string.Empty;
 
     public string VerificationStatus { get; private set; } = string.Empty;
@@ -128,7 +135,12 @@ public sealed partial class ConversationEvent
             : null;
     }
 
-    public void SetOperationalDetails(string? recurrenceRule, int? capacity, DateTime updatedAtUtc)
+    public void SetOperationalDetails(
+        string? recurrenceRule,
+        int? capacity,
+        DateTime updatedAtUtc,
+        DateTime? startsAtUtc = null,
+        DateTime? endsAtUtc = null)
     {
         RecurrenceRule = NormalizeOptionalText(recurrenceRule, 256);
         Capacity = capacity switch
@@ -138,6 +150,7 @@ public sealed partial class ConversationEvent
             > 10000 => throw new DomainRuleException("Conversation event capacity cannot exceed 10000."),
             _ => capacity,
         };
+        SetEventTiming(startsAtUtc, endsAtUtc);
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 
@@ -249,6 +262,31 @@ public sealed partial class ConversationEvent
         }
 
         return value.Kind == DateTimeKind.Utc ? value : value.ToUniversalTime();
+    }
+
+    private void SetEventTiming(DateTime? startsAtUtc, DateTime? endsAtUtc)
+    {
+        DateTime? normalizedStartsAtUtc = startsAtUtc.HasValue
+            ? NormalizeUtc(startsAtUtc.Value, nameof(startsAtUtc))
+            : null;
+        DateTime? normalizedEndsAtUtc = endsAtUtc.HasValue
+            ? NormalizeUtc(endsAtUtc.Value, nameof(endsAtUtc))
+            : null;
+
+        if (normalizedStartsAtUtc is null && normalizedEndsAtUtc is not null)
+        {
+            throw new DomainRuleException("Conversation event end time requires a start time.");
+        }
+
+        if (normalizedStartsAtUtc is not null &&
+            normalizedEndsAtUtc is not null &&
+            normalizedEndsAtUtc <= normalizedStartsAtUtc)
+        {
+            throw new DomainRuleException("Conversation event end time must be after the start time.");
+        }
+
+        StartsAtUtc = normalizedStartsAtUtc;
+        EndsAtUtc = normalizedEndsAtUtc;
     }
 
     [GeneratedRegex("^[a-z0-9]+(-[a-z0-9]+)*$", RegexOptions.Compiled)]

@@ -32,6 +32,7 @@ public sealed class EventPreparationPacksController(
             return Forbid();
         }
 
+        string actorEmail = WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
         EventPreparationPackDetailModel? preparationPack;
 
         try
@@ -39,7 +40,7 @@ public sealed class EventPreparationPacksController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             preparationPack = await catalogApiClient
-                .GetEventPreparationPackBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .GetEventPreparationPackBySlugAsync(normalizedSlug, actorEmail, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -80,6 +81,7 @@ public sealed class EventPreparationPacksController(
             return Forbid();
         }
 
+        string actorEmail = WebUserIdentity.GetRequiredEmail(User, "The authenticated learner does not have an email address.");
         EventPreparationPackDetailModel? preparationPack;
 
         try
@@ -87,7 +89,7 @@ public sealed class EventPreparationPacksController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             preparationPack = await catalogApiClient
-                .GetEventPreparationPackBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .GetEventPreparationPackBySlugAsync(normalizedSlug, actorEmail, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))

@@ -66,6 +66,16 @@ public sealed class ConversationEventsController(IWebCatalogApiClient catalogApi
             lastVerifiedAtUtc = DateTime.SpecifyKind(parsedLastVerifiedAtUtc, DateTimeKind.Utc);
         }
 
+        if (!TryParseOptionalUtc(input.StartsAtUtc, out DateTime? startsAtUtc))
+        {
+            return View("Index", await BuildViewModelAsync(input, null, "Start time must be a valid UTC date/time value.", cancellationToken));
+        }
+
+        if (!TryParseOptionalUtc(input.EndsAtUtc, out DateTime? endsAtUtc))
+        {
+            return View("Index", await BuildViewModelAsync(input, null, "End time must be a valid UTC date/time value.", cancellationToken));
+        }
+
         string slug = input.Slug.Trim();
         string name = input.Name.Trim();
         AdminSaveConversationEventRequest request = new(
@@ -84,6 +94,8 @@ public sealed class ConversationEventsController(IWebCatalogApiClient catalogApi
             TrimToNull(input.ExternalLink),
             TrimToNull(input.ContactMethod),
             input.ScheduleText.Trim(),
+            startsAtUtc,
+            endsAtUtc,
             input.PriceType,
             input.VerificationStatus,
             TrimToNull(input.SourceName),
@@ -140,6 +152,27 @@ public sealed class ConversationEventsController(IWebCatalogApiClient catalogApi
         }
 
         return value.Trim();
+    }
+
+    private static bool TryParseOptionalUtc(string? value, out DateTime? result)
+    {
+        result = null;
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return true;
+        }
+
+        if (!DateTime.TryParse(
+                value,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
+                out DateTime parsed))
+        {
+            return false;
+        }
+
+        result = DateTime.SpecifyKind(parsed, DateTimeKind.Utc);
+        return true;
     }
 
     private static bool HasAllowedCefrLevels(IReadOnlyCollection<string> levels) =>

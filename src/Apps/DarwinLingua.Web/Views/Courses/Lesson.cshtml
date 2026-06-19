@@ -21,8 +21,16 @@
     }
     @if (Model.Progress is not null)
     {
-        <div class="chip-grid" aria-label="@T["Learning progress"]">
-            <span class="chip-link chip-link--static">@T["Learning progress"]: @T[Model.Progress.State]</span>
+        <div class="course-progress-panel" aria-label="@T["Learning progress"]">
+            <div class="chip-grid">
+                <span class="chip-link chip-link--static">@T["Current progress"]: @T[Model.Progress.State]</span>
+            </div>
+            <form class="course-progress-actions" method="post" asp-controller="Courses" asp-action="UpdateLessonProgress" asp-route-courseSlug="@Model.Lesson.CoursePathSlug" asp-route-lessonSlug="@Model.Lesson.Slug">
+                @Html.AntiForgeryToken()
+                <button class="button button--secondary button--compact" type="submit" name="state" value="in-progress">@T["Continue later"]</button>
+                <button class="button button--primary button--compact" type="submit" name="state" value="completed">@T["Mark completed"]</button>
+                <button class="button button--secondary button--compact" type="submit" name="state" value="needs-review">@T["Review again"]</button>
+            </form>
         </div>
     }
     <p>@Model.Lesson.Narrative</p>
@@ -118,12 +126,12 @@
     <section class="panel stack-md">
         <h2 class="headline-sm">@T["Linked content"]</h2>
         <div class="grid-two-col">
-            <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "Grammar")' />
-            <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "Browse")' />
-            <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "Expressions")' />
-            <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "Dialogues")' />
-            <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "TalkTopics")' />
-            <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "Exercises")' />
+            <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "grammar-topic")' />
+            <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "word")' />
+            <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "expression")' />
+            <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "dialogue")' />
+            <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "talk-topic")' />
+            <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "exercise-set")' />
         </div>
     </section>
 }

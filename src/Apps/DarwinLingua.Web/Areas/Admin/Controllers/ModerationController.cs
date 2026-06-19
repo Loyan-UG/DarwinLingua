@@ -13,11 +13,24 @@ public sealed class ModerationController(
     ICommunityNotificationEmailService notificationEmailService) : Controller
 {
     [HttpGet("", Name = "Admin_Moderation_Index")]
-    public async Task<IActionResult> Index(string? status, CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(
+        string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState,
+        CancellationToken cancellationToken)
     {
         string? normalizedStatus = NormalizeStatus(status);
+        string? normalizedReason = NormalizeReason(reason);
+        string? normalizedTargetType = NormalizeTargetType(targetType);
+        string? normalizedAssignedState = NormalizeAssignedState(assignedState);
         Task<IReadOnlyList<UserReportModel>> reportsTask = catalogApiClient
-            .GetAdminUserReportsAsync(normalizedStatus, cancellationToken);
+            .GetAdminUserReportsAsync(
+                normalizedStatus,
+                normalizedReason,
+                normalizedTargetType,
+                normalizedAssignedState,
+                cancellationToken);
         Task<IReadOnlyList<ModerationDecisionAuditModel>> auditsTask = catalogApiClient
             .GetAdminModerationDecisionAuditsAsync(cancellationToken);
 
@@ -25,6 +38,9 @@ public sealed class ModerationController(
 
         return View(new AdminModerationPageViewModel(
             normalizedStatus,
+            normalizedReason,
+            normalizedTargetType,
+            normalizedAssignedState,
             await reportsTask.ConfigureAwait(false),
             await auditsTask.ConfigureAwait(false),
             TempData["StatusMessage"] as string,
@@ -37,12 +53,19 @@ public sealed class ModerationController(
         Guid reportId,
         AdminModerationDecisionInputModel input,
         [FromForm] string? returnStatus,
+        [FromForm] string? returnReason,
+        [FromForm] string? returnTargetType,
+        [FromForm] string? returnAssignedState,
         CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid || !IsAllowedDecisionStatus(input.Status))
         {
             TempData["ErrorMessage"] = "Required decision fields are missing or invalid.";
-            return RedirectToAction(nameof(Index), new { status = NormalizeStatus(returnStatus) });
+            return RedirectToAction(nameof(Index), BuildFilterRouteValues(
+                returnStatus,
+                returnReason,
+                returnTargetType,
+                returnAssignedState));
         }
 
         try
@@ -69,7 +92,11 @@ public sealed class ModerationController(
             TempData["ErrorMessage"] = BuildDecisionErrorMessage(exception);
         }
 
-        return RedirectToAction(nameof(Index), new { status = NormalizeStatus(returnStatus) });
+        return RedirectToAction(nameof(Index), BuildFilterRouteValues(
+            returnStatus,
+            returnReason,
+            returnTargetType,
+            returnAssignedState));
     }
 
     private static bool IsAllowedDecisionStatus(string status) =>
@@ -90,6 +117,67 @@ public sealed class ModerationController(
             ? trimmed
             : null;
     }
+
+    private static string? NormalizeReason(string? reason)
+    {
+        if (string.IsNullOrWhiteSpace(reason))
+        {
+            return null;
+        }
+
+        string trimmed = reason.Trim();
+        return string.Equals(trimmed, "inaccurate-listing", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "spam", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "harassment", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "unsafe-contact", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "impersonation", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "other", StringComparison.OrdinalIgnoreCase)
+            ? trimmed
+            : null;
+    }
+
+    private static string? NormalizeTargetType(string? targetType)
+    {
+        if (string.IsNullOrWhiteSpace(targetType))
+        {
+            return null;
+        }
+
+        string trimmed = targetType.Trim();
+        return string.Equals(trimmed, "conversation-event", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "learner-profile", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "partner-request", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "organizer-profile", StringComparison.OrdinalIgnoreCase)
+            ? trimmed
+            : null;
+    }
+
+    private static string? NormalizeAssignedState(string? assignedState)
+    {
+        if (string.IsNullOrWhiteSpace(assignedState))
+        {
+            return null;
+        }
+
+        string trimmed = assignedState.Trim();
+        return string.Equals(trimmed, "assigned", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(trimmed, "unassigned", StringComparison.OrdinalIgnoreCase)
+            ? trimmed
+            : null;
+    }
+
+    private static object BuildFilterRouteValues(
+        string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState) =>
+        new
+        {
+            status = NormalizeStatus(status),
+            reason = NormalizeReason(reason),
+            targetType = NormalizeTargetType(targetType),
+            assignedState = NormalizeAssignedState(assignedState)
+        };
 
     private string GetAdminEmail() =>
         WebUserIdentity.TryGetEmail(User) ?? "admin@local";

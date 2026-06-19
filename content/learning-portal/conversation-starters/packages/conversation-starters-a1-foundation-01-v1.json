@@ -1,0 +1,310 @@
+{
+  "packageVersion": "1.0",
+  "packageId": "conversation-starters-a1-foundation-01-v1",
+  "packageName": "Conversation Starters A1 Foundation 01",
+  "source": "DarwinLingua reviewed original content",
+  "defaultMeaningLanguages": ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"],
+  "entries": [],
+  "conversationStarterPacks": [
+    {
+      "slug": "a1-im-cafe-ein-gespraech-beginnen",
+      "title": "Im Cafe ein Gespraech beginnen",
+      "description": "Kurze, freundliche Saetze, um im Cafe einfach zu bestellen und ein kleines Gespraech zu starten.",
+      "cefrLevel": "A1",
+      "category": "everyday-conversation",
+      "situation": "cafe",
+      "tone": "friendly",
+      "conversationGoal": "starting-and-ordering",
+      "topics": ["everyday-life", "shopping-and-services"],
+      "sortOrder": 10,
+      "linkedDialogueSlugs": ["a1-cafe-order"],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Guten Tag, ich moechte bitte einen Kaffee.",
+          "function": "opening",
+          "register": "neutral",
+          "usageNote": "Use this when you order politely and simply.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": ["Hallo, ich nehme bitte einen Kaffee."],
+          "commonMistake": "Do not say 'ich will' in a cafe if you want to sound polite.",
+          "translations": [
+            { "language": "en", "text": "Hello, I would like a coffee, please." },
+            { "language": "fa", "text": "روز بخیر، لطفاً یک قهوه می‌خواهم." },
+            { "language": "ar", "text": "مرحباً، أود قهوة من فضلك." },
+            { "language": "tr", "text": "Merhaba, lütfen bir kahve istiyorum." },
+            { "language": "ru", "text": "Здравствуйте, я хотел бы кофе, пожалуйста." },
+            { "language": "ckb", "text": "سڵاو، تکایە قاوەیەکم دەوێت." },
+            { "language": "kmr", "text": "Slav, ji kerema xwe ez qehweyekê dixwazim." },
+            { "language": "pl", "text": "Dzień dobry, poproszę kawę." },
+            { "language": "ro", "text": "Bună ziua, aș dori o cafea, vă rog." },
+            { "language": "sq", "text": "Mirëdita, do të doja një kafe, ju lutem." }
+          ]
+        },
+        {
+          "baseText": "Haben Sie auch Tee?",
+          "function": "follow-up-question",
+          "register": "neutral",
+          "usageNote": "Use this to ask for another option.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": ["Gibt es auch Tee?"],
+          "commonMistake": "Use 'auch' before the thing you ask about: 'auch Tee'.",
+          "translations": [
+            { "language": "en", "text": "Do you also have tea?" },
+            { "language": "fa", "text": "چای هم دارید؟" },
+            { "language": "ar", "text": "هل لديكم الشاي أيضاً؟" },
+            { "language": "tr", "text": "Çay da var mı?" },
+            { "language": "ru", "text": "У вас также есть чай?" },
+            { "language": "ckb", "text": "چایشتان هەیە؟" },
+            { "language": "kmr", "text": "Çay jî heye?" },
+            { "language": "pl", "text": "Czy mają państwo też herbatę?" },
+            { "language": "ro", "text": "Aveți și ceai?" },
+            { "language": "sq", "text": "A keni edhe çaj?" }
+          ]
+        },
+        {
+          "baseText": "Das ist alles, danke.",
+          "function": "closing",
+          "register": "neutral",
+          "usageNote": "Use this when your order is complete.",
+          "sortOrder": 3,
+          "alternativeBaseTexts": ["Mehr brauche ich nicht, danke."],
+          "commonMistake": "Do not add another verb after 'Das ist alles'.",
+          "translations": [
+            { "language": "en", "text": "That is all, thank you." },
+            { "language": "fa", "text": "همین کافی است، ممنون." },
+            { "language": "ar", "text": "هذا كل شيء، شكراً." },
+            { "language": "tr", "text": "Hepsi bu, teşekkür ederim." },
+            { "language": "ru", "text": "Это всё, спасибо." },
+            { "language": "ckb", "text": "هەمووی ئەوەیە، سوپاس." },
+            { "language": "kmr", "text": "Ev hemû ye, spas." },
+            { "language": "pl", "text": "To wszystko, dziękuję." },
+            { "language": "ro", "text": "Atât, mulțumesc." },
+            { "language": "sq", "text": "Kaq është, faleminderit." }
+          ]
+        },
+        {
+          "baseText": "Kann ich bitte hier bezahlen?",
+          "function": "next-step",
+          "register": "neutral",
+          "usageNote": "Use this when you want to pay at the counter or table.",
+          "sortOrder": 4,
+          "alternativeBaseTexts": ["Kann ich bitte zahlen?"],
+          "commonMistake": "Use 'bezahlen' or 'zahlen'; both are possible here.",
+          "translations": [
+            { "language": "en", "text": "Can I pay here, please?" },
+            { "language": "fa", "text": "می‌توانم لطفاً همین‌جا پرداخت کنم؟" },
+            { "language": "ar", "text": "هل يمكنني الدفع هنا من فضلك؟" },
+            { "language": "tr", "text": "Lütfen burada ödeyebilir miyim?" },
+            { "language": "ru", "text": "Можно мне заплатить здесь, пожалуйста?" },
+            { "language": "ckb", "text": "دەتوانم تکایە لێرە پارە بدەم؟" },
+            { "language": "kmr", "text": "Ez dikarim ji kerema xwe li vir bidim?" },
+            { "language": "pl", "text": "Czy mogę tutaj zapłacić?" },
+            { "language": "ro", "text": "Pot plăti aici, vă rog?" },
+            { "language": "sq", "text": "A mund të paguaj këtu, ju lutem?" }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-arzttermin-einfach-klaeren",
+      "title": "Arzttermin einfach klaeren",
+      "description": "Sehr einfache Saetze, um einen Arzttermin zu erfragen, zu bestaetigen oder zu verschieben.",
+      "cefrLevel": "A1",
+      "category": "appointments",
+      "situation": "doctor-office",
+      "tone": "formal",
+      "conversationGoal": "arranging-next-contact",
+      "topics": ["appointments-and-health", "healthcare-and-appointments"],
+      "sortOrder": 20,
+      "linkedDialogueSlugs": ["a1-dialogue-appointment-001", "a1-dialogue-doctor-002"],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Ich brauche einen Termin beim Arzt.",
+          "function": "opening",
+          "register": "neutral",
+          "usageNote": "Use this as a clear first sentence on the phone or at reception.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": ["Ich moechte bitte einen Arzttermin."],
+          "commonMistake": "Say 'beim Arzt' or 'einen Arzttermin', not 'zu Arzt'.",
+          "translations": [
+            { "language": "en", "text": "I need an appointment with the doctor." },
+            { "language": "fa", "text": "من به یک وقت دکتر نیاز دارم." },
+            { "language": "ar", "text": "أحتاج إلى موعد عند الطبيب." },
+            { "language": "tr", "text": "Doktordan randevu almam gerekiyor." },
+            { "language": "ru", "text": "Мне нужна запись к врачу." },
+            { "language": "ckb", "text": "پێویستم بە کاتێکی پزیشک هەیە." },
+            { "language": "kmr", "text": "Ji min re demek li ba doktor pêwîst e." },
+            { "language": "pl", "text": "Potrzebuję terminu u lekarza." },
+            { "language": "ro", "text": "Am nevoie de o programare la medic." },
+            { "language": "sq", "text": "Më duhet një termin te mjeku." }
+          ]
+        },
+        {
+          "baseText": "Passt der Termin am Dienstag?",
+          "function": "clarification",
+          "register": "neutral",
+          "usageNote": "Use this to check whether a proposed date works.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": ["Geht der Termin am Dienstag?"],
+          "commonMistake": "Use 'am Dienstag' for a weekday, not 'in Dienstag'.",
+          "translations": [
+            { "language": "en", "text": "Does the appointment on Tuesday work?" },
+            { "language": "fa", "text": "وقت روز سه‌شنبه مناسب است؟" },
+            { "language": "ar", "text": "هل يناسبك الموعد يوم الثلاثاء؟" },
+            { "language": "tr", "text": "Salı günkü randevu uygun mu?" },
+            { "language": "ru", "text": "Вам подходит запись во вторник?" },
+            { "language": "ckb", "text": "کاتی سێشەممە گونجاوە؟" },
+            { "language": "kmr", "text": "Dema sêşemê baş e?" },
+            { "language": "pl", "text": "Czy termin we wtorek pasuje?" },
+            { "language": "ro", "text": "Programarea de marți este potrivită?" },
+            { "language": "sq", "text": "A ju përshtatet termini të martën?" }
+          ]
+        },
+        {
+          "baseText": "Ich kann leider nicht kommen.",
+          "function": "reaction",
+          "register": "neutral",
+          "usageNote": "Use this before you ask to move an appointment.",
+          "sortOrder": 3,
+          "alternativeBaseTexts": ["Leider passt der Termin nicht."],
+          "commonMistake": "Put 'leider' near the beginning to sound polite and natural.",
+          "translations": [
+            { "language": "en", "text": "Unfortunately, I cannot come." },
+            { "language": "fa", "text": "متأسفانه نمی‌توانم بیایم." },
+            { "language": "ar", "text": "للأسف لا أستطيع الحضور." },
+            { "language": "tr", "text": "Ne yazık ki gelemem." },
+            { "language": "ru", "text": "К сожалению, я не могу прийти." },
+            { "language": "ckb", "text": "بەداخەوە ناتوانم بێم." },
+            { "language": "kmr", "text": "Mixabin ez nikarim werim." },
+            { "language": "pl", "text": "Niestety nie mogę przyjść." },
+            { "language": "ro", "text": "Din păcate, nu pot veni." },
+            { "language": "sq", "text": "Fatkeqësisht, nuk mund të vij." }
+          ]
+        },
+        {
+          "baseText": "Koennen wir den Termin bitte verschieben?",
+          "function": "next-step",
+          "register": "formal",
+          "usageNote": "Use this to ask politely for a new appointment.",
+          "sortOrder": 4,
+          "alternativeBaseTexts": ["Kann ich bitte einen neuen Termin bekommen?"],
+          "commonMistake": "Use 'verschieben' for moving an existing appointment.",
+          "translations": [
+            { "language": "en", "text": "Could we please reschedule the appointment?" },
+            { "language": "fa", "text": "می‌توانیم لطفاً وقت را جابه‌جا کنیم؟" },
+            { "language": "ar", "text": "هل يمكننا تأجيل الموعد من فضلك؟" },
+            { "language": "tr", "text": "Randevuyu lütfen erteleyebilir miyiz?" },
+            { "language": "ru", "text": "Можем ли мы перенести запись, пожалуйста?" },
+            { "language": "ckb", "text": "دەتوانین تکایە کاتەکە بگۆڕین؟" },
+            { "language": "kmr", "text": "Em dikarin ji kerema xwe demê biguherînin?" },
+            { "language": "pl", "text": "Czy możemy przełożyć termin?" },
+            { "language": "ro", "text": "Putem reprograma întâlnirea, vă rog?" },
+            { "language": "sq", "text": "A mund ta shtyjmë terminin, ju lutem?" }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-im-sprachkurs-nachfragen",
+      "title": "Im Sprachkurs nachfragen",
+      "description": "Einfache Saetze, um im Sprachkurs um Wiederholung, Hilfe oder eine kurze Erklaerung zu bitten.",
+      "cefrLevel": "A1",
+      "category": "classroom-communication",
+      "situation": "class",
+      "tone": "friendly",
+      "conversationGoal": "asking-questions",
+      "topics": ["education-and-training", "everyday-life"],
+      "sortOrder": 30,
+      "linkedDialogueSlugs": ["a1-dialogue-course-012"],
+      "linkedEventPreparationPackSlugs": [],
+      "phrases": [
+        {
+          "baseText": "Koennen Sie das bitte wiederholen?",
+          "function": "clarification",
+          "register": "formal",
+          "usageNote": "Use this when you did not hear or understand something.",
+          "sortOrder": 1,
+          "alternativeBaseTexts": ["Bitte noch einmal."],
+          "commonMistake": "Use 'Sie' with a teacher unless the course clearly uses 'du'.",
+          "translations": [
+            { "language": "en", "text": "Could you please repeat that?" },
+            { "language": "fa", "text": "می‌توانید لطفاً آن را تکرار کنید؟" },
+            { "language": "ar", "text": "هل يمكنك تكرار ذلك من فضلك؟" },
+            { "language": "tr", "text": "Bunu lütfen tekrar eder misiniz?" },
+            { "language": "ru", "text": "Не могли бы вы повторить это, пожалуйста?" },
+            { "language": "ckb", "text": "دەتوانن تکایە ئەوە دووبارە بکەنەوە؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji kerema xwe wê dubare bikin?" },
+            { "language": "pl", "text": "Czy może pan/pani to powtórzyć?" },
+            { "language": "ro", "text": "Puteți repeta, vă rog?" },
+            { "language": "sq", "text": "A mund ta përsërisni, ju lutem?" }
+          ]
+        },
+        {
+          "baseText": "Was bedeutet dieses Wort?",
+          "function": "follow-up-question",
+          "register": "neutral",
+          "usageNote": "Use this to ask about a word in class.",
+          "sortOrder": 2,
+          "alternativeBaseTexts": ["Was heisst dieses Wort?"],
+          "commonMistake": "Use 'dieses Wort' for one specific word.",
+          "translations": [
+            { "language": "en", "text": "What does this word mean?" },
+            { "language": "fa", "text": "این کلمه چه معنی دارد؟" },
+            { "language": "ar", "text": "ماذا تعني هذه الكلمة؟" },
+            { "language": "tr", "text": "Bu kelime ne anlama geliyor?" },
+            { "language": "ru", "text": "Что означает это слово?" },
+            { "language": "ckb", "text": "ئەم وشەیە مانای چییە؟" },
+            { "language": "kmr", "text": "Ev peyv çi wate dide?" },
+            { "language": "pl", "text": "Co znaczy to słowo?" },
+            { "language": "ro", "text": "Ce înseamnă acest cuvânt?" },
+            { "language": "sq", "text": "Çfarë do të thotë kjo fjalë?" }
+          ]
+        },
+        {
+          "baseText": "Ich habe eine Frage zur Aufgabe.",
+          "function": "transition",
+          "register": "neutral",
+          "usageNote": "Use this before you ask about an exercise or homework task.",
+          "sortOrder": 3,
+          "alternativeBaseTexts": ["Ich habe eine Frage."],
+          "commonMistake": "Use 'zur Aufgabe' when the question is about the task.",
+          "translations": [
+            { "language": "en", "text": "I have a question about the task." },
+            { "language": "fa", "text": "من دربارهٔ تمرین یک سؤال دارم." },
+            { "language": "ar", "text": "لدي سؤال عن التمرين." },
+            { "language": "tr", "text": "Ödevle ilgili bir sorum var." },
+            { "language": "ru", "text": "У меня есть вопрос по заданию." },
+            { "language": "ckb", "text": "پرسیارێکم لەبارەی ئەرکەکە هەیە." },
+            { "language": "kmr", "text": "Pirsek min li ser vê peywirê heye." },
+            { "language": "pl", "text": "Mam pytanie dotyczące zadania." },
+            { "language": "ro", "text": "Am o întrebare despre sarcină." },
+            { "language": "sq", "text": "Kam një pyetje për detyrën." }
+          ]
+        },
+        {
+          "baseText": "Koennen Sie mir bitte helfen?",
+          "function": "next-step",
+          "register": "formal",
+          "usageNote": "Use this when you need direct help.",
+          "sortOrder": 4,
+          "alternativeBaseTexts": ["Ich brauche bitte Hilfe."],
+          "commonMistake": "Use 'mir helfen', not only 'helfen mich'.",
+          "translations": [
+            { "language": "en", "text": "Could you please help me?" },
+            { "language": "fa", "text": "می‌توانید لطفاً به من کمک کنید؟" },
+            { "language": "ar", "text": "هل يمكنك مساعدتي من فضلك؟" },
+            { "language": "tr", "text": "Bana lütfen yardım eder misiniz?" },
+            { "language": "ru", "text": "Не могли бы вы мне помочь, пожалуйста?" },
+            { "language": "ckb", "text": "دەتوانن تکایە یارمەتیم بدەن؟" },
+            { "language": "kmr", "text": "Hûn dikarin ji kerema xwe alîkariya min bikin?" },
+            { "language": "pl", "text": "Czy może mi pan/pani pomóc?" },
+            { "language": "ro", "text": "Mă puteți ajuta, vă rog?" },
+            { "language": "sq", "text": "A mund të më ndihmoni, ju lutem?" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -242,8 +242,14 @@ public sealed class DialoguesController(
         string dialogueSlug,
         CancellationToken cancellationToken)
     {
-        return await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false)
-            ? await catalogApiClient.GetEventPreparationPacksForDialogueAsync(dialogueSlug, cancellationToken).ConfigureAwait(false)
-            : [];
+        if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
+        {
+            return [];
+        }
+
+        string? actorEmail = WebUserIdentity.TryGetEmail(User);
+        return string.IsNullOrWhiteSpace(actorEmail)
+            ? []
+            : await catalogApiClient.GetEventPreparationPacksForDialogueAsync(dialogueSlug, actorEmail, cancellationToken).ConfigureAwait(false);
     }
 }

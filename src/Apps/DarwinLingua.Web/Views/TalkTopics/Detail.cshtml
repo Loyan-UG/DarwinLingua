@@ -1,4 +1,3 @@
-@using DarwinLingua.SharedKernel.Lexicon
 @model DarwinLingua.Web.Models.TalkTopicDetailPageViewModel
 @{
     ViewData["Title"] = Model.TalkTopic.Title;
@@ -6,11 +5,14 @@
     string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
         ? "ltr"
         : TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
+    string contentTypeLabelKey = string.Equals(Model.TalkTopic.ContentType, "article", StringComparison.Ordinal)
+        ? "Article"
+        : Model.TalkTopic.ContentType;
 }
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
-        <span class="eyebrow">@Model.TalkTopic.CefrLevel · @T[Model.TalkTopic.ContentType] · @Model.TalkTopic.Category</span>
+        <span class="eyebrow">@Model.TalkTopic.CefrLevel · @T[contentTypeLabelKey] · @Model.TalkTopic.Category</span>
         <div class="detail-toolbar__actions">
             <a class="button button--secondary button--compact" asp-controller="TalkTopics" asp-action="Index">@T["All Talk Topics"]</a>
         </div>
@@ -101,10 +103,9 @@
             @for (int index = 0; index < Model.TalkTopic.VocabularyItems.Count; index++)
             {
                 var item = Model.TalkTopic.VocabularyItems[index];
-                string wordSlug = string.IsNullOrWhiteSpace(item.WordSlug) ? LemmaUrlSlug.FromLemma(item.Lemma) : item.WordSlug;
-                if (item.IsResolved || !string.IsNullOrWhiteSpace(item.WordSlug))
+                if (item.IsResolved && !string.IsNullOrWhiteSpace(item.WordSlug))
                 {
-                    <a asp-controller="Words" asp-action="Detail" asp-route-slug="@wordSlug">@item.Lemma</a>
+                    <a asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@item.WordSlug">@item.Lemma</a>
                 }
                 else
                 {

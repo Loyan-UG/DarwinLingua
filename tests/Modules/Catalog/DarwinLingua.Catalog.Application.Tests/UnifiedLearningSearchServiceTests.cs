@@ -9,32 +9,30 @@ namespace DarwinLingua.Catalog.Application.Tests;
 public sealed class UnifiedLearningSearchServiceTests
 {
     [Fact]
-    public async Task SearchAsync_ShouldReturnEmpty_ForEmptyQuery()
+    public async Task SearchAsync_ShouldRejectEmptyQuery()
     {
         FakeUnifiedSearchRepository repository = new();
         await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
         IUnifiedLearningSearchService service = serviceProvider.GetRequiredService<IUnifiedLearningSearchService>();
 
-        IReadOnlyList<UnifiedLearningSearchResultModel> results = await service.SearchAsync(
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.SearchAsync(
             new UnifiedLearningSearchFilterModel(" ", null, null, null, null),
-            CancellationToken.None);
+            CancellationToken.None));
 
-        Assert.Empty(results);
         Assert.False(repository.WasCalled);
     }
 
     [Fact]
-    public async Task SearchAsync_ShouldReturnEmpty_ForOneCharacterQuery()
+    public async Task SearchAsync_ShouldRejectOneCharacterQuery()
     {
         FakeUnifiedSearchRepository repository = new();
         await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
         IUnifiedLearningSearchService service = serviceProvider.GetRequiredService<IUnifiedLearningSearchService>();
 
-        IReadOnlyList<UnifiedLearningSearchResultModel> results = await service.SearchAsync(
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.SearchAsync(
             new UnifiedLearningSearchFilterModel("a", null, null, null, null),
-            CancellationToken.None);
+            CancellationToken.None));
 
-        Assert.Empty(results);
         Assert.False(repository.WasCalled);
     }
 

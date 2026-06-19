@@ -63,6 +63,7 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Equal(1, report.LearningPortal.CourseLessonsWithMalformedActivityBlocksJson);
             Assert.Equal(1, report.LearningPortal.CourseActivityBlocksWithUnsupportedTargetType);
             Assert.Equal(1, report.LearningPortal.CourseActivityBlocksWithUnresolvedTargetSlug);
+            Assert.Equal(1, report.LearningPortal.ExerciseSetsWithUnresolvedOwnerReferences);
             Assert.NotEmpty(report.LearningPortal.SampleIssues);
 
             AdminLearningPortalIssuesResponse issues = await service.GetLearningPortalIssuesAsync("Grammar linked exercise", "missing", 10, CancellationToken.None);
@@ -77,6 +78,12 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
                 issue.Area == "CourseLesson activity" &&
                 issue.Owner == "a1-activity-unresolved" &&
                 issue.Target == "exercise:missing-activity-exercise");
+
+            AdminLearningPortalIssuesResponse exerciseSetOwnerIssues = await service.GetLearningPortalIssuesAsync("ExerciseSet owner", "missing-owner-lesson", 10, CancellationToken.None);
+            Assert.Contains(exerciseSetOwnerIssues.Issues, issue =>
+                issue.Area == "ExerciseSet owner" &&
+                issue.Owner == "a1-article-practice-set" &&
+                issue.Target == "course-lesson:missing-owner-lesson");
         }
         finally
         {
@@ -181,6 +188,18 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             PublicationStatus.Active,
             10,
             now);
+        ExerciseSet exerciseSet = new(
+            Guid.NewGuid(),
+            "a1-article-practice-set",
+            "Article practice",
+            "Practice article choice.",
+            CefrLevel.A1,
+            "course-lesson",
+            "missing-owner-lesson",
+            PublicationStatus.Active,
+            10,
+            now);
+        exerciseSet.AddExercise(Guid.NewGuid(), "a1-article-choice", 10, now);
 
         ExpressionEntry expression = new(
             Guid.NewGuid(),
@@ -370,6 +389,7 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
         dbContext.GrammarTopics.Add(grammarTopic);
         dbContext.GrammarTopics.Add(grammarTopicWithoutExercise);
         dbContext.Exercises.Add(exercise);
+        dbContext.ExerciseSets.Add(exerciseSet);
         dbContext.ExpressionEntries.Add(expression);
         dbContext.RoleplayScenarios.Add(roleplayScenario);
         dbContext.ExamProfiles.Add(examProfile);

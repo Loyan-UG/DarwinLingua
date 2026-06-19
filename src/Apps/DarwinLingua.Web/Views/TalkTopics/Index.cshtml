@@ -43,9 +43,12 @@ else
     <section class="grid-two-col">
         @foreach (var talkTopic in Model.TalkTopics)
         {
+            string contentTypeLabelKey = string.Equals(talkTopic.ContentType, "article", StringComparison.Ordinal)
+                ? "Article"
+                : talkTopic.ContentType;
             <article class="panel stack-md">
                 <div class="action-row collection-card__meta">
-                    <span class="eyebrow">@talkTopic.CefrLevel · @T[talkTopic.ContentType] · @talkTopic.Category</span>
+                    <span class="eyebrow">@talkTopic.CefrLevel · @T[contentTypeLabelKey] · @talkTopic.Category</span>
                     <span>@T["{0} min read", talkTopic.EstimatedReadingMinutes]</span>
                 </div>
                 <h2 class="headline-sm">

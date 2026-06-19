@@ -19,6 +19,8 @@ public sealed record OrganizerManagedConversationEventModel(
     string? ExternalLink,
     string? ContactMethod,
     string ScheduleText,
+    DateTime? StartsAtUtc,
+    DateTime? EndsAtUtc,
     string PriceType,
     string VerificationStatus,
     string PublicationStatus,

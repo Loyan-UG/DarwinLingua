@@ -46,6 +46,9 @@ public sealed class UserBlockInputModel
 
 public sealed record AdminModerationPageViewModel(
     string? StatusFilter,
+    string? ReasonFilter,
+    string? TargetTypeFilter,
+    string? AssignedStateFilter,
     IReadOnlyList<UserReportModel> Reports,
     IReadOnlyList<ModerationDecisionAuditModel> Audits,
     string? StatusMessage,

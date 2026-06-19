@@ -240,7 +240,7 @@ internal sealed class TalkTopicRepository(IDbContextFactory<DarwinLinguaDbContex
                     .FirstOrDefault();
                 return new TalkTopicVocabularyItemModel(
                     item.Lemma,
-                    word is null ? item.WordSlug : LemmaUrlSlug.FromLemma(word.Lemma),
+                    word is null ? null : LemmaUrlSlug.FromLemma(word.Lemma),
                     item.CefrLevel?.ToString(),
                     sense is null ? null : ResolvePrimaryMeaning(sense.Translations, primaryLanguage),
                     sense is null ? null : ResolveSecondaryMeaning(sense.Translations, secondaryLanguage),

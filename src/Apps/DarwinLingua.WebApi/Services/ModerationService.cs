@@ -95,6 +95,9 @@ public sealed class ModerationService(IDbContextFactory<DarwinLinguaDbContext> d
 
     public async Task<IReadOnlyList<UserReportResponse>> GetReportsAsync(
         string? status,
+        string? reason,
+        string? targetType,
+        string? assignedState,
         CancellationToken cancellationToken)
     {
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
@@ -111,6 +114,39 @@ public sealed class ModerationService(IDbContextFactory<DarwinLinguaDbContext> d
             }
 
             query = query.Where(report => report.Status == normalizedStatus);
+        }
+
+        if (!string.IsNullOrWhiteSpace(reason))
+        {
+            string normalizedReason = ConversationEvent.NormalizeKey(reason, "User report reason");
+            if (!ModerationTaxonomy.ReportReasons.Contains(normalizedReason))
+            {
+                throw new InvalidOperationException("User report reason is not supported.");
+            }
+
+            query = query.Where(report => report.Reason == normalizedReason);
+        }
+
+        if (!string.IsNullOrWhiteSpace(targetType))
+        {
+            string normalizedTargetType = ConversationEvent.NormalizeKey(targetType, "User report target type");
+            if (!ModerationTaxonomy.ReportTargetTypes.Contains(normalizedTargetType))
+            {
+                throw new InvalidOperationException("User report target type is not supported.");
+            }
+
+            query = query.Where(report => report.TargetType == normalizedTargetType);
+        }
+
+        if (!string.IsNullOrWhiteSpace(assignedState))
+        {
+            string normalizedAssignedState = ConversationEvent.NormalizeKey(assignedState, "User report assigned state");
+            query = normalizedAssignedState switch
+            {
+                "assigned" => query.Where(report => report.DecidedBy != null),
+                "unassigned" => query.Where(report => report.DecidedBy == null),
+                _ => throw new InvalidOperationException("User report assigned state is not supported."),
+            };
         }
 
         UserReport[] reports = await query

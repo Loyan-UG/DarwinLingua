@@ -41,12 +41,33 @@
     </nav>
 
     <form id="moderation-filter" method="get" asp-action="Index" class="action-row">
-        <select name="status">
-            <option value="">All</option>
+        <select name="status" aria-label="Status">
+            <option value="">All statuses</option>
             <option value="pending" selected="@(Model.StatusFilter == "pending")">Pending</option>
             <option value="reviewed" selected="@(Model.StatusFilter == "reviewed")">Reviewed</option>
             <option value="dismissed" selected="@(Model.StatusFilter == "dismissed")">Dismissed</option>
             <option value="action-taken" selected="@(Model.StatusFilter == "action-taken")">Action taken</option>
+        </select>
+        <select name="reason" aria-label="Reason">
+            <option value="">All reasons</option>
+            <option value="inaccurate-listing" selected="@(Model.ReasonFilter == "inaccurate-listing")">Inaccurate listing</option>
+            <option value="spam" selected="@(Model.ReasonFilter == "spam")">Spam</option>
+            <option value="harassment" selected="@(Model.ReasonFilter == "harassment")">Harassment</option>
+            <option value="unsafe-contact" selected="@(Model.ReasonFilter == "unsafe-contact")">Unsafe contact</option>
+            <option value="impersonation" selected="@(Model.ReasonFilter == "impersonation")">Impersonation</option>
+            <option value="other" selected="@(Model.ReasonFilter == "other")">Other</option>
+        </select>
+        <select name="targetType" aria-label="Target type">
+            <option value="">All targets</option>
+            <option value="conversation-event" selected="@(Model.TargetTypeFilter == "conversation-event")">Conversation event</option>
+            <option value="learner-profile" selected="@(Model.TargetTypeFilter == "learner-profile")">Learner profile</option>
+            <option value="partner-request" selected="@(Model.TargetTypeFilter == "partner-request")">Partner request</option>
+            <option value="organizer-profile" selected="@(Model.TargetTypeFilter == "organizer-profile")">Organizer profile</option>
+        </select>
+        <select name="assignedState" aria-label="Decision owner">
+            <option value="">Any decision owner</option>
+            <option value="unassigned" selected="@(Model.AssignedStateFilter == "unassigned")">No decision owner</option>
+            <option value="assigned" selected="@(Model.AssignedStateFilter == "assigned")">Has decision owner</option>
         </select>
         <button type="submit" class="button button--secondary">Filter</button>
     </form>
@@ -89,6 +110,9 @@
                             <form method="post" asp-action="Decide" asp-route-reportId="@report.Id" class="stack-sm" data-confirm-submit="Save this moderation decision?">
                                 @Html.AntiForgeryToken()
                                 <input type="hidden" name="returnStatus" value="@Model.StatusFilter" />
+                                <input type="hidden" name="returnReason" value="@Model.ReasonFilter" />
+                                <input type="hidden" name="returnTargetType" value="@Model.TargetTypeFilter" />
+                                <input type="hidden" name="returnAssignedState" value="@Model.AssignedStateFilter" />
                                 <label class="form-field">
                                     <span>Status</span>
                                     <select name="Status">

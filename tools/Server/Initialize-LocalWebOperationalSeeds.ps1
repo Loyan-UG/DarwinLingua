@@ -1,6 +1,6 @@
 param(
     [string]$ApiBaseUrl = "http://localhost:5099",
-    [string]$SeedPath = "content\generated\de-event-directory-seeds-001.json",
+    [string]$SeedPath = "tools\Web\WebReadinessSeedFixtureManifest.json",
     [string]$WebApiProjectPath = "src\Apps\DarwinLingua.WebApi\DarwinLingua.WebApi.csproj",
     [string]$LogDirectory = "artifacts\logs",
     [string]$AdminApiKey = $env:DARWINLINGUA_ADMIN_API_KEY,
@@ -87,10 +87,18 @@ function Invoke-JsonRequest {
         }
 
         $errorBody = $null
-        if (-not [string]::IsNullOrWhiteSpace($_.ErrorDetails.Message)) {
-            $errorBody = $_.ErrorDetails.Message
+        $errorDetailsMessage = $null
+        if ($_.PSObject.Properties["ErrorDetails"] -and $null -ne $_.ErrorDetails) {
+            $errorDetailsMessageProperty = $_.ErrorDetails.PSObject.Properties["Message"]
+            if ($null -ne $errorDetailsMessageProperty) {
+                $errorDetailsMessage = $errorDetailsMessageProperty.Value
+            }
         }
-        elseif ($response -is [System.Net.Http.HttpResponseMessage]) {
+
+        if (-not [string]::IsNullOrWhiteSpace($errorDetailsMessage)) {
+            $errorBody = $errorDetailsMessage
+        }
+        elseif ($response.GetType().FullName -eq "System.Net.Http.HttpResponseMessage") {
             try {
                 $errorBody = $response.Content.ReadAsStringAsync().GetAwaiter().GetResult()
             }
@@ -132,6 +140,91 @@ function Get-SeedItems {
     return @($property.Value)
 }
 
+function Get-FirstSeedItems {
+    param(
+        [object]$Seed,
+        [string[]]$PropertyNames
+    )
+
+    foreach ($propertyName in $PropertyNames) {
+        $items = @(Get-SeedItems -Seed $Seed -PropertyName $propertyName)
+        if ($items.Count -gt 0) {
+            return $items
+        }
+    }
+
+    return @()
+}
+
+function Get-SeedValue {
+    param(
+        [object]$Item,
+        [string]$PropertyName,
+        [object]$Default = $null,
+        [switch]$Required
+    )
+
+    $property = $Item.PSObject.Properties[$PropertyName]
+    if ($null -eq $property -or $null -eq $property.Value) {
+        if ($Required.IsPresent) {
+            throw "Seed item is missing required property '$PropertyName'."
+        }
+
+        return $Default
+    }
+
+    if ($property.Value -is [string] -and [string]::IsNullOrWhiteSpace($property.Value)) {
+        if ($Required.IsPresent) {
+            throw "Seed item property '$PropertyName' cannot be empty."
+        }
+
+        return $Default
+    }
+
+    return $property.Value
+}
+
+function Get-SeedValueFromAny {
+    param(
+        [object]$Item,
+        [string[]]$PropertyNames,
+        [switch]$Required
+    )
+
+    foreach ($propertyName in $PropertyNames) {
+        $property = $Item.PSObject.Properties[$propertyName]
+        if ($null -eq $property -or $null -eq $property.Value) {
+            continue
+        }
+
+        if ($property.Value -is [string] -and [string]::IsNullOrWhiteSpace($property.Value)) {
+            continue
+        }
+
+        return $property.Value
+    }
+
+    if ($Required.IsPresent) {
+        throw "Seed item is missing one of the required properties: $($PropertyNames -join ', ')."
+    }
+
+    return $null
+}
+
+function Get-SeedArray {
+    param(
+        [object]$Item,
+        [string]$PropertyName
+    )
+
+    $property = $Item.PSObject.Properties[$PropertyName]
+    if ($null -eq $property -or $null -eq $property.Value) {
+        return ,@()
+    }
+
+    return ,@($property.Value)
+}
+
 function Get-PublicProfileIdByEmail {
     param(
         [hashtable]$ProfileIdsByEmail,
@@ -144,6 +237,58 @@ function Get-PublicProfileIdByEmail {
     }
 
     return $ProfileIdsByEmail[$key]
+}
+
+function Get-RequiredProfileEmailByKey {
+    param(
+        [hashtable]$EmailsByKey,
+        [string]$ProfileKey
+    )
+
+    if (-not $EmailsByKey.ContainsKey($ProfileKey)) {
+        throw "Learner profile email not found for key '$ProfileKey'."
+    }
+
+    return $EmailsByKey[$ProfileKey]
+}
+
+function Get-RequiredProfileIdByKey {
+    param(
+        [hashtable]$ProfileIdsByKey,
+        [string]$ProfileKey
+    )
+
+    if (-not $ProfileIdsByKey.ContainsKey($ProfileKey)) {
+        throw "Learner profile ID not found for key '$ProfileKey'."
+    }
+
+    return $ProfileIdsByKey[$ProfileKey]
+}
+
+function Get-RequiredPartnerRequestIdByKey {
+    param(
+        [hashtable]$PartnerRequestIdsByKey,
+        [string]$PartnerRequestKey
+    )
+
+    if (-not $PartnerRequestIdsByKey.ContainsKey($PartnerRequestKey)) {
+        throw "Partner request ID not found for key '$PartnerRequestKey'."
+    }
+
+    return $PartnerRequestIdsByKey[$PartnerRequestKey]
+}
+
+function Get-RequiredReportIdByKey {
+    param(
+        [hashtable]$ReportIdsByKey,
+        [string]$ReportKey
+    )
+
+    if (-not $ReportIdsByKey.ContainsKey($ReportKey)) {
+        throw "User report ID not found for key '$ReportKey'."
+    }
+
+    return $ReportIdsByKey[$ReportKey]
 }
 
 $workspaceRoot = (Resolve-Path ".").Path
@@ -206,19 +351,19 @@ try {
 
     foreach ($profile in (Get-SeedItems -Seed $seed -PropertyName "organizerProfiles")) {
         $body = @{
-            slug = $profile.slug
-            displayName = $profile.displayName
-            organizerType = $profile.organizerType
-            description = $profile.description
-            cityRegion = $profile.cityRegion
-            isOnlineAvailable = $profile.isOnlineAvailable
-            supportedLearnerLevels = @($profile.supportedLearnerLevels)
-            helperLanguageCodes = @($profile.helperLanguageCodes)
-            websiteUrl = $profile.websiteUrl
-            publicContactMethod = $profile.publicContactMethod
-            verificationStatus = $profile.verificationStatus
-            planKey = $profile.planKey
-            historicalEventCount = $profile.historicalEventCount
+            slug = Get-SeedValue -Item $profile -PropertyName "slug" -Required
+            displayName = Get-SeedValue -Item $profile -PropertyName "displayName" -Required
+            organizerType = Get-SeedValue -Item $profile -PropertyName "organizerType" -Required
+            description = Get-SeedValue -Item $profile -PropertyName "description" -Required
+            cityRegion = Get-SeedValue -Item $profile -PropertyName "cityRegion"
+            isOnlineAvailable = Get-SeedValue -Item $profile -PropertyName "isOnlineAvailable" -Default $false
+            supportedLearnerLevels = Get-SeedArray -Item $profile -PropertyName "supportedLearnerLevels"
+            helperLanguageCodes = Get-SeedArray -Item $profile -PropertyName "helperLanguageCodes"
+            websiteUrl = Get-SeedValue -Item $profile -PropertyName "websiteUrl"
+            publicContactMethod = Get-SeedValue -Item $profile -PropertyName "publicContactMethod"
+            verificationStatus = Get-SeedValue -Item $profile -PropertyName "verificationStatus" -Required
+            planKey = Get-SeedValue -Item $profile -PropertyName "planKey" -Required
+            historicalEventCount = Get-SeedValue -Item $profile -PropertyName "historicalEventCount" -Default 0
         }
 
         Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/organizer-profiles" -Method Post -Body $body | Out-Null
@@ -227,29 +372,31 @@ try {
 
     foreach ($event in (Get-SeedItems -Seed $seed -PropertyName "conversationEvents")) {
         $body = @{
-            slug = $event.slug
-            name = $event.name
-            description = $event.description
-            city = $event.city
-            countryRegion = $event.countryRegion
-            approximateLocation = $event.approximateLocation
-            isOnline = $event.isOnline
-            category = $event.category
-            supportedLearnerLevels = @($event.supportedLearnerLevels)
-            helperLanguageCodes = @($event.helperLanguageCodes)
-            organizerName = $event.organizerName
-            organizerProfileSlug = $event.organizerProfileSlug
-            externalLink = $event.externalLink
-            contactMethod = $event.contactMethod
-            scheduleText = $event.scheduleText
-            priceType = $event.priceType
-            verificationStatus = $event.verificationStatus
-            sourceName = $event.sourceName
-            sourceUrl = $event.sourceUrl
-            lastVerifiedAtUtc = $event.lastVerifiedAtUtc
-            linkedEventPreparationPackSlugs = @($event.linkedEventPreparationPackSlugs)
-            recurrenceRule = $event.recurrenceRule
-            capacity = $event.capacity
+            slug = Get-SeedValue -Item $event -PropertyName "slug" -Required
+            name = Get-SeedValue -Item $event -PropertyName "name" -Required
+            description = Get-SeedValue -Item $event -PropertyName "description" -Required
+            city = Get-SeedValue -Item $event -PropertyName "city"
+            countryRegion = Get-SeedValue -Item $event -PropertyName "countryRegion" -Required
+            approximateLocation = Get-SeedValue -Item $event -PropertyName "approximateLocation"
+            isOnline = Get-SeedValue -Item $event -PropertyName "isOnline" -Default $false
+            category = Get-SeedValue -Item $event -PropertyName "category" -Required
+            supportedLearnerLevels = Get-SeedArray -Item $event -PropertyName "supportedLearnerLevels"
+            helperLanguageCodes = Get-SeedArray -Item $event -PropertyName "helperLanguageCodes"
+            organizerName = Get-SeedValue -Item $event -PropertyName "organizerName" -Required
+            organizerProfileSlug = Get-SeedValue -Item $event -PropertyName "organizerProfileSlug"
+            externalLink = Get-SeedValue -Item $event -PropertyName "externalLink"
+            contactMethod = Get-SeedValue -Item $event -PropertyName "contactMethod"
+            scheduleText = Get-SeedValue -Item $event -PropertyName "scheduleText" -Required
+            startsAtUtc = Get-SeedValue -Item $event -PropertyName "startsAtUtc"
+            endsAtUtc = Get-SeedValue -Item $event -PropertyName "endsAtUtc"
+            priceType = Get-SeedValue -Item $event -PropertyName "priceType" -Required
+            verificationStatus = Get-SeedValue -Item $event -PropertyName "verificationStatus" -Required
+            sourceName = Get-SeedValue -Item $event -PropertyName "sourceName"
+            sourceUrl = Get-SeedValue -Item $event -PropertyName "sourceUrl"
+            lastVerifiedAtUtc = Get-SeedValue -Item $event -PropertyName "lastVerifiedAtUtc"
+            linkedEventPreparationPackSlugs = Get-SeedArray -Item $event -PropertyName "linkedEventPreparationPackSlugs"
+            recurrenceRule = Get-SeedValue -Item $event -PropertyName "recurrenceRule"
+            capacity = Get-SeedValue -Item $event -PropertyName "capacity"
         }
 
         Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/conversation-events" -Method Post -Body $body | Out-Null
@@ -258,9 +405,9 @@ try {
 
     foreach ($owner in (Get-SeedItems -Seed $seed -PropertyName "organizerProfileOwners")) {
         $body = @{
-            organizerProfileSlug = $owner.organizerProfileSlug
-            ownerEmail = $owner.ownerEmail
-            assignedBy = $owner.assignedBy
+            organizerProfileSlug = Get-SeedValue -Item $owner -PropertyName "organizerProfileSlug" -Required
+            ownerEmail = Get-SeedValue -Item $owner -PropertyName "ownerEmail" -Required
+            assignedBy = Get-SeedValue -Item $owner -PropertyName "assignedBy" -Required
         }
 
         Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/organizer-profile-owners" -Method Post -Body $body | Out-Null
@@ -268,89 +415,141 @@ try {
     }
 
     $existingClaims = @((Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/organizer-claim-requests" -Method Get) | ForEach-Object { $_ })
-    foreach ($claim in (Get-SeedItems -Seed $seed -PropertyName "organizerClaimRequests")) {
+    foreach ($claim in (Get-FirstSeedItems -Seed $seed -PropertyNames @("organizerClaimRequests", "organizerClaims"))) {
+        $organizerProfileSlug = Get-SeedValue -Item $claim -PropertyName "organizerProfileSlug" -Required
+        $requesterEmail = Get-SeedValue -Item $claim -PropertyName "requesterEmail" -Required
+        $relationshipToOrganizer = Get-SeedValue -Item $claim -PropertyName "relationshipToOrganizer" -Required
         $alreadyExists = @($existingClaims | Where-Object {
-                $_.organizerProfileSlug -eq $claim.organizerProfileSlug -and
-                $_.requesterEmail -eq $claim.requesterEmail -and
-                $_.relationshipToOrganizer -eq $claim.relationshipToOrganizer
+                $_.organizerProfileSlug -eq $organizerProfileSlug -and
+                $_.requesterEmail -eq $requesterEmail -and
+                $_.relationshipToOrganizer -eq $relationshipToOrganizer
             }).Count -gt 0
 
+        $claimId = $null
+
         if ($alreadyExists) {
-            continue
+            $claimId = @($existingClaims | Where-Object {
+                    $_.organizerProfileSlug -eq $organizerProfileSlug -and
+                    $_.requesterEmail -eq $requesterEmail -and
+                    $_.relationshipToOrganizer -eq $relationshipToOrganizer
+                } | Select-Object -First 1)[0].id
+        }
+        else {
+            $body = @{
+                requesterName = Get-SeedValue -Item $claim -PropertyName "requesterName" -Required
+                requesterEmail = $requesterEmail
+                relationshipToOrganizer = $relationshipToOrganizer
+                evidenceText = Get-SeedValue -Item $claim -PropertyName "evidenceText" -Required
+            }
+
+            $savedClaim = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/organizer-profiles/$(Escape-Url $organizerProfileSlug)/claim" -Method Post -Body $body
+            $claimId = $savedClaim.id
+            $counts.OrganizerClaims++
         }
 
-        $body = @{
-            requesterName = $claim.requesterName
-            requesterEmail = $claim.requesterEmail
-            relationshipToOrganizer = $claim.relationshipToOrganizer
-            evidenceText = $claim.evidenceText
+        $claimStatus = Get-SeedValue -Item $claim -PropertyName "status" -Default "submitted"
+        if ($claimStatus -ne "submitted") {
+            Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/organizer-claim-requests/$claimId/status" -Method Post -Body @{ status = $claimStatus } | Out-Null
         }
-
-        Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/organizer-profiles/$(Escape-Url $claim.organizerProfileSlug)/claim" -Method Post -Body $body | Out-Null
-        $counts.OrganizerClaims++
     }
 
     foreach ($rsvp in (Get-SeedItems -Seed $seed -PropertyName "eventRsvps")) {
+        $eventSlug = Get-SeedValueFromAny -Item $rsvp -PropertyNames @("conversationEventSlug", "eventSlug") -Required
         $body = @{
-            participantName = $rsvp.participantName
-            participantEmail = $rsvp.participantEmail
-            status = $rsvp.status
+            participantName = Get-SeedValue -Item $rsvp -PropertyName "participantName" -Required
+            participantEmail = Get-SeedValue -Item $rsvp -PropertyName "participantEmail" -Required
+            status = Get-SeedValue -Item $rsvp -PropertyName "status" -Required
         }
 
-        Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/conversation-events/$(Escape-Url $rsvp.conversationEventSlug)/rsvps" -Method Post -Body $body | Out-Null
+        Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/conversation-events/$(Escape-Url $eventSlug)/rsvps" -Method Post -Body $body | Out-Null
         $counts.EventRsvps++
     }
 
     $profileIdsByEmail = @{}
-    foreach ($learner in (Get-SeedItems -Seed $seed -PropertyName "learnerConversationProfiles")) {
+    $profileIdsByKey = @{}
+    $emailsByProfileKey = @{}
+    foreach ($learner in (Get-FirstSeedItems -Seed $seed -PropertyNames @("learnerConversationProfiles", "learnerProfiles"))) {
+        $ownerEmail = Get-SeedValue -Item $learner -PropertyName "ownerEmail" -Required
+        $profileKey = Get-SeedValue -Item $learner -PropertyName "key" -Default $ownerEmail
         $body = @{
-            displayName = $learner.displayName
-            cityRegion = $learner.cityRegion
-            interactionPreference = $learner.interactionPreference
-            germanLevel = $learner.germanLevel
-            helperLanguageCodes = @($learner.helperLanguageCodes)
-            conversationGoals = $learner.conversationGoals
-            availabilityNotes = $learner.availabilityNotes
-            visibility = $learner.visibility
-            hasConfirmedAdult = $learner.hasConfirmedAdult
+            displayName = Get-SeedValue -Item $learner -PropertyName "displayName" -Required
+            cityRegion = Get-SeedValue -Item $learner -PropertyName "cityRegion" -Default (Get-SeedValue -Item $learner -PropertyName "city")
+            interactionPreference = Get-SeedValue -Item $learner -PropertyName "interactionPreference" -Default "both"
+            germanLevel = Get-SeedValue -Item $learner -PropertyName "germanLevel" -Default "B1"
+            helperLanguageCodes = Get-SeedArray -Item $learner -PropertyName "helperLanguageCodes"
+            conversationGoals = Get-SeedValue -Item $learner -PropertyName "conversationGoals" -Default ((Get-SeedArray -Item $learner -PropertyName "practiceGoals") -join ", ")
+            availabilityNotes = Get-SeedValue -Item $learner -PropertyName "availabilityNotes"
+            visibility = Get-SeedValue -Item $learner -PropertyName "visibility" -Default ($(if ((Get-SeedValue -Item $learner -PropertyName "isPublic" -Default $true)) { "public" } else { "request-only" }))
+            hasConfirmedAdult = Get-SeedValue -Item $learner -PropertyName "hasConfirmedAdult" -Default $true
         }
 
-        $savedProfile = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/learner-conversation-profiles/me?ownerEmail=$(Escape-Url $learner.ownerEmail)" -Method Post -Body $body
-        $profileIdsByEmail[$learner.ownerEmail.Trim().ToLowerInvariant()] = $savedProfile.id
+        $savedProfile = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/learner-conversation-profiles/me?ownerEmail=$(Escape-Url $ownerEmail)" -Method Post -Body $body
+        $normalizedOwnerEmail = $ownerEmail.Trim().ToLowerInvariant()
+        $profileIdsByEmail[$normalizedOwnerEmail] = $savedProfile.id
+        $profileIdsByKey[$profileKey] = $savedProfile.id
+        $emailsByProfileKey[$profileKey] = $normalizedOwnerEmail
         $counts.LearnerProfiles++
     }
 
+    $partnerRequestIdsByKey = @{}
     foreach ($request in (Get-SeedItems -Seed $seed -PropertyName "partnerRequests")) {
-        $existingRequests = @((Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests?ownerEmail=$(Escape-Url $request.requesterEmail)" -Method Get) | ForEach-Object { $_ })
+        $requesterEmail = Get-SeedValue -Item $request -PropertyName "requesterEmail"
+        if ([string]::IsNullOrWhiteSpace($requesterEmail)) {
+            $requesterEmail = Get-RequiredProfileEmailByKey -EmailsByKey $emailsByProfileKey -ProfileKey (Get-SeedValue -Item $request -PropertyName "requesterProfileKey" -Required)
+        }
+
+        $targetLearnerEmail = Get-SeedValue -Item $request -PropertyName "targetLearnerEmail"
+        if ([string]::IsNullOrWhiteSpace($targetLearnerEmail)) {
+            $targetLearnerEmail = Get-RequiredProfileEmailByKey -EmailsByKey $emailsByProfileKey -ProfileKey (Get-SeedValue -Item $request -PropertyName "targetProfileKey" -Required)
+        }
+
+        $targetProfileId = Get-SeedValue -Item $request -PropertyName "targetLearnerProfileId"
+        if ([string]::IsNullOrWhiteSpace($targetProfileId)) {
+            $targetProfileId = Get-RequiredProfileIdByKey -ProfileIdsByKey $profileIdsByKey -ProfileKey (Get-SeedValue -Item $request -PropertyName "targetProfileKey" -Required)
+        }
+        $openerTemplateKey = Get-SeedValue -Item $request -PropertyName "openerTemplateKey" -Default (Get-SeedValue -Item $request -PropertyName "practiceGoal" -Default "practice-goals")
+        $note = Get-SeedValue -Item $request -PropertyName "note" -Default (Get-SeedValue -Item $request -PropertyName "practiceGoal")
+        $existingRequests = @((Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests?ownerEmail=$(Escape-Url $requesterEmail)" -Method Get) | ForEach-Object { $_ })
         $alreadyExists = @($existingRequests | Where-Object {
-                $_.openerTemplateKey -eq $request.openerTemplateKey -and
-                $_.note -eq $request.note
+                $_.openerTemplateKey -eq $openerTemplateKey -and
+                $_.note -eq $note
             }).Count -gt 0
 
         if ($alreadyExists) {
+            $requestKey = Get-SeedValue -Item $request -PropertyName "key"
+            if (-not [string]::IsNullOrWhiteSpace($requestKey)) {
+                $partnerRequestIdsByKey[$requestKey] = @($existingRequests | Where-Object {
+                        $_.openerTemplateKey -eq $openerTemplateKey -and
+                        $_.note -eq $note
+                    } | Select-Object -First 1)[0].id
+            }
             continue
         }
 
-        $targetProfileId = Get-PublicProfileIdByEmail -ProfileIdsByEmail $profileIdsByEmail -OwnerEmail $request.targetLearnerEmail
         $body = @{
             targetLearnerProfileId = $targetProfileId
-            openerTemplateKey = $request.openerTemplateKey
-            note = $request.note
+            openerTemplateKey = $openerTemplateKey
+            note = $note
         }
 
-        $savedRequest = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests?ownerEmail=$(Escape-Url $request.requesterEmail)" -Method Post -Body $body
-        switch ($request.status) {
+        $savedRequest = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests?ownerEmail=$(Escape-Url $requesterEmail)" -Method Post -Body $body
+        $requestKey = Get-SeedValue -Item $request -PropertyName "key"
+        if (-not [string]::IsNullOrWhiteSpace($requestKey)) {
+            $partnerRequestIdsByKey[$requestKey] = $savedRequest.id
+        }
+
+        switch (Get-SeedValue -Item $request -PropertyName "status" -Default "pending") {
             "accepted" {
-                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $request.targetLearnerEmail)" -Method Post -Body @{ action = "accept" } | Out-Null
+                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $targetLearnerEmail)" -Method Post -Body @{ action = "accept" } | Out-Null
             }
             "declined" {
-                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $request.targetLearnerEmail)" -Method Post -Body @{ action = "decline" } | Out-Null
+                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $targetLearnerEmail)" -Method Post -Body @{ action = "decline" } | Out-Null
             }
             "cancelled" {
-                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $request.requesterEmail)" -Method Post -Body @{ action = "cancel" } | Out-Null
+                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $requesterEmail)" -Method Post -Body @{ action = "cancel" } | Out-Null
             }
             "blocked" {
-                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $request.targetLearnerEmail)" -Method Post -Body @{ action = "block" } | Out-Null
+                Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/partner-requests/$($savedRequest.id)/state?ownerEmail=$(Escape-Url $targetLearnerEmail)" -Method Post -Body @{ action = "block" } | Out-Null
             }
         }
 
@@ -358,47 +557,79 @@ try {
     }
 
     $existingReports = @((Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/moderation/reports" -Method Get) | ForEach-Object { $_ })
+    $reportIdsByKey = @{}
+    $reportsByKey = @{}
     foreach ($report in (Get-SeedItems -Seed $seed -PropertyName "userReports")) {
+        $reporterEmail = Get-SeedValue -Item $report -PropertyName "reporterEmail" -Required
+        $targetType = Get-SeedValue -Item $report -PropertyName "targetType" -Required
+        $targetKey = Get-SeedValue -Item $report -PropertyName "targetKey" -Required
+        $reason = Get-SeedValue -Item $report -PropertyName "reason" -Required
         $existingReport = @($existingReports | Where-Object {
-                $_.reporterEmail -eq $report.reporterEmail -and
-                $_.targetType -eq $report.targetType -and
-                $_.targetKey -eq $report.targetKey -and
-                $_.reason -eq $report.reason
+                $_.reporterEmail -eq $reporterEmail -and
+                $_.targetType -eq $targetType -and
+                $_.targetKey -eq $targetKey -and
+                $_.reason -eq $reason
             } | Select-Object -First 1)
 
         if ($existingReport.Count -gt 0) {
+            $reportKey = Get-SeedValue -Item $report -PropertyName "key"
+            if (-not [string]::IsNullOrWhiteSpace($reportKey)) {
+                $reportIdsByKey[$reportKey] = $existingReport[0].id
+                $reportsByKey[$reportKey] = $existingReport[0]
+            }
             continue
         }
 
         $body = @{
-            targetType = $report.targetType
-            targetKey = $report.targetKey
-            reportedUserEmail = $report.reportedUserEmail
-            reason = $report.reason
-            details = $report.details
+            targetType = $targetType
+            targetKey = $targetKey
+            reportedUserEmail = Get-SeedValue -Item $report -PropertyName "reportedUserEmail"
+            reason = $reason
+            details = Get-SeedValue -Item $report -PropertyName "details" -Required
         }
 
-        $savedReport = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/moderation/reports?reporterEmail=$(Escape-Url $report.reporterEmail)" -Method Post -Body $body
-        if ($report.status -ne "pending") {
-            Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/moderation/reports/$($savedReport.id)/decision" -Method Post -Body @{
-                status = $report.status
-                decisionNote = $report.decisionNote
-                decidedBy = $report.decidedBy
-            } | Out-Null
+        $savedReport = Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/moderation/reports?reporterEmail=$(Escape-Url $reporterEmail)" -Method Post -Body $body
+        $reportKey = Get-SeedValue -Item $report -PropertyName "key"
+        if (-not [string]::IsNullOrWhiteSpace($reportKey)) {
+            $reportIdsByKey[$reportKey] = $savedReport.id
+            $reportsByKey[$reportKey] = $savedReport
         }
 
         $counts.UserReports++
     }
 
-    foreach ($block in (Get-SeedItems -Seed $seed -PropertyName "userBlocks")) {
-        $body = @{
-            blockedEmail = $block.blockedEmail
-            reason = $block.reason
-            sourcePartnerRequestId = $null
-            targetLearnerProfileId = $null
+    foreach ($audit in (Get-SeedItems -Seed $seed -PropertyName "moderationAudits")) {
+        $reportKey = Get-SeedValue -Item $audit -PropertyName "userReportKey" -Required
+        $decisionStatus = Get-SeedValue -Item $audit -PropertyName "decisionStatus" -Required
+        $reportId = Get-RequiredReportIdByKey -ReportIdsByKey $reportIdsByKey -ReportKey $reportKey
+        $reportForAudit = $reportsByKey[$reportKey]
+        if ($null -ne $reportForAudit -and $reportForAudit.status -eq $decisionStatus -and -not [string]::IsNullOrWhiteSpace($reportForAudit.decidedBy)) {
+            continue
         }
 
-        Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/moderation/blocks?blockerEmail=$(Escape-Url $block.blockerEmail)" -Method Post -Body $body | Out-Null
+        Invoke-JsonRequest -Uri "$ApiBaseUrl/api/admin/catalog/moderation/reports/$reportId/decision" -Method Post -Body @{
+            status = $decisionStatus
+            decisionNote = Get-SeedValue -Item $audit -PropertyName "decisionNote" -Required
+            decidedBy = Get-SeedValue -Item $audit -PropertyName "decidedBy" -Required
+        } | Out-Null
+    }
+
+    foreach ($block in (Get-SeedItems -Seed $seed -PropertyName "userBlocks")) {
+        $sourcePartnerRequestKey = Get-SeedValue -Item $block -PropertyName "sourcePartnerRequestKey"
+        $targetLearnerProfileId = $null
+        if ([string]::IsNullOrWhiteSpace($sourcePartnerRequestKey)) {
+            $targetLearnerProfileId = Get-RequiredProfileIdByKey -ProfileIdsByKey $profileIdsByKey -ProfileKey (Get-SeedValue -Item $block -PropertyName "blockedProfileKey" -Required)
+        }
+
+        $body = @{
+            blockedEmail = Get-SeedValue -Item $block -PropertyName "blockedEmail"
+            reason = Get-SeedValue -Item $block -PropertyName "reason"
+            sourcePartnerRequestId = $(if ([string]::IsNullOrWhiteSpace($sourcePartnerRequestKey)) { $null } else { Get-RequiredPartnerRequestIdByKey -PartnerRequestIdsByKey $partnerRequestIdsByKey -PartnerRequestKey $sourcePartnerRequestKey })
+            targetLearnerProfileId = $targetLearnerProfileId
+        }
+
+        $blockerEmail = Get-SeedValue -Item $block -PropertyName "blockerEmail" -Default (Get-RequiredProfileEmailByKey -EmailsByKey $emailsByProfileKey -ProfileKey (Get-SeedValue -Item $block -PropertyName "blockerProfileKey" -Required))
+        Invoke-JsonRequest -Uri "$ApiBaseUrl/api/catalog/moderation/blocks?blockerEmail=$(Escape-Url $blockerEmail)" -Method Post -Body $body | Out-Null
         $counts.UserBlocks++
     }
 

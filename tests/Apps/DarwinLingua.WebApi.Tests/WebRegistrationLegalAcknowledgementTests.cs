@@ -59,6 +59,28 @@ public sealed class WebRegistrationLegalAcknowledgementTests
     }
 
     [Fact]
+    public void RegisterWorkflow_ShouldCreateLearnerEntitlementPolicyAcceptanceAndConfirmation()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string registerModel = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Areas/Identity/Pages/Account/Register.cshtml.cs"));
+
+        Assert.Contains("UserName = email", registerModel, StringComparison.Ordinal);
+        Assert.Contains("Email = email", registerModel, StringComparison.Ordinal);
+        Assert.Contains("userManager.CreateAsync(user, Input.Password)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("userManager.AddToRoleAsync(user, DarwinLinguaRoles.Learner)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("userEntitlementService.GetCurrentAsync(user.Id", registerModel, StringComparison.Ordinal);
+        Assert.Contains("RecordRegistrationAcceptancesAsync(user.Id, ResolveCulture()", registerModel, StringComparison.Ordinal);
+        Assert.Contains("SendConfirmationAsync(user, ReturnUrl", registerModel, StringComparison.Ordinal);
+        Assert.Contains("GenerateEmailConfirmationTokenAsync(user)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("SendEmailConfirmationAsync(", registerModel, StringComparison.Ordinal);
+        Assert.Contains("FindByEmailAsync(email)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("existingUser is not null", registerModel, StringComparison.Ordinal);
+        Assert.Contains("RedirectToPage(\"/Account/CheckEmail\"", registerModel, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void WebIdentityBootstrapper_ShouldCreatePolicyAcceptanceTable()
     {
         string repositoryRoot = FindRepositoryRoot();

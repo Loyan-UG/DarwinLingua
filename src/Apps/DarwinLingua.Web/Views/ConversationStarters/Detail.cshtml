@@ -1,6 +1,10 @@
 @model DarwinLingua.Web.Models.ConversationStarterDetailPageViewModel
 @{
     ViewData["Title"] = Model.StarterPack.Title;
+    string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
+        ? "ltr"
+        : TextDirection.FromLanguageCode(Model.SecondaryMeaningLanguageCode);
 }
 
 <section class="panel stack-lg">
@@ -43,14 +47,14 @@
                 </div>
                 @if (!string.IsNullOrWhiteSpace(phrase.PrimaryMeaning))
                 {
-                    <div class="meaning-block meaning-block--primary">
+                    <div class="meaning-block meaning-block--primary" dir="@primaryMeaningDirection">
                         <span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span>
                         <div>@phrase.PrimaryMeaning</div>
                     </div>
                 }
                 @if (!string.IsNullOrWhiteSpace(phrase.SecondaryMeaning))
                 {
-                    <div class="meaning-block">
+                    <div class="meaning-block" dir="@secondaryMeaningDirection">
                         <span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span>
                         <div>@phrase.SecondaryMeaning</div>
                     </div>

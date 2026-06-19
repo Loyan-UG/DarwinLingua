@@ -52,15 +52,21 @@ builder.Services.AddResponseCompression(options =>
 });
 builder.Services.AddOutputCache(options =>
 {
-    options.AddBasePolicy(policy => policy.Expire(TimeSpan.FromSeconds(60)));
+    options.AddBasePolicy(policy => policy
+        .Expire(TimeSpan.FromSeconds(60))
+        .SetVaryByQuery("culture", "ui-culture")
+        .SetVaryByHeader("Cookie"));
     options.AddPolicy("LandingPage", policy => policy
         .Expire(TimeSpan.FromSeconds(30))
-        .SetVaryByHeader("Cookie"));
+        .SetVaryByHeader("Cookie")
+        .SetVaryByQuery("culture", "ui-culture"));
     options.AddPolicy("CatalogBrowse", policy => policy
         .Expire(TimeSpan.FromMinutes(2))
         .Tag("catalog")
         .SetVaryByHeader("Cookie")
         .SetVaryByQuery(
+            "culture",
+            "ui-culture",
             "id",
             "skip",
             "city",
@@ -113,6 +119,10 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
         ForwardedHeaders.XForwardedProto |
         ForwardedHeaders.XForwardedHost;
     options.KnownProxies.Add(IPAddress.Parse("192.168.178.22"));
+});
+builder.Services.AddHttpsRedirection(options =>
+{
+    options.HttpsPort = 443;
 });
 builder.Services.AddScoped<IWebActorContextAccessor, WebActorContextAccessor>();
 builder.Services.AddScoped<IWebLearningProfileAccessor, WebLearningProfileAccessor>();
@@ -227,6 +237,11 @@ app.UseHttpsRedirection();
 app.UseResponseCompression();
 app.Use(async (context, next) =>
 {
+    if (ShouldSendStrictTransportSecurity(context))
+    {
+        context.Response.Headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains";
+    }
+
     context.Response.Headers["X-Content-Type-Options"] = "nosniff";
     context.Response.Headers["Referrer-Policy"] = "strict-origin-when-cross-origin";
     context.Response.Headers["X-Frame-Options"] = "DENY";
@@ -302,5 +317,26 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 app.Run();
+
+static bool ShouldSendStrictTransportSecurity(HttpContext context)
+{
+    if (!context.Request.IsHttps)
+    {
+        return false;
+    }
+
+    HostString host = context.Request.Host;
+    if (host.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase))
+    {
+        return false;
+    }
+
+    if (IPAddress.TryParse(host.Host, out IPAddress? address))
+    {
+        return !IPAddress.IsLoopback(address);
+    }
+
+    return true;
+}
 
 public partial class Program;

@@ -75,6 +75,36 @@
     </article>
 </section>
 
+@if (Model.Template.Variables.Count > 0)
+{
+    <section class="panel stack-md"
+             data-writing-template-editor
+             data-template-text="@Model.Template.TemplateText">
+        <h2 class="headline-sm">@T["Try this template"]</h2>
+        <p>@T["Fill the variables below to preview your own version. Nothing is saved."]</p>
+        <div class="form-grid">
+            @foreach (string variable in Model.Template.Variables)
+            {
+                <label class="field">
+                    <span><code>{{@variable}}</code></span>
+                    <input type="text"
+                           maxlength="160"
+                           autocomplete="off"
+                           data-template-variable="@variable"
+                           placeholder="@T["Variable value"]" />
+                </label>
+            }
+        </div>
+        <div class="action-row">
+            <button class="button button--secondary button--compact" type="button" data-writing-template-reset>@T["Clear values"]</button>
+        </div>
+        <article class="stack-sm">
+            <h3 class="eyebrow">@T["Preview"]</h3>
+            <pre class="content-code" data-writing-template-output aria-live="polite">@Model.Template.TemplateText</pre>
+        </article>
+    </section>
+}
+
 <section class="grid-two-col">
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Variables"]</h2>
@@ -115,10 +145,10 @@
 <section class="panel stack-md">
     <h2 class="headline-sm">@T["Linked content"]</h2>
     <div class="grid-two-col">
-        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Template.LinkedGrammarTopicSlugs)' />
-        <partial name="_SlugList" model='(T["Words"].Value, Model.Template.LinkedWordSlugs)' />
-        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Template.LinkedExpressionSlugs)' />
-        <partial name="_SlugList" model='(T["Exercises"].Value, Model.Template.LinkedExerciseSlugs)' />
-        <partial name="_SlugList" model='(T["Course Lessons"].Value, Model.Template.LinkedCourseLessonSlugs)' />
+        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Template.LinkedGrammarTopicSlugs, "grammar-topic")' />
+        <partial name="_SlugList" model='(T["Words"].Value, Model.Template.LinkedWordSlugs, "word")' />
+        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Template.LinkedExpressionSlugs, "expression")' />
+        <partial name="_SlugList" model='(T["Exercises"].Value, Model.Template.LinkedExerciseSlugs, "exercise")' />
+        <partial name="_SlugList" model='(T["Course Lessons"].Value, Model.Template.LinkedCourseLessonSlugs, "course-lesson")' />
     </div>
 </section>

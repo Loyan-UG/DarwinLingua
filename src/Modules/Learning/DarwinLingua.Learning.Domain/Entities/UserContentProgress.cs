@@ -103,7 +103,7 @@ public sealed class UserContentProgress
 
         CompletedAtUtc = normalizedState == "completed"
             ? normalizedUpdatedAtUtc
-            : CompletedAtUtc;
+            : null;
         State = normalizedState;
         UpdatedAtUtc = normalizedUpdatedAtUtc;
     }

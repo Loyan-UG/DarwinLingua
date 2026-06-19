@@ -1,3 +1,4 @@
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -10,6 +11,38 @@ public partial class SyncLearningPortalLocalizedSnapshot20260616 : Migration
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)
     {
+        if (ActiveProvider.Contains("Sqlite", StringComparison.OrdinalIgnoreCase))
+        {
+            AddJsonColumn(migrationBuilder, "ExerciseSets", "DescriptionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExerciseSets", "TitleTranslationsJson");
+            AddJsonColumn(migrationBuilder, "Exercises", "CommonMistakeNoteTranslationsJson");
+            AddJsonColumn(migrationBuilder, "Exercises", "CorrectExplanationTranslationsJson");
+            AddJsonColumn(migrationBuilder, "Exercises", "HintTranslationsJson");
+            AddJsonColumn(migrationBuilder, "Exercises", "IncorrectExplanationTranslationsJson");
+            AddJsonColumn(migrationBuilder, "Exercises", "InstructionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "Exercises", "TitleTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamProfiles", "DescriptionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamProfiles", "DisplayNameTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamPrepUnits", "ChecklistTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamPrepUnits", "ExplanationTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamPrepUnits", "LinkedRoleplaySlugsJson");
+            AddJsonColumn(migrationBuilder, "ExamPrepUnits", "ShortDescriptionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamPrepUnits", "StrategyNotesTranslationsJson");
+            AddJsonColumn(migrationBuilder, "ExamPrepUnits", "TitleTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CoursePaths", "DescriptionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CoursePaths", "TitleTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseModules", "DescriptionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseModules", "TitleTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseLessons", "HomeworkTaskTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseLessons", "LearningGoalsTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseLessons", "NarrativeTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseLessons", "ReviewSummaryTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseLessons", "ShortDescriptionTranslationsJson");
+            AddJsonColumn(migrationBuilder, "CourseLessons", "TitleTranslationsJson");
+
+            return;
+        }
+
         migrationBuilder.Sql(
             """
             ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "ExplanationTranslationsJson" text NOT NULL DEFAULT '[]';
@@ -60,6 +93,38 @@ public partial class SyncLearningPortalLocalizedSnapshot20260616 : Migration
     /// <inheritdoc />
     protected override void Down(MigrationBuilder migrationBuilder)
     {
+        if (ActiveProvider.Contains("Sqlite", StringComparison.OrdinalIgnoreCase))
+        {
+            migrationBuilder.DropColumn(name: "TitleTranslationsJson", table: "CourseLessons");
+            migrationBuilder.DropColumn(name: "ShortDescriptionTranslationsJson", table: "CourseLessons");
+            migrationBuilder.DropColumn(name: "ReviewSummaryTranslationsJson", table: "CourseLessons");
+            migrationBuilder.DropColumn(name: "NarrativeTranslationsJson", table: "CourseLessons");
+            migrationBuilder.DropColumn(name: "LearningGoalsTranslationsJson", table: "CourseLessons");
+            migrationBuilder.DropColumn(name: "HomeworkTaskTranslationsJson", table: "CourseLessons");
+            migrationBuilder.DropColumn(name: "TitleTranslationsJson", table: "CourseModules");
+            migrationBuilder.DropColumn(name: "DescriptionTranslationsJson", table: "CourseModules");
+            migrationBuilder.DropColumn(name: "TitleTranslationsJson", table: "CoursePaths");
+            migrationBuilder.DropColumn(name: "DescriptionTranslationsJson", table: "CoursePaths");
+            migrationBuilder.DropColumn(name: "TitleTranslationsJson", table: "ExamPrepUnits");
+            migrationBuilder.DropColumn(name: "StrategyNotesTranslationsJson", table: "ExamPrepUnits");
+            migrationBuilder.DropColumn(name: "ShortDescriptionTranslationsJson", table: "ExamPrepUnits");
+            migrationBuilder.DropColumn(name: "LinkedRoleplaySlugsJson", table: "ExamPrepUnits");
+            migrationBuilder.DropColumn(name: "ExplanationTranslationsJson", table: "ExamPrepUnits");
+            migrationBuilder.DropColumn(name: "ChecklistTranslationsJson", table: "ExamPrepUnits");
+            migrationBuilder.DropColumn(name: "DisplayNameTranslationsJson", table: "ExamProfiles");
+            migrationBuilder.DropColumn(name: "DescriptionTranslationsJson", table: "ExamProfiles");
+            migrationBuilder.DropColumn(name: "TitleTranslationsJson", table: "Exercises");
+            migrationBuilder.DropColumn(name: "InstructionTranslationsJson", table: "Exercises");
+            migrationBuilder.DropColumn(name: "IncorrectExplanationTranslationsJson", table: "Exercises");
+            migrationBuilder.DropColumn(name: "HintTranslationsJson", table: "Exercises");
+            migrationBuilder.DropColumn(name: "CorrectExplanationTranslationsJson", table: "Exercises");
+            migrationBuilder.DropColumn(name: "CommonMistakeNoteTranslationsJson", table: "Exercises");
+            migrationBuilder.DropColumn(name: "TitleTranslationsJson", table: "ExerciseSets");
+            migrationBuilder.DropColumn(name: "DescriptionTranslationsJson", table: "ExerciseSets");
+
+            return;
+        }
+
         migrationBuilder.Sql(
             """
             ALTER TABLE "CourseLessons" DROP COLUMN IF EXISTS "TitleTranslationsJson";
@@ -105,5 +170,15 @@ public partial class SyncLearningPortalLocalizedSnapshot20260616 : Migration
             ALTER TABLE "WritingTemplates" DROP COLUMN IF EXISTS "LinkedCourseLessonSlugsJson";
             ALTER TABLE "WritingTemplates" DROP COLUMN IF EXISTS "ExplanationTranslationsJson";
             """);
+    }
+
+    private static void AddJsonColumn(MigrationBuilder migrationBuilder, string tableName, string columnName)
+    {
+        migrationBuilder.AddColumn<string>(
+            name: columnName,
+            table: tableName,
+            type: "TEXT",
+            nullable: false,
+            defaultValue: "[]");
     }
 }

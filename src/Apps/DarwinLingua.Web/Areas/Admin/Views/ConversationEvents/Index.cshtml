@@ -98,6 +98,14 @@
             <input name="ScheduleText" value="@Model.Input.ScheduleText" />
         </label>
         <label class="field">
+            <span>Starts at UTC</span>
+            <input name="StartsAtUtc" value="@Model.Input.StartsAtUtc" placeholder="2026-06-18 18:00Z" />
+        </label>
+        <label class="field">
+            <span>Ends at UTC</span>
+            <input name="EndsAtUtc" value="@Model.Input.EndsAtUtc" placeholder="2026-06-18 19:30Z" />
+        </label>
+        <label class="field">
             <span>Recurrence rule</span>
             <input name="RecurrenceRule" value="@Model.Input.RecurrenceRule" placeholder="weekly:tuesday:18:00" />
         </label>
@@ -169,6 +177,7 @@
                     <tr>
                         <th>Event</th>
                         <th>Mode</th>
+                        <th>Start</th>
                         <th>Levels</th>
                         <th>Organizer</th>
                         <th>Preparation</th>
@@ -184,6 +193,7 @@
                                 <a asp-area="" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
                             </td>
                             <td>@(item.IsOnline ? "Online" : item.City ?? item.CountryRegion)</td>
+                            <td>@(item.StartsAtUtc?.ToString("yyyy-MM-dd HH:mm 'UTC'", System.Globalization.CultureInfo.InvariantCulture) ?? "Schedule text only")</td>
                             <td>@string.Join(", ", item.SupportedLearnerLevels)</td>
                             <td>
                                 @if (!string.IsNullOrWhiteSpace(item.OrganizerProfileSlug))

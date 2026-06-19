@@ -151,6 +151,133 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
     }
 
     [Fact]
+    public async Task EntitlementStatesResolveExpectedFeatureFlags()
+    {
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity_features");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
+                new DarwinLinguaIdentityBootstrapOptions(),
+                new DarwinLinguaEntitlementOptions
+                {
+                    NewUserTrialDays = 0,
+                });
+
+            IDarwinLinguaIdentityBootstrapper bootstrapper = services.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+
+            UserManager<DarwinLinguaIdentityUser> userManager = services.GetRequiredService<UserManager<DarwinLinguaIdentityUser>>();
+            DarwinLinguaIdentityUser user = new()
+            {
+                UserName = "features@example.local",
+                Email = "features@example.local",
+                EmailConfirmed = true,
+            };
+
+            IdentityResult createResult = await userManager.CreateAsync(user, "Features123!");
+            Assert.True(createResult.Succeeded, string.Join("; ", createResult.Errors.Select(error => error.Description)));
+
+            IUserEntitlementService entitlementService = services.GetRequiredService<IUserEntitlementService>();
+
+            UserEntitlementSnapshot freeSnapshot = await entitlementService.GetCurrentAsync(user.Id, CancellationToken.None);
+            Assert.Equal(DarwinLinguaEntitlementTiers.Free, freeSnapshot.Tier);
+            Assert.Contains(DarwinLinguaFeatureKeys.BrowseCatalog, freeSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.SearchCatalog, freeSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.LearnerProfiles, freeSnapshot.EnabledFeatures);
+            Assert.DoesNotContain(DarwinLinguaFeatureKeys.Favorites, freeSnapshot.EnabledFeatures);
+            Assert.DoesNotContain(DarwinLinguaFeatureKeys.DualMeaningLanguage, freeSnapshot.EnabledFeatures);
+            Assert.DoesNotContain(DarwinLinguaFeatureKeys.EventPreparationPacks, freeSnapshot.EnabledFeatures);
+            Assert.False(await entitlementService.HasFeatureAsync(user.Id, DarwinLinguaFeatureKeys.PartnerMatching, CancellationToken.None));
+
+            UserEntitlementSnapshot trialSnapshot = await entitlementService.SetTierAsync(
+                user.Id,
+                DarwinLinguaEntitlementTiers.Trial,
+                DateTimeOffset.UtcNow.AddDays(7),
+                "test-admin",
+                CancellationToken.None);
+            Assert.Equal(DarwinLinguaEntitlementTiers.Trial, trialSnapshot.Tier);
+            Assert.Contains(DarwinLinguaFeatureKeys.Favorites, trialSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.DualMeaningLanguage, trialSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.EventPreparationPacks, trialSnapshot.EnabledFeatures);
+            Assert.True(await entitlementService.HasFeatureAsync(user.Id, DarwinLinguaFeatureKeys.PartnerMatching, CancellationToken.None));
+
+            UserEntitlementSnapshot premiumSnapshot = await entitlementService.SetTierAsync(
+                user.Id,
+                DarwinLinguaEntitlementTiers.Premium,
+                null,
+                "test-admin",
+                CancellationToken.None);
+            Assert.Equal(DarwinLinguaEntitlementTiers.Premium, premiumSnapshot.Tier);
+            Assert.Contains(DarwinLinguaFeatureKeys.Favorites, premiumSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.AdvancedDialoguePacks, premiumSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.PartnerMatching, premiumSnapshot.EnabledFeatures);
+    }
+
+    [Fact]
+    public async Task ExpiredTrialAndPremiumStatesFallBackToFreeAccess()
+    {
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity_expired");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
+                new DarwinLinguaIdentityBootstrapOptions(),
+                new DarwinLinguaEntitlementOptions
+                {
+                    NewUserTrialDays = 0,
+                });
+
+            IDarwinLinguaIdentityBootstrapper bootstrapper = services.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
+            await bootstrapper.InitializeAsync(CancellationToken.None);
+
+            UserManager<DarwinLinguaIdentityUser> userManager = services.GetRequiredService<UserManager<DarwinLinguaIdentityUser>>();
+            DarwinLinguaIdentityUser trialUser = new()
+            {
+                UserName = "expired-trial@example.local",
+                Email = "expired-trial@example.local",
+                EmailConfirmed = true,
+            };
+            DarwinLinguaIdentityUser premiumUser = new()
+            {
+                UserName = "expired-premium@example.local",
+                Email = "expired-premium@example.local",
+                EmailConfirmed = true,
+            };
+
+            IdentityResult trialCreateResult = await userManager.CreateAsync(trialUser, "Expired123!");
+            IdentityResult premiumCreateResult = await userManager.CreateAsync(premiumUser, "Expired123!");
+            Assert.True(trialCreateResult.Succeeded, string.Join("; ", trialCreateResult.Errors.Select(error => error.Description)));
+            Assert.True(premiumCreateResult.Succeeded, string.Join("; ", premiumCreateResult.Errors.Select(error => error.Description)));
+
+            IUserEntitlementService entitlementService = services.GetRequiredService<IUserEntitlementService>();
+            DateTimeOffset expiredAtUtc = DateTimeOffset.UtcNow.AddSeconds(-1);
+
+            UserEntitlementSnapshot trialSnapshot = await entitlementService.SetTierAsync(
+                trialUser.Id,
+                DarwinLinguaEntitlementTiers.Trial,
+                expiredAtUtc,
+                "test-admin",
+                CancellationToken.None);
+            UserEntitlementSnapshot premiumSnapshot = await entitlementService.SetTierAsync(
+                premiumUser.Id,
+                DarwinLinguaEntitlementTiers.Premium,
+                expiredAtUtc,
+                "test-admin",
+                CancellationToken.None);
+
+            Assert.Equal(DarwinLinguaEntitlementTiers.Free, trialSnapshot.Tier);
+            Assert.Equal(DarwinLinguaEntitlementTiers.Free, premiumSnapshot.Tier);
+            Assert.Contains(DarwinLinguaFeatureKeys.SearchCatalog, trialSnapshot.EnabledFeatures);
+            Assert.Contains(DarwinLinguaFeatureKeys.SearchCatalog, premiumSnapshot.EnabledFeatures);
+            Assert.DoesNotContain(DarwinLinguaFeatureKeys.Favorites, trialSnapshot.EnabledFeatures);
+            Assert.DoesNotContain(DarwinLinguaFeatureKeys.Favorites, premiumSnapshot.EnabledFeatures);
+
+            IReadOnlyList<UserEntitlementAuditEventModel> trialAuditEvents = await entitlementService
+                .GetRecentAuditEventsAsync(trialUser.Id, 10, CancellationToken.None);
+            IReadOnlyList<UserEntitlementAuditEventModel> premiumAuditEvents = await entitlementService
+                .GetRecentAuditEventsAsync(premiumUser.Id, 10, CancellationToken.None);
+            Assert.Contains(trialAuditEvents, auditEvent => auditEvent.EventType == "trial-expired");
+            Assert.Contains(premiumAuditEvents, auditEvent => auditEvent.EventType == "premium-expired");
+    }
+
+    [Fact]
     public async Task SetTierAsync_RecordsAuditEventsForManualChangesAndExpiration()
     {
         await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity");

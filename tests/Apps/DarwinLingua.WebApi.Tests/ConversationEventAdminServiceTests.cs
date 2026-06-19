@@ -33,6 +33,8 @@ public sealed class ConversationEventAdminServiceTests
             Assert.Equal(["A1", "A2"], savedEvent.SupportedLearnerLevels);
             Assert.Equal(["en", "fa"], savedEvent.HelperLanguageCodes);
             Assert.Equal(["a1-cafe-first-meeting-prep"], savedEvent.LinkedEventPreparationPackSlugs);
+            Assert.NotNull(savedEvent.StartsAtUtc);
+            Assert.NotNull(savedEvent.EndsAtUtc);
 
             IConversationEventQueryService queryService = serviceProvider.GetRequiredService<IConversationEventQueryService>();
             IReadOnlyList<ConversationEventListItemModel> events = await queryService.GetPublishedEventsAsync(
@@ -143,6 +145,8 @@ public sealed class ConversationEventAdminServiceTests
             "https://example.local/events",
             "events@example.local",
             "Every Tuesday evening",
+            DateTime.UtcNow.AddDays(7),
+            DateTime.UtcNow.AddDays(7).AddHours(1),
             "free",
             verificationStatus,
             "manual-admin",

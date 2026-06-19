@@ -69,6 +69,33 @@ public sealed class CoursePath
     public DateTime UpdatedAtUtc { get; private set; }
     public IReadOnlyCollection<CourseModule> Modules => _modules;
 
+    public void UpdateDetails(
+        string title,
+        string description,
+        CefrLevel? cefrLevel,
+        string? cefrRange,
+        PublicationStatus publicationStatus,
+        int sortOrder,
+        DateTime timestampUtc,
+        string titleTranslationsJson = "[]",
+        string descriptionTranslationsJson = "[]")
+    {
+        Title = RequireText(title, "Course path title", 256);
+        Description = RequireText(description, "Course path description", 2000);
+        TitleTranslationsJson = RequireText(titleTranslationsJson, "Course path title translations JSON", 12000);
+        DescriptionTranslationsJson = RequireText(descriptionTranslationsJson, "Course path description translations JSON", 12000);
+        CefrLevel = cefrLevel;
+        CefrRange = NormalizeOptionalText(cefrRange, 32, "Course path CEFR range") ?? cefrLevel?.ToString() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(CefrRange))
+        {
+            throw new DomainRuleException("Course path CEFR level or range is required.");
+        }
+
+        PublicationStatus = publicationStatus;
+        SortOrder = Math.Max(0, sortOrder);
+        UpdatedAtUtc = timestampUtc;
+    }
+
     internal static string RequireText(string value, string fieldName, int maxLength)
     {
         string normalized = value.Trim();
