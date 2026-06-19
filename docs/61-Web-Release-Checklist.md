@@ -10,7 +10,7 @@ Use it for both the learner-facing root site and the admin area.
 
 ## Latest Local Evidence
 
-Last updated: 2026-06-19.
+Last updated: 2026-06-20.
 
 - Local `DarwinLingua.Web` build passed with 0 warnings and 0 errors.
 - Local `DarwinLingua.WebApi` build passed with 0 warnings and 0 errors.
@@ -41,13 +41,15 @@ Last updated: 2026-06-19.
 - Brevo and Stripe provider-error paths were reviewed so provider response bodies are not logged or surfaced in diagnostics.
 - PWA shell readiness was hardened on 2026-06-18: manifest delivery, service-worker registration, first-party shell cache creation, and offline navigation fallback were verified in local desktop Chromium. With the Web host stopped, a controlled browser session loaded `/offline-smoke-check` from the cached `offline.html` shell. Targeted structural tests for the manifest, service worker, install prompt wiring, and offline shell passed.
 - PWA follow-up on 2026-06-19 regenerated `artifacts/installability-report.json` against `https://localhost:7501`: `17` automated checks passed, `0` failed, and `2` manual checks remain for real Desktop Chrome/Edge and Android Chrome prompt acceptance. The homepage 404 collection image and htmx inline-style CSP console error were fixed before the report was regenerated.
-- Production sign-off still requires the unchecked release gates below, especially release commit selection, manual target-browser install validation, production configuration, Brevo DNS/domain verification, legal/operator review, and Stripe test-mode/staging validation where billing is enabled.
+- Web readiness checkpoint commits are selected: `a7fef927 Complete web readiness checkpoint` and `07833401 Document Brevo production handoff`.
+- Production sign-off still requires the unchecked release gates below, especially manual target-browser install validation, production configuration, Brevo DNS/domain verification, legal/operator review, and Stripe test-mode/staging validation where billing is enabled.
 
 ---
 
 ## A. Build And Test
 
-- [ ] release commit selected
+- [x] release commit selected
+  - Evidence: Web readiness is captured in `a7fef927 Complete web readiness checkpoint`; Brevo operator handoff follow-up is captured in `07833401 Document Brevo production handoff`.
 - [x] solution build succeeded
   - Evidence: 2026-06-18 active Web-scope source build passed for all 22 non-MAUI source projects, including `DarwinLingua.Web`, `DarwinLingua.WebApi`, `DarwinLingua.ImportTool`, shared building blocks, and Catalog/ContentOps/Learning/Localization/Practice modules. Mobile/MAUI remains intentionally deferred and is not part of the active Web release gate.
 - [x] automated tests succeeded
@@ -195,7 +197,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [x] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed
   - Evidence: 2026-06-18 targeted Admin Reports tests passed for Learning Portal issue drilldown, summary counters, and `WebsiteAdminQueryService` report coverage. Authenticated local admin smoke after Web/WebApi restart passed 11/11 admin routes including `/admin/reports`; report artifact: `artifacts/validation/web-admin-smoke/web-admin-authenticated-smoke-20260618-191753.json`.
 - [x] phase-completion backup created under `X:\Projects\DarwinLingua.Backup` with PostgreSQL dumps, repo restore overlay, separate local config/secret bundle, manifest, restore notes, and checksum verification
-  - Evidence: latest Web readiness checkpoint is `X:\Projects\DarwinLingua.Backup\20260619-222010-web-readiness-account-legal-pwa-pre-user-testing`. It contains the refreshed PostgreSQL dump/restore-list, dry-run restore counts (`CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`), repo overlay patch plus dirty-file snapshot, separate secret bundle, Docker metadata, manifest, and regenerated SHA256 checksums.
+  - Evidence: latest Web readiness checkpoint is `X:\Projects\DarwinLingua.Backup\20260619-222010-web-readiness-account-legal-pwa-pre-user-testing`. It contains the refreshed PostgreSQL dump/restore-list, dry-run restore counts (`CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`), repo overlay patch plus dirty-file snapshot, separate secret bundle, Docker metadata, manifest, and regenerated SHA256 checksums. Repository source follow-up is committed through `07833401`.
 - [ ] production email provider configured
 - [ ] sender address and reply-to address configured
 - [ ] SPF, DKIM, and DMARC verified for the sender domain

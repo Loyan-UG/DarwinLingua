@@ -63,10 +63,13 @@ Immediate next order:
 
 1. Keep validation reports green after any content repair.
 2. Keep the Web-side Sensitive Educational Language and registration/legal acknowledgement gates covered by tests before adding more sensitive content.
-3. Invite the first controlled Web testers using `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke/TesterQuickStart.md`, collect observations in that bundle's `WebTesterFeedback.csv`, and run the triage helper before new bulk content work.
-4. During tester feedback, only repair broken links, missing translations, route mismatches, smoke blockers, and clear UX/content issues.
-5. Treat Course `activityBlocks` backfill as complete for the first Web baseline: A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`, C1 `120/120`, and C2 `120/120`.
-6. Generate any further Everyday Expressions, RoleplayScenario, Exam Prep, Writing Templates, or Life in Germany content only as small reviewed batches after an explicit plan, strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
+3. Decide the account/email mode for the first controlled Web tester pass:
+   - If testers self-register, complete Brevo provider setup, DNS/domain verification, webhook secret, and DPA review first.
+   - If Brevo is not ready, use pre-created tester accounts and explicitly exclude registration, email confirmation, password reset, and email-change from production-behavior validation.
+4. Invite the first controlled Web testers using `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke/TesterQuickStart.md`, collect observations in that bundle's `WebTesterFeedback.csv`, and run the triage helper before new bulk content work.
+5. During tester feedback, only repair broken links, missing translations, route mismatches, smoke blockers, and clear UX/content issues.
+6. Treat Course `activityBlocks` backfill as complete for the first Web baseline: A1 `60/60`, A2 `80/80`, B1 `100/100`, B2 `80/80`, C1 `120/120`, and C2 `120/120`.
+7. Generate any further Everyday Expressions, RoleplayScenario, Exam Prep, Writing Templates, or Life in Germany content only as small reviewed batches after an explicit plan, strict quality gate, import, Web/API smoke, Unified Search smoke, and admin report checks.
 8. Consider Life in Germany B2+ expansion only after the current Web readiness/user-testing checkpoint is closed or a tester/content review identifies a concrete gap.
 9. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
 10. After every completed Web/content phase, update docs and create a restorable external backup under `X:\Projects\DarwinLingua.Backup` before moving to the next phase.

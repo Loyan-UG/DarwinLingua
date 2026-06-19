@@ -12,7 +12,8 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Public API health: `https://linguaapi.vafadar.pro/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
-- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`
+- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260619-222010-web-readiness-account-legal-pwa-pre-user-testing`
+- Latest readiness commits: `a7fef927 Complete web readiness checkpoint`, `07833401 Document Brevo production handoff`
 - Latest tester bundle: `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke`
 - Latest public preflight: `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke/preflight/web-tester-preflight-20260618-190135.json` with 25/25 checks passed.
 - Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260618-190142.md` with 0 validation errors on the empty bundle feedback template.
@@ -33,6 +34,14 @@ Do not use this pass as a marketing launch. The tester group should know that th
 ## Pre-Test Operator Checklist
 
 Before inviting testers:
+
+- Decide the account/email mode for this tester pass:
+  - If testers will self-register, complete the Brevo setup in `docs/73-Transactional-Email-And-Account-Communication-Backlog.md` first, including verified sender domain, API key, webhook secret, and DNS authentication.
+  - If Brevo is not ready yet, use pre-created tester accounts and do not ask testers to validate registration, email confirmation, password reset, or email-change flows as production behavior.
+  - In either mode, record the choice in the generated tester bundle README or pass notes.
+- Confirm the public test host is `https://lingua.vafadar.pro`; do not use `www.lingua.vafadar.pro` unless that host is intentionally configured.
+- Confirm the Legal Notice/Impressum and Privacy Policy still carry the correct development-stage wording and that production operator data is not claimed before legal review.
+- Confirm the two PWA manual install checks from `docs/56-Web-Pwa-Install-Validation-Worksheet.md` are either completed or explicitly left out of this tester pass.
 
 - Create a timestamped tester bundle:
 
