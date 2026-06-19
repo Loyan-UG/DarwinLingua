@@ -87,6 +87,47 @@ The application is ready to use Brevo, but the operator must complete the provid
 9. Select transactional events needed for diagnostics and suppression handling: delivered/sent, soft bounce, hard bounce, blocked, invalid email, spam, complaint, and other provider failure events Brevo exposes for transactional email.
 10. Review and accept the required Brevo data-processing terms/DPA for EU/GDPR operation.
 
+Official Brevo references to use during setup:
+
+- Domain authentication: `https://help.brevo.com/hc/en-us/articles/12163873383186-Authenticate-your-domain-with-Brevo-Brevo-code-DKIM-DMARC`
+- Transactional email API: `https://developers.brevo.com/docs/send-a-transactional-email`
+- Transactional webhook events: `https://developers.brevo.com/docs/transactional-webhooks`
+- Secured webhooks and custom headers/Bearer authorization: `https://developers.brevo.com/docs/secured-webhooks`
+
+### Operator handoff
+
+The developer cannot finish real delivery without these operator-owned values and external actions:
+
+1. Brevo account owner email and organization name.
+2. Sending domain to use during the current development/test phase.
+3. Verified sender email, recommended shape: `no-reply@<verified-domain>`.
+4. Support/reply-to email, recommended shape: `support@<verified-domain>`.
+5. DNS access for the sending domain, or confirmation that Brevo automatic domain authentication may manage the required DNS records.
+6. Brevo transactional API key, stored only in local/production secret configuration.
+7. A strong random `TransactionalEmail:BrevoWebhookSecret`, stored in Darwin Lingua config and also configured in Brevo webhook authentication.
+8. Confirmation that the Brevo DPA/data-processing terms have been reviewed and accepted for the operating entity.
+
+For the current development environment, `https://lingua.vafadar.pro` is the temporary public base URL. Do not configure `www.lingua.vafadar.pro` unless that host is intentionally enabled. When Web moves to the final main domain, update the following together in the same release step:
+
+- `TransactionalEmail:PublicBaseUrl`
+- Brevo webhook URL
+- sender/domain authentication if the sending domain changes
+- legal pages and support contact references
+- DNS records shown by Brevo for the final sending domain
+
+### Webhook authentication choice
+
+Darwin Lingua accepts these secure webhook authentication forms:
+
+- Preferred: Bearer token, with `Authorization: Bearer <TransactionalEmail:BrevoWebhookSecret>`.
+- Also supported: custom header `X-DarwinLingua-Brevo-Webhook-Secret: <TransactionalEmail:BrevoWebhookSecret>`.
+
+The query-string fallback is only for local diagnostics and must stay disabled outside local development:
+
+```json
+"BrevoAllowQuerySecretFallback": false
+```
+
 ### Darwin Lingua configuration
 
 Set these values outside source control for the target environment:
@@ -121,6 +162,7 @@ During the current development phase, `lingua.vafadar.pro` is the temporary publ
 - Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.
 - Confirm hard bounce/spam/complaint events create internal recipient suppression.
 - Confirm `BrevoSandboxMode=false` only after sender/domain verification is complete.
+- Confirm Admin -> Email diagnostics reports Brevo mode, API key configured, webhook secret configured, sandbox disabled, and no production-readiness warnings.
 
 ---
 
