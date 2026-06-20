@@ -102,6 +102,64 @@ public sealed class WebAccountAuthenticationWorkflowTests
         Assert.Contains("ExpiredToken", resetPasswordModel, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void RegistrationWorkflow_ShouldSendConfirmationWithoutAccountEnumeration()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string registerModel = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Areas/Identity/Pages/Account/Register.cshtml.cs"));
+        string registerPage = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Areas/Identity/Pages/Account/Register.cshtml"));
+
+        Assert.Contains("rateLimiter.TryConsume(\"register\"", registerModel, StringComparison.Ordinal);
+        Assert.Contains("FindByEmailAsync(email)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("IsEmailConfirmedAsync(existingUser)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("rateLimiter.TryConsume(\"register-confirmation\"", registerModel, StringComparison.Ordinal);
+        Assert.Contains("GenerateEmailConfirmationTokenAsync(user)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code))", registerModel, StringComparison.Ordinal);
+        Assert.Contains("BuildPublicPageUrl(", registerModel, StringComparison.Ordinal);
+        Assert.Contains("SendEmailConfirmationAsync(", registerModel, StringComparison.Ordinal);
+        Assert.Contains("RedirectToPage(\"/Account/CheckEmail\"", registerModel, StringComparison.Ordinal);
+        Assert.Contains("Url.IsLocalUrl(returnUrl)", registerModel, StringComparison.Ordinal);
+        Assert.Contains("AcceptTermsOfUse", registerPage, StringComparison.Ordinal);
+        Assert.Contains("AcknowledgePrivacyNotice", registerPage, StringComparison.Ordinal);
+        Assert.Contains("autocomplete=\"email\"", registerPage, StringComparison.Ordinal);
+        Assert.Contains("autocomplete=\"new-password\"", registerPage, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void EmailChangeWorkflow_ShouldValidatePasswordAndNotifyOldEmailAfterSuccessfulChange()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string emailModel = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Areas/Identity/Pages/Account/Manage/Email.cshtml.cs"));
+        string confirmEmailChangeModel = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml.cs"));
+
+        Assert.Contains("[Authorize]", emailModel, StringComparison.Ordinal);
+        Assert.Contains("CheckPasswordAsync(user, Input.CurrentPassword)", emailModel, StringComparison.Ordinal);
+        Assert.Contains("rateLimiter.TryConsume(", emailModel, StringComparison.Ordinal);
+        Assert.Contains("\"change-email\"", emailModel, StringComparison.Ordinal);
+        Assert.Contains("GenerateChangeEmailTokenAsync(user, newEmail)", emailModel, StringComparison.Ordinal);
+        Assert.Contains("WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code))", emailModel, StringComparison.Ordinal);
+        Assert.Contains("BuildPublicPageUrl(", emailModel, StringComparison.Ordinal);
+        Assert.Contains("SendEmailChangeConfirmationAsync(", emailModel, StringComparison.Ordinal);
+        Assert.Contains("If the new address can be used, a confirmation email has been sent.", emailModel, StringComparison.Ordinal);
+
+        Assert.Contains("[Authorize]", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("WebEncoders.Base64UrlDecode(code)", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("catch (FormatException)", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("ChangeEmailAsync(user, email, token)", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("SetUserNameAsync(user, email)", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("UpdateSecurityStampAsync(user)", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("RefreshSignInAsync(user)", confirmEmailChangeModel, StringComparison.Ordinal);
+        Assert.Contains("SendEmailChangedNotificationAsync(", confirmEmailChangeModel, StringComparison.Ordinal);
+    }
+
     private static string FindRepositoryRoot()
     {
         DirectoryInfo? directory = new(AppContext.BaseDirectory);

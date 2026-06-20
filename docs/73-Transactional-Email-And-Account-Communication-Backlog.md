@@ -553,13 +553,23 @@ For the first release, use web-hosted confirmation and password-reset pages from
 
 ### Unit Tests
 
-- [ ] email message factory creates expected scenario keys
+- [x] all declared email scenario keys render in English and German without unresolved placeholders
 - [x] template renderer returns localized English and German output
 - [x] missing template or missing localization fails safely
 - [x] provider options validation catches missing production settings
 - [x] Brevo API sender posts the expected payload, API key header, and sandbox header
 - [x] Brevo API sender returns useful provider error summaries
 - [x] Brevo complaint events mark delivery failed and suppress the recipient
+
+### Automated Structural Coverage
+
+- [x] registration flow generates a URL-safe confirmation token and sends a confirmation email
+- [x] registration and resend confirmation use rate limits and neutral check-email redirects
+- [x] confirmed/unconfirmed login paths are wired to the account-state UX
+- [x] password reset request uses anti-enumeration response wording and sends only for confirmed users
+- [x] password reset validates URL-safe tokens, handles malformed token input, and fails token errors safely
+- [x] successful password reset updates the security stamp and sends a reset-success notification
+- [x] email change validates the current password, sends confirmation to the new address, and notifies the old address after success
 
 ### Integration Tests
 
