@@ -12,11 +12,11 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Public API health: `https://linguaapi.vafadar.pro/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
-- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260619-222010-web-readiness-account-legal-pwa-pre-user-testing`
+- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260620-011255-web-readiness-final-pre-user-testing`
 - Latest readiness commits: `a7fef927 Complete web readiness checkpoint`, `07833401 Document Brevo production handoff`
-- Latest tester bundle: `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke`
-- Latest public preflight: `artifacts/validation/web-tester-runs/20260618-190132-web-tester-expanded-learner-admin-smoke/preflight/web-tester-preflight-20260618-190135.json` with 25/25 checks passed.
-- Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260618-190142.md` with 0 validation errors on the empty bundle feedback template.
+- Latest tester bundle: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass`
+- Latest public preflight: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass/preflight/web-tester-preflight-20260620-011005.json` with 25/25 checks passed.
+- Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260620-011012.md` with 0 validation errors on the empty bundle feedback template.
 - Mobile/MAUI is explicitly out of scope for this test pass.
 
 ## Tester Profile

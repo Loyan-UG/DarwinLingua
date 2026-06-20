@@ -19,8 +19,9 @@ $verificationPath = Join-Path $backupPath "verification"
 $repoOverlayPath = Join-Path $backupPath "repo-overlay"
 $secretsPath = Join-Path $backupPath "secrets"
 $dockerPath = Join-Path $backupPath "docker"
+$artifactsPath = Join-Path $backupPath "artifacts"
 
-New-Item -ItemType Directory -Path $backupPath, $dbPath, $verificationPath, $secretsPath, $dockerPath -Force | Out-Null
+New-Item -ItemType Directory -Path $backupPath, $dbPath, $verificationPath, $secretsPath, $dockerPath, $artifactsPath -Force | Out-Null
 
 function Write-TextFile {
     param(
@@ -137,6 +138,28 @@ foreach ($relativePath in $secretCandidates) {
     if (Test-Path $sourcePath) {
         $targetPath = Join-Path $secretsPath $relativePath
         New-Item -ItemType Directory -Path (Split-Path -Parent $targetPath) -Force | Out-Null
+        Copy-Item -LiteralPath $sourcePath -Destination $targetPath -Force
+    }
+}
+
+$artifactCandidates = @(
+    "artifacts\validation",
+    "artifacts\installability-report.json",
+    "artifacts\installability-report-android.json"
+)
+
+foreach ($relativePath in $artifactCandidates) {
+    $sourcePath = Join-Path $repoRoot $relativePath
+    if (-not (Test-Path $sourcePath)) {
+        continue
+    }
+
+    $targetPath = Join-Path $backupPath $relativePath
+    New-Item -ItemType Directory -Path (Split-Path -Parent $targetPath) -Force | Out-Null
+    if (Test-Path $sourcePath -PathType Container) {
+        Copy-Item -LiteralPath $sourcePath -Destination $targetPath -Recurse -Force
+    }
+    else {
         Copy-Item -LiteralPath $sourcePath -Destination $targetPath -Force
     }
 }
