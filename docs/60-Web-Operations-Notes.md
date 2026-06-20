@@ -170,6 +170,9 @@ Latest verified phase checkpoint:
 - `X:\Projects\DarwinLingua.Backup\20260620-140609-web-readiness-current-pre-user-testing`
 - Scope: Current Web readiness checkpoint after account email-token hardening, Brevo HTML/handoff polish, and refreshed readiness evidence docs.
 - Verification: custom PostgreSQL dump and restore list exist, dry-run restore to a temporary PostgreSQL database reported `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, and `ActivityEnabled=560`; repo overlay, selected validation artifacts, separate local config/secret bundle, Docker metadata, manifest, restore dry-run evidence, and regenerated SHA256 checksums are present.
+- `X:\Projects\DarwinLingua.Backup\20260620-141903-web-readiness-current-legal-refresh-pre-user-testing`
+- Scope: Current Web readiness checkpoint after the follow-up legal-source refresh gate for Life in Germany/LiD catalog wording, DSA/TDDDG, and cannabis limits.
+- Verification: custom PostgreSQL dump and restore list exist, dry-run restore to a temporary PostgreSQL database reported `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, and `ActivityEnabled=560`; repo overlay, selected validation artifacts, separate local config/secret bundle, Docker metadata, manifest, restore dry-run evidence, and regenerated SHA256 checksums are present.
 - `X:\Projects\DarwinLingua.Backup\20260616-190633-course-a1-activity-flow-complete-pre-a2-activity-flow`
 - Scope: Course A1 activity-flow checkpoint before A2 backfill, with `CourseLessons=560`, `A1ActivityEnabled=60`, `TotalActivityEnabled=60`, `PublishedLessonsWithoutActivityBlocks=500`, and zero unresolved activity targets at backup time.
 - Verification: `pg_restore --list` exists, restore dry-run counts match live counts, repo overlay and separate local config/secret bundle are present, Docker metadata is captured, manifest restore notes are present, and SHA256 checksums were generated.

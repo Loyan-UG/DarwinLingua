@@ -12,7 +12,7 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Public API health: `https://linguaapi.vafadar.pro/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
-- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260620-140609-web-readiness-current-pre-user-testing`
+- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260620-141903-web-readiness-current-legal-refresh-pre-user-testing`
 - Latest readiness commits: `a7fef927 Complete web readiness checkpoint`, `07833401 Document Brevo production handoff`, plus follow-up hardening in `5c3aed83 Polish Brevo email handoff` and `c57f7169 Cover identity email token failures`.
 - Latest tester bundle: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass`
 - Latest public preflight: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass/preflight/web-tester-preflight-20260620-011005.json` with 25/25 checks passed.
