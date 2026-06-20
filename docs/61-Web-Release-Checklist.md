@@ -41,16 +41,16 @@ Last updated: 2026-06-20.
 - Brevo and Stripe provider-error paths were reviewed so provider response bodies are not logged or surfaced in diagnostics.
 - PWA shell readiness was hardened on 2026-06-18: manifest delivery, service-worker registration, first-party shell cache creation, and offline navigation fallback were verified in local desktop Chromium. With the Web host stopped, a controlled browser session loaded `/offline-smoke-check` from the cached `offline.html` shell. Targeted structural tests for the manifest, service worker, install prompt wiring, and offline shell passed.
 - PWA follow-up on 2026-06-19 regenerated `artifacts/installability-report.json` against `https://localhost:7501`: `17` automated checks passed, `0` failed, and `2` manual checks remain for real Desktop Chrome/Edge and Android Chrome prompt acceptance. The homepage 404 collection image and htmx inline-style CSP console error were fixed before the report was regenerated.
-- Web readiness checkpoint commits are selected: `a7fef927 Complete web readiness checkpoint` and `07833401 Document Brevo production handoff`.
+- Web readiness checkpoint commits are selected: `a7fef927 Complete web readiness checkpoint` and `07833401 Document Brevo production handoff`, with follow-up hardening in `2a59a0a6 Cover account email workflow structure`, `093d8001 Refresh Life in Germany legal research gate`, `bf3035f7 Add Life in Germany legal content gate`, `5c3aed83 Polish Brevo email handoff`, and `c57f7169 Cover identity email token failures`.
 - Production sign-off still requires the unchecked release gates below, especially manual target-browser install validation, production configuration, Brevo DNS/domain verification, legal/operator review, and Stripe test-mode/staging validation where billing is enabled.
-- Brevo production readiness now has a repeatable operator gate: `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1` writes JSON/Markdown evidence under `artifacts/validation/brevo-readiness/` and fails while API key, webhook secret, sender verification, DNS authentication, webhook configuration, DPA confirmation, or real-delivery settings are incomplete.
+- Brevo production readiness now has a repeatable operator gate: `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1` writes JSON/Markdown evidence under `artifacts/validation/brevo-readiness/` and fails while API key, webhook secret, sender verification, DNS authentication, webhook configuration, DPA confirmation, or real-delivery settings are incomplete. The production handoff also has a Persian operator guide in `docs/89-Brevo-Operator-Handoff.fa.md`, and transactional email templates now render action links as email-safe CTA buttons.
 
 ---
 
 ## A. Build And Test
 
 - [x] release commit selected
-  - Evidence: Web readiness is captured in `a7fef927 Complete web readiness checkpoint`; Brevo operator handoff follow-up is captured in `07833401 Document Brevo production handoff`.
+  - Evidence: Web readiness is captured in `a7fef927 Complete web readiness checkpoint`; Brevo operator handoff follow-up is captured in `07833401 Document Brevo production handoff`; follow-up hardening is captured in `2a59a0a6 Cover account email workflow structure`, `093d8001 Refresh Life in Germany legal research gate`, `bf3035f7 Add Life in Germany legal content gate`, `5c3aed83 Polish Brevo email handoff`, and `c57f7169 Cover identity email token failures`.
 - [x] solution build succeeded
   - Evidence: 2026-06-18 active Web-scope source build passed for all 22 non-MAUI source projects, including `DarwinLingua.Web`, `DarwinLingua.WebApi`, `DarwinLingua.ImportTool`, shared building blocks, and Catalog/ContentOps/Learning/Localization/Practice modules. Mobile/MAUI remains intentionally deferred and is not part of the active Web release gate.
 - [x] automated tests succeeded

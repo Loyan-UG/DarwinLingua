@@ -13,7 +13,7 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
 - Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260620-011255-web-readiness-final-pre-user-testing`
-- Latest readiness commits: `a7fef927 Complete web readiness checkpoint`, `07833401 Document Brevo production handoff`
+- Latest readiness commits: `a7fef927 Complete web readiness checkpoint`, `07833401 Document Brevo production handoff`, plus follow-up hardening in `5c3aed83 Polish Brevo email handoff` and `c57f7169 Cover identity email token failures`.
 - Latest tester bundle: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass`
 - Latest public preflight: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass/preflight/web-tester-preflight-20260620-011005.json` with 25/25 checks passed.
 - Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260620-011012.md` with 0 validation errors on the empty bundle feedback template.
@@ -36,7 +36,7 @@ Do not use this pass as a marketing launch. The tester group should know that th
 Before inviting testers:
 
 - Decide the account/email mode for this tester pass:
-  - If testers will self-register, complete the Brevo setup in `docs/73-Transactional-Email-And-Account-Communication-Backlog.md` first, including verified sender domain, API key, webhook secret, and DNS authentication.
+  - If testers will self-register, complete the Brevo setup in `docs/73-Transactional-Email-And-Account-Communication-Backlog.md` and the Persian operator handoff `docs/89-Brevo-Operator-Handoff.fa.md` first, including verified sender domain, API key, webhook secret, DNS authentication, DPA confirmation, webhook setup, and real delivery checks.
   - If Brevo is not ready yet, use pre-created tester accounts and do not ask testers to validate registration, email confirmation, password reset, or email-change flows as production behavior.
   - In either mode, record the choice in the generated tester bundle README or pass notes.
 - For the recommended first wave while Brevo is still pending, prepare tester accounts first, then grant Premium in batch:
