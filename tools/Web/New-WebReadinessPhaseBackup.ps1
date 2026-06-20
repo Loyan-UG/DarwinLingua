@@ -195,7 +195,7 @@ $manifest = @"
 ## Restore Outline
 
 1. Start from a clean checkout at the recorded Git commit when possible.
-2. Copy `repo-overlay/` over the checkout if local uncommitted files are needed.
+2. Copy ``repo-overlay/`` over the checkout if local uncommitted files are needed.
 3. Restore secrets from `secrets/` to their original local paths.
 4. Restore PostgreSQL from `db/*.dump` with `pg_restore --clean --if-exists --create`.
 5. Verify counts and run Web/WebApi smoke before exposing the environment.
@@ -204,7 +204,7 @@ $manifest = @"
 
 - `checksums.sha256` was generated after backup collection.
 - `db/*.restore-list.txt` exists when database dump was enabled.
-- `verification/git-status.txt` records dirty/untracked state at backup time.
+- ``verification/git-status.txt`` records dirty/untracked state at backup time.
 "@
 
 Write-TextFile -Path (Join-Path $backupPath "manifest.md") -Content $manifest
