@@ -19,6 +19,10 @@ public sealed class WebAccountDataSelfServiceStructuralTests
         Assert.Contains("ValidateAntiForgeryToken", controller, StringComparison.Ordinal);
         Assert.Contains("JsonSerializer.SerializeToUtf8Bytes", controller, StringComparison.Ordinal);
         Assert.Contains("signInManager.SignOutAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("IAccountEmailService accountEmailService", controller, StringComparison.Ordinal);
+        Assert.Contains("SendAccountDeletedAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("TrySendAccountDeletedNotificationAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("LogWarning", controller, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -62,6 +66,32 @@ public sealed class WebAccountDataSelfServiceStructuralTests
             "src/Apps/DarwinLingua.Web/Program.cs"));
 
         Assert.Contains("AddScoped<IAccountDataSelfService, AccountDataSelfService>", program, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void AccountDeletionEmailScenario_ShouldBeRegisteredAndDocumented()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string models = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Services/TransactionalEmailModels.cs"));
+        string templates = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Services/TransactionalEmailTemplates.cs"));
+        string accountEmailService = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Services/AccountEmailService.cs"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+
+        Assert.Contains("AccountDeleted = \"Account.Deleted\"", models, StringComparison.Ordinal);
+        Assert.Contains("TransactionalEmailScenarios.AccountDeleted", templates, StringComparison.Ordinal);
+        Assert.Contains("Your Darwin Lingua account was deleted", templates, StringComparison.Ordinal);
+        Assert.Contains("Dein Darwin Lingua Konto wurde geloscht", templates, StringComparison.Ordinal);
+        Assert.Contains("SendAccountDeletedAsync", accountEmailService, StringComparison.Ordinal);
+        Assert.Contains("[x] account deleted/deactivated confirmation", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("[x] `Account.Deleted`", emailBacklog, StringComparison.Ordinal);
     }
 
     private static string FindRepositoryRoot()

@@ -241,7 +241,7 @@ Email flows must feel reliable, clear, and safe. A learner should never be stuck
 - [x] email address change confirmation for the new address
 - [x] email address changed notification to the old address
 - [x] account locked or suspicious login notification if lockout is enabled
-- [ ] account deleted/deactivated confirmation if account deletion exists
+- [x] account deleted/deactivated confirmation if account deletion exists
 
 ### Security and Trust Emails
 
@@ -432,6 +432,7 @@ Later, email body content may support the user's selected UI language and possib
 - [x] `Account.PasswordResetCompleted`
 - [x] `Account.EmailChangeConfirmation`
 - [x] `Account.EmailChangedNotification`
+- [x] `Account.Deleted`
 - [x] `Organizer.ClaimSubmitted`
 - [x] `Organizer.ClaimApproved`
 - [x] `Organizer.ClaimRejected`

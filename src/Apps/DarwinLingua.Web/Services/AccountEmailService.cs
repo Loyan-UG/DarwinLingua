@@ -38,6 +38,12 @@ public interface IAccountEmailService
         string? correlationId,
         CancellationToken cancellationToken);
 
+    Task SendAccountDeletedAsync(
+        DarwinLinguaIdentityUser user,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken);
+
     Task SendEmailChangeConfirmationAsync(
         DarwinLinguaIdentityUser user,
         string newEmail,
@@ -132,6 +138,20 @@ public sealed class AccountEmailService(
     {
         RenderedEmailTemplate template = templateRenderer.Render(
             TransactionalEmailScenarios.AccountLocked,
+            culture,
+            new Dictionary<string, string>(StringComparer.Ordinal));
+
+        return SendRenderedAsync(user, template, correlationId, cancellationToken);
+    }
+
+    public Task SendAccountDeletedAsync(
+        DarwinLinguaIdentityUser user,
+        string? culture,
+        string? correlationId,
+        CancellationToken cancellationToken)
+    {
+        RenderedEmailTemplate template = templateRenderer.Render(
+            TransactionalEmailScenarios.AccountDeleted,
             culture,
             new Dictionary<string, string>(StringComparer.Ordinal));
 

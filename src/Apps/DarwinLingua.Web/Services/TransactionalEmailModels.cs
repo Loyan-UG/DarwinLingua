@@ -7,6 +7,7 @@ public static class TransactionalEmailScenarios
     public const string AccountPasswordResetCompleted = "Account.PasswordResetCompleted";
     public const string AccountPasswordChanged = "Account.PasswordChanged";
     public const string AccountLocked = "Account.Locked";
+    public const string AccountDeleted = "Account.Deleted";
     public const string AccountEmailChangeConfirmation = "Account.EmailChangeConfirmation";
     public const string AccountEmailChangedNotification = "Account.EmailChangedNotification";
     public const string OrganizerClaimSubmitted = "Organizer.ClaimSubmitted";

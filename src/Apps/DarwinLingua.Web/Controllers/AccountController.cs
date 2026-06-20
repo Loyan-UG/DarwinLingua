@@ -16,7 +16,9 @@ public sealed class AccountController(
     IUserEntitlementService userEntitlementService,
     UserManager<DarwinLinguaIdentityUser> userManager,
     SignInManager<DarwinLinguaIdentityUser> signInManager,
-    IAccountDataSelfService accountDataSelfService) : Controller
+    IAccountDataSelfService accountDataSelfService,
+    IAccountEmailService accountEmailService,
+    ILogger<AccountController> logger) : Controller
 {
     private static readonly JsonSerializerOptions ExportJsonOptions = new(JsonSerializerDefaults.Web)
     {
@@ -80,6 +82,7 @@ public sealed class AccountController(
             return RedirectToAction(nameof(Index));
         }
 
+        await TrySendAccountDeletedNotificationAsync(user, cancellationToken).ConfigureAwait(false);
         await signInManager.SignOutAsync().ConfigureAwait(false);
         TempData["StatusMessage"] =
             $"Your account was deleted. Removed rows: {result.Counts.RemovedRows}; anonymized rows: {result.Counts.AnonymizedRows}; detached audit rows: {result.Counts.DetachedAuditRows}.";
@@ -91,4 +94,28 @@ public sealed class AccountController(
         DarwinLinguaIdentityUser? user = await userManager.GetUserAsync(User).ConfigureAwait(false);
         return user ?? throw new InvalidOperationException("The authenticated user could not be loaded.");
     }
+
+    private async Task TrySendAccountDeletedNotificationAsync(
+        DarwinLinguaIdentityUser user,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            await accountEmailService
+                .SendAccountDeletedAsync(user, GetCurrentCultureName(), HttpContext.TraceIdentifier, cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception ex) when (!cancellationToken.IsCancellationRequested)
+        {
+            logger.LogWarning(
+                ex,
+                "Account deletion notification could not be sent for deleted user {UserId}.",
+                user.Id);
+        }
+    }
+
+    private string? GetCurrentCultureName() =>
+        Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>()
+            ?.RequestCulture.UICulture.Name
+        ?? Thread.CurrentThread.CurrentUICulture.Name;
 }

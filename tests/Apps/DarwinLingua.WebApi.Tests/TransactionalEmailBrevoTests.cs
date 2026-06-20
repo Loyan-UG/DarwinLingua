@@ -248,6 +248,14 @@ public sealed class TransactionalEmailBrevoTests
             TransactionalEmailScenarios.AccountEmailConfirmation,
             "fa",
             values);
+        RenderedEmailTemplate accountDeletedEnglish = renderer.Render(
+            TransactionalEmailScenarios.AccountDeleted,
+            "en-US",
+            new Dictionary<string, string>(StringComparer.Ordinal));
+        RenderedEmailTemplate accountDeletedGerman = renderer.Render(
+            TransactionalEmailScenarios.AccountDeleted,
+            "de-DE",
+            new Dictionary<string, string>(StringComparer.Ordinal));
 
         Assert.Equal("en", english.Culture);
         Assert.Contains("Confirm your Darwin Lingua email", english.Subject, StringComparison.Ordinal);
@@ -267,6 +275,15 @@ public sealed class TransactionalEmailBrevoTests
 
         Assert.Equal("en", fallback.Culture);
         Assert.Equal(english.Subject, fallback.Subject);
+
+        Assert.Equal("en", accountDeletedEnglish.Culture);
+        Assert.Contains("account was deleted", accountDeletedEnglish.Subject, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("self-service request", accountDeletedEnglish.PlainTextBody, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("operational records", accountDeletedEnglish.HtmlBody, StringComparison.OrdinalIgnoreCase);
+
+        Assert.Equal("de", accountDeletedGerman.Culture);
+        Assert.Contains("Konto wurde geloscht", accountDeletedGerman.Subject, StringComparison.Ordinal);
+        Assert.Contains("Self-Service-Anfrage", accountDeletedGerman.PlainTextBody, StringComparison.Ordinal);
     }
 
     [Fact]

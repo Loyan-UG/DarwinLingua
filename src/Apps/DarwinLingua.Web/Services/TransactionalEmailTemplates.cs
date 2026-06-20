@@ -72,6 +72,17 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                     "Dein {ProductName} Konto wurde nach mehreren fehlgeschlagenen Anmeldeversuchen vorubergehend gesperrt. Wenn du das nicht warst, setze dein Passwort zuruck oder kontaktiere {SupportEmail}.",
                     "<p>Dein <strong>{ProductName}</strong> Konto wurde nach mehreren fehlgeschlagenen Anmeldeversuchen vorubergehend gesperrt.</p><p>Wenn du das nicht warst, setze dein Passwort zuruck oder kontaktiere {SupportEmail}.</p>"),
             },
+            [TransactionalEmailScenarios.AccountDeleted] = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = new(
+                    "Your Darwin Lingua account was deleted",
+                    "Your {ProductName} account was deleted by self-service request. Some operational records may be retained where legal, accounting, security, or fraud-prevention obligations require it.\n\nIf this was not you, contact {SupportEmail} immediately.",
+                    "<p>Your <strong>{ProductName}</strong> account was deleted by self-service request.</p><p>Some operational records may be retained where legal, accounting, security, or fraud-prevention obligations require it.</p><p>If this was not you, contact {SupportEmail} immediately.</p>"),
+                ["de"] = new(
+                    "Dein Darwin Lingua Konto wurde geloscht",
+                    "Dein {ProductName} Konto wurde auf deine Self-Service-Anfrage hin geloscht. Einige betriebliche Nachweise konnen aufbewahrt werden, wenn rechtliche, buchhalterische, Sicherheits- oder Betrugspraventionspflichten dies erfordern.\n\nWenn du das nicht warst, kontaktiere sofort {SupportEmail}.",
+                    "<p>Dein <strong>{ProductName}</strong> Konto wurde auf deine Self-Service-Anfrage hin geloscht.</p><p>Einige betriebliche Nachweise konnen aufbewahrt werden, wenn rechtliche, buchhalterische, Sicherheits- oder Betrugspraventionspflichten dies erfordern.</p><p>Wenn du das nicht warst, kontaktiere sofort {SupportEmail}.</p>"),
+            },
             [TransactionalEmailScenarios.AccountEmailChangeConfirmation] = new(StringComparer.OrdinalIgnoreCase)
             {
                 ["en"] = new(
