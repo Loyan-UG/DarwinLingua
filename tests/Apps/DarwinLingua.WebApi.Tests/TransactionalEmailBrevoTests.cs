@@ -269,6 +269,35 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Equal(english.Subject, fallback.Subject);
     }
 
+    [Fact]
+    public void BrevoProductionReadinessTool_ShouldCoverConfigurationAndOperatorGates()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-BrevoProductionReadinessCheck.ps1"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+        string releaseChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/61-Web-Release-Checklist.md"));
+
+        Assert.Contains("BrevoApi", script, StringComparison.Ordinal);
+        Assert.Contains("BrevoApiKey", script, StringComparison.Ordinal);
+        Assert.Contains("BrevoWebhookSecret", script, StringComparison.Ordinal);
+        Assert.Contains("Secret value was not printed", script, StringComparison.Ordinal);
+        Assert.Contains("SenderVerified", script, StringComparison.Ordinal);
+        Assert.Contains("DnsAuthenticated", script, StringComparison.Ordinal);
+        Assert.Contains("WebhookConfigured", script, StringComparison.Ordinal);
+        Assert.Contains("DpaAccepted", script, StringComparison.Ordinal);
+        Assert.Contains("RequireRealDelivery", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-readiness", script, StringComparison.Ordinal);
+
+        Assert.Contains("Invoke-BrevoProductionReadinessCheck.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoProductionReadinessCheck.ps1", releaseChecklist, StringComparison.Ordinal);
+    }
+
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()
     {
         Mode = "BrevoApi",
@@ -292,6 +321,17 @@ public sealed class TransactionalEmailBrevoTests
         "Plain body",
         "<p>HTML body</p>",
         "trace-123");
+
+    private static string FindRepositoryRoot()
+    {
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
+        while (directory is not null && !File.Exists(Path.Combine(directory.FullName, "DarwinLingua.slnx")))
+        {
+            directory = directory.Parent;
+        }
+
+        return directory?.FullName ?? throw new InvalidOperationException("Repository root was not found.");
+    }
 
     private sealed class StaticHttpClientFactory(HttpClient httpClient) : IHttpClientFactory
     {

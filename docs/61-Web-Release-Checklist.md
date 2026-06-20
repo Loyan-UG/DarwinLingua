@@ -43,6 +43,7 @@ Last updated: 2026-06-20.
 - PWA follow-up on 2026-06-19 regenerated `artifacts/installability-report.json` against `https://localhost:7501`: `17` automated checks passed, `0` failed, and `2` manual checks remain for real Desktop Chrome/Edge and Android Chrome prompt acceptance. The homepage 404 collection image and htmx inline-style CSP console error were fixed before the report was regenerated.
 - Web readiness checkpoint commits are selected: `a7fef927 Complete web readiness checkpoint` and `07833401 Document Brevo production handoff`.
 - Production sign-off still requires the unchecked release gates below, especially manual target-browser install validation, production configuration, Brevo DNS/domain verification, legal/operator review, and Stripe test-mode/staging validation where billing is enabled.
+- Brevo production readiness now has a repeatable operator gate: `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1` writes JSON/Markdown evidence under `artifacts/validation/brevo-readiness/` and fails while API key, webhook secret, sender verification, DNS authentication, webhook configuration, DPA confirmation, or real-delivery settings are incomplete.
 
 ---
 

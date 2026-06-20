@@ -155,6 +155,21 @@ During the current development phase, `lingua.vafadar.pro` is the temporary publ
 
 ### Verification checklist
 
+- Run the repeatable local readiness check after configuring secrets and after every domain/sender change:
+
+```powershell
+.\tools\Web\Invoke-BrevoProductionReadinessCheck.ps1 `
+  -ConfigPath .\src\Apps\DarwinLingua.Web\appsettings.Development.Local.json `
+  -SendingDomain "<verified-domain>" `
+  -SenderVerified `
+  -DnsAuthenticated `
+  -WebhookConfigured `
+  -DpaAccepted `
+  -RequireRealDelivery
+```
+
+- The readiness tool writes JSON and Markdown reports under `artifacts/validation/brevo-readiness/`. It does not print API keys or webhook secrets; it only reports whether they appear configured.
+- Treat every `blocker` in that report as a hard stop before asking testers to self-register or before enabling real transactional delivery.
 - Send one email-confirmation message to a real inbox.
 - Send one password-reset message to a real inbox.
 - Confirm that both HTML and plain-text alternatives render correctly.
