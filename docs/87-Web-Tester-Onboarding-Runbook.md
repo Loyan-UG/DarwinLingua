@@ -39,6 +39,15 @@ Before inviting testers:
   - If testers will self-register, complete the Brevo setup in `docs/73-Transactional-Email-And-Account-Communication-Backlog.md` first, including verified sender domain, API key, webhook secret, and DNS authentication.
   - If Brevo is not ready yet, use pre-created tester accounts and do not ask testers to validate registration, email confirmation, password reset, or email-change flows as production behavior.
   - In either mode, record the choice in the generated tester bundle README or pass notes.
+- For the recommended first wave while Brevo is still pending, prepare tester accounts first, then grant Premium in batch:
+
+```powershell
+Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-tester-runs\<run-id>\WebTesterAccounts.csv
+# Edit WebTesterAccounts.csv so the Email column contains real existing tester account emails.
+.\tools\Web\Set-WebTesterPremiumAccess.ps1 -TesterCsvPath .\artifacts\validation\web-tester-runs\<run-id>\WebTesterAccounts.csv -UpdatedBy "first-web-tester-wave"
+```
+
+- The batch tool confirms the existing account email and grants Premium with an entitlement audit record. It does not create passwords or send email; keep account-password delivery out of public channels.
 - Confirm the public test host is `https://lingua.vafadar.pro`; do not use `www.lingua.vafadar.pro` unless that host is intentionally configured.
 - Confirm the Legal Notice/Impressum and Privacy Policy still carry the correct development-stage wording and that production operator data is not claimed before legal review.
 - Confirm the two PWA manual install checks from `docs/56-Web-Pwa-Install-Validation-Worksheet.md` are either completed or explicitly left out of this tester pass.
