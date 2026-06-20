@@ -14,6 +14,9 @@ public sealed class WebTesterOperatorToolingTests
         string script = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/Set-WebTesterPremiumAccess.ps1"));
+        string bundleScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebTesterValidationBundle.ps1"));
         string csvTemplate = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/WebTesterAccounts.example.csv"));
@@ -24,6 +27,9 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("UserEntitlementAuditEvents", script, StringComparison.Ordinal);
         Assert.Contains("tier-changed", script, StringComparison.Ordinal);
         Assert.Contains("Skipped unchanged users", script, StringComparison.Ordinal);
+        Assert.Contains("WebTesterAccounts.csv", bundleScript, StringComparison.Ordinal);
+        Assert.Contains("Set-WebTesterPremiumAccess.ps1", bundleScript, StringComparison.Ordinal);
+        Assert.Contains("operator-only account list", bundleScript, StringComparison.Ordinal);
     }
 
     private static string FindRepositoryRoot()
