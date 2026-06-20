@@ -294,7 +294,7 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
             ApplyValues(template.PlainTextBody, mergedValues, encodeHtml: false),
             BuildHtmlDocument(
                 ApplyValues(template.Subject, mergedValues, encodeHtml: false),
-                ApplyValues(template.HtmlBody, mergedValues, encodeHtml: true),
+                StyleActionLinks(ApplyValues(template.HtmlBody, mergedValues, encodeHtml: true)),
                 options.Value));
     }
 
@@ -374,7 +374,7 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
                         <tr>
                           <td class="email-card" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 14px 40px rgba(17,24,39,.08);">
                             <h1 class="email-title" style="margin:0 0 20px 0;color:#111827;font-size:24px;line-height:32px;font-weight:800;">{{safeSubject}}</h1>
-                            <div class="email-content" style="color:#1f2937;font-size:16px;line-height:26px;">
+                            <div class="email-content" style="color:#1f2937;font-size:16px;line-height:26px;overflow-wrap:anywhere;word-break:break-word;">
                               {{htmlBody}}
                             </div>
                           </td>
@@ -392,6 +392,14 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
             </body>
             </html>
             """;
+    }
+
+    private static string StyleActionLinks(string htmlBody)
+    {
+        const string anchorPrefix = "<a href=\"";
+        const string styledAnchorPrefix = "<a style=\"display:inline-block;margin:8px 0 4px 0;padding:12px 18px;border-radius:999px;background:#2563eb;color:#ffffff;text-decoration:none;font-weight:700;line-height:20px;box-shadow:0 8px 18px rgba(37,99,235,.24);\" href=\"";
+
+        return htmlBody.Replace(anchorPrefix, styledAnchorPrefix, StringComparison.OrdinalIgnoreCase);
     }
 
     private sealed record EmailTemplateDefinition(string Subject, string PlainTextBody, string HtmlBody);

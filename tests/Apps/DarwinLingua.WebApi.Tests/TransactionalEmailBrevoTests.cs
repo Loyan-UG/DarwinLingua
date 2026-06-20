@@ -265,6 +265,9 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("<!doctype html>", english.HtmlBody, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("email-card", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("box-shadow", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("overflow-wrap:anywhere", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("border-radius:999px", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("background:#2563eb", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("prefers-color-scheme: dark", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("transactional service email", english.HtmlBody, StringComparison.Ordinal);
 

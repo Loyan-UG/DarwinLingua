@@ -58,7 +58,7 @@ The public product must not be released without at least:
 The web app now has a production-provider path for transactional email:
 
 - `TransactionalEmail:Mode=BrevoApi` sends through Brevo's transactional API.
-- Transactional email templates now render a designed HTML document with a branded card layout, inline email-safe styling, a plain-text alternative, and dark-mode readability hints.
+- Transactional email templates now render a designed HTML document with a branded card layout, inline email-safe styling, CTA-style action links, a plain-text alternative, and dark-mode readability hints.
 - Brevo sandbox mode sends the `X-Sib-Sandbox: drop` request header and payload header so staging tests can avoid real delivery.
 - Delivery logs store provider message ids and webhook events for diagnostics.
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
@@ -67,6 +67,8 @@ The web app now has a production-provider path for transactional email:
 Operational work still required before production launch: configure a real Brevo API key and webhook secret outside source control, verify the sender domain, set SPF/DKIM/DMARC, configure the Brevo transactional webhook URL, and review the provider DPA.
 
 ## Brevo Production Setup Runbook
+
+Persian operator handoff for the Brevo-side tasks is available in `docs/89-Brevo-Operator-Handoff.fa.md`. Use that document when the operator needs step-by-step dashboard, DNS, webhook, and readiness instructions.
 
 The application is ready to use Brevo, but the operator must complete the provider-side setup before real production sending.
 
