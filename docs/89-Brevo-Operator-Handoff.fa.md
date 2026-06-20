@@ -121,6 +121,32 @@ unsubscribed
 
 در توسعه می‌توان `BrevoSandboxMode=true` گذاشت تا Brevo درخواست را اعتبارسنجی کند ولی ایمیل واقعی نفرستد. برای تست واقعی inbox باید مقدار آن `false` باشد.
 
+برای وارد کردن secretها در همین محیط توسعه، از helper زیر استفاده کنید تا کلیدها داخل ASP.NET Core user-secrets ذخیره شوند و وارد Git نشوند:
+
+```powershell
+.\scripts\Set-Web-LocalSecrets.ps1 `
+  -ConfigureBrevo `
+  -PublicBaseUrl "https://lingua.vafadar.pro" `
+  -BrevoSandboxMode $false `
+  -BrevoAllowQuerySecretFallback $false
+```
+
+این command به صورت امن API key و webhook secret را prompt می‌کند. اگر می‌خواهید non-interactive اجرا شود، فقط در همان session مقدارهای زیر را به عنوان environment variable بگذارید و بعد command را با `-UseEnvironment` اجرا کنید:
+
+```powershell
+$env:DARWINLINGUA_BREVO_API_KEY = "<secret-from-brevo>"
+$env:DARWINLINGUA_BREVO_WEBHOOK_SECRET = "<strong-random-secret>"
+
+.\scripts\Set-Web-LocalSecrets.ps1 `
+  -ConfigureBrevo `
+  -UseEnvironment `
+  -PublicBaseUrl "https://lingua.vafadar.pro" `
+  -BrevoSandboxMode $false `
+  -BrevoAllowQuerySecretFallback $false
+```
+
+بعد از تغییر secretها باید `DarwinLingua.Web` restart شود، چون تنظیمات ایمیل هنگام startup خوانده می‌شوند.
+
 ## چیزهایی که باید به توسعه‌دهنده/اپراتور سیستم داده شود
 
 - نام حساب یا سازمان در Brevo.
@@ -131,6 +157,7 @@ unsubscribed
 - webhook secret، فقط از مسیر امن تنظیمات محرمانه.
 - تأیید اینکه DPA/data-processing terms بررسی و پذیرفته شده‌اند.
 - تصمیم نهایی برای اینکه self-registration در تست کاربر فعال باشد یا فعلاً حساب‌ها از قبل ساخته شوند.
+- خروجی readiness check بعد از وارد کردن secretها، مخصوصاً تعداد blockerها و فایل report ساخته‌شده.
 
 ## تست بعد از تنظیم Brevo
 
@@ -146,6 +173,8 @@ unsubscribed
   -DpaAccepted `
   -RequireRealDelivery
 ```
+
+اگر هنوز نمی‌خواهید DNS lookup انجام شود و فقط وضعیت verified داخل Brevo را ملاک می‌گیرید، موقتاً `-SkipDnsLookup` هم اضافه کنید. برای تصمیم نهایی production بهتر است DNS واقعی هم بررسی شود.
 
 بعد از pass شدن readiness check:
 
