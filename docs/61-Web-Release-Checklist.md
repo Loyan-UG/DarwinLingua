@@ -174,7 +174,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] cookie/storage consent withdrawal is as easy as opt-in if a future consent manager is required
 - [ ] data-subject request owner and process are documented
 - [x] account deletion/export/rectification plan is documented
-  - Evidence: `/account` exposes self-service account data export, rectification links, and account deletion with password/`DELETE` confirmation where applicable. `docs/86-Web-Legal-Compliance-Baseline.md` records the implementation, retention boundaries, and remaining operator escalation duties.
+  - Evidence: `/account` exposes self-service account data export, rectification links, and account deletion with password/`DELETE` confirmation where applicable. `docs/86-Web-Legal-Compliance-Baseline.md` records the implementation, retention boundaries, and remaining operator escalation duties. 2026-06-20 `WebAccountDataSelfServiceStructuralTests` passed 5/5 and verifies export/deletion routes, anti-forgery, password/confirmation controls, retained operational-audit boundaries, account-deleted email notification wiring, and service registration.
 - [ ] breach triage owner, illegal-content report owner, and community moderation escalation process are assigned before broad public community release
 - [x] policy acceptance records are available for required registration acknowledgements
   - Evidence: 2026-06-18 `WebIdentityBootstrapper_ShouldCreatePolicyAcceptanceTable` verifies `WebPolicyAcceptances` and its unique user/policy/version index; `PolicyAcceptanceService_RecordsVersionedRegistrationAcceptances` verifies records are persisted.
