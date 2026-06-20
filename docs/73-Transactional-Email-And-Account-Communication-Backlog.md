@@ -455,7 +455,7 @@ Later, email body content may support the user's selected UI language and possib
 - [x] show success page after valid confirmation
 - [x] show expired/invalid token page with resend option
 - [x] block or limit protected features for unconfirmed users according to product policy
-- [ ] add tests for confirmed and unconfirmed login behavior
+- [x] add tests for confirmed and unconfirmed login behavior
 
 ### Password Reset
 
@@ -466,7 +466,7 @@ Later, email body content may support the user's selected UI language and possib
 - [x] validate reset token and update password
 - [x] send password reset success notification
 - [x] show success page after reset
-- [ ] add tests for non-existing email, invalid token, expired token, and successful reset
+- [x] add tests for non-existing email, invalid token, expired token, and successful reset
 
 ### Email Change
 
@@ -474,7 +474,7 @@ Later, email body content may support the user's selected UI language and possib
 - [x] send confirmation to new email address
 - [x] notify old email address after successful change
 - [x] require re-authentication for email change if necessary
-- [ ] add tests for change-email token validation and old-email notification
+- [x] add tests for change-email token validation and old-email notification
 
 ---
 
@@ -565,6 +565,8 @@ For the first release, use web-hosted confirmation and password-reset pages from
 - [x] Brevo complaint events mark delivery failed and suppress the recipient
 
 ### Automated Structural Coverage
+
+Current automated coverage is intentionally split between Web account-flow structural tests and Identity token-provider tests. Full inbox/browser integration and provider delivery validation remain under Integration Tests and Manual Validation.
 
 - [x] registration flow generates a URL-safe confirmation token and sends a confirmation email
 - [x] registration and resend confirmation use rate limits and neutral check-email redirects
