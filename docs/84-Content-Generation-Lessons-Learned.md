@@ -361,6 +361,13 @@ When a content-quality problem is found, add a short note here with:
 - Why it matters: Many learners memorize the fixed German test questions but do not understand the underlying concepts. The product should teach the concepts clearly and safely, not just reproduce a question bank.
 - Prevention rule: Treat official LiD/Einbuergerungstest material as source orientation, not as bulk copied app content. Write original explanatory notes, keep legal topics as general education rather than individual legal advice, and use target-language helper translations to make the German civic/social concept understandable without stereotyping.
 
+### 2026-06-20: Legal-adjacent Life in Germany content needs source refresh before generation
+
+- What could fail: Laws, fines, residence/citizenship rules, cannabis rules, and civil-status rules can change after content has been generated, while learners may treat Life in Germany explanations as practical guidance.
+- Where it applies: Life in Germany B2+ content and any future note that mentions rights, duties, crimes, fines, traffic, cannabis, residence, citizenship, school obligations, discrimination, violence protection, or public-office procedure.
+- Why it matters: The feature is educational, not legal advice, but inaccurate legal-adjacent explanations can still mislead learners in everyday decisions. A source refresh also prevents old Orientierungskurs assumptions from missing newer topics such as the 2024 nationality-law reform, Chancenkarte, Cannabisgesetz, and Selbstbestimmungsgesetz.
+- Prevention rule: Before generating legal/civic content batches, refresh the official-source checklist in `artifacts/planning/life-in-germany-content-plan.md`. Use exact fine amounts only with a cited review date; otherwise use cautious wording such as "can lead to a fine or criminal investigation." Teach the safe everyday action and where to get help, not tactics for avoiding enforcement.
+
 ### 2026-06-13: Life in Germany B1+ notes need real explanatory depth
 
 - What failed: The first B1 Life in Germany drafts were structurally correct, but the main explanations were too short for learners who need to understand civic and legal concepts behind Orientierungskurs/Leben-in-Deutschland topics.
