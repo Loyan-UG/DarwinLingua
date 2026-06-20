@@ -161,6 +161,8 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] Terms of Use page is reviewed and linked from registration
 - [x] current legal research pass covers DDG, TDDDG, GDPR/BDSG risk areas, UWG email-marketing boundaries, DSA/community-report boundaries, BGB subscription-cancellation risk, and StGB/KJM content and security-abuse risk
   - Evidence: `docs/86-Web-Legal-Compliance-Baseline.md` has a 2026-06-20 legal research snapshot with official-source references and crime/fine review notes. This is engineering research, not final legal counsel sign-off.
+- [x] Life in Germany legal/civic source-refresh gate is documented before further legal-adjacent content expansion
+  - Evidence: `artifacts/planning/life-in-germany-content-plan.md` records the 2026-06-20 official-source refresh for BAMF Orientierungskurs/LiD/Einbuergerungstest framing, Grundgesetz basics, 2024 nationality-law reform, Chancenkarte, Cannabisgesetz, SBGG, everyday crime/fine boundaries, and help/escalation routes. `docs/86-Web-Legal-Compliance-Baseline.md` now treats that gate as required for future Life in Germany legal/civic batches.
 - [x] Cookie / Storage Notice page renders and matches the latest cookie/storage inventory
   - Evidence: 2026-06-18 `WebLegalComplianceBaselineTests` verifies the Cookie/Storage Notice route, page copy, and `artifacts/validation/web-cookie-storage-inventory.md`; public smoke returned HTTP 200 for `/cookies`.
 - [x] Contact page provides support and privacy-request routing

@@ -62,6 +62,29 @@ This snapshot is an engineering review of current official sources. It is not fi
 - BGB section 312k becomes relevant when public paid consumer subscriptions are enabled online. Because public billing is disabled during Web testing and premium is manual, this is deferred but must be re-opened before self-service paid subscriptions are exposed.
 - StGB sections 86a, 130, 184, 184b, 184c, 201a, 202a-202d, 263a, and 303a and KJM youth-media guidance are current crime-risk reference points for illegal symbols/propaganda, hate-inciting content, pornographic or minor-related sexual content, intimate-image abuse, data-security crimes, computer fraud, and data alteration. Darwin Lingua must keep explicit adult/pornographic, exploitative, minor-related, extremist propaganda, hate-inciting, illegal hacking/security-abuse, fraud-facilitating, and harm-facilitating content blocked. The current "Sensitive Educational Language" feature is not age verification and must not be used as a bypass for verified-adult content.
 
+## Life In Germany Legal-Adjacent Content Gate
+
+`Life in Germany` is educational civic and everyday-orientation content. It may explain legal systems, rights, duties, crimes, fines, public offices, residence/citizenship basics, and everyday administrative expectations, but it must not present itself as official government information or individual legal, immigration, medical, financial, or tax advice.
+
+The current source-refresh gate is recorded in `artifacts/planning/life-in-germany-content-plan.md` under `2026 Legal and Civic Research Refresh`. Before any new B2+ legal/civic batch is generated or imported, verify that the gate still reflects current official sources for:
+
+- BAMF integration course, Orientierungskurs, DTZ, Test Leben in Deutschland, and Einbuergerungstest framing.
+- Grundgesetz fundamentals: dignity, equality, non-discrimination, religious freedom, expression and its limits, family, school, assembly, and federal democracy.
+- Citizenship and residence orientation after the 2024 nationality-law reform and the 2024 skilled-worker/Chancenkarte changes.
+- Cannabis rules after the 2024 Cannabisgesetz, including the difference between limited legality and unrestricted use.
+- Self-Determination Act / SBGG civil-status changes that took effect in 2024.
+- Crime and fine boundaries for violence, threats, stalking, forced marriage, insult, false accusation, discrimination, hate/extremist symbols, traffic, cannabis, fare evasion, shoplifting, weapons, waste/local rules, and public-order issues.
+- Help and escalation routes such as emergency services, police, anti-discrimination advice, migration advice, tenant/consumer advice, victim support, school/youth-office context, and when to ask a lawyer.
+
+Release rules for this content:
+
+- Teach the civic reason, safe everyday action, and help path.
+- Use exact fine amounts only when the source and review date are recorded; otherwise use cautious wording such as "can lead to a fine" or "can lead to a criminal investigation."
+- Do not describe tactics for avoiding enforcement, deceiving authorities, bypassing identity checks, or hiding illegal conduct.
+- Do not copy the official BAMF question bank as product-owned content. It is acceptable to cite official resources in docs/planning and to teach the underlying concepts in original explanatory language.
+- Keep helper translations semantic and culturally aware, but non-stereotyping.
+- Keep public page disclaimers aligned with `/terms`: Life in Germany is learning content and does not replace official guidance or legal advice.
+
 ## Required Public Pages
 
 The Web release must expose these public pages from the footer and registration flow:
