@@ -2,6 +2,8 @@
 
 This checklist covers the server-side setup tasks required before running Darwin Lingua in staging or production.
 
+Current scope note: the active Web testing phase uses the temporary development/test domain `https://lingua.vafadar.pro` and keeps public paid billing disabled. For the next controlled tester pass, the required external setup is Brevo transactional email, public URL configuration, database/runtime secrets, and legal/operator ownership. Stripe tasks in this document remain required before self-service paid subscriptions are exposed, but they are not blockers for a no-billing controlled Web test.
+
 ## Secrets and Configuration
 
 - [ ] Store database connection strings in platform secret storage, not repository files.
