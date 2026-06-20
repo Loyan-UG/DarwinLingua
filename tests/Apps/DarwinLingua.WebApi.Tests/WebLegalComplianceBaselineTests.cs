@@ -75,9 +75,32 @@ public sealed class WebLegalComplianceBaselineTests
         Assert.Contains("TDDDG section 25", baseline, StringComparison.Ordinal);
         Assert.Contains("DDG section 5", baseline, StringComparison.Ordinal);
         Assert.Contains("GDPR", baseline, StringComparison.Ordinal);
+        Assert.Contains("Digital Services Act", baseline, StringComparison.Ordinal);
+        Assert.Contains("UWG section 7", baseline, StringComparison.Ordinal);
+        Assert.Contains("StGB sections 202a-202d", baseline, StringComparison.Ordinal);
         Assert.Contains("No marketing cookies", inventory, StringComparison.Ordinal);
         Assert.Contains("no cookie banner is required", inventory, StringComparison.Ordinal);
         Assert.Contains("86-Web-Legal-Compliance-Baseline.md", index, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void TermsPrivacyAndContact_ShouldExposeMisuseAndRequestBoundaries()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string terms = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Views/Home/Terms.cshtml"));
+        string privacy = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Views/Home/Privacy.cshtml"));
+        string contact = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/Views/Home/Contact.cshtml"));
+
+        Assert.Contains("security-abuse", terms, StringComparison.Ordinal);
+        Assert.Contains("Marketing email is not part of account creation", privacy, StringComparison.Ordinal);
+        Assert.Contains("Security, abuse, and illegal-content reports", contact, StringComparison.Ordinal);
+        Assert.Contains("Do not send passwords, tokens, identity documents", contact, StringComparison.Ordinal);
     }
 
     [Fact]

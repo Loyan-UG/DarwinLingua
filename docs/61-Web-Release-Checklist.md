@@ -158,6 +158,8 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] Legal Notice / Impressum page renders and has reviewed production operator data
 - [ ] Privacy Policy page is reviewed and includes account, learning, policy acceptance, sensitive preference, transactional email, billing-provider, retention, and data-subject-rights coverage
 - [ ] Terms of Use page is reviewed and linked from registration
+- [x] current legal research pass covers DDG, TDDDG, GDPR/BDSG risk areas, UWG email-marketing boundaries, DSA/community-report boundaries, BGB subscription-cancellation risk, and StGB/KJM content and security-abuse risk
+  - Evidence: `docs/86-Web-Legal-Compliance-Baseline.md` has a 2026-06-20 legal research snapshot with official-source references and crime/fine review notes. This is engineering research, not final legal counsel sign-off.
 - [x] Cookie / Storage Notice page renders and matches the latest cookie/storage inventory
   - Evidence: 2026-06-18 `WebLegalComplianceBaselineTests` verifies the Cookie/Storage Notice route, page copy, and `artifacts/validation/web-cookie-storage-inventory.md`; public smoke returned HTTP 200 for `/cookies`.
 - [x] Contact page provides support and privacy-request routing
@@ -170,11 +172,14 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] data-subject request owner and process are documented
 - [x] account deletion/export/rectification plan is documented
   - Evidence: `/account` exposes self-service account data export, rectification links, and account deletion with password/`DELETE` confirmation where applicable. `docs/86-Web-Legal-Compliance-Baseline.md` records the implementation, retention boundaries, and remaining operator escalation duties.
+- [ ] breach triage owner, illegal-content report owner, and community moderation escalation process are assigned before broad public community release
 - [x] policy acceptance records are available for required registration acknowledgements
   - Evidence: 2026-06-18 `WebIdentityBootstrapper_ShouldCreatePolicyAcceptanceTable` verifies `WebPolicyAcceptances` and its unique user/policy/version index; `PolicyAcceptanceService_RecordsVersionedRegistrationAcceptances` verifies records are persisted.
 - [x] Sensitive Educational Language opt-in remains separate from registration, off by default, and reversible
   - Evidence: 2026-06-18 policy and structural coverage verify registration/legal acknowledgement is separate from the Settings-only `Show sensitive educational language` preference. Web Expressions read the persisted learner profile setting, Settings exposes a reversible checkbox, and public API query-string requests cannot unlock sensitive educational content without admin credentials.
 - [ ] explicit adult/pornographic content remains blocked until legal review and approved age-verification/closed-user-group design
+- [x] Terms and Contact pages include user-facing misuse/reporting boundaries for illegal content, security abuse, privacy concerns, and rights issues
+  - Evidence: 2026-06-20 Terms/Contact copy was updated to describe prohibited illegal/security-abuse content and the support route for security, abuse, illegal-content, privacy, and rights reports.
 - [ ] transactional email provider processing/DPA requirements are reviewed
 - [ ] billing provider legal text, cancellation/refund flow, and Stripe processing are reviewed if billing is enabled
 - [ ] production legal owner/sign-off is recorded

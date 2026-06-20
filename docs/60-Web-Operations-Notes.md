@@ -233,6 +233,10 @@ Before production release:
 - review transactional email provider processing and DPA status before enabling production provider mode
 - review Stripe provider, subscription, cancellation/refund, and legal text before enabling billing
 - keep Sensitive Educational Language opt-in separate from registration and document that it is not age verification
+- keep transactional email separate from marketing email; any newsletter, promotional, or win-back campaign needs a separate consent and unsubscribe design before activation
+- keep a clear intake path for security, abuse, illegal-content, privacy, and rights reports while organizer, partner, RSVP, claim, profile, and report workflows are exposed to real users
+- review DSA classification, notice/action handling, moderation transparency, and appeal/escalation requirements before broad public community release
+- keep public paid subscriptions disabled until BGB section 312k cancellation-button, refund/cancellation text, Stripe customer portal, and legal copy are reviewed together
 - keep mobile legal/privacy/store-compliance work deferred until Web sign-off
 
 Policy acceptance audit:

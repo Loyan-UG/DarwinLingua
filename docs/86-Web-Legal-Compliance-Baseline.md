@@ -24,21 +24,30 @@ Review these primary sources during production legal review:
 - GDPR Article 15, access: https://gdpr-info.eu/art-15-gdpr/
 - GDPR Article 17, erasure: https://gdpr-info.eu/art-17-gdpr/
 - GDPR Article 20, portability: https://gdpr-info.eu/art-20-gdpr/
+- GDPR Article 32, processing security: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng
+- GDPR Article 33 and 34, personal-data-breach notification and communication: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng
 - GDPR Article 83, administrative fines: https://gdpr-info.eu/art-83-gdpr/
 - TDDDG section 25, terminal-device storage/access: https://www.gesetze-im-internet.de/ttdsg/__25.html
 - DDG section 5, provider information / Impressum duties: https://www.gesetze-im-internet.de/ddg/__5.html
 - DDG section 33, fines: https://www.gesetze-im-internet.de/ddg/__33.html
+- Digital Services Act, Regulation (EU) 2022/2065: https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng
+- UWG section 7, unreasonable nuisance / electronic advertising: https://www.gesetze-im-internet.de/uwg_2004/__7.html
 - BGB section 312k, cancellation button for consumer subscriptions: https://www.gesetze-im-internet.de/bgb/__312k.html
 - StGB section 86a, unconstitutional and terrorist-organization symbols: https://www.gesetze-im-internet.de/stgb/__86a.html
+- StGB section 130, incitement to hatred / Volksverhetzung: https://www.gesetze-im-internet.de/stgb/__130.html
 - StGB section 184, pornographic content: https://www.gesetze-im-internet.de/stgb/__184.html
 - StGB section 184b, child-pornographic content: https://www.gesetze-im-internet.de/stgb/__184b.html
 - StGB section 184c, youth-pornographic content: https://www.gesetze-im-internet.de/stgb/__184c.html
+- StGB section 201a, intimate image/privacy violations: https://www.gesetze-im-internet.de/stgb/__201a.html
+- StGB sections 202a-202d, data espionage, interception, preparation, and stolen data: https://www.gesetze-im-internet.de/stgb/
+- StGB section 263a, computer fraud: https://www.gesetze-im-internet.de/stgb/__263a.html
+- StGB section 303a, data alteration: https://www.gesetze-im-internet.de/stgb/__303a.html
 - KJM development-impairing content: https://www.kjm-online.de/themen/technischer-jugendmedienschutz/entwicklungsbeeintraechtigung/
 - KJM impermissible content and age-verification systems: https://www.kjm-online.de/themen/technischer-jugendmedienschutz/unzulaessige-inhalte/
 - KJM pornography supervision notes: https://www.kjm-online.de/themen/aufsicht-internet/pornografie/
 - Stripe legal terms and privacy/provider documentation: https://stripe.com/legal
 
-## Legal Research Snapshot 2026-06-19
+## Legal Research Snapshot 2026-06-20
 
 This snapshot is an engineering review of current official sources. It is not final legal advice and must be reviewed by the operator or qualified counsel before production launch.
 
@@ -46,9 +55,12 @@ This snapshot is an engineering review of current official sources. It is not fi
 - DDG section 33 defines fines for violations of DDG duties. The release checklist must treat missing or incorrect provider information as a production blocker.
 - TDDDG section 25 remains the terminal-device storage/access reference. The current cookie/storage position is: strictly necessary authentication and anti-forgery cookies, culture preference storage, session-scoped learner navigation storage, and first-party PWA cache; no marketing or analytics storage is active.
 - GDPR Articles 12, 15, 17, and 20 require transparent handling of access, deletion, and portability. Article 12 response timing is normally without undue delay and within one month, with possible extension for complex requests. The new self-service export/delete controls reduce support-only dependency but do not remove the need for an operator escalation process.
+- GDPR Articles 32, 33, and 34 require security measures and breach triage. Security incidents involving account data, email tokens, learning data, billing state, or private community records must have an operator-owned triage path before real-user testing expands beyond a controlled group.
 - GDPR Article 83 defines administrative fines, including a higher tier for data-subject-rights failures. Broken export/delete/rectification handling is therefore not just a UX issue.
+- UWG section 7 makes unsolicited electronic advertising a legal risk. Current transactional email must stay strictly service-related; newsletters, promotional campaigns, or win-back campaigns require a separate consent model and unsubscribe process before they are enabled.
+- The DSA applies on a graduated basis to intermediary services. Darwin Lingua is primarily a language-learning service, but organizer profiles, partner/community workflows, claims, reports, and user-submitted content can create notice/action and moderation-process obligations if exposed publicly. Terms, Contact, and Admin operations must preserve a clear route for illegal-content, abuse, and rights reports before broader community release.
 - BGB section 312k becomes relevant when public paid consumer subscriptions are enabled online. Because public billing is disabled during Web testing and premium is manual, this is deferred but must be re-opened before self-service paid subscriptions are exposed.
-- StGB sections 86a, 184, 184b, and 184c and KJM youth-media guidance are the current content-risk reference points for illegal symbols/propaganda and pornographic or minor-related sexual content. Darwin Lingua must keep explicit adult/pornographic, exploitative, minor-related, extremist propaganda, hate-inciting, and harm-facilitating content blocked. The current "Sensitive Educational Language" feature is not age verification and must not be used as a bypass for verified-adult content.
+- StGB sections 86a, 130, 184, 184b, 184c, 201a, 202a-202d, 263a, and 303a and KJM youth-media guidance are current crime-risk reference points for illegal symbols/propaganda, hate-inciting content, pornographic or minor-related sexual content, intimate-image abuse, data-security crimes, computer fraud, and data alteration. Darwin Lingua must keep explicit adult/pornographic, exploitative, minor-related, extremist propaganda, hate-inciting, illegal hacking/security-abuse, fraud-facilitating, and harm-facilitating content blocked. The current "Sensitive Educational Language" feature is not age verification and must not be used as a bypass for verified-adult content.
 
 ## Required Public Pages
 
@@ -142,6 +154,7 @@ The Privacy and Contact pages must give a practical request path for:
 - objection
 - portability
 - complaint to a supervisory authority
+- security, abuse, illegal-content, or rights reports where user/community content is involved
 
 Current implementation:
 
@@ -159,6 +172,8 @@ Before production, the operator must still define:
 - response timelines
 - retention and backup-deletion boundaries
 - escalation path for difficult requests
+- breach triage owner and decision record for GDPR Articles 33 and 34
+- moderation/illegal-content report intake owner for public user-generated content
 
 ## Sensitive Educational Language
 
@@ -182,7 +197,21 @@ Crime/fine review notes:
 - Do not add content that instructs users to commit fraud, evade legal obligations, bypass security systems, or misuse government/identity processes.
 - Do not add extremist propaganda, unconstitutional-symbol promotion, hate-inciting content, or content that normalizes violence against protected or vulnerable groups.
 - Do not add pornographic, arousing, explicit adult, exploitative, coercive, or minor-related sexual content. If adult-only educational content is ever reconsidered, it requires a separate verified-adult access system and legal review first.
+- Do not add simulated phishing, credential theft, malware, bypass, exploit, identity-document misuse, payment fraud, or data-destruction instructions. Security-related language learning must stay defensive and general.
+- Do not accept or publish private photos, intimate images, ID documents, medical records, or immigration-case files unless a later feature has a reviewed necessity, minimisation, retention, and deletion design.
 - Keep Life in Germany content educational and explanatory; it may help learners understand everyday civic, social, and administrative topics but must not present itself as official legal, immigration, or government advice.
+
+## Community, Reports, And DSA-Aware Boundaries
+
+The Web product has organizer, partner, RSVP, claim, profile, and report concepts. They are not the core learning content, but they can create moderation and illegal-content handling duties when exposed to real users.
+
+Release rules:
+
+- Keep community/user-submitted content controlled during the first tester wave.
+- Provide a clear support route for illegal-content, abuse, privacy, rights, and security reports.
+- Keep admin issue handling role-protected and avoid exposing private reporter data in public pages.
+- Do not represent claim approval, organizer pages, or Life in Germany content as official government verification, legal advice, immigration advice, or professional certification.
+- Before any broad public community release, review DSA classification, notice/action handling, moderation transparency, and appeal/escalation requirements with counsel.
 
 ## Admin And Operator Access
 
