@@ -413,7 +413,7 @@ Later, email body content may support the user's selected UI language and possib
 
 ### Template Requirements
 
-- [-] define template keys for every transactional scenario
+- [x] define template keys for every transactional scenario
 - [x] implement localized subject lines
 - [x] implement localized plain-text bodies
 - [x] implement localized HTML bodies if HTML email is used
@@ -422,8 +422,8 @@ Later, email body content may support the user's selected UI language and possib
 - [x] include clear expiration text for token emails
 - [x] include fallback copyable URL when using button-style HTML emails
 - [x] avoid unnecessary personal data in email bodies
-- [ ] test missing-localization fallback behavior
-- [ ] add template rendering tests for English and German
+- [x] test missing-localization fallback behavior
+- [x] add template rendering tests for English and German
 
 ### Minimum Templates For Release
 
@@ -554,8 +554,8 @@ For the first release, use web-hosted confirmation and password-reset pages from
 ### Unit Tests
 
 - [ ] email message factory creates expected scenario keys
-- [ ] template renderer returns localized English and German output
-- [ ] missing template or missing localization fails safely
+- [x] template renderer returns localized English and German output
+- [x] missing template or missing localization fails safely
 - [x] provider options validation catches missing production settings
 - [x] Brevo API sender posts the expected payload, API key header, and sandbox header
 - [x] Brevo API sender returns useful provider error summaries

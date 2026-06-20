@@ -287,6 +287,44 @@ public sealed class TransactionalEmailBrevoTests
     }
 
     [Fact]
+    public void TransactionalEmailTemplateRenderer_ShouldRenderEveryScenarioInEnglishAndGerman()
+    {
+        TransactionalEmailOptions options = CreateBrevoOptions(sandboxMode: true);
+        options.ProductName = "Darwin Lingua";
+        options.SupportEmail = "support@example.com";
+        TransactionalEmailTemplateRenderer renderer = new(Options.Create(options));
+        Dictionary<string, string> values = CreateTemplateValues();
+
+        string[] scenarioKeys = typeof(TransactionalEmailScenarios)
+            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+            .Where(static field => field.IsLiteral && !field.IsInitOnly && field.FieldType == typeof(string))
+            .Select(static field => (string)field.GetRawConstantValue()!)
+            .OrderBy(static scenario => scenario, StringComparer.Ordinal)
+            .ToArray();
+
+        Assert.NotEmpty(scenarioKeys);
+
+        foreach (string scenarioKey in scenarioKeys)
+        {
+            RenderedEmailTemplate english = renderer.Render(scenarioKey, "en-US", values);
+            RenderedEmailTemplate german = renderer.Render(scenarioKey, "de-DE", values);
+
+            Assert.Equal("en", english.Culture);
+            Assert.Equal("de", german.Culture);
+            Assert.Equal(scenarioKey, english.TemplateKey);
+            Assert.Equal(scenarioKey, german.TemplateKey);
+            Assert.False(string.IsNullOrWhiteSpace(english.Subject));
+            Assert.False(string.IsNullOrWhiteSpace(english.PlainTextBody));
+            Assert.False(string.IsNullOrWhiteSpace(english.HtmlBody));
+            Assert.False(string.IsNullOrWhiteSpace(german.Subject));
+            Assert.False(string.IsNullOrWhiteSpace(german.PlainTextBody));
+            Assert.False(string.IsNullOrWhiteSpace(german.HtmlBody));
+            AssertNoUnresolvedTemplateTokens(english, values.Keys);
+            AssertNoUnresolvedTemplateTokens(german, values.Keys);
+        }
+    }
+
+    [Fact]
     public void BrevoProductionReadinessTool_ShouldCoverConfigurationAndOperatorGates()
     {
         string repositoryRoot = FindRepositoryRoot();
@@ -338,6 +376,45 @@ public sealed class TransactionalEmailBrevoTests
         "Plain body",
         "<p>HTML body</p>",
         "trace-123");
+
+    private static Dictionary<string, string> CreateTemplateValues() => new(StringComparer.Ordinal)
+    {
+        ["ActionUrl"] = "https://lingua.example/action",
+        ["AdminActor"] = "Admin User",
+        ["BillingStatus"] = "active",
+        ["CurrentPeriodEnd"] = "2026-07-20",
+        ["DisplayName"] = "Mina",
+        ["EntitlementTier"] = "Premium",
+        ["EventTitle"] = "Sprachcafe",
+        ["ExpirationText"] = "24 hours",
+        ["FailureCount"] = "3",
+        ["LastFailureCode"] = "provider-error",
+        ["LastFailureScenarioKey"] = "Account.EmailConfirmation",
+        ["OrganizerName"] = "Berlin Sprachschule",
+        ["OrganizerProfileSlug"] = "berlin-sprachschule",
+        ["Reason"] = "safety",
+        ["RequesterName"] = "Mina",
+        ["RsvpStatus"] = "confirmed",
+        ["Status"] = "reviewed",
+        ["SubscriptionId"] = "sub_123",
+        ["TargetKey"] = "target-123",
+        ["TargetType"] = "profile",
+        ["UserId"] = "user-123",
+        ["WindowMinutes"] = "15",
+    };
+
+    private static void AssertNoUnresolvedTemplateTokens(
+        RenderedEmailTemplate template,
+        IEnumerable<string> tokenKeys)
+    {
+        foreach (string tokenKey in tokenKeys)
+        {
+            string token = "{" + tokenKey + "}";
+            Assert.DoesNotContain(token, template.Subject, StringComparison.Ordinal);
+            Assert.DoesNotContain(token, template.PlainTextBody, StringComparison.Ordinal);
+            Assert.DoesNotContain(token, template.HtmlBody, StringComparison.Ordinal);
+        }
+    }
 
     private static string FindRepositoryRoot()
     {
