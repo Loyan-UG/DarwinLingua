@@ -325,10 +325,59 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
             Assert.Contains(auditEvents, auditEvent => auditEvent.EventType == "premium-expired");
     }
 
+    [Fact]
+    public async Task IdentityEmailTokens_RejectWrongPurposeInvalidExpiredAndReusedPasswordResetTokens()
+    {
+        await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_identity_tokens");
+        await using ServiceProvider services = BuildServices(
+                database.ConnectionString,
+                new DarwinLinguaIdentityBootstrapOptions(),
+                new DarwinLinguaEntitlementOptions(),
+                TimeSpan.FromSeconds(1));
+
+        IDarwinLinguaIdentityBootstrapper bootstrapper = services.GetRequiredService<IDarwinLinguaIdentityBootstrapper>();
+        await bootstrapper.InitializeAsync(CancellationToken.None);
+
+        UserManager<DarwinLinguaIdentityUser> userManager = services.GetRequiredService<UserManager<DarwinLinguaIdentityUser>>();
+        DarwinLinguaIdentityUser user = new()
+        {
+            UserName = "tokens@example.local",
+            Email = "tokens@example.local",
+            EmailConfirmed = true,
+        };
+
+        IdentityResult createResult = await userManager.CreateAsync(user, "Tokens123!");
+        Assert.True(createResult.Succeeded, string.Join("; ", createResult.Errors.Select(error => error.Description)));
+
+        string confirmationToken = await userManager.GenerateEmailConfirmationTokenAsync(user);
+        IdentityResult wrongPurposeResult = await userManager.ResetPasswordAsync(user, confirmationToken, "Tokens456!");
+        Assert.False(wrongPurposeResult.Succeeded);
+        Assert.Contains(wrongPurposeResult.Errors, static error => error.Code == "InvalidToken");
+
+        IdentityResult invalidResult = await userManager.ResetPasswordAsync(user, "not-a-real-token", "Tokens456!");
+        Assert.False(invalidResult.Succeeded);
+        Assert.Contains(invalidResult.Errors, static error => error.Code == "InvalidToken");
+
+        string expiredResetToken = await userManager.GeneratePasswordResetTokenAsync(user);
+        await Task.Delay(TimeSpan.FromMilliseconds(1500));
+        IdentityResult expiredResult = await userManager.ResetPasswordAsync(user, expiredResetToken, "Tokens456!");
+        Assert.False(expiredResult.Succeeded);
+        Assert.Contains(expiredResult.Errors, static error => error.Code == "InvalidToken");
+
+        string validResetToken = await userManager.GeneratePasswordResetTokenAsync(user);
+        IdentityResult successResult = await userManager.ResetPasswordAsync(user, validResetToken, "Tokens789!");
+        Assert.True(successResult.Succeeded, string.Join("; ", successResult.Errors.Select(error => error.Description)));
+
+        IdentityResult reusedResult = await userManager.ResetPasswordAsync(user, validResetToken, "Tokens890!");
+        Assert.False(reusedResult.Succeeded);
+        Assert.Contains(reusedResult.Errors, static error => error.Code == "InvalidToken");
+    }
+
     private static ServiceProvider BuildServices(
         string connectionString,
         DarwinLinguaIdentityBootstrapOptions bootstrapOptions,
-        DarwinLinguaEntitlementOptions entitlementOptions)
+        DarwinLinguaEntitlementOptions entitlementOptions,
+        TimeSpan? tokenLifespan = null)
     {
         ServiceCollection services = new();
 
@@ -349,6 +398,14 @@ public sealed class DarwinLinguaIdentityBootstrapperTests
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<TestIdentityDbContext>()
             .AddDefaultTokenProviders();
+
+        if (tokenLifespan is not null)
+        {
+            services.Configure<DataProtectionTokenProviderOptions>(options =>
+            {
+                options.TokenLifespan = tokenLifespan.Value;
+            });
+        }
 
         services.AddScoped<IDarwinLinguaIdentityBootstrapper, DarwinLinguaIdentityBootstrapper<TestIdentityDbContext>>();
         services.AddScoped<IUserEntitlementService, UserEntitlementService<TestIdentityDbContext>>();

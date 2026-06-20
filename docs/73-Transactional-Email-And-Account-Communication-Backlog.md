@@ -384,7 +384,8 @@ Email tokens are security-sensitive. They must be short-lived, single-purpose, a
 - [x] rate-limit confirmation resend requests
 - [x] rate-limit registration confirmation sending
 - [x] invalidate or make old flows harmless after email/password changes where applicable
-- [ ] add tests for expired, invalid, reused, malformed, and wrong-purpose tokens
+- [x] add tests for expired, invalid, reused, malformed, and wrong-purpose tokens
+  - Evidence: `DarwinLingua.Identity.Tests` includes `IdentityEmailTokens_RejectWrongPurposeInvalidExpiredAndReusedPasswordResetTokens`, which uses PostgreSQL-backed ASP.NET Core Identity `UserManager` and token providers to verify wrong-purpose email-confirmation tokens, invalid/malformed reset tokens, expired reset tokens, successful reset, and reused reset tokens. Web structural coverage separately verifies malformed Base64 callback handling in confirmation/reset pages.
 
 ### Suggested Initial Policy
 
