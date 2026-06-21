@@ -142,6 +142,49 @@ foreach ($relativePath in $secretCandidates) {
     }
 }
 
+function Get-AspNetUserSecretsPath {
+    param([string]$ProjectRelativePath)
+
+    $projectPath = Join-Path $repoRoot $ProjectRelativePath
+    if (-not (Test-Path -LiteralPath $projectPath -PathType Leaf)) {
+        return $null
+    }
+
+    [xml]$projectXml = Get-Content -LiteralPath $projectPath
+    $userSecretsId = ($projectXml.Project.PropertyGroup |
+        ForEach-Object { $_.UserSecretsId } |
+        Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+        Select-Object -First 1)
+
+    if ([string]::IsNullOrWhiteSpace($userSecretsId)) {
+        return $null
+    }
+
+    $appData = [Environment]::GetFolderPath("ApplicationData")
+    if ([string]::IsNullOrWhiteSpace($appData)) {
+        return $null
+    }
+
+    return [ordered]@{
+        Id = $userSecretsId
+        Path = Join-Path $appData "Microsoft\UserSecrets\$userSecretsId\secrets.json"
+    }
+}
+
+$aspNetUserSecrets = @(
+    Get-AspNetUserSecretsPath -ProjectRelativePath "src\Apps\DarwinLingua.Web\DarwinLingua.Web.csproj"
+)
+
+foreach ($userSecrets in $aspNetUserSecrets) {
+    if ($null -eq $userSecrets -or -not (Test-Path -LiteralPath $userSecrets.Path -PathType Leaf)) {
+        continue
+    }
+
+    $targetPath = Join-Path $secretsPath "aspnet-user-secrets\$($userSecrets.Id)\secrets.json"
+    New-Item -ItemType Directory -Path (Split-Path -Parent $targetPath) -Force | Out-Null
+    Copy-Item -LiteralPath $userSecrets.Path -Destination $targetPath -Force
+}
+
 $artifactCandidates = @(
     "artifacts\validation",
     "artifacts\installability-report.json",
@@ -197,6 +240,7 @@ $manifest = @"
 1. Start from a clean checkout at the recorded Git commit when possible.
 2. Copy ``repo-overlay/`` over the checkout if local uncommitted files are needed.
 3. Restore secrets from `secrets/` to their original local paths.
+   - ASP.NET Core user-secrets are stored under `secrets/aspnet-user-secrets/<UserSecretsId>/secrets.json`.
 4. Restore PostgreSQL from `db/*.dump` with `pg_restore --clean --if-exists --create`.
 5. Verify counts and run Web/WebApi smoke before exposing the environment.
 

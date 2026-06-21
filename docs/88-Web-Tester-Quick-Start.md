@@ -8,7 +8,7 @@ This is a controlled test, not a public launch. The goal is to find confusing fl
 
 Open:
 
-`https://lingua.vafadar.pro`
+`https://darwinlingua.com`
 
 Use your normal browser and device. If possible, test once on a phone-sized screen too.
 

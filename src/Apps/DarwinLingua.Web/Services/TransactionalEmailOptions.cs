@@ -12,13 +12,13 @@ public sealed class TransactionalEmailOptions
 
     public string ProductName { get; set; } = "Darwin Lingua";
 
-    public string FromEmail { get; set; } = "no-reply@example.local";
+    public string FromEmail { get; set; } = "no-reply@darwinlingua.com";
 
     public string FromName { get; set; } = "Darwin Lingua";
 
-    public string ReplyToEmail { get; set; } = "support@example.local";
+    public string ReplyToEmail { get; set; } = "support@darwinlingua.com";
 
-    public string SupportEmail { get; set; } = "support@example.local";
+    public string SupportEmail { get; set; } = "support@darwinlingua.com";
 
     public string[] AdminNotificationEmails { get; set; } = [];
 

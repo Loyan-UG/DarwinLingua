@@ -1,8 +1,9 @@
 [CmdletBinding()]
 param(
     [string]$ConfigPath = "src\Apps\DarwinLingua.Web\appsettings.Development.Local.json",
+    [string]$ProjectPath = "src\Apps\DarwinLingua.Web\DarwinLingua.Web.csproj",
     [string]$OutputDirectory = "artifacts/validation/brevo-readiness",
-    [string]$ExpectedPublicBaseUrl = "https://lingua.vafadar.pro",
+    [string]$ExpectedPublicBaseUrl = "https://darwinlingua.com",
     [string]$SendingDomain,
     [switch]$SenderVerified,
     [switch]$DnsAuthenticated,
@@ -59,6 +60,69 @@ function Get-PropertyValue {
     return $property.Value
 }
 
+function Get-UserSecretsPath {
+    param([string]$ProjectFile)
+
+    $resolvedProjectPath = Resolve-RepositoryPath -Path $ProjectFile
+    if (-not (Test-Path -LiteralPath $resolvedProjectPath -PathType Leaf)) {
+        return $null
+    }
+
+    [xml]$projectXml = Get-Content -LiteralPath $resolvedProjectPath
+    $userSecretsId = ($projectXml.Project.PropertyGroup |
+        ForEach-Object { $_.UserSecretsId } |
+        Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+        Select-Object -First 1)
+
+    if ([string]::IsNullOrWhiteSpace($userSecretsId)) {
+        return $null
+    }
+
+    $appData = [Environment]::GetFolderPath("ApplicationData")
+    if ([string]::IsNullOrWhiteSpace($appData)) {
+        return $null
+    }
+
+    return Join-Path $appData "Microsoft\UserSecrets\$userSecretsId\secrets.json"
+}
+
+function Get-SecretOverride {
+    param(
+        [object]$Secrets,
+        [string]$Section,
+        [string]$Name
+    )
+
+    if ($null -eq $Secrets) {
+        return $null
+    }
+
+    $flatName = "$Section`:$Name"
+    $flatProperty = $Secrets.PSObject.Properties[$flatName]
+    if ($null -ne $flatProperty) {
+        return $flatProperty.Value
+    }
+
+    $sectionObject = Get-PropertyValue -Object $Secrets -Name $Section
+    return Get-PropertyValue -Object $sectionObject -Name $Name
+}
+
+function Get-ConfigurationValue {
+    param(
+        [object]$SectionObject,
+        [object]$Secrets,
+        [string]$Section,
+        [string]$Name
+    )
+
+    $secretValue = Get-SecretOverride -Secrets $Secrets -Section $Section -Name $Name
+    if ($null -ne $secretValue) {
+        return $secretValue
+    }
+
+    return Get-PropertyValue -Object $SectionObject -Name $Name
+}
+
 function Test-ConfiguredSecret {
     param([object]$Value)
 
@@ -106,6 +170,16 @@ $outputRoot = Resolve-RepositoryPath -Path $OutputDirectory
 New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
 
 $config = Get-Content -LiteralPath $resolvedConfigPath -Raw | ConvertFrom-Json
+$resolvedUserSecretsPath = Get-UserSecretsPath -ProjectFile $ProjectPath
+$userSecrets = $null
+if (-not [string]::IsNullOrWhiteSpace($resolvedUserSecretsPath) -and
+    (Test-Path -LiteralPath $resolvedUserSecretsPath -PathType Leaf)) {
+    $userSecretsContent = Get-Content -LiteralPath $resolvedUserSecretsPath -Raw
+    if (-not [string]::IsNullOrWhiteSpace($userSecretsContent)) {
+        $userSecrets = $userSecretsContent | ConvertFrom-Json
+    }
+}
+
 $email = Get-PropertyValue -Object $config -Name "TransactionalEmail"
 
 $checks = New-Object System.Collections.Generic.List[object]
@@ -114,16 +188,16 @@ if ($null -eq $email) {
     $checks.Add((New-Check -Key "config.section" -Status "blocker" -Message "TransactionalEmail section is missing." -Evidence $resolvedConfigPath))
 }
 else {
-    $mode = (Get-PropertyValue -Object $email -Name "Mode")
-    $publicBaseUrl = (Get-PropertyValue -Object $email -Name "PublicBaseUrl")
-    $fromEmail = (Get-PropertyValue -Object $email -Name "FromEmail")
-    $replyToEmail = (Get-PropertyValue -Object $email -Name "ReplyToEmail")
-    $supportEmail = (Get-PropertyValue -Object $email -Name "SupportEmail")
-    $brevoApiBaseUrl = (Get-PropertyValue -Object $email -Name "BrevoApiBaseUrl")
-    $brevoApiKey = (Get-PropertyValue -Object $email -Name "BrevoApiKey")
-    $brevoWebhookSecret = (Get-PropertyValue -Object $email -Name "BrevoWebhookSecret")
-    $brevoSandboxMode = (Get-PropertyValue -Object $email -Name "BrevoSandboxMode")
-    $brevoAllowQuerySecretFallback = (Get-PropertyValue -Object $email -Name "BrevoAllowQuerySecretFallback")
+    $mode = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "Mode")
+    $publicBaseUrl = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "PublicBaseUrl")
+    $fromEmail = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "FromEmail")
+    $replyToEmail = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "ReplyToEmail")
+    $supportEmail = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "SupportEmail")
+    $brevoApiBaseUrl = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "BrevoApiBaseUrl")
+    $brevoApiKey = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "BrevoApiKey")
+    $brevoWebhookSecret = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "BrevoWebhookSecret")
+    $brevoSandboxMode = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "BrevoSandboxMode")
+    $brevoAllowQuerySecretFallback = (Get-ConfigurationValue -SectionObject $email -Secrets $userSecrets -Section "TransactionalEmail" -Name "BrevoAllowQuerySecretFallback")
 
     if ($mode -eq "BrevoApi") {
         $checks.Add((New-Check -Key "config.mode" -Status "pass" -Message "TransactionalEmail mode is BrevoApi."))
@@ -135,7 +209,7 @@ else {
     $parsedPublicBaseUri = $null
     if ([Uri]::TryCreate([string]$publicBaseUrl, [UriKind]::Absolute, [ref]$parsedPublicBaseUri) -and $publicBaseUrl.ToString().StartsWith("https://", [StringComparison]::OrdinalIgnoreCase)) {
         $status = if ($publicBaseUrl -eq $ExpectedPublicBaseUrl) { "pass" } else { "warning" }
-        $message = if ($status -eq "pass") { "PublicBaseUrl matches the expected temporary development domain." } else { "PublicBaseUrl is HTTPS but does not match the expected temporary domain; confirm this was intentional." }
+        $message = if ($status -eq "pass") { "PublicBaseUrl matches the expected public web origin." } else { "PublicBaseUrl is HTTPS but does not match the expected public web origin; confirm this was intentional." }
         $checks.Add((New-Check -Key "config.publicBaseUrl" -Status $status -Message $message -Evidence "Current value: $publicBaseUrl"))
     }
     else {
@@ -261,6 +335,8 @@ $markdownPath = Join-Path $outputRoot "brevo-production-readiness-$timestamp.md"
 $report = [ordered]@{
     generatedAtUtc = (Get-Date).ToUniversalTime().ToString("O")
     configPath = $resolvedConfigPath
+    userSecretsPath = $resolvedUserSecretsPath
+    userSecretsLoaded = $null -ne $userSecrets
     expectedPublicBaseUrl = $ExpectedPublicBaseUrl
     sendingDomain = $SendingDomain
     requireRealDelivery = $RequireRealDelivery.IsPresent
@@ -276,6 +352,7 @@ $lines.Add("# Brevo Production Readiness Check")
 $lines.Add("")
 $lines.Add("- Generated: $($report.generatedAtUtc)")
 $lines.Add("- Config: $resolvedConfigPath")
+$lines.Add("- User secrets loaded: $($report.userSecretsLoaded)")
 $lines.Add("- Expected public base URL: $ExpectedPublicBaseUrl")
 $lines.Add("- Sending domain: $SendingDomain")
 $lines.Add("- Blockers: $($blockers.Count)")

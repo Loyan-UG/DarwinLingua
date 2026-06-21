@@ -273,9 +273,21 @@ The local Cloudflare-routed public domains require the same ports used by the ch
 - `DarwinLingua.Web`: `https://0.0.0.0:7501` and `http://0.0.0.0:5192`
 - `DarwinLingua.WebApi`: `https://0.0.0.0:53944` and `http://0.0.0.0:53945`
 
-For private local-only smoke, `http://localhost:5192` and `http://localhost:5099` may still be used when Web is configured to call the API on `5099`. For public-routed smoke through `lingua.vafadar.pro` and `linguaapi.vafadar.pro`, start the launch-profile ports or ensure the tunnel ingress points at the active local ports. A public `502 Bad Gateway` with healthy localhost responses usually means the tunnel origin port is not running or the Web host is calling a local API port that is not active.
+Current public hostnames:
 
-Do not start WebApi with only `--urls http://localhost:5099` when the public `linguaapi.vafadar.pro` tunnel must be tested. That local-only launch leaves the checked-in tunnel origin ports closed and produces public `502` responses even though `http://localhost:5099/health` is healthy. Use the checked-in launch profile for public smoke so WebApi listens on `https://0.0.0.0:53944`, `http://0.0.0.0:53945`, and `http://localhost:5099`.
+- Web: `https://darwinlingua.com`
+- API: `https://api.darwinlingua.com`
+
+Recommended Cloudflare Tunnel mapping for the current single-machine setup:
+
+- `darwinlingua.com` -> Web origin `http://localhost:5192` or `https://localhost:7501`
+- `api.darwinlingua.com` -> WebApi origin `http://localhost:53945` or `https://localhost:53944`
+
+If HTTPS origins are used with local development certificates, disable origin certificate verification for those tunnel services or install a trusted origin certificate. If HTTP origins are used, keep Cloudflare edge TLS enabled and ensure the tunnel is the only public ingress to those local ports.
+
+For private local-only smoke, `http://localhost:5192` and `http://localhost:5099` may still be used when Web is configured to call the API on `5099`. For public-routed smoke through `darwinlingua.com` and `api.darwinlingua.com`, start the launch-profile ports or ensure the tunnel ingress points at the active local ports. A public `502 Bad Gateway` with healthy localhost responses usually means the tunnel origin port is not running or the Web host is calling a local API port that is not active.
+
+Do not start WebApi with only `--urls http://localhost:5099` when the public `api.darwinlingua.com` tunnel must be tested. That local-only launch leaves the checked-in tunnel origin ports closed and produces public `502` responses even though `http://localhost:5099/health` is healthy. Use the checked-in launch profile for public smoke so WebApi listens on `https://0.0.0.0:53944`, `http://0.0.0.0:53945`, and `http://localhost:5099`.
 
 ## Phase Backup Register
 

@@ -303,5 +303,5 @@ As of 2026-06-19:
 - Sensitive Educational Language is disabled by default and controlled from Settings.
 - Current checked-in Web assets do not use third-party analytics or marketing cookies.
 - Public billing remains disabled during Web testing; premium access can be granted manually by an operator.
-- The temporary development domain is `lingua.vafadar.pro`; final production domain migration is deferred until Web maturity and user-testing feedback.
+- The primary product domain is `darwinlingua.com`; `api.darwinlingua.com` is the API host for Web/API separation during Web testing and production hardening.
 - Mobile/MAUI implementation remains unchanged and deferred.

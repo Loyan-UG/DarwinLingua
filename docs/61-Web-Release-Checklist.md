@@ -300,7 +300,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - Release owner: Darwin Lingua operator / Web release owner during controlled testing.
 - Validation owner: Darwin Lingua operator, with engineering evidence from this checklist and generated validation artifacts.
 - Known accepted issues:
-  - This is not a broad public production launch sign-off. The temporary development/test domain is `https://lingua.vafadar.pro`; `https://www.lingua.vafadar.pro` is not a required route unless DNS and redirects are explicitly added later.
+  - This is not a broad public production launch sign-off. The primary Web test domain is `https://darwinlingua.com`; `https://www.darwinlingua.com` is not a required route unless DNS and redirects are explicitly added later.
   - Brevo production sending is code-ready but provider-side setup remains external: verified sender/domain, SPF/DKIM/DMARC, transactional API key, webhook secret, webhook events, real-delivery readiness, and Brevo DPA review.
   - Production legal/operator review remains external: real Impressum/operator data, Privacy Policy, Terms, data-subject request owner/process, breach triage owner, illegal-content report owner, and final legal sign-off.
   - Target-browser PWA install prompt acceptance still needs manual validation on real desktop Chrome/Edge and Android Chrome.

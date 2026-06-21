@@ -8,8 +8,8 @@ The goal is not to generate more content during testing. The goal is to find pra
 
 ## Current Test Baseline
 
-- Public Web: `https://lingua.vafadar.pro`
-- Public API health: `https://linguaapi.vafadar.pro/health`
+- Public Web: `https://darwinlingua.com`
+- Public API health: `https://api.darwinlingua.com/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
 - Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260620-141903-web-readiness-current-legal-refresh-pre-user-testing`
@@ -48,7 +48,7 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 ```
 
 - The batch tool confirms the existing account email and grants Premium with an entitlement audit record. It does not create passwords or send email; keep account-password delivery out of public channels.
-- Confirm the public test host is `https://lingua.vafadar.pro`; do not use `www.lingua.vafadar.pro` unless that host is intentionally configured.
+- Confirm the public test host is `https://darwinlingua.com`; do not use `www.darwinlingua.com` unless that host is intentionally configured.
 - Confirm the Legal Notice/Impressum and Privacy Policy still carry the correct development-stage wording and that production operator data is not claimed before legal review.
 - Confirm the two PWA manual install checks from `docs/56-Web-Pwa-Install-Validation-Worksheet.md` are either completed or explicitly left out of this tester pass.
 
@@ -76,7 +76,7 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 - For non-local environments, set `DARWINLINGUA_WEB_ADMIN_EMAIL` and `DARWINLINGUA_WEB_ADMIN_PASSWORD` instead of using the local seed switch.
 - Confirm the admin smoke exits successfully and writes a JSON report under `artifacts/validation/web-admin-smoke/`.
 - If you used `New-WebTesterValidationBundle.ps1` without `-SkipPreflight`, the bundle already contains a pass-specific preflight report under its `preflight/` folder.
-- The script verifies `https://lingua.vafadar.pro` and `https://linguaapi.vafadar.pro/health`.
+- The script verifies `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
 - It also smokes these pages:
   - `/browse`
   - `/browse/cefr/A1`
@@ -112,7 +112,7 @@ Ask each tester to complete only a small set. Do not overload them.
 
 ### Task 1: First Impression
 
-1. Open `https://lingua.vafadar.pro`.
+1. Open `https://darwinlingua.com`.
 2. Find the learning area that feels most relevant.
 3. Say what you expected to do next and whether the page made that clear.
 

@@ -6,13 +6,13 @@
 
 کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است، اما تا وقتی دامنه، فرستنده، API key، webhook و قرارداد پردازش داده در Brevo کامل نشده باشند، نباید ثبت‌نام آزاد یا بازیابی رمز عبور را به کاربران تستی واقعی بسپاریم.
 
-در مرحله‌ی توسعه، آدرس عمومی موقت سیستم این است:
+دامنه‌ی اصلی Web برای تست و سپس production این است:
 
 ```text
-https://lingua.vafadar.pro
+https://darwinlingua.com
 ```
 
-آدرس `https://www.lingua.vafadar.pro` معیار تست نیست، مگر اینکه بعداً عمداً برای آن DNS و redirect تنظیم شود.
+آدرس `https://www.darwinlingua.com` معیار تست نیست، مگر اینکه بعداً عمداً برای آن DNS و redirect تنظیم شود. دامنه‌ی API باید جداگانه روی `https://api.darwinlingua.com` منتشر شود.
 
 ## چیزی که داخل سیستم آماده است
 
@@ -24,7 +24,7 @@ https://lingua.vafadar.pro
 - endpoint webhook:
 
 ```text
-https://lingua.vafadar.pro/webhooks/brevo/transactional-email
+https://darwinlingua.com/webhooks/brevo/transactional-email
 ```
 
 - دو روش امن برای احراز هویت webhook:
@@ -44,14 +44,13 @@ X-DarwinLingua-Brevo-Webhook-Secret: <TransactionalEmail:BrevoWebhookSecret>
 ## کارهایی که باید در Brevo انجام شود
 
 1. یک Brevo account متعلق به مالک عملیاتی Darwin Lingua بسازید یا حساب موجود را انتخاب کنید.
-2. برای فاز توسعه، یک دامنه یا زیردامنه‌ی ارسال انتخاب کنید. مثال‌های مناسب:
+2. برای ارسال ایمیل transactional، دامنه‌ی `darwinlingua.com` را در Brevo authenticate کنید. Sender پیشنهادی:
 
 ```text
-mail.lingua.vafadar.pro
-no-reply@lingua.vafadar.pro
+no-reply@darwinlingua.com
 ```
 
-مقدار دقیق باید با مالک DNS هماهنگ شود. اگر بعداً دامنه‌ی اصلی محصول عوض شود، تنظیمات sender، DNS و webhook هم باید همزمان عوض شوند.
+`support@darwinlingua.com` برای Reply-To و ارتباط پشتیبانی استفاده شود. اگر inbox جدا برای `no-reply` ساخته نمی‌شود، حداقل یک alias/forward برای آن به `info@darwinlingua.com` بسازید تا bounce یا خطای انسانی گم نشود.
 
 3. در Brevo بخش domain authentication را باز کنید و دامنه‌ی ارسال را اضافه کنید.
 4. رکوردهای DNS را دقیقاً از Brevo کپی کنید. مقدارهای SPF، DKIM و DMARC برای هر حساب و دامنه می‌توانند متفاوت باشند؛ نباید دستی حدس زده شوند.
@@ -70,10 +69,12 @@ Reply-to: support@<verified-domain>
 10. یک transactional webhook در Brevo بسازید:
 
 ```text
-URL: https://lingua.vafadar.pro/webhooks/brevo/transactional-email
+URL: https://darwinlingua.com/webhooks/brevo/transactional-email
 Method: POST
-Authentication: Bearer token یا custom header
+Authentication: Token
 ```
+
+در UI فعلی Brevo برای webhook سه گزینه‌ی `No`, `Basic`, و `Token` دیده می‌شود. برای Darwin Lingua گزینه‌ی درست `Token` است. مقدار token باید دقیقاً همان `TransactionalEmail:BrevoWebhookSecret` باشد. کد برنامه این مقدار را از هدر `Authorization: Bearer <token>` می‌خواند. `No` ناامن است و `Basic` با endpoint فعلی ما تطبیق ندارد.
 
 11. برای webhook، eventهای transactional لازم را فعال کنید:
 
@@ -104,12 +105,12 @@ unsubscribed
 {
   "TransactionalEmail": {
     "Mode": "BrevoApi",
-    "PublicBaseUrl": "https://lingua.vafadar.pro",
+    "PublicBaseUrl": "https://darwinlingua.com",
     "ProductName": "Darwin Lingua",
-    "FromEmail": "no-reply@<verified-domain>",
+    "FromEmail": "no-reply@darwinlingua.com",
     "FromName": "Darwin Lingua",
-    "ReplyToEmail": "support@<verified-domain>",
-    "SupportEmail": "support@<verified-domain>",
+    "ReplyToEmail": "support@darwinlingua.com",
+    "SupportEmail": "support@darwinlingua.com",
     "BrevoApiBaseUrl": "https://api.brevo.com",
     "BrevoApiKey": "<secret-from-brevo>",
     "BrevoWebhookSecret": "<strong-random-secret>",
@@ -126,7 +127,7 @@ unsubscribed
 ```powershell
 .\scripts\Set-Web-LocalSecrets.ps1 `
   -ConfigureBrevo `
-  -PublicBaseUrl "https://lingua.vafadar.pro" `
+  -PublicBaseUrl "https://darwinlingua.com" `
   -BrevoSandboxMode $false `
   -BrevoAllowQuerySecretFallback $false
 ```
@@ -140,7 +141,7 @@ $env:DARWINLINGUA_BREVO_WEBHOOK_SECRET = "<strong-random-secret>"
 .\scripts\Set-Web-LocalSecrets.ps1 `
   -ConfigureBrevo `
   -UseEnvironment `
-  -PublicBaseUrl "https://lingua.vafadar.pro" `
+  -PublicBaseUrl "https://darwinlingua.com" `
   -BrevoSandboxMode $false `
   -BrevoAllowQuerySecretFallback $false
 ```
@@ -179,7 +180,7 @@ $env:DARWINLINGUA_BREVO_WEBHOOK_SECRET = "<strong-random-secret>"
 بعد از pass شدن readiness check:
 
 1. یک کاربر تستی ثبت‌نام کند و ایمیل تأیید دریافت شود.
-2. لینک تأیید باید از `https://lingua.vafadar.pro` شروع شود.
+2. لینک تأیید باید از `https://darwinlingua.com` شروع شود.
 3. password reset روی یک inbox واقعی تست شود.
 4. HTML email در Gmail/Outlook/mobile inbox بررسی شود.
 5. plain text alternative هم قابل خواندن باشد.
@@ -194,7 +195,7 @@ $env:DARWINLINGUA_BREVO_WEBHOOK_SECRET = "<strong-random-secret>"
 - ایمیل‌ها با HTML inline داخل کد Darwin Lingua طراحی و نسخه‌بندی شوند.
 - از Brevo فقط برای ارسال، deliverability، log، webhook و suppression استفاده شود.
 - فعلاً از Brevo templateId استفاده نشود، چون مدیریت دستی بیرون از Git اضافه می‌کند و تست‌پذیری تغییرات ایمیل را پایین می‌آورد.
-- وقتی Web به بلوغ رسید و دامنه‌ی اصلی انتخاب شد، sender domain، `PublicBaseUrl`، legal pages و webhook URL در یک release step واحد به دامنه‌ی اصلی منتقل شوند.
+- دامنه‌ی اصلی انتخاب شده است: `darwinlingua.com`. از این به بعد sender domain، `PublicBaseUrl`، legal pages و webhook URL باید روی همین دامنه بررسی شوند.
 
 ## منابع رسمی Brevo
 

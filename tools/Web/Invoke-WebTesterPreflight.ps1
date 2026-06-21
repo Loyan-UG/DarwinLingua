@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-    [string]$WebBaseUrl = "https://lingua.vafadar.pro",
-    [string]$ApiBaseUrl = "https://linguaapi.vafadar.pro",
+    [string]$WebBaseUrl = "https://darwinlingua.com",
+    [string]$ApiBaseUrl = "https://api.darwinlingua.com",
     [string]$OutputDirectory = "artifacts/validation/web-tester-preflight",
     [int]$TimeoutSeconds = 20
 )

@@ -13,7 +13,7 @@ public sealed class ServerContentOptions
     /// <summary>
     /// Gets or sets the base URL exposed to clients for generated download links.
     /// </summary>
-    public string PublicBaseUrl { get; set; } = "https://linguaapi.vafadar.pro";
+    public string PublicBaseUrl { get; set; } = "https://api.darwinlingua.com";
 
     /// <summary>
     /// Gets or sets the default schema version for generated manifests.

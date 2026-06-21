@@ -2,7 +2,7 @@
 
 This checklist covers the server-side setup tasks required before running Darwin Lingua in staging or production.
 
-Current scope note: the active Web testing phase uses the temporary development/test domain `https://lingua.vafadar.pro` and keeps public paid billing disabled. For the next controlled tester pass, the required external setup is Brevo transactional email, public URL configuration, database/runtime secrets, and legal/operator ownership. Stripe tasks in this document remain required before self-service paid subscriptions are exposed, but they are not blockers for a no-billing controlled Web test.
+Current scope note: the active Web testing phase uses the primary product domain `https://darwinlingua.com` and the API domain `https://api.darwinlingua.com`, while public paid billing remains disabled. For the next controlled tester pass, the required external setup is Brevo transactional email, Cloudflare routing, database/runtime secrets, and legal/operator ownership. Stripe tasks in this document remain required before self-service paid subscriptions are exposed, but they are not blockers for a no-billing controlled Web test.
 
 ## Secrets and Configuration
 
@@ -39,17 +39,17 @@ Local development helper:
 - [ ] Set `TransactionalEmail__BrevoApiBaseUrl=https://api.brevo.com`.
 - [ ] Use `TransactionalEmail__BrevoSandboxMode=true` only for integration validation where no email should be sent.
 - [ ] Set `TransactionalEmail__BrevoSandboxMode=false` before real staging delivery tests and production.
-- [ ] Set `TransactionalEmail__FromEmail` to a verified Brevo sender address.
+- [ ] Set `TransactionalEmail__FromEmail` to a verified Brevo sender address, preferably `no-reply@darwinlingua.com`.
 - [ ] Set `TransactionalEmail__FromName`.
-- [ ] Set `TransactionalEmail__ReplyToEmail`.
-- [ ] Set `TransactionalEmail__SupportEmail`.
+- [ ] Set `TransactionalEmail__ReplyToEmail=support@darwinlingua.com`.
+- [ ] Set `TransactionalEmail__SupportEmail=support@darwinlingua.com`.
 - [ ] Set at least one `TransactionalEmail__AdminNotificationEmails__0` recipient.
 - [ ] Generate a strong random `TransactionalEmail__BrevoWebhookSecret`.
 - [ ] Store the webhook secret in platform secret storage.
 - [ ] Confirm every environment using `TransactionalEmail__Mode=BrevoApi` has a non-empty webhook secret.
 - [ ] Keep `TransactionalEmail__BrevoAllowQuerySecretFallback=false` outside local/manual diagnostics.
-- [ ] Configure a Brevo transactional webhook to call `/webhooks/brevo/transactional-email`.
-- [ ] Configure Brevo webhook security with Bearer auth and set the bearer token to `TransactionalEmail__BrevoWebhookSecret`.
+- [ ] Configure a Brevo transactional webhook to call `https://darwinlingua.com/webhooks/brevo/transactional-email`.
+- [ ] Configure Brevo webhook security with `Token` authentication and set the token to `TransactionalEmail__BrevoWebhookSecret`.
 - [ ] If Bearer auth is not available, configure a custom header `X-DarwinLingua-Brevo-Webhook-Secret` with the same secret.
 - [ ] Avoid query-string webhook secrets except for short local/manual diagnostics because URLs can be logged by infrastructure.
 - [ ] Enable Brevo webhook events for delivered, deferred, hard bounce, soft bounce, blocked, invalid, error, spam, complaint, opened, and clicked where supported.
