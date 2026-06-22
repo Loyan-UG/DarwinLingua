@@ -212,7 +212,8 @@ function Write-SmokeReport {
     $lines.Add("")
     $lines.Add("| Scenario | Sent | Provider message id |")
     $lines.Add("| --- | --- | --- |")
-    foreach ($message in @($Report.messages)) {
+    $reportMessages = if ($null -eq $Report.messages) { @() } else { [object[]]$Report.messages }
+    foreach ($message in $reportMessages) {
         $lines.Add("| $($message.scenarioKey) | $($message.sent) | $($message.providerMessageId) |")
     }
     $lines.Add("")
@@ -415,7 +416,7 @@ $finalReport = [ordered]@{
     expectedPublicBaseUrl = $ExpectedPublicBaseUrl
     sendingDomain = $SendingDomain
     readinessReport = if ($null -eq $latestReadinessReport) { "" } else { $latestReadinessReport.FullName }
-    messages = $sentMessages
+    messages = @($sentMessages.ToArray())
 }
 
 Write-SmokeReport -JsonPath $jsonPath -MarkdownPath $markdownPath -Report $finalReport

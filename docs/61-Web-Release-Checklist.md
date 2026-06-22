@@ -201,7 +201,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 
 - [ ] production configuration applied
 - [x] database connectivity verified
-  - Evidence: 2026-06-18 local Web/WebApi smoke returned `200` for `https://localhost:7501/`, `https://localhost:7501/courses`, and `http://localhost:5099/health`; public smoke returned `200` for `https://lingua.vafadar.pro/`, `/courses`, and `https://linguaapi.vafadar.pro/health`. PostgreSQL verification against `darwinlingua_shared` returned `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, and `AspNetUsers=7`.
+  - Evidence: 2026-06-18 local Web/WebApi smoke returned `200` for `https://localhost:7501/`, `https://localhost:7501/courses`, and `http://localhost:5099/health`; public smoke returned `200` for `https://lingua.vafadar.pro/`, `/courses`, and `https://linguaapi.vafadar.pro/health`. 2026-06-22 Darwin-domain public stack helper `tools/Web/Start-WebPublicDevStack.ps1 -StopExisting` generated `artifacts/validation/web-public-stack/web-public-stack-20260622-231319.md` with smoke passed for `https://darwinlingua.com`, `/legal`, `/privacy`, and `https://api.darwinlingua.com/health`. PostgreSQL verification against `darwinlingua_shared` returned `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, and `AspNetUsers=7`.
 - [x] Web PostgreSQL/Npgsql identity connection string is configured; no local `darwin-lingua.web.db` startup path is used
   - Evidence: 2026-06-18 `WebRuntimeBootstrapStructuralTests` verified Web/WebApi PostgreSQL/Npgsql startup configuration, and source search found no `darwin-lingua.web.db` startup path under Web/WebApi.
 - [x] security headers verified
@@ -213,11 +213,11 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [x] phase-completion backup created under `X:\Projects\DarwinLingua.Backup` with PostgreSQL dumps, repo restore overlay, separate local config/secret bundle, manifest, restore notes, and checksum verification
   - Evidence: latest Web/domain/Brevo/legal checkpoint is `X:\Projects\DarwinLingua.Backup\20260622-222944-web-brevo-live-api-gate-blocked-by-authorized-ip`. It contains PostgreSQL dump, restore list, globals, repo overlay, separate `secrets/` bundle including ASP.NET user-secrets, Docker metadata, `manifest.md`, and `checksums.sha256`.
 - [x] production email provider configured
-  - Evidence: 2026-06-22 Brevo readiness report `brevo-production-readiness-20260622-223909.md` passed `config.mode=BrevoApi`, `secret.apiKey`, `secret.webhookSecret`, `config.sandbox=false`, `config.querySecretFallback=false`, and `operator.webhookConfigured`. The provider is configured, but real delivery smoke remains blocked until Brevo Authorized IPs includes IP `109.85.65.57`.
-- [ ] Brevo live API reachability from the current host is verified
-  - Evidence needed: add IP `109.85.65.57` in Brevo Authorized IPs, rerun `Invoke-BrevoProductionReadinessCheck.ps1` with `-VerifyBrevoApi`, and get 0 blockers. Current evidence `brevo-production-readiness-20260622-223909.md` has blocker `brevo.accountApi` because Brevo rejected that IP as unauthorized.
-- [ ] Brevo real inbox/webhook smoke is complete
-  - Evidence needed: run `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1` with `-ConfirmSend`, confirm both smoke emails in `info@darwinlingua.com`, and archive the generated `artifacts/validation/brevo-real-delivery-smoke/` report.
+  - Evidence: 2026-06-22 Brevo readiness report `brevo-production-readiness-20260622-230359.md` passed `config.mode=BrevoApi`, `secret.apiKey`, `secret.webhookSecret`, `config.sandbox=false`, `config.querySecretFallback=false`, `operator.webhookConfigured`, and `brevo.accountApi` with `0` blockers and `0` warnings.
+- [x] Brevo live API reachability from the current host is verified
+  - Evidence: `artifacts/validation/brevo-readiness/brevo-production-readiness-20260622-230359.md` was generated with `-VerifyBrevoApi`, `blockerCount=0`, and `warningCount=0`.
+- [x] Brevo real inbox/provider smoke is sent
+  - Evidence: `artifacts/validation/brevo-real-delivery-smoke/brevo-real-delivery-smoke-20260622-230358.md` reports `Status: sent` for `Account.EmailConfirmation` and `Account.PasswordReset` to `info@darwinlingua.com`, with Brevo provider message ids recorded. Manual inbox and webhook-log review should still confirm visual rendering and provider event arrival before broad tester self-registration.
 - [x] sender address and reply-to address configured
   - Evidence: 2026-06-22 Brevo readiness report passed syntactic checks for FromEmail, ReplyToEmail, and SupportEmail and confirmed FromEmail uses `darwinlingua.com`.
 - [x] SPF, DKIM, and DMARC verified for the sender domain

@@ -181,6 +181,32 @@ public sealed class WebRuntimeBootstrapStructuralTests
         Assert.Contains("Get-SeedItems", operationalSeedsScript, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void WebPublicDevStackScript_ShouldStartLaunchProfilePortsAndTunnelSmoke()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string source = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools",
+            "Web",
+            "Start-WebPublicDevStack.ps1"));
+
+        Assert.Contains("Set-StrictMode -Version Latest", source, StringComparison.Ordinal);
+        Assert.Contains("DarwinLingua.WebApi.csproj", source, StringComparison.Ordinal);
+        Assert.Contains("DarwinLingua.Web.csproj", source, StringComparison.Ordinal);
+        Assert.Contains("--launch-profile", source, StringComparison.Ordinal);
+        Assert.Contains("DarwinLingua.WebApi", source, StringComparison.Ordinal);
+        Assert.Contains("https", source, StringComparison.Ordinal);
+        Assert.Contains("Start-CloudflaredFromInstalledService", source, StringComparison.Ordinal);
+        Assert.Contains("user-process-fallback", source, StringComparison.Ordinal);
+        Assert.Contains("http://localhost:5192", source, StringComparison.Ordinal);
+        Assert.Contains("http://localhost:53945/health", source, StringComparison.Ordinal);
+        Assert.Contains("https://darwinlingua.com", source, StringComparison.Ordinal);
+        Assert.Contains("https://api.darwinlingua.com/health", source, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-public-stack", source, StringComparison.Ordinal);
+        Assert.DoesNotContain("eyJh", source, StringComparison.Ordinal);
+    }
+
     private static string ResolveRepositoryRoot()
     {
         DirectoryInfo? currentDirectory = new(AppContext.BaseDirectory);

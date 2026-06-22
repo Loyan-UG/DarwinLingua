@@ -289,6 +289,14 @@ For private local-only smoke, `http://localhost:5192` and `http://localhost:5099
 
 Do not start WebApi with only `--urls http://localhost:5099` when the public `api.darwinlingua.com` tunnel must be tested. That local-only launch leaves the checked-in tunnel origin ports closed and produces public `502` responses even though `http://localhost:5099/health` is healthy. Use the checked-in launch profile for public smoke so WebApi listens on `https://0.0.0.0:53944`, `http://0.0.0.0:53945`, and `http://localhost:5099`.
 
+Repeatable local public-stack helper:
+
+```powershell
+.\tools\Web\Start-WebPublicDevStack.ps1 -StopExisting
+```
+
+The helper starts WebApi and Web with the checked-in launch profiles, starts the installed Cloudflared tunnel if needed, falls back to a user-process `cloudflared` run when the Windows service cannot be started from the current shell, and writes JSON/Markdown evidence under `artifacts/validation/web-public-stack/`. It must not print the tunnel token.
+
 ## Phase Backup Register
 
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
