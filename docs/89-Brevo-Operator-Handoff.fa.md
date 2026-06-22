@@ -4,7 +4,7 @@
 
 این سند برای کارهای بیرون از کد است؛ یعنی کارهایی که باید در پنل Brevo، DNS دامنه، و تنظیمات محرمانه انجام شود تا ایمیل‌های واقعی Darwin Lingua ارسال شوند.
 
-کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-22: API key و webhook secret در user-secrets ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، و readiness check با 0 blocker / 0 warning پاس شده است. قبل از اینکه ثبت‌نام آزاد یا بازیابی رمز عبور را به کاربران تستی واقعی بسپاریم، هنوز باید smoke واقعی inbox/webhook انجام شود و اگر Brevo API خطای IP داد، IP اجراکننده در Authorized IPs اضافه شود.
+کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-22: API key و webhook secret در user-secrets ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، و DPA پذیرفته شده است. اما live API check با `-VerifyBrevoApi` هنوز یک blocker دارد: Brevo این ماشین را به دلیل IP مجازنشده رد می‌کند. قبل از ثبت‌نام آزاد یا بازیابی رمز عبور برای کاربران تستی واقعی، IP گزارش‌شده باید در Authorized IPs اضافه شود و سپس smoke واقعی inbox/webhook انجام شود.
 
 دامنه‌ی اصلی Web برای تست و سپس production این است:
 
@@ -175,10 +175,11 @@ $env:DARWINLINGUA_BREVO_WEBHOOK_SECRET = "<strong-random-secret>"
   -DnsAuthenticated `
   -WebhookConfigured `
   -DpaAccepted `
-  -RequireRealDelivery
+  -RequireRealDelivery `
+  -VerifyBrevoApi
 ```
 
-اگر هنوز نمی‌خواهید DNS lookup انجام شود و فقط وضعیت verified داخل Brevo را ملاک می‌گیرید، موقتاً `-SkipDnsLookup` هم اضافه کنید. برای تصمیم نهایی production بهتر است DNS واقعی هم بررسی شود.
+اگر هنوز نمی‌خواهید DNS lookup انجام شود و فقط وضعیت verified داخل Brevo را ملاک می‌گیرید، موقتاً `-SkipDnsLookup` هم اضافه کنید. برای تصمیم نهایی production بهتر است DNS واقعی هم بررسی شود. اگر گزارش با `brevo.accountApi` و متن `unrecognised IP address` شکست خورد، IP نمایش داده‌شده در همان گزارش را در Brevo از مسیر `https://app.brevo.com/security/authorised_ips` اضافه کنید و همین command را دوباره اجرا کنید.
 
 بعد از pass شدن readiness check:
 

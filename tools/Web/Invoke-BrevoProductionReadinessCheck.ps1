@@ -10,6 +10,7 @@ param(
     [switch]$WebhookConfigured,
     [switch]$DpaAccepted,
     [switch]$RequireRealDelivery,
+    [switch]$VerifyBrevoApi,
     [switch]$SkipDnsLookup
 )
 
@@ -254,6 +255,68 @@ else {
         $checks.Add((New-Check -Key "secret.apiKey" -Status "blocker" -Message "Brevo API key is missing or still a placeholder."))
     }
 
+    if ($VerifyBrevoApi.IsPresent) {
+        if ((Test-ConfiguredSecret -Value $brevoApiKey) -and
+            [Uri]::TryCreate([string]$brevoApiBaseUrl, [UriKind]::Absolute, [ref]$parsedBrevoApiBaseUri) -and
+            $brevoApiBaseUrl.ToString().StartsWith("https://", [StringComparison]::OrdinalIgnoreCase)) {
+            try {
+                $accountUri = "$($brevoApiBaseUrl.ToString().TrimEnd('/'))/v3/account"
+                $response = Invoke-WebRequest -Uri $accountUri -Method Get -Headers @{
+                    "api-key" = $brevoApiKey.ToString()
+                    "accept" = "application/json"
+                } -UseBasicParsing -TimeoutSec 30
+                $checks.Add((New-Check -Key "brevo.accountApi" -Status "pass" -Message "Brevo account API is reachable from this host with the configured API key." -Evidence "HTTP $($response.StatusCode)"))
+            }
+            catch {
+                $statusCode = ""
+                $body = ""
+                if ($null -ne $_.Exception.Response) {
+                    $statusCode = [int]$_.Exception.Response.StatusCode
+                    if (-not [string]::IsNullOrWhiteSpace($_.ErrorDetails.Message)) {
+                        $body = $_.ErrorDetails.Message
+                    }
+                    elseif ($_.Exception.Response -is [System.Net.Http.HttpResponseMessage]) {
+                        try {
+                            $body = $_.Exception.Response.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+                        }
+                        catch {
+                            $body = ""
+                        }
+                    }
+                    else {
+                        $stream = $_.Exception.Response.GetResponseStream()
+                        if ($null -ne $stream) {
+                            $reader = [System.IO.StreamReader]::new($stream)
+                            $body = $reader.ReadToEnd()
+                        }
+                    }
+                }
+
+                $evidence = if ([string]::IsNullOrWhiteSpace($body)) {
+                    $_.Exception.Message
+                }
+                else {
+                    "HTTP $statusCode. $body"
+                }
+
+                $message = if ($evidence.Contains("unrecognised IP address", [StringComparison]::OrdinalIgnoreCase)) {
+                    "Brevo rejected this host because its IP address is not authorized. Add the current server/operator IP in Brevo Authorized IPs at https://app.brevo.com/security/authorised_ips before real delivery smoke."
+                }
+                else {
+                    "Brevo account API could not be reached with the configured API key from this host."
+                }
+
+                $checks.Add((New-Check -Key "brevo.accountApi" -Status "blocker" -Message $message -Evidence $evidence))
+            }
+        }
+        else {
+            $checks.Add((New-Check -Key "brevo.accountApi" -Status "blocker" -Message "Brevo API live verification was requested, but BrevoApiBaseUrl or BrevoApiKey is not configured."))
+        }
+    }
+    else {
+        $checks.Add((New-Check -Key "brevo.accountApi" -Status "warning" -Message "Brevo live API verification was skipped; rerun with -VerifyBrevoApi before real inbox/webhook smoke."))
+    }
+
     if ((Test-ConfiguredSecret -Value $brevoWebhookSecret) -and $brevoWebhookSecret.ToString().Length -ge 32) {
         $checks.Add((New-Check -Key "secret.webhookSecret" -Status "pass" -Message "Brevo webhook secret appears configured and long enough. Secret value was not printed."))
     }
@@ -340,6 +403,7 @@ $report = [ordered]@{
     expectedPublicBaseUrl = $ExpectedPublicBaseUrl
     sendingDomain = $SendingDomain
     requireRealDelivery = $RequireRealDelivery.IsPresent
+    verifyBrevoApi = $VerifyBrevoApi.IsPresent
     blockerCount = $blockers.Count
     warningCount = $warnings.Count
     checks = $checks

@@ -53,7 +53,8 @@ Local development helper:
 - [x] If Bearer auth is not available, configure a custom header `X-DarwinLingua-Brevo-Webhook-Secret` with the same secret.
 - [x] Avoid query-string webhook secrets except for short local/manual diagnostics because URLs can be logged by infrastructure.
 - [x] Set the Brevo webhook event category to `Transactional email` and enable request/sent, delivered, deferred, hard bounce, soft bounce, blocked, invalid/invalid email, error, spam, complaint, opened, unique opened, click/clicked, unsubscribed, and equivalent provider failure events where supported by the current Brevo UI.
-- [ ] If Brevo API calls return `unrecognised IP address`, add the current server/operator IP in Brevo Authorized IPs at `https://app.brevo.com/security/authorised_ips` before treating the API key as invalid.
+- [ ] Add the current server/operator IP in Brevo Authorized IPs at `https://app.brevo.com/security/authorised_ips`; latest live check rejected `109.85.65.57` as unauthorized.
+- [ ] Rerun `Invoke-BrevoProductionReadinessCheck.ps1` with `-VerifyBrevoApi` and confirm `brevo.accountApi` passes before real inbox/webhook smoke.
 - [ ] Confirm webhook calls reach the public HTTPS origin.
 - [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events.
 - [ ] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.

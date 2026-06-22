@@ -399,9 +399,13 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("WebhookConfigured", script, StringComparison.Ordinal);
         Assert.Contains("DpaAccepted", script, StringComparison.Ordinal);
         Assert.Contains("RequireRealDelivery", script, StringComparison.Ordinal);
+        Assert.Contains("VerifyBrevoApi", script, StringComparison.Ordinal);
+        Assert.Contains("brevo.accountApi", script, StringComparison.Ordinal);
+        Assert.Contains("https://app.brevo.com/security/authorised_ips", script, StringComparison.Ordinal);
         Assert.Contains("artifacts/validation/brevo-readiness", script, StringComparison.Ordinal);
 
         Assert.Contains("Invoke-BrevoProductionReadinessCheck.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("-VerifyBrevoApi", emailBacklog, StringComparison.Ordinal);
         Assert.Contains("Invoke-BrevoProductionReadinessCheck.ps1", releaseChecklist, StringComparison.Ordinal);
     }
 

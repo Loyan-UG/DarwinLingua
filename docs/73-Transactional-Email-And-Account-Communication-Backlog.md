@@ -170,10 +170,12 @@ Set these values outside source control for the target environment:
   -DnsAuthenticated `
   -WebhookConfigured `
   -DpaAccepted `
-  -RequireRealDelivery
+  -RequireRealDelivery `
+  -VerifyBrevoApi
 ```
 
 - The readiness tool writes JSON and Markdown reports under `artifacts/validation/brevo-readiness/`. It does not print API keys or webhook secrets; it only reports whether they appear configured.
+- `-VerifyBrevoApi` calls Brevo's account API with the configured key from this host. Treat an `unrecognised IP address` blocker as proof that the current server/operator IP must be added in Brevo Authorized IPs before real inbox/webhook smoke.
 - Treat every `blocker` in that report as a hard stop before asking testers to self-register or before enabling real transactional delivery.
 - Send one email-confirmation message to a real inbox.
 - Send one password-reset message to a real inbox.
