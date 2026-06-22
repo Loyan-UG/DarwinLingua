@@ -183,13 +183,33 @@ $env:DARWINLINGUA_BREVO_WEBHOOK_SECRET = "<strong-random-secret>"
 
 بعد از pass شدن readiness check:
 
-1. یک کاربر تستی ثبت‌نام کند و ایمیل تأیید دریافت شود.
-2. لینک تأیید باید از `https://darwinlingua.com` شروع شود.
-3. password reset روی یک inbox واقعی تست شود.
-4. HTML email در Gmail/Outlook/mobile inbox بررسی شود.
-5. plain text alternative هم قابل خواندن باشد.
-6. Brevo transactional logs باید message id و delivery status را نشان دهد.
-7. یک webhook event یا manual provider event باید در Admin Email Diagnostics دیده شود.
+اول smoke کنترل‌شده‌ی ارسال واقعی را اجرا کنید. این command بدون `-ConfirmSend` هیچ ایمیل واقعی نمی‌فرستد:
+
+```powershell
+.\tools\Web\Invoke-BrevoRealDeliverySmoke.ps1 `
+  -RecipientEmail "info@darwinlingua.com" `
+  -SenderVerified `
+  -DnsAuthenticated `
+  -WebhookConfigured `
+  -DpaAccepted `
+  -ConfirmSend
+```
+
+این ابزار قبل از ارسال، همان readiness check را با `-VerifyBrevoApi` اجرا می‌کند. اگر هنوز IP در Brevo مجاز نشده باشد، ارسال را متوقف می‌کند و گزارش را در مسیر زیر می‌نویسد:
+
+```text
+artifacts/validation/brevo-real-delivery-smoke/
+```
+
+بعد از smoke موفق:
+
+1. هر دو ایمیل smoke باید در inbox واقعی دیده شوند: یکی برای email confirmation و یکی برای password reset.
+2. لینک‌ها باید از `https://darwinlingua.com` شروع شوند.
+3. HTML email در Gmail/Outlook/mobile inbox بررسی شود.
+4. plain text alternative هم قابل خواندن باشد.
+5. Brevo transactional logs باید message id و delivery status را نشان دهد.
+6. یک webhook event یا manual provider event باید در Admin Email Diagnostics دیده شود.
+7. بعد از آن، یک ثبت‌نام کاربر تستی و یک password reset واقعی از خود UI انجام شود.
 8. bounce/spam/complaint باید suppression داخلی بسازد.
 
 ## تصمیم پیشنهادی فعلی

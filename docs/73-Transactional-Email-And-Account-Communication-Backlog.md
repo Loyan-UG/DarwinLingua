@@ -177,8 +177,19 @@ Set these values outside source control for the target environment:
 - The readiness tool writes JSON and Markdown reports under `artifacts/validation/brevo-readiness/`. It does not print API keys or webhook secrets; it only reports whether they appear configured.
 - `-VerifyBrevoApi` calls Brevo's account API with the configured key from this host. Treat an `unrecognised IP address` blocker as proof that the current server/operator IP must be added in Brevo Authorized IPs before real inbox/webhook smoke.
 - Treat every `blocker` in that report as a hard stop before asking testers to self-register or before enabling real transactional delivery.
-- Send one email-confirmation message to a real inbox.
-- Send one password-reset message to a real inbox.
+- After the readiness report has zero blockers, run the controlled real-delivery smoke tool. It sends one email-confirmation smoke message and one password-reset smoke message only when `-ConfirmSend` is explicitly present:
+
+```powershell
+.\tools\Web\Invoke-BrevoRealDeliverySmoke.ps1 `
+  -RecipientEmail "info@darwinlingua.com" `
+  -SenderVerified `
+  -DnsAuthenticated `
+  -WebhookConfigured `
+  -DpaAccepted `
+  -ConfirmSend
+```
+
+- The real-delivery smoke tool writes JSON and Markdown reports under `artifacts/validation/brevo-real-delivery-smoke/`. It does not print API keys or webhook secrets.
 - Confirm that both HTML and plain-text alternatives render correctly.
 - Confirm that action links use the configured `PublicBaseUrl`.
 - Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.

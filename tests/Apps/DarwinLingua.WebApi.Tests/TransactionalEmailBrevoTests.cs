@@ -409,6 +409,36 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("Invoke-BrevoProductionReadinessCheck.ps1", releaseChecklist, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void BrevoRealDeliverySmokeTool_ShouldGateRealSendingAndWriteEvidence()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-BrevoRealDeliverySmoke.ps1"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+        string operatorHandoff = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/89-Brevo-Operator-Handoff.fa.md"));
+
+        Assert.Contains("Invoke-BrevoProductionReadinessCheck.ps1", script, StringComparison.Ordinal);
+        Assert.Contains("-VerifyBrevoApi", script, StringComparison.Ordinal);
+        Assert.Contains("ConfirmSend", script, StringComparison.Ordinal);
+        Assert.Contains("PreflightOnly", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-real-delivery-smoke", script, StringComparison.Ordinal);
+        Assert.Contains("Account.EmailConfirmation", script, StringComparison.Ordinal);
+        Assert.Contains("Account.PasswordReset", script, StringComparison.Ordinal);
+        Assert.Contains("X-DarwinLingua-Smoke", script, StringComparison.Ordinal);
+        Assert.Contains("Secret", script, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+
+        Assert.Contains("Invoke-BrevoRealDeliverySmoke.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoRealDeliverySmoke.ps1", operatorHandoff, StringComparison.Ordinal);
+        Assert.Contains("-ConfirmSend", operatorHandoff, StringComparison.Ordinal);
+    }
+
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()
     {
         Mode = "BrevoApi",

@@ -55,6 +55,7 @@ Local development helper:
 - [x] Set the Brevo webhook event category to `Transactional email` and enable request/sent, delivered, deferred, hard bounce, soft bounce, blocked, invalid/invalid email, error, spam, complaint, opened, unique opened, click/clicked, unsubscribed, and equivalent provider failure events where supported by the current Brevo UI.
 - [ ] Add the current server/operator IP in Brevo Authorized IPs at `https://app.brevo.com/security/authorised_ips`; latest live check rejected `109.85.65.57` as unauthorized.
 - [ ] Rerun `Invoke-BrevoProductionReadinessCheck.ps1` with `-VerifyBrevoApi` and confirm `brevo.accountApi` passes before real inbox/webhook smoke.
+- [ ] Run `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1 -RecipientEmail "info@darwinlingua.com" -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted -ConfirmSend` and archive the generated `artifacts/validation/brevo-real-delivery-smoke/` report.
 - [ ] Confirm webhook calls reach the public HTTPS origin.
 - [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events.
 - [ ] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.
