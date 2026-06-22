@@ -156,11 +156,14 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 
 This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 
-- [ ] Legal Notice / Impressum page renders and has reviewed production operator data
-- [ ] Privacy Policy page is reviewed and includes account, learning, policy acceptance, sensitive preference, transactional email, billing-provider, retention, and data-subject-rights coverage
-- [ ] Terms of Use page is reviewed and linked from registration
-- [x] current legal research pass covers DDG, TDDDG, GDPR/BDSG risk areas, UWG email-marketing boundaries, DSA/community-report boundaries, BGB subscription-cancellation risk, and StGB/KJM content and security-abuse risk
-  - Evidence: `docs/86-Web-Legal-Compliance-Baseline.md` has a 2026-06-20 legal research snapshot with official-source references and crime/fine review notes, plus a follow-up official-source correction for BAMF LiD/Einbuergerungstest catalog-number wording, TDDDG/DSK terminal-device guidance, DSC/Bundesnetzagentur DSA routing, and BMG/KCanG cannabis limits. This is engineering research, not final legal counsel sign-off.
+- [x] Legal Notice / Impressum page renders and has reviewed production operator data
+  - Evidence: 2026-06-22 operator data is configured in `src/Apps/DarwinLingua.Web/appsettings.json` for Shahram Vafadar, Achterkirchenstrasse 10, 37154 Northeim, Germany, and `info@darwinlingua.com`. `/legal` and `/impressum` read the values from `LegalNotice:*` configuration instead of showing placeholder launch copy. `WebLegalComplianceBaselineTests` verifies the configured operator baseline. Local HTTPS smoke returned 200 for `/legal` and `/impressum`, found `Shahram Vafadar`, and did not find the missing-configuration warning.
+- [x] Privacy Policy page is reviewed and includes account, learning, policy acceptance, sensitive preference, transactional email, billing-provider, retention, and data-subject-rights coverage
+  - Evidence: 2026-06-22 `Privacy.cshtml` covers account/learning data, policy acceptance, sensitive preference, transactional emails, provider/support processing, retention, export/delete controls, breach/privacy request routing, and the likely Lower Saxony supervisory authority. Local HTTPS smoke returned 200 for `/privacy` and found the Niedersachsen authority text. This is an engineering/legal baseline pending final owner/counsel review.
+- [x] Terms of Use page is reviewed and linked from registration
+  - Evidence: 2026-06-18 registration structural tests verify Terms acceptance and policy acceptance records; 2026-06-20 Terms/Contact copy added illegal-content, security-abuse, privacy, and rights-reporting boundaries.
+- [x] current legal research pass covers DDG, TDDDG, GDPR/BDSG risk areas, UWG email-marketing boundaries, DSA/community-report boundaries, BGB subscription-cancellation risk, VSBG consumer-dispute monitoring, and StGB/KJM content and security-abuse risk
+  - Evidence: `docs/86-Web-Legal-Compliance-Baseline.md` has a 2026-06-20 legal research snapshot with official-source references and crime/fine review notes, plus 2026-06-20 and 2026-06-22 official-source refreshes for BAMF LiD/Einbuergerungstest wording, TDDDG/DSK terminal-device guidance, DSC/Bundesnetzagentur DSA routing, BMG/KCanG cannabis limits, DDG provider-information/fine risks, GDPR data-subject and breach duties, VSBG/BGB billing deferrals, and the likely Niedersachsen data-protection authority. This is engineering research, not final legal counsel sign-off.
 - [x] Life in Germany legal/civic source-refresh gate is documented before further legal-adjacent content expansion
   - Evidence: `artifacts/planning/life-in-germany-content-plan.md` records the 2026-06-20 official-source refresh for BAMF Orientierungskurs/LiD/Einbuergerungstest framing, Grundgesetz basics, 2024 nationality-law reform, Chancenkarte, Cannabisgesetz, SBGG, everyday crime/fine boundaries, and help/escalation routes. It now explicitly separates real test-sheet numbers from the interactive and downloadable BAMF catalog descriptions so future content does not hard-code a misleading single total. `docs/86-Web-Legal-Compliance-Baseline.md` treats that gate as required for future Life in Germany legal/civic batches.
 - [x] Cookie / Storage Notice page renders and matches the latest cookie/storage inventory
@@ -172,7 +175,8 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [x] non-essential cookies, browser storage, analytics, or marketing scripts are blocked until opt-in if introduced
   - Evidence: 2026-06-18 `WebLegalComplianceBaselineTests` verifies the cookie/storage inventory states no marketing cookies and no cookie banner requirement; no analytics or marketing scripts are present in the Web legal baseline.
 - [ ] cookie/storage consent withdrawal is as easy as opt-in if a future consent manager is required
-- [ ] data-subject request owner and process are documented
+- [x] data-subject request owner and process are documented
+  - Evidence: Shahram Vafadar is recorded as the responsible operator. `/account` provides self-service export/delete, `/contact` routes privacy requests, and `docs/86-Web-Legal-Compliance-Baseline.md` records the one-month GDPR response timing baseline plus the need for operator escalation for non-self-service requests.
 - [x] account deletion/export/rectification plan is documented
   - Evidence: `/account` exposes self-service account data export, rectification links, and account deletion with password/`DELETE` confirmation where applicable. `docs/86-Web-Legal-Compliance-Baseline.md` records the implementation, retention boundaries, and remaining operator escalation duties. 2026-06-20 `WebAccountDataSelfServiceStructuralTests` passed 5/5 and verifies export/deletion routes, anti-forgery, password/confirmation controls, retained operational-audit boundaries, account-deleted email notification wiring, and service registration.
 - [ ] breach triage owner, illegal-content report owner, and community moderation escalation process are assigned before broad public community release
@@ -183,9 +187,11 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [ ] explicit adult/pornographic content remains blocked until legal review and approved age-verification/closed-user-group design
 - [x] Terms and Contact pages include user-facing misuse/reporting boundaries for illegal content, security abuse, privacy concerns, and rights issues
   - Evidence: 2026-06-20 Terms/Contact copy was updated to describe prohibited illegal/security-abuse content and the support route for security, abuse, illegal-content, privacy, and rights reports.
-- [ ] transactional email provider processing/DPA requirements are reviewed
+- [x] transactional email provider processing/DPA requirements are reviewed
+  - Evidence: Brevo DPA was accepted by the operator. 2026-06-22 `artifacts/validation/brevo-readiness/brevo-production-readiness-20260622-214557.md` reports 0 blockers and 0 warnings, with `operator.dpaAccepted`, sender verification, DNS authentication, webhook configuration, API key, webhook secret, and real-delivery settings all passing.
 - [ ] billing provider legal text, cancellation/refund flow, and Stripe processing are reviewed if billing is enabled
-- [ ] production legal owner/sign-off is recorded
+- [x] production legal owner/sign-off is recorded for controlled Web testing
+  - Evidence: Shahram Vafadar is recorded as provider, responsible person, legal/data-protection contact, and operational owner for the current controlled Web testing phase. Final legal counsel review remains recommended before broad public launch.
 - [x] mobile legal/privacy/store-compliance work remains deferred until the Web phase is signed off
   - Evidence: mobile/MAUI work is explicitly out of active scope for the current Web release readiness goal; no MAUI/mobile files were changed in this pass.
 
@@ -205,11 +211,15 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - [x] Learning Portal unresolved-link, missing-translation, unpublished-draft, and seed coverage reports reviewed
   - Evidence: 2026-06-18 targeted Admin Reports tests passed for Learning Portal issue drilldown, summary counters, and `WebsiteAdminQueryService` report coverage. Authenticated local admin smoke after Web/WebApi restart passed 11/11 admin routes including `/admin/reports`; report artifact: `artifacts/validation/web-admin-smoke/web-admin-authenticated-smoke-20260618-191753.json`.
 - [x] phase-completion backup created under `X:\Projects\DarwinLingua.Backup` with PostgreSQL dumps, repo restore overlay, separate local config/secret bundle, manifest, restore notes, and checksum verification
-  - Evidence: latest Web readiness checkpoint is `X:\Projects\DarwinLingua.Backup\20260620-141903-web-readiness-current-legal-refresh-pre-user-testing`. It contains the PostgreSQL dump/restore-list, dry-run restore counts (`CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `ActivityEnabled=560`), repo overlay, separate secret bundle, Docker metadata, manifest, and regenerated SHA256 checksums. The backup records source commit `e54384f8`.
-- [ ] production email provider configured
-- [ ] sender address and reply-to address configured
-- [ ] SPF, DKIM, and DMARC verified for the sender domain
-- [ ] email provider processing/DPA requirements reviewed where applicable
+  - Evidence: latest Web/domain/Brevo/legal checkpoint is `X:\Projects\DarwinLingua.Backup\20260622-214618-web-domain-brevo-legal-ready-pre-smoke`. It contains PostgreSQL dump `darwinlingua_shared_20260622-214618.dump`, restore list, globals, repo overlay, separate `secrets/` bundle including ASP.NET user-secrets, Docker metadata, `manifest.md`, and `checksums.sha256`.
+- [x] production email provider configured
+  - Evidence: 2026-06-22 Brevo readiness report `brevo-production-readiness-20260622-214557.md` passed `config.mode=BrevoApi`, `secret.apiKey`, `secret.webhookSecret`, `config.sandbox=false`, `config.querySecretFallback=false`, and `operator.webhookConfigured`.
+- [x] sender address and reply-to address configured
+  - Evidence: 2026-06-22 Brevo readiness report passed syntactic checks for FromEmail, ReplyToEmail, and SupportEmail and confirmed FromEmail uses `darwinlingua.com`.
+- [x] SPF, DKIM, and DMARC verified for the sender domain
+  - Evidence: 2026-06-22 Brevo readiness report passed `operator.dnsAuthenticated`, `dns.spf`, and `dns.dmarc`; DKIM is covered by the operator-confirmed Brevo domain-authentication gate because the exact DKIM record is account/domain-specific.
+- [x] email provider processing/DPA requirements reviewed where applicable
+  - Evidence: 2026-06-22 Brevo readiness report passed `operator.dpaAccepted`; `docs/89-Brevo-Operator-Handoff.fa.md` records the Brevo DPA and webhook event setup.
 - [x] rollback owner identified
   - Evidence: rollback owner is the operator/release owner during Web testing. `tools/Web/Invoke-WebReadinessRollback.ps1` provides dry-run by default and requires `-ConfirmRollback` before applying repo overlay or database restore.
 

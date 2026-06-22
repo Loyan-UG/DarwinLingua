@@ -2,26 +2,40 @@
 @{
     ViewData["Title"] = T["Legal Notice"];
 
-    static string ReadConfiguredValue(IConfiguration configuration, string key) =>
+    static string? ReadConfiguredValue(IConfiguration configuration, string key) =>
         string.IsNullOrWhiteSpace(configuration[key])
-            ? "Not configured - legal review required before production."
+            ? null
             : configuration[key]!;
 
-    string providerName = ReadConfiguredValue(Configuration, "LegalNotice:ProviderName");
-    string address = ReadConfiguredValue(Configuration, "LegalNotice:Address");
-    string email = ReadConfiguredValue(Configuration, "LegalNotice:Email");
-    string phone = ReadConfiguredValue(Configuration, "LegalNotice:Phone");
-    string responsiblePerson = ReadConfiguredValue(Configuration, "LegalNotice:ResponsiblePerson");
-    string registerInfo = ReadConfiguredValue(Configuration, "LegalNotice:RegisterInfo");
-    string vatId = ReadConfiguredValue(Configuration, "LegalNotice:VatId");
-    string dataProtectionContact = ReadConfiguredValue(Configuration, "LegalNotice:DataProtectionContact");
+    string missing = "Not configured - legal review required before production.";
+    string providerName = ReadConfiguredValue(Configuration, "LegalNotice:ProviderName") ?? missing;
+    string address = ReadConfiguredValue(Configuration, "LegalNotice:Address") ?? missing;
+    string email = ReadConfiguredValue(Configuration, "LegalNotice:Email") ?? missing;
+    string? phone = ReadConfiguredValue(Configuration, "LegalNotice:Phone");
+    string responsiblePerson = ReadConfiguredValue(Configuration, "LegalNotice:ResponsiblePerson") ?? missing;
+    string? registerInfo = ReadConfiguredValue(Configuration, "LegalNotice:RegisterInfo");
+    string? vatId = ReadConfiguredValue(Configuration, "LegalNotice:VatId");
+    string dataProtectionContact = ReadConfiguredValue(Configuration, "LegalNotice:DataProtectionContact") ?? missing;
+    bool hasCoreProviderData = !string.IsNullOrWhiteSpace(providerName) &&
+        !string.IsNullOrWhiteSpace(address) &&
+        !string.IsNullOrWhiteSpace(email) &&
+        !string.IsNullOrWhiteSpace(responsiblePerson) &&
+        !string.IsNullOrWhiteSpace(dataProtectionContact);
 }
 
 <section class="panel stack-lg">
     <span class="eyebrow">@T["Legal"]</span>
     <h1 class="headline-md">@T["Legal Notice"]</h1>
-    <p class="body-lg">@T["This draft legal notice uses operator configuration placeholders. Do not launch production without reviewed provider details."]</p>
-    <p class="body-sm">@T["The public legal notice is prepared for German provider-information requirements. Real operator data must be configured before production use."]</p>
+    @if (hasCoreProviderData)
+    {
+        <p class="body-lg">@T["This legal notice is populated from the configured operator details for Darwin Lingua."]</p>
+        <p class="body-sm">@T["The release owner must review the configured details before broad public launch."]</p>
+    }
+    else
+    {
+        <p class="body-lg">@T["This legal notice is missing required operator configuration. Do not launch production without reviewed provider details."]</p>
+        <p class="body-sm">@T["The public legal notice is prepared for German provider-information requirements. Real operator data must be configured before production use."]</p>
+    }
 </section>
 
 <section class="grid-two-col">
@@ -34,8 +48,11 @@
             <dd>@address</dd>
             <dt>@T["Email"]</dt>
             <dd>@email</dd>
-            <dt>@T["Phone"]</dt>
-            <dd>@phone</dd>
+            @if (!string.IsNullOrWhiteSpace(phone))
+            {
+                <dt>@T["Phone"]</dt>
+                <dd>@phone</dd>
+            }
         </dl>
     </article>
 
@@ -44,10 +61,16 @@
         <dl class="definition-list">
             <dt>@T["Responsible person"]</dt>
             <dd>@responsiblePerson</dd>
-            <dt>@T["Register information"]</dt>
-            <dd>@registerInfo</dd>
-            <dt>@T["VAT ID"]</dt>
-            <dd>@vatId</dd>
+            @if (!string.IsNullOrWhiteSpace(registerInfo))
+            {
+                <dt>@T["Register information"]</dt>
+                <dd>@registerInfo</dd>
+            }
+            @if (!string.IsNullOrWhiteSpace(vatId))
+            {
+                <dt>@T["VAT ID"]</dt>
+                <dd>@vatId</dd>
+            }
             <dt>@T["Data protection contact"]</dt>
             <dd>@dataProtectionContact</dd>
         </dl>
@@ -57,7 +80,7 @@
         <h2 class="headline-sm">@T["Legal review status"]</h2>
         <ul class="feature-list">
             <li>@T["This page is a Web legal baseline, not final legal advice."]</li>
-            <li>@T["Production must configure real operator information before public launch."]</li>
+            <li>@T["Operator information is read from application configuration and must stay current."]</li>
             <li>@T["Terms, Privacy, Cookie/Storage Notice, and Sensitive Educational Language policy require owner review before release."]</li>
         </ul>
     </article>

@@ -37,12 +37,15 @@ public sealed class WebLegalComplianceBaselineTests
     }
 
     [Fact]
-    public void LegalPages_ShouldUseConfigurationPlaceholdersAndReviewWarnings()
+    public void LegalPages_ShouldUseConfiguredOperatorDataAndReviewWarnings()
     {
         string repositoryRoot = FindRepositoryRoot();
         string legal = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "src/Apps/DarwinLingua.Web/Views/Home/Legal.cshtml"));
+        string appsettings = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src/Apps/DarwinLingua.Web/appsettings.json"));
         string cookies = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "src/Apps/DarwinLingua.Web/Views/Home/Cookies.cshtml"));
@@ -51,7 +54,10 @@ public sealed class WebLegalComplianceBaselineTests
             "src/Apps/DarwinLingua.Web/Views/Home/Contact.cshtml"));
 
         Assert.Contains("LegalNotice:ProviderName", legal, StringComparison.Ordinal);
-        Assert.Contains("Not configured - legal review required before production.", legal, StringComparison.Ordinal);
+        Assert.Contains("This legal notice is populated from the configured operator details", legal, StringComparison.Ordinal);
+        Assert.Contains("Shahram Vafadar", appsettings, StringComparison.Ordinal);
+        Assert.Contains("Achterkirchenstrasse 10, 37154 Northeim, Germany", appsettings, StringComparison.Ordinal);
+        Assert.Contains("info@darwinlingua.com", appsettings, StringComparison.Ordinal);
         Assert.Contains("LegalNotice:Email", contact, StringComparison.Ordinal);
         Assert.Contains("no cookie banner is shown", cookies, StringComparison.Ordinal);
         Assert.Contains("marketing cookies or third-party analytics scripts", cookies, StringComparison.Ordinal);
@@ -99,6 +105,7 @@ public sealed class WebLegalComplianceBaselineTests
 
         Assert.Contains("security-abuse", terms, StringComparison.Ordinal);
         Assert.Contains("Marketing email is not part of account creation", privacy, StringComparison.Ordinal);
+        Assert.Contains("Landesbeauftragte fuer den Datenschutz Niedersachsen", privacy, StringComparison.Ordinal);
         Assert.Contains("Security, abuse, and illegal-content reports", contact, StringComparison.Ordinal);
         Assert.Contains("Do not send passwords, tokens, identity documents", contact, StringComparison.Ordinal);
     }

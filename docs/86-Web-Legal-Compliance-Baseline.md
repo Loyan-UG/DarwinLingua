@@ -70,6 +70,18 @@ This snapshot is an engineering review of current official sources. It is not fi
 - The 2026-06-20 official-source refresh found one Life in Germany content-risk correction: do not state a single fixed official question-bank total without context. The BAMF 2026 Abschlusspruefung page states the real LiD test sheet has 33 questions, 60 minutes, 15 correct answers to pass, and 17 correct answers for citizenship-relevant proof, and says the interactive online catalog shows answers for 310 questions. The separate BAMF downloadable Gesamtfragenkatalog page dated 2025-05-26 describes the full catalog as 300 federal questions plus 160 federal-state-specific questions. App content should teach the underlying concepts and cite source/review date when exact test-catalog numbers are shown.
 - The 2026-06-20 cannabis/crime/fine refresh confirms that cannabis content must not imply broad legality: BMG/KCanG currently describe limited adult possession/cultivation, continued prohibition for minors, consumption-place restrictions, no transfer to minors, and administrative-offence/criminal-law thresholds for excess quantities. Use cautious wording for consequences unless the exact rule and review date are carried in the content.
 
+### Official-Source Refresh 2026-06-22
+
+This follow-up checked the current operator-facing legal baseline against official/current sources again before the Brevo/domain readiness checkpoint.
+
+- DDG section 5 remains the active German provider-information basis. The configured public operator baseline is now `Shahram Vafadar`, `Achterkirchenstrasse 10, 37154 Northeim, Germany`, contact `info@darwinlingua.com`, and data-protection contact `info@darwinlingua.com`. `/legal` and `/impressum` must keep reading those values from configuration rather than hard-coded page copy.
+- DDG section 33 remains the fine-risk reference for DDG obligations. Missing, misleading, or stale provider information stays a launch blocker even during controlled Web testing.
+- TDDDG section 25 and the DSK 2024 "OH Digitale Dienste" remain the cookie/storage gate. The current app still has no marketing cookies or third-party analytics, so the no-banner position remains valid only while no non-essential storage is introduced.
+- GDPR Articles 12, 15, 17, 20, 32, 33, 34, and 83 remain the data-subject-rights, security, breach, portability, deletion, and fine-risk baseline. Self-service export/delete is implemented, but manual privacy requests and breach triage still need an operator-owned process before broad public launch.
+- Because the configured operator location is in Lower Saxony, the likely competent data-protection supervisory authority for the public privacy notice is the Landesbeauftragte fuer den Datenschutz Niedersachsen. The Privacy page should route users there without removing their right to contact another competent authority under GDPR Article 77.
+- VSBG section 36 can become relevant when Darwin Lingua is operated as a consumer-facing business with more than the statutory employee threshold or with AGB consumer-dispute obligations. Public paid subscriptions remain disabled, so this is monitored but not a blocker for the current no-billing controlled Web testing phase.
+- BGB section 312k remains deferred until self-service paid subscriptions are exposed. Manual Premium grants during testing do not trigger the same online cancellation-button flow, but this must be reopened before Stripe self-service billing is enabled.
+
 ## Life In Germany Legal-Adjacent Content Gate
 
 `Life in Germany` is educational civic and everyday-orientation content. It may explain legal systems, rights, duties, crimes, fines, public offices, residence/citizenship basics, and everyday administrative expectations, but it must not present itself as official government information or individual legal, immigration, medical, financial, or tax advice.
@@ -99,11 +111,11 @@ The Web release must expose these public pages from the footer and registration 
 
 - `/privacy`: Privacy Policy / privacy notice.
 - `/terms`: Terms of Use.
-- `/legal` and `/impressum`: Legal Notice / Anbieterkennzeichnung placeholder backed by configuration.
+- `/legal` and `/impressum`: Legal Notice / Anbieterkennzeichnung backed by operator configuration.
 - `/cookies` and `/cookie-policy`: Cookie and browser-storage notice.
-- `/contact`: support and privacy request contact placeholder.
+- `/contact`: support and privacy request contact backed by operator configuration.
 
-Public pages must state clearly when text is draft operational copy pending legal review.
+Public pages must state clearly that the current copy is an engineering/legal baseline pending operator or counsel review before broad public launch.
 
 ## Registration Requirements
 
