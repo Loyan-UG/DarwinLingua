@@ -76,7 +76,7 @@ Authentication: Token
 
 در UI فعلی Brevo برای webhook سه گزینه‌ی `No`, `Basic`, و `Token` دیده می‌شود. برای Darwin Lingua گزینه‌ی درست `Token` است. مقدار token باید دقیقاً همان `TransactionalEmail:BrevoWebhookSecret` باشد. کد برنامه این مقدار را از هدر `Authorization: Bearer <token>` می‌خواند. `No` ناامن است و `Basic` با endpoint فعلی ما تطبیق ندارد.
 
-11. برای webhook، eventهای transactional لازم را فعال کنید:
+11. برای webhook، eventهای transactional لازم را فعال کنید. در UI فعلی Brevo ابتدا `Event category` را روی `Transactional email` بگذارید و بعد همه‌ی eventهای موجود و مرتبط را فعال کنید:
 
 ```text
 request / sent
@@ -85,17 +85,20 @@ deferred
 softBounce / soft_bounce
 hardBounce / hard_bounce
 blocked
-invalid / invalid_email
+invalid / invalidEmail / invalid_email
 spam
 complaint
-opened / uniqueOpened
-click
+error
+opened / uniqueOpened / unique_opened
+click / clicked
 unsubscribed
 ```
 
-اگر نام event در پنل Brevo کمی متفاوت بود، نزدیک‌ترین event رسمی transactional را انتخاب کنید. برنامه چند نام رایج Brevo را می‌پذیرد.
+نکته‌ی مهم: مستندات رسمی Brevo در صفحه‌های مختلف دقیقاً یکسان نیستند. مرجع API برای ساخت webhook نام‌هایی مثل `hardBounce`, `softBounce`, `spam`, `uniqueOpened` و `unsubscribed` را نشان می‌دهد، ولی راهنمای transactional webhooks در بعضی بخش‌ها از برچسب‌هایی مثل `Complaint` و `Error` هم نام می‌برد. اگر UI شما مثلاً `spam` را نشان نداد، همه‌ی eventهای موجود در همان دسته‌ی `Transactional email` را فعال کنید و بعد از Brevo logs یا API بررسی کنید که چه eventهایی واقعاً ثبت شده‌اند. کد Darwin Lingua نام‌های camelCase و snake_case رایج Brevo را به مقدار داخلی ثابت تبدیل می‌کند.
 
 12. قرارداد پردازش داده یا DPA مربوط به Brevo را برای GDPR/EU operation بررسی و قبول کنید.
+
+اگر Brevo API هنگام بررسی webhookها یا ارسال تست خطای `unrecognised IP address` داد، IP سرور یا ماشین اجرای تست را در Brevo از مسیر `https://app.brevo.com/security/authorised_ips` به Authorized IPs اضافه کنید. بدون این کار ممکن است API key درست باشد ولی Brevo درخواست را با 401 رد کند.
 
 ## تنظیماتی که بعد از Brevo باید در برنامه وارد شود
 

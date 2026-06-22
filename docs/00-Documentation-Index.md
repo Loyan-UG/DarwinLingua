@@ -218,7 +218,7 @@ If you are new to the project, read the documents in this order:
 - `86-Web-Legal-Compliance-Baseline.md` defines the Web-first legal/compliance baseline for public legal pages, registration acknowledgements, policy records, cookie/storage inventory, GDPR/TDDDG/DDG review gates, Sensitive Educational Language legal boundaries, and deferred mobile compliance.
 - `87-Web-Tester-Onboarding-Runbook.md` defines the controlled real-user Web testing pass, tester tasks, feedback format, triage rules, and completion criteria before mobile work resumes.
 - `88-Web-Tester-Quick-Start.md` defines the short tester-facing task brief that can be shared without the operator runbook.
-- `89-Brevo-Operator-Handoff.fa.md` gives the Persian operator handoff for Brevo sender/domain setup, webhook configuration, secrets, DPA review, readiness checks, and temporary development-domain rules.
+- `89-Brevo-Operator-Handoff.fa.md` gives the Persian operator handoff for Brevo sender/domain setup, webhook configuration, secrets, DPA review, readiness checks, and Darwin Lingua production-domain rules.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Learning Portal Planning Rule

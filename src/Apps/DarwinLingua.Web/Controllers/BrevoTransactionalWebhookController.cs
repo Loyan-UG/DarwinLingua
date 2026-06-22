@@ -29,10 +29,9 @@ public sealed class BrevoTransactionalWebhookController(
         }
 
         string? providerMessageId = NormalizeLength(webhookEvent.MessageId ?? webhookEvent.MessageIdAlternative, 256);
-        string? providerEvent = NormalizeLength(webhookEvent.Event, 64);
+        string? providerEvent = NormalizeProviderEvent(webhookEvent.Event);
         if (string.IsNullOrWhiteSpace(providerMessageId) ||
-            string.IsNullOrWhiteSpace(providerEvent) ||
-            !IsAllowedProviderEvent(providerEvent))
+            string.IsNullOrWhiteSpace(providerEvent))
         {
             logger.LogInformation("Ignored Brevo webhook event without a supported message id or event name.");
             return Accepted();
@@ -138,23 +137,39 @@ public sealed class BrevoTransactionalWebhookController(
         return trimmed.Length <= maxLength ? trimmed : trimmed[..maxLength];
     }
 
-    private static bool IsAllowedProviderEvent(string providerEvent) =>
-        string.Equals(providerEvent, "request", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "sent", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "delivered", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "deferred", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "soft_bounce", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "hard_bounce", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "blocked", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "invalid", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "invalid_email", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "error", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "spam", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "complaint", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "opened", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "unique_opened", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "click", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(providerEvent, "unsubscribed", StringComparison.OrdinalIgnoreCase);
+    private static string? NormalizeProviderEvent(string? providerEvent)
+    {
+        string? normalized = NormalizeLength(providerEvent, 64);
+        if (normalized is null)
+        {
+            return null;
+        }
+
+        string key = normalized.Replace("-", string.Empty, StringComparison.Ordinal)
+            .Replace("_", string.Empty, StringComparison.Ordinal)
+            .ToLowerInvariant();
+
+        return key switch
+        {
+            "request" => "request",
+            "sent" => "sent",
+            "delivered" => "delivered",
+            "deferred" => "deferred",
+            "softbounce" => "soft_bounce",
+            "hardbounce" => "hard_bounce",
+            "blocked" => "blocked",
+            "invalid" => "invalid",
+            "invalidemail" => "invalid_email",
+            "error" => "error",
+            "spam" => "spam",
+            "complaint" => "complaint",
+            "opened" => "opened",
+            "uniqueopened" => "unique_opened",
+            "click" or "clicked" => "click",
+            "unsubscribed" => "unsubscribed",
+            _ => null,
+        };
+    }
 }
 
 public sealed record BrevoTransactionalEmailWebhookEvent(

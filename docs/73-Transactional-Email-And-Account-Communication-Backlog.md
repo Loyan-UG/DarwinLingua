@@ -86,7 +86,7 @@ The application is ready to use Brevo, but the operator must complete the provid
    - Method: `POST`
    - Authentication method: `Token`
    - Token value: the same value configured as `TransactionalEmail:BrevoWebhookSecret`
-9. Select transactional events needed for diagnostics and suppression handling: delivered/sent, soft bounce, hard bounce, blocked, invalid email, spam, complaint, and other provider failure events Brevo exposes for transactional email.
+9. Set the Brevo webhook event category to `Transactional email` and select the events needed for diagnostics and suppression handling: request/sent, delivered, deferred, soft bounce, hard bounce, blocked, invalid email, spam, complaint, error, opened, unique opened, click/clicked, unsubscribed, and any equivalent transactional provider failure event Brevo exposes in the current UI. Brevo's official API reference and UI labels can differ; Darwin Lingua normalizes common camelCase and snake_case event names before storing them.
 10. Review and accept the required Brevo data-processing terms/DPA for EU/GDPR operation.
 
 Official Brevo references to use during setup:
@@ -94,7 +94,10 @@ Official Brevo references to use during setup:
 - Domain authentication: `https://help.brevo.com/hc/en-us/articles/12163873383186-Authenticate-your-domain-with-Brevo-Brevo-code-DKIM-DMARC`
 - Transactional email API: `https://developers.brevo.com/docs/send-a-transactional-email`
 - Transactional webhook events: `https://developers.brevo.com/docs/transactional-webhooks`
+- Create webhook API event names: `https://developers.brevo.com/reference/create-webhook`
 - Secured webhooks and custom headers/Bearer authorization: `https://developers.brevo.com/docs/secured-webhooks`
+
+If Brevo API calls return `unrecognised IP address`, add the current server/operator IP to Brevo Authorized IPs at `https://app.brevo.com/security/authorised_ips`; the API key can be valid while Brevo still rejects requests from a new IP.
 
 ### Operator handoff
 

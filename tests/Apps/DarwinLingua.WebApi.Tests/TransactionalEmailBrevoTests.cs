@@ -1,8 +1,11 @@
 using System.Net;
 using System.Text;
 using System.Text.Json;
+using DarwinLingua.Web.Controllers;
 using DarwinLingua.Web.Data;
 using DarwinLingua.Web.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -114,6 +117,52 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Equal("brevo:complaint", suppression.Reason);
         Assert.Equal("brevo-api", suppression.ProviderName);
         Assert.Equal("<provider-message-id>", suppression.ProviderMessageId);
+    }
+
+    [Theory]
+    [InlineData("hardBounce", "hard_bounce")]
+    [InlineData("softBounce", "soft_bounce")]
+    [InlineData("uniqueOpened", "unique_opened")]
+    [InlineData("clicked", "click")]
+    [InlineData("invalidEmail", "invalid_email")]
+    [InlineData("spam", "spam")]
+    [InlineData("Complaint", "complaint")]
+    public async Task BrevoWebhook_ShouldNormalizeOfficialEventNamesBeforePersisting(
+        string incomingEvent,
+        string expectedStoredEvent)
+    {
+        CapturingEmailDeliveryLogRepository repository = new();
+        BrevoTransactionalWebhookController controller = new(
+            repository,
+            Options.Create(CreateBrevoOptions(sandboxMode: false)),
+            NullLogger<BrevoTransactionalWebhookController>.Instance)
+        {
+            ControllerContext = new ControllerContext
+            {
+                HttpContext = new DefaultHttpContext(),
+            },
+        };
+        controller.ControllerContext.HttpContext.Request.Headers.Authorization = "Bearer test-webhook-secret";
+
+        IActionResult result = await controller.Receive(
+            secret: null,
+            new BrevoTransactionalEmailWebhookEvent(
+                incomingEvent,
+                "<provider-message-id>",
+                null,
+                null,
+                null,
+                1_700_000_000,
+                null,
+                "provider reason",
+                null,
+                null),
+            CancellationToken.None);
+
+        Assert.IsType<OkResult>(result);
+        Assert.Equal("<provider-message-id>", repository.ProviderMessageId);
+        Assert.Equal(expectedStoredEvent, repository.ProviderEvent);
+        Assert.Equal("provider reason", repository.Reason);
     }
 
     [Fact]
@@ -466,6 +515,91 @@ public sealed class TransactionalEmailBrevoTests
 
             return response;
         }
+    }
+
+    private sealed class CapturingEmailDeliveryLogRepository : IEmailDeliveryLogRepository
+    {
+        public string? ProviderMessageId { get; private set; }
+
+        public string? ProviderEvent { get; private set; }
+
+        public string? Reason { get; private set; }
+
+        public Task<WebEmailDeliveryLog> AddQueuedAsync(
+            TransactionalEmailMessage message,
+            string providerName,
+            CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<WebEmailDeliveryLog> AddSuppressedAsync(
+            TransactionalEmailMessage message,
+            string providerName,
+            string reason,
+            CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<bool> IsSuppressedAsync(string recipientEmail, CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task MarkSentAsync(Guid id, string? providerMessageId, CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task MarkFailedAsync(
+            Guid id,
+            string? failureCode,
+            string? failureMessageSummary,
+            CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<bool> MarkProviderEventAsync(
+            string providerMessageId,
+            string providerEvent,
+            DateTimeOffset providerEventAtUtc,
+            string? reason,
+            CancellationToken cancellationToken)
+        {
+            ProviderMessageId = providerMessageId;
+            ProviderEvent = providerEvent;
+            Reason = reason;
+            return Task.FromResult(true);
+        }
+
+        public Task<IReadOnlyList<WebEmailDeliveryLog>> GetRecentAsync(
+            int take,
+            string? status,
+            string? dialogue,
+            DateTimeOffset? fromUtc,
+            DateTimeOffset? toUtc,
+            string? recipientHashPrefix,
+            string? providerMessageId,
+            string? providerEvent,
+            CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<int> DeleteOlderThanAsync(DateTimeOffset cutoffUtc, CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<EmailDeliverySummary> GetSummarySinceAsync(DateTimeOffset sinceUtc, CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<EmailDeliveryFailureAlertSnapshot> GetFailureAlertSnapshotAsync(
+            DateTimeOffset sinceUtc,
+            string excludedScenarioKey,
+            CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<EmailSuppressionSummary> GetSuppressionSummaryAsync(CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<IReadOnlyList<WebEmailSuppression>> GetSuppressionsAsync(
+            string? recipientHashPrefix,
+            string? reason,
+            int take,
+            CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
+
+        public Task<bool> DeleteSuppressionByHashAsync(string recipientEmailHash, CancellationToken cancellationToken) =>
+            throw new NotSupportedException();
     }
 
     private sealed class TestWebHostEnvironment : IWebHostEnvironment
