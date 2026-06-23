@@ -322,6 +322,7 @@ Verification evidence:
 - `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenPresent=True` were verified without printing secret values.
 - `artifacts/validation/brevo-transactional-log-check/brevo-transactional-log-check-20260623-084312.md` passed with recent real Brevo message ids matching provider events.
 - `artifacts/validation/pwa-installability/pwa-installability-darwinlingua-20260623.json` passed 17 public-domain automated PWA checks with 0 failures and 2 manual install-acceptance checks.
+- Follow-up PWA evidence `artifacts/validation/pwa-installability/pwa-installability-darwinlingua-20260623-205307.json` also passed 17 public-domain automated PWA checks with 0 failures. It observed the desktop install-prompt event in headless Chromium, but real desktop installed-window behavior and Android Chrome install flow remain manual target-browser checks.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, and `https://api.darwinlingua.com/health`.
 
 ### 2026-06-23 Brevo Domain Ready / Pre User Testing
