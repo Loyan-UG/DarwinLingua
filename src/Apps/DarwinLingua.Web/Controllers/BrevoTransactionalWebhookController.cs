@@ -165,6 +165,8 @@ public sealed class BrevoTransactionalWebhookController(
             "complaint" => "complaint",
             "opened" => "opened",
             "uniqueopened" => "unique_opened",
+            "proxyopen" => "proxy_open",
+            "uniqueproxyopen" => "unique_proxy_open",
             "click" or "clicked" => "click",
             "unsubscribed" => "unsubscribed",
             _ => null,

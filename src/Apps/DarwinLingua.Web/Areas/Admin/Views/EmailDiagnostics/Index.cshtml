@@ -232,7 +232,7 @@
             @T["Provider event"]
             <select name="providerEvent">
                 <option value="">@T["All"]</option>
-                @foreach (string providerEvent in new[] { "request", "sent", "delivered", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam", "opened", "unique_opened", "click", "unsubscribed" })
+                @foreach (string providerEvent in new[] { "request", "sent", "delivered", "deferred", "soft_bounce", "hard_bounce", "blocked", "invalid", "invalid_email", "error", "spam", "opened", "unique_opened", "proxy_open", "unique_proxy_open", "click", "unsubscribed" })
                 {
                     <option value="@providerEvent" selected="@(string.Equals(Model.ProviderEvent, providerEvent, StringComparison.OrdinalIgnoreCase))">@providerEvent</option>
                 }

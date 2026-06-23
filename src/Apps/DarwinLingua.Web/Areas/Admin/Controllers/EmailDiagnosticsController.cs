@@ -365,6 +365,8 @@ public sealed class EmailDiagnosticsController(
         string.Equals(providerEvent, "complaint", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "opened", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "unique_opened", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "proxy_open", StringComparison.OrdinalIgnoreCase) ||
+        string.Equals(providerEvent, "unique_proxy_open", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "click", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(providerEvent, "unsubscribed", StringComparison.OrdinalIgnoreCase);
 
