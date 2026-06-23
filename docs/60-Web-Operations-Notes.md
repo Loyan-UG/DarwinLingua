@@ -452,7 +452,7 @@ Verification evidence:
 
 Operational note:
 
-- A live Brevo webhook configuration re-check from the current machine was blocked by Brevo Authorized IP protection. The previously verified provider-side webhook evidence remains in the backup, but the current machine IP must be added in Brevo Authorized IPs before rerunning `tools/Web/Invoke-BrevoWebhookConfigurationCheck.ps1`.
+- A live Brevo production readiness re-check from the current machine was blocked by Brevo Authorized IP protection. The previously verified provider-side webhook evidence remains in the backup, but the current machine IP must be added in Brevo Authorized IPs before rerunning `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1 -VerifyBrevoApi -RequireRealDelivery -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted`.
 
 ### 2026-06-23 Brevo Token Manual Evidence / Pre User Testing
 
@@ -493,8 +493,8 @@ Scope:
 
 Verification evidence:
 
-- `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-222540.json` reports `AutomatedReady=False`, `AutomatedFailures=1`, `HumanOpen=4`, and `Ready=False`.
-- `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-222427.md` reports `Blockers=1`, `Warnings=0`; the blocker is Brevo Authorized IP for the current host.
+- `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-232858.json` reports `AutomatedReady=False`, `AutomatedFailures=1`, `HumanOpen=4`, and `Ready=False`.
+- `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-232247.md` reports `Blockers=1`, `Warnings=0`; the blocker is Brevo Authorized IP for the current host.
 - `db/darwinlingua_shared_20260623-223159.dump` was created from `darwinlingua_shared`.
 - `db/darwinlingua_shared_20260623-223159.restore-list.txt` was generated with `pg_restore --list`.
 - `manifest.md`, `checksums.sha256`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, `artifacts/`, and `verification/` are present.

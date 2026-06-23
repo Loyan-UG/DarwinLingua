@@ -2,6 +2,7 @@
 param(
     [string]$OutputDirectory = "artifacts/validation/web-external-action-packet",
     [switch]$GenerateFreshAudit,
+    [switch]$RunBrevoReadinessCheck,
     [switch]$RunBrevoWebhookCheck
 )
 
@@ -110,31 +111,80 @@ else {
     $null
 }
 
+$brevoReadinessCommand = ".\tools\Web\Invoke-BrevoProductionReadinessCheck.ps1 -VerifyBrevoApi -RequireRealDelivery -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted"
 $brevoStatus = "not-run"
-$brevoAction = "Run .\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1. If Brevo reports an unrecognised IP address, add that IP under Brevo Security -> Authorised IPs and rerun the check."
+$brevoAction = "Run $brevoReadinessCommand. If Brevo reports an unrecognised IP address, add that IP under Brevo Security -> Authorised IPs and rerun the same readiness check."
 $brevoAuthorizedIp = ""
-if ($RunBrevoWebhookCheck) {
+if ($RunBrevoReadinessCheck -or $RunBrevoWebhookCheck) {
+    $brevoReadinessScript = Join-Path $scriptRoot "Invoke-BrevoProductionReadinessCheck.ps1"
+    $brevoOutputPath = New-TemporaryFile
     try {
-        & (Join-Path $scriptRoot "Invoke-BrevoWebhookConfigurationCheck.ps1") | Out-Host
-        $brevoStatus = "passed"
-        $brevoAction = "No Brevo Authorized IP action is required by the current check."
+        $brevoArgs = @(
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            $brevoReadinessScript,
+            "-VerifyBrevoApi",
+            "-RequireRealDelivery",
+            "-SenderVerified",
+            "-DnsAuthenticated",
+            "-WebhookConfigured",
+            "-DpaAccepted"
+        )
+        $brevoProcess = Start-Process `
+            -FilePath "powershell" `
+            -ArgumentList $brevoArgs `
+            -NoNewWindow `
+            -Wait `
+            -PassThru `
+            -RedirectStandardOutput $brevoOutputPath.FullName `
+            -RedirectStandardError $brevoOutputPath.FullName
+        Get-Content -LiteralPath $brevoOutputPath.FullName -Raw | Write-Host
+
+        if ($brevoProcess.ExitCode -eq 0) {
+            $brevoStatus = "passed"
+            $brevoAction = "No Brevo Authorized IP action is required by the current readiness check."
+        }
+        else {
+            throw "Brevo readiness check exited with code $($brevoProcess.ExitCode)."
+        }
     }
     catch {
+        $latestBrevoReadinessPath = Get-LatestReport -RelativeDirectory "artifacts/validation/brevo-readiness"
+        $latestBrevoReadiness = if (-not [string]::IsNullOrWhiteSpace($latestBrevoReadinessPath)) {
+            Get-Content -LiteralPath $latestBrevoReadinessPath -Raw | ConvertFrom-Json
+        }
+        else {
+            $null
+        }
+        $brevoEvidence = if ($null -ne $latestBrevoReadiness) {
+            @($latestBrevoReadiness.checks |
+                Where-Object { $_.key -eq "brevo.accountApi" } |
+                Select-Object -ExpandProperty evidence -First 1) -join "`n"
+        }
+        else {
+            ""
+        }
+
         $messageParts = @(
             $_.Exception.Message,
-            $_.ErrorDetails.Message,
-            ($_ | Out-String)
+            $brevoEvidence,
+            (Get-Content -LiteralPath $brevoOutputPath.FullName -Raw -ErrorAction SilentlyContinue)
         ) | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) }
         $message = $messageParts -join "`n"
         $brevoStatus = "needs-authorized-ip-or-review"
         $match = [regex]::Match($message, "unrecognised IP address\s+(?<ip>[0-9a-fA-F:\.]+)")
         if ($match.Success) {
             $brevoAuthorizedIp = $match.Groups["ip"].Value.TrimEnd(".")
-            $brevoAction = "Open Brevo -> Security -> Authorised IPs, add the IP listed in this packet, save it, then rerun .\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1."
+            $brevoAction = "Open Brevo -> Security -> Authorised IPs, add the IP listed in this packet, save it, then rerun $brevoReadinessCommand."
         }
         else {
-            $brevoAction = "Brevo webhook check failed. Review the generated terminal error without copying API keys or webhook tokens into Git."
+            $brevoAction = "Brevo readiness check failed. Review the generated terminal error without copying API keys or webhook tokens into Git."
         }
+    }
+    finally {
+        Remove-Item -LiteralPath $brevoOutputPath.FullName -Force -ErrorAction SilentlyContinue
     }
 }
 
@@ -160,6 +210,8 @@ $packet = [ordered]@{
     automatedReady = if ($null -ne $readiness) { [bool]$readiness.automatedReady } else { $false }
     controlledTesterReadyToInvite = if ($null -ne $readiness) { [bool]$readiness.controlledTesterReadyToInvite } else { $false }
     openHumanStartGates = @($openHumanGates)
+    brevoReadinessCommand = $brevoReadinessCommand
+    brevoReadinessCheckStatus = $brevoStatus
     brevoWebhookCheckStatus = $brevoStatus
     brevoAuthorizedIpToAdd = $brevoAuthorizedIp
     brevoAction = $brevoAction
@@ -198,7 +250,7 @@ This packet lists only the actions that cannot be honestly completed by code alo
 
 | Action | Current status | What to do | Evidence |
 | --- | --- | --- | --- |
-| Brevo Authorized IP | $brevoStatus | $brevoAction | Rerun ``.\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1`` |
+| Brevo Authorized IP | $brevoStatus | $brevoAction | Rerun ``$brevoReadinessCommand`` |
 | Mailbox rendering | $mailboxStatus | Review real emails in ``info@darwinlingua.com``; record safe notes only. | ``$mailboxEvidencePath`` |
 | PWA desktop install | $desktopStatus | Test install in desktop Chrome or Edge and installed-window navigation. | ``docs/56-Web-Pwa-Install-Validation-Worksheet.md`` |
 | PWA Android install | $androidStatus | Test Android Chrome install flow, or explicitly mark not in scope for this tester pass. | ``docs/56-Web-Pwa-Install-Validation-Worksheet.md`` |
@@ -212,13 +264,19 @@ If the Brevo row says ``needs-authorized-ip-or-review``, open:
 https://app.brevo.com/security/authorised_ips
 ~~~
 
-Add this IP exactly, save, then rerun the webhook configuration check:
+Add this IP exactly, save, then rerun the production readiness check:
 
 ~~~text
 $brevoIpLine
 ~~~
 
 Do not store the Brevo API key or webhook token in this packet.
+
+Brevo currently manages Authorized IPs in the account Security area. According to Brevo's current API/security documentation, IP security restricts API calls to whitelisted IPs, unknown IPs can be blocked even when the API key is valid, and manually authorized IPs apply to both API and SMTP keys. Brevo accepts single IPs and CIDR ranges in the Authorized IPs UI.
+
+~~~powershell
+$brevoReadinessCommand
+~~~
 
 ## Close-Out Command
 

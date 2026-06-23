@@ -23,7 +23,7 @@ artifacts/validation/web-human-gate-handoff/
 For a single operator-facing packet that includes the current Brevo Authorized IP action, mailbox review, PWA install checks, and tester-start gate, run:
 
 ```powershell
-.\tools\Web\New-WebExternalActionPacket.ps1 -GenerateFreshAudit -RunBrevoWebhookCheck
+.\tools\Web\New-WebExternalActionPacket.ps1 -GenerateFreshAudit -RunBrevoReadinessCheck
 ```
 
 The packet is written under:
@@ -76,10 +76,16 @@ Allowed non-passing statuses must remain visible:
 
 ## Brevo Authorized IP Note
 
-If Brevo API verification fails with an `unrecognised IP address` error, the operator must add the current machine/server IP in Brevo under `Security` -> `Authorised IPs`, then rerun:
+If Brevo API verification fails with an `unrecognised IP address` error, the operator must add the current machine/server IP in Brevo under `Security` -> `Authorised IPs`, then rerun the production readiness check:
 
 ```powershell
-.\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1
+.\tools\Web\Invoke-BrevoProductionReadinessCheck.ps1 `
+  -VerifyBrevoApi `
+  -RequireRealDelivery `
+  -SenderVerified `
+  -DnsAuthenticated `
+  -WebhookConfigured `
+  -DpaAccepted
 ```
 
 Never record Brevo API keys, webhook tokens, raw action URLs, reset tokens, provider message ids, diagnostic hashes, or full real email bodies in Git-tracked files or handoff evidence.

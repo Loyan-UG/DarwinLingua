@@ -202,10 +202,16 @@ $($statusLines -join "`n")
 
 ## Brevo Authorized IP Note
 
-If `Invoke-BrevoWebhookConfigurationCheck.ps1` returns an 'unrecognised IP address' error, add the current machine/server IP in Brevo under `Security` -> `Authorised IPs`, then rerun:
+If Brevo API verification returns an 'unrecognised IP address' error, add the current machine/server IP in Brevo under `Security` -> `Authorised IPs`, then rerun the production readiness check:
 
 ```powershell
-.\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1
+.\tools\Web\Invoke-BrevoProductionReadinessCheck.ps1 `
+  -VerifyBrevoApi `
+  -RequireRealDelivery `
+  -SenderVerified `
+  -DnsAuthenticated `
+  -WebhookConfigured `
+  -DpaAccepted
 ```
 
 Do not paste Brevo API keys or webhook tokens into this handoff or any Git-tracked file.
