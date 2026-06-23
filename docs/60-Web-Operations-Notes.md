@@ -446,6 +446,30 @@ Operational note:
 
 - A live Brevo webhook configuration re-check from the current machine was blocked by Brevo Authorized IP protection. The previously verified provider-side webhook evidence remains in the backup, but the current machine IP must be added in Brevo Authorized IPs before rerunning `tools/Web/Invoke-BrevoWebhookConfigurationCheck.ps1`.
 
+### 2026-06-23 Brevo Token Manual Evidence / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-221416-brevo-token-manual-evidence-pre-user-testing`
+
+Scope:
+
+- Added `tools/Web/Test-WebManualExternalEvidence.ps1` to validate real mailbox review evidence before closing the manual mailbox-rendering gate.
+- Updated Brevo operator documentation to match the current state: API key and webhook secret are configured outside Git, DPA is accepted, but the latest live Brevo API check is blocked until the current host IP is added under Brevo `Security -> Authorised IPs`.
+- Public Web stack was restarted and verified on the canonical hosts only: `https://darwinlingua.com`, `/legal`, `/privacy`, `/contact`, and `https://api.darwinlingua.com/health`.
+- The backup was taken after commit `bc549075` and includes the separate secret bundle with local appsettings and ASP.NET user-secrets; secret values were not printed into Git-tracked files or chat output.
+
+Verification evidence:
+
+- `dotnet test tests/Apps/DarwinLingua.WebApi.Tests/DarwinLingua.WebApi.Tests.csproj --filter "WebTesterOperatorToolingTests"` passed.
+- `tools/Web/Test-WebManualExternalEvidence.ps1 -FailOnIssue` reported `Blockers=0`, `Open rows=1`, and `Passed for mailbox close=False`, which is expected until the real mailbox review CSV is completed.
+- Strict mailbox evidence validation with `-FailOnOpenMailboxRows` failed intentionally while one mailbox evidence row remains `not-reviewed`.
+- `rg` secret scan found no Brevo API key or full webhook token literal in the workspace.
+- `db/darwinlingua_shared_20260623-221416.dump` was created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-221416.restore-list.txt` was generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, `artifacts/`, and `verification/` are present.
+- Backup verification found `946` files and `284065931` bytes; checksum verification passed for `944` listed files.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
