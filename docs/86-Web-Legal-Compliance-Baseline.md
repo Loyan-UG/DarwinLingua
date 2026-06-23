@@ -32,11 +32,17 @@ Review these primary sources during production legal review:
 - DDG section 33, fines: https://www.gesetze-im-internet.de/ddg/__33.html
 - Digital Services Act, Regulation (EU) 2022/2065: https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng
 - Digital Services Coordinator Germany / Bundesnetzagentur: https://www.dsc.bund.de/
+- Digital Services Coordinators, European Commission overview: https://digital-strategy.ec.europa.eu/en/policies/dsa-dscs
+- Bundesnetzagentur DSC 2025 activity report press release: https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2026/20260430_TB_DSC.html
 - UWG section 7, unreasonable nuisance / electronic advertising: https://www.gesetze-im-internet.de/uwg_2004/__7.html
 - BGB section 312k, cancellation button for consumer subscriptions: https://www.gesetze-im-internet.de/bgb/__312k.html
 - BFSG / Barrierefreiheitsstaerkungsgesetz: https://www.gesetze-im-internet.de/bfsg/
+- BFSG section 1, scope: https://www.gesetze-im-internet.de/bfsg/__1.html
+- BFSG section 2, definitions: https://www.gesetze-im-internet.de/bfsg/__2.html
 - BFSGV / Barrierefreiheitsanforderungen: https://www.gesetze-im-internet.de/bfsgv/
+- BFSGV section 19, e-commerce service requirements: https://www.gesetze-im-internet.de/bfsgv/__19.html
 - Bundesfachstelle Barrierefreiheit BFSG overview and FAQ: https://www.bundesfachstelle-barrierefreiheit.de/DE/Barrierefreiheitsstaerkungsgesetz
+- Bundesfachstelle Barrierefreiheit BFSG FAQ: https://www.bundesfachstelle-barrierefreiheit.de/DE/Barrierefreiheitsstaerkungsgesetz/FAQ/faq_node
 - VSBG section 36, consumer dispute-resolution information duty: https://www.gesetze-im-internet.de/vsbg/__36.html
 - BAMF Abschlusspruefung / Test Leben in Deutschland framing: https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/Abschlusspruefung/abschlusspruefung-node.html
 - BAMF Gesamtfragenkatalog download page: https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.html
@@ -94,7 +100,7 @@ This refresh checked current official sources again after the `darwinlingua.com`
 - TDDDG section 25 remains the terminal-device storage/access gate. The current no-banner position depends on keeping analytics, advertising, third-party tracking, and non-essential storage disabled until a real consent model exists.
 - GDPR Articles 12, 15, 17, 20, 32, 33, 34, and 83 remain the data-subject-rights, deletion/export/portability, security, breach, and fine-risk baseline. Self-service export/delete is implemented and now transaction-protected for the local account/user-state deletion path, but the operator still needs a manual escalation process for complex identity, backup, billing, security, and abuse-retention cases.
 - The Bundesnetzagentur is the German Digital Services Coordinator for DSA enforcement and acts as a central complaint point. Darwin Lingua is currently a controlled language-learning product, but organizer, partner, RSVP, report, claim, profile, or other user-submitted surfaces must keep a clear abuse/illegal-content reporting route before broader community release.
-- BFSG has been applicable since 28 June 2025 for covered consumer products and services. The Bundesfachstelle Barrierefreiheit states that services in electronic commerce are in scope, with microenterprise exceptions for some service providers. Because public paid self-service billing is disabled, BFSG is not treated as a blocker for the current no-billing controlled Web test; before Stripe/self-service paid subscriptions or consumer e-commerce flows are exposed, perform a BFSG applicability review and accessibility conformance pass for Web and later mobile.
+- BFSG has been applicable since 28 June 2025 for covered consumer products and services. The Bundesfachstelle Barrierefreiheit states that services in electronic commerce and e-books can be in scope, while interactive learning offers that are not the electronic version of a book are not automatically covered as e-books. Because the current controlled Web test is an interactive learning product with no public paid self-service consumer contract flow, BFSG is not treated as a blocker for this test. Reopen BFSG/BFSGV review before Stripe/self-service paid subscriptions, consumer e-commerce checkout, downloadable/e-book learning products, app-store consumer contract flows, or later mobile publication are exposed.
 - VSBG section 36 can require consumer-dispute information on a website/AGB for qualifying businesses. This remains monitored while Darwin Lingua is a development-stage personal project with no public paid subscriptions; reopen before broad consumer launch or if formal AGB/business operations change.
 - BGB section 312k remains deferred until online consumer subscription contracts can be concluded through the product. Manual Premium grants during testing are not the same as self-service paid subscriptions.
 - StGB crime-risk and KJM youth-media references remain product-content guardrails. The Terms page already prohibits illegal, hateful, extremist, pornographic, exploitative, harassing, fraudulent, security-abuse, or rights-infringing content. Keep these prohibitions aligned with moderation tooling before user-submitted content is widened.
@@ -109,6 +115,15 @@ After the controlled tester readiness audit, the current public-page and content
 - BGB section 312k remains deferred because no self-service paid consumer subscription contract can currently be concluded through the product.
 - VSBG section 36 remains monitored for later consumer-business/AGB launch conditions; it is not treated as a blocker for the current no-billing controlled Web test.
 - StGB crime-risk references, especially sections 86a, 130, 184, 184b, 184c, 201a, 202a-202d, 263a, and 303a, remain aligned with the current Terms and content gates. No new allowance is created for extremist propaganda, hate-incitement, pornographic/minor-related sexual content, intimate-image abuse, credential theft, hacking misuse, fraud facilitation, or destructive data misuse.
+
+### Late Official-Source Refresh 2026-06-23
+
+This late refresh checked official/current sources after the public-domain, TLS, Brevo, and tester-readiness work:
+
+- TLS/domain note: `https://darwinlingua.com` is the primary public Web origin, `https://api.darwinlingua.com` is the API origin, and `https://www.darwinlingua.com` is only a canonical redirect to the apex domain. Public legal/support pages and tester instructions must not use `www` as an action URL.
+- DSA/Bundesnetzagentur note: the German DSC's 2025 activity reporting highlights complaints about inadequate reasons for restrictions/removal/non-removal and the usability of illegal-content reporting systems, and proceedings focused on DSA Articles 16, 17, and 20. Darwin Lingua's current controlled learning product is not being treated as a broad public platform, but any wider user-submitted/community surface must preserve a visible report route, reasoned moderation records, staff-supervised decisions, and a non-automated escalation path before release.
+- BFSG note: the Bundesfachstelle FAQ says BFSG covers certain products/services, including electronic-commerce services and e-books, and says websites fall in scope when corresponding consumer services are offered through them. It also distinguishes digital learning media in e-book form from interactive learning offers that are not electronic books. Therefore the current no-billing interactive Web test remains a monitored accessibility risk, not a launch blocker; paid checkout, consumer contract flows, e-book/download products, or app-store publication must reopen BFSG/BFSGV section 19 review.
+- GDPR fine-risk note: Article 83 keeps data-subject rights, deletion/export/portability, security, and breach handling in the administrative-fine risk surface. Self-service export/delete is implemented, but manual escalation, backup-retention explanation, breach triage ownership, and complex identity/support handling stay mandatory before broad public launch.
 
 ## Life In Germany Legal-Adjacent Content Gate
 
@@ -328,7 +343,7 @@ Before public release:
 - transactional email provider/DPA reviewed
 - billing provider/legal text reviewed if billing is enabled
 - self-service account export/delete verified
-- BFSG/accessibility applicability reviewed before paid consumer e-commerce or broader public subscription flows
+- BFSG/accessibility applicability reviewed before paid consumer e-commerce, broader public subscription flows, downloadable/e-book learning products, or app-store consumer contract flows
 - data-subject request escalation process documented
 - breach triage process documented
 - mobile compliance remains deferred until the mobile phase

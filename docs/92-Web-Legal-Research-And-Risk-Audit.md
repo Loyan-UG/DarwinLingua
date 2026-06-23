@@ -12,7 +12,7 @@ The purpose is to keep Darwin Lingua aligned with current Germany/EU Web require
 - Product scope: public Web, Web API, learner accounts, transactional email, learning content, Life in Germany content, admin diagnostics, controlled tester pass.
 - Out of scope for this pass: MAUI/mobile implementation and public self-service paid subscriptions.
 - Current public domains: `https://darwinlingua.com` and `https://api.darwinlingua.com`.
-- `www.darwinlingua.com` is not required and must not be treated as a failing host unless intentionally enabled later.
+- `https://www.darwinlingua.com` is configured only as a canonical redirect to `https://darwinlingua.com`; tester action links and public legal/support copy must use the apex domain.
 
 ## Official Sources Checked
 
@@ -27,6 +27,7 @@ Primary/current sources reviewed for this pass:
   - `https://www.bfdi.bund.de/DE/Buerger/Inhalte/Telemedien/Cookies.html`
   - `https://www.bfdi.bund.de/SharedDocs/Downloads/DE/DSK/Orientierungshilfen/OH_Digitale-Dienste.pdf`
 - GDPR rights, transparency, deletion, portability, security, breach, and fines:
+  - `https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng`
   - `https://gdpr-info.eu/art-12-gdpr/`
   - `https://gdpr-info.eu/art-13-gdpr/`
   - `https://gdpr-info.eu/art-15-gdpr/`
@@ -37,12 +38,18 @@ Primary/current sources reviewed for this pass:
   - `https://gdpr-info.eu/art-34-gdpr/`
   - `https://gdpr-info.eu/art-83-gdpr/`
 - Digital Services Act enforcement in Germany:
+  - `https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng`
+  - `https://digital-strategy.ec.europa.eu/en/policies/dsa-dscs`
   - `https://www.dsc.bund.de/`
   - `https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2024/20240514_DSC.html`
+  - `https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2026/20260430_TB_DSC.html`
 - Accessibility and consumer-service duties:
   - `https://www.gesetze-im-internet.de/bfsg/`
   - `https://www.gesetze-im-internet.de/bfsg/__1.html`
+  - `https://www.gesetze-im-internet.de/bfsg/__2.html`
+  - `https://www.gesetze-im-internet.de/bfsgv/__19.html`
   - `https://www.bundesfachstelle-barrierefreiheit.de/DE/Barrierefreiheitsstaerkungsgesetz`
+  - `https://www.bundesfachstelle-barrierefreiheit.de/DE/Barrierefreiheitsstaerkungsgesetz/FAQ/faq_node`
   - `https://www.bundesfachstelle-barrierefreiheit.de/DE/Barrierefreiheitsstaerkungsgesetz/E-Commerce/online-shops_node`
   - `https://www.gesetze-im-internet.de/vsbg/__36.html`
   - `https://www.gesetze-im-internet.de/bgb/__312k.html`
@@ -70,7 +77,8 @@ Primary/current sources reviewed for this pass:
 - DDG replaced the old TMG reference for public provider information. The project must use DDG section 5, not old TMG section 5 wording.
 - The official DDG text is current on Gesetze im Internet and records later amendments, including the 2026 amendment state shown on the full law page. The project therefore treats `DDG section 5` and `DDG section 33` as the current provider-information and fine-risk baseline.
 - TTDSG is now TDDDG for the terminal-device storage/access discussion. The cookie/storage baseline must reference `TDDDG section 25`.
-- BFSG has applied since 2025-06-28 for covered products/services. Because public paid self-service billing is disabled, the current controlled no-billing Web test is not blocked by a full e-commerce BFSG review. Before self-service paid subscriptions or consumer e-commerce flows are exposed, BFSG applicability and accessibility conformance must be reviewed again.
+- BFSG has applied since 2025-06-28 for covered products/services. Official accessibility guidance treats electronic-commerce services and e-books as possible BFSG scope, while interactive learning offers that are not electronic books are not automatically treated as e-books. Because the current controlled Web test has no public paid self-service consumer contract flow and is an interactive learning product, this pass does not block tester readiness on BFSG. Reopen BFSG/BFSGV review before self-service paid subscriptions, consumer checkout, downloadable/e-book learning products, app-store consumer contract flows, or later mobile publication.
+- The 2026 Bundesnetzagentur DSC activity report keeps DSA notice/action, statement-of-reasons, and internal complaint-handling implementation as active enforcement themes. Darwin Lingua's current contact/report route is enough for controlled learning tests, but broad public community/user-submitted surfaces need a specific moderation/reporting review before exposure.
 
 ## Current Project Mapping
 
@@ -81,7 +89,7 @@ The current implementation aligns with the audit as follows:
 - `/terms` states that Darwin Lingua is educational, not legal/medical/immigration/financial advice, and prohibits illegal, hateful, extremist, pornographic, exploitative, harassing, fraudulent, security-abuse, and rights-infringing content.
 - `/cookies` states the current no-banner position and limits it to necessary cookies, preference storage, session storage, and first-party PWA cache.
 - `/contact` provides a route for support, privacy, security, abuse, and illegal-content reports.
-- `tools/Web/New-WebLegalSurfaceAudit.ps1` verifies the public legal/support page surface from the configured Web domain before tester invitations: `/legal`, `/impressum`, `/privacy`, `/terms`, `/cookies`, and `/contact` must return HTTP 2xx, contain the expected operator/contact text, and avoid placeholders, old temporary domains, `www.darwinlingua.com`, and obvious secret leaks.
+- `tools/Web/New-WebLegalSurfaceAudit.ps1` verifies the public legal/support page surface from the configured Web domain before tester invitations: `/legal`, `/impressum`, `/privacy`, `/terms`, `/cookies`, and `/contact` must return HTTP 2xx, contain the expected operator/contact text, and avoid placeholders, old temporary domains, `www.darwinlingua.com` action links, and obvious secret leaks.
 - Registration requires Terms acceptance and Privacy notice acknowledgement, and policy acceptance records are stored.
 - Signed-in users have self-service account export and account deletion from `/account`.
 - Transactional email is Brevo-backed, uses `no-reply@darwinlingua.com`, keeps `support@darwinlingua.com` as reply/support contact, and is documented as service-related rather than marketing.
@@ -98,8 +106,8 @@ The current implementation aligns with the audit as follows:
 | Cookie/storage consent | No marketing/analytics storage active. | No banner for current baseline; any non-essential storage requires opt-in design first. |
 | Transactional email | Brevo real delivery, webhook, suppression, diagnostics, and DPA evidence exist. | Manual mailbox rendering review remains open. |
 | Marketing email/newsletter | Not enabled. | Must not be added without separate consent/unsubscribe model. |
-| DSA/illegal content reports | Contact/report route exists; community surfaces controlled. | Broader user-submitted content needs DSA/moderation review. |
-| BFSG/accessibility | Web has accessibility work, but paid e-commerce disabled. | Reopen before self-service paid subscriptions or broad consumer commerce. |
+| DSA/illegal content reports | Contact/report route exists; community surfaces controlled. | Broader user-submitted content needs DSA/moderation review covering notice/action, reasons, complaint handling, and staff-supervised escalation. |
+| BFSG/accessibility | Web has accessibility work; current interactive no-billing test is not treated as a BFSG blocker. | Reopen before self-service paid subscriptions, consumer checkout, downloadable/e-book learning products, app-store consumer contract flows, or later mobile publication. |
 | VSBG consumer dispute information | Monitored. | Reopen before formal consumer launch/AGB changes. |
 | BGB 312k cancellation button | Deferred because public paid subscriptions are disabled. | Required before online consumer subscription contracts are enabled. |
 | Crime/youth-media content | Terms and Sensitive Educational Language policy block illegal and explicit content. | Keep content generation/admin gates active. |
@@ -113,9 +121,9 @@ These are intentionally not marked complete by engineering automation:
 - Manual mailbox rendering review for real Brevo emails in `info@darwinlingua.com`.
 - PWA install review on target desktop and Android browsers.
 - Controlled tester pass and triage of blocker/major feedback.
-- Accessibility/BFSG applicability review before paid self-service subscriptions or consumer e-commerce flows.
+- Accessibility/BFSG applicability review before paid self-service subscriptions, consumer e-commerce flows, downloadable/e-book learning products, app-store consumer contract flows, or mobile publication.
 - Stripe and BGB 312k cancellation-button review before public paid billing is enabled.
 
 ## Engineering Rule
 
-Any future feature that adds marketing email, analytics, third-party scripts, non-essential browser storage, user-submitted public content, paid self-service billing, age-restricted content, official-looking civic/legal claims, or broader community workflows must update this audit and the related release checklist before it is exposed to testers or production users.
+Any future feature that adds marketing email, analytics, third-party scripts, non-essential browser storage, user-submitted public content, paid self-service billing, consumer checkout, downloadable/e-book learning products, age-restricted content, official-looking civic/legal claims, app-store consumer contract flows, mobile publication, or broader community workflows must update this audit and the related release checklist before it is exposed to testers or production users.
