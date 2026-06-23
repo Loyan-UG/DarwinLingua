@@ -351,6 +351,10 @@ Verification evidence:
 - `artifacts/validation/web-email-diagnostics-admin-smoke/web-email-diagnostics-admin-smoke-20260623-190230.md` and `artifacts/validation/web-email-diagnostics-admin-actions-smoke/web-email-diagnostics-admin-actions-smoke-20260623-190236.md` passed.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
 
+Current status note:
+
+- This checkpoint remains useful as historical evidence of a previously authorized Brevo host/IP. It is superseded for live Brevo API reachability by the later `2026-06-23 Brevo Token Manual Evidence / Pre User Testing` checkpoint, where Brevo rejects the current host until its IP is added again under Brevo `Security -> Authorised IPs`.
+
 ### 2026-06-23 Brevo Webhook Configuration Check Ready / Pre User Testing
 
 Backup path:
@@ -398,6 +402,10 @@ Verification evidence:
 - `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-193121.md` passed the automated gate with zero automated failures and preserved the four open human gates.
 - `WebTesterOperatorToolingTests` passed with `--no-build`.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
+
+Current status note:
+
+- A later readiness audit on 2026-06-23 reports `Automated ready=False` with one automated failure: Brevo Authorized IP for the current host. The four human gates remain open as before.
 
 ### 2026-06-23 Public PWA Evidence Refresh / Pre User Testing
 
