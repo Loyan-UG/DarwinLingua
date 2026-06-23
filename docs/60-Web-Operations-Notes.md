@@ -350,6 +350,29 @@ Verification evidence:
 - `artifacts/validation/web-email-diagnostics-admin-smoke/web-email-diagnostics-admin-smoke-20260623-190230.md` and `artifacts/validation/web-email-diagnostics-admin-actions-smoke/web-email-diagnostics-admin-actions-smoke-20260623-190236.md` passed.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
 
+### 2026-06-23 Brevo Webhook Configuration Check Ready / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-191546-brevo-webhook-config-check-ready-pre-user-testing`
+
+Scope:
+
+- Added repeatable provider-side Brevo webhook configuration verification through `tools/Web/Invoke-BrevoWebhookConfigurationCheck.ps1`.
+- The tool verifies Brevo `/v3/webhooks` metadata for the Darwin Lingua transactional webhook without storing API keys, bearer tokens, custom header values, or raw webhook responses.
+- Public Web stack restarted from commit `96235b8c` and verified through `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
+- Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
+
+Verification evidence:
+
+- `db/darwinlingua_shared_20260623-191546.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-191546.restore-list.txt` generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present.
+- `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenShapePresent=True` were verified without printing secret values.
+- `artifacts/validation/brevo-webhook-configuration-check/brevo-webhook-configuration-check-20260623-191243.md` passed with provider webhook URL `https://darwinlingua.com/webhooks/brevo/transactional-email`, type `transactional`, auth type `bearer`, and zero missing expected event keys.
+- `TransactionalEmailBrevoTests` passed `30/30`.
+- Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
