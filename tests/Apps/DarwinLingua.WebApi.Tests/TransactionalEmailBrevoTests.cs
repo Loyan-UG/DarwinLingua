@@ -463,6 +463,46 @@ public sealed class TransactionalEmailBrevoTests
     }
 
     [Fact]
+    public void WebAccountEmailLinkSmokeTool_ShouldExerciseRealBrevoActionLinksWithoutPersistingSecrets()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-WebAccountEmailLinkSmoke.ps1"));
+        string operationsChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/74-Production-Operations-Setup-Checklist.md"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+
+        Assert.Contains("/Identity/Account/Register", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/ConfirmEmail", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/ForgotPassword", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/ResetPassword", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/Manage/Email", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/ConfirmEmailChange", script, StringComparison.Ordinal);
+        Assert.Contains("/v3/smtp/emails?messageId=", script, StringComparison.Ordinal);
+        Assert.Contains("/v3/smtp/emails?email=", script, StringComparison.Ordinal);
+        Assert.Contains("/v3/smtp/emails/$encodedUuid", script, StringComparison.Ordinal);
+        Assert.Contains("AllowAutoRedirect = $false", script, StringComparison.Ordinal);
+        Assert.Contains("Account.EmailConfirmation", script, StringComparison.Ordinal);
+        Assert.Contains("Account.PasswordReset", script, StringComparison.Ordinal);
+        Assert.Contains("Account.PasswordResetCompleted", script, StringComparison.Ordinal);
+        Assert.Contains("Account.EmailChangeConfirmation", script, StringComparison.Ordinal);
+        Assert.Contains("Account.EmailChangedNotification", script, StringComparison.Ordinal);
+        Assert.Contains("No full action URLs", script, StringComparison.Ordinal);
+        Assert.Contains("ConvertTo-Sha256", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-account-email-link-smoke", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+
+        Assert.Contains("Invoke-WebAccountEmailLinkSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
+        Assert.Contains("Invoke-WebAccountEmailLinkSmoke.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("Brevo's official sent-email content API", emailBacklog, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void BrevoWebhookSuppressionSmokeTool_ShouldExercisePublicWebhookAndSuppressionPath()
     {
         string repositoryRoot = FindRepositoryRoot();

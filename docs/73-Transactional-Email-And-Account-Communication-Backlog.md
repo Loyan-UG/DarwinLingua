@@ -64,7 +64,7 @@ The web app now has a production-provider path for transactional email:
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
 - Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
 
-Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, app-level registration/password-reset sends are logged through provider `brevo-api`, a controlled public webhook smoke verifies Bearer-authenticated `hardBounce` handling plus internal suppression creation, and a controlled suppressed-send smoke verifies that a later account email to a suppressed recipient is logged as `Suppressed` without calling Brevo. Manual mailbox rendering review and real Brevo dashboard event observation still remain before broad public launch.
+Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, app-level registration/password-reset sends are logged through provider `brevo-api`, real Brevo-tracked registration/password-reset/email-change action links resolve and complete successfully on `https://darwinlingua.com`, a controlled public webhook smoke verifies Bearer-authenticated `hardBounce` handling plus internal suppression creation, and a controlled suppressed-send smoke verifies that a later account email to a suppressed recipient is logged as `Suppressed` without calling Brevo. Manual mailbox rendering review still remains before broad public launch.
 
 ## Brevo Production Setup Runbook
 
@@ -197,6 +197,13 @@ Set these values outside source control for the target environment:
 ```
 
 - The app-level tool writes JSON and Markdown reports under `artifacts/validation/web-account-email-smoke/`. It registers a timestamped test learner through the public Register page, requests a password reset through the public Forgot Password page, and verifies `WebEmailDeliveryLogs` contains `brevo-api` provider message ids for `Account.EmailConfirmation` and `Account.PasswordReset`.
+- After the app-level send smoke passes, run the public action-link smoke:
+
+```powershell
+.\tools\Web\Invoke-WebAccountEmailLinkSmoke.ps1
+```
+
+- The action-link smoke writes JSON and Markdown reports under `artifacts/validation/web-account-email-link-smoke/`. It registers a timestamped test learner, reads the real delivered content through Brevo's official sent-email content API, resolves Brevo tracking redirects without storing full action URLs, confirms the registration link, completes password reset, signs in with the reset password, confirms an email change, and verifies the old-email notification log. It stores only short SHA256 hashes/previews for links and provider message ids.
 - After app-level email smoke passes, run the controlled webhook/suppression smoke:
 
 ```powershell
@@ -629,31 +636,37 @@ Current automated coverage is intentionally split between Web account-flow struc
 
 ### Integration Tests
 
-- [ ] registration sends confirmation email
+- [x] registration sends confirmation email
+  - Evidence: `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` verifies public registration creates a Brevo-backed `Account.EmailConfirmation` delivery log; `tools/Web/Invoke-WebAccountEmailLinkSmoke.ps1` additionally confirms the real action link.
 - [ ] resend confirmation sends a new confirmation email
 - [ ] confirmed user can access confirmed-only flows
 - [ ] unconfirmed user is blocked from confirmed-only flows
 - [ ] password reset request returns neutral response for existing and non-existing emails
-- [ ] password reset token resets password successfully
+- [x] password reset token resets password successfully
+  - Evidence: `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-153300.md` resolved the Brevo-tracked password-reset link, posted a new password, and logged in with the reset password.
 - [ ] expired password reset token fails safely
 - [ ] invalid password reset token fails safely
 - [ ] malformed token fails safely
-- [ ] email change sends confirmation to new email
-- [ ] successful email change notifies old email
+- [x] email change sends confirmation to new email
+- [x] successful email change notifies old email
+  - Evidence: the same action-link smoke changed the test account email, consumed the new-email confirmation link, and verified the old-email notification log.
 - [ ] rate limit prevents abusive repeated reset/resend attempts
 
 ### Manual Validation
 
 - [ ] registration email received in development sink
 - [ ] registration email received in staging inbox
-- [ ] confirmation link works from desktop browser
+- [x] confirmation link works from desktop browser
+  - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` resolved the real Brevo-tracked confirmation link and followed the final public Web Identity URL.
 - [ ] confirmation link works from mobile browser
-- [ ] password reset link works from desktop browser
+- [x] password reset link works from desktop browser
+  - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` resolved and completed the real Brevo-tracked reset flow.
 - [ ] password reset link works from mobile browser
 - [ ] German email template renders correctly
 - [ ] English email template renders correctly
 - [ ] dark-mode email clients remain readable if HTML email is used
-- [ ] links use the correct public base URL
+- [x] links use the correct public base URL
+  - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` confirms the resolved action links target `https://darwinlingua.com`; the report stores hashes, not full recovery URLs or tokens.
 
 ---
 
@@ -667,8 +680,10 @@ Current automated coverage is intentionally split between Web account-flow struc
 - [x] email delivery logs have a retention policy
 - [x] unsubscribe links are not required for transactional security emails, but marketing emails must not be mixed into this channel
 - [x] privacy policy mentions transactional emails and provider processing where required
-- [-] data processing agreement with production email provider is reviewed before launch
-- [ ] sender domain is verified with SPF, DKIM, and DMARC before production release
+- [x] data processing agreement with production email provider is reviewed before launch
+  - Evidence: operator confirmed Brevo DPA accepted on 2026-06-23.
+- [x] sender domain is verified with SPF, DKIM, and DMARC before production release
+  - Evidence: `Invoke-BrevoProductionReadinessCheck.ps1 -VerifyBrevoApi` passed with zero blockers/warnings after sender-domain setup and Brevo authorized-IP configuration.
 
 ---
 
