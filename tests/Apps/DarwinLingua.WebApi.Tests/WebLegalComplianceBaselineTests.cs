@@ -59,6 +59,7 @@ public sealed class WebLegalComplianceBaselineTests
         Assert.Contains("Achterkirchenstrasse 10, 37154 Northeim, Germany", appsettings, StringComparison.Ordinal);
         Assert.Contains("info@darwinlingua.com", appsettings, StringComparison.Ordinal);
         Assert.Contains("LegalNotice:Email", contact, StringComparison.Ordinal);
+        Assert.Contains("TransactionalEmail:SupportEmail", contact, StringComparison.Ordinal);
         Assert.Contains("no cookie banner is shown", cookies, StringComparison.Ordinal);
         Assert.Contains("marketing cookies or third-party analytics scripts", cookies, StringComparison.Ordinal);
     }
@@ -79,6 +80,15 @@ public sealed class WebLegalComplianceBaselineTests
         string index = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "docs/00-Documentation-Index.md"));
+        string legalSurfaceAuditScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebLegalSurfaceAudit.ps1"));
+        string manualExternalReview = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/91-Web-Manual-External-Review-Checklist.md"));
+        string humanGateHandoff = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/93-Web-Human-Gate-Handoff.md"));
 
         Assert.Contains("not final legal advice", baseline, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("TDDDG section 25", baseline, StringComparison.Ordinal);
@@ -102,6 +112,23 @@ public sealed class WebLegalComplianceBaselineTests
         Assert.Contains("no cookie banner is required", inventory, StringComparison.Ordinal);
         Assert.Contains("86-Web-Legal-Compliance-Baseline.md", index, StringComparison.Ordinal);
         Assert.Contains("92-Web-Legal-Research-And-Risk-Audit.md", index, StringComparison.Ordinal);
+        Assert.Contains("New-WebLegalSurfaceAudit.ps1", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("New-WebLegalSurfaceAudit.ps1", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("New-WebLegalSurfaceAudit.ps1", humanGateHandoff, StringComparison.Ordinal);
+        Assert.Contains("/legal", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("/impressum", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("/privacy", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("/terms", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("/cookies", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("/contact", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("requiredWwwHost = $false", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("lingua.vafadar.pro", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("www.darwinlingua.com", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("xkeysib\" + \"-", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("BrevoWebhookSecret", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("BrevoApiKey", legalSurfaceAuditScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", legalSurfaceAuditScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", legalSurfaceAuditScript, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
@@ -150,6 +177,8 @@ public sealed class WebLegalComplianceBaselineTests
             "src/Apps/DarwinLingua.Web/Views/Home/Contact.cshtml"));
 
         Assert.Contains("security-abuse", terms, StringComparison.Ordinal);
+        Assert.Contains("LegalNotice:DataProtectionContact", privacy, StringComparison.Ordinal);
+        Assert.Contains("LegalNotice:Email", privacy, StringComparison.Ordinal);
         Assert.Contains("Marketing email is not part of account creation", privacy, StringComparison.Ordinal);
         Assert.Contains("Landesbeauftragte fuer den Datenschutz Niedersachsen", privacy, StringComparison.Ordinal);
         Assert.Contains("Security, abuse, and illegal-content reports", contact, StringComparison.Ordinal);

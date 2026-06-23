@@ -152,7 +152,17 @@ For a release gate, add:
 
 The report intentionally treats `not-reviewed` and `not-started` as open gates. Do not mark a gate as passed until the evidence was actually reviewed.
 
-## E. Consolidated Tester Readiness Audit
+## E. Public Legal Surface Audit
+
+Before treating the public legal pages as ready for controlled tester invitations, run the public surface audit:
+
+```powershell
+.\tools\Web\New-WebLegalSurfaceAudit.ps1 -FailOnIssue
+```
+
+This verifies the current public routes for `/legal`, `/impressum`, `/privacy`, `/terms`, `/cookies`, and `/contact`. It checks HTTP status, required configured operator/contact text, old-domain references, `www.darwinlingua.com`, unresolved placeholders, and obvious secret leaks. It is an engineering gate only; it does not replace final operator/legal review before broad public launch.
+
+## F. Consolidated Tester Readiness Audit
 
 After generating the manual review report, run the consolidated audit from the repository root:
 

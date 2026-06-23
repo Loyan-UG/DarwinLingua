@@ -27,6 +27,14 @@ The generated handoff reads the latest `New-WebControlledTesterReadinessAudit.ps
 - Android PWA install acceptance or explicit out-of-scope decision
 - controlled tester pass start status
 
+Before closing the legal/operator review row for tester invitations, also run:
+
+```powershell
+.\tools\Web\New-WebLegalSurfaceAudit.ps1 -FailOnIssue
+```
+
+This confirms that the public legal/support pages render from `https://darwinlingua.com` with configured operator/contact text and without placeholders, old temporary domains, `www`, or obvious secret leaks.
+
 ## Required Public Hosts
 
 - Web: `https://darwinlingua.com`

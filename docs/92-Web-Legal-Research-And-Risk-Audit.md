@@ -81,6 +81,7 @@ The current implementation aligns with the audit as follows:
 - `/terms` states that Darwin Lingua is educational, not legal/medical/immigration/financial advice, and prohibits illegal, hateful, extremist, pornographic, exploitative, harassing, fraudulent, security-abuse, and rights-infringing content.
 - `/cookies` states the current no-banner position and limits it to necessary cookies, preference storage, session storage, and first-party PWA cache.
 - `/contact` provides a route for support, privacy, security, abuse, and illegal-content reports.
+- `tools/Web/New-WebLegalSurfaceAudit.ps1` verifies the public legal/support page surface from the configured Web domain before tester invitations: `/legal`, `/impressum`, `/privacy`, `/terms`, `/cookies`, and `/contact` must return HTTP 2xx, contain the expected operator/contact text, and avoid placeholders, old temporary domains, `www.darwinlingua.com`, and obvious secret leaks.
 - Registration requires Terms acceptance and Privacy notice acknowledgement, and policy acceptance records are stored.
 - Signed-in users have self-service account export and account deletion from `/account`.
 - Transactional email is Brevo-backed, uses `no-reply@darwinlingua.com`, keeps `support@darwinlingua.com` as reply/support contact, and is documented as service-related rather than marketing.
