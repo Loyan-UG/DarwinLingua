@@ -12,11 +12,11 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Public API health: `https://api.darwinlingua.com/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
-- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-091250-web-public-pwa-ready-pre-user-testing`
-- Latest readiness commits: recorded by the phase backup manifest and recoverable through `repo-overlay/darwinlingua-current-head.bundle`; recent changes cover operational incident ownership, Brevo/domain hardening, and email-change public-link verification.
-- Latest tester bundle: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass`
-- Latest public preflight: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass/preflight/web-tester-preflight-20260620-011005.json` with 25/25 checks passed.
-- Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260620-011012.md` with 0 validation errors on the empty bundle feedback template.
+- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-164407-web-transactional-email-preview-ready-pre-user-testing`
+- Latest readiness commits: recorded by the phase backup manifest and recoverable through `repo-overlay/darwinlingua-current-head.bundle`; recent changes cover operational incident ownership, Brevo/domain hardening, email-change public-link verification, branded transactional email HTML, and safe template preview generation.
+- Latest tester bundle: `artifacts/validation/web-tester-runs/20260623-171610-web-tester-pass-brevo-ready`
+- Latest public preflight: `artifacts/validation/web-tester-runs/20260623-171610-web-tester-pass-brevo-ready/preflight/web-tester-preflight-20260623-171614.json` with 25/25 checks passed.
+- Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260623-171624.md` with 0 validation errors on the empty bundle feedback template.
 - Mobile/MAUI is explicitly out of scope for this test pass.
 
 ## Tester Profile
@@ -35,11 +35,9 @@ Do not use this pass as a marketing launch. The tester group should know that th
 
 Before inviting testers:
 
-- Decide the account/email mode for this tester pass:
-  - If testers will self-register, complete the Brevo setup in `docs/73-Transactional-Email-And-Account-Communication-Backlog.md` and the Persian operator handoff `docs/89-Brevo-Operator-Handoff.fa.md` first, including verified sender domain, API key, webhook secret, DNS authentication, DPA confirmation, webhook setup, and real delivery checks.
-  - If Brevo is not ready yet, use pre-created tester accounts and do not ask testers to validate registration, email confirmation, password reset, or email-change flows as production behavior.
-  - In either mode, record the choice in the generated tester bundle README or pass notes.
-- For the recommended first wave while Brevo is still pending, prepare tester accounts first, then grant Premium in batch:
+- Use Brevo-ready self-registration for this tester pass. Brevo setup, DNS/domain verification, webhook secret, DPA acceptance, public delivery smoke, app-level email link smoke, webhook/suppression smoke, and Admin Email Diagnostics smoke are complete for the controlled public Web stack. Testers may validate registration, email confirmation, password reset, and email-change behavior as part of the pass.
+- Use pre-created accounts only for a specific tester who cannot self-register, and record that exception in the generated bundle notes.
+- Grant Premium in batch only after the tester accounts already exist:
 
 ```powershell
 Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-tester-runs\<run-id>\WebTesterAccounts.csv

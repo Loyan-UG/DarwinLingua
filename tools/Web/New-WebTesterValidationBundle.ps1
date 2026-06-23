@@ -93,13 +93,15 @@ $readme = @"
 
 ## Account Access
 
-If Brevo production email is not ready yet, create tester accounts through the current operator process, edit `WebTesterAccounts.csv`, then run from the repository root:
+For the Brevo-ready controlled tester pass, let testers self-register with their own email address first so registration confirmation, password reset, and email-change behavior can be validated through the real public email path.
+
+Use `WebTesterAccounts.csv` only as an operator-only account list for testers who should receive Premium access during the pass. After the accounts already exist, replace the sample rows with real tester account emails and run from the repository root:
 
 ~~~powershell
 .\tools\Web\Set-WebTesterPremiumAccess.ps1 -TesterCsvPath "$($runDirectory)\WebTesterAccounts.csv" -UpdatedBy "$safeLabel"
 ~~~
 
-The Premium tool only updates existing users, confirms their email, and writes entitlement audit events. It does not create passwords or send email.
+The Premium tool only updates existing users, confirms their email if needed, and writes entitlement audit events. It does not create passwords or send email.
 
 ## Triage
 
