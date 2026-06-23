@@ -104,6 +104,8 @@ All project documentation should remain in English.
 - `88-Web-Tester-Quick-Start.md`
 - `89-Brevo-Operator-Handoff.fa.md`
 - `90-Web-Operational-Incident-Runbook.md`
+- `91-Web-Manual-External-Review-Checklist.md`
+- `92-Web-Legal-Research-And-Risk-Audit.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -179,6 +181,8 @@ If you are new to the project, read the documents in this order:
 59. `88-Web-Tester-Quick-Start.md`
 60. `89-Brevo-Operator-Handoff.fa.md`
 61. `90-Web-Operational-Incident-Runbook.md`
+62. `91-Web-Manual-External-Review-Checklist.md`
+63. `92-Web-Legal-Research-And-Risk-Audit.md`
 
 ---
 
@@ -225,6 +229,7 @@ If you are new to the project, read the documents in this order:
 - `89-Brevo-Operator-Handoff.fa.md` gives the Persian operator handoff for Brevo sender/domain setup, webhook configuration, secrets, DPA review, readiness checks, and Darwin Lingua production-domain rules.
 - `90-Web-Operational-Incident-Runbook.md` defines the Web-first operational ownership and incident process for Brevo, DNS/Cloudflare, privacy requests, security/breach triage, community escalation, and backup/restore.
 - `91-Web-Manual-External-Review-Checklist.md` gives the operator one evidence checklist for the remaining human gates before and during the controlled Web tester pass: real mailbox rendering, PWA install acceptance, and tester-pass start/close criteria.
+- `92-Web-Legal-Research-And-Risk-Audit.md` records the current-source Web legal and compliance risk audit for DDG/TDDDG/GDPR, self-service account controls, Brevo email, DSA, BFSG/accessibility, crime/content-risk guardrails, Life in Germany content, and deferred billing gates.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Learning Portal Planning Rule

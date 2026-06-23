@@ -70,6 +70,9 @@ public sealed class WebLegalComplianceBaselineTests
         string baseline = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "docs/86-Web-Legal-Compliance-Baseline.md"));
+        string legalRiskAudit = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/92-Web-Legal-Research-And-Risk-Audit.md"));
         string inventory = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "artifacts/validation/web-cookie-storage-inventory.md"));
@@ -88,9 +91,17 @@ public sealed class WebLegalComplianceBaselineTests
         Assert.Contains("Official-Source Refresh 2026-06-23", baseline, StringComparison.Ordinal);
         Assert.Contains("BFSG/accessibility applicability reviewed", baseline, StringComparison.Ordinal);
         Assert.Contains("StGB sections 202a-202d", baseline, StringComparison.Ordinal);
+        Assert.Contains("Review date: 2026-06-23", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("DDG section 5", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("TDDDG section 25", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("BFSG has applied since 2025-06-28", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("Self-service delete exists", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("BGB 312k cancellation button", legalRiskAudit, StringComparison.Ordinal);
+        Assert.Contains("Manual mailbox rendering review remains open", legalRiskAudit, StringComparison.Ordinal);
         Assert.Contains("No marketing cookies", inventory, StringComparison.Ordinal);
         Assert.Contains("no cookie banner is required", inventory, StringComparison.Ordinal);
         Assert.Contains("86-Web-Legal-Compliance-Baseline.md", index, StringComparison.Ordinal);
+        Assert.Contains("92-Web-Legal-Research-And-Risk-Audit.md", index, StringComparison.Ordinal);
     }
 
     [Fact]
