@@ -421,6 +421,31 @@ Verification evidence:
 - `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenShapePresent=True` were verified without printing secret values.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/manifest.webmanifest`, `/offline.html`, `/legal`, and `https://api.darwinlingua.com/health`.
 
+### 2026-06-23 Mailbox Review Packet / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-211136-mailbox-review-packet-pre-user-testing`
+
+Scope:
+
+- Added `tools/Web/New-WebMailboxRenderingReviewPacket.ps1` to generate an operator-facing real-inbox review packet for transactional email rendering.
+- The packet does not store raw action URLs, reset tokens, webhook secrets, API keys, provider message ids, diagnostic hashes, or full real email bodies.
+- The generated packet `artifacts/validation/web-mailbox-rendering-review-packet/web-mailbox-rendering-review-packet-20260623-210707/` was included in the external phase backup under `artifacts/validation/`.
+- Public Web stack was restarted after build/test locks and verified through `https://darwinlingua.com`, `/legal`, `/contact`, and `https://api.darwinlingua.com/health`.
+
+Verification evidence:
+
+- `dotnet test tests/Apps/DarwinLingua.WebApi.Tests/DarwinLingua.WebApi.Tests.csproj --filter "WebTesterOperatorToolingTests"` passed.
+- `db/darwinlingua_shared_20260623-211136.dump` was created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-211136.restore-list.txt` was generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, and `verification/` are present.
+- `SecretFileCount=3`, `BrevoApiKeyFileCount=2`, and `WebhookTokenFileCount=2` were verified inside `secrets/` without printing secret values.
+
+Operational note:
+
+- A live Brevo webhook configuration re-check from the current machine was blocked by Brevo Authorized IP protection. The previously verified provider-side webhook evidence remains in the backup, but the current machine IP must be added in Brevo Authorized IPs before rerunning `tools/Web/Invoke-BrevoWebhookConfigurationCheck.ps1`.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
