@@ -64,7 +64,7 @@ The web app now has a production-provider path for transactional email:
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
 - Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
 
-Operational work still required before production launch: configure a real Brevo API key and webhook secret outside source control, verify the sender domain, set SPF/DKIM/DMARC, configure the Brevo transactional webhook URL, and review the provider DPA.
+Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes, DPA is accepted, direct Brevo real-delivery smoke passes, and app-level registration/password-reset sends are logged through provider `brevo-api`. Manual mailbox rendering review, webhook event monitoring, and negative-path bounce/suppression drills still remain before broad public launch.
 
 ## Brevo Production Setup Runbook
 
@@ -190,6 +190,13 @@ Set these values outside source control for the target environment:
 ```
 
 - The real-delivery smoke tool writes JSON and Markdown reports under `artifacts/validation/brevo-real-delivery-smoke/`. It does not print API keys or webhook secrets.
+- After direct provider smoke passes, run the app-level public Web flow smoke:
+
+```powershell
+.\tools\Web\Invoke-WebAccountEmailFlowSmoke.ps1
+```
+
+- The app-level tool writes JSON and Markdown reports under `artifacts/validation/web-account-email-smoke/`. It registers a timestamped test learner through the public Register page, requests a password reset through the public Forgot Password page, and verifies `WebEmailDeliveryLogs` contains `brevo-api` provider message ids for `Account.EmailConfirmation` and `Account.PasswordReset`.
 - Confirm that both HTML and plain-text alternatives render correctly.
 - Confirm that action links use the configured `PublicBaseUrl`.
 - Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.

@@ -4,7 +4,7 @@
 
 این سند برای کارهای بیرون از کد است؛ یعنی کارهایی که باید در پنل Brevo، DNS دامنه، و تنظیمات محرمانه انجام شود تا ایمیل‌های واقعی Darwin Lingua ارسال شوند.
 
-کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-22: API key و webhook secret در user-secrets ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، و DPA پذیرفته شده است. اما live API check با `-VerifyBrevoApi` هنوز یک blocker دارد: Brevo این ماشین را به دلیل IP مجازنشده رد می‌کند. قبل از ثبت‌نام آزاد یا بازیابی رمز عبور برای کاربران تستی واقعی، IP گزارش‌شده باید در Authorized IPs اضافه شود و سپس smoke واقعی inbox/webhook انجام شود.
+کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-22: API key و webhook secret بیرون از Git و در user-secrets ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check پاس شده، smoke ارسال واقعی مستقیم پاس شده، و smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است. قبل از باز کردن ثبت‌نام عمومی گسترده، هنوز باید نمایش واقعی ایمیل‌ها در inbox و eventهای webhook در طول زمان بررسی شوند.
 
 دامنه‌ی اصلی Web برای تست و سپس production این است:
 
@@ -94,7 +94,7 @@ click / clicked
 unsubscribed
 ```
 
-نکته‌ی مهم: مستندات رسمی Brevo در صفحه‌های مختلف دقیقاً یکسان نیستند. مرجع API برای ساخت webhook نام‌هایی مثل `hardBounce`, `softBounce`, `spam`, `uniqueOpened` و `unsubscribed` را نشان می‌دهد، ولی راهنمای transactional webhooks در بعضی بخش‌ها از برچسب‌هایی مثل `Complaint` و `Error` هم نام می‌برد. اگر UI شما مثلاً `spam` را نشان نداد، همه‌ی eventهای موجود در همان دسته‌ی `Transactional email` را فعال کنید و بعد از Brevo logs یا API بررسی کنید که چه eventهایی واقعاً ثبت شده‌اند. کد Darwin Lingua نام‌های camelCase و snake_case رایج Brevo را به مقدار داخلی ثابت تبدیل می‌کند.
+نکته‌ی مهم: مرجع رسمی API برای ساخت webhook نوع `transactional` این eventها را به‌عنوان مقدارهای معتبر نشان می‌دهد: `sent` یا `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened`, و `unsubscribed`. اگر UI فعلی Brevo همه‌ی این نام‌ها را دقیقاً با همین label نشان نداد، همه‌ی eventهای موجود در همان دسته‌ی `Transactional email` را فعال کنید و بعد از Brevo logs یا API بررسی کنید که چه eventهایی واقعاً ثبت شده‌اند. کد Darwin Lingua نام‌های camelCase، snake_case و چند label رایج مثل `Complaint` را به مقدار داخلی ثابت تبدیل می‌کند.
 
 12. قرارداد پردازش داده یا DPA مربوط به Brevo را برای GDPR/EU operation بررسی و قبول کنید.
 
@@ -211,6 +211,18 @@ artifacts/validation/brevo-real-delivery-smoke/
 6. یک webhook event یا manual provider event باید در Admin Email Diagnostics دیده شود.
 7. بعد از آن، یک ثبت‌نام کاربر تستی و یک password reset واقعی از خود UI انجام شود.
 8. bounce/spam/complaint باید suppression داخلی بسازد.
+
+برای smoke واقعی از خود UI، ابزار زیر را اجرا کنید:
+
+```powershell
+.\tools\Web\Invoke-WebAccountEmailFlowSmoke.ps1
+```
+
+این ابزار از صفحه‌ی public ثبت‌نام و صفحه‌ی public فراموشی رمز استفاده می‌کند، anti-forgery token را از HTML می‌خواند، یک کاربر تستی timestamped می‌سازد، برای یک کاربر موجود password reset می‌فرستد، و سپس در PostgreSQL بررسی می‌کند که `WebEmailDeliveryLogs` برای `Account.EmailConfirmation` و `Account.PasswordReset` provider برابر `brevo-api` و provider message id داشته باشد. گزارش آن در این مسیر ذخیره می‌شود:
+
+```text
+artifacts/validation/web-account-email-smoke/
+```
 
 ## تصمیم پیشنهادی فعلی
 

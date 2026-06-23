@@ -439,6 +439,29 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("-ConfirmSend", operatorHandoff, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void WebAccountEmailFlowSmokeTool_ShouldExerciseRegistrationResetAndDeliveryLogs()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1"));
+
+        Assert.Contains("/Identity/Account/Register", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/ForgotPassword", script, StringComparison.Ordinal);
+        Assert.Contains("__RequestVerificationToken", script, StringComparison.Ordinal);
+        Assert.Contains("Input.AcceptTermsOfUse", script, StringComparison.Ordinal);
+        Assert.Contains("Input.AcknowledgePrivacyNotice", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailDeliveryLogs", script, StringComparison.Ordinal);
+        Assert.Contains("Account.EmailConfirmation", script, StringComparison.Ordinal);
+        Assert.Contains("Account.PasswordReset", script, StringComparison.Ordinal);
+        Assert.Contains("brevo-api", script, StringComparison.Ordinal);
+        Assert.Contains("ProviderMessageId", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-account-email-smoke", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+    }
+
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()
     {
         Mode = "BrevoApi",

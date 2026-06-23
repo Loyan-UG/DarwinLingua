@@ -43,7 +43,7 @@ Last updated: 2026-06-20.
 - PWA follow-up on 2026-06-19 regenerated `artifacts/installability-report.json` against `https://localhost:7501`: `17` automated checks passed, `0` failed, and `2` manual checks remain for real Desktop Chrome/Edge and Android Chrome prompt acceptance. The homepage 404 collection image and htmx inline-style CSP console error were fixed before the report was regenerated.
 - Web readiness checkpoint commits are selected: `a7fef927 Complete web readiness checkpoint` and `07833401 Document Brevo production handoff`, with follow-up hardening in `2a59a0a6 Cover account email workflow structure`, `093d8001 Refresh Life in Germany legal research gate`, `bf3035f7 Add Life in Germany legal content gate`, `5c3aed83 Polish Brevo email handoff`, and `c57f7169 Cover identity email token failures`.
 - Production sign-off still requires the unchecked release gates below, especially manual target-browser install validation, production configuration, Brevo DNS/domain verification, legal/operator review, and Stripe test-mode/staging validation where billing is enabled.
-- Brevo production readiness now has a repeatable operator gate: `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1` writes JSON/Markdown evidence under `artifacts/validation/brevo-readiness/` and fails while API key, webhook secret, sender verification, DNS authentication, webhook configuration, DPA confirmation, or real-delivery settings are incomplete. The production handoff also has a Persian operator guide in `docs/89-Brevo-Operator-Handoff.fa.md`, and transactional email templates now render action links as email-safe CTA buttons.
+- Brevo production readiness now has repeatable operator gates: `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1` writes JSON/Markdown evidence under `artifacts/validation/brevo-readiness/`; `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1` verifies direct provider delivery; and `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` verifies registration and password-reset email flow through the public Web UI and `WebEmailDeliveryLogs`. The production handoff also has a Persian operator guide in `docs/89-Brevo-Operator-Handoff.fa.md`, and transactional email templates now render action links as email-safe CTA buttons.
 
 ---
 
@@ -119,7 +119,7 @@ Last updated: 2026-06-20.
 This section is a release blocker. See `73-Transactional-Email-And-Account-Communication-Backlog.md`.
 
 - [x] email confirmation is sent after registration
-  - Evidence: 2026-06-18 `WebRegistrationLegalAcknowledgementTests` verifies registration calls `GenerateEmailConfirmationTokenAsync` and `SendEmailConfirmationAsync`; public smoke returned HTTP 200 for `/Identity/Account/Register`.
+  - Evidence: 2026-06-18 `WebRegistrationLegalAcknowledgementTests` verifies registration calls `GenerateEmailConfirmationTokenAsync` and `SendEmailConfirmationAsync`; public smoke returned HTTP 200 for `/Identity/Account/Register`. 2026-06-22 app-level public smoke `artifacts/validation/web-account-email-smoke/web-account-email-smoke-20260622-233338.md` registered a test learner through `https://darwinlingua.com`, created the user, and logged `Account.EmailConfirmation` through provider `brevo-api` with a provider message id.
 - [x] registration requires Terms of Use acceptance
   - Evidence: 2026-06-18 `WebRegistrationLegalAcknowledgementTests` verifies the registration page includes `Input.AcceptTermsOfUse`, links to Terms, validates required acknowledgements, and records registration policy acceptances.
 - [x] registration shows a clear Privacy Policy notice link and acknowledgement without mislabeling the Privacy Policy as optional marketing consent
@@ -131,7 +131,7 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [x] resend confirmation flow works
   - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies resend confirmation rate limiting, token generation, confirmation email sending, and enumeration-resistant redirect to `/Account/CheckEmail`.
 - [x] forgot-password request works without account enumeration
-  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies forgot-password IP/email rate limits, redirects to `/Account/ForgotPasswordConfirmation` for blocked or unknown/unconfirmed accounts, and only sends reset emails for confirmed users. Public smoke returned HTTP 200 for `/Identity/Account/ForgotPassword`.
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies forgot-password IP/email rate limits, redirects to `/Account/ForgotPasswordConfirmation` for blocked or unknown/unconfirmed accounts, and only sends reset emails for confirmed users. Public smoke returned HTTP 200 for `/Identity/Account/ForgotPassword`. 2026-06-22 app-level public smoke `artifacts/validation/web-account-email-smoke/web-account-email-smoke-20260622-233338.md` requested password reset through `https://darwinlingua.com` and logged `Account.PasswordReset` through provider `brevo-api` with a provider message id.
 - [x] password reset link works
   - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies reset links decode Base64Url tokens and call `ResetPasswordAsync`.
 - [x] expired and invalid reset tokens fail safely
@@ -146,7 +146,8 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
   - Evidence: 2026-06-18 `/admin/email-diagnostics` is linked from the admin dashboard and protected by the `Operator` policy. `AdminDashboardRouteStructuralTests` verifies the diagnostics page exposes delivery status, scenario, provider metadata, recipient hash, failure summary, suppressions, readiness warnings, filtering, retention cleanup, manual provider-event reconciliation, and admin-only suppression controls without exposing email body fields.
 - [x] email-triggering endpoints are rate-limited
   - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies registration, resend confirmation, and forgot-password flows call `IAccountEmailRateLimiter`; login lockout notification is also guarded by `account-lockout` rate limiting.
-- [ ] production public base URL is configured correctly for email links
+- [x] production public base URL is configured correctly for email links
+  - Evidence: 2026-06-22 Brevo readiness and real-delivery smoke use expected public base URL `https://darwinlingua.com`; the app-level account email smoke exercised public Web account flows through the same origin and verified Brevo delivery logs.
 - [x] no reset/confirmation token or full recovery URL is logged
   - Evidence: 2026-06-18 `DeliveryLogRepository_ShouldStoreDiagnosticsWithoutEmailBodyOrRecoveryUrl` verifies delivery logs persist operational diagnostics without storing email body, reset/confirmation token values, or full recovery URLs. `EmailDeliveryLogRepository` now redacts URL-like diagnostic text before persisting failure summaries and provider event reasons; `EmailDiagnostics_ShouldExposeDeliveryLogWithoutEmailBodyOrRecoveryUrls` verifies the admin diagnostics model/view do not expose `PlainTextBody`, `HtmlBody`, `ActionUrl`, callback URLs, reset URLs, or confirmation URLs.
 
@@ -315,7 +316,7 @@ This section is a release blocker. See `86-Web-Legal-Compliance-Baseline.md`.
 - Validation owner: Darwin Lingua operator, with engineering evidence from this checklist and generated validation artifacts.
 - Known accepted issues:
   - This is not a broad public production launch sign-off. The primary Web test domain is `https://darwinlingua.com`; `https://www.darwinlingua.com` is not a required route unless DNS and redirects are explicitly added later.
-  - Brevo production sending is code-ready but provider-side setup remains external: verified sender/domain, SPF/DKIM/DMARC, transactional API key, webhook secret, webhook events, real-delivery readiness, and Brevo DPA review.
+  - Brevo production sending is now configured and smoke-tested for the controlled local public stack with verified provider/API readiness, direct real-delivery smoke, and app-level registration/password-reset delivery logs. Manual mailbox render review and ongoing provider webhook/event monitoring still remain operational checks before broad public launch.
   - Production legal/operator review remains external: real Impressum/operator data, Privacy Policy, Terms, data-subject request owner/process, breach triage owner, illegal-content report owner, and final legal sign-off.
   - Target-browser PWA install prompt acceptance still needs manual validation on real desktop Chrome/Edge and Android Chrome.
   - Public paid billing remains disabled for Web testing; Stripe legal/provider/customer-portal validation must be re-opened before self-service paid subscriptions are exposed.

@@ -56,9 +56,11 @@ Local development helper:
 - [x] Add the current server/operator IP in Brevo Authorized IPs at `https://app.brevo.com/security/authorised_ips`.
 - [x] Rerun `Invoke-BrevoProductionReadinessCheck.ps1` with `-VerifyBrevoApi` and confirm `brevo.accountApi` passes before real inbox/webhook smoke.
 - [x] Run `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1 -RecipientEmail "info@darwinlingua.com" -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted -ConfirmSend` and archive the generated `artifacts/validation/brevo-real-delivery-smoke/` report.
+- [x] Run `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` against `https://darwinlingua.com` and archive the generated `artifacts/validation/web-account-email-smoke/` report.
 - [ ] Manually confirm the two smoke messages reached `info@darwinlingua.com` and render correctly in the actual mailbox.
 - [ ] Confirm webhook calls reach the public HTTPS origin.
-- [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events.
+- [x] Confirm `WebEmailDeliveryLogs` shows provider message ids for app-level registration and password-reset sends.
+- [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events in the operator UI.
 - [ ] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.
 - [ ] Confirm permanent Brevo failures create internal hashed suppressions and later sends are logged as `Suppressed`.
 - [ ] Confirm admins can filter suppressions by hash/reason and manually unsuppress only after support review.
@@ -101,9 +103,9 @@ Local development helper:
 
 ## Public URLs and Account Links
 
-- [ ] Set `TransactionalEmail__PublicBaseUrl` to the public HTTPS web origin.
-- [ ] Verify confirmation links use `TransactionalEmail__PublicBaseUrl`.
-- [ ] Verify password reset links use `TransactionalEmail__PublicBaseUrl`.
+- [x] Set `TransactionalEmail__PublicBaseUrl` to the public HTTPS web origin.
+- [x] Verify confirmation links use `TransactionalEmail__PublicBaseUrl`.
+- [x] Verify password reset links use `TransactionalEmail__PublicBaseUrl`.
 - [ ] Verify email-change links use `TransactionalEmail__PublicBaseUrl`.
 
 ## Database Bootstrap
@@ -117,9 +119,9 @@ Local development helper:
 
 ## Validation
 
-- [ ] Register a test learner and confirm the email is received through Brevo.
+- [x] Register a test learner and confirm the email is sent through Brevo.
 - [ ] Confirm the registration email link works.
-- [ ] Request a password reset and confirm the email is received through Brevo.
+- [x] Request a password reset and confirm the email is sent through Brevo.
 - [ ] Complete password reset and confirm the success notification is received.
 - [ ] Change account email and confirm both new-email confirmation and old-email notification are sent.
 - [ ] Force one delivery failure in staging and confirm the failed event is visible in `admin/email-diagnostics`.
