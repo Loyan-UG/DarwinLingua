@@ -36,6 +36,18 @@ function Test-ClosedStatus {
     return $Status -in @("passed", "passed-with-notes", "not-in-scope-for-this-pass")
 }
 
+function Test-TesterStartStatus {
+    param([string]$Status)
+
+    return $Status -in @("ready-to-invite", "in-progress", "closed")
+}
+
+function Test-HasEvidence {
+    param([string]$Value)
+
+    return -not [string]::IsNullOrWhiteSpace($Value)
+}
+
 function Format-MarkdownCell {
     param([string]$Value)
 
@@ -49,7 +61,7 @@ function Format-MarkdownCell {
 $mailboxClosed = Test-ClosedStatus -Status $MailboxReviewStatus
 $pwaDesktopClosed = Test-ClosedStatus -Status $PwaDesktopStatus
 $pwaAndroidClosed = Test-ClosedStatus -Status $PwaAndroidStatus
-$testerClosed = $TesterPassStatus -eq "closed"
+$testerClosed = Test-TesterStartStatus -Status $TesterPassStatus
 
 $failedStatuses = @()
 if ($MailboxReviewStatus -eq "failed") { $failedStatuses += "mailbox" }
@@ -62,6 +74,11 @@ if (-not $mailboxClosed) { $openGates += "mailbox-rendering" }
 if (-not $pwaDesktopClosed) { $openGates += "pwa-desktop-install" }
 if (-not $pwaAndroidClosed) { $openGates += "pwa-android-install" }
 if (-not $testerClosed) { $openGates += "controlled-tester-pass" }
+if ($mailboxClosed -and -not (Test-HasEvidence -Value $MailboxEvidence)) { $openGates += "mailbox-evidence-missing" }
+if ($pwaDesktopClosed -and -not (Test-HasEvidence -Value $PwaEvidence)) { $openGates += "pwa-desktop-evidence-missing" }
+if ($pwaAndroidClosed -and -not (Test-HasEvidence -Value $PwaEvidence)) { $openGates += "pwa-android-evidence-missing" }
+if ($testerClosed -and -not (Test-HasEvidence -Value $TesterBundle)) { $openGates += "tester-bundle-missing" }
+if ($TesterPassStatus -eq "closed" -and -not (Test-HasEvidence -Value $FeedbackTriageReport)) { $openGates += "feedback-triage-evidence-missing" }
 
 $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
 $outputRoot = Join-Path $repoRoot $OutputDirectory

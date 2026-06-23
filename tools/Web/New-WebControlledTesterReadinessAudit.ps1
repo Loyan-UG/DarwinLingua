@@ -293,6 +293,11 @@ if (-not (Test-ClosedManualStatus -Status $pwaAndroidStatus)) { $humanStartOpenG
 if ($testerPassStatus -ne "ready-to-invite" -and $testerPassStatus -ne "in-progress" -and $testerPassStatus -ne "closed") {
     $humanStartOpenGates.Add("tester-pass-start-status") | Out-Null
 }
+foreach ($manualOpenGate in $openHumanGates) {
+    if (-not $humanStartOpenGates.Contains($manualOpenGate)) {
+        $humanStartOpenGates.Add($manualOpenGate) | Out-Null
+    }
+}
 
 $automatedFailureCount = @($automatedFailures).Count
 $humanStartOpenGateCount = @($humanStartOpenGates).Count

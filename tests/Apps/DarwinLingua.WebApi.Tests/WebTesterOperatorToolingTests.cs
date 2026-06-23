@@ -71,6 +71,12 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("PwaDesktopStatus", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("TesterPassStatus", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("FailOnIncomplete", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("mailbox-evidence-missing", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("pwa-desktop-evidence-missing", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("pwa-android-evidence-missing", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("tester-bundle-missing", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("feedback-triage-evidence-missing", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("ready-to-invite", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("requiredWwwHost = $false", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("Web Manual External Review Report", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("New-WebMailboxRenderingReviewPacket.ps1", runbook, StringComparison.Ordinal);
@@ -101,6 +107,8 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("blockerCount", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("[string[]]$failedHumanGates = @()", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("$failedHumanGates = @(ConvertTo-StringArray -Value $manualReview.failedGates)", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("foreach ($manualOpenGate in $openHumanGates)", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("$humanStartOpenGates.Contains($manualOpenGate)", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("93-Web-Human-Gate-Handoff.md", documentationIndex, StringComparison.Ordinal);
         Assert.Contains("New-WebHumanGateHandoff.ps1", humanGateHandoff, StringComparison.Ordinal);
         Assert.Contains("New-WebControlledTesterReadinessAudit.ps1", humanGateHandoffScript, StringComparison.Ordinal);
