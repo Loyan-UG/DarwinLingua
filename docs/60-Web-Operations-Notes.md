@@ -373,6 +373,31 @@ Verification evidence:
 - `TransactionalEmailBrevoTests` passed `30/30`.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
 
+### 2026-06-23 Controlled Tester Readiness Audit Ready / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-193207-controlled-tester-readiness-audit-ready-pre-user-testing`
+
+Scope:
+
+- Added repeatable controlled-tester readiness aggregation through `tools/Web/New-WebControlledTesterReadinessAudit.ps1`.
+- The audit consolidates public-stack, operations bootstrap, Brevo readiness, webhook configuration, delivery/link/suppression/log smokes, Admin Email Diagnostics smokes, tester bundle preflight, and manual external-review status.
+- The latest audit report shows `Automated ready=True`, `Automated failures=0`, `Human start ready=False`, `Controlled tester ready to invite=False`, and `Human start open gates=4`.
+- Open human gates remain: mailbox rendering review, desktop PWA install review, Android PWA install review, and tester-pass start status.
+- Public Web stack restarted from commit `56d2a6af` and verified through `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
+- Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
+
+Verification evidence:
+
+- `db/darwinlingua_shared_20260623-193207.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-193207.restore-list.txt` generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, and `verification/` are present.
+- `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenShapePresent=True` were verified without printing secret values.
+- `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-193121.md` passed the automated gate with zero automated failures and preserved the four open human gates.
+- `WebTesterOperatorToolingTests` passed with `--no-build`.
+- Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
