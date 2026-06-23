@@ -72,13 +72,19 @@ Local development helper:
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` verifies a `WebEmailSuppressions` row with `Reason=brevo:hard_bounce` and provider `brevo-api` is created for the synthetic recipient hash.
 - [x] Confirm later sends to a suppressed recipient are logged as `Suppressed`.
   - Evidence: `tools/Web/Invoke-BrevoSuppressedSendSmoke.ps1` creates a temporary suppression for a confirmed account, submits `/Identity/Account/ForgotPassword`, verifies a `WebEmailDeliveryLogs` row with `Status=Suppressed`, `FailureCode=recipient-suppressed`, no provider message id, and then removes the temporary suppression. The 2026-06-23 run passed and wrote evidence under `artifacts/validation/brevo-suppressed-send-smoke/`.
-- [ ] Confirm admins can filter suppressions by hash/reason and manually unsuppress only after support review.
-- [ ] Confirm manual suppression changes are Admin-only and appear in application logs.
-- [ ] Confirm manual provider-event recording works for support reconciliation when a webhook event is missing.
-- [ ] Confirm manual provider-event recording is Admin-only and appears in application logs.
-- [ ] Confirm delivery-log cleanup is Admin-only and appears in application logs.
-- [ ] Configure `TransactionalEmail__EnableFailureAlerts=true`.
-- [ ] Tune `TransactionalEmail__FailureAlertThreshold`, `FailureAlertWindowMinutes`, `FailureAlertCooldownMinutes`, and `FailureAlertMonitorIntervalMinutes`.
+- [x] Confirm admins can filter suppressions by hash/reason and manually unsuppress only after support review.
+  - Evidence: `tools/Web/Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1 -UseLocalDevelopmentSeed` inserts a temporary suppression, opens `/admin/email-diagnostics` with a suppression hash filter, posts the Admin-only unsuppress form, and verifies the row was deleted. The 2026-06-23 run passed and wrote evidence under `artifacts/validation/web-email-diagnostics-admin-actions-smoke/`.
+- [x] Confirm manual suppression changes are Admin-only and appear in application logs.
+  - Evidence: `Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` verifies the suppression action is protected by the `Admin` policy and that `EmailDiagnosticsController` logs `removed email suppression` with the admin identity and hash prefix.
+- [x] Confirm manual provider-event recording works for support reconciliation when a webhook event is missing.
+  - Evidence: `Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` inserts a temporary delivery log, posts the Admin-only manual provider-event form with `hard_bounce`, verifies the delivery log becomes `Failed` with `ProviderLastEvent=hard_bounce` and `FailureCode=brevo:hard_bounce`, and verifies a hashed internal suppression is created.
+- [x] Confirm manual provider-event recording is Admin-only and appears in application logs.
+  - Evidence: `Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` verifies the provider-event action is protected by the `Admin` policy and that `EmailDiagnosticsController` logs `manually recorded provider event` with the admin identity and provider message id.
+- [x] Confirm delivery-log cleanup is Admin-only and appears in application logs.
+  - Evidence: `Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` verifies the cleanup action is protected by the `Admin` policy and that `EmailDiagnosticsController` logs `deleted {DeletedCount} email delivery log entries`. The smoke intentionally does not run cleanup because it deletes operational audit data older than the retention window.
+- [x] Configure `TransactionalEmail__EnableFailureAlerts=true`.
+- [x] Tune `TransactionalEmail__FailureAlertThreshold`, `FailureAlertWindowMinutes`, `FailureAlertCooldownMinutes`, and `FailureAlertMonitorIntervalMinutes`.
+  - Evidence: checked-in Web defaults enable failure alerts with threshold `3`, window `15` minutes, cooldown `60` minutes, and monitor interval `5` minutes. `/admin/email-diagnostics` exposes those readiness values, and the failure-alert trigger itself remains a separate validation item below.
 
 ## Billing With Stripe
 

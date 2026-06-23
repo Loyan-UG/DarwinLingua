@@ -150,6 +150,49 @@ public sealed class AdminDashboardRouteStructuralTests
         Assert.Contains("Invoke-WebEmailDiagnosticsAdminSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void EmailDiagnosticsAdminActionsSmokeTool_ShouldExerciseAdminOnlyProviderEventSuppressionAndLoggingPaths()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string scriptPath = Path.Combine(
+            repositoryRoot,
+            "tools",
+            "Web",
+            "Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1");
+        string controllerPath = Path.Combine(
+            repositoryRoot,
+            "src",
+            "Apps",
+            "DarwinLingua.Web",
+            "Areas",
+            "Admin",
+            "Controllers",
+            "EmailDiagnosticsController.cs");
+        string operationsChecklistPath = Path.Combine(
+            repositoryRoot,
+            "docs",
+            "74-Production-Operations-Setup-Checklist.md");
+
+        string script = File.ReadAllText(scriptPath);
+        string controller = File.ReadAllText(controllerPath);
+        string operationsChecklist = File.ReadAllText(operationsChecklistPath);
+
+        Assert.Contains("/admin/email-diagnostics/provider-events", script, StringComparison.Ordinal);
+        Assert.Contains("/admin/email-diagnostics/suppressions/remove", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailDeliveryLogs", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailSuppressions", script, StringComparison.Ordinal);
+        Assert.Contains("providerEventUpdatedDelivery", script, StringComparison.Ordinal);
+        Assert.Contains("providerEventCreatedSuppression", script, StringComparison.Ordinal);
+        Assert.Contains("removeSuppressionDeletedRow", script, StringComparison.Ordinal);
+        Assert.Contains("adminActionsLogInformation", script, StringComparison.Ordinal);
+        Assert.Contains("[Authorize(Policy = \"Admin\")]", controller, StringComparison.Ordinal);
+        Assert.Contains("removed email suppression", controller, StringComparison.Ordinal);
+        Assert.Contains("manually recorded provider event", controller, StringComparison.Ordinal);
+        Assert.Contains("deleted {DeletedCount} email delivery log entries", controller, StringComparison.Ordinal);
+        Assert.Contains("Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+    }
+
     private static string ResolveRepositoryRoot()
     {
         DirectoryInfo? currentDirectory = new(AppContext.BaseDirectory);
