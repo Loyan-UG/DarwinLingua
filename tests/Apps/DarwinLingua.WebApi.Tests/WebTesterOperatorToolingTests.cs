@@ -20,6 +20,9 @@ public sealed class WebTesterOperatorToolingTests
         string manualExternalReview = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "docs/91-Web-Manual-External-Review-Checklist.md"));
+        string manualExternalReviewScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebManualExternalReviewReport.ps1"));
         string csvTemplate = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/WebTesterAccounts.example.csv"));
@@ -32,12 +35,20 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("Skipped unchanged users", script, StringComparison.Ordinal);
         Assert.Contains("WebTesterAccounts.csv", bundleScript, StringComparison.Ordinal);
         Assert.Contains("ManualExternalReviewChecklist.md", bundleScript, StringComparison.Ordinal);
+        Assert.Contains("New-WebManualExternalReviewReport.ps1", runbook, StringComparison.Ordinal);
+        Assert.Contains("New-WebManualExternalReviewReport.ps1", bundleScript, StringComparison.Ordinal);
         Assert.Contains("Set-WebTesterPremiumAccess.ps1", bundleScript, StringComparison.Ordinal);
         Assert.Contains("operator-only account list", bundleScript, StringComparison.Ordinal);
         Assert.Contains("Transactional Email Mailbox Review", manualExternalReview, StringComparison.Ordinal);
         Assert.Contains("PWA Install Review", manualExternalReview, StringComparison.Ordinal);
         Assert.Contains("Controlled Tester Pass Start Gate", manualExternalReview, StringComparison.Ordinal);
         Assert.Contains("Do not use `www.darwinlingua.com`", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("MailboxReviewStatus", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("PwaDesktopStatus", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("TesterPassStatus", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("FailOnIncomplete", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("requiredWwwHost = $false", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("Web Manual External Review Report", manualExternalReviewScript, StringComparison.Ordinal);
     }
 
     private static string FindRepositoryRoot()

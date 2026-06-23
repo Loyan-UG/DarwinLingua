@@ -118,3 +118,27 @@ Record:
 - Triage report:
 - Result: `ready-to-invite`, `needs-fix-before-invite`, `in-progress`, or `closed`
 - Notes:
+
+## D. Generate Review Report
+
+After recording the manual evidence above, generate a timestamped JSON and Markdown report from the repository root:
+
+```powershell
+.\tools\Web\New-WebManualExternalReviewReport.ps1 `
+  -MailboxReviewStatus passed-with-notes `
+  -PwaDesktopStatus passed `
+  -PwaAndroidStatus not-in-scope-for-this-pass `
+  -TesterPassStatus ready-to-invite `
+  -TesterBundle ".\artifacts\validation\web-tester-runs\<run-id>" `
+  -MailboxEvidence "<mailbox evidence path or notes>" `
+  -PwaEvidence "<pwa evidence path or notes>" `
+  -FeedbackTriageReport ".\artifacts\validation\web-tester-feedback\<report>.md"
+```
+
+For a release gate, add:
+
+```powershell
+-FailOnIncomplete -FailOnFailed
+```
+
+The report intentionally treats `not-reviewed` and `not-started` as open gates. Do not mark a gate as passed until the evidence was actually reviewed.

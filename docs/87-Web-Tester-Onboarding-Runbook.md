@@ -12,11 +12,11 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Public API health: `https://api.darwinlingua.com/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
-- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-164407-web-transactional-email-preview-ready-pre-user-testing`
-- Latest readiness commits: recorded by the phase backup manifest and recoverable through `repo-overlay/darwinlingua-current-head.bundle`; recent changes cover operational incident ownership, Brevo/domain hardening, email-change public-link verification, branded transactional email HTML, and safe template preview generation.
-- Latest tester bundle: `artifacts/validation/web-tester-runs/20260623-171610-web-tester-pass-brevo-ready`
-- Latest public preflight: `artifacts/validation/web-tester-runs/20260623-171610-web-tester-pass-brevo-ready/preflight/web-tester-preflight-20260623-171614.json` with 25/25 checks passed.
-- Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260623-171624.md` with 0 validation errors on the empty bundle feedback template.
+- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-181445-web-readiness-evidence-sync-pre-user-testing`
+- Latest readiness commit: `ad0bb9cb Refresh web readiness evidence references`; the phase backup manifest and `repo-overlay/darwinlingua-current-head.bundle` can restore the matching local state.
+- Latest tester bundle: `artifacts/validation/web-tester-runs/20260623-172706-web-tester-pass-brevo-ready`
+- Latest public preflight: `artifacts/validation/web-tester-runs/20260623-172706-web-tester-pass-brevo-ready/preflight/web-tester-preflight-20260623-172715.json` with 25/25 checks passed.
+- Latest feedback triage dry-run: `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260623-181053.md` with 0 validation errors on the empty bundle feedback template.
 - Mobile/MAUI is explicitly out of scope for this test pass.
 
 ## Tester Profile
@@ -49,6 +49,7 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 - Confirm the public test host is `https://darwinlingua.com`; do not use `www.darwinlingua.com` unless that host is intentionally configured.
 - Confirm the Legal Notice/Impressum and Privacy Policy still carry the correct development-stage wording and that production operator data is not claimed before legal review.
 - Confirm the two PWA manual install checks from `docs/56-Web-Pwa-Install-Validation-Worksheet.md` are either completed or explicitly left out of this tester pass.
+- Use `docs/91-Web-Manual-External-Review-Checklist.md` for the manual mailbox, PWA, and tester-pass evidence that automation cannot prove.
 
 - Create a timestamped tester bundle:
 
@@ -58,6 +59,15 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 
 - Use the generated folder under `artifacts/validation/web-tester-runs/` for that tester pass.
 - Share `TesterQuickStart.md` from the generated bundle with testers; keep this runbook for operators.
+- Record the current manual external-review status before inviting testers:
+
+```powershell
+.\tools\Web\New-WebManualExternalReviewReport.ps1 `
+  -TesterBundle ".\artifacts\validation\web-tester-runs\20260623-172706-web-tester-pass-brevo-ready" `
+  -FeedbackTriageReport ".\artifacts\validation\web-tester-feedback\web-tester-feedback-triage-20260623-181053.md"
+```
+
+- For release gating, rerun the same command with `-FailOnIncomplete -FailOnFailed` after mailbox rendering, PWA checks, and the controlled tester pass are complete. Until then, open gates must stay visible in the generated report.
 - Run the repeatable preflight script from the repository root:
 
 ```powershell

@@ -41,8 +41,9 @@ $testerAccountsTemplatePath = Join-Path $repoRoot "tools\Web\WebTesterAccounts.e
 $preflightScript = Join-Path $repoRoot "tools\Web\Invoke-WebTesterPreflight.ps1"
 $triageScript = Join-Path $repoRoot "tools\Web\Convert-WebTesterFeedbackToReport.ps1"
 $premiumAccessScript = Join-Path $repoRoot "tools\Web\Set-WebTesterPremiumAccess.ps1"
+$manualExternalReviewReportScript = Join-Path $repoRoot "tools\Web\New-WebManualExternalReviewReport.ps1"
 
-foreach ($path in @($runbookPath, $quickStartPath, $manualExternalReviewPath, $templatePath, $testerAccountsTemplatePath, $preflightScript, $triageScript, $premiumAccessScript)) {
+foreach ($path in @($runbookPath, $quickStartPath, $manualExternalReviewPath, $templatePath, $testerAccountsTemplatePath, $preflightScript, $triageScript, $premiumAccessScript, $manualExternalReviewReportScript)) {
     if (-not (Test-Path -LiteralPath $path)) {
         throw "Required file is missing: $path"
     }
@@ -105,6 +106,16 @@ Use `WebTesterAccounts.csv` only as an operator-only account list for testers wh
 ~~~
 
 The Premium tool only updates existing users, confirms their email if needed, and writes entitlement audit events. It does not create passwords or send email.
+
+## Manual External Review Report
+
+Before inviting testers, record the current manual gates from the repository root:
+
+~~~powershell
+.\tools\Web\New-WebManualExternalReviewReport.ps1 -TesterBundle "$($runDirectory)" -FeedbackTriageReport ".\artifacts\validation\web-tester-feedback\web-tester-feedback-triage-20260623-181053.md"
+~~~
+
+For release gating after mailbox rendering, PWA install checks, and tester feedback are complete, rerun the same command with `-FailOnIncomplete -FailOnFailed`.
 
 ## Triage
 
