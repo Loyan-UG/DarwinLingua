@@ -399,6 +399,28 @@ Verification evidence:
 - `WebTesterOperatorToolingTests` passed with `--no-build`.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
 
+### 2026-06-23 Public PWA Evidence Refresh / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-205446-public-pwa-evidence-refresh-pre-user-testing`
+
+Scope:
+
+- Refreshed public-domain PWA installability evidence for `https://darwinlingua.com`.
+- `artifacts/validation/pwa-installability/pwa-installability-darwinlingua-20260623-205307.json` reports 17 automated checks passed, 0 failed checks, and 2 manual checks.
+- Headless Chromium observed the desktop install-prompt event, but real desktop installed-window behavior and Android Chrome install flow remain manual target-browser checks.
+- Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
+
+Verification evidence:
+
+- `db/darwinlingua_shared_20260623-205446.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-205446.restore-list.txt` generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, and `verification/` are present.
+- Because `artifacts/validation/` is intentionally ignored by Git and excluded from the repo overlay, the PWA JSON report was copied into the backup at `validation-artifacts/pwa-installability/pwa-installability-darwinlingua-20260623-205307.json` and its SHA256 was appended to `checksums.sha256`.
+- `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenShapePresent=True` were verified without printing secret values.
+- Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/manifest.webmanifest`, `/offline.html`, `/legal`, and `https://api.darwinlingua.com/health`.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
