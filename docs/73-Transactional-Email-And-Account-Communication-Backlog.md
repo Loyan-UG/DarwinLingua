@@ -232,6 +232,13 @@ Set these values outside source control for the target environment:
 ```
 
 - The admin diagnostics smoke writes JSON and Markdown reports under `artifacts/validation/web-email-diagnostics-admin-smoke/`. It signs in as the local admin seed, opens `/admin/email-diagnostics` with filters for an existing Brevo provider message id, provider event, and suppression, and verifies that the UI shows Brevo readiness, provider message id, provider event, suppression data, and Admin-only reconciliation controls.
+- Generate safe local template previews before manual inbox review:
+
+```powershell
+.\tools\Web\New-TransactionalEmailTemplatePreview.ps1 -StopRunningApplications
+```
+
+- The preview writes `index.html`, one HTML file, and one plain-text file for every registered transactional scenario and `en/de` culture under `artifacts/validation/transactional-email-template-preview/`. It uses the real `TransactionalEmailTemplateRenderer` with safe sample values and does not include API keys, webhook secrets, reset tokens, provider message ids, full action URLs from real users, or real user email addresses. Use `-StopRunningApplications` when the local Web/WebApi stack may be running, because the preview compiles a temporary project that references the Web application.
 - Confirm that both HTML and plain-text alternatives render correctly.
 - Confirm that action links use the configured `PublicBaseUrl`.
 - Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.

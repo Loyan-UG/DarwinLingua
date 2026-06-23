@@ -556,6 +556,32 @@ public sealed class TransactionalEmailBrevoTests
     }
 
     [Fact]
+    public void TransactionalEmailTemplatePreviewTool_ShouldRenderSafeReviewArtifacts()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-TransactionalEmailTemplatePreview.ps1"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+
+        Assert.Contains("TransactionalEmailTemplateRenderer", script, StringComparison.Ordinal);
+        Assert.Contains("TransactionalEmailScenarios", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/transactional-email-template-preview", script, StringComparison.Ordinal);
+        Assert.Contains("index.html", script, StringComparison.Ordinal);
+        Assert.Contains("manifest.md", script, StringComparison.Ordinal);
+        Assert.Contains("StopRunningApplications", script, StringComparison.Ordinal);
+        Assert.Contains("safe sample values", script, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("No API keys", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+
+        Assert.Contains("transactional-email-template-preview", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("-StopRunningApplications", emailBacklog, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void BrevoWebhookSuppressionSmokeTool_ShouldExercisePublicWebhookAndSuppressionPath()
     {
         string repositoryRoot = FindRepositoryRoot();
