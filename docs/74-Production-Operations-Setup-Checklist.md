@@ -39,7 +39,8 @@ Local development helper:
 - [x] Store the API key as `TransactionalEmail__BrevoApiKey`.
 - [x] Set `TransactionalEmail__Mode=BrevoApi` in staging and production.
 - [x] Set `TransactionalEmail__BrevoApiBaseUrl=https://api.brevo.com`.
-- [ ] Use `TransactionalEmail__BrevoSandboxMode=true` only for integration validation where no email should be sent.
+- [x] Use `TransactionalEmail__BrevoSandboxMode=true` only for integration validation where no email should be sent.
+  - Evidence: live controlled delivery checks use `TransactionalEmail__BrevoSandboxMode=false`; `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-185124.md` passed with sandbox mode disabled for real delivery. Sandbox mode remains documented for non-sending integration validation only.
 - [x] Set `TransactionalEmail__BrevoSandboxMode=false` before real staging delivery tests and production.
 - [x] Set `TransactionalEmail__FromEmail` to a verified Brevo sender address, preferably `no-reply@darwinlingua.com`.
 - [x] Set `TransactionalEmail__FromName`.
@@ -58,11 +59,13 @@ Local development helper:
 - [x] Set the Brevo webhook event category to `Transactional email` and enable the official transactional events exposed by the current Brevo UI: request/sent, delivered, deferred, hard bounce, soft bounce, blocked, invalid/invalid email, spam, opened, unique opened, click/clicked, and unsubscribed. Brevo's API lists `sent` or `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened`, and `unsubscribed`; if provider logs later send `error`, `proxyOpen`, `uniqueProxyOpen`, complaint-like reasons, or equivalent failure labels, Darwin Lingua normalizes them for diagnostics/suppression.
 - [x] Add the current server/operator IP in Brevo Authorized IPs at `https://app.brevo.com/security/authorised_ips`.
 - [x] Rerun `Invoke-BrevoProductionReadinessCheck.ps1` with `-VerifyBrevoApi` and confirm `brevo.accountApi` passes before real inbox/webhook smoke.
+  - Evidence: `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-185124.md` passed with `Blockers=0` and `Warnings=0`.
 - [x] Run `tools/Web/Invoke-BrevoWebhookConfigurationCheck.ps1` and confirm the provider-side webhook object uses `https://darwinlingua.com/webhooks/brevo/transactional-email`, type `transactional`, auth type `bearer`, and the expected transactional event set without printing API keys or webhook tokens.
+  - Evidence: `artifacts/validation/brevo-webhook-configuration-check/brevo-webhook-configuration-check-20260623-191243.md` passed against the real provider-side webhook configuration with zero missing expected event keys.
 - [x] Run `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1 -RecipientEmail "info@darwinlingua.com" -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted -ConfirmSend` and archive the generated `artifacts/validation/brevo-real-delivery-smoke/` report.
 - [x] Run `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` against `https://darwinlingua.com` and archive the generated `artifacts/validation/web-account-email-smoke/` report.
 - [x] Run `tools/Web/Invoke-WebAccountEmailLinkSmoke.ps1` against `https://darwinlingua.com` and archive the generated `artifacts/validation/web-account-email-link-smoke/` report.
-  - Evidence: the 2026-06-23 report `web-account-email-link-smoke-20260623-162504.md` passed registration, resend-confirmation delivery, confirmation through the resent link, password reset, reset-success notification, change-email confirmation, and old-email notification using Brevo's sent-email content API after the branded HTML layout upgrade. The report stores only hashes/previews and explicitly avoids full action URLs, tokens, API keys, webhook secrets, and full provider message ids.
+  - Evidence: the 2026-06-23 report `web-account-email-link-smoke-20260623-173710.md` passed registration, resend-confirmation delivery, confirmation through the resent link, password reset, reset-success notification, change-email confirmation, and old-email notification using Brevo's sent-email content API after the branded HTML layout upgrade. The report stores only hashes/previews and explicitly avoids full action URLs, tokens, API keys, webhook secrets, and full provider message ids.
 - [ ] Manually confirm the two smoke messages reached `info@darwinlingua.com` and render correctly in the actual mailbox.
 - [x] Confirm webhook calls reach the public HTTPS origin.
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` posts a controlled `hardBounce` event to `https://darwinlingua.com/webhooks/brevo/transactional-email` with Bearer token authentication and writes evidence under `artifacts/validation/brevo-webhook-suppression-smoke/`. The 2026-06-23 run returned HTTP 200.
