@@ -85,6 +85,12 @@ if (-not $SkipDatabaseDump) {
 if (-not $SkipRepoOverlay) {
     New-Item -ItemType Directory -Path $repoOverlayPath -Force | Out-Null
 
+    $bundlePath = Join-Path $repoOverlayPath "darwinlingua-current-head.bundle"
+    git -C $repoRoot bundle create $bundlePath HEAD
+    if ($LASTEXITCODE -ne 0) {
+        throw "git bundle failed while creating the repo restore bundle."
+    }
+
     $diffPath = Join-Path $repoOverlayPath "git-diff-binary.patch"
     git -C $repoRoot diff --binary -- . ':!bin' ':!obj' ':!.vs' ':!node_modules' ':!*.log' ':!*.tmp' > $diffPath
     if ($LASTEXITCODE -ne 0) {
@@ -238,11 +244,12 @@ $manifest = @"
 ## Restore Outline
 
 1. Start from a clean checkout at the recorded Git commit when possible.
-2. Copy ``repo-overlay/`` over the checkout if local uncommitted files are needed.
-3. Restore secrets from `secrets/` to their original local paths.
+2. If the recorded Git commit is not available from the remote repository, clone or fetch ``repo-overlay/darwinlingua-current-head.bundle`` first, then check out the recorded commit.
+3. Copy ``repo-overlay/`` over the checkout if local uncommitted files are needed.
+4. Restore secrets from `secrets/` to their original local paths.
    - ASP.NET Core user-secrets are stored under `secrets/aspnet-user-secrets/<UserSecretsId>/secrets.json`.
-4. Restore PostgreSQL from `db/*.dump` with `pg_restore --clean --if-exists --create`.
-5. Verify counts and run Web/WebApi smoke before exposing the environment.
+5. Restore PostgreSQL from `db/*.dump` with `pg_restore --clean --if-exists --create`.
+6. Verify counts and run Web/WebApi smoke before exposing the environment.
 
 ## Verification
 
