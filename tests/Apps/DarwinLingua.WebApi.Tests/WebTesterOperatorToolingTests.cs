@@ -104,6 +104,8 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("New-WebExternalActionPacket.ps1", humanGateHandoff, StringComparison.Ordinal);
         Assert.Contains("Invoke-BrevoWebhookConfigurationCheck.ps1", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("Authorised IPs", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("ErrorDetails.Message", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("unrecognised IP address", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("mailbox-rendering-review-packet", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("pwa-installability", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("web-tester-runs", externalActionPacketScript, StringComparison.Ordinal);

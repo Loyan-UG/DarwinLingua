@@ -118,7 +118,12 @@ if ($RunBrevoWebhookCheck) {
         $brevoAction = "No Brevo Authorized IP action is required by the current check."
     }
     catch {
-        $message = $_.Exception.Message
+        $messageParts = @(
+            $_.Exception.Message,
+            $_.ErrorDetails.Message,
+            ($_ | Out-String)
+        ) | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) }
+        $message = $messageParts -join "`n"
         $brevoStatus = "needs-authorized-ip-or-review"
         $match = [regex]::Match($message, "unrecognised IP address\s+(?<ip>[0-9a-fA-F:\.]+)")
         if ($match.Success) {
