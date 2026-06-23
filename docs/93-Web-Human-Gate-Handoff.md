@@ -64,6 +64,7 @@ This confirms that the public legal/support pages render from `https://darwinlin
 ## Gate Closure Rule
 
 Do not mark a gate as passed unless the evidence was actually reviewed.
+The manual report also keeps a gate open when a passing status is supplied without the required evidence path, for example mailbox rendering without a CSV, PWA review without worksheet evidence, or tester-pass status without a tester bundle. This is intentional: readiness must be backed by reviewable evidence, not only by a status label.
 
 Allowed non-passing statuses must remain visible:
 

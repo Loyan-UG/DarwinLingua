@@ -388,7 +388,7 @@ Scope:
 
 - Added repeatable controlled-tester readiness aggregation through `tools/Web/New-WebControlledTesterReadinessAudit.ps1`.
 - The audit consolidates public-stack, operations bootstrap, Brevo readiness, webhook configuration, delivery/link/suppression/log smokes, Admin Email Diagnostics smokes, tester bundle preflight, and manual external-review status.
-- The latest audit report shows `Automated ready=True`, `Automated failures=0`, `Human start ready=False`, `Controlled tester ready to invite=False`, and `Human start open gates=4`.
+- The checkpoint audit report for this backup showed `Automated ready=True`, `Automated failures=0`, `Human start ready=False`, `Controlled tester ready to invite=False`, and `Human start open gates=4`.
 - Open human gates remain: mailbox rendering review, desktop PWA install review, Android PWA install review, and tester-pass start status.
 - Public Web stack restarted from commit `56d2a6af` and verified through `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
 - Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
@@ -405,7 +405,7 @@ Verification evidence:
 
 Current status note:
 
-- A later readiness audit on 2026-06-23 reports `Automated ready=False` with one automated failure: Brevo Authorized IP for the current host. The four human gates remain open as before.
+- A later readiness audit on 2026-06-23 reports `Automated ready=False` with one automated failure: Brevo Authorized IP for the current host. The human-start gate count is now five because the audit also carries through manual-report evidence gaps instead of allowing a passed status without proof. Current open gates are mailbox rendering review, desktop PWA install review, Android PWA install review, tester-pass start status, and controlled tester pass evidence.
 
 ### 2026-06-23 Public PWA Evidence Refresh / Pre User Testing
 
@@ -493,8 +493,8 @@ Scope:
 
 Verification evidence:
 
-- `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-232858.json` reports `AutomatedReady=False`, `AutomatedFailures=1`, `HumanOpen=4`, and `Ready=False`.
-- `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-232247.md` reports `Blockers=1`, `Warnings=0`; the blocker is Brevo Authorized IP for the current host.
+- Follow-up current evidence `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-234126.md` reports `AutomatedReady=False`, `AutomatedFailures=1`, `HumanOpen=5`, and `Ready=False`.
+- Follow-up current evidence `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-234027.md` reports `Blockers=1`, `Warnings=0`; the blocker is Brevo Authorized IP for the current host.
 - `db/darwinlingua_shared_20260623-223159.dump` was created from `darwinlingua_shared`.
 - `db/darwinlingua_shared_20260623-223159.restore-list.txt` was generated with `pg_restore --list`.
 - `manifest.md`, `checksums.sha256`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, `artifacts/`, and `verification/` are present.
