@@ -299,22 +299,23 @@ The helper starts WebApi and Web with the checked-in launch profiles, starts the
 
 ## Phase Backup Register
 
-### 2026-06-23 Web Email Change Links Ready / Pre User Testing
+### 2026-06-23 Web Email Alerts Ready / Pre User Testing
 
 Backup path:
 
-`X:\Projects\DarwinLingua.Backup\20260623-082328-web-email-change-links-ready-pre-user-testing`
+`X:\Projects\DarwinLingua.Backup\20260623-083515-web-email-alerts-ready-pre-user-testing`
 
 Scope:
 
 - Web public-stack checkpoint after the Darwin-domain/Brevo/legal readiness pass.
 - Email-change confirmation links are verified to use `TransactionalEmail__PublicBaseUrl` when configured, with request-host fallback only when no absolute public base URL is available.
+- Repeated email-delivery failures are verified to trigger `Admin.EmailDeliveryFailureAlert` once the configured threshold is reached, while below-threshold snapshots do not alert.
 - Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
 
 Verification evidence:
 
-- `db/darwinlingua_shared_20260623-082328.dump` created from `darwinlingua_shared`.
-- `db/darwinlingua_shared_20260623-082328.restore-list.txt` generated with `pg_restore --list`.
+- `db/darwinlingua_shared_20260623-083515.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-083515.restore-list.txt` generated with `pg_restore --list`.
 - `manifest.md`, `checksums.sha256`, `repo-overlay/`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, and `docker/` are present.
 - `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenPresent=True` were verified without printing secret values.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, and `https://api.darwinlingua.com/health`.
