@@ -324,6 +324,32 @@ Verification evidence:
 - `artifacts/validation/pwa-installability/pwa-installability-darwinlingua-20260623.json` passed 17 public-domain automated PWA checks with 0 failures and 2 manual install-acceptance checks.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, and `https://api.darwinlingua.com/health`.
 
+### 2026-06-23 Brevo Domain Ready / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-190324-brevo-domain-ready-pre-user-testing`
+
+Scope:
+
+- Brevo production-domain checkpoint after `no-reply@darwinlingua.com` creation, `support@darwinlingua.com` forwarding confirmation, operator DPA acceptance, and live Brevo webhook/API verification.
+- Public Web stack restarted from commit `0d69c309` and verified through `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
+- Webhook normalization was aligned with the currently configured Brevo transactional events, including `proxyOpen`, `uniqueProxyOpen`, and `error`.
+- Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
+
+Verification evidence:
+
+- `db/darwinlingua_shared_20260623-190324.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-190324.restore-list.txt` generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/`, `secrets/`, and `docker/` are present.
+- `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenShapePresent=True` were verified without printing secret values.
+- `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-185124.md` passed with `Blockers=0` and `Warnings=0`.
+- `artifacts/validation/brevo-real-delivery-smoke/brevo-real-delivery-smoke-20260623-185122.md` sent a controlled real delivery through Brevo.
+- `artifacts/validation/brevo-webhook-suppression-smoke/brevo-webhook-suppression-smoke-20260623-185056.md` passed with Bearer-token webhook authentication and internal suppression creation.
+- `artifacts/validation/brevo-transactional-log-check/brevo-transactional-log-check-20260623-185106.md` passed against Brevo provider logs.
+- `artifacts/validation/web-email-diagnostics-admin-smoke/web-email-diagnostics-admin-smoke-20260623-190230.md` and `artifacts/validation/web-email-diagnostics-admin-actions-smoke/web-email-diagnostics-admin-actions-smoke-20260623-190236.md` passed.
+- Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, `/cookies`, and `https://api.darwinlingua.com/health`.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
