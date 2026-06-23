@@ -4,7 +4,7 @@
 
 این سند برای کارهای بیرون از کد است؛ یعنی کارهایی که باید در پنل Brevo، DNS دامنه، و تنظیمات محرمانه انجام شود تا ایمیل‌های واقعی Darwin Lingua ارسال شوند.
 
-کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-23: API key و webhook secret بیرون از Git و در local secret configuration ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check بدون blocker/warning پاس شده، smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است، و smoke عمومی webhook ثابت کرده که endpoint عمومی `hardBounce` را با Bearer token می‌پذیرد، delivery log را failed می‌کند و suppression داخلی می‌سازد. قبل از باز کردن ثبت‌نام عمومی گسترده، هنوز باید نمایش واقعی ایمیل‌ها در inbox و eventهای webhook واقعی Brevo در طول زمان بررسی شوند.
+کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-23: API key و webhook secret بیرون از Git و در local secret configuration ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check بدون blocker/warning پاس شده، smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است، smoke لینک‌های واقعی Brevo-tracked ثابت کرده که تایید ایمیل، ریست پسورد، و تغییر ایمیل روی `https://darwinlingua.com` کامل می‌شوند، و smoke عمومی webhook ثابت کرده که endpoint عمومی `hardBounce` را با Bearer token می‌پذیرد، delivery log را failed می‌کند و suppression داخلی می‌سازد. قبل از باز کردن ثبت‌نام عمومی گسترده، تنها بررسی انسانیِ ایمیل این است که نمایش ظاهری ایمیل‌ها در inbox واقعی مثل Gmail/Outlook/mobile مرور شود.
 
 دامنه‌ی اصلی Web برای تست و سپس production این است:
 
@@ -215,18 +215,28 @@ artifacts/validation/brevo-real-delivery-smoke/
 بعد از smoke موفق:
 
 1. هر دو ایمیل smoke باید در inbox واقعی دیده شوند: یکی برای email confirmation و یکی برای password reset.
-2. لینک‌ها باید از `https://darwinlingua.com` شروع شوند.
-3. HTML email در Gmail/Outlook/mobile inbox بررسی شود.
-4. plain text alternative هم قابل خواندن باشد.
-5. Brevo transactional logs باید message id و delivery status را نشان دهد.
-6. یک webhook event یا manual provider event باید در Admin Email Diagnostics دیده شود.
-7. بعد از آن، یک ثبت‌نام کاربر تستی و یک password reset واقعی از خود UI انجام شود.
-8. bounce/spam/complaint باید suppression داخلی بسازد.
+2. HTML email در Gmail/Outlook/mobile inbox بررسی شود.
+3. plain text alternative هم قابل خواندن باشد.
+4. Brevo transactional logs باید message id و delivery status را نشان دهد.
+5. یک webhook event یا manual provider event باید در Admin Email Diagnostics دیده شود.
+6. bounce/spam/complaint باید suppression داخلی بسازد.
 
 برای smoke واقعی از خود UI، ابزار زیر را اجرا کنید:
 
 ```powershell
 .\tools\Web\Invoke-WebAccountEmailFlowSmoke.ps1
+```
+
+برای تست کامل لینک‌های واقعی داخل ایمیل‌های ارسال‌شده توسط Brevo، ابزار زیر اجرا شده و باید سبز بماند:
+
+```powershell
+.\tools\Web\Invoke-WebAccountEmailLinkSmoke.ps1
+```
+
+این ابزار لینک کامل، token، reset code، API key، webhook secret یا provider message id کامل را در گزارش ذخیره نمی‌کند. فقط hash کوتاه و نتیجه‌ی pass/fail را ثبت می‌کند. مسیر evidence فعلی:
+
+```text
+artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-153300.md
 ```
 
 این ابزار از صفحه‌ی public ثبت‌نام و صفحه‌ی public فراموشی رمز استفاده می‌کند، anti-forgery token را از HTML می‌خواند، یک کاربر تستی timestamped می‌سازد، برای یک کاربر موجود password reset می‌فرستد، و سپس در PostgreSQL بررسی می‌کند که `WebEmailDeliveryLogs` برای `Account.EmailConfirmation` و `Account.PasswordReset` provider برابر `brevo-api` و provider message id داشته باشد. گزارش آن در این مسیر ذخیره می‌شود:

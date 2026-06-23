@@ -85,6 +85,44 @@ public sealed class TransactionalEmailBrevoTests
     }
 
     [Fact]
+    public async Task SendAsync_FileMode_WritesDevelopmentSinkEml()
+    {
+        string contentRoot = Path.Combine(Path.GetTempPath(), "darwin-email-sink-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(contentRoot);
+        try
+        {
+            TransactionalEmailOptions options = CreateBrevoOptions(sandboxMode: true);
+            options.Mode = "File";
+            options.FileSinkDirectory = "EmailSink";
+            TransactionalEmailSender sender = new(
+                Options.Create(options),
+                new StaticHttpClientFactory(new HttpClient(new CapturingHttpMessageHandler(new HttpResponseMessage(HttpStatusCode.OK)))),
+                new TestWebHostEnvironment { ContentRootPath = contentRoot },
+                NullLogger<TransactionalEmailSender>.Instance);
+
+            TransactionalEmailSendResult result = await sender.SendAsync(CreateMessage(), CancellationToken.None);
+
+            Assert.True(result.Succeeded);
+            Assert.Equal("file", result.ProviderName);
+            Assert.False(string.IsNullOrWhiteSpace(result.ProviderMessageId));
+            string[] files = Directory.GetFiles(Path.Combine(contentRoot, "EmailSink"), "*.eml");
+            string sinkBody = await File.ReadAllTextAsync(Assert.Single(files));
+            Assert.Contains("Scenario: Account.EmailConfirmation", sinkBody, StringComparison.Ordinal);
+            Assert.Contains("To: learner@example.com", sinkBody, StringComparison.Ordinal);
+            Assert.Contains("Plain body", sinkBody, StringComparison.Ordinal);
+            Assert.Contains("--- HTML ---", sinkBody, StringComparison.Ordinal);
+            Assert.Contains("<p>HTML body</p>", sinkBody, StringComparison.Ordinal);
+        }
+        finally
+        {
+            if (Directory.Exists(contentRoot))
+            {
+                Directory.Delete(contentRoot, recursive: true);
+            }
+        }
+    }
+
+    [Fact]
     public async Task MarkProviderEventAsync_ComplaintMarksDeliveryFailedAndSuppressesRecipient()
     {
         await using PostgresTestDatabase database = await PostgresTestDatabase.CreateAsync("darwin_web_email");

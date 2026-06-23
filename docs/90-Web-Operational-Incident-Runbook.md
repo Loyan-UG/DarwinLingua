@@ -175,7 +175,7 @@ foreach($url in $urls){
 ## Current Deferred Items
 
 - Real inbox rendering must still be confirmed manually in `info@darwinlingua.com`.
-- Brevo dashboard logs must still be observed over time for real delivery/open/bounce/webhook events.
+- Brevo dashboard monitoring over time remains an operational habit, not an implementation blocker. The automated provider-log check, public action-link smoke, webhook suppression smoke, suppressed-send smoke, and Admin Email Diagnostics smoke have passed for the controlled Web stack.
 - Stripe remains disabled and must be separately validated before public paid subscriptions.
 - PWA install prompt acceptance still requires real target-browser testing.
 - Legal/operator copy is an engineering baseline and should receive owner/counsel review before broad public launch.

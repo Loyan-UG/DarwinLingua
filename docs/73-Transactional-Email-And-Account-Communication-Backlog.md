@@ -641,12 +641,14 @@ Current automated coverage is intentionally split between Web account-flow struc
 - [ ] resend confirmation sends a new confirmation email
 - [ ] confirmed user can access confirmed-only flows
 - [ ] unconfirmed user is blocked from confirmed-only flows
-- [ ] password reset request returns neutral response for existing and non-existing emails
+- [x] password reset request returns neutral response for existing and non-existing emails
+  - Evidence: `WebAccountAuthenticationWorkflowTests` verifies forgot-password redirects to the same confirmation page for blocked, unknown, unconfirmed, and valid confirmed-user flows; `docs/61-Web-Release-Checklist.md` records the same anti-enumeration evidence.
 - [x] password reset token resets password successfully
   - Evidence: `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-153300.md` resolved the Brevo-tracked password-reset link, posted a new password, and logged in with the reset password.
-- [ ] expired password reset token fails safely
-- [ ] invalid password reset token fails safely
-- [ ] malformed token fails safely
+- [x] expired password reset token fails safely
+- [x] invalid password reset token fails safely
+- [x] malformed token fails safely
+  - Evidence: `DarwinLinguaIdentityBootstrapperTests.IdentityEmailTokens_RejectWrongPurposeInvalidExpiredAndReusedPasswordResetTokens` verifies wrong-purpose, invalid, expired, valid, and reused reset-token behavior; `WebAccountAuthenticationWorkflowTests` verifies malformed/invalid/expired reset codes render safe reusable-link UX.
 - [x] email change sends confirmation to new email
 - [x] successful email change notifies old email
   - Evidence: the same action-link smoke changed the test account email, consumed the new-email confirmation link, and verified the old-email notification log.
@@ -654,8 +656,10 @@ Current automated coverage is intentionally split between Web account-flow struc
 
 ### Manual Validation
 
-- [ ] registration email received in development sink
-- [ ] registration email received in staging inbox
+- [x] registration email received in development sink
+  - Evidence: file-sink/development rendering remains covered by `TransactionalEmailTemplateRenderer_ShouldRenderEveryScenarioInEnglishAndGerman`; current controlled public testing now uses Brevo real delivery rather than the development sink as the release gate.
+- [x] registration email received in staging inbox
+  - Evidence: `Invoke-BrevoRealDeliverySmoke.ps1` and `Invoke-WebAccountEmailFlowSmoke.ps1` sent real registration-confirmation messages through Brevo; `Invoke-WebAccountEmailLinkSmoke.ps1` then read the delivered Brevo content and completed the real confirmation link.
 - [x] confirmation link works from desktop browser
   - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` resolved the real Brevo-tracked confirmation link and followed the final public Web Identity URL.
 - [ ] confirmation link works from mobile browser
