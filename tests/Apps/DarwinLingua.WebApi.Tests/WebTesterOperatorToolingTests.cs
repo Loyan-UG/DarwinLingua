@@ -94,6 +94,8 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("artifacts/validation/web-manual-evidence-audit", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("manual-evidence-safety", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("blockerCount", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("[string[]]$failedHumanGates = @()", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("$failedHumanGates = @(ConvertTo-StringArray -Value $manualReview.failedGates)", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("93-Web-Human-Gate-Handoff.md", documentationIndex, StringComparison.Ordinal);
         Assert.Contains("New-WebHumanGateHandoff.ps1", humanGateHandoff, StringComparison.Ordinal);
         Assert.Contains("New-WebControlledTesterReadinessAudit.ps1", humanGateHandoffScript, StringComparison.Ordinal);

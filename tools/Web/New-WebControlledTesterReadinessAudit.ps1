@@ -266,8 +266,16 @@ $mailboxStatus = [string](Get-PropertyValue -Object $manualReview -Name "mailbox
 $pwaDesktopStatus = [string](Get-PropertyValue -Object $manualReview -Name "pwaDesktopStatus")
 $pwaAndroidStatus = [string](Get-PropertyValue -Object $manualReview -Name "pwaAndroidStatus")
 $testerPassStatus = [string](Get-PropertyValue -Object $manualReview -Name "testerPassStatus")
-[string[]]$openHumanGates = if ($manualReview) { ConvertTo-StringArray -Value $manualReview.openGates } else { @("manual-review-report-missing") }
-[string[]]$failedHumanGates = if ($manualReview) { ConvertTo-StringArray -Value $manualReview.failedGates } else { @("manual-review-report-missing") }
+[string[]]$openHumanGates = @()
+[string[]]$failedHumanGates = @()
+if ($manualReview) {
+    $openHumanGates = @(ConvertTo-StringArray -Value $manualReview.openGates)
+    $failedHumanGates = @(ConvertTo-StringArray -Value $manualReview.failedGates)
+}
+else {
+    $openHumanGates = @("manual-review-report-missing")
+    $failedHumanGates = @("manual-review-report-missing")
+}
 
 $automatedFailures = @($automatedGates | Where-Object { $_.status -ne "pass" })
 $humanStartOpenGates = [System.Collections.Generic.List[string]]::new()
