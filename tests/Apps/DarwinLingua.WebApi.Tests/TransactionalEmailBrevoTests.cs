@@ -350,17 +350,28 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("Darwin &lt;Lingua&gt;", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("code=&lt;unsafe&gt;", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("<!doctype html>", english.HtmlBody, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("<html lang=\"en\">", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("email-brand-mark", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("Language learning and account service", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("email-badge", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains(">Account</span>", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("email-card", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("email-accent", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("box-shadow", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("overflow-wrap:anywhere", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("border-radius:999px", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("background:#2563eb", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("email-security-note", english.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("Security note", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("prefers-color-scheme: dark", english.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("transactional service email", english.HtmlBody, StringComparison.Ordinal);
 
         Assert.Equal("de", german.Culture);
         Assert.Contains("Bestatige deine Darwin Lingua E-Mail", german.Subject, StringComparison.Ordinal);
         Assert.Contains("Dieser Link lauft", german.PlainTextBody, StringComparison.Ordinal);
+        Assert.Contains("<html lang=\"de\">", german.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains(">Konto</span>", german.HtmlBody, StringComparison.Ordinal);
+        Assert.Contains("Sicherheitshinweis", german.HtmlBody, StringComparison.Ordinal);
         Assert.Contains("E-Mail bestatigen", german.HtmlBody, StringComparison.Ordinal);
 
         Assert.Equal("en", fallback.Culture);
@@ -524,6 +535,8 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("/v3/smtp/emails?messageId=", script, StringComparison.Ordinal);
         Assert.Contains("/v3/smtp/emails?email=", script, StringComparison.Ordinal);
         Assert.Contains("/v3/smtp/emails/$encodedUuid", script, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoRestMethod", script, StringComparison.Ordinal);
+        Assert.Contains("429", script, StringComparison.Ordinal);
         Assert.Contains("AllowAutoRedirect = $false", script, StringComparison.Ordinal);
         Assert.Contains("Account.EmailConfirmation", script, StringComparison.Ordinal);
         Assert.Contains("resendConfirmationLogged", script, StringComparison.Ordinal);

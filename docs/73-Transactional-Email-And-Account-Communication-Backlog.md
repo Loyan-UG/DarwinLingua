@@ -64,7 +64,7 @@ The web app now has a production-provider path for transactional email:
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
 - Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
 
-Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, app-level registration/password-reset sends are logged through provider `brevo-api`, real Brevo-tracked registration/password-reset/email-change action links resolve and complete successfully on `https://darwinlingua.com`, a controlled public webhook smoke verifies Bearer-authenticated `hardBounce` handling plus internal suppression creation, and a controlled suppressed-send smoke verifies that a later account email to a suppressed recipient is logged as `Suppressed` without calling Brevo. Manual mailbox rendering review still remains before broad public launch.
+Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, app-level registration/password-reset sends are logged through provider `brevo-api`, real Brevo-tracked registration/resend-confirmation/password-reset/email-change action links resolve and complete successfully on `https://darwinlingua.com`, the 2026-06-23 `web-account-email-link-smoke-20260623-162504.md` run passed after the branded HTML email layout upgrade, a controlled public webhook smoke verifies Bearer-authenticated `hardBounce` handling plus internal suppression creation, and a controlled suppressed-send smoke verifies that a later account email to a suppressed recipient is logged as `Suppressed` without calling Brevo. Manual mailbox rendering review still remains before broad public launch.
 
 ## Brevo Production Setup Runbook
 
@@ -647,7 +647,7 @@ Current automated coverage is intentionally split between Web account-flow struc
 - [x] password reset request returns neutral response for existing and non-existing emails
   - Evidence: `WebAccountAuthenticationWorkflowTests` verifies forgot-password redirects to the same confirmation page for blocked, unknown, unconfirmed, and valid confirmed-user flows; `docs/61-Web-Release-Checklist.md` records the same anti-enumeration evidence.
 - [x] password reset token resets password successfully
-  - Evidence: `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-153300.md` resolved the Brevo-tracked password-reset link, posted a new password, and logged in with the reset password.
+  - Evidence: `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-162504.md` resolved the Brevo-tracked password-reset link, posted a new password, and logged in with the reset password.
 - [x] expired password reset token fails safely
 - [x] invalid password reset token fails safely
 - [x] malformed token fails safely
@@ -671,9 +671,9 @@ Current automated coverage is intentionally split between Web account-flow struc
   - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` resolved and completed the real Brevo-tracked reset flow.
 - [ ] password reset link works from mobile browser
 - [x] German email template renders correctly
-  - Evidence: `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies German account-confirmation subject/body rendering for `de-DE`; broader development file-sink rendering is covered by `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml`.
+  - Evidence: `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies German account-confirmation subject/body rendering for `de-DE`, the branded HTML layout, CTA styling, localized badge, security note, dark-mode CSS hint, and safe HTML encoding; broader development file-sink rendering is covered by `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml`.
 - [x] English email template renders correctly
-  - Evidence: `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies English subject/body rendering, value substitution, HTML encoding, and fallback behavior; broader development file-sink rendering is covered by `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml`.
+  - Evidence: `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies English subject/body rendering, value substitution, branded HTML layout, CTA styling, security note, HTML encoding, and fallback behavior; broader development file-sink rendering is covered by `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml`.
 - [ ] dark-mode email clients remain readable if HTML email is used
 - [x] links use the correct public base URL
   - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` confirms the resolved action links target `https://darwinlingua.com`; the report stores hashes, not full recovery URLs or tokens.

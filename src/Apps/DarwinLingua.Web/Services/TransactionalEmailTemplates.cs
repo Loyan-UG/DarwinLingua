@@ -294,8 +294,10 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
             ApplyValues(template.PlainTextBody, mergedValues, encodeHtml: false),
             BuildHtmlDocument(
                 ApplyValues(template.Subject, mergedValues, encodeHtml: false),
-                StyleActionLinks(ApplyValues(template.HtmlBody, mergedValues, encodeHtml: true)),
-                options.Value));
+                StyleBodyHtml(ApplyValues(template.HtmlBody, mergedValues, encodeHtml: true)),
+                options.Value,
+                templateKey,
+                normalizedCulture));
     }
 
     private static string NormalizeCulture(string? culture)
@@ -335,15 +337,25 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
     private static string BuildHtmlDocument(
         string subject,
         string htmlBody,
-        TransactionalEmailOptions emailOptions)
+        TransactionalEmailOptions emailOptions,
+        string templateKey,
+        string culture)
     {
         string safeSubject = WebUtility.HtmlEncode(subject);
         string safeProductName = WebUtility.HtmlEncode(emailOptions.ProductName);
-        string safeSupportEmail = WebUtility.HtmlEncode(emailOptions.SupportEmail);
+        string safeBadge = WebUtility.HtmlEncode(GetTemplateBadgeLabel(templateKey, culture));
+        string safePreheader = WebUtility.HtmlEncode(GetPreheader(subject, culture));
+        string safeSecurityTitle = WebUtility.HtmlEncode(culture == "de" ? "Sicherheitshinweis" : "Security note");
+        string safeSecurityText = WebUtility.HtmlEncode(culture == "de"
+            ? "Wir fragen dich nie nach deinem Passwort oder nach vollstandigen Zahlungsdaten per E-Mail. Offne Links nur, wenn du diese Aktion selbst gestartet hast."
+            : "We will never ask for your password or full payment details by email. Only open links when you started this action yourself.");
+        string safeFooterText = WebUtility.HtmlEncode(culture == "de"
+            ? $"Dies ist eine transaktionale Service-E-Mail von {emailOptions.ProductName}. Brauchst du Hilfe? Kontaktiere {emailOptions.SupportEmail}."
+            : $"This is a transactional service email from {emailOptions.ProductName}. Need help? Contact {emailOptions.SupportEmail}.");
 
         return $$"""
             <!doctype html>
-            <html lang="en">
+            <html lang="{{culture}}">
             <head>
               <meta charset="utf-8">
               <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -353,35 +365,60 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
               <style>
                 @media (prefers-color-scheme: dark) {
                   body, .email-shell { background: #111827 !important; }
-                  .email-card { background: #1f2937 !important; border-color: #374151 !important; }
-                  .email-title, .email-content, .email-footer { color: #f9fafb !important; }
+                  .email-card { background: #1f2937 !important; border-color: #374151 !important; box-shadow: none !important; }
+                  .email-title, .email-content, .email-footer, .email-brand { color: #f9fafb !important; }
                   .email-muted { color: #d1d5db !important; }
+                  .email-security-note { background: #111827 !important; border-color: #374151 !important; color: #e5e7eb !important; }
+                  .email-badge { background: #1e3a8a !important; color: #dbeafe !important; }
                 }
               </style>
             </head>
             <body style="margin:0;padding:0;background:#f3f4f6;color:#111827;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;">
               <div class="email-shell" style="width:100%;background:#f3f4f6;padding:32px 12px;">
-                <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">{{safeSubject}}</div>
+                <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">{{safePreheader}}</div>
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
                   <tr>
                     <td align="center">
                       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:640px;">
                         <tr>
                           <td style="padding:0 0 16px 0;text-align:left;">
-                            <div style="font-size:13px;line-height:20px;color:#4b5563;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">{{safeProductName}}</div>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                              <tr>
+                                <td align="left" style="vertical-align:middle;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                                    <tr>
+                                      <td class="email-brand-mark" style="width:38px;height:38px;border-radius:12px;background:#111827;color:#ffffff;text-align:center;font-size:15px;line-height:38px;font-weight:800;">DL</td>
+                                      <td style="padding-left:12px;">
+                                        <div class="email-brand" style="font-size:15px;line-height:20px;color:#111827;font-weight:800;">{{safeProductName}}</div>
+                                        <div class="email-muted" style="font-size:12px;line-height:18px;color:#6b7280;">Language learning and account service</div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td align="right" style="vertical-align:middle;">
+                                  <span class="email-badge" style="display:inline-block;padding:6px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:12px;line-height:16px;font-weight:700;">{{safeBadge}}</span>
+                                </td>
+                              </tr>
+                            </table>
                           </td>
                         </tr>
                         <tr>
-                          <td class="email-card" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:32px;box-shadow:0 14px 40px rgba(17,24,39,.08);">
+                          <td class="email-card" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:18px;padding:0;box-shadow:0 18px 50px rgba(17,24,39,.10);overflow:hidden;">
+                            <div class="email-accent" style="height:6px;background:#2563eb;line-height:6px;font-size:1px;">&nbsp;</div>
+                            <div style="padding:32px;">
                             <h1 class="email-title" style="margin:0 0 20px 0;color:#111827;font-size:24px;line-height:32px;font-weight:800;">{{safeSubject}}</h1>
                             <div class="email-content" style="color:#1f2937;font-size:16px;line-height:26px;overflow-wrap:anywhere;word-break:break-word;">
                               {{htmlBody}}
+                            </div>
+                            <div class="email-security-note" style="margin-top:24px;padding:14px 16px;border:1px solid #dbeafe;border-radius:12px;background:#eff6ff;color:#1e3a8a;font-size:13px;line-height:20px;">
+                              <strong>{{safeSecurityTitle}}:</strong> {{safeSecurityText}}
+                            </div>
                             </div>
                           </td>
                         </tr>
                         <tr>
                           <td class="email-footer" style="padding:20px 4px 0 4px;color:#6b7280;font-size:13px;line-height:20px;">
-                            <p class="email-muted" style="margin:0;">This is a transactional service email from {{safeProductName}}. Need help? Contact {{safeSupportEmail}}.</p>
+                            <p class="email-muted" style="margin:0;">{{safeFooterText}}</p>
                           </td>
                         </tr>
                       </table>
@@ -393,6 +430,42 @@ public sealed class TransactionalEmailTemplateRenderer(IOptions<TransactionalEma
             </html>
             """;
     }
+
+    private static string GetPreheader(string subject, string culture) =>
+        culture == "de"
+            ? $"{subject} - eine sichere Service-Nachricht von Darwin Lingua."
+            : $"{subject} - a secure service message from Darwin Lingua.";
+
+    private static string GetTemplateBadgeLabel(string templateKey, string culture)
+    {
+        if (templateKey.StartsWith("Admin.", StringComparison.Ordinal))
+        {
+            return culture == "de" ? "Admin-Hinweis" : "Admin alert";
+        }
+
+        if (templateKey.StartsWith("Billing.", StringComparison.Ordinal))
+        {
+            return culture == "de" ? "Abrechnung" : "Billing";
+        }
+
+        if (templateKey.StartsWith("Account.", StringComparison.Ordinal))
+        {
+            return culture == "de" ? "Konto" : "Account";
+        }
+
+        if (templateKey.StartsWith("Moderation.", StringComparison.Ordinal))
+        {
+            return culture == "de" ? "Moderation" : "Moderation";
+        }
+
+        return culture == "de" ? "Service" : "Service";
+    }
+
+    private static string StyleBodyHtml(string htmlBody) =>
+        StyleParagraphs(StyleActionLinks(htmlBody));
+
+    private static string StyleParagraphs(string htmlBody) =>
+        htmlBody.Replace("<p>", "<p style=\"margin:0 0 16px 0;\">", StringComparison.OrdinalIgnoreCase);
 
     private static string StyleActionLinks(string htmlBody)
     {

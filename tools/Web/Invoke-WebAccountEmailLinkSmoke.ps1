@@ -206,6 +206,54 @@ function Get-MessageIdPreview {
     return "$($MessageId.Substring(0, 10))...$($MessageId.Substring($MessageId.Length - 6))"
 }
 
+function Invoke-BrevoWebRequest {
+    param(
+        [string]$Uri,
+        [hashtable]$Headers,
+        [string]$Method = "Get",
+        [int]$TimeoutSec = 30
+    )
+
+    for ($attempt = 1; $attempt -le 5; $attempt++) {
+        try {
+            return Invoke-WebRequest -Uri $Uri -Headers $Headers -Method $Method -TimeoutSec $TimeoutSec
+        }
+        catch {
+            $responseProperty = $_.Exception.PSObject.Properties["Response"]
+            $statusCode = if ($null -ne $responseProperty -and $null -ne $responseProperty.Value) { [int]$responseProperty.Value.StatusCode } else { 0 }
+            if ($statusCode -ne 429 -or $attempt -eq 5) {
+                throw
+            }
+
+            Start-Sleep -Seconds (10 * $attempt)
+        }
+    }
+}
+
+function Invoke-BrevoRestMethod {
+    param(
+        [string]$Uri,
+        [hashtable]$Headers,
+        [string]$Method = "Get",
+        [int]$TimeoutSec = 30
+    )
+
+    for ($attempt = 1; $attempt -le 5; $attempt++) {
+        try {
+            return Invoke-RestMethod -Uri $Uri -Headers $Headers -Method $Method -TimeoutSec $TimeoutSec
+        }
+        catch {
+            $responseProperty = $_.Exception.PSObject.Properties["Response"]
+            $statusCode = if ($null -ne $responseProperty -and $null -ne $responseProperty.Value) { [int]$responseProperty.Value.StatusCode } else { 0 }
+            if ($statusCode -ne 429 -or $attempt -eq 5) {
+                throw
+            }
+
+            Start-Sleep -Seconds (10 * $attempt)
+        }
+    }
+}
+
 function Get-BrevoSentEmailContent {
     param(
         [string]$MessageId,
@@ -225,7 +273,7 @@ function Get-BrevoSentEmailContent {
         }
 
         $listUri = "$($BrevoApiBaseUrl.TrimEnd('/'))/v3/smtp/emails?messageId=$encodedMessageId&limit=1"
-        $listResponse = Invoke-WebRequest -Uri $listUri -Headers $Headers -Method Get -TimeoutSec 30
+        $listResponse = Invoke-BrevoWebRequest -Uri $listUri -Headers $Headers -Method Get -TimeoutSec 30
         $listBody = [string]$listResponse.Content
         if (-not [string]::IsNullOrWhiteSpace($listBody)) {
             $list = $listBody | ConvertFrom-Json
@@ -251,7 +299,7 @@ function Get-BrevoSentEmailContent {
             continue
         }
 
-        $emailResponse = Invoke-WebRequest -Uri "$($BrevoApiBaseUrl.TrimEnd('/'))/v3/smtp/emails?email=$encodedRecipientEmail&limit=20" -Headers $Headers -Method Get -TimeoutSec 30
+        $emailResponse = Invoke-BrevoWebRequest -Uri "$($BrevoApiBaseUrl.TrimEnd('/'))/v3/smtp/emails?email=$encodedRecipientEmail&limit=20" -Headers $Headers -Method Get -TimeoutSec 30
         $emailBody = [string]$emailResponse.Content
         if ([string]::IsNullOrWhiteSpace($emailBody)) {
             $lastShape = "$lastShape; fallback=email; http=$($emailResponse.StatusCode); bodyLength=0"
@@ -285,7 +333,7 @@ function Get-BrevoSentEmailContent {
     }
 
     $encodedUuid = [System.Uri]::EscapeDataString($uuid)
-    $content = Invoke-RestMethod -Uri "$($BrevoApiBaseUrl.TrimEnd('/'))/v3/smtp/emails/$encodedUuid" -Headers $Headers -Method Get -TimeoutSec 30
+    $content = Invoke-BrevoRestMethod -Uri "$($BrevoApiBaseUrl.TrimEnd('/'))/v3/smtp/emails/$encodedUuid" -Headers $Headers -Method Get -TimeoutSec 30
     return [ordered]@{
         uuid = $uuid
         body = [string]$content.body
@@ -317,6 +365,12 @@ function Get-LinkFromEmailBody {
             if (-not [string]::IsNullOrWhiteSpace($location) -and $location.Contains($PathFragment, [StringComparison]::OrdinalIgnoreCase)) {
                 return $location
             }
+
+            $redirectBody = $redirectResponse.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+            $redirectBodyUrl = Get-PlainUrlFromText -Text $redirectBody -PathFragment $PathFragment
+            if (-not [string]::IsNullOrWhiteSpace($redirectBodyUrl)) {
+                return $redirectBodyUrl
+            }
         }
         catch {
             continue
@@ -327,9 +381,28 @@ function Get-LinkFromEmailBody {
         }
     }
 
+    $plainBodyUrl = Get-PlainUrlFromText -Text $decodedBody -PathFragment $PathFragment
+    if (-not [string]::IsNullOrWhiteSpace($plainBodyUrl)) {
+        return $plainBodyUrl
+    }
+
+    throw "Expected email action link containing '$PathFragment' was not found."
+}
+
+function Get-PlainUrlFromText {
+    param(
+        [string]$Text,
+        [string]$PathFragment
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Text)) {
+        return $null
+    }
+
+    $decodedText = [System.Net.WebUtility]::HtmlDecode($Text)
     $pathPattern = [regex]::Escape($PathFragment)
     $plainUrlMatches = [regex]::Matches(
-        $decodedBody,
+        $decodedText,
         "https?://[^\s<>`"'']*$pathPattern[^\s<>`"'']*",
         [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
     foreach ($match in $plainUrlMatches) {
@@ -339,7 +412,7 @@ function Get-LinkFromEmailBody {
         }
     }
 
-    throw "Expected email action link containing '$PathFragment' was not found."
+    return $null
 }
 
 function Get-LatestDeliveryLog {
