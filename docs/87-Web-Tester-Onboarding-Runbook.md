@@ -12,7 +12,7 @@ The goal is not to generate more content during testing. The goal is to find pra
 - Public API health: `https://api.darwinlingua.com/health`
 - Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
-- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-083515-web-email-alerts-ready-pre-user-testing`
+- Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-084635-web-brevo-provider-logs-ready-pre-user-testing`
 - Latest readiness commits: recorded by the phase backup manifest and recoverable through `repo-overlay/darwinlingua-current-head.bundle`; recent changes cover operational incident ownership, Brevo/domain hardening, and email-change public-link verification.
 - Latest tester bundle: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass`
 - Latest public preflight: `artifacts/validation/web-tester-runs/20260620-011001-web-tester-pass/preflight/web-tester-preflight-20260620-011005.json` with 25/25 checks passed.
