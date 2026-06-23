@@ -4,7 +4,7 @@
 
 این سند برای کارهای بیرون از کد است؛ یعنی کارهایی که باید در پنل Brevo، DNS دامنه، و تنظیمات محرمانه انجام شود تا ایمیل‌های واقعی Darwin Lingua ارسال شوند.
 
-کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-23: API key و webhook secret بیرون از Git و در local secret configuration ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check بدون blocker/warning پاس شده، و smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است. قبل از باز کردن ثبت‌نام عمومی گسترده، هنوز باید نمایش واقعی ایمیل‌ها در inbox و eventهای webhook در طول زمان بررسی شوند.
+کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-23: API key و webhook secret بیرون از Git و در local secret configuration ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check بدون blocker/warning پاس شده، smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است، و smoke عمومی webhook ثابت کرده که endpoint عمومی `hardBounce` را با Bearer token می‌پذیرد، delivery log را failed می‌کند و suppression داخلی می‌سازد. قبل از باز کردن ثبت‌نام عمومی گسترده، هنوز باید نمایش واقعی ایمیل‌ها در inbox و eventهای webhook واقعی Brevo در طول زمان بررسی شوند.
 
 دامنه‌ی اصلی Web برای تست و سپس production این است:
 
@@ -220,6 +220,24 @@ artifacts/validation/brevo-real-delivery-smoke/
 
 ```text
 artifacts/validation/web-account-email-smoke/
+```
+
+برای تست کنترل‌شده‌ی webhook و suppression داخلی، ابزار زیر را اجرا کنید:
+
+```powershell
+.\tools\Web\Invoke-BrevoWebhookSuppressionSmoke.ps1
+```
+
+این ابزار هیچ ایمیلی به گیرنده‌ی واقعی نمی‌فرستد. یک delivery log ساختگی با recipient hash کنترل‌شده می‌سازد، یک event از نوع `hardBounce` را به endpoint عمومی زیر با `Authorization: Bearer <token>` می‌فرستد، و بعد در PostgreSQL بررسی می‌کند که همان delivery log به `Failed` تغییر کرده و یک suppression داخلی با reason برابر `brevo:hard_bounce` ساخته شده است:
+
+```text
+https://darwinlingua.com/webhooks/brevo/transactional-email
+```
+
+گزارش این smoke در مسیر زیر ذخیره می‌شود:
+
+```text
+artifacts/validation/brevo-webhook-suppression-smoke/
 ```
 
 ## تصمیم پیشنهادی فعلی

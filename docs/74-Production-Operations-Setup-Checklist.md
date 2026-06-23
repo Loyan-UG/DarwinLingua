@@ -58,11 +58,15 @@ Local development helper:
 - [x] Run `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1 -RecipientEmail "info@darwinlingua.com" -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted -ConfirmSend` and archive the generated `artifacts/validation/brevo-real-delivery-smoke/` report.
 - [x] Run `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` against `https://darwinlingua.com` and archive the generated `artifacts/validation/web-account-email-smoke/` report.
 - [ ] Manually confirm the two smoke messages reached `info@darwinlingua.com` and render correctly in the actual mailbox.
-- [ ] Confirm webhook calls reach the public HTTPS origin.
+- [x] Confirm webhook calls reach the public HTTPS origin.
+  - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` posts a controlled `hardBounce` event to `https://darwinlingua.com/webhooks/brevo/transactional-email` with Bearer token authentication and writes evidence under `artifacts/validation/brevo-webhook-suppression-smoke/`. The 2026-06-23 run returned HTTP 200.
 - [x] Confirm `WebEmailDeliveryLogs` shows provider message ids for app-level registration and password-reset sends.
 - [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events in the operator UI.
-- [ ] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.
-- [ ] Confirm permanent Brevo failures create internal hashed suppressions and later sends are logged as `Suppressed`.
+- [x] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.
+  - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` verifies the synthetic delivery row becomes `Failed` with `ProviderLastEvent=hard_bounce` and `FailureCode=brevo:hard_bounce`. `DeliveryLogRepository_ShouldStoreDiagnosticsWithoutEmailBodyOrRecoveryUrl` verifies diagnostic text redacts recovery URLs/tokens before persistence.
+- [x] Confirm permanent Brevo failures create internal hashed suppressions.
+  - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` verifies a `WebEmailSuppressions` row with `Reason=brevo:hard_bounce` and provider `brevo-api` is created for the synthetic recipient hash.
+- [ ] Confirm later sends to a suppressed recipient are logged as `Suppressed`.
 - [ ] Confirm admins can filter suppressions by hash/reason and manually unsuppress only after support review.
 - [ ] Confirm manual suppression changes are Admin-only and appear in application logs.
 - [ ] Confirm manual provider-event recording works for support reconciliation when a webhook event is missing.
@@ -132,5 +136,6 @@ Local development helper:
 
 - [ ] Assign an owner for Brevo account billing and plan upgrades.
 - [ ] Assign an owner for DNS records and sender-domain verification.
-- [ ] Review the Brevo data processing agreement before production launch.
+- [x] Review the Brevo data processing agreement before production launch.
+  - Evidence: operator confirmed Brevo DPA accepted on 2026-06-23; the Brevo readiness report records `operator.dpaAccepted`.
 - [ ] Document the incident process for API key rotation, sender-domain failure, and account suspension.

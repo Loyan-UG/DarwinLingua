@@ -64,7 +64,7 @@ The web app now has a production-provider path for transactional email:
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
 - Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
 
-Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, and app-level registration/password-reset sends are logged through provider `brevo-api`. Manual mailbox rendering review, webhook event monitoring, and negative-path bounce/suppression drills still remain before broad public launch.
+Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, app-level registration/password-reset sends are logged through provider `brevo-api`, and a controlled public webhook smoke verifies Bearer-authenticated `hardBounce` handling plus internal suppression creation. Manual mailbox rendering review, real Brevo dashboard event observation, and later-send suppression logging drills still remain before broad public launch.
 
 ## Brevo Production Setup Runbook
 
@@ -197,6 +197,13 @@ Set these values outside source control for the target environment:
 ```
 
 - The app-level tool writes JSON and Markdown reports under `artifacts/validation/web-account-email-smoke/`. It registers a timestamped test learner through the public Register page, requests a password reset through the public Forgot Password page, and verifies `WebEmailDeliveryLogs` contains `brevo-api` provider message ids for `Account.EmailConfirmation` and `Account.PasswordReset`.
+- After app-level email smoke passes, run the controlled webhook/suppression smoke:
+
+```powershell
+.\tools\Web\Invoke-BrevoWebhookSuppressionSmoke.ps1
+```
+
+- The webhook/suppression smoke tool writes JSON and Markdown reports under `artifacts/validation/brevo-webhook-suppression-smoke/`. It creates one synthetic delivery-log row, posts a `hardBounce` event to the public Brevo webhook endpoint with Bearer token authentication, and verifies the delivery log is marked failed and a hashed internal suppression is created. It does not send email to a real recipient.
 - Confirm that both HTML and plain-text alternatives render correctly.
 - Confirm that action links use the configured `PublicBaseUrl`.
 - Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.

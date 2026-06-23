@@ -462,6 +462,36 @@ public sealed class TransactionalEmailBrevoTests
         Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void BrevoWebhookSuppressionSmokeTool_ShouldExercisePublicWebhookAndSuppressionPath()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+        string operationsChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/74-Production-Operations-Setup-Checklist.md"));
+
+        Assert.Contains("/webhooks/brevo/transactional-email", script, StringComparison.Ordinal);
+        Assert.Contains("Authorization", script, StringComparison.Ordinal);
+        Assert.Contains("Bearer", script, StringComparison.Ordinal);
+        Assert.Contains("hardBounce", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailDeliveryLogs", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailSuppressions", script, StringComparison.Ordinal);
+        Assert.Contains("brevo:hard_bounce", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-webhook-suppression-smoke", script, StringComparison.Ordinal);
+        Assert.Contains("Secret value was not printed", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+
+        Assert.Contains("Invoke-BrevoWebhookSuppressionSmoke.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoWebhookSuppressionSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
+    }
+
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()
     {
         Mode = "BrevoApi",
