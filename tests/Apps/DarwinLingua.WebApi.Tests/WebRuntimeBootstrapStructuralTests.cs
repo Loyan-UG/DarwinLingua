@@ -123,6 +123,29 @@ public sealed class WebRuntimeBootstrapStructuralTests
     }
 
     [Fact]
+    public void WebRuntime_ShouldRedirectWwwHostToCanonicalApexHost()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string webProgramSource = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src",
+            "Apps",
+            "DarwinLingua.Web",
+            "Program.cs"));
+
+        Assert.Contains("ShouldRedirectToCanonicalPublicHost(context)", webProgramSource, StringComparison.Ordinal);
+        Assert.Contains("www.darwinlingua.com", webProgramSource, StringComparison.Ordinal);
+        Assert.Contains("\"https://darwinlingua.com\"", webProgramSource, StringComparison.Ordinal);
+        Assert.Contains("context.Request.PathBase.ToUriComponent()", webProgramSource, StringComparison.Ordinal);
+        Assert.Contains("context.Request.Path.ToUriComponent()", webProgramSource, StringComparison.Ordinal);
+        Assert.Contains("context.Request.QueryString.ToUriComponent()", webProgramSource, StringComparison.Ordinal);
+        Assert.Contains("context.Response.Redirect(canonicalUrl, permanent: true)", webProgramSource, StringComparison.Ordinal);
+        Assert.True(
+            webProgramSource.IndexOf("app.UseForwardedHeaders();", StringComparison.Ordinal) <
+            webProgramSource.IndexOf("ShouldRedirectToCanonicalPublicHost(context)", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public void ServerContentBootstrapper_ShouldRetrofitExistingPostgresSchema()
     {
         string repositoryRoot = ResolveRepositoryRoot();

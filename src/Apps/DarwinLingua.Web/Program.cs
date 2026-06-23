@@ -263,6 +263,22 @@ app.Use(async (context, next) =>
 
     await next();
 });
+app.Use(async (context, next) =>
+{
+    if (ShouldRedirectToCanonicalPublicHost(context))
+    {
+        string canonicalUrl =
+            "https://darwinlingua.com" +
+            context.Request.PathBase.ToUriComponent() +
+            context.Request.Path.ToUriComponent() +
+            context.Request.QueryString.ToUriComponent();
+
+        context.Response.Redirect(canonicalUrl, permanent: true);
+        return;
+    }
+
+    await next();
+});
 app.UseRouting();
 string[] supportedUiLanguageCodes = ["en", "de"];
 RequestLocalizationOptions localizationOptions = new()
@@ -338,6 +354,11 @@ static bool ShouldSendStrictTransportSecurity(HttpContext context)
     }
 
     return true;
+}
+
+static bool ShouldRedirectToCanonicalPublicHost(HttpContext context)
+{
+    return context.Request.Host.Host.Equals("www.darwinlingua.com", StringComparison.OrdinalIgnoreCase);
 }
 
 public partial class Program;

@@ -25,18 +25,34 @@ function Invoke-CurlProbe {
     param(
         [ValidateSet("GET", "HEAD")]
         [string]$Method,
-        [string]$Url
+        [string]$Url,
+        [switch]$NoFollowRedirects
     )
 
     $bodyPath = New-TemporaryFile
     $headersPath = New-TemporaryFile
     try {
         if ($Method -eq "HEAD") {
-            $headerText = (& curl.exe -I -L -s $Url) -join "`n"
-            $writeOut = & curl.exe -I -L -s -o $bodyPath.FullName -w "%{http_code}|%{ssl_verify_result}|%{url_effective}" $Url
+            $headerArgs = @("-I", "-s")
+            $writeArgs = @("-I", "-s", "-o", $bodyPath.FullName, "-w", "%{http_code}|%{ssl_verify_result}|%{url_effective}|%{redirect_url}")
+            if (-not $NoFollowRedirects.IsPresent) {
+                $headerArgs += "-L"
+                $writeArgs += "-L"
+            }
+
+            $headerArgs += $Url
+            $writeArgs += $Url
+            $headerText = (& curl.exe @headerArgs) -join "`n"
+            $writeOut = & curl.exe @writeArgs
         }
         else {
-            $writeOut = & curl.exe -L -s -D $headersPath.FullName -o $bodyPath.FullName -w "%{http_code}|%{ssl_verify_result}|%{url_effective}" $Url
+            $writeArgs = @("-s", "-D", $headersPath.FullName, "-o", $bodyPath.FullName, "-w", "%{http_code}|%{ssl_verify_result}|%{url_effective}|%{redirect_url}")
+            if (-not $NoFollowRedirects.IsPresent) {
+                $writeArgs += "-L"
+            }
+
+            $writeArgs += $Url
+            $writeOut = & curl.exe @writeArgs
             $headerText = Get-Content -LiteralPath $headersPath.FullName -Raw
         }
 
@@ -47,6 +63,8 @@ function Invoke-CurlProbe {
             statusCode = [int]$parts[0]
             sslVerifyResult = [int]$parts[1]
             effectiveUrl = $parts[2]
+            redirectUrl = $parts[3]
+            followsRedirects = -not $NoFollowRedirects.IsPresent
             bodyBytes = if (Test-Path -LiteralPath $bodyPath.FullName -PathType Leaf) { (Get-Item -LiteralPath $bodyPath.FullName).Length } else { 0 }
             headers = $headerText
         }
@@ -105,6 +123,7 @@ $markdownPath = Join-Path $outputRoot "web-tls-security-surface-$timestamp.md"
 $probes = @(
     (Invoke-CurlProbe -Method GET -Url "https://darwinlingua.com")
     (Invoke-CurlProbe -Method HEAD -Url "https://darwinlingua.com")
+    (Invoke-CurlProbe -Method HEAD -Url "https://www.darwinlingua.com" -NoFollowRedirects)
     (Invoke-CurlProbe -Method GET -Url "https://api.darwinlingua.com/health")
     (Invoke-CurlProbe -Method HEAD -Url "https://api.darwinlingua.com/health")
 )
@@ -133,7 +152,16 @@ foreach ($certificate in $certificates) {
 }
 
 $webGet = $probes | Where-Object { $_.method -eq "GET" -and $_.url -eq "https://darwinlingua.com" } | Select-Object -First 1
+$wwwHead = $probes | Where-Object { $_.method -eq "HEAD" -and $_.url -eq "https://www.darwinlingua.com" } | Select-Object -First 1
 $apiHead = $probes | Where-Object { $_.method -eq "HEAD" -and $_.url -eq "https://api.darwinlingua.com/health" } | Select-Object -First 1
+
+if ($wwwHead.statusCode -notin @(301, 308)) {
+    $issues.Add([ordered]@{ area = "canonical-host"; target = "https://www.darwinlingua.com"; message = "Expected permanent redirect to https://darwinlingua.com, got $($wwwHead.statusCode)." }) | Out-Null
+}
+
+if (-not $wwwHead.redirectUrl.StartsWith("https://darwinlingua.com", [StringComparison]::OrdinalIgnoreCase)) {
+    $issues.Add([ordered]@{ area = "canonical-host"; target = "https://www.darwinlingua.com"; message = "Expected redirect target to start with https://darwinlingua.com, got '$($wwwHead.redirectUrl)'." }) | Out-Null
+}
 
 $webRequiredHeaders = @(
     "Strict-Transport-Security",
@@ -170,6 +198,7 @@ $report = [ordered]@{
     publicWeb = "https://darwinlingua.com"
     publicApiHealth = "https://api.darwinlingua.com/health"
     requiredWwwHost = $false
+    wwwCanonicalRedirect = "https://darwinlingua.com"
     passed = $passed
     issueCount = $issues.Count
     probes = $probes | ForEach-Object {
@@ -179,6 +208,8 @@ $report = [ordered]@{
             statusCode = $_.statusCode
             sslVerifyResult = $_.sslVerifyResult
             effectiveUrl = $_.effectiveUrl
+            redirectUrl = $_.redirectUrl
+            followsRedirects = $_.followsRedirects
             bodyBytes = $_.bodyBytes
         }
     }
@@ -195,6 +226,7 @@ $lines.Add(("- Generated: {0}" -f $report.generatedAtUtc))
 $lines.Add(("- Passed: {0}" -f $passed))
 $lines.Add(("- Issues: {0}" -f $issues.Count))
 $lines.Add("- Required www host: false")
+$lines.Add("- Canonical www redirect: https://darwinlingua.com")
 $lines.Add("")
 $lines.Add("## HTTP/TLS Probes")
 $lines.Add("")
