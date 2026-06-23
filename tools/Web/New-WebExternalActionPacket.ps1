@@ -294,4 +294,4 @@ Set-Content -LiteralPath $markdownPath -Value $markdown -Encoding UTF8
 Write-Host "Web external action packet Markdown: $markdownPath"
 Write-Host "Web external action packet JSON: $jsonPath"
 Write-Host "Open human start gates: $($openHumanGates.Count)"
-Write-Host "Brevo webhook check status: $brevoStatus"
+Write-Host "Brevo readiness check status: $brevoStatus"

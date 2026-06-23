@@ -159,7 +159,7 @@ $markdown = @"
 
 This handoff is intentionally limited to human gates. It does not approve broad public launch, legal sign-off, paid billing, or mobile work.
 
-Known human start gate keys: `mailbox-rendering`, `pwa-desktop-install`, `pwa-android-install`, `tester-pass-start-status`.
+Known human start gate keys include `mailbox-rendering`, `pwa-desktop-install`, `pwa-android-install`, `tester-pass-start-status`, `controlled-tester-pass`, and the evidence-specific keys `mailbox-evidence-missing`, `pwa-desktop-evidence-missing`, `pwa-android-evidence-missing`, `tester-bundle-missing`, and `feedback-triage-evidence-missing`.
 
 ## Current Gate Status
 
@@ -177,7 +177,7 @@ $($statusLines -join "`n")
 
 3. Complete the PWA checks from `docs/56-Web-Pwa-Install-Validation-Worksheet.md`. Use `not-in-scope-for-this-pass` only when the device/browser check is intentionally deferred for the controlled tester pass.
 
-4. Confirm the tester bundle is the current Brevo-ready bundle and that testers will use `https://darwinlingua.com`, not `www.darwinlingua.com`.
+4. Confirm the tester bundle is the current Brevo-ready bundle and that testers will use `https://darwinlingua.com`; `www.darwinlingua.com` is only a canonical redirect and must not appear in action links or tester instructions.
 
 5. Generate the manual external review report:
 

@@ -10,7 +10,7 @@ It does not replace legal counsel, real tester feedback, or target-browser check
 
 - Public Web: `https://darwinlingua.com`
 - Public API: `https://api.darwinlingua.com`
-- Do not use `www.darwinlingua.com` unless that host is intentionally configured later.
+- Do not use `www.darwinlingua.com` in tester instructions or action links. It is only a canonical redirect to the apex domain.
 - Mobile/MAUI is out of scope.
 - Public paid billing remains disabled.
 

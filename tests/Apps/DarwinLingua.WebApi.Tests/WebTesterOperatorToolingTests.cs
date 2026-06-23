@@ -117,6 +117,9 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("pwa-desktop-install", humanGateHandoffScript, StringComparison.Ordinal);
         Assert.Contains("pwa-android-install", humanGateHandoffScript, StringComparison.Ordinal);
         Assert.Contains("tester-pass-start-status", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("controlled-tester-pass", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("mailbox-evidence-missing", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("feedback-triage-evidence-missing", humanGateHandoffScript, StringComparison.Ordinal);
         Assert.Contains("www.darwinlingua.com", humanGateHandoffScript, StringComparison.Ordinal);
         Assert.Contains("Authorised IPs", humanGateHandoffScript, StringComparison.Ordinal);
         Assert.Contains("Do not paste Brevo API keys or webhook tokens", humanGateHandoffScript, StringComparison.Ordinal);
@@ -137,6 +140,7 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("unrecognised IP address", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("TrimEnd(\".\")", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("brevoReadinessCheckStatus", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Brevo readiness check status", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("mailbox-rendering-review-packet", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("pwa-installability", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("web-tester-runs", externalActionPacketScript, StringComparison.Ordinal);

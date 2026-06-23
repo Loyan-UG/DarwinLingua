@@ -59,12 +59,14 @@ This confirms that the public legal/support pages render from `https://darwinlin
 
 - Web: `https://darwinlingua.com`
 - API: `https://api.darwinlingua.com/health`
-- `www.darwinlingua.com` is not a required host unless it is intentionally configured later.
+- `www.darwinlingua.com` is configured only as a canonical redirect to `https://darwinlingua.com`; it is not a separate required product host and must not appear in action links.
 
 ## Gate Closure Rule
 
 Do not mark a gate as passed unless the evidence was actually reviewed.
 The manual report also keeps a gate open when a passing status is supplied without the required evidence path, for example mailbox rendering without a CSV, PWA review without worksheet evidence, or tester-pass status without a tester bundle. This is intentional: readiness must be backed by reviewable evidence, not only by a status label.
+
+Evidence-specific open gate keys include `mailbox-evidence-missing`, `pwa-desktop-evidence-missing`, `pwa-android-evidence-missing`, `tester-bundle-missing`, and `feedback-triage-evidence-missing`.
 
 Allowed non-passing statuses must remain visible:
 
