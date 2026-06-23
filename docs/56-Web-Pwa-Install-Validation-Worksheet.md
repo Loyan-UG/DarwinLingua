@@ -16,19 +16,19 @@ Latest local validation evidence can be captured in:
 ## Build Under Test
 
 - Build commit: current working tree after Web readiness/account/legal/email/PWA fixes
-- Validation date: 2026-06-19
+- Validation date: 2026-06-23
 - Validator: local automated smoke
 - Browser: Google Chrome desktop, headless Chromium via `puppeteer-core`
 - OS: Windows local development machine
-- Deployment URL: `https://localhost:7501`
+- Deployment URL: `https://darwinlingua.com`
 
 Latest local evidence:
 
-- `DarwinLingua.Web` build passed after the Web readiness changes.
-- `tools/Web/New-WebPwaInstallabilityReport.ps1` regenerated `artifacts/installability-report.json` with `17` passed automated checks, `0` failed checks, and `2` manual checks.
-- Local HTTPS smoke returned HTTP 200 for `/`, `/manifest.webmanifest`, `/sw.js`, `/offline.html`, and `/images/logo.png`.
-- Desktop Chromium loaded the home page, parsed the manifest, registered the service worker at `https://localhost:7501/`, created cache `darwin-lingua-shell-v3`, and cached `/offline.html`.
-- With the Web host intentionally stopped after online load, desktop Chromium navigated to `/offline-smoke-check` and rendered cached `Offline - Darwin Lingua`.
+- `tools/Web/Start-WebPublicDevStack.ps1 -StopExisting` passed public routed smoke for `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
+- `tools/Web/New-WebPwaInstallabilityReport.ps1 -WebUrl https://darwinlingua.com -OutputPath artifacts/validation/pwa-installability/pwa-installability-darwinlingua-20260623.json` regenerated the current public-domain PWA report with `17` passed automated checks, `0` failed checks, and `2` manual checks.
+- Public HTTPS smoke returned HTTP 200 for `/`, `/manifest.webmanifest`, `/offline.html`, `/images/logo.png`, and all manifest icons.
+- Desktop Chromium loaded the public home page, parsed the manifest, registered the service worker at `https://darwinlingua.com/`, created cache `darwin-lingua-shell-v3`, and cached `/offline.html`.
+- The public-domain report observed the install prompt event in headless Chromium, but real prompt acceptance remains a manual browser action.
 - 2026-06-19 follow-up fixed a homepage missing collection image (`/images/collections/basic-communication-daily-life.svg`) and disabled htmx inline indicator style injection through `htmx-config`; the refreshed PWA report no longer shows CSP inline-style errors or 404 asset errors.
 
 ---
@@ -51,7 +51,7 @@ Latest local evidence:
 - [ ] click `Install`
 - [ ] verify the browser install prompt appears
 - [ ] complete installation
-- Result: Automated prompt availability passed; manual prompt acceptance remains open.
+- Result: Automated prompt availability passed on `https://darwinlingua.com`; manual prompt acceptance remains open.
 - Notes: Headless Chromium cannot accept the real browser install prompt. Validate on desktop Chrome/Edge with a visible browser session.
 
 ---
@@ -74,8 +74,8 @@ Latest local evidence:
 - [ ] relaunch the installed app
 - [x] verify the shell still loads
 - [x] verify previously cached assets do not break navigation
-- Result: Passed for service-worker shell fallback in desktop Chromium.
-- Notes: The local smoke stopped the Web host instead of completing a real installed-app relaunch. Install prompt acceptance and installed-window behavior remain part of sections A and B.
+- Result: Passed for public-domain service-worker shell caching and offline shell response in desktop Chromium.
+- Notes: The automated report validates service-worker readiness and offline shell assets. Real installed-app relaunch remains part of sections A and B.
 
 ---
 
@@ -94,4 +94,4 @@ Latest local evidence:
 
 - Known issues accepted:
 - Follow-up tasks filed: manual target-browser install acceptance on Desktop Chrome/Edge and Android Chrome.
-- Final PWA-install readiness recommendation: automated PWA shell readiness is green; do not block Web tester onboarding on headless prompt acceptance, but complete the two manual install checks before treating PWA as production signed off.
+- Final PWA-install readiness recommendation: automated PWA shell readiness is green on `https://darwinlingua.com`; do not block Web tester onboarding on headless prompt acceptance, but complete the two manual install checks before treating PWA as production signed off.
