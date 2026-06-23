@@ -463,6 +463,38 @@ public sealed class TransactionalEmailBrevoTests
     }
 
     [Fact]
+    public void BrevoWebhookConfigurationCheckTool_ShouldVerifyProviderWebhookWithoutPrintingSecrets()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-BrevoWebhookConfigurationCheck.ps1"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+        string operationsChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/74-Production-Operations-Setup-Checklist.md"));
+
+        Assert.Contains("/v3/webhooks", script, StringComparison.Ordinal);
+        Assert.Contains("ExpectedWebhookUrl", script, StringComparison.Ordinal);
+        Assert.Contains("https://darwinlingua.com/webhooks/brevo/transactional-email", script, StringComparison.Ordinal);
+        Assert.Contains("targetWebhookAuthType", script, StringComparison.Ordinal);
+        Assert.Contains("bearer", script, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("configuredWebhookSecretPresent", script, StringComparison.Ordinal);
+        Assert.Contains("proxyOpen", script, StringComparison.Ordinal);
+        Assert.Contains("uniqueProxyOpen", script, StringComparison.Ordinal);
+        Assert.Contains("error", script, StringComparison.Ordinal);
+        Assert.Contains("It does not store the Brevo API key", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-webhook-configuration-check", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+
+        Assert.Contains("Invoke-BrevoWebhookConfigurationCheck.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoWebhookConfigurationCheck.ps1", operationsChecklist, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void BrevoRealDeliverySmokeTool_ShouldGateRealSendingAndWriteEvidence()
     {
         string repositoryRoot = FindRepositoryRoot();
