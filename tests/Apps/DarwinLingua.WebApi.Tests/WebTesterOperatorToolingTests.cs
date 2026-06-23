@@ -91,6 +91,9 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("requiredWwwHost = $false", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("does not approve broad public launch", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("artifacts/validation/brevo-webhook-configuration-check", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-manual-evidence-audit", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("manual-evidence-safety", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("blockerCount", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("93-Web-Human-Gate-Handoff.md", documentationIndex, StringComparison.Ordinal);
         Assert.Contains("New-WebHumanGateHandoff.ps1", humanGateHandoff, StringComparison.Ordinal);
         Assert.Contains("New-WebControlledTesterReadinessAudit.ps1", humanGateHandoffScript, StringComparison.Ordinal);
@@ -106,6 +109,8 @@ public sealed class WebTesterOperatorToolingTests
         Assert.DoesNotContain("98959d34", humanGateHandoffScript, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("New-WebExternalActionPacket.ps1", humanGateHandoff, StringComparison.Ordinal);
         Assert.Contains("Invoke-BrevoWebhookConfigurationCheck.ps1", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Test-WebManualExternalEvidence.ps1", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("FailOnIssue", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("Authorised IPs", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("ErrorDetails.Message", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("unrecognised IP address", externalActionPacketScript, StringComparison.Ordinal);

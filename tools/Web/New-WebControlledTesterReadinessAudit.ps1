@@ -145,6 +145,15 @@ $automatedGates.Add((New-Gate `
     -EvidencePath $(if ($operationsFile) { $operationsFile.FullName } else { "" }) `
     -Message "Operations bootstrap must verify Web/API health, local secrets presence, required tables, and Brevo event columns.")) | Out-Null
 
+$manualEvidenceFile = Get-LatestJsonReport -RelativeDirectory "artifacts/validation/web-manual-evidence-audit"
+$manualEvidence = Read-JsonReport -File $manualEvidenceFile
+$manualEvidenceBlockerCount = if ($manualEvidence) { [int](Get-PropertyValue -Object $manualEvidence -Name "blockerCount") } else { -1 }
+$automatedGates.Add((New-Gate `
+    -Key "manual-evidence-safety" `
+    -Status $(if ($manualEvidence -and $manualEvidenceBlockerCount -eq 0) { "pass" } else { "fail" }) `
+    -EvidencePath $(if ($manualEvidenceFile) { $manualEvidenceFile.FullName } else { "" }) `
+    -Message "Manual mailbox evidence must be structurally safe and free of raw tokens, provider ids, diagnostic hashes, old domains, or www links.")) | Out-Null
+
 $brevoReadinessFile = Get-LatestJsonReport -RelativeDirectory "artifacts/validation/brevo-readiness"
 $brevoReadiness = Read-JsonReport -File $brevoReadinessFile
 $automatedGates.Add((New-Gate `

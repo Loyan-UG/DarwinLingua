@@ -84,7 +84,8 @@ function Get-LatestDirectory {
 }
 
 if ($GenerateFreshAudit) {
-    & (Join-Path $scriptRoot "New-WebControlledTesterReadinessAudit.ps1") -FailOnAutomatedFailure | Out-Host
+    & (Join-Path $scriptRoot "Test-WebManualExternalEvidence.ps1") -FailOnIssue | Out-Host
+    & (Join-Path $scriptRoot "New-WebControlledTesterReadinessAudit.ps1") | Out-Host
     & (Join-Path $scriptRoot "New-WebLegalSurfaceAudit.ps1") -FailOnIssue | Out-Host
 }
 
