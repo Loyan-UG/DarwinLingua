@@ -145,6 +145,14 @@ $automatedGates.Add((New-Gate `
     -EvidencePath $(if ($operationsFile) { $operationsFile.FullName } else { "" }) `
     -Message "Operations bootstrap must verify Web/API health, local secrets presence, required tables, and Brevo event columns.")) | Out-Null
 
+$tlsSecurityFile = Get-LatestJsonReport -RelativeDirectory "artifacts/validation/web-tls-security-surface"
+$tlsSecurity = Read-JsonReport -File $tlsSecurityFile
+$automatedGates.Add((New-Gate `
+    -Key "tls-security-surface" `
+    -Status $(if ($tlsSecurity -and $tlsSecurity.passed -eq $true) { "pass" } else { "fail" }) `
+    -EvidencePath $(if ($tlsSecurityFile) { $tlsSecurityFile.FullName } else { "" }) `
+    -Message "Public Web/API TLS, GET/HEAD health checks, and core security headers must pass.")) | Out-Null
+
 $manualEvidenceFile = Get-LatestJsonReport -RelativeDirectory "artifacts/validation/web-manual-evidence-audit"
 $manualEvidence = Read-JsonReport -File $manualEvidenceFile
 $manualEvidenceBlockerCount = if ($manualEvidence) { [int](Get-PropertyValue -Object $manualEvidence -Name "blockerCount") } else { -1 }

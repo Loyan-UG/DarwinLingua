@@ -41,6 +41,9 @@ public sealed class WebTesterOperatorToolingTests
         string manualEvidenceAuditScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/Test-WebManualExternalEvidence.ps1"));
+        string tlsSecurityAuditScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Test-WebTlsSecuritySurface.ps1"));
         string documentationIndex = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "docs/00-Documentation-Index.md"));
@@ -91,6 +94,8 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("requiredWwwHost = $false", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("does not approve broad public launch", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("artifacts/validation/brevo-webhook-configuration-check", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-tls-security-surface", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("tls-security-surface", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("artifacts/validation/web-manual-evidence-audit", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("manual-evidence-safety", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("blockerCount", controlledTesterAuditScript, StringComparison.Ordinal);
@@ -111,6 +116,7 @@ public sealed class WebTesterOperatorToolingTests
         Assert.DoesNotContain("98959d34", humanGateHandoffScript, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("New-WebExternalActionPacket.ps1", humanGateHandoff, StringComparison.Ordinal);
         Assert.Contains("Invoke-BrevoWebhookConfigurationCheck.ps1", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Test-WebTlsSecuritySurface.ps1", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("Test-WebManualExternalEvidence.ps1", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("FailOnIssue", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("Authorised IPs", externalActionPacketScript, StringComparison.Ordinal);
@@ -136,6 +142,15 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("lingua\\.vafadar\\.pro", manualEvidenceAuditScript, StringComparison.Ordinal);
         Assert.DoesNotContain("xkeysib-", manualEvidenceAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", manualEvidenceAuditScript, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("https://darwinlingua.com", tlsSecurityAuditScript, StringComparison.Ordinal);
+        Assert.Contains("https://api.darwinlingua.com/health", tlsSecurityAuditScript, StringComparison.Ordinal);
+        Assert.Contains("HttpMethods.Head", File.ReadAllText(Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.WebApi/Program.cs")), StringComparison.Ordinal);
+        Assert.Contains("Strict-Transport-Security", tlsSecurityAuditScript, StringComparison.Ordinal);
+        Assert.Contains("Content-Security-Policy", tlsSecurityAuditScript, StringComparison.Ordinal);
+        Assert.Contains("ssl_verify_result", tlsSecurityAuditScript, StringComparison.Ordinal);
+        Assert.Contains("requiredWwwHost = $false", tlsSecurityAuditScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", tlsSecurityAuditScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", tlsSecurityAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("xkeysib-", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
     }
