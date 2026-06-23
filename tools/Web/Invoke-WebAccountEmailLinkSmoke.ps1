@@ -219,7 +219,7 @@ function Get-BrevoSentEmailContent {
     $encodedRecipientEmail = if ([string]::IsNullOrWhiteSpace($RecipientEmail)) { "" } else { [System.Uri]::EscapeDataString($RecipientEmail.Trim()) }
     $uuid = $null
     $lastShape = ""
-    for ($attempt = 1; $attempt -le 6 -and [string]::IsNullOrWhiteSpace($uuid); $attempt++) {
+    for ($attempt = 1; $attempt -le 12 -and [string]::IsNullOrWhiteSpace($uuid); $attempt++) {
         if ($attempt -gt 1) {
             Start-Sleep -Seconds 5
         }
@@ -327,6 +327,18 @@ function Get-LinkFromEmailBody {
         }
     }
 
+    $pathPattern = [regex]::Escape($PathFragment)
+    $plainUrlMatches = [regex]::Matches(
+        $decodedBody,
+        "https?://[^\s<>`"'']*$pathPattern[^\s<>`"'']*",
+        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    foreach ($match in $plainUrlMatches) {
+        $candidate = [System.Net.WebUtility]::HtmlDecode($match.Value).Trim()
+        if ($candidate.Contains($PathFragment, [StringComparison]::OrdinalIgnoreCase)) {
+            return $candidate
+        }
+    }
+
     throw "Expected email action link containing '$PathFragment' was not found."
 }
 
@@ -422,8 +434,19 @@ $registerResponse = Invoke-FormPost -Session $session -Url "$normalizedWebBaseUr
 
 Start-Sleep -Seconds 3
 $registrationLog = Get-LatestDeliveryLog -ScenarioKey "Account.EmailConfirmation" -RunStartedAtUtc $runStartedAtText
-$registrationContent = Get-BrevoSentEmailContent -MessageId ([string]$registrationLog.ProviderMessageId) -RecipientEmail $registrationEmail -BrevoApiBaseUrl $brevoApiBaseUrl -Headers $headers
-$confirmationLink = Get-LinkFromEmailBody -Body $registrationContent.body -PathFragment "/Identity/Account/ConfirmEmail"
+$resendStartedAtUtc = (Get-Date).ToUniversalTime()
+$resendStartedAtText = $resendStartedAtUtc.ToString("O")
+$resendPage = Invoke-WebRequest -Uri "$normalizedWebBaseUrl/Identity/Account/ResendEmailConfirmation" -WebSession $session -MaximumRedirection 5
+$resendToken = Get-AntiForgeryToken -Html $resendPage.Content
+$resendResponse = Invoke-FormPost -Session $session -Url "$normalizedWebBaseUrl/Identity/Account/ResendEmailConfirmation" -Body @{
+    "__RequestVerificationToken" = $resendToken
+    "Input.Email" = $registrationEmail
+}
+
+Start-Sleep -Seconds 3
+$resendConfirmationLog = Get-LatestDeliveryLog -ScenarioKey "Account.EmailConfirmation" -RunStartedAtUtc $resendStartedAtText
+$resendConfirmationContent = Get-BrevoSentEmailContent -MessageId ([string]$resendConfirmationLog.ProviderMessageId) -RecipientEmail $registrationEmail -BrevoApiBaseUrl $brevoApiBaseUrl -Headers $headers
+$confirmationLink = Get-LinkFromEmailBody -Body $resendConfirmationContent.body -PathFragment "/Identity/Account/ConfirmEmail"
 $confirmResponse = Invoke-WebRequest -Uri $confirmationLink -WebSession $session -MaximumRedirection 5 -SkipHttpErrorCheck
 
 $registrationEmailSql = ConvertTo-PostgresSqlLiteral -Value $registrationEmail
@@ -498,6 +521,8 @@ $linkHashes = [ordered]@{
 
 $checks = [ordered]@{
     registrationHttpStatus = [int]$registerResponse.StatusCode
+    resendConfirmationHttpStatus = [int]$resendResponse.StatusCode
+    resendConfirmationLogged = -not [string]::IsNullOrWhiteSpace([string]$resendConfirmationLog.ProviderMessageId)
     confirmationLinkResolved = $confirmResponse.StatusCode -ge 200 -and $confirmResponse.StatusCode -lt 400
     emailConfirmed = $emailConfirmed -eq "true"
     forgotPasswordHttpStatus = [int]$forgotResponse.StatusCode
@@ -511,7 +536,8 @@ $checks = [ordered]@{
 }
 
 $logs = @(
-    [ordered]@{ scenario = "Account.EmailConfirmation"; messageIdPreview = Get-MessageIdPreview -MessageId ([string]$registrationLog.ProviderMessageId); messageIdSha256 = (ConvertTo-Sha256 -Value ([string]$registrationLog.ProviderMessageId)).Substring(0, 16) },
+    [ordered]@{ scenario = "Account.EmailConfirmation.Register"; messageIdPreview = Get-MessageIdPreview -MessageId ([string]$registrationLog.ProviderMessageId); messageIdSha256 = (ConvertTo-Sha256 -Value ([string]$registrationLog.ProviderMessageId)).Substring(0, 16) },
+    [ordered]@{ scenario = "Account.EmailConfirmation.Resend"; messageIdPreview = Get-MessageIdPreview -MessageId ([string]$resendConfirmationLog.ProviderMessageId); messageIdSha256 = (ConvertTo-Sha256 -Value ([string]$resendConfirmationLog.ProviderMessageId)).Substring(0, 16) },
     [ordered]@{ scenario = "Account.PasswordReset"; messageIdPreview = Get-MessageIdPreview -MessageId ([string]$resetLog.ProviderMessageId); messageIdSha256 = (ConvertTo-Sha256 -Value ([string]$resetLog.ProviderMessageId)).Substring(0, 16) },
     [ordered]@{ scenario = "Account.PasswordResetCompleted"; messageIdPreview = Get-MessageIdPreview -MessageId ([string]$resetCompletedLog.ProviderMessageId); messageIdSha256 = (ConvertTo-Sha256 -Value ([string]$resetCompletedLog.ProviderMessageId)).Substring(0, 16) },
     [ordered]@{ scenario = "Account.EmailChangeConfirmation"; messageIdPreview = Get-MessageIdPreview -MessageId ([string]$changeConfirmationLog.ProviderMessageId); messageIdSha256 = (ConvertTo-Sha256 -Value ([string]$changeConfirmationLog.ProviderMessageId)).Substring(0, 16) },

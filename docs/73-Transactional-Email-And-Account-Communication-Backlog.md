@@ -346,12 +346,12 @@ Transactional email must be provider-independent and testable. Do not couple bus
 - [x] define `IEmailDeliveryLogRepository` or equivalent persistence boundary
 - [x] define email provider options and validation
 - [x] define environment-specific behavior for development, staging, and production
-- [-] define background sending boundary if synchronous sending becomes unreliable
+- [x] define background sending boundary if synchronous sending becomes unreliable
 - [x] define retry policy and non-retryable failure handling
 - [x] define cancellation-token support for all email operations
 - [x] define correlation/request id storage for diagnostics
 
-Current boundary: transactional emails are still sent synchronously with retry handling, while a hosted failure monitor watches delivery logs and notifies admins when repeated provider failures exceed the configured threshold. A durable background queue should be added only if request-path sending becomes unreliable under production load.
+Current boundary: transactional emails are still sent synchronously with retry handling, while a hosted failure monitor watches delivery logs and notifies admins when repeated provider failures exceed the configured threshold. A durable background queue is intentionally deferred until request-path sending becomes unreliable under production load; this is a documented operational boundary, not an active v1 implementation gap.
 
 ### Provider Strategy
 
@@ -410,7 +410,7 @@ Suggested fields:
 - [x] define email delivery status enum
 - [x] define email scenario keys
 - [x] define email delivery log entity
-- [-] define EF Core mapping and migration
+- [x] define EF Core mapping and migration
 - [x] define retention policy for delivery logs
 - [x] avoid storing sensitive token values in logs
 - [x] avoid logging full reset/confirmation URLs
@@ -638,9 +638,12 @@ Current automated coverage is intentionally split between Web account-flow struc
 
 - [x] registration sends confirmation email
   - Evidence: `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` verifies public registration creates a Brevo-backed `Account.EmailConfirmation` delivery log; `tools/Web/Invoke-WebAccountEmailLinkSmoke.ps1` additionally confirms the real action link.
-- [ ] resend confirmation sends a new confirmation email
-- [ ] confirmed user can access confirmed-only flows
-- [ ] unconfirmed user is blocked from confirmed-only flows
+- [x] resend confirmation sends a new confirmation email
+  - Evidence: `WebAccountAuthenticationWorkflowTests.ConfirmationAndRecoveryWorkflow_ShouldUseSafeTokensRateLimitsAndEnumerationResistantRedirects` verifies the resend page generates a new confirmation token and calls `SendEmailConfirmationAsync`; `Invoke-WebAccountEmailLinkSmoke.ps1` now posts the resend form before confirming the account, reads the resend delivery through Brevo's sent-email content API, and uses the resent confirmation link for the final confirmation step.
+- [x] confirmed user can access confirmed-only flows
+  - Evidence: `WebAccountAuthenticationWorkflowTests.LoginWorkflow_ShouldNormalizeReturnUrlAndHandleConfirmedLockoutAndNotAllowedStates` verifies confirmed sign-in continues through `PasswordSignInAsync` and successful local redirect.
+- [x] unconfirmed user is blocked from confirmed-only flows
+  - Evidence: the same workflow test verifies unconfirmed valid-credential users are redirected to `/Account/UnconfirmedAccount`, and `Program.cs` requires confirmed accounts for Web sign-in.
 - [x] password reset request returns neutral response for existing and non-existing emails
   - Evidence: `WebAccountAuthenticationWorkflowTests` verifies forgot-password redirects to the same confirmation page for blocked, unknown, unconfirmed, and valid confirmed-user flows; `docs/61-Web-Release-Checklist.md` records the same anti-enumeration evidence.
 - [x] password reset token resets password successfully
@@ -652,12 +655,13 @@ Current automated coverage is intentionally split between Web account-flow struc
 - [x] email change sends confirmation to new email
 - [x] successful email change notifies old email
   - Evidence: the same action-link smoke changed the test account email, consumed the new-email confirmation link, and verified the old-email notification log.
-- [ ] rate limit prevents abusive repeated reset/resend attempts
+- [x] rate limit prevents abusive repeated reset/resend attempts
+  - Evidence: `WebAccountAuthenticationWorkflowTests.ConfirmationAndRecoveryWorkflow_ShouldUseSafeTokensRateLimitsAndEnumerationResistantRedirects` verifies forgot-password and resend-confirmation both use IP and recipient rate-limit buckets; `AccountEmailRateLimiterTests` verifies the shared limiter blocks repeated attempts for the same purpose/key while keeping separate buckets independent.
 
 ### Manual Validation
 
 - [x] registration email received in development sink
-  - Evidence: file-sink/development rendering remains covered by `TransactionalEmailTemplateRenderer_ShouldRenderEveryScenarioInEnglishAndGerman`; current controlled public testing now uses Brevo real delivery rather than the development sink as the release gate.
+  - Evidence: `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml` verifies development file mode writes a local `.eml` with scenario, recipient, plain body, and HTML body; current controlled public testing uses Brevo real delivery as the release gate.
 - [x] registration email received in staging inbox
   - Evidence: `Invoke-BrevoRealDeliverySmoke.ps1` and `Invoke-WebAccountEmailFlowSmoke.ps1` sent real registration-confirmation messages through Brevo; `Invoke-WebAccountEmailLinkSmoke.ps1` then read the delivered Brevo content and completed the real confirmation link.
 - [x] confirmation link works from desktop browser
@@ -666,8 +670,10 @@ Current automated coverage is intentionally split between Web account-flow struc
 - [x] password reset link works from desktop browser
   - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` resolved and completed the real Brevo-tracked reset flow.
 - [ ] password reset link works from mobile browser
-- [ ] German email template renders correctly
-- [ ] English email template renders correctly
+- [x] German email template renders correctly
+  - Evidence: `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies German account-confirmation subject/body rendering for `de-DE`; broader development file-sink rendering is covered by `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml`.
+- [x] English email template renders correctly
+  - Evidence: `TransactionalEmailTemplateRenderer_ShouldRenderEnglishGermanAndFallbackSafely` verifies English subject/body rendering, value substitution, HTML encoding, and fallback behavior; broader development file-sink rendering is covered by `TransactionalEmailBrevoTests.SendAsync_FileMode_WritesDevelopmentSinkEml`.
 - [ ] dark-mode email clients remain readable if HTML email is used
 - [x] links use the correct public base URL
   - Evidence: `Invoke-WebAccountEmailLinkSmoke.ps1` confirms the resolved action links target `https://darwinlingua.com`; the report stores hashes, not full recovery URLs or tokens.

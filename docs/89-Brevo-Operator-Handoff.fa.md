@@ -236,10 +236,10 @@ artifacts/validation/brevo-real-delivery-smoke/
 این ابزار لینک کامل، token، reset code، API key، webhook secret یا provider message id کامل را در گزارش ذخیره نمی‌کند. فقط hash کوتاه و نتیجه‌ی pass/fail را ثبت می‌کند. مسیر evidence فعلی:
 
 ```text
-artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-153300.md
+artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-160148.md
 ```
 
-این ابزار از صفحه‌ی public ثبت‌نام و صفحه‌ی public فراموشی رمز استفاده می‌کند، anti-forgery token را از HTML می‌خواند، یک کاربر تستی timestamped می‌سازد، برای یک کاربر موجود password reset می‌فرستد، و سپس در PostgreSQL بررسی می‌کند که `WebEmailDeliveryLogs` برای `Account.EmailConfirmation` و `Account.PasswordReset` provider برابر `brevo-api` و provider message id داشته باشد. گزارش آن در این مسیر ذخیره می‌شود:
+این ابزار از صفحه‌ی public ثبت‌نام، صفحه‌ی public resend confirmation، صفحه‌ی public فراموشی رمز، و صفحه‌ی تغییر ایمیل استفاده می‌کند، anti-forgery token را از HTML می‌خواند، یک کاربر تستی timestamped می‌سازد، ایمیل resend confirmation را از Brevo content API می‌خواند، همان لینک جدید را برای confirm مصرف می‌کند، password reset را کامل می‌کند، و سپس تغییر ایمیل را هم با لینک واقعی Brevo تأیید می‌کند. در PostgreSQL و گزارش خروجی، فقط وضعیت، hash کوتاه، و provider message id hash ذخیره می‌شود؛ لینک کامل، token، reset code، API key، webhook secret و provider message id کامل ذخیره نمی‌شود. گزارش خلاصه‌ی app-level delivery بدون مصرف لینک‌ها همچنان در این مسیر ذخیره می‌شود:
 
 ```text
 artifacts/validation/web-account-email-smoke/

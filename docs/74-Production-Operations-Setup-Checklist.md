@@ -61,7 +61,7 @@ Local development helper:
 - [x] Run `tools/Web/Invoke-BrevoRealDeliverySmoke.ps1 -RecipientEmail "info@darwinlingua.com" -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted -ConfirmSend` and archive the generated `artifacts/validation/brevo-real-delivery-smoke/` report.
 - [x] Run `tools/Web/Invoke-WebAccountEmailFlowSmoke.ps1` against `https://darwinlingua.com` and archive the generated `artifacts/validation/web-account-email-smoke/` report.
 - [x] Run `tools/Web/Invoke-WebAccountEmailLinkSmoke.ps1` against `https://darwinlingua.com` and archive the generated `artifacts/validation/web-account-email-link-smoke/` report.
-  - Evidence: the 2026-06-23 report `web-account-email-link-smoke-20260623-153300.md` passed registration confirmation, password reset, reset-success notification, change-email confirmation, and old-email notification using Brevo's sent-email content API. The report stores only hashes/previews and explicitly avoids full action URLs, tokens, API keys, webhook secrets, and full provider message ids.
+  - Evidence: the 2026-06-23 report `web-account-email-link-smoke-20260623-160148.md` passed registration, resend-confirmation delivery, confirmation through the resent link, password reset, reset-success notification, change-email confirmation, and old-email notification using Brevo's sent-email content API. The report stores only hashes/previews and explicitly avoids full action URLs, tokens, API keys, webhook secrets, and full provider message ids.
 - [ ] Manually confirm the two smoke messages reached `info@darwinlingua.com` and render correctly in the actual mailbox.
 - [x] Confirm webhook calls reach the public HTTPS origin.
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` posts a controlled `hardBounce` event to `https://darwinlingua.com/webhooks/brevo/transactional-email` with Bearer token authentication and writes evidence under `artifacts/validation/brevo-webhook-suppression-smoke/`. The 2026-06-23 run returned HTTP 200.
@@ -142,7 +142,7 @@ Local development helper:
 
 - [x] Register a test learner and confirm the email is sent through Brevo.
 - [x] Confirm the registration email link works.
-  - Evidence: `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-153300.md` resolved the Brevo-tracked confirmation link, followed the final `https://darwinlingua.com` Identity confirmation URL, and verified `EmailConfirmed=true` for the test account.
+  - Evidence: `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-160148.md` resolved the resent Brevo confirmation link, followed the final `https://darwinlingua.com` Identity confirmation URL, and verified `EmailConfirmed=true` for the test account.
 - [x] Request a password reset and confirm the email is sent through Brevo.
 - [x] Complete password reset and confirm the success notification is received.
   - Evidence: the same public link smoke resolved the real password-reset link, posted a new password, logged in with the reset password, and verified `Account.PasswordResetCompleted` was logged through the configured email provider.

@@ -515,6 +515,7 @@ public sealed class TransactionalEmailBrevoTests
             "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
 
         Assert.Contains("/Identity/Account/Register", script, StringComparison.Ordinal);
+        Assert.Contains("/Identity/Account/ResendEmailConfirmation", script, StringComparison.Ordinal);
         Assert.Contains("/Identity/Account/ConfirmEmail", script, StringComparison.Ordinal);
         Assert.Contains("/Identity/Account/ForgotPassword", script, StringComparison.Ordinal);
         Assert.Contains("/Identity/Account/ResetPassword", script, StringComparison.Ordinal);
@@ -525,6 +526,7 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("/v3/smtp/emails/$encodedUuid", script, StringComparison.Ordinal);
         Assert.Contains("AllowAutoRedirect = $false", script, StringComparison.Ordinal);
         Assert.Contains("Account.EmailConfirmation", script, StringComparison.Ordinal);
+        Assert.Contains("resendConfirmationLogged", script, StringComparison.Ordinal);
         Assert.Contains("Account.PasswordReset", script, StringComparison.Ordinal);
         Assert.Contains("Account.PasswordResetCompleted", script, StringComparison.Ordinal);
         Assert.Contains("Account.EmailChangeConfirmation", script, StringComparison.Ordinal);

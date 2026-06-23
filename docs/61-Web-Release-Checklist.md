@@ -131,11 +131,11 @@ This section is a release blocker. See `73-Transactional-Email-And-Account-Commu
 - [x] confirmation callback works
   - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies the confirmation callback decodes Base64Url tokens, handles malformed tokens safely, and calls `ConfirmEmailAsync`.
 - [x] resend confirmation flow works
-  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies resend confirmation rate limiting, token generation, confirmation email sending, and enumeration-resistant redirect to `/Account/CheckEmail`.
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies resend confirmation rate limiting, token generation, confirmation email sending, and enumeration-resistant redirect to `/Account/CheckEmail`. 2026-06-23 public link smoke `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-160148.md` posted the resend form, verified `resendConfirmationLogged=True`, and confirmed the account through the resent Brevo email link.
 - [x] forgot-password request works without account enumeration
   - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies forgot-password IP/email rate limits, redirects to `/Account/ForgotPasswordConfirmation` for blocked or unknown/unconfirmed accounts, and only sends reset emails for confirmed users. Public smoke returned HTTP 200 for `/Identity/Account/ForgotPassword`. 2026-06-23 app-level public smoke `artifacts/validation/web-account-email-smoke/web-account-email-smoke-20260623-070951.md` requested password reset through `https://darwinlingua.com` and logged `Account.PasswordReset` through provider `brevo-api` with a provider message id.
 - [x] password reset link works
-  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies reset links decode Base64Url tokens and call `ResetPasswordAsync`.
+  - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies reset links decode Base64Url tokens and call `ResetPasswordAsync`. 2026-06-23 public link smoke `artifacts/validation/web-account-email-link-smoke/web-account-email-link-smoke-20260623-160148.md` resolved the real Brevo password-reset email content, submitted a new password, and logged in with the reset password.
 - [x] expired and invalid reset tokens fail safely
   - Evidence: 2026-06-18 `WebAccountAuthenticationWorkflowTests` verifies malformed reset codes and `InvalidToken`/`ExpiredToken` errors render a safe reusable-link error instead of completing the reset.
 - [x] password reset success notification is sent
