@@ -35,6 +35,9 @@ public sealed class WebTesterOperatorToolingTests
         string humanGateHandoffScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebHumanGateHandoff.ps1"));
+        string externalActionPacketScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebExternalActionPacket.ps1"));
         string documentationIndex = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "docs/00-Documentation-Index.md"));
@@ -98,6 +101,16 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("Do not paste Brevo API keys or webhook tokens", humanGateHandoffScript, StringComparison.Ordinal);
         Assert.DoesNotContain("xkeysib-", humanGateHandoffScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", humanGateHandoffScript, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("New-WebExternalActionPacket.ps1", humanGateHandoff, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoWebhookConfigurationCheck.ps1", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Authorised IPs", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("mailbox-rendering-review-packet", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("pwa-installability", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("web-tester-runs", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("requiredWwwHost = $false", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Do not paste Brevo API keys", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", externalActionPacketScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", externalActionPacketScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("xkeysib-", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
     }

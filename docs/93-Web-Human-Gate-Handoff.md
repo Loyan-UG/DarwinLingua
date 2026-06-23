@@ -20,6 +20,20 @@ The tool writes timestamped Markdown and JSON reports under:
 artifacts/validation/web-human-gate-handoff/
 ```
 
+For a single operator-facing packet that includes the current Brevo Authorized IP action, mailbox review, PWA install checks, and tester-start gate, run:
+
+```powershell
+.\tools\Web\New-WebExternalActionPacket.ps1 -GenerateFreshAudit -RunBrevoWebhookCheck
+```
+
+The packet is written under:
+
+```text
+artifacts/validation/web-external-action-packet/
+```
+
+Generated packets may include the current IP address that Brevo asks to authorize, but must never include Brevo API keys, webhook tokens, raw action URLs, reset tokens, provider message ids, diagnostic hashes, or full real email bodies.
+
 The generated handoff reads the latest `New-WebControlledTesterReadinessAudit.ps1` evidence and lists the current manual statuses for:
 
 - real mailbox rendering review
