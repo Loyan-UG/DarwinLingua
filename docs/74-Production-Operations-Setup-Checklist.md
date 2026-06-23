@@ -66,7 +66,8 @@ Local development helper:
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` verifies the synthetic delivery row becomes `Failed` with `ProviderLastEvent=hard_bounce` and `FailureCode=brevo:hard_bounce`. `DeliveryLogRepository_ShouldStoreDiagnosticsWithoutEmailBodyOrRecoveryUrl` verifies diagnostic text redacts recovery URLs/tokens before persistence.
 - [x] Confirm permanent Brevo failures create internal hashed suppressions.
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` verifies a `WebEmailSuppressions` row with `Reason=brevo:hard_bounce` and provider `brevo-api` is created for the synthetic recipient hash.
-- [ ] Confirm later sends to a suppressed recipient are logged as `Suppressed`.
+- [x] Confirm later sends to a suppressed recipient are logged as `Suppressed`.
+  - Evidence: `tools/Web/Invoke-BrevoSuppressedSendSmoke.ps1` creates a temporary suppression for a confirmed account, submits `/Identity/Account/ForgotPassword`, verifies a `WebEmailDeliveryLogs` row with `Status=Suppressed`, `FailureCode=recipient-suppressed`, no provider message id, and then removes the temporary suppression. The 2026-06-23 run passed and wrote evidence under `artifacts/validation/brevo-suppressed-send-smoke/`.
 - [ ] Confirm admins can filter suppressions by hash/reason and manually unsuppress only after support review.
 - [ ] Confirm manual suppression changes are Admin-only and appear in application logs.
 - [ ] Confirm manual provider-event recording works for support reconciliation when a webhook event is missing.

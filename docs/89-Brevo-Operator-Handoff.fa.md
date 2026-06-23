@@ -240,6 +240,18 @@ https://darwinlingua.com/webhooks/brevo/transactional-email
 artifacts/validation/brevo-webhook-suppression-smoke/
 ```
 
+بعد از آن، برای اطمینان از اینکه ارسال بعدی به گیرنده‌ی suppress شده واقعاً به Brevo فرستاده نمی‌شود، ابزار زیر را اجرا کنید:
+
+```powershell
+.\tools\Web\Invoke-BrevoSuppressedSendSmoke.ps1
+```
+
+این ابزار برای یک حساب تأییدشده یک suppression موقت می‌سازد، فرم public فراموشی رمز را submit می‌کند، بررسی می‌کند که در `WebEmailDeliveryLogs` یک رکورد با وضعیت `Suppressed` و `FailureCode=recipient-suppressed` ساخته شده و provider message id ندارد، و در پایان suppression موقتی را که خودش ساخته پاک می‌کند. گزارش آن در مسیر زیر ذخیره می‌شود:
+
+```text
+artifacts/validation/brevo-suppressed-send-smoke/
+```
+
 ## تصمیم پیشنهادی فعلی
 
 در این مرحله از توسعه، پیشنهاد این است:

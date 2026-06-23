@@ -492,6 +492,38 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("Invoke-BrevoWebhookSuppressionSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void BrevoSuppressedSendSmokeTool_ShouldExerciseSuppressedSendPathWithoutCallingProvider()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-BrevoSuppressedSendSmoke.ps1"));
+        string emailBacklog = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/73-Transactional-Email-And-Account-Communication-Backlog.md"));
+        string operationsChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/74-Production-Operations-Setup-Checklist.md"));
+
+        Assert.Contains("/Identity/Account/ForgotPassword", script, StringComparison.Ordinal);
+        Assert.Contains("__RequestVerificationToken", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailSuppressions", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailDeliveryLogs", script, StringComparison.Ordinal);
+        Assert.Contains("Account.PasswordReset", script, StringComparison.Ordinal);
+        Assert.Contains("Suppressed", script, StringComparison.Ordinal);
+        Assert.Contains("recipient-suppressed", script, StringComparison.Ordinal);
+        Assert.Contains("delete from \"\"WebEmailSuppressions\"\"", script, StringComparison.Ordinal);
+        Assert.Contains("providerMessageIdStored", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-suppressed-send-smoke", script, StringComparison.Ordinal);
+        Assert.Contains("Recipient value was not printed", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+
+        Assert.Contains("Invoke-BrevoSuppressedSendSmoke.ps1", emailBacklog, StringComparison.Ordinal);
+        Assert.Contains("Invoke-BrevoSuppressedSendSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
+    }
+
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()
     {
         Mode = "BrevoApi",
