@@ -6,13 +6,15 @@ Current scope note: the active Web testing phase uses the primary product domain
 
 ## Secrets and Configuration
 
-- [ ] Store database connection strings in platform secret storage, not repository files.
-- [ ] Set `ConnectionStrings__Identity` for the application database user.
-- [ ] Set `ConnectionStrings__IdentityAdmin` only where bootstrap/admin schema operations are expected.
-- [ ] Set `WebApi__BaseUrl` to the internal or public WebApi origin used by the web host.
-- [ ] Set `WebApi__IgnoreSslErrors=false` outside local development.
-- [ ] Set `IdentityBootstrap__RequireSeedAccounts` according to the environment.
-- [ ] Set seed account emails/passwords only through secret storage when seed accounts are enabled.
+- [x] Store database connection strings in platform secret storage, not repository files.
+  - Evidence: local development connection strings are in `appsettings.Development.Local.json`/secret bundle outside Git; `tools/Web/Invoke-WebOperationsBootstrapCheck.ps1` verifies presence without printing values.
+- [x] Set `ConnectionStrings__Identity` for the application database user.
+- [x] Set `ConnectionStrings__IdentityAdmin` only where bootstrap/admin schema operations are expected.
+- [x] Set `WebApi__BaseUrl` to the internal or public WebApi origin used by the web host.
+- [x] Set `WebApi__IgnoreSslErrors=false` outside local development.
+- [x] Set `IdentityBootstrap__RequireSeedAccounts` according to the environment.
+- [x] Set seed account emails/passwords only through secret storage when seed accounts are enabled.
+  - Evidence: 2026-06-23 `artifacts/validation/web-operations-bootstrap/web-operations-bootstrap-20260623-075413.md` passed `identityConnectionConfigured`, `identityAdminConnectionConfigured`, `webApiBaseUrlConfigured`, `webApiIgnoreSslErrorsFalse`, `identityBootstrapConfigured`, and `seedCredentialsConfiguredWhenRequired`.
 
 Local development helper:
 
@@ -43,7 +45,8 @@ Local development helper:
 - [x] Set `TransactionalEmail__FromName`.
 - [x] Set `TransactionalEmail__ReplyToEmail=support@darwinlingua.com`.
 - [x] Set `TransactionalEmail__SupportEmail=support@darwinlingua.com`.
-- [ ] Set at least one `TransactionalEmail__AdminNotificationEmails__0` recipient.
+- [x] Set at least one `TransactionalEmail__AdminNotificationEmails__0` recipient.
+  - Evidence: 2026-06-23 `web-operations-bootstrap-20260623-075413.md` reports `Admin notification recipients: 1` and `transactionalAdminRecipientConfigured=True` without printing the configured address.
 - [x] Generate a strong random `TransactionalEmail__BrevoWebhookSecret`.
 - [x] Store the webhook secret in platform secret storage.
 - [x] Confirm every environment using `TransactionalEmail__Mode=BrevoApi` has a non-empty webhook secret.
@@ -116,12 +119,13 @@ Local development helper:
 
 ## Database Bootstrap
 
-- [ ] Run WebApi once with the shared server database reachable.
-- [ ] Run Web once with the shared server database reachable.
-- [ ] Confirm Identity tables exist.
-- [ ] Confirm web user-state tables exist.
-- [ ] Confirm `WebEmailDeliveryLogs` exists.
-- [ ] Confirm `WebEmailDeliveryLogs` has Brevo event columns: `ProviderLastEvent`, `ProviderLastEventAtUtc`, `ProviderLastEventReason`.
+- [x] Run WebApi once with the shared server database reachable.
+- [x] Run Web once with the shared server database reachable.
+- [x] Confirm Identity tables exist.
+- [x] Confirm web user-state tables exist.
+- [x] Confirm `WebEmailDeliveryLogs` exists.
+- [x] Confirm `WebEmailDeliveryLogs` has Brevo event columns: `ProviderLastEvent`, `ProviderLastEventAtUtc`, `ProviderLastEventReason`.
+  - Evidence: 2026-06-23 `tools/Web/Invoke-WebOperationsBootstrapCheck.ps1` passed against `https://darwinlingua.com`, `https://api.darwinlingua.com/health`, and `darwinlingua_shared`. It verified required tables `AspNetUsers`, `WebUserPreferences`, `WebEmailDeliveryLogs`, `WebEmailSuppressions`, `WebPolicyAcceptances`, `UserContentProgress`, plus Brevo event columns `ProviderLastEvent`, `ProviderLastEventAtUtc`, and `ProviderLastEventReason`.
 
 ## Validation
 

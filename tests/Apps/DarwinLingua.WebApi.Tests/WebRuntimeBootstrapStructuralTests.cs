@@ -207,6 +207,35 @@ public sealed class WebRuntimeBootstrapStructuralTests
         Assert.DoesNotContain("eyJh", source, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void WebOperationsBootstrapCheck_ShouldVerifyRuntimeConfigAndDatabaseTablesWithoutPrintingSecrets()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string source = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools",
+            "Web",
+            "Invoke-WebOperationsBootstrapCheck.ps1"));
+
+        Assert.Contains("appsettings.Development.Local.json", source, StringComparison.Ordinal);
+        Assert.Contains("identityConnectionConfigured", source, StringComparison.Ordinal);
+        Assert.Contains("identityAdminConnectionConfigured", source, StringComparison.Ordinal);
+        Assert.Contains("webApiBaseUrlConfigured", source, StringComparison.Ordinal);
+        Assert.Contains("webApiIgnoreSslErrorsFalse", source, StringComparison.Ordinal);
+        Assert.Contains("transactionalAdminRecipientConfigured", source, StringComparison.Ordinal);
+        Assert.Contains("AspNetUsers", source, StringComparison.Ordinal);
+        Assert.Contains("WebEmailDeliveryLogs", source, StringComparison.Ordinal);
+        Assert.Contains("WebEmailSuppressions", source, StringComparison.Ordinal);
+        Assert.Contains("ProviderLastEvent", source, StringComparison.Ordinal);
+        Assert.Contains("ProviderLastEventAtUtc", source, StringComparison.Ordinal);
+        Assert.Contains("ProviderLastEventReason", source, StringComparison.Ordinal);
+        Assert.Contains("https://darwinlingua.com", source, StringComparison.Ordinal);
+        Assert.Contains("https://api.darwinlingua.com/health", source, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-operations-bootstrap", source, StringComparison.Ordinal);
+        Assert.DoesNotContain("Password=@", source, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", source, StringComparison.Ordinal);
+    }
+
     private static string ResolveRepositoryRoot()
     {
         DirectoryInfo? currentDirectory = new(AppContext.BaseDirectory);

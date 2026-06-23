@@ -67,6 +67,13 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 ```
 
 - Confirm the script exits successfully and writes a JSON report under `artifacts/validation/web-tester-preflight/`.
+- Confirm the runtime/database bootstrap check is green:
+
+```powershell
+.\tools\Web\Invoke-WebOperationsBootstrapCheck.ps1
+```
+
+- Confirm it exits successfully and writes a report under `artifacts/validation/web-operations-bootstrap/`.
 - For local operator smoke, also run authenticated admin checks:
 
 ```powershell
