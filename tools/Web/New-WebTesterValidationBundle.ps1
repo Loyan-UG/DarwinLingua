@@ -35,13 +35,14 @@ New-Item -ItemType Directory -Path $runDirectory -Force | Out-Null
 
 $runbookPath = Join-Path $repoRoot "docs\87-Web-Tester-Onboarding-Runbook.md"
 $quickStartPath = Join-Path $repoRoot "docs\88-Web-Tester-Quick-Start.md"
+$manualExternalReviewPath = Join-Path $repoRoot "docs\91-Web-Manual-External-Review-Checklist.md"
 $templatePath = Join-Path $repoRoot "docs\87-Web-Tester-Feedback-Template.csv"
 $testerAccountsTemplatePath = Join-Path $repoRoot "tools\Web\WebTesterAccounts.example.csv"
 $preflightScript = Join-Path $repoRoot "tools\Web\Invoke-WebTesterPreflight.ps1"
 $triageScript = Join-Path $repoRoot "tools\Web\Convert-WebTesterFeedbackToReport.ps1"
 $premiumAccessScript = Join-Path $repoRoot "tools\Web\Set-WebTesterPremiumAccess.ps1"
 
-foreach ($path in @($runbookPath, $quickStartPath, $templatePath, $testerAccountsTemplatePath, $preflightScript, $triageScript, $premiumAccessScript)) {
+foreach ($path in @($runbookPath, $quickStartPath, $manualExternalReviewPath, $templatePath, $testerAccountsTemplatePath, $preflightScript, $triageScript, $premiumAccessScript)) {
     if (-not (Test-Path -LiteralPath $path)) {
         throw "Required file is missing: $path"
     }
@@ -49,6 +50,7 @@ foreach ($path in @($runbookPath, $quickStartPath, $templatePath, $testerAccount
 
 Copy-Item -LiteralPath $runbookPath -Destination (Join-Path $runDirectory "WebTesterOnboardingRunbook.md") -Force
 Copy-Item -LiteralPath $quickStartPath -Destination (Join-Path $runDirectory "TesterQuickStart.md") -Force
+Copy-Item -LiteralPath $manualExternalReviewPath -Destination (Join-Path $runDirectory "ManualExternalReviewChecklist.md") -Force
 Copy-Item -LiteralPath $templatePath -Destination (Join-Path $runDirectory "WebTesterFeedback.csv") -Force
 Copy-Item -LiteralPath $testerAccountsTemplatePath -Destination (Join-Path $runDirectory "WebTesterAccounts.csv") -Force
 
@@ -87,6 +89,7 @@ $readme = @"
 
 - `WebTesterOnboardingRunbook.md`: operator and tester task instructions.
 - `TesterQuickStart.md`: short tester-facing instructions to share directly with testers.
+- `ManualExternalReviewChecklist.md`: operator-only checklist for mailbox rendering, PWA install, and tester-pass start/close evidence.
 - `WebTesterFeedback.csv`: copy this file and add one row per tester observation.
 - `WebTesterAccounts.csv`: operator-only account list for the first wave. Replace sample rows with existing tester account emails before granting Premium.
 - `preflight/`: generated JSON preflight report when preflight is enabled.
@@ -135,6 +138,7 @@ $manifest = [ordered]@{
         "README.md",
         "WebTesterOnboardingRunbook.md",
         "TesterQuickStart.md",
+        "ManualExternalReviewChecklist.md",
         "WebTesterAccounts.csv",
         "WebTesterFeedback.csv"
     )

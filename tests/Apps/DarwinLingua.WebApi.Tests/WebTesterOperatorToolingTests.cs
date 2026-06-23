@@ -17,6 +17,9 @@ public sealed class WebTesterOperatorToolingTests
         string bundleScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebTesterValidationBundle.ps1"));
+        string manualExternalReview = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/91-Web-Manual-External-Review-Checklist.md"));
         string csvTemplate = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/WebTesterAccounts.example.csv"));
@@ -28,8 +31,13 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("tier-changed", script, StringComparison.Ordinal);
         Assert.Contains("Skipped unchanged users", script, StringComparison.Ordinal);
         Assert.Contains("WebTesterAccounts.csv", bundleScript, StringComparison.Ordinal);
+        Assert.Contains("ManualExternalReviewChecklist.md", bundleScript, StringComparison.Ordinal);
         Assert.Contains("Set-WebTesterPremiumAccess.ps1", bundleScript, StringComparison.Ordinal);
         Assert.Contains("operator-only account list", bundleScript, StringComparison.Ordinal);
+        Assert.Contains("Transactional Email Mailbox Review", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("PWA Install Review", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("Controlled Tester Pass Start Gate", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("Do not use `www.darwinlingua.com`", manualExternalReview, StringComparison.Ordinal);
     }
 
     private static string FindRepositoryRoot()
