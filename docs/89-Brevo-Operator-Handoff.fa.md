@@ -98,6 +98,19 @@ unsubscribed
 
 اگر Brevo API هنگام بررسی webhookها یا ارسال تست خطای `unrecognised IP address` داد، IP سرور یا ماشین اجرای تست را در Brevo از مسیر `https://app.brevo.com/security/authorised_ips` به Authorized IPs اضافه کنید. بدون این کار ممکن است API key درست باشد ولی Brevo درخواست را با 401 رد کند.
 
+### منابع رسمی Brevo که مبنای تنظیمات بالا هستند
+
+- `https://help.brevo.com/hc/en-us/articles/27824932835474-Create-outbound-webhooks-to-send-real-time-data-from-Brevo-to-an-external-app`
+  - مسیر جدید UI را توضیح می‌دهد: `Integrations > Webhooks > Add webhook > Outbound webhook`.
+  - برای outbound webhook سه حالت احراز هویت را می‌گوید: بدون احراز هویت، Basic authentication، یا Token authentication.
+  - برای انتخاب event می‌گوید اول `Event category` انتخاب می‌شود و بعد eventهای همان دسته فعال/غیرفعال می‌شوند.
+- `https://developers.brevo.com/docs/secured-webhooks`
+  - روش secure webhook با Bearer token را برای `auth.type = bearer` و `token` توضیح می‌دهد. بنابراین برای Darwin Lingua در UI گزینه‌ی `Token` درست است و مقدار token باید همان secret ذخیره‌شده در برنامه باشد.
+- `https://developers.brevo.com/docs/transactional-webhooks`
+  - لیست eventهای transactional email را توضیح می‌دهد. در UI ممکن است labelها کمی متفاوت باشند، اما برای دسته‌ی `Transactional email` eventهای مهم برای Darwin Lingua همان delivery, bounce, blocked, spam/unsubscribe/open/click و invalid/deferred/error/proxy-open در صورت وجود هستند.
+- `https://help.brevo.com/hc/en-us/articles/208858829-Review-your-transactional-email-reports`
+  - تفاوت عملیاتی `Hard bounce`, `Soft bounce`, `Blocked`, و spam/complaint metrics را توضیح می‌دهد. در گزارش‌های Brevo ممکن است عبارت `Complaint` برای گزارش spam دیده شود، حتی اگر event انتخابی در webhook UI با label `Spam` یا نام نزدیک نمایش داده شود.
+
 ## تنظیماتی که بعد از Brevo باید در برنامه وارد شود
 
 این مقدارها باید بیرون از source control تنظیم شوند:
