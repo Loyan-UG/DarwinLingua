@@ -1,0 +1,65 @@
+# Web Human Gate Handoff
+
+## Purpose
+
+This document defines the final human-gate handoff before the controlled Web tester pass can start.
+
+The automated Web stack can be ready while human gates remain open. This handoff keeps those decisions separate so an operator does not confuse automated readiness with permission to invite testers or launch publicly.
+
+## Generate The Current Handoff
+
+From the repository root:
+
+```powershell
+.\tools\Web\New-WebHumanGateHandoff.ps1 -GenerateFreshAudit
+```
+
+The tool writes timestamped Markdown and JSON reports under:
+
+```text
+artifacts/validation/web-human-gate-handoff/
+```
+
+The generated handoff reads the latest `New-WebControlledTesterReadinessAudit.ps1` evidence and lists the current manual statuses for:
+
+- real mailbox rendering review
+- desktop PWA install acceptance
+- Android PWA install acceptance or explicit out-of-scope decision
+- controlled tester pass start status
+
+## Required Public Hosts
+
+- Web: `https://darwinlingua.com`
+- API: `https://api.darwinlingua.com/health`
+- `www.darwinlingua.com` is not a required host unless it is intentionally configured later.
+
+## Gate Closure Rule
+
+Do not mark a gate as passed unless the evidence was actually reviewed.
+
+Allowed non-passing statuses must remain visible:
+
+- `not-reviewed`
+- `not-started`
+- `failed`
+- `needs-fix-before-invite`
+
+`not-in-scope-for-this-pass` is acceptable only for a browser/device install check that is intentionally excluded from the controlled tester pass. It is not a broad launch sign-off.
+
+## Brevo Authorized IP Note
+
+If Brevo API verification fails with an `unrecognised IP address` error, the operator must add the current machine/server IP in Brevo under `Security` -> `Authorised IPs`, then rerun:
+
+```powershell
+.\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1
+```
+
+Never record Brevo API keys, webhook tokens, raw action URLs, reset tokens, provider message ids, diagnostic hashes, or full real email bodies in Git-tracked files or handoff evidence.
+
+## Relationship To Other Documents
+
+- `91-Web-Manual-External-Review-Checklist.md` is the full manual checklist.
+- `87-Web-Tester-Onboarding-Runbook.md` is the operator runbook for the tester pass.
+- `88-Web-Tester-Quick-Start.md` is the tester-facing brief.
+- `90-Web-Operational-Incident-Runbook.md` covers incidents after the pass starts.
+- `92-Web-Legal-Research-And-Risk-Audit.md` covers legal risk evidence; broad public launch still needs final operator/legal review.

@@ -29,6 +29,15 @@ public sealed class WebTesterOperatorToolingTests
         string controlledTesterAuditScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebControlledTesterReadinessAudit.ps1"));
+        string humanGateHandoff = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/93-Web-Human-Gate-Handoff.md"));
+        string humanGateHandoffScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebHumanGateHandoff.ps1"));
+        string documentationIndex = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/00-Documentation-Index.md"));
         string csvTemplate = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/WebTesterAccounts.example.csv"));
@@ -76,6 +85,19 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("requiredWwwHost = $false", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("does not approve broad public launch", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("artifacts/validation/brevo-webhook-configuration-check", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("93-Web-Human-Gate-Handoff.md", documentationIndex, StringComparison.Ordinal);
+        Assert.Contains("New-WebHumanGateHandoff.ps1", humanGateHandoff, StringComparison.Ordinal);
+        Assert.Contains("New-WebControlledTesterReadinessAudit.ps1", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("New-WebManualExternalReviewReport.ps1", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("mailbox-rendering", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("pwa-desktop-install", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("pwa-android-install", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("tester-pass-start-status", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("www.darwinlingua.com", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("Authorised IPs", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.Contains("Do not paste Brevo API keys or webhook tokens", humanGateHandoffScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", humanGateHandoffScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", humanGateHandoffScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("xkeysib-", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
     }
