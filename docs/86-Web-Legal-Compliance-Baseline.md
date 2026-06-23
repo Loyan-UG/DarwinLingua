@@ -99,6 +99,17 @@ This refresh checked current official sources again after the `darwinlingua.com`
 - BGB section 312k remains deferred until online consumer subscription contracts can be concluded through the product. Manual Premium grants during testing are not the same as self-service paid subscriptions.
 - StGB crime-risk and KJM youth-media references remain product-content guardrails. The Terms page already prohibits illegal, hateful, extremist, pornographic, exploitative, harassing, fraudulent, security-abuse, or rights-infringing content. Keep these prohibitions aligned with moderation tooling before user-submitted content is widened.
 
+### Post-Audit Official-Source Confirmation 2026-06-23
+
+After the controlled tester readiness audit, the current public-page and content-safety baseline was spot-checked again against official sources on `gesetze-im-internet.de` and EUR-Lex:
+
+- DDG sections 5 and 33 still support the existing release gate: public provider information must stay complete and stale/misleading provider data remains a fine-risk blocker.
+- TDDDG section 25 still supports the current cookie/storage position: no marketing, advertising, analytics, or third-party tracking storage is introduced without a real consent model.
+- GDPR Articles 12, 15, 17, 20, 32, 33, 34, and 83 still support the current self-service export/delete plus operator escalation model; the remaining gap is operational/legal review, not missing Web UI.
+- BGB section 312k remains deferred because no self-service paid consumer subscription contract can currently be concluded through the product.
+- VSBG section 36 remains monitored for later consumer-business/AGB launch conditions; it is not treated as a blocker for the current no-billing controlled Web test.
+- StGB crime-risk references, especially sections 86a, 130, 184, 184b, 184c, 201a, 202a-202d, 263a, and 303a, remain aligned with the current Terms and content gates. No new allowance is created for extremist propaganda, hate-incitement, pornographic/minor-related sexual content, intimate-image abuse, credential theft, hacking misuse, fraud facilitation, or destructive data misuse.
+
 ## Life In Germany Legal-Adjacent Content Gate
 
 `Life in Germany` is educational civic and everyday-orientation content. It may explain legal systems, rights, duties, crimes, fines, public offices, residence/citizenship basics, and everyday administrative expectations, but it must not present itself as official government information or individual legal, immigration, medical, financial, or tax advice.
