@@ -83,6 +83,10 @@ public sealed class WebLegalComplianceBaselineTests
         Assert.Contains("GDPR", baseline, StringComparison.Ordinal);
         Assert.Contains("Digital Services Act", baseline, StringComparison.Ordinal);
         Assert.Contains("UWG section 7", baseline, StringComparison.Ordinal);
+        Assert.Contains("BFSG", baseline, StringComparison.Ordinal);
+        Assert.Contains("VSBG section 36", baseline, StringComparison.Ordinal);
+        Assert.Contains("Official-Source Refresh 2026-06-23", baseline, StringComparison.Ordinal);
+        Assert.Contains("BFSG/accessibility applicability reviewed", baseline, StringComparison.Ordinal);
         Assert.Contains("StGB sections 202a-202d", baseline, StringComparison.Ordinal);
         Assert.Contains("No marketing cookies", inventory, StringComparison.Ordinal);
         Assert.Contains("no cookie banner is required", inventory, StringComparison.Ordinal);

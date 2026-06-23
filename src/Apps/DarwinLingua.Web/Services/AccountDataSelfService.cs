@@ -91,20 +91,58 @@ public sealed class AccountDataSelfService(
         string userId = user.Id;
         string? normalizedEmail = NormalizeEmail(user.Email);
 
-        AccountDeletionCounts webCounts = await DeleteWebStateAsync(userId, normalizedEmail, cancellationToken)
+        await using DarwinLinguaDbContext sharedDbContext = await sharedDbContextFactory
+            .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
-        AccountDeletionCounts learningCounts = await DeleteLearningStateAsync(userId, normalizedEmail, cancellationToken)
+        await using var webTransaction = await webIdentityDbContext.Database
+            .BeginTransactionAsync(cancellationToken)
             .ConfigureAwait(false);
+        await using var sharedTransaction = await sharedDbContext.Database
+            .BeginTransactionAsync(cancellationToken)
+            .ConfigureAwait(false);
+        bool webTransactionCompleted = false;
+        bool sharedTransactionCompleted = false;
 
-        IdentityResult identityResult = await userManager.DeleteAsync(user).ConfigureAwait(false);
-        if (!identityResult.Succeeded)
+        try
         {
-            return AccountDeletionResult.Failed(string.Join(
-                " ",
-                identityResult.Errors.Select(static error => error.Description)));
-        }
+            AccountDeletionCounts webCounts = await DeleteWebStateAsync(userId, normalizedEmail, cancellationToken)
+                .ConfigureAwait(false);
+            AccountDeletionCounts learningCounts = await DeleteLearningStateAsync(sharedDbContext, userId, normalizedEmail, cancellationToken)
+                .ConfigureAwait(false);
 
-        return AccountDeletionResult.Completed(webCounts + learningCounts);
+            IdentityResult identityResult = await userManager.DeleteAsync(user).ConfigureAwait(false);
+            if (!identityResult.Succeeded)
+            {
+                await webTransaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
+                webTransactionCompleted = true;
+                await sharedTransaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
+                sharedTransactionCompleted = true;
+                return AccountDeletionResult.Failed(string.Join(
+                    " ",
+                    identityResult.Errors.Select(static error => error.Description)));
+            }
+
+            await webTransaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+            webTransactionCompleted = true;
+            await sharedTransaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+            sharedTransactionCompleted = true;
+
+            return AccountDeletionResult.Completed(webCounts + learningCounts);
+        }
+        catch
+        {
+            if (!webTransactionCompleted)
+            {
+                await webTransaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            if (!sharedTransactionCompleted)
+            {
+                await sharedTransaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            throw;
+        }
     }
 
     private async Task<AccountDataExportWebSection> LoadWebSectionAsync(
@@ -377,14 +415,11 @@ public sealed class AccountDataSelfService(
     }
 
     private async Task<AccountDeletionCounts> DeleteLearningStateAsync(
+        DarwinLinguaDbContext sharedDbContext,
         string userId,
         string? normalizedEmail,
         CancellationToken cancellationToken)
     {
-        await using DarwinLinguaDbContext sharedDbContext = await sharedDbContextFactory
-            .CreateDbContextAsync(cancellationToken)
-            .ConfigureAwait(false);
-
         int removed = 0;
         int anonymized = 0;
 

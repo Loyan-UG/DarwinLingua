@@ -64,7 +64,7 @@ The web app now has a production-provider path for transactional email:
 - Permanent Brevo failure events, including hard bounces, blocked addresses, invalid email, spam, and complaints, add the recipient hash to the internal suppression list.
 - Admin email diagnostics can inspect delivery logs, manual provider events, and suppressions.
 
-Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes, DPA is accepted, direct Brevo real-delivery smoke passes, and app-level registration/password-reset sends are logged through provider `brevo-api`. Manual mailbox rendering review, webhook event monitoring, and negative-path bounce/suppression drills still remain before broad public launch.
+Current operational status for the controlled public Web stack: the Brevo API key and webhook secret are configured outside source control, the sender/domain readiness gate passes with zero blockers/warnings, DPA is accepted, direct Brevo real-delivery smoke passes, and app-level registration/password-reset sends are logged through provider `brevo-api`. Manual mailbox rendering review, webhook event monitoring, and negative-path bounce/suppression drills still remain before broad public launch.
 
 ## Brevo Production Setup Runbook
 
@@ -86,7 +86,7 @@ The application is ready to use Brevo, but the operator must complete the provid
    - Method: `POST`
    - Authentication method: `Token`
    - Token value: the same value configured as `TransactionalEmail:BrevoWebhookSecret`
-9. Set the Brevo webhook event category to `Transactional email` and select the events needed for diagnostics and suppression handling: request/sent, delivered, deferred, soft bounce, hard bounce, blocked, invalid email, spam, complaint, error, opened, unique opened, click/clicked, unsubscribed, and any equivalent transactional provider failure event Brevo exposes in the current UI. Brevo's official API reference and UI labels can differ; Darwin Lingua normalizes common camelCase and snake_case event names before storing them.
+9. Set the Brevo webhook event category to `Transactional email` and select the official transactional events Brevo exposes in the current UI: request/sent, delivered, deferred, soft bounce, hard bounce, blocked, invalid email, spam, opened, unique opened, click/clicked, and unsubscribed. Brevo's create/update webhook API currently lists these transactional event values: `sent` or `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened`, and `unsubscribed`. Some guide pages also document provider events such as `Error`, `Proxy Open`, or `Unique Proxy Open`; Darwin Lingua normalizes common camelCase/snake_case labels and equivalent provider failure reasons before storing them. Do not treat `complaint` as a required UI checkbox; if Brevo sends a complaint-like event or reason, the application still handles it as a permanent suppression signal.
 10. Review and accept the required Brevo data-processing terms/DPA for EU/GDPR operation.
 
 Official Brevo references to use during setup:

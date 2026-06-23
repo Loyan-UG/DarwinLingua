@@ -4,7 +4,7 @@
 
 این سند برای کارهای بیرون از کد است؛ یعنی کارهایی که باید در پنل Brevo، DNS دامنه، و تنظیمات محرمانه انجام شود تا ایمیل‌های واقعی Darwin Lingua ارسال شوند.
 
-کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-22: API key و webhook secret بیرون از Git و در user-secrets ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check پاس شده، smoke ارسال واقعی مستقیم پاس شده، و smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است. قبل از باز کردن ثبت‌نام عمومی گسترده، هنوز باید نمایش واقعی ایمیل‌ها در inbox و eventهای webhook در طول زمان بررسی شوند.
+کد برنامه آماده‌ی ارسال ایمیل transactional از مسیر Brevo است. وضعیت 2026-06-23: API key و webhook secret بیرون از Git و در local secret configuration ذخیره شده‌اند، دامنه و sender طبق readiness check تأیید شده‌اند، DPA پذیرفته شده است، live API check بدون blocker/warning پاس شده، و smoke مسیر واقعی ثبت‌نام/فراموشی رمز از خود Web هم در `WebEmailDeliveryLogs` با provider message id ثبت شده است. قبل از باز کردن ثبت‌نام عمومی گسترده، هنوز باید نمایش واقعی ایمیل‌ها در inbox و eventهای webhook در طول زمان بررسی شوند.
 
 دامنه‌ی اصلی Web برای تست و سپس production این است:
 
@@ -74,7 +74,7 @@ Method: POST
 Authentication: Token
 ```
 
-در UI فعلی Brevo برای webhook سه گزینه‌ی `No`, `Basic`, و `Token` دیده می‌شود. برای Darwin Lingua گزینه‌ی درست `Token` است. مقدار token باید دقیقاً همان `TransactionalEmail:BrevoWebhookSecret` باشد. کد برنامه این مقدار را از هدر `Authorization: Bearer <token>` می‌خواند. `No` ناامن است و `Basic` با endpoint فعلی ما تطبیق ندارد.
+در UI فعلی Brevo برای webhook سه گزینه‌ی `No`, `Basic`, و `Token` دیده می‌شود. برای Darwin Lingua گزینه‌ی درست `Token` است. مقدار token باید دقیقاً همان `TransactionalEmail:BrevoWebhookSecret` باشد. طبق مستندات رسمی secure webhooks، Brevo در حالت token مقدار را به‌صورت Bearer token می‌فرستد، و کد برنامه همین مقدار را از هدر `Authorization: Bearer <token>` می‌خواند. `No` ناامن است و `Basic` با endpoint فعلی ما تطبیق ندارد.
 
 11. برای webhook، eventهای transactional لازم را فعال کنید. در UI فعلی Brevo ابتدا `Event category` را روی `Transactional email` بگذارید و بعد همه‌ی eventهای موجود و مرتبط را فعال کنید:
 
@@ -87,14 +87,12 @@ hardBounce / hard_bounce
 blocked
 invalid / invalidEmail / invalid_email
 spam
-complaint
-error
 opened / uniqueOpened / unique_opened
 click / clicked
 unsubscribed
 ```
 
-نکته‌ی مهم: مرجع رسمی API برای ساخت webhook نوع `transactional` این eventها را به‌عنوان مقدارهای معتبر نشان می‌دهد: `sent` یا `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened`, و `unsubscribed`. اگر UI فعلی Brevo همه‌ی این نام‌ها را دقیقاً با همین label نشان نداد، همه‌ی eventهای موجود در همان دسته‌ی `Transactional email` را فعال کنید و بعد از Brevo logs یا API بررسی کنید که چه eventهایی واقعاً ثبت شده‌اند. کد Darwin Lingua نام‌های camelCase، snake_case و چند label رایج مثل `Complaint` را به مقدار داخلی ثابت تبدیل می‌کند.
+نکته‌ی مهم: مرجع رسمی API برای ساخت webhook نوع `transactional` این eventها را به‌عنوان مقدارهای معتبر نشان می‌دهد: `sent` یا `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened`, و `unsubscribed`. خود صفحه‌ی راهنمای transactional webhooks در Brevo همچنین نمونه/بخش‌هایی مثل `Error`, `Proxy Open`, و `Unique Proxy Open` را توضیح می‌دهد. اگر UI فعلی Brevo همه‌ی این نام‌ها را دقیقاً با همین label نشان نداد، همه‌ی eventهای موجود در همان دسته‌ی `Transactional email` را فعال کنید و بعد از Brevo logs یا API بررسی کنید که چه eventهایی واقعاً ثبت شده‌اند. انتظار دیدن `complaint` در همه‌ی فرم‌های transactional Brevo نداشته باشید؛ اگر provider چنین event یا reason مشابهی بفرستد، کد Darwin Lingua آن را برای suppression/diagnostics نرمال‌سازی می‌کند.
 
 12. قرارداد پردازش داده یا DPA مربوط به Brevo را برای GDPR/EU operation بررسی و قبول کنید.
 

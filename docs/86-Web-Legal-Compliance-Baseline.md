@@ -34,6 +34,10 @@ Review these primary sources during production legal review:
 - Digital Services Coordinator Germany / Bundesnetzagentur: https://www.dsc.bund.de/
 - UWG section 7, unreasonable nuisance / electronic advertising: https://www.gesetze-im-internet.de/uwg_2004/__7.html
 - BGB section 312k, cancellation button for consumer subscriptions: https://www.gesetze-im-internet.de/bgb/__312k.html
+- BFSG / Barrierefreiheitsstaerkungsgesetz: https://www.gesetze-im-internet.de/bfsg/
+- BFSGV / Barrierefreiheitsanforderungen: https://www.gesetze-im-internet.de/bfsgv/
+- Bundesfachstelle Barrierefreiheit BFSG overview and FAQ: https://www.bundesfachstelle-barrierefreiheit.de/DE/Barrierefreiheitsstaerkungsgesetz
+- VSBG section 36, consumer dispute-resolution information duty: https://www.gesetze-im-internet.de/vsbg/__36.html
 - BAMF Abschlusspruefung / Test Leben in Deutschland framing: https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/Abschlusspruefung/abschlusspruefung-node.html
 - BAMF Gesamtfragenkatalog download page: https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.html
 - BMG Cannabisgesetz FAQ: https://www.bundesgesundheitsministerium.de/themen/cannabis/faq-cannabisgesetz
@@ -81,6 +85,19 @@ This follow-up checked the current operator-facing legal baseline against offici
 - Because the configured operator location is in Lower Saxony, the likely competent data-protection supervisory authority for the public privacy notice is the Landesbeauftragte fuer den Datenschutz Niedersachsen. The Privacy page should route users there without removing their right to contact another competent authority under GDPR Article 77.
 - VSBG section 36 can become relevant when Darwin Lingua is operated as a consumer-facing business with more than the statutory employee threshold or with AGB consumer-dispute obligations. Public paid subscriptions remain disabled, so this is monitored but not a blocker for the current no-billing controlled Web testing phase.
 - BGB section 312k remains deferred until self-service paid subscriptions are exposed. Manual Premium grants during testing do not trigger the same online cancellation-button flow, but this must be reopened before Stripe self-service billing is enabled.
+
+### Official-Source Refresh 2026-06-23
+
+This refresh checked current official sources again after the `darwinlingua.com` and Brevo readiness work. It also reviewed the service from the perspective of administrative fines, crimes, illegal-content reports, and accessibility duties that can become relevant once the Web product moves from controlled development testing to broader public use.
+
+- DDG section 5 and section 33 remain the active German public-provider-information and fine-risk baseline. The checked-in public Legal Notice now reads operator data from configuration and currently has the configured development-stage operator details. Do not publish with stale address, email, or responsible-person data.
+- TDDDG section 25 remains the terminal-device storage/access gate. The current no-banner position depends on keeping analytics, advertising, third-party tracking, and non-essential storage disabled until a real consent model exists.
+- GDPR Articles 12, 15, 17, 20, 32, 33, 34, and 83 remain the data-subject-rights, deletion/export/portability, security, breach, and fine-risk baseline. Self-service export/delete is implemented and now transaction-protected for the local account/user-state deletion path, but the operator still needs a manual escalation process for complex identity, backup, billing, security, and abuse-retention cases.
+- The Bundesnetzagentur is the German Digital Services Coordinator for DSA enforcement and acts as a central complaint point. Darwin Lingua is currently a controlled language-learning product, but organizer, partner, RSVP, report, claim, profile, or other user-submitted surfaces must keep a clear abuse/illegal-content reporting route before broader community release.
+- BFSG has been applicable since 28 June 2025 for covered consumer products and services. The Bundesfachstelle Barrierefreiheit states that services in electronic commerce are in scope, with microenterprise exceptions for some service providers. Because public paid self-service billing is disabled, BFSG is not treated as a blocker for the current no-billing controlled Web test; before Stripe/self-service paid subscriptions or consumer e-commerce flows are exposed, perform a BFSG applicability review and accessibility conformance pass for Web and later mobile.
+- VSBG section 36 can require consumer-dispute information on a website/AGB for qualifying businesses. This remains monitored while Darwin Lingua is a development-stage personal project with no public paid subscriptions; reopen before broad consumer launch or if formal AGB/business operations change.
+- BGB section 312k remains deferred until online consumer subscription contracts can be concluded through the product. Manual Premium grants during testing are not the same as self-service paid subscriptions.
+- StGB crime-risk and KJM youth-media references remain product-content guardrails. The Terms page already prohibits illegal, hateful, extremist, pornographic, exploitative, harassing, fraudulent, security-abuse, or rights-infringing content. Keep these prohibitions aligned with moderation tooling before user-submitted content is widened.
 
 ## Life In Germany Legal-Adjacent Content Gate
 
@@ -300,13 +317,14 @@ Before public release:
 - transactional email provider/DPA reviewed
 - billing provider/legal text reviewed if billing is enabled
 - self-service account export/delete verified
+- BFSG/accessibility applicability reviewed before paid consumer e-commerce or broader public subscription flows
 - data-subject request escalation process documented
 - breach triage process documented
 - mobile compliance remains deferred until the mobile phase
 
 ## Current Evidence
 
-As of 2026-06-19:
+As of 2026-06-23:
 
 - `/terms`, `/privacy`, `/legal`, `/impressum`, `/cookies`, `/cookie-policy`, and `/contact` are implemented in Web.
 - Registration requires Terms acceptance and Privacy notice acknowledgement.
@@ -317,4 +335,6 @@ As of 2026-06-19:
 - Public billing remains disabled during Web testing; premium access can be granted manually by an operator.
 - The primary product domain is `darwinlingua.com`; `api.darwinlingua.com` is the API host for Web/API separation during Web testing and production hardening.
 - Current configured operator baseline: Shahram Vafadar, Achterkirchenstrasse 10, 37154 Northeim, Germany, contact `info@darwinlingua.com`, data-protection contact `info@darwinlingua.com`.
+- Brevo transactional email is configured outside Git, DPA is accepted, direct real-delivery smoke passed, and app-level registration/password-reset sends are logged through provider `brevo-api`.
+- Account deletion now uses explicit transactions for Web identity/user-state and shared learning cleanup before the user deletion is committed.
 - Mobile/MAUI implementation remains unchanged and deferred.

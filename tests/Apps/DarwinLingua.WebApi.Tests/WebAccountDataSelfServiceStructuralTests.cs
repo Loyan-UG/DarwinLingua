@@ -51,6 +51,9 @@ public sealed class WebAccountDataSelfServiceStructuralTests
 
         Assert.Contains("DeleteConfirmationPhrase => \"DELETE\"", service, StringComparison.Ordinal);
         Assert.Contains("CheckPasswordAsync", service, StringComparison.Ordinal);
+        Assert.Contains("BeginTransactionAsync", service, StringComparison.Ordinal);
+        Assert.Contains("CommitAsync", service, StringComparison.Ordinal);
+        Assert.Contains("RollbackAsync", service, StringComparison.Ordinal);
         Assert.Contains("RecipientUserId = null", service, StringComparison.Ordinal);
         Assert.Contains("billingEvent.UserId = null", service, StringComparison.Ordinal);
         Assert.Contains("Billing and entitlement audit records may be retained", service, StringComparison.Ordinal);
