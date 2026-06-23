@@ -331,6 +331,7 @@
                         <th>@T["Dialogue"]</th>
                         <th>@T["Culture"]</th>
                         <th>@T["Provider"]</th>
+                        <th>@T["Provider message id"]</th>
                         <th>@T["Provider event"]</th>
                         <th>@T["Recipient hash"]</th>
                         <th>@T["Subject"]</th>
@@ -346,6 +347,7 @@
                             <td>@log.ScenarioKey</td>
                             <td>@log.Culture</td>
                             <td>@log.ProviderName</td>
+                            <td><code>@(string.IsNullOrWhiteSpace(log.ProviderMessageId) ? T["none"] : log.ProviderMessageId[..Math.Min(48, log.ProviderMessageId.Length)])</code></td>
                             <td>@(log.ProviderLastEvent ?? T["none"])</td>
                             <td><code>@log.RecipientEmailHash[..Math.Min(12, log.RecipientEmailHash.Length)]</code></td>
                             <td>@log.Subject</td>

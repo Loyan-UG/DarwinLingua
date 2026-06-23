@@ -109,6 +109,8 @@ public sealed class AdminDashboardRouteStructuralTests
         Assert.Contains("Recent account email delivery attempts are listed without reset tokens, confirmation tokens, or full recovery URLs.", view, StringComparison.Ordinal);
         Assert.Contains("RecipientEmailHash", model, StringComparison.Ordinal);
         Assert.Contains("ProviderMessageId", model, StringComparison.Ordinal);
+        Assert.Contains("@T[\"Provider message id\"]", view, StringComparison.Ordinal);
+        Assert.Contains("log.ProviderMessageId", view, StringComparison.Ordinal);
         Assert.Contains("FailureMessageSummary", model, StringComparison.Ordinal);
         Assert.DoesNotContain("PlainTextBody", model, StringComparison.Ordinal);
         Assert.DoesNotContain("HtmlBody", model, StringComparison.Ordinal);
@@ -116,6 +118,36 @@ public sealed class AdminDashboardRouteStructuralTests
         Assert.DoesNotContain("callbackUrl", view, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("ResetPassword", view, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("ConfirmEmail", view, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void EmailDiagnosticsAdminSmokeTool_ShouldVerifyProviderIdsEventsSuppressionsAndReadiness()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string scriptPath = Path.Combine(
+            repositoryRoot,
+            "tools",
+            "Web",
+            "Invoke-WebEmailDiagnosticsAdminSmoke.ps1");
+        string operationsChecklistPath = Path.Combine(
+            repositoryRoot,
+            "docs",
+            "74-Production-Operations-Setup-Checklist.md");
+
+        string script = File.ReadAllText(scriptPath);
+        string operationsChecklist = File.ReadAllText(operationsChecklistPath);
+
+        Assert.Contains("/admin/email-diagnostics", script, StringComparison.Ordinal);
+        Assert.Contains("ProviderMessageId", script, StringComparison.Ordinal);
+        Assert.Contains("ProviderLastEvent", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailSuppressions", script, StringComparison.Ordinal);
+        Assert.Contains("Brevo API key", script, StringComparison.Ordinal);
+        Assert.Contains("Brevo webhook secret", script, StringComparison.Ordinal);
+        Assert.Contains("Brevo sandbox mode", script, StringComparison.Ordinal);
+        Assert.Contains("Unsuppress", script, StringComparison.Ordinal);
+        Assert.Contains("Manual provider event", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/web-email-diagnostics-admin-smoke", script, StringComparison.Ordinal);
+        Assert.Contains("Invoke-WebEmailDiagnosticsAdminSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
     }
 
     private static string ResolveRepositoryRoot()

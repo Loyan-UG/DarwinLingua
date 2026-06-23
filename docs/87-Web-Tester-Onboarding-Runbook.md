@@ -75,6 +75,13 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 
 - For non-local environments, set `DARWINLINGUA_WEB_ADMIN_EMAIL` and `DARWINLINGUA_WEB_ADMIN_PASSWORD` instead of using the local seed switch.
 - Confirm the admin smoke exits successfully and writes a JSON report under `artifacts/validation/web-admin-smoke/`.
+- If Brevo account-email checks are in scope for this tester pass, run the more specific Email Diagnostics smoke too:
+
+```powershell
+.\tools\Web\Invoke-WebEmailDiagnosticsAdminSmoke.ps1 -UseLocalDevelopmentSeed
+```
+
+- Confirm it exits successfully and writes a report under `artifacts/validation/web-email-diagnostics-admin-smoke/`.
 - If you used `New-WebTesterValidationBundle.ps1` without `-SkipPreflight`, the bundle already contains a pass-specific preflight report under its `preflight/` folder.
 - The script verifies `https://darwinlingua.com` and `https://api.darwinlingua.com/health`.
 - It also smokes these pages:

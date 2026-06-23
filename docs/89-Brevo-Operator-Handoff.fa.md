@@ -252,6 +252,18 @@ artifacts/validation/brevo-webhook-suppression-smoke/
 artifacts/validation/brevo-suppressed-send-smoke/
 ```
 
+برای بررسی UI ادمین و اینکه provider message id، provider event، suppression و وضعیت readiness واقعاً در صفحه‌ی admin دیده می‌شوند، smoke زیر را اجرا کنید:
+
+```powershell
+.\tools\Web\Invoke-WebEmailDiagnosticsAdminSmoke.ps1 -UseLocalDevelopmentSeed
+```
+
+این ابزار با admin seed محلی وارد می‌شود، صفحه‌ی `/admin/email-diagnostics` را با فیلترهای واقعی باز می‌کند و بررسی می‌کند که Brevo readiness، provider message id، provider event، suppression data و کنترل‌های admin-only در UI دیده شوند. گزارش آن در مسیر زیر ذخیره می‌شود:
+
+```text
+artifacts/validation/web-email-diagnostics-admin-smoke/
+```
+
 ## تصمیم پیشنهادی فعلی
 
 در این مرحله از توسعه، پیشنهاد این است:

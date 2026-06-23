@@ -61,7 +61,8 @@ Local development helper:
 - [x] Confirm webhook calls reach the public HTTPS origin.
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` posts a controlled `hardBounce` event to `https://darwinlingua.com/webhooks/brevo/transactional-email` with Bearer token authentication and writes evidence under `artifacts/validation/brevo-webhook-suppression-smoke/`. The 2026-06-23 run returned HTTP 200.
 - [x] Confirm `WebEmailDeliveryLogs` shows provider message ids for app-level registration and password-reset sends.
-- [ ] Confirm `admin/email-diagnostics` shows provider message ids and provider events in the operator UI.
+- [x] Confirm `admin/email-diagnostics` shows provider message ids and provider events in the operator UI.
+  - Evidence: `tools/Web/Invoke-WebEmailDiagnosticsAdminSmoke.ps1 -UseLocalDevelopmentSeed` signs in as the local admin seed, opens `/admin/email-diagnostics` with filters for a real Brevo provider message id, provider event, and suppression hash/reason, and verifies the UI shows Brevo readiness, provider message id, provider event, suppression data, and Admin-only controls. The 2026-06-23 run passed and wrote evidence under `artifacts/validation/web-email-diagnostics-admin-smoke/`.
 - [x] Confirm failed Brevo delivery events update delivery logs without storing email tokens or recovery URLs.
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` verifies the synthetic delivery row becomes `Failed` with `ProviderLastEvent=hard_bounce` and `FailureCode=brevo:hard_bounce`. `DeliveryLogRepository_ShouldStoreDiagnosticsWithoutEmailBodyOrRecoveryUrl` verifies diagnostic text redacts recovery URLs/tokens before persistence.
 - [x] Confirm permanent Brevo failures create internal hashed suppressions.

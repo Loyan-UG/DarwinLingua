@@ -211,6 +211,13 @@ Set these values outside source control for the target environment:
 ```
 
 - The suppressed-send smoke tool writes JSON and Markdown reports under `artifacts/validation/brevo-suppressed-send-smoke/`. It creates a temporary internal suppression for a confirmed account, submits the public forgot-password form, verifies that the app records a `Suppressed` delivery log with `recipient-suppressed` and no provider message id, and then removes only the temporary suppression it created.
+- Then run the authenticated Admin Email Diagnostics smoke:
+
+```powershell
+.\tools\Web\Invoke-WebEmailDiagnosticsAdminSmoke.ps1 -UseLocalDevelopmentSeed
+```
+
+- The admin diagnostics smoke writes JSON and Markdown reports under `artifacts/validation/web-email-diagnostics-admin-smoke/`. It signs in as the local admin seed, opens `/admin/email-diagnostics` with filters for an existing Brevo provider message id, provider event, and suppression, and verifies that the UI shows Brevo readiness, provider message id, provider event, suppression data, and Admin-only reconciliation controls.
 - Confirm that both HTML and plain-text alternatives render correctly.
 - Confirm that action links use the configured `PublicBaseUrl`.
 - Trigger or manually reconcile one Brevo event and verify Admin Email Diagnostics receives or can reconcile provider status.
