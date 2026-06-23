@@ -147,6 +147,10 @@ public sealed class WebAccountAuthenticationWorkflowTests
         Assert.Contains("GenerateChangeEmailTokenAsync(user, newEmail)", emailModel, StringComparison.Ordinal);
         Assert.Contains("WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code))", emailModel, StringComparison.Ordinal);
         Assert.Contains("BuildPublicPageUrl(", emailModel, StringComparison.Ordinal);
+        Assert.Contains("emailOptions.Value.PublicBaseUrl", emailModel, StringComparison.Ordinal);
+        Assert.Contains("Uri.TryCreate(emailOptions.Value.PublicBaseUrl, UriKind.Absolute", emailModel, StringComparison.Ordinal);
+        Assert.Contains("new Uri(baseUri, path).ToString()", emailModel, StringComparison.Ordinal);
+        Assert.Contains("Url.Page(page, null, values, Request.Scheme)", emailModel, StringComparison.Ordinal);
         Assert.Contains("SendEmailChangeConfirmationAsync(", emailModel, StringComparison.Ordinal);
         Assert.Contains("If the new address can be used, a confirmation email has been sent.", emailModel, StringComparison.Ordinal);
 

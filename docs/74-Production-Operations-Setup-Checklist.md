@@ -122,7 +122,8 @@ Local development helper:
 - [x] Set `TransactionalEmail__PublicBaseUrl` to the public HTTPS web origin.
 - [x] Verify confirmation links use `TransactionalEmail__PublicBaseUrl`.
 - [x] Verify password reset links use `TransactionalEmail__PublicBaseUrl`.
-- [ ] Verify email-change links use `TransactionalEmail__PublicBaseUrl`.
+- [x] Verify email-change links use `TransactionalEmail__PublicBaseUrl`.
+  - Evidence: `WebAccountAuthenticationWorkflowTests.EmailChangeWorkflow_ShouldValidatePasswordAndNotifyOldEmailAfterSuccessfulChange` verifies `Manage/Email.cshtml.cs` builds the change-email confirmation URL through `BuildPublicPageUrl`, reads `emailOptions.Value.PublicBaseUrl`, uses it when it is an absolute URL, and falls back to `Request.Scheme` only when no configured public base URL is available.
 
 ## Database Bootstrap
 
