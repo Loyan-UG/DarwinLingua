@@ -109,10 +109,14 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("Authorised IPs", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("ErrorDetails.Message", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("unrecognised IP address", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("TrimEnd(\".\")", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("mailbox-rendering-review-packet", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("pwa-installability", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("web-tester-runs", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("requiredWwwHost = $false", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("``$mailboxEvidencePath``", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("``$($packet.testerBundle)``", externalActionPacketScript, StringComparison.Ordinal);
+        Assert.Contains("~~~text", externalActionPacketScript, StringComparison.Ordinal);
         Assert.Contains("Do not paste Brevo API keys", externalActionPacketScript, StringComparison.Ordinal);
         Assert.DoesNotContain("xkeysib-", externalActionPacketScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", externalActionPacketScript, StringComparison.OrdinalIgnoreCase);

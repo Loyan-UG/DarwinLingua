@@ -127,7 +127,7 @@ if ($RunBrevoWebhookCheck) {
         $brevoStatus = "needs-authorized-ip-or-review"
         $match = [regex]::Match($message, "unrecognised IP address\s+(?<ip>[0-9a-fA-F:\.]+)")
         if ($match.Success) {
-            $brevoAuthorizedIp = $match.Groups["ip"].Value
+            $brevoAuthorizedIp = $match.Groups["ip"].Value.TrimEnd(".")
             $brevoAction = "Open Brevo -> Security -> Authorised IPs, add the IP listed in this packet, save it, then rerun .\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1."
         }
         else {
@@ -184,7 +184,7 @@ $markdown = @"
 - Generated: $($packet.generatedAtUtc)
 - Web: https://darwinlingua.com
 - API health: https://api.darwinlingua.com/health
-- Required `www` host: false
+- Required ``www`` host: false
 - Automated ready: $($packet.automatedReady)
 - Controlled tester ready to invite: $($packet.controlledTesterReadyToInvite)
 - Readiness audit: $($packet.readinessAudit)
@@ -196,25 +196,25 @@ This packet lists only the actions that cannot be honestly completed by code alo
 
 | Action | Current status | What to do | Evidence |
 | --- | --- | --- | --- |
-| Brevo Authorized IP | $brevoStatus | $brevoAction | Rerun `.\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1` |
-| Mailbox rendering | $mailboxStatus | Review real emails in `info@darwinlingua.com`; record safe notes only. | `$mailboxEvidencePath` |
-| PWA desktop install | $desktopStatus | Test install in desktop Chrome or Edge and installed-window navigation. | `docs/56-Web-Pwa-Install-Validation-Worksheet.md` |
-| PWA Android install | $androidStatus | Test Android Chrome install flow, or explicitly mark not in scope for this tester pass. | `docs/56-Web-Pwa-Install-Validation-Worksheet.md` |
-| Tester pass start | $testerStatus | Confirm tester bundle and mark `ready-to-invite` only after mailbox/PWA scope is reviewed. | `$($packet.testerBundle)` |
+| Brevo Authorized IP | $brevoStatus | $brevoAction | Rerun ``.\tools\Web\Invoke-BrevoWebhookConfigurationCheck.ps1`` |
+| Mailbox rendering | $mailboxStatus | Review real emails in ``info@darwinlingua.com``; record safe notes only. | ``$mailboxEvidencePath`` |
+| PWA desktop install | $desktopStatus | Test install in desktop Chrome or Edge and installed-window navigation. | ``docs/56-Web-Pwa-Install-Validation-Worksheet.md`` |
+| PWA Android install | $androidStatus | Test Android Chrome install flow, or explicitly mark not in scope for this tester pass. | ``docs/56-Web-Pwa-Install-Validation-Worksheet.md`` |
+| Tester pass start | $testerStatus | Confirm tester bundle and mark ``ready-to-invite`` only after mailbox/PWA scope is reviewed. | ``$($packet.testerBundle)`` |
 
 ## Brevo Authorized IP
 
-If the Brevo row says `needs-authorized-ip-or-review`, open:
+If the Brevo row says ``needs-authorized-ip-or-review``, open:
 
-```text
+~~~text
 https://app.brevo.com/security/authorised_ips
-```
+~~~
 
 Add this IP exactly, save, then rerun the webhook configuration check:
 
-```text
+~~~text
 $brevoIpLine
-```
+~~~
 
 Do not store the Brevo API key or webhook token in this packet.
 
@@ -222,9 +222,9 @@ Do not store the Brevo API key or webhook token in this packet.
 
 After the manual rows are completed, generate the manual review report and run:
 
-```powershell
+~~~powershell
 .\tools\Web\New-WebControlledTesterReadinessAudit.ps1 -FailOnAutomatedFailure -FailOnOpenHumanGates
-```
+~~~
 
 The controlled tester pass can start only when that command passes.
 "@
