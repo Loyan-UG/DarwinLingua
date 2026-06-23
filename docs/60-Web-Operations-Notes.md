@@ -478,6 +478,28 @@ Verification evidence:
 - `manifest.md`, `checksums.sha256`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, `artifacts/`, and `verification/` are present.
 - Backup verification found `946` files and `284065931` bytes; checksum verification passed for `944` listed files.
 
+### 2026-06-23 Brevo IP Gate Doc Sync / Pre User Testing
+
+Backup path:
+
+`X:\Projects\DarwinLingua.Backup\20260623-223159-brevo-ip-gate-doc-sync-pre-user-testing`
+
+Scope:
+
+- Synchronized `docs/61-Web-Release-Checklist.md`, `docs/74-Production-Operations-Setup-Checklist.md`, and this operations note with the current Brevo Authorized IP blocker.
+- Preserved older successful Brevo evidence as historical evidence only; the active release gate now requires adding the current host IP in Brevo and rerunning live API/webhook checks.
+- Included the refreshed external action packet and controlled tester readiness artifacts under `artifacts/validation/`.
+- Public Web/API remained available on `https://darwinlingua.com` and `https://api.darwinlingua.com/health` before the backup.
+
+Verification evidence:
+
+- `artifacts/validation/web-controlled-tester-readiness/web-controlled-tester-readiness-20260623-222540.json` reports `AutomatedReady=False`, `AutomatedFailures=1`, `HumanOpen=4`, and `Ready=False`.
+- `artifacts/validation/brevo-readiness/brevo-production-readiness-20260623-222427.md` reports `Blockers=1`, `Warnings=0`; the blocker is Brevo Authorized IP for the current host.
+- `db/darwinlingua_shared_20260623-223159.dump` was created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-223159.restore-list.txt` was generated with `pg_restore --list`.
+- `manifest.md`, `checksums.sha256`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, `docker/`, `artifacts/`, and `verification/` are present.
+- Backup verification found `966` files and `284115729` bytes; checksum verification passed for `964` listed files.
+
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
 
 Backup path:
