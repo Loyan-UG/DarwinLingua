@@ -142,3 +142,29 @@ For a release gate, add:
 ```
 
 The report intentionally treats `not-reviewed` and `not-started` as open gates. Do not mark a gate as passed until the evidence was actually reviewed.
+
+## E. Consolidated Tester Readiness Audit
+
+After generating the manual review report, run the consolidated audit from the repository root:
+
+```powershell
+.\tools\Web\New-WebControlledTesterReadinessAudit.ps1
+```
+
+Use this report as the operator handoff before inviting testers:
+
+- `Automated ready` must be `True`; otherwise repeatable Web/API/Brevo/tester-bundle evidence is broken.
+- `Controlled tester ready to invite` must be `True`; otherwise a human gate such as mailbox rendering, PWA install scope, or tester-pass start evidence is still open.
+- The audit intentionally does not require `www.darwinlingua.com` and does not approve broad public launch. It only answers whether the controlled tester pass can start.
+
+For an automated gate check, use:
+
+```powershell
+.\tools\Web\New-WebControlledTesterReadinessAudit.ps1 -FailOnAutomatedFailure
+```
+
+For the final pre-invite gate after all manual evidence is closed, use:
+
+```powershell
+.\tools\Web\New-WebControlledTesterReadinessAudit.ps1 -FailOnAutomatedFailure -FailOnOpenHumanGates
+```

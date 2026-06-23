@@ -23,6 +23,9 @@ public sealed class WebTesterOperatorToolingTests
         string manualExternalReviewScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebManualExternalReviewReport.ps1"));
+        string controlledTesterAuditScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebControlledTesterReadinessAudit.ps1"));
         string csvTemplate = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/WebTesterAccounts.example.csv"));
@@ -49,6 +52,15 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("FailOnIncomplete", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("requiredWwwHost = $false", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("Web Manual External Review Report", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("New-WebControlledTesterReadinessAudit.ps1", runbook, StringComparison.Ordinal);
+        Assert.Contains("FailOnAutomatedFailure", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("FailOnOpenHumanGates", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("controlledTesterReadyToInvite", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("requiredWwwHost = $false", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("does not approve broad public launch", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-webhook-configuration-check", controlledTesterAuditScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
     }
 
     private static string FindRepositoryRoot()

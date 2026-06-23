@@ -68,6 +68,14 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 ```
 
 - For release gating, rerun the same command with `-FailOnIncomplete -FailOnFailed` after mailbox rendering, PWA checks, and the controlled tester pass are complete. Until then, open gates must stay visible in the generated report.
+- Generate the consolidated controlled-tester readiness audit. This combines the latest automated evidence with the latest manual-review report and keeps the two decisions separate: automated stack readiness and whether testers can actually be invited.
+
+```powershell
+.\tools\Web\New-WebControlledTesterReadinessAudit.ps1
+```
+
+- Before inviting testers, the audit must show `Automated ready: True` and `Controlled tester ready to invite: True`. A passing automated section alone is not enough; mailbox rendering, PWA install scope, and tester-pass start evidence must be closed in the manual review report first.
+- In CI/operator checks, use `-FailOnAutomatedFailure` to fail only when repeatable automated evidence is broken. Use `-FailOnOpenHumanGates` only when the manual gates are expected to be closed.
 - Run the repeatable preflight script from the repository root:
 
 ```powershell
