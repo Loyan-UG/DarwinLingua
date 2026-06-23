@@ -144,7 +144,8 @@ Local development helper:
 - [ ] Change account email and confirm both new-email confirmation and old-email notification are sent.
 - [x] Force one delivery failure in staging and confirm the failed event is visible in `admin/email-diagnostics`.
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` forced a controlled `hardBounce` through the public webhook and verified the delivery row became `Failed`; `tools/Web/Invoke-WebEmailDiagnosticsAdminSmoke.ps1` and `tools/Web/Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` verified provider events, failed status, suppressions, and Admin-only controls are visible in `/admin/email-diagnostics`.
-- [ ] Confirm repeated failures trigger an admin alert.
+- [x] Confirm repeated failures trigger an admin alert.
+  - Evidence: `EmailDeliveryFailureMonitorTests.Monitor_ShouldSendAdminAlertWhenFailureThresholdIsReached` executes `EmailDeliveryFailureMonitorService` with a failure snapshot at the configured threshold and verifies `SendAdminEmailDeliveryFailureAlertAsync` is called with failure count, window, scenario, and failure code. `Monitor_ShouldNotSendAdminAlertBelowThreshold` verifies no admin alert is sent below threshold and that `Admin.EmailDeliveryFailureAlert` is excluded from the failure-count snapshot to prevent alert loops.
 - [ ] Check Brevo dashboard logs for message id, delivery state, bounce/error details, and webhook status.
 
 ## Operational Ownership
