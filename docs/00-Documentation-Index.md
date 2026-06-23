@@ -102,6 +102,8 @@ All project documentation should remain in English.
 - `86-Web-Legal-Compliance-Baseline.md`
 - `87-Web-Tester-Onboarding-Runbook.md`
 - `88-Web-Tester-Quick-Start.md`
+- `89-Brevo-Operator-Handoff.fa.md`
+- `90-Web-Operational-Incident-Runbook.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -175,6 +177,8 @@ If you are new to the project, read the documents in this order:
 57. `86-Web-Legal-Compliance-Baseline.md`
 58. `87-Web-Tester-Onboarding-Runbook.md`
 59. `88-Web-Tester-Quick-Start.md`
+60. `89-Brevo-Operator-Handoff.fa.md`
+61. `90-Web-Operational-Incident-Runbook.md`
 
 ---
 
@@ -219,6 +223,7 @@ If you are new to the project, read the documents in this order:
 - `87-Web-Tester-Onboarding-Runbook.md` defines the controlled real-user Web testing pass, tester tasks, feedback format, triage rules, and completion criteria before mobile work resumes.
 - `88-Web-Tester-Quick-Start.md` defines the short tester-facing task brief that can be shared without the operator runbook.
 - `89-Brevo-Operator-Handoff.fa.md` gives the Persian operator handoff for Brevo sender/domain setup, webhook configuration, secrets, DPA review, readiness checks, and Darwin Lingua production-domain rules.
+- `90-Web-Operational-Incident-Runbook.md` defines the Web-first operational ownership and incident process for Brevo, DNS/Cloudflare, privacy requests, security/breach triage, community escalation, and backup/restore.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
 
 ### Learning Portal Planning Rule

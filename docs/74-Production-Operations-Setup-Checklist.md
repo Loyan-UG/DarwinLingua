@@ -114,7 +114,8 @@ Local development helper:
 - [ ] Confirm billing notification emails are sent for Premium activation, payment action needed, Premium ended, and reconciliation completed.
 - [ ] Confirm billing notification emails appear in `admin/email-diagnostics` with provider message ids and no raw Stripe payloads.
 - [ ] Complete `docs/75-Stripe-Billing-Validation-Playbook.md` in staging before enabling live Stripe billing.
-- [ ] Assign an owner for Stripe account access, API key rotation, tax settings, invoices, refunds, chargebacks, and plan upgrades.
+- [x] Assign an owner for Stripe account access, API key rotation, tax settings, invoices, refunds, chargebacks, and plan upgrades.
+  - Evidence: `docs/90-Web-Operational-Incident-Runbook.md` assigns Shahram Vafadar as the operator/release owner. Stripe remains disabled, but ownership is assigned before the deferred Stripe validation phase is re-opened.
 
 ## Public URLs and Account Links
 
@@ -140,14 +141,18 @@ Local development helper:
 - [x] Request a password reset and confirm the email is sent through Brevo.
 - [ ] Complete password reset and confirm the success notification is received.
 - [ ] Change account email and confirm both new-email confirmation and old-email notification are sent.
-- [ ] Force one delivery failure in staging and confirm the failed event is visible in `admin/email-diagnostics`.
+- [x] Force one delivery failure in staging and confirm the failed event is visible in `admin/email-diagnostics`.
+  - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` forced a controlled `hardBounce` through the public webhook and verified the delivery row became `Failed`; `tools/Web/Invoke-WebEmailDiagnosticsAdminSmoke.ps1` and `tools/Web/Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` verified provider events, failed status, suppressions, and Admin-only controls are visible in `/admin/email-diagnostics`.
 - [ ] Confirm repeated failures trigger an admin alert.
 - [ ] Check Brevo dashboard logs for message id, delivery state, bounce/error details, and webhook status.
 
 ## Operational Ownership
 
-- [ ] Assign an owner for Brevo account billing and plan upgrades.
-- [ ] Assign an owner for DNS records and sender-domain verification.
+- [x] Assign an owner for Brevo account billing and plan upgrades.
+  - Evidence: `docs/90-Web-Operational-Incident-Runbook.md` assigns Shahram Vafadar as the Brevo account, sender-domain, API key rotation, and plan-upgrade owner.
+- [x] Assign an owner for DNS records and sender-domain verification.
+  - Evidence: `docs/90-Web-Operational-Incident-Runbook.md` assigns Shahram Vafadar as the DNS/Cloudflare routing and sender-domain verification owner.
 - [x] Review the Brevo data processing agreement before production launch.
   - Evidence: operator confirmed Brevo DPA accepted on 2026-06-23; the Brevo readiness report records `operator.dpaAccepted`.
-- [ ] Document the incident process for API key rotation, sender-domain failure, and account suspension.
+- [x] Document the incident process for API key rotation, sender-domain failure, and account suspension.
+  - Evidence: `docs/90-Web-Operational-Incident-Runbook.md` defines Brevo API key rotation, Brevo sender-domain/account failure, webhook failure, DNS/Cloudflare incidents, privacy/security triage, and backup/restore response flows.

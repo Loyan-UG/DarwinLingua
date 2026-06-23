@@ -94,6 +94,37 @@ public sealed class WebLegalComplianceBaselineTests
     }
 
     [Fact]
+    public void WebOperationalIncidentRunbook_ShouldAssignOwnersAndResponseFlows()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string runbook = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/90-Web-Operational-Incident-Runbook.md"));
+        string index = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/00-Documentation-Index.md"));
+        string releaseChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/61-Web-Release-Checklist.md"));
+        string operationsChecklist = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "docs/74-Production-Operations-Setup-Checklist.md"));
+
+        Assert.Contains("Shahram Vafadar", runbook, StringComparison.Ordinal);
+        Assert.Contains("info@darwinlingua.com", runbook, StringComparison.Ordinal);
+        Assert.Contains("Brevo API Key Rotation", runbook, StringComparison.Ordinal);
+        Assert.Contains("Brevo Sender-Domain Or Account Failure", runbook, StringComparison.Ordinal);
+        Assert.Contains("Webhook Failure", runbook, StringComparison.Ordinal);
+        Assert.Contains("Privacy And Account Requests", runbook, StringComparison.Ordinal);
+        Assert.Contains("Security Or Breach Triage", runbook, StringComparison.Ordinal);
+        Assert.Contains("DNS Or Cloudflare Routing Incident", runbook, StringComparison.Ordinal);
+        Assert.Contains("Backup/Restore Incident", runbook, StringComparison.Ordinal);
+        Assert.Contains("90-Web-Operational-Incident-Runbook.md", index, StringComparison.Ordinal);
+        Assert.Contains("90-Web-Operational-Incident-Runbook.md", releaseChecklist, StringComparison.Ordinal);
+        Assert.Contains("90-Web-Operational-Incident-Runbook.md", operationsChecklist, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void TermsPrivacyAndContact_ShouldExposeMisuseAndRequestBoundaries()
     {
         string repositoryRoot = FindRepositoryRoot();
