@@ -299,11 +299,11 @@ The helper starts WebApi and Web with the checked-in launch profiles, starts the
 
 ## Phase Backup Register
 
-### 2026-06-23 Web Brevo Provider Logs Ready / Pre User Testing
+### 2026-06-23 Web Public PWA Ready / Pre User Testing
 
 Backup path:
 
-`X:\Projects\DarwinLingua.Backup\20260623-084635-web-brevo-provider-logs-ready-pre-user-testing`
+`X:\Projects\DarwinLingua.Backup\20260623-091250-web-public-pwa-ready-pre-user-testing`
 
 Scope:
 
@@ -311,15 +311,17 @@ Scope:
 - Email-change confirmation links are verified to use `TransactionalEmail__PublicBaseUrl` when configured, with request-host fallback only when no absolute public base URL is available.
 - Repeated email-delivery failures are verified to trigger `Admin.EmailDeliveryFailureAlert` once the configured threshold is reached, while below-threshold snapshots do not alert.
 - Brevo provider-side transactional logs are verified through the official `/v3/smtp/statistics/events` API for recent real delivery message ids.
+- Public-domain automated PWA shell/installability preconditions are verified for `https://darwinlingua.com`; real install prompt acceptance remains a target-browser manual check.
 - Shared PostgreSQL backup refreshed from `darwinlingua_shared`; local secret bundle includes the configured Brevo API key and webhook token without writing them to Git.
 
 Verification evidence:
 
-- `db/darwinlingua_shared_20260623-084635.dump` created from `darwinlingua_shared`.
-- `db/darwinlingua_shared_20260623-084635.restore-list.txt` generated with `pg_restore --list`.
+- `db/darwinlingua_shared_20260623-091250.dump` created from `darwinlingua_shared`.
+- `db/darwinlingua_shared_20260623-091250.restore-list.txt` generated with `pg_restore --list`.
 - `manifest.md`, `checksums.sha256`, `repo-overlay/`, `repo-overlay/darwinlingua-current-head.bundle`, `secrets/`, and `docker/` are present.
 - `SecretFileCount=3`, `BrevoApiKeyPresent=True`, and `WebhookTokenPresent=True` were verified without printing secret values.
 - `artifacts/validation/brevo-transactional-log-check/brevo-transactional-log-check-20260623-084312.md` passed with recent real Brevo message ids matching provider events.
+- `artifacts/validation/pwa-installability/pwa-installability-darwinlingua-20260623.json` passed 17 public-domain automated PWA checks with 0 failures and 2 manual install-acceptance checks.
 - Public routed smoke returned HTTP 200 for `https://darwinlingua.com`, `/legal`, `/privacy`, and `https://api.darwinlingua.com/health`.
 
 ### 2026-06-17 Course B2 Activity Flow Complete / Pre-C1
