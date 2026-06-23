@@ -23,6 +23,9 @@ public sealed class WebTesterOperatorToolingTests
         string manualExternalReviewScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebManualExternalReviewReport.ps1"));
+        string mailboxReviewPacketScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/New-WebMailboxRenderingReviewPacket.ps1"));
         string controlledTesterAuditScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebControlledTesterReadinessAudit.ps1"));
@@ -52,6 +55,20 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("FailOnIncomplete", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("requiredWwwHost = $false", manualExternalReviewScript, StringComparison.Ordinal);
         Assert.Contains("Web Manual External Review Report", manualExternalReviewScript, StringComparison.Ordinal);
+        Assert.Contains("New-WebMailboxRenderingReviewPacket.ps1", runbook, StringComparison.Ordinal);
+        Assert.Contains("New-WebMailboxRenderingReviewPacket.ps1", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("New-TransactionalEmailTemplatePreview.ps1", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("MailboxRenderingEvidence.csv", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Registration confirmation", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Password reset", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("Email change confirmation", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("no-reply@darwinlingua.com", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("support@darwinlingua.com", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("https://darwinlingua.com", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("www.darwinlingua.com", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.Contains("webhook secrets, API keys", mailboxReviewPacketScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", mailboxReviewPacketScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", mailboxReviewPacketScript, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("New-WebControlledTesterReadinessAudit.ps1", runbook, StringComparison.Ordinal);
         Assert.Contains("FailOnAutomatedFailure", controlledTesterAuditScript, StringComparison.Ordinal);
         Assert.Contains("FailOnOpenHumanGates", controlledTesterAuditScript, StringComparison.Ordinal);

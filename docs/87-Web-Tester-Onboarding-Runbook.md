@@ -50,6 +50,13 @@ Copy-Item .\tools\Web\WebTesterAccounts.example.csv .\artifacts\validation\web-t
 - Confirm the Legal Notice/Impressum and Privacy Policy still carry the correct development-stage wording and that production operator data is not claimed before legal review.
 - Confirm the two PWA manual install checks from `docs/56-Web-Pwa-Install-Validation-Worksheet.md` are either completed or explicitly left out of this tester pass.
 - Use `docs/91-Web-Manual-External-Review-Checklist.md` for the manual mailbox, PWA, and tester-pass evidence that automation cannot prove.
+- Before recording mailbox evidence, generate the operator packet so the inbox review has a concrete checklist and CSV evidence file:
+
+```powershell
+.\tools\Web\New-WebMailboxRenderingReviewPacket.ps1
+```
+
+- Review the real `info@darwinlingua.com` inbox against the generated `MailboxRenderingReview.md`; keep raw action URLs, reset tokens, provider ids, webhook secrets, and API keys out of the evidence file.
 
 - Create a timestamped tester bundle:
 

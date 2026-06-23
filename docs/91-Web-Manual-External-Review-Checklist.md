@@ -21,9 +21,18 @@ Use this after the Brevo real-delivery and app-level email-link smokes have pass
 Evidence inputs:
 
 - Latest safe template preview: `artifacts/validation/transactional-email-template-preview/`
+- Operator packet generator: `tools/Web/New-WebMailboxRenderingReviewPacket.ps1`
 - Latest action-link smoke: `artifacts/validation/web-account-email-link-smoke/`
 - Latest Brevo transactional log check: `artifacts/validation/brevo-transactional-log-check/`
 - Real mailbox: `info@darwinlingua.com`
+
+Generate the mailbox review packet before starting the real inbox check:
+
+```powershell
+.\tools\Web\New-WebMailboxRenderingReviewPacket.ps1
+```
+
+The packet writes `MailboxRenderingReview.md` and `MailboxRenderingEvidence.csv` under `artifacts/validation/web-mailbox-rendering-review-packet/`. It references safe template previews but the gate is closed only by checking real emails in `info@darwinlingua.com`.
 
 Manual checks:
 
