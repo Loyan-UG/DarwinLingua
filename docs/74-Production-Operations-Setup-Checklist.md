@@ -146,7 +146,8 @@ Local development helper:
   - Evidence: `tools/Web/Invoke-BrevoWebhookSuppressionSmoke.ps1` forced a controlled `hardBounce` through the public webhook and verified the delivery row became `Failed`; `tools/Web/Invoke-WebEmailDiagnosticsAdminSmoke.ps1` and `tools/Web/Invoke-WebEmailDiagnosticsAdminActionsSmoke.ps1` verified provider events, failed status, suppressions, and Admin-only controls are visible in `/admin/email-diagnostics`.
 - [x] Confirm repeated failures trigger an admin alert.
   - Evidence: `EmailDeliveryFailureMonitorTests.Monitor_ShouldSendAdminAlertWhenFailureThresholdIsReached` executes `EmailDeliveryFailureMonitorService` with a failure snapshot at the configured threshold and verifies `SendAdminEmailDeliveryFailureAlertAsync` is called with failure count, window, scenario, and failure code. `Monitor_ShouldNotSendAdminAlertBelowThreshold` verifies no admin alert is sent below threshold and that `Admin.EmailDeliveryFailureAlert` is excluded from the failure-count snapshot to prevent alert loops.
-- [ ] Check Brevo dashboard logs for message id, delivery state, bounce/error details, and webhook status.
+- [x] Check Brevo provider logs for message id, delivery state, bounce/error details, and webhook status.
+  - Evidence: `tools/Web/Invoke-BrevoTransactionalLogCheck.ps1 -RequireEvents` uses Brevo's official transactional event report API (`/v3/smtp/statistics/events`) against recent `WebEmailDeliveryLogs` provider message ids. The 2026-06-23 report `artifacts/validation/brevo-transactional-log-check/brevo-transactional-log-check-20260623-084312.md` passed with 10 recent Brevo delivery logs checked, 8 real provider messages matched to Brevo events, and provider event names including `requests`, `delivered`, and `opened`. Synthetic webhook-smoke message ids correctly have no provider-side events.
 
 ## Operational Ownership
 

@@ -211,6 +211,13 @@ Set these values outside source control for the target environment:
 ```
 
 - The suppressed-send smoke tool writes JSON and Markdown reports under `artifacts/validation/brevo-suppressed-send-smoke/`. It creates a temporary internal suppression for a confirmed account, submits the public forgot-password form, verifies that the app records a `Suppressed` delivery log with `recipient-suppressed` and no provider message id, and then removes only the temporary suppression it created.
+- To verify provider-side transactional logs without opening the Brevo dashboard manually, run:
+
+```powershell
+.\tools\Web\Invoke-BrevoTransactionalLogCheck.ps1 -RequireEvents
+```
+
+- The transactional log check writes JSON and Markdown reports under `artifacts/validation/brevo-transactional-log-check/`. It reads recent Brevo provider message ids from `WebEmailDeliveryLogs`, calls Brevo's official `/v3/smtp/statistics/events` endpoint with `messageId` filters, records provider event names such as `requests`, `delivered`, and `opened`, and stores only redacted message id previews plus SHA256 hashes. It does not print the Brevo API key or full provider message ids.
 - Then run the authenticated Admin Email Diagnostics smoke:
 
 ```powershell

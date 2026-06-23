@@ -524,6 +524,26 @@ public sealed class TransactionalEmailBrevoTests
         Assert.Contains("Invoke-BrevoSuppressedSendSmoke.ps1", operationsChecklist, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void BrevoTransactionalLogCheckTool_ShouldVerifyProviderEventsWithoutPrintingSecrets()
+    {
+        string repositoryRoot = FindRepositoryRoot();
+        string script = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Invoke-BrevoTransactionalLogCheck.ps1"));
+
+        Assert.Contains("/v3/smtp/statistics/events", script, StringComparison.Ordinal);
+        Assert.Contains("messageId", script, StringComparison.Ordinal);
+        Assert.Contains("WebEmailDeliveryLogs", script, StringComparison.Ordinal);
+        Assert.Contains("ProviderMessageId", script, StringComparison.Ordinal);
+        Assert.Contains("providerMessageIdSha256", script, StringComparison.Ordinal);
+        Assert.Contains("Invoke-RestMethod", script, StringComparison.Ordinal);
+        Assert.Contains("artifacts/validation/brevo-transactional-log-check", script, StringComparison.Ordinal);
+        Assert.Contains("The report uses Brevo's official transactional event report endpoint", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", script, StringComparison.Ordinal);
+        Assert.DoesNotContain("98959d34", script, StringComparison.Ordinal);
+    }
+
     private static TransactionalEmailOptions CreateBrevoOptions(bool sandboxMode) => new()
     {
         Mode = "BrevoApi",
