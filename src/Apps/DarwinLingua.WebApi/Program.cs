@@ -1921,8 +1921,9 @@ app.MapGet(
     (string moduleKey, string? clientProductKey, int? clientSchemaVersion, IMobileContentPackageDeliveryService deliveryService) =>
         ResolvePackageDownload(() => deliveryService.GetLatestModulePackage(clientProductKey, moduleKey, clientSchemaVersion)));
 
-app.MapGet(
+app.MapMethods(
     "/health",
+    [HttpMethods.Get, HttpMethods.Head],
     (IOptions<ServerContentOptions> options) =>
     {
         return Results.Ok(new

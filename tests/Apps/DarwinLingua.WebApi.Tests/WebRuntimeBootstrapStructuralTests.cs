@@ -236,6 +236,23 @@ public sealed class WebRuntimeBootstrapStructuralTests
         Assert.DoesNotContain("xkeysib-", source, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void WebApiProgram_ShouldSupportHeadForHealthChecks()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string source = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "src",
+            "Apps",
+            "DarwinLingua.WebApi",
+            "Program.cs"));
+
+        Assert.Contains("MapMethods(", source, StringComparison.Ordinal);
+        Assert.Contains("\"/health\"", source, StringComparison.Ordinal);
+        Assert.Contains("HttpMethods.Get", source, StringComparison.Ordinal);
+        Assert.Contains("HttpMethods.Head", source, StringComparison.Ordinal);
+    }
+
     private static string ResolveRepositoryRoot()
     {
         DirectoryInfo? currentDirectory = new(AppContext.BaseDirectory);
