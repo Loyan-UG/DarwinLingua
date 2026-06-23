@@ -34,6 +34,12 @@ Generate the mailbox review packet before starting the real inbox check:
 
 The packet writes `MailboxRenderingReview.md` and `MailboxRenderingEvidence.csv` under `artifacts/validation/web-mailbox-rendering-review-packet/`. It references safe template previews but the gate is closed only by checking real emails in `info@darwinlingua.com`.
 
+Before using the mailbox evidence to close the gate, validate that the CSV is complete and does not contain raw links, tokens, provider ids, diagnostic hashes, old domains, or `www` links:
+
+```powershell
+.\tools\Web\Test-WebManualExternalEvidence.ps1 -FailOnIssue -FailOnOpenMailboxRows
+```
+
 Manual checks:
 
 - [ ] Open the latest real registration confirmation email in the mailbox.

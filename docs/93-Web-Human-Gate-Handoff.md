@@ -34,6 +34,12 @@ artifacts/validation/web-external-action-packet/
 
 Generated packets may include the current IP address that Brevo asks to authorize, but must never include Brevo API keys, webhook tokens, raw action URLs, reset tokens, provider message ids, diagnostic hashes, or full real email bodies.
 
+When the real mailbox review CSV is filled in, validate it before using it to close the mailbox-rendering gate:
+
+```powershell
+.\tools\Web\Test-WebManualExternalEvidence.ps1 -FailOnIssue -FailOnOpenMailboxRows
+```
+
 The generated handoff reads the latest `New-WebControlledTesterReadinessAudit.ps1` evidence and lists the current manual statuses for:
 
 - real mailbox rendering review

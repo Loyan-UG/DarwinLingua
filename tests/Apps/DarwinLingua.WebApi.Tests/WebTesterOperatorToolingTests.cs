@@ -38,6 +38,9 @@ public sealed class WebTesterOperatorToolingTests
         string externalActionPacketScript = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "tools/Web/New-WebExternalActionPacket.ps1"));
+        string manualEvidenceAuditScript = File.ReadAllText(Path.Combine(
+            repositoryRoot,
+            "tools/Web/Test-WebManualExternalEvidence.ps1"));
         string documentationIndex = File.ReadAllText(Path.Combine(
             repositoryRoot,
             "docs/00-Documentation-Index.md"));
@@ -113,6 +116,15 @@ public sealed class WebTesterOperatorToolingTests
         Assert.Contains("Do not paste Brevo API keys", externalActionPacketScript, StringComparison.Ordinal);
         Assert.DoesNotContain("xkeysib-", externalActionPacketScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", externalActionPacketScript, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Test-WebManualExternalEvidence.ps1", humanGateHandoff, StringComparison.Ordinal);
+        Assert.Contains("Test-WebManualExternalEvidence.ps1", manualExternalReview, StringComparison.Ordinal);
+        Assert.Contains("MailboxRenderingEvidence.csv", manualEvidenceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("FailOnOpenMailboxRows", manualEvidenceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("not-reviewed", manualEvidenceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("www\\.darwinlingua\\.com", manualEvidenceAuditScript, StringComparison.Ordinal);
+        Assert.Contains("lingua\\.vafadar\\.pro", manualEvidenceAuditScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("xkeysib-", manualEvidenceAuditScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("98959d34", manualEvidenceAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("xkeysib-", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("98959d34", controlledTesterAuditScript, StringComparison.OrdinalIgnoreCase);
     }
