@@ -1199,6 +1199,25 @@ Before starting a new implementation slice:
 
 Content generation for new modules must not start until the corresponding implementation, validation rules, and Web rendering are stable.
 
+### 7.0 Current Web Readiness Blockers
+
+Status as of 2026-06-24: Web feature/content implementation for the current Learning Portal baseline is complete enough for controlled testing, but tester invitation is still blocked by one external Brevo gate and five human evidence gates. Current operator packet: `artifacts/validation/web-external-action-packet/web-external-action-packet-20260624-000221.md`.
+
+- [ ] add the current host IP shown in the latest external action packet to Brevo `Security -> Authorised IPs`
+  - Verification: rerun `tools/Web/Invoke-BrevoProductionReadinessCheck.ps1 -VerifyBrevoApi -RequireRealDelivery -SenderVerified -DnsAuthenticated -WebhookConfigured -DpaAccepted` and require `Blockers=0`, `Warnings=0`.
+- [ ] close the real mailbox rendering review gate
+  - Verification: record safe evidence through `docs/91-Web-Manual-External-Review-Checklist.md` and rerun `tools/Web/Test-WebManualExternalEvidence.ps1 -FailOnIssue`.
+- [ ] close the desktop PWA install evidence gate
+  - Verification: record the desktop Chrome/Edge install result using `docs/56-Web-Pwa-Install-Validation-Worksheet.md` or the manual external review report.
+- [ ] close the Android PWA install evidence gate or explicitly mark it out of scope for this controlled tester pass
+  - Verification: record Android Chrome install evidence or a deliberate `not-in-scope-for-this-pass` decision; do not treat that as broad production sign-off.
+- [ ] close the tester-pass start-status gate
+  - Verification: confirm the current tester bundle, tester-facing quick start, operator-only manual checklist, intended tester count, helper-language coverage, and Premium grant approach before invitations.
+- [ ] run the controlled tester pass and triage feedback
+  - Verification: collect `WebTesterFeedback.csv`, run `tools/Web/Convert-WebTesterFeedbackToReport.ps1`, fix blocker/major issues, and rerun `tools/Web/New-WebControlledTesterReadinessAudit.ps1 -FailOnAutomatedFailure -FailOnOpenHumanGates`.
+- [ ] create the next restore-ready external backup after the controlled tester readiness gates are closed
+  - Verification: backup under `X:\Projects\DarwinLingua.Backup` includes PostgreSQL dump, globals, restore list, dry-run restore evidence, repo overlay, separate secret bundle, manifest, checksums, and current readiness evidence.
+
 ### 7.1 Learning Portal Foundation
 
 - [x] define shared learning portal navigation
