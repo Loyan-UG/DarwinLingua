@@ -1,4 +1,5 @@
 using DarwinLingua.Web.Models;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Web.Services;
 
@@ -220,7 +221,12 @@ internal sealed class WebAdminOperationsQueryService(IWebCatalogApiClient catalo
         string? query,
         int take,
         CancellationToken cancellationToken) =>
-        catalogApiClient.GetAdminLearningPortalIssuesAsync(areaFilter, query, take, cancellationToken);
+        catalogApiClient.GetAdminLearningPortalIssuesAsync(
+            areaFilter,
+            query,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            take,
+            cancellationToken);
 
     public Task<AdminWordsPageViewModel> GetWordsAsync(
         string? query,

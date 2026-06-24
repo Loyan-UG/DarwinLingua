@@ -54,6 +54,7 @@ public sealed class UserLearningProfileServiceTests
         Assert.Equal("en", profile.PreferredMeaningLanguage1);
         Assert.Null(profile.PreferredMeaningLanguage2);
         Assert.Equal(["en"], profile.ActiveMeaningLanguages);
+        Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, profile.TargetLearningLanguageCode);
     }
 
     /// <summary>

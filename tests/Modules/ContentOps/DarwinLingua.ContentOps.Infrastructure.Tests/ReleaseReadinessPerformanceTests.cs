@@ -180,6 +180,8 @@ public sealed class ReleaseReadinessPerformanceTests
             packageVersion = "1.0",
             packageId,
             packageName = "Phase 1 Starter Performance Package",
+            targetLearningLanguageCode = "de",
+            levelSystemCode = "cefr",
             source = "Hybrid",
             defaultMeaningLanguages = requiredMeaningLanguages,
             labels = new[]

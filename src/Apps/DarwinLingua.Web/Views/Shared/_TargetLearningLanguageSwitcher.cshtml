@@ -1,0 +1,35 @@
+@{
+    string currentTargetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    TargetLearningLanguageDefinition currentLanguage =
+        TargetLearningLanguageCatalog.Active.FirstOrDefault(language =>
+            string.Equals(language.Code, currentTargetLearningLanguageCode, StringComparison.OrdinalIgnoreCase))
+        ?? TargetLearningLanguageCatalog.German;
+}
+
+<details class="account-menu target-language-switcher">
+    <summary class="target-language-switcher__summary" aria-label="@T["Target learning language"]">
+        <span class="target-language-switcher__label">@T["Learning"]</span>
+        <strong>@currentLanguage.NativeName</strong>
+    </summary>
+    <div class="account-menu__panel target-language-switcher__panel">
+        <span class="target-language-switcher__section">@T["Target learning language"]</span>
+        @foreach (TargetLearningLanguageDefinition language in TargetLearningLanguageCatalog.All.OrderBy(language => language.SortOrder))
+        {
+            if (language.IsActive)
+            {
+                <a class="target-language-switcher__option @(string.Equals(language.Code, currentLanguage.Code, StringComparison.OrdinalIgnoreCase) ? "is-active" : string.Empty)" asp-area="" asp-controller="Browse" asp-action="Index" asp-route-targetLearningLanguageCode="@language.Code" aria-current="@(string.Equals(language.Code, currentLanguage.Code, StringComparison.OrdinalIgnoreCase) ? "true" : null)">
+                    <span>@language.NativeName</span>
+                    <small>@language.EnglishName</small>
+                </a>
+            }
+            else
+            {
+                <span class="target-language-switcher__option target-language-switcher__option--disabled" aria-disabled="true">
+                    <span>@language.NativeName</span>
+                    <small>@language.EnglishName · @T["Planned"]</small>
+                </span>
+            }
+        }
+        <p class="target-language-switcher__hint">@T["Target learning language is separate from UI language and helper translations."]</p>
+    </div>
+</details>

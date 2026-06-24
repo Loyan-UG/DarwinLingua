@@ -1,5 +1,6 @@
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Identity;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
@@ -103,6 +104,7 @@ public sealed class OrganizerDashboardController(
                 .SaveAdminOrganizerProfileAsync(
                     new AdminSaveOrganizerProfileRequest(
                         profile.Slug,
+                        ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                         input.DisplayName.Trim(),
                         input.OrganizerType.Trim(),
                         input.Description.Trim(),
@@ -334,6 +336,7 @@ public sealed class OrganizerDashboardController(
 
             EventRsvpModel updatedRsvp = await catalogApiClient.SetAdminEventRsvpStatusAsync(
                     conversationEvent.Slug,
+                    ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                     rsvpId,
                     new AdminSetEventRsvpStatusRequest(status.Trim()),
                     cancellationToken)
@@ -379,7 +382,9 @@ public sealed class OrganizerDashboardController(
             return null;
         }
 
-        return await catalogApiClient.GetOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken).ConfigureAwait(false);
+        return await catalogApiClient
+            .GetOrganizerProfileBySlugAsync(normalizedSlug, ContentLanguageRequirements.DefaultTargetLearningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
     }
 
     private async Task<OrganizerDashboardProfileViewModel?[]> LoadDashboardProfilesAsync(
@@ -421,7 +426,7 @@ public sealed class OrganizerDashboardController(
         CancellationToken cancellationToken)
     {
         OrganizerProfileDetailModel? profile = await catalogApiClient
-            .GetOrganizerProfileBySlugAsync(organizerProfileSlug, cancellationToken)
+            .GetOrganizerProfileBySlugAsync(organizerProfileSlug, ContentLanguageRequirements.DefaultTargetLearningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
         if (profile is null)
@@ -461,8 +466,14 @@ public sealed class OrganizerDashboardController(
         await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
         try
         {
-            Task<EventRsvpSummaryModel> summaryTask = catalogApiClient.GetEventRsvpSummaryAsync(eventSlug, cancellationToken);
-            Task<IReadOnlyList<EventRsvpModel>> rsvpsTask = catalogApiClient.GetAdminEventRsvpsAsync(eventSlug, cancellationToken);
+            Task<EventRsvpSummaryModel> summaryTask = catalogApiClient.GetEventRsvpSummaryAsync(
+                eventSlug,
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                cancellationToken);
+            Task<IReadOnlyList<EventRsvpModel>> rsvpsTask = catalogApiClient.GetAdminEventRsvpsAsync(
+                eventSlug,
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                cancellationToken);
             await Task.WhenAll(summaryTask, rsvpsTask).ConfigureAwait(false);
 
             return new(
@@ -477,7 +488,14 @@ public sealed class OrganizerDashboardController(
             return new(
                 eventSlug,
                 new DashboardEventRsvpData(
-                    new EventRsvpSummaryModel(eventSlug, 0, 0, 0, 0, null),
+                    new EventRsvpSummaryModel(
+                        eventSlug,
+                        ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                        0,
+                        0,
+                        0,
+                        0,
+                        null),
                     []));
         }
         finally
@@ -552,6 +570,7 @@ public sealed class OrganizerDashboardController(
         {
             AdminSaveConversationEventRequest request = new(
                         input.Slug.Trim(),
+                        ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                         input.Name.Trim(),
                         input.Description.Trim(),
                         TrimToNull(input.City),

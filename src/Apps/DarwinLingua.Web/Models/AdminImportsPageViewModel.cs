@@ -56,9 +56,9 @@ public sealed record AdminImportsPageViewModel(
             return "writing-templates";
         }
 
-        if (packageText.Contains("life-in-germany", StringComparison.Ordinal) || packageText.Contains("cultural", StringComparison.Ordinal))
+        if (packageText.Contains("country-guidance", StringComparison.Ordinal))
         {
-            return "life-in-germany";
+            return "country-guidance";
         }
 
         if (packageText.Contains("roleplay", StringComparison.Ordinal))
@@ -93,7 +93,7 @@ public sealed record AdminImportsPageViewModel(
             "courses" => "Courses",
             "exam-prep" => "Exam Prep",
             "writing-templates" => "Writing Templates",
-            "life-in-germany" => "Life in Germany",
+            "country-guidance" => "Country Guidance",
             "roleplays" => "Roleplays",
             "dialogues" => "Dialogues",
             "talk-topics" => "Talk Topics",

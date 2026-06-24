@@ -20,6 +20,7 @@ public sealed partial class DialogueLesson
 
     private DialogueLesson()
     {
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public DialogueLesson(
@@ -32,7 +33,8 @@ public sealed partial class DialogueLesson
         string category,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -40,6 +42,7 @@ public sealed partial class DialogueLesson
         }
 
         Id = id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Dialogue lesson target learning language");
         Slug = NormalizeKey(slug, "Dialogue lesson slug");
         Title = NormalizeRequiredText(title, nameof(title), 256);
         Description = NormalizeRequiredText(description, nameof(description), 4000);
@@ -53,6 +56,8 @@ public sealed partial class DialogueLesson
     }
 
     public Guid Id { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; }
 
     public string Slug { get; private set; } = string.Empty;
 

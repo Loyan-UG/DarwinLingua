@@ -9,7 +9,7 @@
             <span class="eyebrow">@T["Content"]</span>
             <h1>@T["Exam Prep"]</h1>
         </div>
-        <a class="button button--secondary button--compact" asp-area="" asp-controller="ExamPrep" asp-action="Index">@T["Open learner view"]</a>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open learner view"]</a>
     </div>
 
     <h2>@T["Exam profiles"]</h2>
@@ -36,7 +36,7 @@
                     {
                         <tr>
                             <td>
-                                <a asp-area="" asp-controller="ExamPrep" asp-action="Detail" asp-route-slug="@unit.Slug">@unit.Title</a>
+                                <a asp-area="" asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@unit.Slug">@unit.Title</a>
                                 <small>@unit.Slug</small>
                             </td>
                             <td>@unit.ExamProfileKey</td>

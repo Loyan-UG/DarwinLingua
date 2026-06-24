@@ -14,11 +14,17 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
-    public async Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         LanguageCode primaryLanguage = ResolveRequestedLanguage(primaryMeaningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
-        IQueryable<ExerciseSet> query = dbContext.ExerciseSets.AsNoTracking().Include(set => set.Items).Where(set => set.PublicationStatus == PublicationStatus.Active);
+        IQueryable<ExerciseSet> query = dbContext.ExerciseSets
+            .AsNoTracking()
+            .Include(set => set.Items)
+            .Where(set =>
+                set.PublicationStatus == PublicationStatus.Active &&
+                set.TargetLearningLanguageCode == targetLanguageCode);
         query = ApplySetFilters(query, filter);
 
         List<ExerciseSet> sets = await query.OrderBy(set => set.SortOrder).ThenBy(set => set.Title)
@@ -26,13 +32,17 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
         return sets.Select(set => MapSetListItem(set, primaryLanguage)).ToArray();
     }
 
-    public async Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = slug.Trim().ToLowerInvariant();
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         LanguageCode primaryLanguage = ResolveRequestedLanguage(primaryMeaningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         ExerciseSet? set = await dbContext.ExerciseSets.AsNoTracking().Include(item => item.Items)
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item =>
+                item.PublicationStatus == PublicationStatus.Active &&
+                item.TargetLearningLanguageCode == targetLanguageCode &&
+                item.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken).ConfigureAwait(false);
         if (set is null)
         {
@@ -41,7 +51,10 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
 
         string[] exerciseSlugs = set.Items.OrderBy(item => item.SortOrder).Select(item => item.ExerciseSlug).ToArray();
         List<Exercise> exercises = await dbContext.Exercises.AsNoTracking()
-            .Where(exercise => exercise.PublicationStatus == PublicationStatus.Active && exerciseSlugs.Contains(exercise.Slug))
+            .Where(exercise =>
+                exercise.PublicationStatus == PublicationStatus.Active &&
+                exercise.TargetLearningLanguageCode == targetLanguageCode &&
+                exerciseSlugs.Contains(exercise.Slug))
             .ToListAsync(cancellationToken).ConfigureAwait(false);
 
         ExerciseListItemModel[] exerciseModels = exerciseSlugs
@@ -62,11 +75,16 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
             exerciseModels);
     }
 
-    public async Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         LanguageCode primaryLanguage = ResolveRequestedLanguage(primaryMeaningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
-        IQueryable<Exercise> query = dbContext.Exercises.AsNoTracking().Where(exercise => exercise.PublicationStatus == PublicationStatus.Active);
+        IQueryable<Exercise> query = dbContext.Exercises
+            .AsNoTracking()
+            .Where(exercise =>
+                exercise.PublicationStatus == PublicationStatus.Active &&
+                exercise.TargetLearningLanguageCode == targetLanguageCode);
         query = ApplyExerciseFilters(query, filter);
 
         List<Exercise> exercises = await query.OrderBy(exercise => exercise.SortOrder).ThenBy(exercise => exercise.Title)
@@ -74,10 +92,10 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
         return exercises.Select(exercise => MapListItem(exercise, primaryLanguage)).ToArray();
     }
 
-    public async Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         LanguageCode primaryLanguage = ResolveRequestedLanguage(primaryMeaningLanguageCode);
-        Exercise? exercise = await GetPublishedExerciseEntityBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+        Exercise? exercise = await GetPublishedExerciseEntityBySlugAsync(slug, targetLearningLanguageCode, cancellationToken).ConfigureAwait(false);
         return exercise is null
             ? null
             : new ExerciseDetailModel(
@@ -96,12 +114,16 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
                 ResolveText(exercise.HintTranslationsJson, primaryLanguage));
     }
 
-    public async Task<Exercise?> GetPublishedExerciseEntityBySlugAsync(string slug, CancellationToken cancellationToken)
+    public async Task<Exercise?> GetPublishedExerciseEntityBySlugAsync(string slug, string targetLearningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = slug.Trim().ToLowerInvariant();
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         return await dbContext.Exercises.AsNoTracking()
-            .Where(exercise => exercise.PublicationStatus == PublicationStatus.Active && exercise.Slug == normalizedSlug)
+            .Where(exercise =>
+                exercise.PublicationStatus == PublicationStatus.Active &&
+                exercise.TargetLearningLanguageCode == targetLanguageCode &&
+                exercise.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken).ConfigureAwait(false);
     }
 
@@ -166,6 +188,11 @@ internal sealed class ExerciseRepository(IDbContextFactory<DarwinLinguaDbContext
     }
 
     private static string? Normalize(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim().ToLowerInvariant();
+
+    private static string NormalizeRequiredLanguageCode(string value) =>
+        string.IsNullOrWhiteSpace(value)
+            ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+            : value.Trim().ToLowerInvariant();
     private static string? NormalizeSearch(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
 
     private static string? ResolveText(string json, LanguageCode primaryLanguage)

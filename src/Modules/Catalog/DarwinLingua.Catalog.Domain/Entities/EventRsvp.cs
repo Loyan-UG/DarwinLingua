@@ -1,3 +1,4 @@
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Exceptions;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -11,6 +12,7 @@ public sealed class EventRsvp
     public EventRsvp(
         Guid id,
         string conversationEventSlug,
+        string? targetLearningLanguageCode,
         string participantName,
         string participantEmail,
         string status,
@@ -23,6 +25,7 @@ public sealed class EventRsvp
 
         Id = id;
         ConversationEventSlug = ConversationEvent.NormalizeKey(conversationEventSlug, "Event RSVP event slug");
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         ParticipantName = ConversationEvent.NormalizeRequiredText(participantName, nameof(participantName), 256);
         ParticipantEmail = NormalizeEmail(participantEmail);
         Status = NormalizeStatus(status);
@@ -33,6 +36,8 @@ public sealed class EventRsvp
     public Guid Id { get; private set; }
 
     public string ConversationEventSlug { get; private set; } = string.Empty;
+
+    public string TargetLearningLanguageCode { get; private set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
 
     public string ParticipantName { get; private set; } = string.Empty;
 

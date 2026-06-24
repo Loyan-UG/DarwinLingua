@@ -21,6 +21,10 @@
             <span class="eyebrow">Events</span>
             <strong>@Model.Events.Count</strong>
         </a>
+        <a href="#conversation-event-scope" class="admin-summary-tile">
+            <span class="eyebrow">Target language</span>
+            <strong>@Model.Input.TargetLearningLanguageCode.ToUpperInvariant()</strong>
+        </a>
         <a href="#conversation-events-list" class="admin-summary-tile">
             <span class="eyebrow">Online</span>
             <strong>@onlineCount</strong>
@@ -32,15 +36,44 @@
     </div>
 
     <nav class="admin-anchor-nav" aria-label="Conversation event sections">
+        <a href="#conversation-event-scope">Scope</a>
         <a href="#conversation-event-edit">Create/edit</a>
         <a href="#conversation-events-list">Published events</a>
     </nav>
+</section>
+
+<section id="conversation-event-scope" class="panel stack-md">
+    <h2 class="headline-sm">Target-language scope</h2>
+    <p class="text-muted">Conversation events are language-practice inventory. Choose the learning language before reviewing, linking, or saving event rows.</p>
+    <form method="get" class="form-grid">
+        <label class="field">
+            <span>Target learning language</span>
+            <select name="targetLearningLanguageCode">
+                @foreach (TargetLearningLanguageDefinition language in TargetLearningLanguageCatalog.Active)
+                {
+                    <option value="@language.Code" selected="@(string.Equals(Model.Input.TargetLearningLanguageCode, language.Code, StringComparison.OrdinalIgnoreCase))">@language.EnglishName (@language.Code)</option>
+                }
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--secondary">Apply scope</button>
+        </div>
+    </form>
 </section>
 
 <section id="conversation-event-edit" class="panel stack-md">
     <h2 class="headline-sm">Create or replace event</h2>
     <form method="post" class="form-grid" data-confirm-submit="Save this public conversation event listing?">
         @Html.AntiForgeryToken()
+        <label class="field">
+            <span>Target learning language</span>
+            <select name="TargetLearningLanguageCode">
+                @foreach (TargetLearningLanguageDefinition language in TargetLearningLanguageCatalog.Active)
+                {
+                    <option value="@language.Code" selected="@(string.Equals(Model.Input.TargetLearningLanguageCode, language.Code, StringComparison.OrdinalIgnoreCase))">@language.EnglishName (@language.Code)</option>
+                }
+            </select>
+        </label>
         <label class="field">
             <span>Slug</span>
             <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-cafe-a1" />
@@ -190,7 +223,7 @@
                             <td>
                                 <strong>@item.Name</strong>
                                 <div>@item.Slug</div>
-                                <a asp-area="" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">View public page</a>
+                                <a asp-area="" asp-controller="ConversationEvents" asp-action="Detail" asp-route-targetLearningLanguageCode="@item.TargetLearningLanguageCode" asp-route-slug="@item.Slug">View public page</a>
                             </td>
                             <td>@(item.IsOnline ? "Online" : item.City ?? item.CountryRegion)</td>
                             <td>@(item.StartsAtUtc?.ToString("yyyy-MM-dd HH:mm 'UTC'", System.Globalization.CultureInfo.InvariantCulture) ?? "Schedule text only")</td>
@@ -198,7 +231,7 @@
                             <td>
                                 @if (!string.IsNullOrWhiteSpace(item.OrganizerProfileSlug))
                                 {
-                                    <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerName</a>
+                                    <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@item.TargetLearningLanguageCode" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerName</a>
                                 }
                                 else
                                 {

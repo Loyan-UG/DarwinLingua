@@ -1,5 +1,13 @@
 # Writing Template Content Package Contract
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+
 ## Purpose
 
 Writing Templates teach learners how to produce practical German messages and exam-ready short texts. The German source is canonical. Helper translations explain the situation, structure, template, and sample in the learner's selected meaning language; they never replace the German template text as the target output.

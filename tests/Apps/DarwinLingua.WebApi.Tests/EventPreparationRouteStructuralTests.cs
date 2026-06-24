@@ -16,7 +16,9 @@ public sealed class EventPreparationRouteStructuralTests
         Assert.Contains("\"/api/catalog/dialogues/{slug}/event-preparation-packs\"", apiProgramSource, StringComparison.Ordinal);
         Assert.Contains("\"/api/catalog/event-preparation-packs/{slug}\"", apiProgramSource, StringComparison.Ordinal);
 
-        Assert.Contains("[Route(\"event-preparation-packs\")", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("[Route(DarwinLingua.Web.Services.LearningRouteConventions.EventPreparationPacks)]", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("ResolveTargetLearningLanguageCode(HttpContext)", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", apiProgramSource, StringComparison.Ordinal);
         Assert.Contains("CanUseEventPreparationPacksAsync", controllerSource, StringComparison.Ordinal);
         Assert.Contains("GetEventPreparationPackBySlugAsync", controllerSource, StringComparison.Ordinal);
         Assert.Contains("WebProductAnalyticsEvents.EventPreparationPackCompleted", controllerSource, StringComparison.Ordinal);

@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,10 @@ internal sealed class RoleplayScenarioConfiguration : IEntityTypeConfiguration<R
         builder.ToTable("RoleplayScenarios");
         builder.HasKey(scenario => scenario.Id);
         builder.Property(scenario => scenario.Id).ValueGeneratedNever();
+        builder.Property(scenario => scenario.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(scenario => scenario.Slug).HasMaxLength(128).IsRequired();
         builder.Property(scenario => scenario.LinkedDialogueSlug).HasMaxLength(128);
         builder.Property(scenario => scenario.Title).HasMaxLength(256).IsRequired();
@@ -36,8 +41,8 @@ internal sealed class RoleplayScenarioConfiguration : IEntityTypeConfiguration<R
         builder.Property(scenario => scenario.SortOrder).IsRequired();
         builder.Property(scenario => scenario.CreatedAtUtc).IsRequired();
         builder.Property(scenario => scenario.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(scenario => scenario.Slug).IsUnique();
-        builder.HasIndex(scenario => new { scenario.CefrLevel, scenario.Category, scenario.TaskType, scenario.InteractionMode, scenario.Register });
+        builder.HasIndex(scenario => new { scenario.TargetLearningLanguageCode, scenario.Slug }).IsUnique();
+        builder.HasIndex(scenario => new { scenario.TargetLearningLanguageCode, scenario.CefrLevel, scenario.Category, scenario.TaskType, scenario.InteractionMode, scenario.Register });
 
         builder.HasMany(scenario => scenario.Topics).WithOne().HasForeignKey(topic => topic.RoleplayScenarioId).OnDelete(DeleteBehavior.Cascade);
     }

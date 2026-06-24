@@ -260,7 +260,7 @@ public sealed class CatalogPackagePublisher(
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        List<CulturalNote> activeCulturalNotes = await catalogDbContext.CulturalNotes
+        List<CountryGuidanceNote> activeCountryGuidanceNotes = await catalogDbContext.CountryGuidanceNotes
             .AsNoTracking()
             .Where(note => note.PublicationStatus == PublicationStatus.Active)
             .OrderBy(note => note.SortOrder)
@@ -306,7 +306,7 @@ public sealed class CatalogPackagePublisher(
             activeCourseModules,
             activeCourseLessons,
             activeWritingTemplates,
-            activeCulturalNotes,
+            activeCountryGuidanceNotes,
             activeExamProfiles,
             activeExamPrepUnits);
         List<string> publishedPackageIds = [];
@@ -339,7 +339,7 @@ public sealed class CatalogPackagePublisher(
                 definition.CourseModules,
                 definition.CourseLessons,
                 definition.WritingTemplates,
-                definition.CulturalNotes,
+                definition.CountryGuidanceNotes,
                 definition.ExamProfiles,
                 definition.ExamPrepUnits,
                 activeCollections,
@@ -397,7 +397,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<CourseModule> courseModules,
         IReadOnlyList<CourseLesson> courseLessons,
         IReadOnlyList<WritingTemplate> writingTemplates,
-        IReadOnlyList<CulturalNote> culturalNotes,
+        IReadOnlyList<CountryGuidanceNote> countryGuidanceNotes,
         IReadOnlyList<ExamProfile> examProfiles,
         IReadOnlyList<ExamPrepUnit> examPrepUnits)
     {
@@ -422,7 +422,7 @@ public sealed class CatalogPackagePublisher(
                 courseModules,
                 courseLessons,
                 writingTemplates,
-                culturalNotes,
+                countryGuidanceNotes,
                 examProfiles,
                 examPrepUnits),
             new(
@@ -444,7 +444,7 @@ public sealed class CatalogPackagePublisher(
                 courseModules,
                 courseLessons,
                 writingTemplates,
-                culturalNotes,
+                countryGuidanceNotes,
                 examProfiles,
                 examPrepUnits),
         ];
@@ -508,7 +508,7 @@ public sealed class CatalogPackagePublisher(
             courseModules,
             courseLessons,
             writingTemplates,
-            culturalNotes,
+            countryGuidanceNotes,
             examProfiles,
             examPrepUnits);
 
@@ -532,7 +532,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<CourseModule> courseModules,
         IReadOnlyList<CourseLesson> courseLessons,
         IReadOnlyList<WritingTemplate> writingTemplates,
-        IReadOnlyList<CulturalNote> culturalNotes,
+        IReadOnlyList<CountryGuidanceNote> countryGuidanceNotes,
         IReadOnlyList<ExamProfile> examProfiles,
         IReadOnlyList<ExamPrepUnit> examPrepUnits)
     {
@@ -545,7 +545,7 @@ public sealed class CatalogPackagePublisher(
         AddModuleDefinition(definitions, clientProductKey, versionToken, "courses", "Courses", coursePaths: coursePaths, courseModules: courseModules, courseLessons: courseLessons);
         AddModuleDefinition(definitions, clientProductKey, versionToken, "exam-prep", "Exam Preparation", examProfiles: examProfiles, examPrepUnits: examPrepUnits);
         AddModuleDefinition(definitions, clientProductKey, versionToken, "writing-templates", "Writing Templates", writingTemplates: writingTemplates);
-        AddModuleDefinition(definitions, clientProductKey, versionToken, "cultural-notes", "Cultural Notes", culturalNotes: culturalNotes);
+        AddModuleDefinition(definitions, clientProductKey, versionToken, "country-guidance", "Country Guidance", countryGuidanceNotes: countryGuidanceNotes);
         AddModuleDefinition(definitions, clientProductKey, versionToken, "events", "Events", eventPreparationPacks: eventPreparationPacks);
         AddModuleDefinition(definitions, clientProductKey, versionToken, "organizers", "Organizers");
         AddModuleDefinition(definitions, clientProductKey, versionToken, "conversation-starters", "Conversation Starters", conversationStarterPacks: conversationStarterPacks);
@@ -570,7 +570,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<CourseModule>? courseModules = null,
         IReadOnlyList<CourseLesson>? courseLessons = null,
         IReadOnlyList<WritingTemplate>? writingTemplates = null,
-        IReadOnlyList<CulturalNote>? culturalNotes = null,
+        IReadOnlyList<CountryGuidanceNote>? countryGuidanceNotes = null,
         IReadOnlyList<ExamProfile>? examProfiles = null,
         IReadOnlyList<ExamPrepUnit>? examPrepUnits = null)
     {
@@ -593,7 +593,7 @@ public sealed class CatalogPackagePublisher(
             courseModules ?? [],
             courseLessons ?? [],
             writingTemplates ?? [],
-            culturalNotes ?? [],
+            countryGuidanceNotes ?? [],
             examProfiles ?? [],
             examPrepUnits ?? []));
     }
@@ -619,7 +619,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<CourseModule> courseModules,
         IReadOnlyList<CourseLesson> courseLessons,
         IReadOnlyList<WritingTemplate> writingTemplates,
-        IReadOnlyList<CulturalNote> culturalNotes,
+        IReadOnlyList<CountryGuidanceNote> countryGuidanceNotes,
         IReadOnlyList<ExamProfile> examProfiles,
         IReadOnlyList<ExamPrepUnit> examPrepUnits,
         IReadOnlyList<WordCollection> activeCollections,
@@ -652,7 +652,7 @@ public sealed class CatalogPackagePublisher(
             courseModules.Select(CreateCourseModule).ToArray(),
             courseLessons.Select(CreateCourseLesson).ToArray(),
             writingTemplates.Select(CreateWritingTemplate).ToArray(),
-            culturalNotes.Select(CreateCulturalNote).ToArray(),
+            countryGuidanceNotes.Select(CreateCountryGuidanceNote).ToArray(),
             examProfiles.Select(CreateExamProfile).ToArray(),
             examPrepUnits.Select(CreateExamPrepUnit).ToArray(),
             words.Select(word => CreateEntry(word, topicKeys)).ToArray());
@@ -1221,7 +1221,7 @@ public sealed class CatalogPackagePublisher(
             true,
             template.SortOrder);
 
-    private static ExportedCulturalNote CreateCulturalNote(CulturalNote note) =>
+    private static ExportedCountryGuidanceNote CreateCountryGuidanceNote(CountryGuidanceNote note) =>
         new(
             note.Slug,
             note.Title,
@@ -1230,7 +1230,7 @@ public sealed class CatalogPackagePublisher(
             note.Category,
             note.Context,
             ParseStringArray(note.SectionsJson),
-            ParseJsonArray<ExportedCulturalNoteExample>(note.ExamplesJson),
+            ParseJsonArray<ExportedCountryGuidanceNoteExample>(note.ExamplesJson),
             ParseStringArray(note.DoNotesJson),
             null,
             ParseStringArray(note.DontNotesJson),
@@ -1463,7 +1463,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<CourseModule> CourseModules,
         IReadOnlyList<CourseLesson> CourseLessons,
         IReadOnlyList<WritingTemplate> WritingTemplates,
-        IReadOnlyList<CulturalNote> CulturalNotes,
+        IReadOnlyList<CountryGuidanceNote> CountryGuidanceNotes,
         IReadOnlyList<ExamProfile> ExamProfiles,
         IReadOnlyList<ExamPrepUnit> ExamPrepUnits)
     {
@@ -1481,7 +1481,7 @@ public sealed class CatalogPackagePublisher(
             CourseModules.Count +
             CourseLessons.Count +
             WritingTemplates.Count +
-            CulturalNotes.Count +
+            CountryGuidanceNotes.Count +
             ExamProfiles.Count +
             ExamPrepUnits.Count;
     }
@@ -1509,7 +1509,7 @@ public sealed class CatalogPackagePublisher(
         IReadOnlyList<ExportedCourseModule> CourseModules,
         IReadOnlyList<ExportedCourseLesson> CourseLessons,
         IReadOnlyList<ExportedWritingTemplate> WritingTemplates,
-        IReadOnlyList<ExportedCulturalNote> CulturalNotes,
+        IReadOnlyList<ExportedCountryGuidanceNote> CountryGuidanceNotes,
         IReadOnlyList<ExportedExamProfile> ExamProfiles,
         IReadOnlyList<ExportedExamPrepUnit> ExamPrepUnits,
         IReadOnlyList<ExportedContentEntry> Entries);
@@ -1876,7 +1876,7 @@ public sealed class CatalogPackagePublisher(
         bool IsPublished,
         int SortOrder);
 
-    private sealed record ExportedCulturalNote(
+    private sealed record ExportedCountryGuidanceNote(
         string Slug,
         string Title,
         string ShortDescription,
@@ -1884,7 +1884,7 @@ public sealed class CatalogPackagePublisher(
         string Category,
         string Context,
         IReadOnlyList<string> Sections,
-        IReadOnlyList<ExportedCulturalNoteExample> Examples,
+        IReadOnlyList<ExportedCountryGuidanceNoteExample> Examples,
         IReadOnlyList<string> DoNotes,
         IReadOnlyList<string>? Dos,
         IReadOnlyList<string> DontNotes,
@@ -1898,7 +1898,7 @@ public sealed class CatalogPackagePublisher(
         bool IsPublished,
         int SortOrder);
 
-    private sealed record ExportedCulturalNoteExample(string? GermanText, string? Explanation);
+    private sealed record ExportedCountryGuidanceNoteExample(string? GermanText, string? Explanation);
 
     private sealed record ExportedExamProfile(
         string Key,

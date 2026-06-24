@@ -95,7 +95,7 @@ All project documentation should remain in English.
 - `79-Exercise-Content-Package-Contract.md`
 - `80-Course-Content-Package-Contract.md`
 - `81-Writing-Template-Content-Package-Contract.md`
-- `82-Cultural-Note-Content-Package-Contract.md`
+- `82-Country-Guidance-Content-Package-Contract.md`
 - `83-Exam-Prep-Content-Package-Contract.md`
 - `84-Content-Generation-Lessons-Learned.md`
 - `85-Sensitive-Educational-Language-Policy.md`
@@ -107,6 +107,7 @@ All project documentation should remain in English.
 - `91-Web-Manual-External-Review-Checklist.md`
 - `92-Web-Legal-Research-And-Risk-Audit.md`
 - `93-Web-Human-Gate-Handoff.md`
+- `94-Multi-Target-Language-Architecture.md`
 
 Localized operator-oriented Persian variants also exist for:
 
@@ -173,7 +174,7 @@ If you are new to the project, read the documents in this order:
 50. `79-Exercise-Content-Package-Contract.md`
 51. `80-Course-Content-Package-Contract.md`
 52. `81-Writing-Template-Content-Package-Contract.md`
-53. `82-Cultural-Note-Content-Package-Contract.md`
+53. `82-Country-Guidance-Content-Package-Contract.md`
 54. `83-Exam-Prep-Content-Package-Contract.md`
 55. `84-Content-Generation-Lessons-Learned.md`
 56. `85-Sensitive-Educational-Language-Policy.md`
@@ -185,6 +186,7 @@ If you are new to the project, read the documents in this order:
 62. `91-Web-Manual-External-Review-Checklist.md`
 63. `92-Web-Legal-Research-And-Risk-Audit.md`
 64. `93-Web-Human-Gate-Handoff.md`
+65. `94-Multi-Target-Language-Architecture.md`
 
 ---
 
@@ -221,7 +223,7 @@ If you are new to the project, read the documents in this order:
 - `79-Exercise-Content-Package-Contract.md` defines the Phase 7 reusable Exercise Engine JSON contract now that deterministic exercises and exercise sets have started.
 - `80-Course-Content-Package-Contract.md` defines the Phase 7 Course Lessons and CEFR Learning Paths JSON contract now that dynamic course implementation has started.
 - `81-Writing-Template-Content-Package-Contract.md` defines the Phase 7 Writing Templates JSON contract now that dynamic template implementation has started.
-- `82-Cultural-Note-Content-Package-Contract.md` defines the Phase 7 Life in Germany JSON contract using the current `CulturalNote` backing store.
+- `82-Country-Guidance-Content-Package-Contract.md` defines the Phase 7 Life in Germany JSON contract using the current `CountryGuidanceNote` backing store.
 - `83-Exam-Prep-Content-Package-Contract.md` defines the Phase 7 Exam Preparation JSON contract now that dynamic exam-prep implementation has started.
 - `84-Content-Generation-Lessons-Learned.md` records prompt, localization, import, rendering, and validation lessons that must be checked before future bulk content generation.
 - `85-Sensitive-Educational-Language-Policy.md` defines the product, content, filtering, privacy, and release policy for warning-labeled rude/slang/romantic/social educational language without allowing pornographic or explicit adult content.
@@ -233,13 +235,14 @@ If you are new to the project, read the documents in this order:
 - `91-Web-Manual-External-Review-Checklist.md` gives the operator one evidence checklist for the remaining human gates before and during the controlled Web tester pass: real mailbox rendering, PWA install acceptance, and tester-pass start/close criteria.
 - `92-Web-Legal-Research-And-Risk-Audit.md` records the current-source Web legal and compliance risk audit for DDG/TDDDG/GDPR, self-service account controls, Brevo email, DSA, BFSG/accessibility, crime/content-risk guardrails, Life in Germany content, and deferred billing gates.
 - `93-Web-Human-Gate-Handoff.md` defines the generated operator handoff that maps current automated readiness evidence to exact remaining human-gate actions before tester invitations.
-- `04-Implementation-Backlog.md` turns that strategy into implementation-ready Phase 6 work items.
+- `94-Multi-Target-Language-Architecture.md` defines target learning language, UI language, meaning/helper language, country context, level-system, route, package, testing, and first non-German pilot rules for the Phase 8 platform refactor.
+- `04-Implementation-Backlog.md` turns that strategy into implementation-ready backlog items, including the active Phase 8 multi-target-language execution checklist.
 
 ### Learning Portal Planning Rule
 
 - `76-Learning-Portal-Roadmap-And-Backlog.md` is the single roadmap/backlog source for Phase 7.
 - Do not create extra planning documents for individual Phase 7 modules such as Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, or Life in Germany.
-- Dedicated content-contract documents should be created only when implementation starts for that module; `77-Grammar-Content-Package-Contract.md`, `78-Expression-Content-Package-Contract.md`, `79-Exercise-Content-Package-Contract.md`, `80-Course-Content-Package-Contract.md`, `81-Writing-Template-Content-Package-Contract.md`, `82-Cultural-Note-Content-Package-Contract.md`, and `83-Exam-Prep-Content-Package-Contract.md` are implementation contract examples.
+- Dedicated content-contract documents should be created only when implementation starts for that module; `77-Grammar-Content-Package-Contract.md`, `78-Expression-Content-Package-Contract.md`, `79-Exercise-Content-Package-Contract.md`, `80-Course-Content-Package-Contract.md`, `81-Writing-Template-Content-Package-Contract.md`, `82-Country-Guidance-Content-Package-Contract.md`, and `83-Exam-Prep-Content-Package-Contract.md` are implementation contract examples.
 
 ### Numbering Cleanup Follow-Up
 
@@ -310,3 +313,4 @@ The documentation set is intentionally split into:
 - implementation backlogs
 
 If future cleanup is needed, prefer consolidating overlapping runbooks before touching the core architecture/domain docs.
+

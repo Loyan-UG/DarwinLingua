@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -30,6 +31,7 @@ public sealed class Exercise
         IncorrectExplanationTranslationsJson = "[]";
         HintTranslationsJson = "[]";
         CommonMistakeNoteTranslationsJson = "[]";
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public Exercise(
@@ -56,9 +58,11 @@ public sealed class Exercise
         string? correctExplanationTranslationsJson = null,
         string? incorrectExplanationTranslationsJson = null,
         string? hintTranslationsJson = null,
-        string? commonMistakeNoteTranslationsJson = null)
+        string? commonMistakeNoteTranslationsJson = null,
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exercise id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Exercise target learning language");
         Slug = NormalizeKebabKey(slug, "Exercise slug");
         Title = RequireText(title, "Exercise title", 256);
         Instruction = RequireText(instruction, "Exercise instruction", 2000);
@@ -86,6 +90,7 @@ public sealed class Exercise
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; }
     public string Title { get; private set; }
     public string Instruction { get; private set; }
@@ -176,6 +181,7 @@ public sealed class ExerciseSet
         Description = string.Empty;
         DescriptionTranslationsJson = "[]";
         OwnerType = string.Empty;
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public ExerciseSet(
@@ -190,9 +196,11 @@ public sealed class ExerciseSet
         int sortOrder,
         DateTime timestampUtc,
         string? titleTranslationsJson = null,
-        string? descriptionTranslationsJson = null)
+        string? descriptionTranslationsJson = null,
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exercise set id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Exercise set target learning language");
         Slug = Exercise.NormalizeKebabKey(slug, "Exercise set slug");
         Title = Exercise.RequireText(title, "Exercise set title", 256);
         TitleTranslationsJson = Exercise.NormalizeJsonArray(titleTranslationsJson);
@@ -208,6 +216,7 @@ public sealed class ExerciseSet
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; }
     public string Title { get; private set; }
     public string TitleTranslationsJson { get; private set; }
@@ -257,6 +266,7 @@ public sealed class UserExerciseAttempt
     private UserExerciseAttempt()
     {
         UserId = string.Empty;
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
         ExerciseSlug = string.Empty;
         SubmittedAnswerJson = "{}";
         FeedbackExplanation = string.Empty;
@@ -265,6 +275,7 @@ public sealed class UserExerciseAttempt
     public UserExerciseAttempt(
         Guid id,
         string userId,
+        string targetLearningLanguageCode,
         string exerciseSlug,
         string submittedAnswerJson,
         bool isCorrect,
@@ -273,6 +284,7 @@ public sealed class UserExerciseAttempt
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exercise attempt id is required.") : id;
         UserId = Exercise.RequireText(userId, "Exercise attempt user id", 256);
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Exercise attempt target learning language");
         ExerciseSlug = Exercise.NormalizeKebabKey(exerciseSlug, "Exercise attempt slug");
         SubmittedAnswerJson = Exercise.RequireText(submittedAnswerJson, "Submitted answer JSON", 20000);
         IsCorrect = isCorrect;
@@ -283,6 +295,7 @@ public sealed class UserExerciseAttempt
 
     public Guid Id { get; private set; }
     public string UserId { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string ExerciseSlug { get; private set; }
     public string SubmittedAnswerJson { get; private set; }
     public bool IsCorrect { get; private set; }

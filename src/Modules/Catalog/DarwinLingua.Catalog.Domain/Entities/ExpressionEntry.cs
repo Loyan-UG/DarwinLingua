@@ -26,6 +26,7 @@ public sealed class ExpressionEntry
         ExpressionType = string.Empty;
         Register = string.Empty;
         Category = string.Empty;
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public ExpressionEntry(
@@ -53,7 +54,8 @@ public sealed class ExpressionEntry
         string? sensitiveContentKind = null,
         bool requiresSensitiveOptIn = false,
         bool requiresVerifiedAdult = false,
-        string? usagePolicy = null)
+        string? usagePolicy = null,
+        string? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -61,6 +63,7 @@ public sealed class ExpressionEntry
         }
 
         Id = id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Expression target learning language");
         Slug = NormalizeKebabKey(slug, "Expression slug");
         ExpressionText = RequireText(expressionText, "Expression text", 512);
         LiteralMeaningText = NormalizeOptionalText(literalMeaningText, 1024, "Literal meaning");
@@ -89,6 +92,7 @@ public sealed class ExpressionEntry
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; }
     public string ExpressionText { get; private set; }
     public string? LiteralMeaningText { get; private set; }

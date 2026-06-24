@@ -44,7 +44,7 @@ else
                     @{
                         string wordRouteSlug = WordRouteBuilder.CreateRouteSlug(item.Lemma);
                     }
-                    <a class="button button--secondary" data-word-link data-word-id="@item.PublicId" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Open word"]</a>
+                    <a class="button button--secondary" data-word-link data-word-id="@item.PublicId" asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-wordSlug="@wordRouteSlug">@T["Open word"]</a>
                 </div>
             </article>
         }

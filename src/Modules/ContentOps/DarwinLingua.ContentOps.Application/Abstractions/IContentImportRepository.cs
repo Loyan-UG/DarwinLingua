@@ -23,13 +23,17 @@ public interface IContentImportRepository
     /// <summary>
     /// Determines whether a content package with the same package identifier already exists.
     /// </summary>
-    Task<bool> PackageExistsAsync(string packageId, CancellationToken cancellationToken);
+    Task<bool> PackageExistsAsync(
+        string packageId,
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken);
 
     /// <summary>
     /// Determines whether a lexical entry already exists for the normalized lemma.
     /// </summary>
     Task<bool> WordExistsAsync(
         string normalizedLemma,
+        LanguageCode languageCode,
         CancellationToken cancellationToken);
 
     /// <summary>
@@ -37,6 +41,7 @@ public interface IContentImportRepository
     /// </summary>
     Task<IReadOnlyList<WordEntry>> GetActiveWordsByNormalizedLemmasAsync(
         IReadOnlyCollection<string> normalizedLemmas,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     /// <summary>
@@ -57,7 +62,7 @@ public interface IContentImportRepository
         IReadOnlyList<CourseModule> importedCourseModules,
         IReadOnlyList<CourseLesson> importedCourseLessons,
         IReadOnlyList<WritingTemplate> importedWritingTemplates,
-        IReadOnlyList<CulturalNote> importedCulturalNotes,
+        IReadOnlyList<CountryGuidanceNote> importedCountryGuidanceNotes,
         IReadOnlyList<ExamProfile> importedExamProfiles,
         IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,

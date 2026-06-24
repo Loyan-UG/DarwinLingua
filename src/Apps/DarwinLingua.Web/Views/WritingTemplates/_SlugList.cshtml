@@ -1,4 +1,4 @@
-@model (string Title, IReadOnlyList<string> Slugs, string ContentType)
+@model (string Title, IReadOnlyList<string> Slugs, string ContentType, string TargetLearningLanguageCode, string? CountryContextCode)
 
 <div class="stack-sm">
     <h3>@Model.Title</h3>
@@ -11,7 +11,11 @@
         <ul>
             @foreach (string slug in Model.Slugs)
             {
-                string? href = LearningContentLinkResolver.ResolveHref(Model.ContentType, slug);
+                string? href = LearningContentLinkResolver.ResolveHref(
+                    Model.ContentType,
+                    slug,
+                    Model.TargetLearningLanguageCode,
+                    countryContextCode: Model.CountryContextCode);
                 <li>
                     @if (!string.IsNullOrWhiteSpace(href))
                     {

@@ -3,14 +3,19 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 
 namespace DarwinLingua.Catalog.Infrastructure.Repositories;
 
 internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaDbContext> dbContextFactory) : IOrganizerProfileRepository
 {
-    public async Task<IReadOnlyList<OrganizerProfileListItemModel>> GetPublishedOrganizerProfilesAsync(CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<OrganizerProfileListItemModel>> GetPublishedOrganizerProfilesAsync(
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken)
     {
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
+
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
@@ -25,20 +30,28 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
-        Dictionary<string, int> activeEventCounts = await GetActiveEventCountsAsync(dbContext, profiles.Select(profile => profile.Slug), cancellationToken)
+        Dictionary<string, int> activeEventCounts = await GetActiveEventCountsAsync(
+                dbContext,
+                profiles.Select(profile => profile.Slug),
+                normalizedTargetLearningLanguageCode,
+                cancellationToken)
             .ConfigureAwait(false);
 
         return profiles
-            .Select(profile => CreateListItem(profile, activeEventCounts.GetValueOrDefault(profile.Slug)))
+            .Where(profile => HasTargetLanguageSupport(profile, normalizedTargetLearningLanguageCode) ||
+                activeEventCounts.GetValueOrDefault(profile.Slug) > 0)
+            .Select(profile => CreateListItem(profile, normalizedTargetLearningLanguageCode, activeEventCounts.GetValueOrDefault(profile.Slug)))
             .ToArray();
     }
 
     public async Task<OrganizerProfileDetailModel?> GetPublishedOrganizerProfileBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(slug);
         string normalizedSlug = slug.Trim().ToLowerInvariant();
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -64,20 +77,25 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
             .Include(item => item.SupportedLevels)
             .Include(item => item.HelperLanguages)
             .Include(item => item.PreparationPackLinks)
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.OrganizerProfileSlug == normalizedSlug)
-            .OrderBy(item => item.SortOrder)
+            .Where(item =>
+                item.PublicationStatus == PublicationStatus.Active &&
+                item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                item.OrganizerProfileSlug == normalizedSlug)
+            .OrderBy(item => item.StartsAtUtc ?? DateTime.MaxValue)
+            .ThenBy(item => item.SortOrder)
             .ThenBy(item => item.Name)
             .ToArrayAsync(cancellationToken)
             .ConfigureAwait(false);
 
         return new OrganizerProfileDetailModel(
             profile.Slug,
+            normalizedTargetLearningLanguageCode,
             profile.DisplayName,
             profile.OrganizerType,
             profile.Description,
             profile.CityRegion,
             profile.IsOnlineAvailable,
-            ResolveLevels(profile),
+            ResolveLevels(profile, normalizedTargetLearningLanguageCode),
             ResolveHelperLanguages(profile),
             profile.WebsiteUrl,
             profile.PublicContactMethod,
@@ -90,6 +108,7 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
     private static async Task<Dictionary<string, int>> GetActiveEventCountsAsync(
         DarwinLinguaDbContext dbContext,
         IEnumerable<string> profileSlugs,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         string[] slugs = profileSlugs.ToArray();
@@ -101,6 +120,7 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
         return await dbContext.ConversationEvents
             .AsNoTracking()
             .Where(item => item.PublicationStatus == PublicationStatus.Active &&
+                item.TargetLearningLanguageCode == targetLearningLanguageCode &&
                 item.OrganizerProfileSlug != null &&
                 slugs.Contains(item.OrganizerProfileSlug))
             .GroupBy(item => item.OrganizerProfileSlug!)
@@ -109,15 +129,19 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
             .ConfigureAwait(false);
     }
 
-    private static OrganizerProfileListItemModel CreateListItem(OrganizerProfile profile, int activeEventCount) =>
+    private static OrganizerProfileListItemModel CreateListItem(
+        OrganizerProfile profile,
+        string targetLearningLanguageCode,
+        int activeEventCount) =>
         new(
             profile.Slug,
+            targetLearningLanguageCode,
             profile.DisplayName,
             profile.OrganizerType,
             profile.Description,
             profile.CityRegion,
             profile.IsOnlineAvailable,
-            ResolveLevels(profile),
+            ResolveLevels(profile, targetLearningLanguageCode),
             ResolveHelperLanguages(profile),
             profile.VerificationStatus,
             profile.PlanKey,
@@ -127,6 +151,7 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
     private static ConversationEventListItemModel CreateEventListItem(ConversationEvent conversationEvent) =>
         new(
             conversationEvent.Slug,
+            conversationEvent.TargetLearningLanguageCode,
             conversationEvent.Name,
             conversationEvent.Description,
             conversationEvent.City,
@@ -144,11 +169,15 @@ internal sealed class OrganizerProfileRepository(IDbContextFactory<DarwinLinguaD
             conversationEvent.VerificationStatus,
             conversationEvent.PreparationPackLinks.OrderBy(link => link.SortOrder).Select(link => link.PreparationPackSlug).ToArray());
 
-    private static string[] ResolveLevels(OrganizerProfile profile) =>
+    private static string[] ResolveLevels(OrganizerProfile profile, string targetLearningLanguageCode) =>
         profile.SupportedLevels
+            .Where(level => level.TargetLearningLanguageCode == targetLearningLanguageCode)
             .OrderBy(level => level.SortOrder)
             .Select(level => level.CefrLevel.ToString())
             .ToArray();
+
+    private static bool HasTargetLanguageSupport(OrganizerProfile profile, string targetLearningLanguageCode) =>
+        profile.SupportedLevels.Any(level => level.TargetLearningLanguageCode == targetLearningLanguageCode);
 
     private static string[] ResolveHelperLanguages(OrganizerProfile profile) =>
         profile.HelperLanguages

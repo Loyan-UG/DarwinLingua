@@ -186,7 +186,7 @@ public sealed class DarwinLinguaDbContext : DbContext
 
     public DbSet<WritingTemplate> WritingTemplates => Set<WritingTemplate>();
 
-    public DbSet<CulturalNote> CulturalNotes => Set<CulturalNote>();
+    public DbSet<CountryGuidanceNote> CountryGuidanceNotes => Set<CountryGuidanceNote>();
 
     public DbSet<ExamProfile> ExamProfiles => Set<ExamProfile>();
 
@@ -360,7 +360,7 @@ public sealed class DarwinLinguaDbContext : DbContext
         modelBuilder.ApplyConfiguration(new CourseModuleConfiguration());
         modelBuilder.ApplyConfiguration(new CourseLessonConfiguration());
         modelBuilder.ApplyConfiguration(new WritingTemplateConfiguration());
-        modelBuilder.ApplyConfiguration(new CulturalNoteConfiguration());
+        modelBuilder.ApplyConfiguration(new CountryGuidanceNoteConfiguration());
         modelBuilder.ApplyConfiguration(new ExamProfileConfiguration());
         modelBuilder.ApplyConfiguration(new ExamPrepUnitConfiguration());
         modelBuilder.ApplyConfiguration(new ConversationStarterPackConfiguration());

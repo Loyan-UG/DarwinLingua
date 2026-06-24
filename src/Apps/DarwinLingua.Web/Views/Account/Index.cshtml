@@ -45,7 +45,7 @@
     <article class="panel stack-md account-action-card">
         <span class="eyebrow">@T["Step 2"]</span>
         <h2 class="headline-sm">@T["Complete profile"]</h2>
-        <p class="body-sm">@T["Set your display name, location, German level, helper languages, goals, availability, and visibility for conversation practice."]</p>
+        <p class="body-sm">@T["Set your display name, location, target-language level, helper languages, goals, availability, and visibility for conversation practice."]</p>
         <a class="button button--secondary" asp-controller="LearnerConversationProfiles" asp-action="Edit">@T["Edit profile"]</a>
     </article>
     <article class="panel stack-md account-action-card">
@@ -60,6 +60,7 @@
     <article class="panel stack-md">
         <h2 class="headline-sm">@T["Language settings"]</h2>
         <ul class="feature-list">
+            <li>@T["Target learning language"]: @Model.Profile.TargetLearningLanguageCode</li>
             <li>@T["UI language"]: @Model.Profile.UiLanguageCode</li>
             <li>@T["Primary meaning language"]: @Model.Profile.PreferredMeaningLanguage1</li>
             <li>@T["Secondary meaning language"]: @(Model.Profile.PreferredMeaningLanguage2 ?? T["None"].Value)</li>

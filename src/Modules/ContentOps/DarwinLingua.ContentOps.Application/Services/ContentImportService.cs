@@ -75,13 +75,13 @@ internal sealed class ContentImportService : IContentImportService
     private static readonly HashSet<string> CourseLessonActivityKinds = new(StringComparer.Ordinal)
     {
         "read", "listen", "grammar", "expression", "practice", "roleplay", "write",
-        "life-in-germany", "exam-prep", "review"
+        "country-guidance", "exam-prep", "review"
     };
 
     private static readonly HashSet<string> CourseLessonActivityTargetTypes = new(StringComparer.Ordinal)
     {
         "course-lesson", "grammar-topic", "expression", "dialogue", "talk-topic",
-        "exercise-set", "exercise", "roleplay", "writing-template", "life-in-germany",
+        "exercise-set", "exercise", "roleplay", "writing-template", "country-guidance",
         "exam-prep-unit", "none"
     };
 
@@ -190,7 +190,7 @@ internal sealed class ContentImportService : IContentImportService
         "formal", "informal", "neutral", "official", "workplace", "exam"
     };
 
-    private static readonly HashSet<string> CulturalNoteCategories = new(StringComparer.Ordinal)
+    private static readonly HashSet<string> CountryGuidanceNoteCategories = new(StringComparer.Ordinal)
     {
         "du-vs-sie", "politeness", "directness", "small-talk", "workplace-culture",
         "office-communication", "school-kindergarten", "doctor-visit", "appointments",
@@ -283,7 +283,12 @@ internal sealed class ContentImportService : IContentImportService
             return CreateFatalFailureResult(parsedPackage.PackageId, issues, parsedPackage.PackageName, parsedPackage.Entries.Count);
         }
 
-        bool packageExists = await _contentImportRepository.PackageExistsAsync(parsedPackage.PackageId, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(parsedPackage.TargetLearningLanguageCode);
+        LanguageCode targetLearningLanguage = LanguageCode.From(targetLearningLanguageCode);
+
+        bool packageExists = await _contentImportRepository
+            .PackageExistsAsync(parsedPackage.PackageId, targetLearningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
         if (packageExists && !CanReimportPackageByContentSlug(parsedPackage))
         {
             issues.Add(new ImportIssueModel(null, "Error", $"A content package with id '{parsedPackage.PackageId}' already exists."));
@@ -318,7 +323,7 @@ internal sealed class ContentImportService : IContentImportService
         ValidateExercises(parsedPackage.Exercises, parsedPackage.ExerciseSets, meaningLanguages, issues);
         ValidateCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, meaningLanguages, issues);
         ValidateWritingTemplates(parsedPackage.WritingTemplates, meaningLanguages, issues);
-        ValidateCulturalNotes(parsedPackage.CulturalNotes, meaningLanguages, issues);
+        ValidateCountryGuidanceNotes(parsedPackage.CountryGuidanceNotes, meaningLanguages, issues);
         ValidateExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, meaningLanguages, issues);
         ValidateConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, meaningLanguages, issues);
         ValidateEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, issues);
@@ -341,7 +346,10 @@ internal sealed class ContentImportService : IContentImportService
             ResolveSourceType(parsedPackage.Source),
             fileName,
             parsedPackage.Entries.Count,
-            DateTime.UtcNow);
+            DateTime.UtcNow,
+            targetLearningLanguageCode,
+            NormalizeOptionalText(parsedPackage.LevelSystemCode)?.ToLowerInvariant(),
+            NormalizeOptionalText(parsedPackage.CountryContextCode)?.ToUpperInvariant());
 
         contentPackage.MarkProcessing(DateTime.UtcNow);
 
@@ -358,7 +366,7 @@ internal sealed class ContentImportService : IContentImportService
         List<CourseModule> importedCourseModules = [];
         List<CourseLesson> importedCourseLessons = [];
         List<WritingTemplate> importedWritingTemplates = [];
-        List<CulturalNote> importedCulturalNotes = [];
+        List<CountryGuidanceNote> importedCountryGuidanceNotes = [];
         List<ExamProfile> importedExamProfiles = [];
         List<ExamPrepUnit> importedExamPrepUnits = [];
         List<ConversationStarterPack> importedConversationStarterPacks = [];
@@ -378,6 +386,7 @@ internal sealed class ContentImportService : IContentImportService
                 expectedMeaningLanguages,
                 allowedLabelsByKind,
                 contentPackage,
+                targetLearningLanguage,
                 importedWords,
                 issues,
                 cancellationToken).ConfigureAwait(false);
@@ -388,26 +397,31 @@ internal sealed class ContentImportService : IContentImportService
             importedWords,
             importedCollections,
             issues,
+            targetLearningLanguageCode,
             cancellationToken).ConfigureAwait(false);
 
-        ProcessDialogues(parsedPackage.Dialogues, topicsByKey, importedDialogues);
-        ProcessTalkTopics(parsedPackage.TalkTopics, topicsByKey, importedTalkTopics);
-        ProcessGrammarTopics(parsedPackage.GrammarTopics, topicsByKey, importedGrammarTopics);
-        ProcessExpressionEntries(parsedPackage.ExpressionEntries, topicsByKey, importedExpressions);
-        ProcessExercises(parsedPackage.Exercises, importedExercises);
-        ProcessExerciseSets(parsedPackage.ExerciseSets, importedExerciseSets);
-        ProcessCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, importedCoursePaths, importedCourseModules, importedCourseLessons);
-        ProcessWritingTemplates(parsedPackage.WritingTemplates, importedWritingTemplates);
-        ProcessCulturalNotes(parsedPackage.CulturalNotes, importedCulturalNotes);
-        ProcessExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, importedExamProfiles, importedExamPrepUnits);
-        ProcessConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, importedConversationStarterPacks);
-        ProcessEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, importedEventPreparationPacks);
-        ProcessRoleplayScenarios(parsedPackage.RoleplayScenarios, topicsByKey, importedRoleplayScenarios);
+        ProcessDialogues(parsedPackage.Dialogues, topicsByKey, importedDialogues, targetLearningLanguageCode);
+        ProcessTalkTopics(parsedPackage.TalkTopics, topicsByKey, importedTalkTopics, targetLearningLanguageCode);
+        ProcessGrammarTopics(parsedPackage.GrammarTopics, topicsByKey, importedGrammarTopics, targetLearningLanguageCode);
+        ProcessExpressionEntries(parsedPackage.ExpressionEntries, topicsByKey, importedExpressions, targetLearningLanguageCode);
+        ProcessExercises(parsedPackage.Exercises, importedExercises, targetLearningLanguageCode);
+        ProcessExerciseSets(parsedPackage.ExerciseSets, importedExerciseSets, targetLearningLanguageCode);
+        ProcessCourses(parsedPackage.CoursePaths, parsedPackage.CourseModules, parsedPackage.CourseLessons, importedCoursePaths, importedCourseModules, importedCourseLessons, targetLearningLanguageCode);
+        ProcessWritingTemplates(parsedPackage.WritingTemplates, importedWritingTemplates, targetLearningLanguageCode);
+        ProcessCountryGuidanceNotes(
+            parsedPackage.CountryGuidanceNotes,
+            importedCountryGuidanceNotes,
+            targetLearningLanguageCode,
+            NormalizeOptionalText(parsedPackage.CountryContextCode));
+        ProcessExamPrep(parsedPackage.ExamProfiles, parsedPackage.ExamPrepUnits, importedExamProfiles, importedExamPrepUnits, targetLearningLanguageCode);
+        ProcessConversationStarterPacks(parsedPackage.ConversationStarterPacks, topicsByKey, importedConversationStarterPacks, targetLearningLanguageCode);
+        ProcessEventPreparationPacks(parsedPackage.EventPreparationPacks, topicsByKey, importedEventPreparationPacks, targetLearningLanguageCode);
+        ProcessRoleplayScenarios(parsedPackage.RoleplayScenarios, topicsByKey, importedRoleplayScenarios, targetLearningLanguageCode);
 
         contentPackage.Complete(DateTime.UtcNow);
 
         await _contentImportRepository
-            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedGrammarTopics, importedExpressions, importedExercises, importedExerciseSets, importedCoursePaths, importedCourseModules, importedCourseLessons, importedWritingTemplates, importedCulturalNotes, importedExamProfiles, importedExamPrepUnits, importedConversationStarterPacks, importedEventPreparationPacks, importedRoleplayScenarios, cancellationToken)
+            .PersistImportAsync(contentPackage, importedLabelDefinitions, importedWords, importedCollections, importedDialogues, importedTalkTopics, importedGrammarTopics, importedExpressions, importedExercises, importedExerciseSets, importedCoursePaths, importedCourseModules, importedCourseLessons, importedWritingTemplates, importedCountryGuidanceNotes, importedExamProfiles, importedExamPrepUnits, importedConversationStarterPacks, importedEventPreparationPacks, importedRoleplayScenarios, cancellationToken)
             .ConfigureAwait(false);
 
         return new ImportContentPackageResult(
@@ -429,7 +443,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessDialogues(
         IReadOnlyList<ParsedDialogueLessonModel> dialogues,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<DialogueLesson> importedDialogues)
+        ICollection<DialogueLesson> importedDialogues,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -445,7 +460,8 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(dialogue.Category),
                 PublicationStatus.Active,
                 dialogue.SortOrder < 0 ? 0 : dialogue.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                targetLearningLanguageCode);
 
             lesson.UpdateExamMetadata(
                 NormalizeText(dialogue.TaskType),
@@ -587,7 +603,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessConversationStarterPacks(
         IReadOnlyList<ParsedConversationStarterPackModel> starterPacks,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<ConversationStarterPack> importedStarterPacks)
+        ICollection<ConversationStarterPack> importedStarterPacks,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -605,7 +622,8 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(starterPack.ConversationGoal),
                 PublicationStatus.Active,
                 starterPack.SortOrder < 0 ? 0 : starterPack.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                targetLearningLanguageCode);
 
             string[] topicKeys = starterPack.Topics
                 .Select(topic => NormalizeText(topic).ToLowerInvariant())
@@ -672,7 +690,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessTalkTopics(
         IReadOnlyList<ParsedTalkTopicModel> talkTopics,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<TalkTopic> importedTalkTopics)
+        ICollection<TalkTopic> importedTalkTopics,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -695,7 +714,8 @@ internal sealed class ContentImportService : IContentImportService
                 parsedTopic.RecommendedForModeratedGroupsOnly,
                 parsedTopic.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedTopic.SortOrder < 0 ? 0 : parsedTopic.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                targetLearningLanguageCode);
 
             string[] topicKeys = parsedTopic.Topics
                 .Select(item => NormalizeText(item).ToLowerInvariant())
@@ -784,7 +804,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessGrammarTopics(
         IReadOnlyList<ParsedGrammarTopicModel> grammarTopics,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<GrammarTopic> importedGrammarTopics)
+        ICollection<GrammarTopic> importedGrammarTopics,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -799,7 +820,8 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(parsedTopic.GrammarCategory),
                 parsedTopic.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedTopic.SortOrder < 0 ? 0 : parsedTopic.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                targetLearningLanguageCode);
             topic.SetRichContentMetadata(
                 parsedTopic.ContentRevision,
                 SerializeLocalizedTextDictionary(parsedTopic.TitleLocalized),
@@ -984,7 +1006,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessExpressionEntries(
         IReadOnlyList<ParsedExpressionEntryModel> expressions,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<ExpressionEntry> importedExpressions)
+        ICollection<ExpressionEntry> importedExpressions,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -1015,7 +1038,8 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeOptionalText(parsedExpression.SensitiveContentKind)?.ToLowerInvariant(),
                 parsedExpression.RequiresSensitiveOptIn,
                 parsedExpression.RequiresVerifiedAdult,
-                NormalizeOptionalText(parsedExpression.UsagePolicy)?.ToLowerInvariant());
+                NormalizeOptionalText(parsedExpression.UsagePolicy)?.ToLowerInvariant(),
+                targetLearningLanguageCode);
 
             string[] topicKeys = parsedExpression.Topics
                 .Select(item => NormalizeText(item).ToLowerInvariant())
@@ -1110,7 +1134,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessEventPreparationPacks(
         IReadOnlyList<ParsedEventPreparationPackModel> eventPreparationPacks,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<EventPreparationPack> importedEventPreparationPacks)
+        ICollection<EventPreparationPack> importedEventPreparationPacks,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -1126,7 +1151,8 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(parsedPack.EventType),
                 PublicationStatus.Active,
                 parsedPack.SortOrder < 0 ? 0 : parsedPack.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                targetLearningLanguageCode);
 
             string[] topicKeys = parsedPack.Topics
                 .Select(topic => NormalizeText(topic).ToLowerInvariant())
@@ -1208,7 +1234,8 @@ internal sealed class ContentImportService : IContentImportService
     private static void ProcessRoleplayScenarios(
         IReadOnlyList<ParsedRoleplayScenarioModel> roleplayScenarios,
         IReadOnlyDictionary<string, Topic> topicsByKey,
-        ICollection<RoleplayScenario> importedRoleplayScenarios)
+        ICollection<RoleplayScenario> importedRoleplayScenarios,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
 
@@ -1282,7 +1309,8 @@ internal sealed class ContentImportService : IContentImportService
                 })),
                 parsedScenario.IsPublished ? PublicationStatus.Active : PublicationStatus.Draft,
                 parsedScenario.SortOrder,
-                timestampUtc);
+                timestampUtc,
+                targetLearningLanguageCode);
 
             string[] topicKeys = NormalizeKeys(parsedScenario.Topics);
             for (int topicIndex = 0; topicIndex < topicKeys.Length; topicIndex++)
@@ -1310,7 +1338,10 @@ internal sealed class ContentImportService : IContentImportService
             })
             .ToArray();
 
-    private static void ProcessExercises(IReadOnlyList<ParsedExerciseModel> exercises, ICollection<Exercise> importedExercises)
+    private static void ProcessExercises(
+        IReadOnlyList<ParsedExerciseModel> exercises,
+        ICollection<Exercise> importedExercises,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
         foreach (ParsedExerciseModel parsedExercise in exercises)
@@ -1339,11 +1370,15 @@ internal sealed class ContentImportService : IContentImportService
                 JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.CorrectExplanationTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.IncorrectExplanationTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.HintTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.CommonMistakeNoteTranslations))));
+                JsonSerializer.Serialize(NormalizeTranslations(parsedExercise.CommonMistakeNoteTranslations)),
+                targetLearningLanguageCode));
         }
     }
 
-    private static void ProcessExerciseSets(IReadOnlyList<ParsedExerciseSetModel> exerciseSets, ICollection<ExerciseSet> importedExerciseSets)
+    private static void ProcessExerciseSets(
+        IReadOnlyList<ParsedExerciseSetModel> exerciseSets,
+        ICollection<ExerciseSet> importedExerciseSets,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
         foreach (ParsedExerciseSetModel parsedSet in exerciseSets)
@@ -1360,7 +1395,8 @@ internal sealed class ContentImportService : IContentImportService
                 parsedSet.SortOrder,
                 timestampUtc,
                 JsonSerializer.Serialize(NormalizeTranslations(parsedSet.TitleTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedSet.DescriptionTranslations)));
+                JsonSerializer.Serialize(NormalizeTranslations(parsedSet.DescriptionTranslations)),
+                targetLearningLanguageCode);
 
             for (int index = 0; index < parsedSet.ExerciseSlugs.Count; index++)
             {
@@ -1377,7 +1413,8 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlyList<ParsedCourseLessonModel> courseLessons,
         ICollection<CoursePath> importedCoursePaths,
         ICollection<CourseModule> importedCourseModules,
-        ICollection<CourseLesson> importedCourseLessons)
+        ICollection<CourseLesson> importedCourseLessons,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
         foreach (ParsedCoursePathModel parsedCourse in coursePaths)
@@ -1396,7 +1433,8 @@ internal sealed class ContentImportService : IContentImportService
                 parsedCourse.SortOrder,
                 timestampUtc,
                 JsonSerializer.Serialize(NormalizeTranslations(parsedCourse.TitleTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedCourse.DescriptionTranslations))));
+                JsonSerializer.Serialize(NormalizeTranslations(parsedCourse.DescriptionTranslations)),
+                targetLearningLanguageCode));
         }
 
         foreach (ParsedCourseModuleModel parsedModule in courseModules)
@@ -1413,7 +1451,8 @@ internal sealed class ContentImportService : IContentImportService
                 parsedModule.SortOrder,
                 timestampUtc,
                 JsonSerializer.Serialize(NormalizeTranslations(parsedModule.TitleTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedModule.DescriptionTranslations))));
+                JsonSerializer.Serialize(NormalizeTranslations(parsedModule.DescriptionTranslations)),
+                targetLearningLanguageCode));
         }
 
         foreach (ParsedCourseLessonModel parsedLesson in courseLessons)
@@ -1450,7 +1489,8 @@ internal sealed class ContentImportService : IContentImportService
                 JsonSerializer.Serialize(NormalizeTextListTranslations(parsedLesson.LearningGoalsTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.ReviewSummaryTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedLesson.HomeworkTaskTranslations)),
-                JsonSerializer.Serialize(NormalizeCourseLessonActivityBlocks(parsedLesson.ActivityBlocks))));
+                JsonSerializer.Serialize(NormalizeCourseLessonActivityBlocks(parsedLesson.ActivityBlocks)),
+                targetLearningLanguageCode));
         }
     }
 
@@ -1490,7 +1530,7 @@ internal sealed class ContentImportService : IContentImportService
             })
             .ToArray();
 
-    private static object[] NormalizeCulturalNoteListTranslations(IEnumerable<ParsedCulturalNoteListTranslationModel> translations) =>
+    private static object[] NormalizeCountryGuidanceNoteListTranslations(IEnumerable<ParsedCountryGuidanceNoteListTranslationModel> translations) =>
         translations
             .Select(translation => new
             {
@@ -1499,7 +1539,7 @@ internal sealed class ContentImportService : IContentImportService
             })
             .ToArray();
 
-    private static object[] NormalizeCulturalNoteExampleTranslations(IEnumerable<ParsedCulturalNoteExampleModel> examples) =>
+    private static object[] NormalizeCountryGuidanceNoteExampleTranslations(IEnumerable<ParsedCountryGuidanceNoteExampleModel> examples) =>
         examples
             .Select(example => new
             {
@@ -1509,7 +1549,8 @@ internal sealed class ContentImportService : IContentImportService
 
     private static void ProcessWritingTemplates(
         IReadOnlyList<ParsedWritingTemplateModel> writingTemplates,
-        ICollection<WritingTemplate> importedWritingTemplates)
+        ICollection<WritingTemplate> importedWritingTemplates,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
         foreach (ParsedWritingTemplateModel parsedTemplate in writingTemplates)
@@ -1540,18 +1581,21 @@ internal sealed class ContentImportService : IContentImportService
                 JsonSerializer.Serialize(NormalizeTranslations(parsedTemplate.SituationTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedTemplate.ExplanationTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedTemplate.TemplateTextTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedTemplate.SampleFilledVersionTranslations))));
+                JsonSerializer.Serialize(NormalizeTranslations(parsedTemplate.SampleFilledVersionTranslations)),
+                targetLearningLanguageCode));
         }
     }
 
-    private static void ProcessCulturalNotes(
-        IReadOnlyList<ParsedCulturalNoteModel> culturalNotes,
-        ICollection<CulturalNote> importedCulturalNotes)
+    private static void ProcessCountryGuidanceNotes(
+        IReadOnlyList<ParsedCountryGuidanceNoteModel> countryGuidanceNotes,
+        ICollection<CountryGuidanceNote> importedCountryGuidanceNotes,
+        string targetLearningLanguageCode,
+        string? countryContextCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
-        foreach (ParsedCulturalNoteModel parsedNote in culturalNotes)
+        foreach (ParsedCountryGuidanceNoteModel parsedNote in countryGuidanceNotes)
         {
-            importedCulturalNotes.Add(new CulturalNote(
+            importedCountryGuidanceNotes.Add(new CountryGuidanceNote(
                 Guid.NewGuid(),
                 NormalizeText(parsedNote.Slug),
                 NormalizeText(parsedNote.Title),
@@ -1560,7 +1604,7 @@ internal sealed class ContentImportService : IContentImportService
                 NormalizeText(parsedNote.Category).ToLowerInvariant(),
                 NormalizeText(parsedNote.Context),
                 SerializeStringArray(parsedNote.Sections),
-                SerializeCulturalNoteExamples(parsedNote.Examples),
+                SerializeCountryGuidanceNoteExamples(parsedNote.Examples),
                 SerializeStringArray(parsedNote.DoNotes),
                 SerializeStringArray(parsedNote.DontNotes),
                 NormalizeOptionalText(parsedNote.SensitivityWarning),
@@ -1575,11 +1619,13 @@ internal sealed class ContentImportService : IContentImportService
                 JsonSerializer.Serialize(NormalizeTranslations(parsedNote.TitleTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedNote.ShortDescriptionTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedNote.ContextTranslations)),
-                JsonSerializer.Serialize(NormalizeCulturalNoteListTranslations(parsedNote.SectionsTranslations)),
-                JsonSerializer.Serialize(NormalizeCulturalNoteExampleTranslations(parsedNote.Examples)),
-                JsonSerializer.Serialize(NormalizeCulturalNoteListTranslations(parsedNote.DoNotesTranslations)),
-                JsonSerializer.Serialize(NormalizeCulturalNoteListTranslations(parsedNote.DontNotesTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedNote.SensitivityWarningTranslations))));
+                JsonSerializer.Serialize(NormalizeCountryGuidanceNoteListTranslations(parsedNote.SectionsTranslations)),
+                JsonSerializer.Serialize(NormalizeCountryGuidanceNoteExampleTranslations(parsedNote.Examples)),
+                JsonSerializer.Serialize(NormalizeCountryGuidanceNoteListTranslations(parsedNote.DoNotesTranslations)),
+                JsonSerializer.Serialize(NormalizeCountryGuidanceNoteListTranslations(parsedNote.DontNotesTranslations)),
+                JsonSerializer.Serialize(NormalizeTranslations(parsedNote.SensitivityWarningTranslations)),
+                targetLearningLanguageCode,
+                countryContextCode));
         }
     }
 
@@ -1587,7 +1633,8 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlyList<ParsedExamProfileModel> examProfiles,
         IReadOnlyList<ParsedExamPrepUnitModel> examPrepUnits,
         ICollection<ExamProfile> importedExamProfiles,
-        ICollection<ExamPrepUnit> importedExamPrepUnits)
+        ICollection<ExamPrepUnit> importedExamPrepUnits,
+        string targetLearningLanguageCode)
     {
         DateTime timestampUtc = DateTime.UtcNow;
         foreach (ParsedExamProfileModel parsedProfile in examProfiles)
@@ -1602,7 +1649,8 @@ internal sealed class ContentImportService : IContentImportService
                 parsedProfile.SortOrder,
                 timestampUtc,
                 JsonSerializer.Serialize(NormalizeTranslations(parsedProfile.DisplayNameTranslations)),
-                JsonSerializer.Serialize(NormalizeTranslations(parsedProfile.DescriptionTranslations))));
+                JsonSerializer.Serialize(NormalizeTranslations(parsedProfile.DescriptionTranslations)),
+                targetLearningLanguageCode));
         }
 
         foreach (ParsedExamPrepUnitModel parsedUnit in examPrepUnits)
@@ -1635,7 +1683,8 @@ internal sealed class ContentImportService : IContentImportService
                 JsonSerializer.Serialize(NormalizeTranslations(parsedUnit.ShortDescriptionTranslations)),
                 JsonSerializer.Serialize(NormalizeTranslations(parsedUnit.ExplanationTranslations)),
                 JsonSerializer.Serialize(NormalizeExamPrepTextListTranslations(parsedUnit.StrategyNotesTranslations)),
-                JsonSerializer.Serialize(NormalizeExamPrepTextListTranslations(parsedUnit.ChecklistTranslations))));
+                JsonSerializer.Serialize(NormalizeExamPrepTextListTranslations(parsedUnit.ChecklistTranslations)),
+                targetLearningLanguageCode));
         }
     }
 
@@ -1693,6 +1742,7 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlyList<WordEntry> importedWords,
         ICollection<WordCollection> importedCollections,
         ICollection<ImportIssueModel> issues,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         if (collections.Count == 0)
@@ -1708,7 +1758,7 @@ internal sealed class ContentImportService : IContentImportService
             .ToArray();
 
         IReadOnlyList<WordEntry> existingWords = await _contentImportRepository
-            .GetActiveWordsByNormalizedLemmasAsync(normalizedLemmas, cancellationToken)
+            .GetActiveWordsByNormalizedLemmasAsync(normalizedLemmas, targetLearningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
         List<WordEntry> resolvableWords = importedWords
@@ -1865,6 +1915,7 @@ internal sealed class ContentImportService : IContentImportService
         IReadOnlyList<LanguageCode> expectedMeaningLanguages,
         IReadOnlyDictionary<WordLabelKind, HashSet<string>> allowedLabelsByKind,
         ContentPackage contentPackage,
+        LanguageCode targetLearningLanguage,
         ICollection<WordEntry> importedWords,
         ICollection<ImportIssueModel> issues,
         CancellationToken cancellationToken)
@@ -1892,9 +1943,9 @@ internal sealed class ContentImportService : IContentImportService
             entryErrors.Add("Entry word is required.");
         }
 
-        if (!string.Equals(normalizedLanguage, "de", StringComparison.Ordinal))
+        if (!string.Equals(normalizedLanguage, targetLearningLanguage.Value, StringComparison.Ordinal))
         {
-            entryErrors.Add("Entry language must be 'de' in Phase 1.");
+            entryErrors.Add($"Entry language must match package targetLearningLanguageCode '{targetLearningLanguage.Value}'.");
         }
 
         if (!Enum.TryParse(normalizedCefrLevelText, true, out CefrLevel cefrLevel))
@@ -1952,9 +2003,9 @@ internal sealed class ContentImportService : IContentImportService
             return;
         }
 
-        if (importedWords.Any(word => word.NormalizedLemma == normalizedLemma) ||
+        if (importedWords.Any(word => word.LanguageCode == targetLearningLanguage && word.NormalizedLemma == normalizedLemma) ||
             await _contentImportRepository
-                .WordExistsAsync(normalizedLemma, cancellationToken)
+                .WordExistsAsync(normalizedLemma, targetLearningLanguage, cancellationToken)
                 .ConfigureAwait(false))
         {
             string warningMessage = $"Duplicate entry skipped for lemma '{rawLemma}'.";
@@ -3164,7 +3215,7 @@ internal sealed class ContentImportService : IContentImportService
             parsedPackage.CourseModules.Count > 0 ||
             parsedPackage.CourseLessons.Count > 0 ||
             parsedPackage.WritingTemplates.Count > 0 ||
-            parsedPackage.CulturalNotes.Count > 0 ||
+            parsedPackage.CountryGuidanceNotes.Count > 0 ||
             parsedPackage.ExamProfiles.Count > 0 ||
             parsedPackage.ExamPrepUnits.Count > 0 ||
             parsedPackage.ConversationStarterPacks.Count > 0 ||
@@ -3207,6 +3258,46 @@ internal sealed class ContentImportService : IContentImportService
             issues.Add(new ImportIssueModel(null, "Error", "Package name is required."));
         }
 
+        string normalizedTargetLearningLanguage = NormalizeText(parsedPackage.TargetLearningLanguageCode).ToLowerInvariant();
+        if (string.IsNullOrWhiteSpace(normalizedTargetLearningLanguage))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", "Package targetLearningLanguageCode is required."));
+        }
+        else if (!ContentLanguageRequirements.SupportsTargetLearningLanguage(normalizedTargetLearningLanguage))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", $"Package targetLearningLanguageCode '{normalizedTargetLearningLanguage}' is not active."));
+        }
+
+        string? normalizedLevelSystemCode = NormalizeOptionalText(parsedPackage.LevelSystemCode)?.ToLowerInvariant();
+        if (string.IsNullOrWhiteSpace(normalizedLevelSystemCode))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", "Package levelSystemCode is required."));
+        }
+        else if (!ValidateKebabKey(normalizedLevelSystemCode))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", "Package levelSystemCode must use lowercase kebab-case when provided."));
+        }
+        else if (!string.Equals(normalizedLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.Ordinal))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", $"Package levelSystemCode '{normalizedLevelSystemCode}' is not supported."));
+        }
+
+        string? normalizedCountryContextCode = NormalizeOptionalText(parsedPackage.CountryContextCode)?.ToUpperInvariant();
+        if (normalizedCountryContextCode is not null &&
+            normalizedCountryContextCode.Length is < 2 or > 8)
+        {
+            issues.Add(new ImportIssueModel(null, "Error", "Package countryContextCode must be between 2 and 8 characters when provided."));
+        }
+        else if (parsedPackage.CountryGuidanceNotes.Count > 0 && string.IsNullOrWhiteSpace(normalizedCountryContextCode))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", "Country Guidance packages must declare countryContextCode."));
+        }
+        else if (normalizedCountryContextCode is not null &&
+            !CountryContextCatalog.TryFindActive(normalizedCountryContextCode, normalizedTargetLearningLanguage, out _))
+        {
+            issues.Add(new ImportIssueModel(null, "Error", $"Package countryContextCode '{normalizedCountryContextCode}' is not active for targetLearningLanguageCode '{normalizedTargetLearningLanguage}'."));
+        }
+
         if (parsedPackage.Entries.Count == 0 &&
             parsedPackage.Collections.Count == 0 &&
             parsedPackage.Dialogues.Count == 0 &&
@@ -3219,7 +3310,7 @@ internal sealed class ContentImportService : IContentImportService
             parsedPackage.CourseModules.Count == 0 &&
             parsedPackage.CourseLessons.Count == 0 &&
             parsedPackage.WritingTemplates.Count == 0 &&
-            parsedPackage.CulturalNotes.Count == 0 &&
+            parsedPackage.CountryGuidanceNotes.Count == 0 &&
             parsedPackage.ExamProfiles.Count == 0 &&
             parsedPackage.ExamPrepUnits.Count == 0 &&
             parsedPackage.ConversationStarterPacks.Count == 0 &&
@@ -4520,77 +4611,77 @@ internal sealed class ContentImportService : IContentImportService
         }
     }
 
-    private static void ValidateCulturalNotes(
-        IReadOnlyList<ParsedCulturalNoteModel> culturalNotes,
+    private static void ValidateCountryGuidanceNotes(
+        IReadOnlyList<ParsedCountryGuidanceNoteModel> countryGuidanceNotes,
         IReadOnlySet<LanguageCode> meaningLanguages,
         ICollection<ImportIssueModel> issues)
     {
         HashSet<string> noteSlugs = [];
-        for (int index = 0; index < culturalNotes.Count; index++)
+        for (int index = 0; index < countryGuidanceNotes.Count; index++)
         {
-            ParsedCulturalNoteModel note = culturalNotes[index];
+            ParsedCountryGuidanceNoteModel note = countryGuidanceNotes[index];
             List<string> errors = [];
             string slug = NormalizeText(note.Slug).ToLowerInvariant();
-            if (!ValidateKebabKey(slug)) errors.Add("Cultural note slug is required and must use lowercase kebab-case.");
-            else if (!noteSlugs.Add(slug)) errors.Add($"Duplicate cultural note slug '{slug}' is not allowed inside one package.");
-            if (string.IsNullOrWhiteSpace(NormalizeText(note.Title))) errors.Add("Cultural note title is required.");
-            if (string.IsNullOrWhiteSpace(NormalizeText(note.ShortDescription))) errors.Add("Cultural note shortDescription is required.");
-            if (!Enum.TryParse(NormalizeText(note.CefrLevel), true, out CefrLevel _)) errors.Add("Cultural note CEFR level is invalid.");
+            if (!ValidateKebabKey(slug)) errors.Add("Country guidance note slug is required and must use lowercase kebab-case.");
+            else if (!noteSlugs.Add(slug)) errors.Add($"Duplicate Country guidance note slug '{slug}' is not allowed inside one package.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(note.Title))) errors.Add("Country guidance note title is required.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(note.ShortDescription))) errors.Add("Country guidance note shortDescription is required.");
+            if (!Enum.TryParse(NormalizeText(note.CefrLevel), true, out CefrLevel _)) errors.Add("Country guidance note CEFR level is invalid.");
             string category = NormalizeText(note.Category).ToLowerInvariant();
-            if (!CulturalNoteCategories.Contains(category)) errors.Add($"Cultural note category '{category}' is not supported.");
-            if (string.IsNullOrWhiteSpace(NormalizeText(note.Context))) errors.Add("Cultural note context is required.");
-            ValidateRequiredTextList(note.Sections, "Cultural note sections", errors);
-            ValidateCulturalNoteExamples(note.Examples, errors);
-            ValidateOptionalTextList(note.DoNotes, "Cultural note doNotes", errors);
-            ValidateOptionalTextList(note.DontNotes, "Cultural note dontNotes", errors);
-            ValidateRequiredMeaningTranslations(note.TitleTranslations, meaningLanguages, "Cultural note titleTranslations", errors);
-            ValidateRequiredMeaningTranslations(note.ShortDescriptionTranslations, meaningLanguages, "Cultural note shortDescriptionTranslations", errors);
-            ValidateRequiredMeaningTranslations(note.ContextTranslations, meaningLanguages, "Cultural note contextTranslations", errors);
-            ValidateCulturalNoteListTranslations(note.SectionsTranslations, note.Sections.Count, meaningLanguages, "Cultural note sectionsTranslations", errors);
-            ValidateCulturalNoteListTranslations(note.DoNotesTranslations, note.DoNotes.Count, meaningLanguages, "Cultural note doNotesTranslations", errors);
-            ValidateCulturalNoteListTranslations(note.DontNotesTranslations, note.DontNotes.Count, meaningLanguages, "Cultural note dontNotesTranslations", errors);
+            if (!CountryGuidanceNoteCategories.Contains(category)) errors.Add($"Country guidance note category '{category}' is not supported.");
+            if (string.IsNullOrWhiteSpace(NormalizeText(note.Context))) errors.Add("Country guidance note context is required.");
+            ValidateRequiredTextList(note.Sections, "Country guidance note sections", errors);
+            ValidateCountryGuidanceNoteExamples(note.Examples, errors);
+            ValidateOptionalTextList(note.DoNotes, "Country guidance note doNotes", errors);
+            ValidateOptionalTextList(note.DontNotes, "Country guidance note dontNotes", errors);
+            ValidateRequiredMeaningTranslations(note.TitleTranslations, meaningLanguages, "Country guidance note titleTranslations", errors);
+            ValidateRequiredMeaningTranslations(note.ShortDescriptionTranslations, meaningLanguages, "Country guidance note shortDescriptionTranslations", errors);
+            ValidateRequiredMeaningTranslations(note.ContextTranslations, meaningLanguages, "Country guidance note contextTranslations", errors);
+            ValidateCountryGuidanceNoteListTranslations(note.SectionsTranslations, note.Sections.Count, meaningLanguages, "Country guidance note sectionsTranslations", errors);
+            ValidateCountryGuidanceNoteListTranslations(note.DoNotesTranslations, note.DoNotes.Count, meaningLanguages, "Country guidance note doNotesTranslations", errors);
+            ValidateCountryGuidanceNoteListTranslations(note.DontNotesTranslations, note.DontNotes.Count, meaningLanguages, "Country guidance note dontNotesTranslations", errors);
             if (!string.IsNullOrWhiteSpace(NormalizeText(note.SensitivityWarning)))
             {
-                ValidateRequiredMeaningTranslations(note.SensitivityWarningTranslations, meaningLanguages, "Cultural note sensitivityWarningTranslations", errors);
+                ValidateRequiredMeaningTranslations(note.SensitivityWarningTranslations, meaningLanguages, "Country guidance note sensitivityWarningTranslations", errors);
             }
             else
             {
-                ValidateOptionalMeaningTranslations(note.SensitivityWarningTranslations, meaningLanguages, "Cultural note sensitivityWarningTranslations", errors);
+                ValidateOptionalMeaningTranslations(note.SensitivityWarningTranslations, meaningLanguages, "Country guidance note sensitivityWarningTranslations", errors);
             }
             for (int exampleIndex = 0; exampleIndex < note.Examples.Count; exampleIndex++)
             {
                 if (!string.IsNullOrWhiteSpace(NormalizeText(note.Examples[exampleIndex].Explanation)))
                 {
-                    ValidateRequiredMeaningTranslations(note.Examples[exampleIndex].ExplanationTranslations, meaningLanguages, $"Cultural note examples[{exampleIndex + 1}].explanationTranslations", errors);
+                    ValidateRequiredMeaningTranslations(note.Examples[exampleIndex].ExplanationTranslations, meaningLanguages, $"Country guidance note examples[{exampleIndex + 1}].explanationTranslations", errors);
                 }
                 else
                 {
-                    ValidateOptionalMeaningTranslations(note.Examples[exampleIndex].ExplanationTranslations, meaningLanguages, $"Cultural note examples[{exampleIndex + 1}].explanationTranslations", errors);
+                    ValidateOptionalMeaningTranslations(note.Examples[exampleIndex].ExplanationTranslations, meaningLanguages, $"Country guidance note examples[{exampleIndex + 1}].explanationTranslations", errors);
                 }
             }
-            ValidateGrammarSlugList(note.LinkedDialogueSlugs, "Cultural note linkedDialogueSlugs", errors);
-            ValidateGrammarSlugList(note.LinkedExpressionSlugs, "Cultural note linkedExpressionSlugs", errors);
-            ValidateGrammarSlugList(note.LinkedWritingTemplateSlugs, "Cultural note linkedWritingTemplateSlugs", errors);
-            ValidateGrammarSlugList(note.LinkedTalkTopicSlugs, "Cultural note linkedTalkTopicSlugs", errors);
-            ValidateGrammarSlugList(note.LinkedCourseLessonSlugs, "Cultural note linkedCourseLessonSlugs", errors);
-            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"culturalNotes[{index + 1}]: {error}"));
+            ValidateGrammarSlugList(note.LinkedDialogueSlugs, "Country guidance note linkedDialogueSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedExpressionSlugs, "Country guidance note linkedExpressionSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedWritingTemplateSlugs, "Country guidance note linkedWritingTemplateSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedTalkTopicSlugs, "Country guidance note linkedTalkTopicSlugs", errors);
+            ValidateGrammarSlugList(note.LinkedCourseLessonSlugs, "Country guidance note linkedCourseLessonSlugs", errors);
+            foreach (string error in errors) issues.Add(new ImportIssueModel(null, "Error", $"countryGuidanceNotes[{index + 1}]: {error}"));
         }
     }
 
-    private static void ValidateCulturalNoteExamples(IReadOnlyList<ParsedCulturalNoteExampleModel> examples, ICollection<string> errors)
+    private static void ValidateCountryGuidanceNoteExamples(IReadOnlyList<ParsedCountryGuidanceNoteExampleModel> examples, ICollection<string> errors)
     {
         for (int index = 0; index < examples.Count; index++)
         {
-            ParsedCulturalNoteExampleModel example = examples[index];
+            ParsedCountryGuidanceNoteExampleModel example = examples[index];
             if (string.IsNullOrWhiteSpace(NormalizeText(example.GermanText)))
             {
-                errors.Add($"Cultural note examples[{index + 1}] germanText is required.");
+                errors.Add($"Country guidance note examples[{index + 1}] germanText is required.");
             }
         }
     }
 
-    private static void ValidateCulturalNoteListTranslations(
-        IReadOnlyList<ParsedCulturalNoteListTranslationModel> translations,
+    private static void ValidateCountryGuidanceNoteListTranslations(
+        IReadOnlyList<ParsedCountryGuidanceNoteListTranslationModel> translations,
         int expectedItemCount,
         IReadOnlySet<LanguageCode> meaningLanguages,
         string fieldName,
@@ -4599,7 +4690,7 @@ internal sealed class ContentImportService : IContentImportService
         HashSet<LanguageCode> seenLanguages = [];
         for (int index = 0; index < translations.Count; index++)
         {
-            ParsedCulturalNoteListTranslationModel translation = translations[index];
+            ParsedCountryGuidanceNoteListTranslationModel translation = translations[index];
             string normalizedLanguage = NormalizeText(translation.Language).ToLowerInvariant();
             if (string.IsNullOrWhiteSpace(normalizedLanguage))
             {
@@ -4650,14 +4741,14 @@ internal sealed class ContentImportService : IContentImportService
             }
         }
 
-        ParsedCulturalNoteListTranslationModel? english = translations.FirstOrDefault(translation => string.Equals(NormalizeText(translation.Language), "en", StringComparison.OrdinalIgnoreCase));
+        ParsedCountryGuidanceNoteListTranslationModel? english = translations.FirstOrDefault(translation => string.Equals(NormalizeText(translation.Language), "en", StringComparison.OrdinalIgnoreCase));
         if (english is null)
         {
             return;
         }
 
         string[] englishItems = english.Items.Select(NormalizeText).ToArray();
-        foreach (ParsedCulturalNoteListTranslationModel translation in translations)
+        foreach (ParsedCountryGuidanceNoteListTranslationModel translation in translations)
         {
             string language = NormalizeText(translation.Language).ToLowerInvariant();
             if (string.Equals(language, "en", StringComparison.OrdinalIgnoreCase))
@@ -4876,7 +4967,7 @@ internal sealed class ContentImportService : IContentImportService
     private static string SerializeStringArray(IReadOnlyList<string> values) =>
         System.Text.Json.JsonSerializer.Serialize(values.Select(NormalizeText).Where(value => !string.IsNullOrWhiteSpace(value)).ToArray());
 
-    private static string SerializeCulturalNoteExamples(IReadOnlyList<ParsedCulturalNoteExampleModel> examples) =>
+    private static string SerializeCountryGuidanceNoteExamples(IReadOnlyList<ParsedCountryGuidanceNoteExampleModel> examples) =>
         System.Text.Json.JsonSerializer.Serialize(examples
             .Where(example => !string.IsNullOrWhiteSpace(NormalizeText(example.GermanText)))
             .Select(example => new { GermanText = NormalizeText(example.GermanText), Explanation = NormalizeOptionalText(example.Explanation) })

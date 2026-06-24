@@ -3,6 +3,7 @@ using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Services;
@@ -30,24 +31,28 @@ public sealed class EventRsvpServiceTests
 
             EventRsvpResponse first = await rsvpService.SubmitAsync(
                 "berlin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 new SubmitEventRsvpRequest("Sara Test", "SARA@example.com", "interested"),
                 CancellationToken.None);
             EventRsvpResponse updated = await rsvpService.SubmitAsync(
                 "berlin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 new SubmitEventRsvpRequest("Sara Updated", "sara@example.com", "going"),
                 CancellationToken.None);
 
             Assert.Equal(first.Id, updated.Id);
             Assert.Equal("sara@example.com", updated.ParticipantEmail);
+            Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, updated.TargetLearningLanguageCode);
             Assert.Equal("Sara Updated", updated.ParticipantName);
             Assert.Equal(EventRsvpStatuses.Going, updated.Status);
 
-            EventRsvpSummaryResponse summary = await rsvpService.GetSummaryAsync("berlin-cafe-a1", CancellationToken.None);
+            EventRsvpSummaryResponse summary = await rsvpService.GetSummaryAsync("berlin-cafe-a1", ContentLanguageRequirements.DefaultTargetLearningLanguageCode, CancellationToken.None);
+            Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, summary.TargetLearningLanguageCode);
             Assert.Equal(0, summary.InterestedCount);
             Assert.Equal(1, summary.GoingCount);
             Assert.Equal(9, summary.RemainingCapacity);
 
-            IReadOnlyList<EventRsvpResponse> eventRsvps = await rsvpService.GetByEventAsync("berlin-cafe-a1", CancellationToken.None);
+            IReadOnlyList<EventRsvpResponse> eventRsvps = await rsvpService.GetByEventAsync("berlin-cafe-a1", ContentLanguageRequirements.DefaultTargetLearningLanguageCode, CancellationToken.None);
             Assert.Single(eventRsvps);
         }
         finally
@@ -75,23 +80,26 @@ public sealed class EventRsvpServiceTests
 
             await rsvpService.SubmitAsync(
                 "full-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 new SubmitEventRsvpRequest("First Learner", "first@example.com", "going"),
                 CancellationToken.None);
 
             InvalidOperationException capacityException = await Assert.ThrowsAsync<InvalidOperationException>(() =>
                 rsvpService.SubmitAsync(
                     "full-cafe-a1",
+                    ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                     new SubmitEventRsvpRequest("Second Learner", "second@example.com", "going"),
                     CancellationToken.None));
             Assert.Contains("capacity", capacityException.Message, StringComparison.OrdinalIgnoreCase);
 
             EventRsvpResponse cancelled = await rsvpService.SubmitAsync(
                 "full-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 new SubmitEventRsvpRequest("Second Learner", "second@example.com", "cancelled"),
                 CancellationToken.None);
             Assert.Equal(EventRsvpStatuses.Cancelled, cancelled.Status);
 
-            EventRsvpSummaryResponse summary = await rsvpService.GetSummaryAsync("full-cafe-a1", CancellationToken.None);
+            EventRsvpSummaryResponse summary = await rsvpService.GetSummaryAsync("full-cafe-a1", ContentLanguageRequirements.DefaultTargetLearningLanguageCode, CancellationToken.None);
             Assert.Equal(1, summary.GoingCount);
             Assert.Equal(1, summary.CancelledCount);
             Assert.Equal(0, summary.RemainingCapacity);
@@ -120,15 +128,18 @@ public sealed class EventRsvpServiceTests
             IEventRsvpService rsvpService = serviceProvider.GetRequiredService<IEventRsvpService>();
             EventRsvpResponse going = await rsvpService.SubmitAsync(
                 "admin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 new SubmitEventRsvpRequest("Going Learner", "going@example.com", "going"),
                 CancellationToken.None);
             EventRsvpResponse interested = await rsvpService.SubmitAsync(
                 "admin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 new SubmitEventRsvpRequest("Interested Learner", "interested@example.com", "interested"),
                 CancellationToken.None);
 
             EventRsvpResponse attended = await rsvpService.SetStatusAsync(
                 "admin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 going.Id,
                 new AdminSetEventRsvpStatusRequest("attended"),
                 CancellationToken.None);
@@ -136,6 +147,7 @@ public sealed class EventRsvpServiceTests
 
             EventRsvpResponse promoted = await rsvpService.SetStatusAsync(
                 "admin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 interested.Id,
                 new AdminSetEventRsvpStatusRequest("going"),
                 CancellationToken.None);
@@ -144,6 +156,7 @@ public sealed class EventRsvpServiceTests
             InvalidOperationException capacityException = await Assert.ThrowsAsync<InvalidOperationException>(() =>
                 rsvpService.SetStatusAsync(
                     "admin-cafe-a1",
+                    ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                     going.Id,
                     new AdminSetEventRsvpStatusRequest("going"),
                     CancellationToken.None));
@@ -175,11 +188,13 @@ public sealed class EventRsvpServiceTests
             await Assert.ThrowsAsync<KeyNotFoundException>(() =>
                 rsvpService.SubmitAsync(
                     "draft-cafe-a1",
+                    ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                     new SubmitEventRsvpRequest("Draft Learner", "draft@example.com", "interested"),
                     CancellationToken.None));
             await Assert.ThrowsAsync<KeyNotFoundException>(() =>
                 rsvpService.SubmitAsync(
                     "missing-cafe-a1",
+                    ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                     new SubmitEventRsvpRequest("Missing Learner", "missing@example.com", "interested"),
                     CancellationToken.None));
         }

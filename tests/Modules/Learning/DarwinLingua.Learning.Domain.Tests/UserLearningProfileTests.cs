@@ -251,8 +251,31 @@ public sealed class UserLearningProfileTests
         Assert.Equal(primary, profile.PreferredMeaningLanguage1);
         Assert.Equal(secondary, profile.PreferredMeaningLanguage2);
         Assert.Equal(ui, profile.UiLanguageCode);
+        Assert.Equal(LanguageCode.From(ContentLanguageRequirements.DefaultTargetLearningLanguageCode), profile.TargetLearningLanguageCode);
         Assert.Equal(createdAt, profile.CreatedAtUtc);
         Assert.Equal(createdAt, profile.UpdatedAtUtc);
+    }
+
+    /// <summary>
+    /// Verifies that the target learning language can be changed independently from helper and UI languages.
+    /// </summary>
+    [Fact]
+    public void UpdateTargetLearningLanguage_ShouldPersistTargetLanguageAndTimestamp()
+    {
+        UserLearningProfile profile = new(
+            Guid.NewGuid(),
+            "local-installation-user",
+            LanguageCode.From("en"),
+            preferredMeaningLanguage2: null,
+            LanguageCode.From("en"),
+            DateTime.UtcNow.AddMinutes(-5));
+
+        DateTime updatedAtUtc = DateTime.UtcNow;
+
+        profile.UpdateTargetLearningLanguage(LanguageCode.From("de"), updatedAtUtc);
+
+        Assert.Equal(LanguageCode.From("de"), profile.TargetLearningLanguageCode);
+        Assert.Equal(updatedAtUtc, profile.UpdatedAtUtc);
     }
 
     /// <summary>

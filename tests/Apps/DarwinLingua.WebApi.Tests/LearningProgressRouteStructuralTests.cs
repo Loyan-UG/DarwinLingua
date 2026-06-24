@@ -13,9 +13,9 @@ public sealed class LearningProgressRouteStructuralTests
         Assert.Contains("\"/api/learning/progress/summary\"", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/learning/progress/content\"", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/learning/recommendations\"", program, StringComparison.Ordinal);
-        Assert.Contains("GetSummaryAsync(GetRequiredUserId(principal), cancellationToken)", normalized, StringComparison.Ordinal);
-        Assert.Contains("UpdateContentProgressAsync(GetRequiredUserId(principal), request, cancellationToken)", normalized, StringComparison.Ordinal);
-        Assert.Contains("GetRecommendationsAsync(GetRequiredUserId(principal), Math.Clamp(take ?? 6, 1, 20), cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("GetSummaryAsync( GetRequiredUserId(principal), ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("UpdateContentProgressAsync( GetRequiredUserId(principal), ResolveTargetLearningLanguageCode(targetLearningLanguageCode), request, cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("GetRecommendationsAsync( GetRequiredUserId(principal), ResolveTargetLearningLanguageCode(targetLearningLanguageCode), Math.Clamp(take ?? 6, 1, 20), cancellationToken)", normalized, StringComparison.Ordinal);
         Assert.DoesNotContain("Identity?.Name ?? \"anonymous\"", program, StringComparison.Ordinal);
     }
 
@@ -40,6 +40,10 @@ public sealed class LearningProgressRouteStructuralTests
         string coursesController = File.ReadAllText(GetCoursesControllerPath());
         string recentView = File.ReadAllText(GetRecentViewPath());
         string recentController = File.ReadAllText(GetRecentControllerPath());
+        string webActivityQueryService = File.ReadAllText(GetWebActivityQueryServicePath());
+        string webWordStateService = File.ReadAllText(GetWebUserWordStateServicePath());
+        string webIdentityDbContext = File.ReadAllText(GetWebIdentityDbContextPath());
+        string webBootstrapper = File.ReadAllText(GetWebUserStateDatabaseBootstrapperPath());
         string normalizedCoursesController = NormalizeWhitespace(coursesController);
 
         Assert.Contains("Learning progress", courseLessonView, StringComparison.Ordinal);
@@ -52,15 +56,24 @@ public sealed class LearningProgressRouteStructuralTests
         Assert.Contains("[ValidateAntiForgeryToken]", coursesController, StringComparison.Ordinal);
         Assert.Contains("\"{courseSlug}/{lessonSlug}/progress\"", coursesController, StringComparison.Ordinal);
         Assert.Contains("LearnerSelectableLessonProgressStates.Contains(normalizedState)", normalizedCoursesController, StringComparison.Ordinal);
-        Assert.Contains("UpdateContentProgressAsync( profile.UserId, new UpdateUserContentProgressRequestModel(\"course-lesson\", lessonSlug, normalizedState), cancellationToken)", normalizedCoursesController, StringComparison.Ordinal);
+        Assert.Contains("UpdateContentProgressAsync( profile.UserId, targetLearningLanguageCode, new UpdateUserContentProgressRequestModel(\"course-lesson\", lessonSlug, normalizedState), cancellationToken)", normalizedCoursesController, StringComparison.Ordinal);
         Assert.Contains("Learning progress", recentView, StringComparison.Ordinal);
         Assert.Contains("Model.LearningProgress", recentView, StringComparison.Ordinal);
         Assert.Contains("Completed", recentView, StringComparison.Ordinal);
         Assert.Contains("Needs review", recentView, StringComparison.Ordinal);
         Assert.Contains("Personalized practice", recentView, StringComparison.Ordinal);
         Assert.Contains("Model.Recommendations", recentView, StringComparison.Ordinal);
-        Assert.Contains("GetRecommendationsAsync(userId, 6, cancellationToken)", NormalizeWhitespace(recentController), StringComparison.Ordinal);
+        Assert.Contains("GetRecommendationsAsync(userId, targetLearningLanguageCode, 6, cancellationToken)", NormalizeWhitespace(recentController), StringComparison.Ordinal);
+        Assert.Contains("$\"/learn/{targetLearningLanguageCode}/words/{wordSlug}\"", recentController, StringComparison.Ordinal);
         Assert.Contains("Review this word because you marked it as difficult.", recentController, StringComparison.Ordinal);
+        Assert.Contains("state.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode", webActivityQueryService, StringComparison.Ordinal);
+        Assert.Contains("item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode", webWordStateService, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCode = normalizedTargetLearningLanguageCode", webWordStateService, StringComparison.Ordinal);
+        Assert.Contains("wordState.TargetLearningLanguageCode", webIdentityDbContext, StringComparison.Ordinal);
+        Assert.Contains("IX_WebUserWordStates_Actor_Target_Word", webIdentityDbContext, StringComparison.Ordinal);
+        Assert.Contains("IX_WebUserWordStates_Actor_Target_LastViewed", webIdentityDbContext, StringComparison.Ordinal);
+        Assert.Contains("ALTER TABLE \"WebUserWordStates\" ADD COLUMN IF NOT EXISTS \"TargetLearningLanguageCode\"", webBootstrapper, StringComparison.Ordinal);
+        Assert.Contains("DROP INDEX IF EXISTS \"IX_WebUserWordStates_ActorId_WordPublicId\"", webBootstrapper, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -70,6 +83,7 @@ public sealed class LearningProgressRouteStructuralTests
 
         Assert.Contains("UserExerciseAttempts", reader, StringComparison.Ordinal);
         Assert.Contains("UserWordStates", reader, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCode", reader, StringComparison.Ordinal);
         Assert.Contains("\"weak-exercise\"", reader, StringComparison.Ordinal);
         Assert.Contains("\"difficult-word\"", reader, StringComparison.Ordinal);
         Assert.Contains("latest saved attempt was not correct", reader, StringComparison.Ordinal);
@@ -93,6 +107,18 @@ public sealed class LearningProgressRouteStructuralTests
 
     private static string GetRecommendationReaderPath() =>
         Path.Combine(FindRepositoryRoot(), "src", "Modules", "Learning", "DarwinLingua.Learning.Infrastructure", "Services", "LearningRecommendationCatalogReader.cs");
+
+    private static string GetWebActivityQueryServicePath() =>
+        Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Services", "WebActivityQueryService.cs");
+
+    private static string GetWebUserWordStateServicePath() =>
+        Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Services", "WebUserWordStateService.cs");
+
+    private static string GetWebIdentityDbContextPath() =>
+        Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Data", "WebIdentityDbContext.cs");
+
+    private static string GetWebUserStateDatabaseBootstrapperPath() =>
+        Path.Combine(FindRepositoryRoot(), "src", "Apps", "DarwinLingua.Web", "Services", "WebUserStateDatabaseBootstrapper.cs");
 
     private static string FindRepositoryRoot()
     {

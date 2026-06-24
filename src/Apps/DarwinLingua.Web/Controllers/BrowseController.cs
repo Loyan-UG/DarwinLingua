@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("browse")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Browse)]
 public sealed class BrowseController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,

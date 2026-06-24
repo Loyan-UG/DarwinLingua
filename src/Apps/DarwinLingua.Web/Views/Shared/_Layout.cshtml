@@ -2,6 +2,8 @@
 @{
     string uiLanguageCode = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     string uiDirection = TextDirection.FromLanguageCode(uiLanguageCode);
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string defaultCountryContextCode = LearningRouteConventions.ResolveDefaultCountryContextRouteValue(targetLearningLanguageCode);
 }
 <!DOCTYPE html>
 <html lang="@uiLanguageCode" dir="@uiDirection">
@@ -26,30 +28,31 @@
         <div class="shell-container shell-nav">
             <partial name="_AppHeader" />
             <nav class="shell-links" aria-label="@T["Primary"]">
+                <partial name="_TargetLearningLanguageSwitcher" />
                 <details class="account-menu learning-nav-group">
                     <summary class="nav-button">@T["Learn"]</summary>
                     <div class="account-menu__panel">
-                        <a asp-area="" asp-controller="Browse" asp-action="Index">@T["Browse"]</a>
-                        <a asp-area="" asp-controller="Grammar" asp-action="Index">@T["Grammar Guide"]</a>
-                        <a asp-area="" asp-controller="Expressions" asp-action="Index">@T["Everyday Expressions"]</a>
-                        <a asp-area="" asp-controller="Courses" asp-action="Index">@T["Courses"]</a>
-                        <a asp-area="" asp-controller="Collections" asp-action="Index">@T["Collections"]</a>
-                        <a asp-area="" asp-controller="Search" asp-action="Index">@T["Search"]</a>
+                        <a asp-area="" asp-controller="Browse" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Browse"]</a>
+                        <a asp-area="" asp-controller="Grammar" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Grammar Guide"]</a>
+                        <a asp-area="" asp-controller="Expressions" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Everyday Expressions"]</a>
+                        <a asp-area="" asp-controller="Courses" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Courses"]</a>
+                        <a asp-area="" asp-controller="Collections" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Collections"]</a>
+                        <a asp-area="" asp-controller="Search" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Search"]</a>
                     </div>
                 </details>
                 <details class="account-menu learning-nav-group">
                     <summary class="nav-button">@T["Practice"]</summary>
                     <div class="account-menu__panel">
-                        <a asp-area="" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a>
-                        <a asp-area="" asp-controller="Roleplays" asp-action="Index">@T["Roleplays"]</a>
-                        <a asp-area="" asp-controller="Favorites" asp-action="Index">@T["Favorites"]</a>
-                        <a asp-area="" asp-controller="Recent" asp-action="Index">@T["Recent"]</a>
+                        <a asp-area="" asp-controller="Exercises" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Exercises"]</a>
+                        <a asp-area="" asp-controller="Roleplays" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Roleplays"]</a>
+                        <a asp-area="" asp-controller="Favorites" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Favorites"]</a>
+                        <a asp-area="" asp-controller="Recent" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Recent"]</a>
                     </div>
                 </details>
                 <details class="account-menu learning-nav-group">
                     <summary class="nav-button">@T["Speak"]</summary>
                     <div class="account-menu__panel">
-                        <a asp-area="" asp-controller="TalkTopics" asp-action="Index">@T["Talk Topics"]</a>
+                        <a asp-area="" asp-controller="TalkTopics" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Talk Topics"]</a>
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">@T["Partners"]</a>
@@ -59,18 +62,18 @@
                 <details class="account-menu learning-nav-group">
                     <summary class="nav-button">@T["Prepare"]</summary>
                     <div class="account-menu__panel">
-                        <a asp-area="" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
-                        <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">@T["Conversation Starters"]</a>
-                        <a asp-area="" asp-controller="ExamPrep" asp-action="Index">@T["Exam Prep"]</a>
+                        <a asp-area="" asp-controller="Dialogues" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Dialogues"]</a>
+                        <a asp-area="" asp-controller="ConversationStarters" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Conversation Starters"]</a>
+                        <a asp-area="" asp-controller="ExamPrep" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Exam Prep"]</a>
                     </div>
                 </details>
                 <details class="account-menu learning-nav-group">
                     <summary class="nav-button">@T["Resources"]</summary>
                     <div class="account-menu__panel">
-                        <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">@T["Events"]</a>
-                        <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">@T["Organizers"]</a>
-                        <a asp-area="" asp-controller="WritingTemplates" asp-action="Index">@T["Writing Templates"]</a>
-                        <a asp-area="" asp-controller="CulturalNotes" asp-action="Index">@T["Life in Germany"]</a>
+                        <a asp-area="" asp-controller="ConversationEvents" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Events"]</a>
+                        <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Organizers"]</a>
+                        <a asp-area="" asp-controller="WritingTemplates" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Writing Templates"]</a>
+                        <a asp-area="" asp-controller="CountryGuidance" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-route-countryContextCode="@defaultCountryContextCode">@T["Life in Germany"]</a>
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <a asp-area="" asp-controller="OrganizerDashboard" asp-action="Index">@T["Organizer dashboard"]</a>
@@ -149,22 +152,22 @@
                 {
                     <a asp-area="Identity" asp-page="/Account/Login">@T["Sign in"]</a>
                 }
-                <a asp-area="" asp-controller="Browse" asp-action="Index">@T["Browse"]</a>
-                <a asp-area="" asp-controller="Collections" asp-action="Index">@T["Collections"]</a>
-                <a asp-area="" asp-controller="Expressions" asp-action="Index">@T["Everyday Expressions"]</a>
-                <a asp-area="" asp-controller="Courses" asp-action="Index">@T["Courses"]</a>
-                <a asp-area="" asp-controller="Exercises" asp-action="Index">@T["Exercises"]</a>
-                <a asp-area="" asp-controller="Roleplays" asp-action="Index">@T["Roleplays"]</a>
-                <a asp-area="" asp-controller="WritingTemplates" asp-action="Index">@T["Writing Templates"]</a>
-                <a asp-area="" asp-controller="ExamPrep" asp-action="Index">@T["Exam Prep"]</a>
-                <a asp-area="" asp-controller="CulturalNotes" asp-action="Index">@T["Life in Germany"]</a>
-                <a asp-area="" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
-                <a asp-area="" asp-controller="TalkTopics" asp-action="Index">@T["Talk Topics"]</a>
-                <a asp-area="" asp-controller="ConversationStarters" asp-action="Index">@T["Starters"]</a>
-                <a asp-area="" asp-controller="Search" asp-action="Index">@T["Search"]</a>
-                <a asp-area="" asp-controller="ConversationEvents" asp-action="Index">@T["Events"]</a>
-                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index">@T["Organizers"]</a>
-                <a asp-area="" asp-controller="Recent" asp-action="Index">@T["Recent"]</a>
+                <a asp-area="" asp-controller="Browse" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Browse"]</a>
+                <a asp-area="" asp-controller="Collections" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Collections"]</a>
+                <a asp-area="" asp-controller="Expressions" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Everyday Expressions"]</a>
+                <a asp-area="" asp-controller="Courses" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Courses"]</a>
+                <a asp-area="" asp-controller="Exercises" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Exercises"]</a>
+                <a asp-area="" asp-controller="Roleplays" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Roleplays"]</a>
+                <a asp-area="" asp-controller="WritingTemplates" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Writing Templates"]</a>
+                <a asp-area="" asp-controller="ExamPrep" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Exam Prep"]</a>
+                <a asp-area="" asp-controller="CountryGuidance" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-route-countryContextCode="@defaultCountryContextCode">@T["Life in Germany"]</a>
+                <a asp-area="" asp-controller="Dialogues" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Dialogues"]</a>
+                <a asp-area="" asp-controller="TalkTopics" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Talk Topics"]</a>
+                <a asp-area="" asp-controller="ConversationStarters" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Starters"]</a>
+                <a asp-area="" asp-controller="Search" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Search"]</a>
+                <a asp-area="" asp-controller="ConversationEvents" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Events"]</a>
+                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Organizers"]</a>
+                <a asp-area="" asp-controller="Recent" asp-action="Index" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode">@T["Recent"]</a>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a asp-area="" asp-controller="PartnerMatching" asp-action="Index">@T["Partners"]</a>

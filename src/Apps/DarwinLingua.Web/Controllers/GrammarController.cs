@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("grammar")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Grammar)]
 public sealed class GrammarController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -30,13 +30,16 @@ public sealed class GrammarController(
             WebRouteInput.NormalizeSlug(grammarCategory ?? string.Empty),
             WebRouteInput.NormalizeSlug(topic ?? string.Empty),
             string.IsNullOrWhiteSpace(q) ? null : q.Trim());
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
 
         IReadOnlyList<GrammarTopicListItemModel> grammarTopics;
         try
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
-            grammarTopics = await catalogApiClient.GetGrammarTopicsAsync(filter, catalogTimeout.Token).ConfigureAwait(false);
+            grammarTopics = await catalogApiClient
+                .GetGrammarTopicsAsync(filter, targetLearningLanguageCode, catalogTimeout.Token)
+                .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
@@ -60,9 +63,10 @@ public sealed class GrammarController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
@@ -73,7 +77,7 @@ public sealed class GrammarController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             grammarTopic = await catalogApiClient
-                .GetGrammarTopicBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, catalogTimeout.Token)
+                .GetGrammarTopicBySlugAsync(normalizedSlug, targetLearningLanguageCode, profile.PreferredMeaningLanguage1, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))

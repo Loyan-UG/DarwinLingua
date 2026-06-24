@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,12 +14,15 @@ internal sealed class ExamPrepRepository(IDbContextFactory<DarwinLinguaDbContext
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
-    public async Task<IReadOnlyList<ExamProfileModel>> GetPublishedExamProfilesAsync(string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ExamProfileModel>> GetPublishedExamProfilesAsync(string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         List<ExamProfile> profiles = await dbContext.ExamProfiles
             .AsNoTracking()
-            .Where(profile => profile.PublicationStatus == PublicationStatus.Active)
+            .Where(profile =>
+                profile.PublicationStatus == PublicationStatus.Active &&
+                profile.TargetLearningLanguageCode == targetLanguageCode)
             .OrderBy(profile => profile.SortOrder)
             .ThenBy(profile => profile.DisplayName)
             .ToListAsync(cancellationToken)
@@ -35,10 +39,15 @@ internal sealed class ExamPrepRepository(IDbContextFactory<DarwinLinguaDbContext
             .ToArray();
     }
 
-    public async Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetPublishedExamPrepUnitsAsync(ExamPrepListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetPublishedExamPrepUnitsAsync(ExamPrepListFilterModel filter, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
-        IQueryable<ExamPrepUnit> query = dbContext.ExamPrepUnits.AsNoTracking().Where(unit => unit.PublicationStatus == PublicationStatus.Active);
+        IQueryable<ExamPrepUnit> query = dbContext.ExamPrepUnits
+            .AsNoTracking()
+            .Where(unit =>
+                unit.PublicationStatus == PublicationStatus.Active &&
+                unit.TargetLearningLanguageCode == targetLanguageCode);
         query = ApplyFilters(query, filter);
 
         List<ExamPrepUnit> units = await query
@@ -62,13 +71,19 @@ internal sealed class ExamPrepRepository(IDbContextFactory<DarwinLinguaDbContext
             .ToArray();
     }
 
-    public async Task<ExamPrepUnitDetailModel?> GetPublishedExamPrepUnitBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<ExamPrepUnitDetailModel?> GetPublishedExamPrepUnitBySlugAsync(string slug, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = Normalize(slug) ?? string.Empty;
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         ExamPrepUnit? unit = await dbContext.ExamPrepUnits
             .AsNoTracking()
-            .SingleOrDefaultAsync(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug, cancellationToken)
+            .SingleOrDefaultAsync(
+                item =>
+                    item.PublicationStatus == PublicationStatus.Active &&
+                    item.TargetLearningLanguageCode == targetLanguageCode &&
+                    item.Slug == normalizedSlug,
+                cancellationToken)
             .ConfigureAwait(false);
 
         return unit is null
@@ -165,6 +180,11 @@ internal sealed class ExamPrepRepository(IDbContextFactory<DarwinLinguaDbContext
     }
 
     private static string? Normalize(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim().ToLowerInvariant();
+
+    private static string NormalizeRequiredLanguageCode(string value) =>
+        string.IsNullOrWhiteSpace(value)
+            ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+            : value.Trim().ToLowerInvariant();
 
     private static string? NormalizeSearch(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
 

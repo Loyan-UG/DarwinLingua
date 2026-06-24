@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Linq.Expressions;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.WebApi.Services;
 
@@ -15,13 +16,16 @@ public interface IWebsiteAdminQueryService
 {
     Task<AdminCatalogDashboardResponse> GetDashboardAsync(CancellationToken cancellationToken);
 
-    Task<AdminSystemReportResponse> GetSystemReportAsync(CancellationToken cancellationToken);
+    Task<AdminSystemReportResponse> GetSystemReportAsync(
+        string? targetLearningLanguageCode,
+        CancellationToken cancellationToken);
 
     Task<AdminCatalogImportsResponse> GetImportsAsync(string? statusFilter, CancellationToken cancellationToken);
 
     Task<AdminLearningPortalIssuesResponse> GetLearningPortalIssuesAsync(
         string? areaFilter,
         string? queryText,
+        string? targetLearningLanguageCode,
         int take,
         CancellationToken cancellationToken);
 
@@ -45,7 +49,7 @@ public interface IWebsiteAdminQueryService
 public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbContext> dbContextFactory) : IWebsiteAdminQueryService
 {
     private static readonly IReadOnlySet<string> EmptyStringSet = new HashSet<string>(StringComparer.Ordinal);
-    private static readonly string[] RequiredLearnerMeaningLanguages = ["en", "fa", "ar", "tr", "ru", "ckb", "kmr", "pl", "ro", "sq"];
+    private static readonly IReadOnlyList<string> RequiredLearnerMeaningLanguages = ContentLanguageRequirements.RequiredMeaningLanguageCodes;
     private static readonly JsonSerializerOptions WebJsonOptions = new(JsonSerializerDefaults.Web);
     private static readonly IReadOnlySet<string> SupportedCourseActivityTargetTypes = new HashSet<string>(
         [
@@ -59,7 +63,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             "exercise",
             "roleplay",
             "writing-template",
-            "life-in-germany",
+            "country-guidance",
             "exam-prep-unit",
         ],
         StringComparer.Ordinal);
@@ -90,13 +94,18 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             packageSummary.LastImportAtUtc);
     }
 
-    public async Task<AdminSystemReportResponse> GetSystemReportAsync(CancellationToken cancellationToken)
+    public async Task<AdminSystemReportResponse> GetSystemReportAsync(
+        string? targetLearningLanguageCode,
+        CancellationToken cancellationToken)
     {
+        string normalizedTargetLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         Task<AdminCatalogSystemReportResponse> catalogTask = GetCatalogSystemReportAsync(cancellationToken);
         Task<AdminSocialSystemReportResponse> socialTask = GetSocialSystemReportAsync(cancellationToken);
         Task<AdminModerationSystemReportResponse> moderationTask = GetModerationSystemReportAsync(cancellationToken);
         Task<AdminOperationsSystemReportResponse> operationsTask = GetOperationsSystemReportAsync(cancellationToken);
-        Task<AdminLearningPortalSystemReportResponse> learningPortalTask = GetLearningPortalSystemReportAsync(cancellationToken);
+        Task<AdminLearningPortalSystemReportResponse> learningPortalTask = GetLearningPortalSystemReportAsync(
+            normalizedTargetLanguageCode,
+            cancellationToken);
 
         await Task.WhenAll(catalogTask, socialTask, moderationTask, operationsTask, learningPortalTask).ConfigureAwait(false);
 
@@ -149,9 +158,11 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
     public async Task<AdminLearningPortalIssuesResponse> GetLearningPortalIssuesAsync(
         string? areaFilter,
         string? queryText,
+        string? targetLearningLanguageCode,
         int take,
         CancellationToken cancellationToken)
     {
+        string normalizedTargetLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         string? normalizedAreaFilter = NormalizeFilter(areaFilter);
         string? normalizedQuery = NormalizeFilter(queryText);
         int normalizedTake = Math.Clamp(take <= 0 ? 250 : take, 1, 1000);
@@ -164,6 +175,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         LearningPortalQualitySummary qualitySummary = await GetLearningPortalQualitySummaryAsync(
                 dbContext,
                 tableAvailability,
+                normalizedTargetLanguageCode,
                 int.MaxValue,
                 cancellationToken)
             .ConfigureAwait(false);
@@ -198,6 +210,8 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         AdminLearningPortalIssueRowResponse[] filteredIssueArray = filteredIssues.ToArray();
 
         return new AdminLearningPortalIssuesResponse(
+            normalizedTargetLanguageCode,
+            GetDefaultCountryContextCode(normalizedTargetLanguageCode),
             normalizedAreaFilter,
             normalizedQuery,
             normalizedTake,
@@ -704,7 +718,9 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             packageSummary.LastImportAtUtc);
     }
 
-    private async Task<AdminLearningPortalSystemReportResponse> GetLearningPortalSystemReportAsync(CancellationToken cancellationToken)
+    private async Task<AdminLearningPortalSystemReportResponse> GetLearningPortalSystemReportAsync(
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken)
     {
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -713,111 +729,171 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlyDictionary<string, bool> tableAvailability = await GetLearningPortalTableAvailabilityAsync(dbContext, cancellationToken)
             .ConfigureAwait(false);
 
-        List<AdminLearningPortalCountRowResponse> countsByType = await GetLearningContentCountsByTypeAsync(dbContext, tableAvailability, cancellationToken)
+        IQueryable<GrammarTopic> grammarTopics = TargetScoped(dbContext.GrammarTopics.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExpressionEntry> expressions = TargetScoped(dbContext.ExpressionEntries.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<Exercise> exercises = TargetScoped(dbContext.Exercises.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExerciseSet> exerciseSets = TargetScoped(dbContext.ExerciseSets.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CoursePath> coursePaths = TargetScoped(dbContext.CoursePaths.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CourseModule> courseModules = TargetScoped(dbContext.CourseModules.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CourseLesson> courseLessons = TargetScoped(dbContext.CourseLessons.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExamProfile> examProfiles = TargetScoped(dbContext.ExamProfiles.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExamPrepUnit> examPrepUnits = TargetScoped(dbContext.ExamPrepUnits.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<WritingTemplate> writingTemplates = TargetScoped(dbContext.WritingTemplates.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CountryGuidanceNote> countryGuidanceNotes = TargetScoped(dbContext.CountryGuidanceNotes.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<RoleplayScenario> roleplayScenarios = TargetScoped(dbContext.RoleplayScenarios.AsNoTracking(), targetLearningLanguageCode);
+
+        List<AdminLearningPortalCountRowResponse> countsByType = await GetLearningContentCountsByTypeAsync(
+                tableAvailability,
+                grammarTopics,
+                expressions,
+                exercises,
+                exerciseSets,
+                coursePaths,
+                courseModules,
+                courseLessons,
+                examProfiles,
+                examPrepUnits,
+                writingTemplates,
+                countryGuidanceNotes,
+                roleplayScenarios,
+                cancellationToken)
             .ConfigureAwait(false);
-        List<AdminLearningPortalCountRowResponse> countsByCefr = await GetLearningContentCountsByCefrAsync(dbContext, tableAvailability, cancellationToken)
+        List<AdminLearningPortalCountRowResponse> countsByCefr = await GetLearningContentCountsByCefrAsync(
+                tableAvailability,
+                grammarTopics,
+                expressions,
+                exercises,
+                exerciseSets,
+                courseLessons,
+                examPrepUnits,
+                writingTemplates,
+                countryGuidanceNotes,
+                roleplayScenarios,
+                cancellationToken)
             .ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> grammarByCategory = await CountByIfTableExistsAsync(
             tableAvailability,
             "GrammarTopics",
-            dbContext.GrammarTopics.AsNoTracking(),
+            grammarTopics,
             topic => topic.GrammarCategory,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> expressionsByType = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking(),
+            expressions,
             expression => expression.ExpressionType,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> expressionsByRegister = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking(),
+            expressions,
             expression => expression.Register,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> expressionsByMeaningTransparency = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking(),
+            expressions,
             expression => expression.MeaningTransparency ?? "missing",
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> expressionsBySafetyRating = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking(),
+            expressions,
             expression => expression.SafetyRating,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> expressionsBySensitiveContentKind = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking(),
+            expressions,
             expression => expression.SensitiveContentKind,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> expressionsByUsagePolicy = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking(),
+            expressions,
             expression => expression.UsagePolicy,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> exercisesByType = await CountByIfTableExistsAsync(
             tableAvailability,
             "Exercises",
-            dbContext.Exercises.AsNoTracking(),
+            exercises,
             exercise => exercise.ExerciseType,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> exercisesBySkill = await CountByIfTableExistsAsync(
             tableAvailability,
             "Exercises",
-            dbContext.Exercises.AsNoTracking(),
+            exercises,
             exercise => exercise.TargetSkill,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> lessonsByCourse = await CountByIfTableExistsAsync(
             tableAvailability,
             "CourseLessons",
-            dbContext.CourseLessons.AsNoTracking(),
+            courseLessons,
             lesson => lesson.CoursePathSlug,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> lessonsByCefr = await CountValueByIfTableExistsAsync(
             tableAvailability,
             "CourseLessons",
-            dbContext.CourseLessons.AsNoTracking(),
+            courseLessons,
             lesson => lesson.CefrLevel,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> lessonsByModule = await CountByIfTableExistsAsync(
             tableAvailability,
             "CourseLessons",
-            dbContext.CourseLessons.AsNoTracking(),
+            courseLessons,
             lesson => lesson.ModuleSlug,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> examByProfile = await CountByIfTableExistsAsync(
             tableAvailability,
             "ExamPrepUnits",
-            dbContext.ExamPrepUnits.AsNoTracking(),
+            examPrepUnits,
             unit => unit.ExamProfileKey,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> writingByCategory = await CountByIfTableExistsAsync(
             tableAvailability,
             "WritingTemplates",
-            dbContext.WritingTemplates.AsNoTracking(),
+            writingTemplates,
             template => template.Category,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> writingByRegister = await CountByIfTableExistsAsync(
             tableAvailability,
             "WritingTemplates",
-            dbContext.WritingTemplates.AsNoTracking(),
+            writingTemplates,
             template => template.Register,
             cancellationToken).ConfigureAwait(false);
         List<AdminLearningPortalCountRowResponse> culturalByCategory = await CountByIfTableExistsAsync(
             tableAvailability,
-            "CulturalNotes",
-            dbContext.CulturalNotes.AsNoTracking(),
+            "CountryGuidanceNotes",
+            countryGuidanceNotes,
             note => note.Category,
             cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> countsByTargetLanguage = await GetLearningContentCountsByTargetLanguageAsync(
+            dbContext,
+            tableAvailability,
+            cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> countryGuidanceByCountryContext = await CountByIfTableExistsAsync(
+            tableAvailability,
+            "CountryGuidanceNotes",
+            countryGuidanceNotes,
+            note => note.CountryContextCode,
+            cancellationToken).ConfigureAwait(false);
+        List<AdminLearningPortalCountRowResponse> targetLanguageActivationGate = BuildTargetLanguageActivationGateRows(
+            targetLearningLanguageCode,
+            countsByType,
+            countsByTargetLanguage,
+            countryGuidanceByCountryContext);
 
-        LearningPortalQualitySummary qualitySummary = await GetLearningPortalQualitySummaryAsync(dbContext, tableAvailability, 30, cancellationToken)
+        LearningPortalQualitySummary qualitySummary = await GetLearningPortalQualitySummaryAsync(
+                dbContext,
+                tableAvailability,
+                targetLearningLanguageCode,
+                30,
+                cancellationToken)
             .ConfigureAwait(false);
 
         return new AdminLearningPortalSystemReportResponse(
+            targetLearningLanguageCode,
+            GetDefaultCountryContextCode(targetLearningLanguageCode),
             countsByType,
             countsByCefr,
             grammarByCategory,
@@ -836,6 +912,13 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             writingByCategory,
             writingByRegister,
             culturalByCategory,
+            countsByTargetLanguage,
+            countryGuidanceByCountryContext,
+            targetLanguageActivationGate,
+            qualitySummary.MissingTranslationsByHelperLanguage,
+            qualitySummary.MissingTranslationsByModule,
+            qualitySummary.DuplicateSlugsByType,
+            qualitySummary.DuplicateSlugCount,
             qualitySummary.UnresolvedLinkedWordCount,
             qualitySummary.UnresolvedLinkedContentReferenceCount,
             qualitySummary.MissingTranslationCount,
@@ -961,25 +1044,47 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             ? CountValueByAsync(query, keySelector, cancellationToken)
             : Task.FromResult(new List<AdminLearningPortalCountRowResponse>());
 
+    private static IQueryable<T> TargetScoped<T>(IQueryable<T> query, string targetLearningLanguageCode)
+        where T : class =>
+        query.Where(item => EF.Property<string>(item, "TargetLearningLanguageCode") == targetLearningLanguageCode);
+
+    private static string? GetDefaultCountryContextCode(string targetLearningLanguageCode) =>
+        CountryContextCatalog.Active
+            .Where(context => context.TargetLearningLanguageCodes.Contains(targetLearningLanguageCode, StringComparer.OrdinalIgnoreCase))
+            .OrderBy(static context => context.SortOrder)
+            .Select(static context => context.Code)
+            .FirstOrDefault();
+
     private static async Task<List<AdminLearningPortalCountRowResponse>> GetLearningContentCountsByTypeAsync(
-        DarwinLinguaDbContext dbContext,
         IReadOnlyDictionary<string, bool> tableAvailability,
+        IQueryable<GrammarTopic> grammarTopics,
+        IQueryable<ExpressionEntry> expressions,
+        IQueryable<Exercise> exercises,
+        IQueryable<ExerciseSet> exerciseSets,
+        IQueryable<CoursePath> coursePaths,
+        IQueryable<CourseModule> courseModules,
+        IQueryable<CourseLesson> courseLessons,
+        IQueryable<ExamProfile> examProfiles,
+        IQueryable<ExamPrepUnit> examPrepUnits,
+        IQueryable<WritingTemplate> writingTemplates,
+        IQueryable<CountryGuidanceNote> countryGuidanceNotes,
+        IQueryable<RoleplayScenario> roleplayScenarios,
         CancellationToken cancellationToken)
     {
         List<AdminLearningPortalCountRowResponse> rows =
         [
-            new("grammar-topic", await CountIfTableExistsAsync(tableAvailability, "GrammarTopics", dbContext.GrammarTopics.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("expression", await CountIfTableExistsAsync(tableAvailability, "ExpressionEntries", dbContext.ExpressionEntries.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("exercise", await CountIfTableExistsAsync(tableAvailability, "Exercises", dbContext.Exercises.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("exercise-set", await CountIfTableExistsAsync(tableAvailability, "ExerciseSets", dbContext.ExerciseSets.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("course", await CountIfTableExistsAsync(tableAvailability, "CoursePaths", dbContext.CoursePaths.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("course-module", await CountIfTableExistsAsync(tableAvailability, "CourseModules", dbContext.CourseModules.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("course-lesson", await CountIfTableExistsAsync(tableAvailability, "CourseLessons", dbContext.CourseLessons.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("exam-profile", await CountIfTableExistsAsync(tableAvailability, "ExamProfiles", dbContext.ExamProfiles.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("exam-prep-unit", await CountIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("writing-template", await CountIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("cultural-note", await CountIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
-            new("roleplay", await CountIfTableExistsAsync(tableAvailability, "RoleplayScenarios", dbContext.RoleplayScenarios.AsNoTracking(), cancellationToken).ConfigureAwait(false)),
+            new("grammar-topic", await CountIfTableExistsAsync(tableAvailability, "GrammarTopics", grammarTopics, cancellationToken).ConfigureAwait(false)),
+            new("expression", await CountIfTableExistsAsync(tableAvailability, "ExpressionEntries", expressions, cancellationToken).ConfigureAwait(false)),
+            new("exercise", await CountIfTableExistsAsync(tableAvailability, "Exercises", exercises, cancellationToken).ConfigureAwait(false)),
+            new("exercise-set", await CountIfTableExistsAsync(tableAvailability, "ExerciseSets", exerciseSets, cancellationToken).ConfigureAwait(false)),
+            new("course", await CountIfTableExistsAsync(tableAvailability, "CoursePaths", coursePaths, cancellationToken).ConfigureAwait(false)),
+            new("course-module", await CountIfTableExistsAsync(tableAvailability, "CourseModules", courseModules, cancellationToken).ConfigureAwait(false)),
+            new("course-lesson", await CountIfTableExistsAsync(tableAvailability, "CourseLessons", courseLessons, cancellationToken).ConfigureAwait(false)),
+            new("exam-profile", await CountIfTableExistsAsync(tableAvailability, "ExamProfiles", examProfiles, cancellationToken).ConfigureAwait(false)),
+            new("exam-prep-unit", await CountIfTableExistsAsync(tableAvailability, "ExamPrepUnits", examPrepUnits, cancellationToken).ConfigureAwait(false)),
+            new("writing-template", await CountIfTableExistsAsync(tableAvailability, "WritingTemplates", writingTemplates, cancellationToken).ConfigureAwait(false)),
+            new("country-guidance", await CountIfTableExistsAsync(tableAvailability, "CountryGuidanceNotes", countryGuidanceNotes, cancellationToken).ConfigureAwait(false)),
+            new("roleplay", await CountIfTableExistsAsync(tableAvailability, "RoleplayScenarios", roleplayScenarios, cancellationToken).ConfigureAwait(false)),
         ];
 
         return rows;
@@ -995,20 +1100,28 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             : Task.FromResult(0);
 
     private static async Task<List<AdminLearningPortalCountRowResponse>> GetLearningContentCountsByCefrAsync(
-        DarwinLinguaDbContext dbContext,
         IReadOnlyDictionary<string, bool> tableAvailability,
+        IQueryable<GrammarTopic> grammarTopics,
+        IQueryable<ExpressionEntry> expressions,
+        IQueryable<Exercise> exercises,
+        IQueryable<ExerciseSet> exerciseSets,
+        IQueryable<CourseLesson> courseLessons,
+        IQueryable<ExamPrepUnit> examPrepUnits,
+        IQueryable<WritingTemplate> writingTemplates,
+        IQueryable<CountryGuidanceNote> countryGuidanceNotes,
+        IQueryable<RoleplayScenario> roleplayScenarios,
         CancellationToken cancellationToken)
     {
         List<AdminLearningPortalCountRowResponse> rows = [];
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "GrammarTopics", dbContext.GrammarTopics.AsNoTracking(), topic => topic.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExpressionEntries", dbContext.ExpressionEntries.AsNoTracking(), expression => expression.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "Exercises", dbContext.Exercises.AsNoTracking(), exercise => exercise.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExerciseSets", dbContext.ExerciseSets.AsNoTracking(), set => set.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "CourseLessons", dbContext.CourseLessons.AsNoTracking(), lesson => lesson.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.AsNoTracking(), unit => unit.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.AsNoTracking(), template => template.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.AsNoTracking(), note => note.CefrLevel, cancellationToken).ConfigureAwait(false));
-        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "RoleplayScenarios", dbContext.RoleplayScenarios.AsNoTracking(), scenario => scenario.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "GrammarTopics", grammarTopics, topic => topic.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExpressionEntries", expressions, expression => expression.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "Exercises", exercises, exercise => exercise.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExerciseSets", exerciseSets, set => set.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "CourseLessons", courseLessons, lesson => lesson.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "ExamPrepUnits", examPrepUnits, unit => unit.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "WritingTemplates", writingTemplates, template => template.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "CountryGuidanceNotes", countryGuidanceNotes, note => note.CefrLevel, cancellationToken).ConfigureAwait(false));
+        rows.AddRange(await CountValueByIfTableExistsAsync(tableAvailability, "RoleplayScenarios", roleplayScenarios, scenario => scenario.CefrLevel, cancellationToken).ConfigureAwait(false));
 
         return rows
             .GroupBy(static row => row.Key, StringComparer.Ordinal)
@@ -1017,29 +1130,158 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             .ToList();
     }
 
+    private static async Task<List<AdminLearningPortalCountRowResponse>> GetLearningContentCountsByTargetLanguageAsync(
+        DarwinLinguaDbContext dbContext,
+        IReadOnlyDictionary<string, bool> tableAvailability,
+        CancellationToken cancellationToken)
+    {
+        List<AdminLearningPortalCountRowResponse> rows = [];
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "GrammarTopics", "grammar-topic", dbContext.GrammarTopics.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "ExpressionEntries", "expression", dbContext.ExpressionEntries.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "DialogueLessons", "dialogue", dbContext.DialogueLessons.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "TalkTopics", "talk-topic", dbContext.TalkTopics.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "RoleplayScenarios", "roleplay", dbContext.RoleplayScenarios.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "Exercises", "exercise", dbContext.Exercises.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "ExerciseSets", "exercise-set", dbContext.ExerciseSets.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "CoursePaths", "course", dbContext.CoursePaths.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "CourseModules", "course-module", dbContext.CourseModules.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "CourseLessons", "course-lesson", dbContext.CourseLessons.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "ExamProfiles", "exam-profile", dbContext.ExamProfiles.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "ExamPrepUnits", "exam-prep-unit", dbContext.ExamPrepUnits.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "WritingTemplates", "writing-template", dbContext.WritingTemplates.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+        await AddTargetLanguageCountRowsAsync(rows, tableAvailability, "CountryGuidanceNotes", "country-guidance", dbContext.CountryGuidanceNotes.AsNoTracking(), cancellationToken).ConfigureAwait(false);
+
+        return rows
+            .OrderBy(static row => row.Key, StringComparer.Ordinal)
+            .ToList();
+    }
+
+    private static async Task AddTargetLanguageCountRowsAsync<T>(
+        List<AdminLearningPortalCountRowResponse> rows,
+        IReadOnlyDictionary<string, bool> tableAvailability,
+        string tableName,
+        string moduleKey,
+        IQueryable<T> query,
+        CancellationToken cancellationToken)
+        where T : class
+    {
+        if (!HasTable(tableAvailability, tableName))
+        {
+            return;
+        }
+
+        var targetRows = await query
+            .GroupBy(static item => EF.Property<string>(item, "TargetLearningLanguageCode"))
+            .Select(static group => new
+            {
+                TargetLearningLanguageCode = group.Key,
+                Count = group.Count(),
+            })
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        rows.AddRange(targetRows.Select(row => new AdminLearningPortalCountRowResponse(
+            $"{moduleKey}:{row.TargetLearningLanguageCode}",
+            row.Count)));
+    }
+
+    private static List<AdminLearningPortalCountRowResponse> BuildTargetLanguageActivationGateRows(
+        string targetLearningLanguageCode,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> scopedCountsByType,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> countsByTargetLanguage,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> countryGuidanceByCountryContext)
+    {
+        TargetLearningLanguageDefinition? selectedLanguage = TargetLearningLanguageCatalog.All
+            .FirstOrDefault(language => string.Equals(language.Code, targetLearningLanguageCode, StringComparison.OrdinalIgnoreCase));
+        int selectedCountryContextCount = CountryContextCatalog.Active.Count(context =>
+            context.TargetLearningLanguageCodes.Contains(targetLearningLanguageCode, StringComparer.OrdinalIgnoreCase));
+        int selectedLevelDefinitionCount = string.Equals(selectedLanguage?.DefaultLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.OrdinalIgnoreCase)
+            ? LearningLevelSystemCatalog.GermanCefrLevels.Count
+            : 0;
+
+        List<AdminLearningPortalCountRowResponse> rows =
+        [
+            new("active-target-languages", TargetLearningLanguageCatalog.Active.Count),
+            new("planned-target-languages", TargetLearningLanguageCatalog.All.Count(language => !language.IsActive)),
+            new($"selected-target-active:{targetLearningLanguageCode}", selectedLanguage?.IsActive == true ? 1 : 0),
+            new($"selected-level-definitions:{targetLearningLanguageCode}", selectedLevelDefinitionCount),
+            new($"selected-active-country-contexts:{targetLearningLanguageCode}", selectedCountryContextCount),
+            new($"selected-content-items:{targetLearningLanguageCode}", scopedCountsByType.Sum(static row => row.Count)),
+            new($"selected-country-guidance-streams:{targetLearningLanguageCode}", countryGuidanceByCountryContext.Count),
+        ];
+
+        foreach (TargetLearningLanguageDefinition language in TargetLearningLanguageCatalog.All.OrderBy(static language => language.SortOrder))
+        {
+            int contentItemCount = countsByTargetLanguage
+                .Where(row => row.Key.EndsWith($":{language.Code}", StringComparison.OrdinalIgnoreCase))
+                .Sum(static row => row.Count);
+            int activeCountryContexts = CountryContextCatalog.Active.Count(context =>
+                context.TargetLearningLanguageCodes.Contains(language.Code, StringComparer.OrdinalIgnoreCase));
+            int plannedCountryContexts = CountryContextCatalog.All.Count(context =>
+                !context.IsActive &&
+                context.TargetLearningLanguageCodes.Contains(language.Code, StringComparer.OrdinalIgnoreCase));
+            int levelDefinitionCount = string.Equals(language.DefaultLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.OrdinalIgnoreCase)
+                ? LearningLevelSystemCatalog.GermanCefrLevels.Count
+                : 0;
+
+            rows.Add(new($"target-active:{language.Code}", language.IsActive ? 1 : 0));
+            rows.Add(new($"target-planned:{language.Code}", language.IsActive ? 0 : 1));
+            rows.Add(new($"target-level-definitions:{language.Code}", levelDefinitionCount));
+            rows.Add(new($"target-active-country-contexts:{language.Code}", activeCountryContexts));
+            rows.Add(new($"target-planned-country-contexts:{language.Code}", plannedCountryContexts));
+            rows.Add(new($"target-content-items:{language.Code}", contentItemCount));
+        }
+
+        return rows;
+    }
+
     private static async Task<LearningPortalQualitySummary> GetLearningPortalQualitySummaryAsync(
         DarwinLinguaDbContext dbContext,
         IReadOnlyDictionary<string, bool> tableAvailability,
+        string targetLearningLanguageCode,
         int issueLimit,
         CancellationToken cancellationToken)
     {
+        LanguageCode targetLanguage = LanguageCode.From(targetLearningLanguageCode);
+        IQueryable<GrammarTopic> grammarTopics = TargetScoped(dbContext.GrammarTopics.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExpressionEntry> expressions = TargetScoped(dbContext.ExpressionEntries.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<DialogueLesson> dialogues = TargetScoped(dbContext.DialogueLessons.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<TalkTopic> talkTopics = TargetScoped(dbContext.TalkTopics.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<Exercise> exercises = TargetScoped(dbContext.Exercises.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExerciseSet> exerciseSets = TargetScoped(dbContext.ExerciseSets.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CoursePath> coursePaths = TargetScoped(dbContext.CoursePaths.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CourseModule> courseModules = TargetScoped(dbContext.CourseModules.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CourseLesson> courseLessons = TargetScoped(dbContext.CourseLessons.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExamProfile> examProfiles = TargetScoped(dbContext.ExamProfiles.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<ExamPrepUnit> examPrepUnits = TargetScoped(dbContext.ExamPrepUnits.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<RoleplayScenario> roleplays = TargetScoped(dbContext.RoleplayScenarios.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<WritingTemplate> writingTemplates = TargetScoped(dbContext.WritingTemplates.AsNoTracking(), targetLearningLanguageCode);
+        IQueryable<CountryGuidanceNote> countryGuidanceNotes = TargetScoped(dbContext.CountryGuidanceNotes.AsNoTracking(), targetLearningLanguageCode);
+
         HashSet<string> wordKeys = (await dbContext.WordEntries
                 .AsNoTracking()
+                .Where(word => word.LanguageCode == targetLanguage)
                 .Select(static word => word.NormalizedLemma)
                 .ToArrayAsync(cancellationToken)
                 .ConfigureAwait(false))
             .ToHashSet(StringComparer.Ordinal);
-        HashSet<string> grammarSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "GrammarTopics", dbContext.GrammarTopics.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> expressionSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExpressionEntries", dbContext.ExpressionEntries.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> dialogueSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "DialogueLessons", dbContext.DialogueLessons.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> talkTopicSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "TalkTopics", dbContext.TalkTopics.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> exerciseSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "Exercises", dbContext.Exercises.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> exerciseSetSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExerciseSets", dbContext.ExerciseSets.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> courseLessonSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "CourseLessons", dbContext.CourseLessons.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> examPrepSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> roleplaySlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "RoleplayScenarios", dbContext.RoleplayScenarios.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> writingTemplateSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
-        HashSet<string> culturalNoteSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> grammarSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "GrammarTopics", grammarTopics.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> expressionSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExpressionEntries", expressions.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> dialogueSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "DialogueLessons", dialogues.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> talkTopicSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "TalkTopics", talkTopics.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> exerciseSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "Exercises", exercises.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> exerciseSetSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExerciseSets", exerciseSets.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> courseLessonSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "CourseLessons", courseLessons.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> examPrepSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "ExamPrepUnits", examPrepUnits.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> roleplaySlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "RoleplayScenarios", roleplays.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> writingTemplateSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "WritingTemplates", writingTemplates.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        HashSet<string> countryGuidanceNoteSlugs = await GetSlugSetIfTableExistsAsync(tableAvailability, "CountryGuidanceNotes", countryGuidanceNotes.Select(static item => item.Slug), cancellationToken).ConfigureAwait(false);
+        Guid[] grammarTopicIds = HasTable(tableAvailability, "GrammarTopics")
+            ? await grammarTopics.Select(static item => item.Id).ToArrayAsync(cancellationToken).ConfigureAwait(false)
+            : [];
+        Guid[] expressionEntryIds = HasTable(tableAvailability, "ExpressionEntries")
+            ? await expressions.Select(static item => item.Id).ToArrayAsync(cancellationToken).ConfigureAwait(false)
+            : [];
 
         List<AdminLearningPortalIssueRowResponse> issues = [];
 
@@ -1050,7 +1292,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         {
             GrammarLinkedWord[] grammarLinkedWords = await dbContext.Set<GrammarLinkedWord>()
                 .AsNoTracking()
-                .Where(static item => item.WordSlug != null)
+                .Where(item => grammarTopicIds.Contains(item.GrammarTopicId) && item.WordSlug != null)
                 .ToArrayAsync(cancellationToken)
                 .ConfigureAwait(false);
             foreach (GrammarLinkedWord link in grammarLinkedWords)
@@ -1063,7 +1305,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         {
             ExpressionLinkedWord[] expressionLinkedWords = await dbContext.Set<ExpressionLinkedWord>()
                 .AsNoTracking()
-                .Where(static item => item.WordSlug != null)
+                .Where(item => expressionEntryIds.Contains(item.ExpressionEntryId) && item.WordSlug != null)
                 .ToArrayAsync(cancellationToken)
                 .ConfigureAwait(false);
             foreach (ExpressionLinkedWord link in expressionLinkedWords)
@@ -1072,45 +1314,46 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             }
         }
 
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarPrerequisiteLinks", dbContext.Set<GrammarPrerequisiteLink>(), grammarSlugs, "Grammar prerequisite", issues, issueLimit, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarRelatedTopicLinks", dbContext.Set<GrammarRelatedTopicLink>(), grammarSlugs, "Grammar related topic", issues, issueLimit, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedDialogues", dbContext.Set<GrammarLinkedDialogue>(), dialogueSlugs, "Grammar linked dialogue", issues, issueLimit, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedTalkTopics", dbContext.Set<GrammarLinkedTalkTopic>(), talkTopicSlugs, "Grammar linked Talk Topic", issues, issueLimit, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedExercises", dbContext.Set<GrammarLinkedExercise>(), exerciseSlugs, "Grammar linked exercise", issues, issueLimit, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountMissingExpressionLinksAsync(dbContext, tableAvailability, expressionSlugs, exerciseSlugs, issues, issueLimit, cancellationToken).ConfigureAwait(false);
-        unresolvedContentCount += await CountJsonLinkIssuesAsync(dbContext, tableAvailability, grammarSlugs, expressionSlugs, dialogueSlugs, talkTopicSlugs, exerciseSlugs, exerciseSetSlugs, courseLessonSlugs, examPrepSlugs, roleplaySlugs, writingTemplateSlugs, issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarPrerequisiteLinks", dbContext.Set<GrammarPrerequisiteLink>().Where(link => grammarTopicIds.Contains(link.GrammarTopicId)), grammarSlugs, "Grammar prerequisite", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarRelatedTopicLinks", dbContext.Set<GrammarRelatedTopicLink>().Where(link => grammarTopicIds.Contains(link.GrammarTopicId)), grammarSlugs, "Grammar related topic", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedDialogues", dbContext.Set<GrammarLinkedDialogue>().Where(link => grammarTopicIds.Contains(link.GrammarTopicId)), dialogueSlugs, "Grammar linked dialogue", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedTalkTopics", dbContext.Set<GrammarLinkedTalkTopic>().Where(link => grammarTopicIds.Contains(link.GrammarTopicId)), talkTopicSlugs, "Grammar linked Talk Topic", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingSlugLinksIfTableExistsAsync(tableAvailability, "GrammarLinkedExercises", dbContext.Set<GrammarLinkedExercise>().Where(link => grammarTopicIds.Contains(link.GrammarTopicId)), exerciseSlugs, "Grammar linked exercise", issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountMissingExpressionLinksAsync(dbContext, tableAvailability, expressionEntryIds, expressionSlugs, exerciseSlugs, issues, issueLimit, cancellationToken).ConfigureAwait(false);
+        unresolvedContentCount += await CountJsonLinkIssuesAsync(dbContext, tableAvailability, targetLearningLanguageCode, grammarSlugs, expressionSlugs, dialogueSlugs, talkTopicSlugs, exerciseSlugs, exerciseSetSlugs, courseLessonSlugs, examPrepSlugs, roleplaySlugs, writingTemplateSlugs, issues, issueLimit, cancellationToken).ConfigureAwait(false);
 
         int missingTranslationCount =
-            await CountIfTableExistsAsync(tableAvailability, "GrammarSections", dbContext.GrammarSections.AsNoTracking().Where(section => !section.Translations.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "GrammarExamples", dbContext.GrammarExamples.AsNoTracking().Where(example => !example.Translations.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "GrammarCommonMistakes", dbContext.GrammarCommonMistakes.AsNoTracking().Where(item => !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "GrammarRuleSummaries", dbContext.GrammarRuleSummaries.AsNoTracking().Where(item => !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "GrammarExceptionNotes", dbContext.GrammarExceptionNotes.AsNoTracking().Where(item => !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExpressionEntries", dbContext.ExpressionEntries.AsNoTracking().Where(item => !item.Meanings.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExpressionExamples", dbContext.ExpressionExamples.AsNoTracking().Where(item => !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExpressionWarnings", dbContext.ExpressionWarnings.AsNoTracking().Where(item => !item.Translations.Any()), cancellationToken).ConfigureAwait(false);
+            await CountIfTableExistsAsync(tableAvailability, "GrammarSections", dbContext.GrammarSections.AsNoTracking().Where(section => grammarTopicIds.Contains(section.GrammarTopicId) && !section.Translations.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "GrammarExamples", dbContext.GrammarExamples.AsNoTracking().Where(example => grammarTopicIds.Contains(example.GrammarTopicId) && !example.Translations.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "GrammarCommonMistakes", dbContext.GrammarCommonMistakes.AsNoTracking().Where(item => grammarTopicIds.Contains(item.GrammarTopicId) && !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "GrammarRuleSummaries", dbContext.GrammarRuleSummaries.AsNoTracking().Where(item => grammarTopicIds.Contains(item.GrammarTopicId) && !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "GrammarExceptionNotes", dbContext.GrammarExceptionNotes.AsNoTracking().Where(item => grammarTopicIds.Contains(item.GrammarTopicId) && !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExpressionEntries", expressions.Where(item => !item.Meanings.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExpressionExamples", dbContext.ExpressionExamples.AsNoTracking().Where(item => expressionEntryIds.Contains(item.ExpressionEntryId) && !item.Translations.Any()), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExpressionWarnings", dbContext.ExpressionWarnings.AsNoTracking().Where(item => expressionEntryIds.Contains(item.ExpressionEntryId) && !item.Translations.Any()), cancellationToken).ConfigureAwait(false);
 
         int draftCount =
-            await CountIfTableExistsAsync(tableAvailability, "GrammarTopics", dbContext.GrammarTopics.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExpressionEntries", dbContext.ExpressionEntries.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "Exercises", dbContext.Exercises.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExerciseSets", dbContext.ExerciseSets.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "CoursePaths", dbContext.CoursePaths.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "CourseModules", dbContext.CourseModules.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "CourseLessons", dbContext.CourseLessons.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExamProfiles", dbContext.ExamProfiles.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "ExamPrepUnits", dbContext.ExamPrepUnits.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "WritingTemplates", dbContext.WritingTemplates.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
-            await CountIfTableExistsAsync(tableAvailability, "CulturalNotes", dbContext.CulturalNotes.AsNoTracking().Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false);
+            await CountIfTableExistsAsync(tableAvailability, "GrammarTopics", grammarTopics.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExpressionEntries", expressions.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "Exercises", exercises.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExerciseSets", exerciseSets.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "CoursePaths", coursePaths.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "CourseModules", courseModules.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "CourseLessons", courseLessons.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExamProfiles", examProfiles.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "ExamPrepUnits", examPrepUnits.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "WritingTemplates", writingTemplates.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false) +
+            await CountIfTableExistsAsync(tableAvailability, "CountryGuidanceNotes", countryGuidanceNotes.Where(item => item.PublicationStatus != PublicationStatus.Active), cancellationToken).ConfigureAwait(false);
 
         int grammarWithoutExercises = HasTable(tableAvailability, "GrammarTopics") && HasTable(tableAvailability, "GrammarLinkedExercises")
             ? await dbContext.GrammarTopics
                 .AsNoTracking()
+                .Where(topic => topic.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .CountAsync(topic => !topic.LinkedExercises.Any(), cancellationToken)
                 .ConfigureAwait(false)
             : 0;
         CourseLesson[] lessons = HasTable(tableAvailability, "CourseLessons")
-            ? await dbContext.CourseLessons.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
+            ? await courseLessons.ToArrayAsync(cancellationToken).ConfigureAwait(false)
             : [];
         int lessonsWithoutExerciseSets = lessons.Count(static lesson => ReadStringArray(lesson.LinkedExerciseSetSlugsJson).Count == 0);
         CourseActivityQualityCounts courseActivityQuality = CountCourseActivityQuality(
@@ -1124,23 +1367,23 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             courseLessonSlugs,
             roleplaySlugs,
             writingTemplateSlugs,
-            culturalNoteSlugs,
+            countryGuidanceNoteSlugs,
             examPrepSlugs,
             issues,
             issueLimit);
         CourseQualityCounts courseQuality = CountCourseQuality(
             HasTable(tableAvailability, "CoursePaths")
-                ? await dbContext.CoursePaths.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
+                ? await coursePaths.ToArrayAsync(cancellationToken).ConfigureAwait(false)
                 : [],
             HasTable(tableAvailability, "CourseModules")
-                ? await dbContext.CourseModules.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false)
+                ? await courseModules.ToArrayAsync(cancellationToken).ConfigureAwait(false)
                 : [],
             lessons);
         ExerciseQualityCounts exerciseQuality = HasTable(tableAvailability, "Exercises")
             ? CountExerciseQuality(
-                await dbContext.Exercises.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false),
+                await exercises.ToArrayAsync(cancellationToken).ConfigureAwait(false),
                 HasTable(tableAvailability, "ExerciseSets")
-                    ? await dbContext.ExerciseSets.AsNoTracking().Include(static set => set.Items).ToArrayAsync(cancellationToken).ConfigureAwait(false)
+                    ? await exerciseSets.Include(static set => set.Items).ToArrayAsync(cancellationToken).ConfigureAwait(false)
                     : [],
                 exerciseSlugs,
                 wordKeys,
@@ -1156,27 +1399,27 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int expressionsMissingEligibilityMetadata = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.MeaningTransparency == null || item.MeaningTransparency == string.Empty),
+            expressions.Where(item => item.MeaningTransparency == null || item.MeaningTransparency == string.Empty),
             cancellationToken).ConfigureAwait(false);
         int ordinaryLiteralLeakage = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.PublicationStatus == PublicationStatus.Active && item.MeaningTransparency == "ordinary-literal"),
+            expressions.Where(item => item.PublicationStatus == PublicationStatus.Active && item.MeaningTransparency == "ordinary-literal"),
             cancellationToken).ConfigureAwait(false);
         int expressionsMissingTeachingReason = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.MeaningTransparency != null && item.MeaningTransparency != string.Empty && (item.TeachingReason == null || item.TeachingReason == string.Empty)),
+            expressions.Where(item => item.MeaningTransparency != null && item.MeaningTransparency != string.Empty && (item.TeachingReason == null || item.TeachingReason == string.Empty)),
             cancellationToken).ConfigureAwait(false);
         int expressionsWithFewerThanTwoExamples = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.PublicationStatus == PublicationStatus.Active && item.MeaningTransparency != null && item.Examples.Count < 2),
+            expressions.Where(item => item.PublicationStatus == PublicationStatus.Active && item.MeaningTransparency != null && item.Examples.Count < 2),
             cancellationToken).ConfigureAwait(false);
         int expressionsMissingWarningsForRiskyContent = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+            expressions.Where(item =>
                 (item.IsRisky ||
                     item.Register == "slang" ||
                     item.Register == "rude" ||
@@ -1201,22 +1444,22 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int expressionsRequiringAdultAccess = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresAdultAccess || item.SafetyRating == "explicit-adult"),
+            expressions.Where(item => item.RequiresAdultAccess || item.SafetyRating == "explicit-adult"),
             cancellationToken).ConfigureAwait(false);
         int expressionsRequiringSensitiveOptIn = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresSensitiveOptIn),
+            expressions.Where(item => item.RequiresSensitiveOptIn),
             cancellationToken).ConfigureAwait(false);
         int expressionsRequiringVerifiedAdult = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item => item.RequiresVerifiedAdult),
+            expressions.Where(item => item.RequiresVerifiedAdult),
             cancellationToken).ConfigureAwait(false);
         int expressionsBlockedOrExplicitAdult = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+            expressions.Where(item =>
                 item.SafetyRating == "explicit-adult" ||
                 item.SafetyRating == "blocked-illegal" ||
                 item.SensitiveContentKind == "blocked" ||
@@ -1225,7 +1468,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int expressionsMissingSensitiveUsagePolicy = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+            expressions.Where(item =>
                 (item.RequiresSensitiveOptIn ||
                     item.SafetyRating != "general" ||
                     item.SensitiveContentKind != "none" ||
@@ -1235,7 +1478,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int expressionsOldRiskyMissingSensitiveMetadata = await CountIfTableExistsAsync(
             tableAvailability,
             "ExpressionEntries",
-            dbContext.ExpressionEntries.AsNoTracking().Where(item =>
+            expressions.Where(item =>
                 (item.IsRisky ||
                     item.SafetyRating == "mild-rude" ||
                     item.SafetyRating == "strong-rude" ||
@@ -1248,16 +1491,34 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             cancellationToken).ConfigureAwait(false);
 
         RoleplayQualityCounts roleplayQuality = HasTable(tableAvailability, "RoleplayScenarios")
-            ? CountRoleplayQuality(await dbContext.RoleplayScenarios.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
+            ? CountRoleplayQuality(await roleplays.ToArrayAsync(cancellationToken).ConfigureAwait(false))
             : new RoleplayQualityCounts(0, 0, 0, 0, 0, 0);
         ExamPrepQualityCounts examPrepQuality = HasTable(tableAvailability, "ExamProfiles") && HasTable(tableAvailability, "ExamPrepUnits")
             ? CountExamPrepQuality(
-                await dbContext.ExamProfiles.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false),
-                await dbContext.ExamPrepUnits.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
+                await examProfiles.ToArrayAsync(cancellationToken).ConfigureAwait(false),
+                await examPrepUnits.ToArrayAsync(cancellationToken).ConfigureAwait(false))
             : new ExamPrepQualityCounts(0, 0, 0, 0, 0);
         WritingTemplateQualityCounts writingTemplateQuality = HasTable(tableAvailability, "WritingTemplates")
-            ? CountWritingTemplateQuality(await dbContext.WritingTemplates.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false))
+            ? CountWritingTemplateQuality(await writingTemplates.ToArrayAsync(cancellationToken).ConfigureAwait(false))
             : new WritingTemplateQualityCounts(0, 0, 0);
+        DuplicateSlugQuality duplicateSlugQuality = CountDuplicateSlugQuality(
+            await GetSlugDiagnosticRowsAsync(dbContext, tableAvailability, targetLearningLanguageCode, cancellationToken).ConfigureAwait(false),
+            issues,
+            issueLimit);
+        TranslationCoverageCounts translationCoverage = CountMissingTranslationCoverage(
+            BuildTranslationCoverageItems(
+                HasTable(tableAvailability, "CoursePaths") ? await coursePaths.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "CourseModules") ? await courseModules.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                lessons,
+                HasTable(tableAvailability, "Exercises") ? await exercises.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "ExerciseSets") ? await exerciseSets.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "ExamProfiles") ? await examProfiles.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "ExamPrepUnits") ? await examPrepUnits.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "WritingTemplates") ? await writingTemplates.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "CountryGuidanceNotes") ? await countryGuidanceNotes.ToArrayAsync(cancellationToken).ConfigureAwait(false) : [],
+                HasTable(tableAvailability, "RoleplayScenarios") ? await roleplays.ToArrayAsync(cancellationToken).ConfigureAwait(false) : []),
+            issues,
+            issueLimit);
 
         AddQualityIssue(expressionsMissingEligibilityMetadata, "Expression eligibility", "all", "Missing meaningTransparency metadata", issues, issueLimit);
         AddQualityIssue(ordinaryLiteralLeakage, "Expression eligibility", "published", "Published ordinary-literal expression leakage", issues, issueLimit);
@@ -1299,11 +1560,16 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         AddQualityIssue(roleplayQuality.WithoutAnswerChoices, "RoleplayScenario quality", "published", "No deterministic answer choices", issues, issueLimit);
         AddQualityIssue(roleplayQuality.WithoutStaticFeedback, "RoleplayScenario quality", "published", "No static feedback", issues, issueLimit);
         AddQualityIssue(roleplayQuality.InvalidPlayableSequence, "RoleplayScenario quality", "published", "Invalid playable sequence", issues, issueLimit);
+        AddQualityIssue(duplicateSlugQuality.DuplicateSlugCount, "Slug namespace", "all", "Duplicate slug found inside target-language namespace or across module namespaces", issues, issueLimit);
 
         return new LearningPortalQualitySummary(
             unresolvedWordCount,
             unresolvedContentCount,
             missingTranslationCount,
+            translationCoverage.ByHelperLanguage,
+            translationCoverage.ByModule,
+            duplicateSlugQuality.DuplicateSlugCount,
+            duplicateSlugQuality.ByType,
             draftCount,
             grammarWithoutExercises,
             lessonsWithoutExerciseSets,
@@ -1351,6 +1617,304 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             roleplayQuality.InvalidPlayableSequence,
             issues.Take(issueLimit).ToArray());
     }
+
+    private static IReadOnlyList<TranslationCoverageItem> BuildTranslationCoverageItems(
+        IReadOnlyList<CoursePath> coursePaths,
+        IReadOnlyList<CourseModule> courseModules,
+        IReadOnlyList<CourseLesson> courseLessons,
+        IReadOnlyList<Exercise> exercises,
+        IReadOnlyList<ExerciseSet> exerciseSets,
+        IReadOnlyList<ExamProfile> examProfiles,
+        IReadOnlyList<ExamPrepUnit> examPrepUnits,
+        IReadOnlyList<WritingTemplate> writingTemplates,
+        IReadOnlyList<CountryGuidanceNote> countryGuidanceNotes,
+        IReadOnlyList<RoleplayScenario> roleplayScenarios)
+    {
+        List<TranslationCoverageItem> items = [];
+
+        foreach (CoursePath path in coursePaths)
+        {
+            AddStandardTranslationItems(items, "course", path.Slug, ("title", path.TitleTranslationsJson), ("description", path.DescriptionTranslationsJson));
+        }
+
+        foreach (CourseModule module in courseModules)
+        {
+            AddStandardTranslationItems(items, "course-module", module.Slug, ("title", module.TitleTranslationsJson), ("description", module.DescriptionTranslationsJson));
+        }
+
+        foreach (CourseLesson lesson in courseLessons)
+        {
+            AddStandardTranslationItems(items, "course-lesson", lesson.Slug, ("title", lesson.TitleTranslationsJson), ("shortDescription", lesson.ShortDescriptionTranslationsJson), ("narrative", lesson.NarrativeTranslationsJson));
+            items.Add(new TranslationCoverageItem("course-lesson", lesson.Slug, "learningGoals", lesson.LearningGoalsTranslationsJson, true));
+            if (!string.IsNullOrWhiteSpace(lesson.ReviewSummary))
+            {
+                items.Add(new TranslationCoverageItem("course-lesson", lesson.Slug, "reviewSummary", lesson.ReviewSummaryTranslationsJson, false));
+            }
+
+            if (!string.IsNullOrWhiteSpace(lesson.HomeworkTask))
+            {
+                items.Add(new TranslationCoverageItem("course-lesson", lesson.Slug, "homeworkTask", lesson.HomeworkTaskTranslationsJson, false));
+            }
+        }
+
+        foreach (Exercise exercise in exercises)
+        {
+            AddStandardTranslationItems(
+                items,
+                "exercise",
+                exercise.Slug,
+                ("title", exercise.TitleTranslationsJson),
+                ("instruction", exercise.InstructionTranslationsJson),
+                ("correctExplanation", exercise.CorrectExplanationTranslationsJson),
+                ("incorrectExplanation", exercise.IncorrectExplanationTranslationsJson));
+            if (!string.IsNullOrWhiteSpace(exercise.Hint))
+            {
+                items.Add(new TranslationCoverageItem("exercise", exercise.Slug, "hint", exercise.HintTranslationsJson, false));
+            }
+
+            if (!string.IsNullOrWhiteSpace(exercise.CommonMistakeNote))
+            {
+                items.Add(new TranslationCoverageItem("exercise", exercise.Slug, "commonMistakeNote", exercise.CommonMistakeNoteTranslationsJson, false));
+            }
+        }
+
+        foreach (ExerciseSet exerciseSet in exerciseSets)
+        {
+            AddStandardTranslationItems(items, "exercise-set", exerciseSet.Slug, ("title", exerciseSet.TitleTranslationsJson), ("description", exerciseSet.DescriptionTranslationsJson));
+        }
+
+        foreach (ExamProfile profile in examProfiles)
+        {
+            AddStandardTranslationItems(items, "exam-profile", profile.Key, ("displayName", profile.DisplayNameTranslationsJson), ("description", profile.DescriptionTranslationsJson));
+        }
+
+        foreach (ExamPrepUnit unit in examPrepUnits)
+        {
+            AddStandardTranslationItems(items, "exam-prep-unit", unit.Slug, ("title", unit.TitleTranslationsJson), ("shortDescription", unit.ShortDescriptionTranslationsJson), ("explanation", unit.ExplanationTranslationsJson));
+            items.Add(new TranslationCoverageItem("exam-prep-unit", unit.Slug, "strategyNotes", unit.StrategyNotesTranslationsJson, true));
+            items.Add(new TranslationCoverageItem("exam-prep-unit", unit.Slug, "checklist", unit.ChecklistTranslationsJson, true));
+        }
+
+        foreach (WritingTemplate template in writingTemplates)
+        {
+            AddStandardTranslationItems(
+                items,
+                "writing-template",
+                template.Slug,
+                ("title", template.TitleTranslationsJson),
+                ("shortDescription", template.ShortDescriptionTranslationsJson),
+                ("situation", template.SituationTranslationsJson),
+                ("explanation", template.ExplanationTranslationsJson),
+                ("templateText", template.TemplateTextTranslationsJson),
+                ("sampleFilledVersion", template.SampleFilledVersionTranslationsJson));
+        }
+
+        foreach (CountryGuidanceNote note in countryGuidanceNotes)
+        {
+            AddStandardTranslationItems(
+                items,
+                "country-guidance",
+                $"{note.TargetLearningLanguageCode}|{note.CountryContextCode}|{note.Slug}",
+                ("title", note.TitleTranslationsJson),
+                ("shortDescription", note.ShortDescriptionTranslationsJson),
+                ("context", note.ContextTranslationsJson));
+            items.Add(new TranslationCoverageItem("country-guidance", note.Slug, "sections", note.SectionsTranslationsJson, true));
+            items.Add(new TranslationCoverageItem("country-guidance", note.Slug, "examples", note.ExamplesTranslationsJson, true));
+            items.Add(new TranslationCoverageItem("country-guidance", note.Slug, "doNotes", note.DoNotesTranslationsJson, true));
+            items.Add(new TranslationCoverageItem("country-guidance", note.Slug, "dontNotes", note.DontNotesTranslationsJson, true));
+            if (!string.IsNullOrWhiteSpace(note.SensitivityWarning))
+            {
+                items.Add(new TranslationCoverageItem("country-guidance", note.Slug, "sensitivityWarning", note.SensitivityWarningTranslationsJson, false));
+            }
+        }
+
+        foreach (RoleplayScenario scenario in roleplayScenarios)
+        {
+            AddStandardTranslationItems(
+                items,
+                "roleplay",
+                scenario.Slug,
+                ("title", scenario.TitleTranslationsJson),
+                ("description", scenario.DescriptionTranslationsJson),
+                ("learnerGoal", scenario.LearnerGoalTranslationsJson));
+        }
+
+        return items;
+    }
+
+    private static void AddStandardTranslationItems(
+        List<TranslationCoverageItem> items,
+        string module,
+        string owner,
+        params (string Field, string Json)[] fields)
+    {
+        foreach ((string field, string json) in fields)
+        {
+            items.Add(new TranslationCoverageItem(module, owner, field, json, false));
+        }
+    }
+
+    private static TranslationCoverageCounts CountMissingTranslationCoverage(
+        IReadOnlyList<TranslationCoverageItem> items,
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
+    {
+        Dictionary<string, int> byHelperLanguage = new(StringComparer.Ordinal);
+        Dictionary<string, int> byModule = new(StringComparer.Ordinal);
+
+        foreach (TranslationCoverageItem item in items)
+        {
+            IReadOnlySet<string> presentLanguages = ReadTranslationLanguages(item.Json, item.IsTextList);
+            foreach (string requiredLanguage in RequiredLearnerMeaningLanguages)
+            {
+                if (presentLanguages.Contains(requiredLanguage))
+                {
+                    continue;
+                }
+
+                byHelperLanguage[requiredLanguage] = byHelperLanguage.GetValueOrDefault(requiredLanguage) + 1;
+                byModule[item.Module] = byModule.GetValueOrDefault(item.Module) + 1;
+                AddDetailedQualityIssue(
+                    "Helper translation",
+                    $"{item.Module}:{item.Owner}",
+                    "Missing required helper-language translation",
+                    $"{requiredLanguage}:{item.Field}",
+                    issues,
+                    issueLimit);
+            }
+        }
+
+        return new TranslationCoverageCounts(
+            ToCountRows(byHelperLanguage),
+            ToCountRows(byModule));
+    }
+
+    private static IReadOnlySet<string> ReadTranslationLanguages(string json, bool isTextList)
+    {
+        if (string.IsNullOrWhiteSpace(json))
+        {
+            return EmptyStringSet;
+        }
+
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(json);
+            if (document.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return EmptyStringSet;
+            }
+
+            HashSet<string> languages = new(StringComparer.Ordinal);
+            foreach (JsonElement translation in document.RootElement.EnumerateArray())
+            {
+                string? language = ReadStringProperty(translation, "language");
+                if (string.IsNullOrWhiteSpace(language))
+                {
+                    continue;
+                }
+
+                bool hasValue = isTextList
+                    ? translation.TryGetProperty("texts", out JsonElement texts) &&
+                        texts.ValueKind == JsonValueKind.Array &&
+                        texts.EnumerateArray().Any(static item => item.ValueKind == JsonValueKind.String && !string.IsNullOrWhiteSpace(item.GetString()))
+                    : !string.IsNullOrWhiteSpace(ReadStringProperty(translation, "text"));
+                if (hasValue)
+                {
+                    languages.Add(language.Trim().ToLowerInvariant());
+                }
+            }
+
+            return languages;
+        }
+        catch (JsonException)
+        {
+            return EmptyStringSet;
+        }
+    }
+
+    private static async Task<IReadOnlyList<SlugDiagnosticRow>> GetSlugDiagnosticRowsAsync(
+        DarwinLinguaDbContext dbContext,
+        IReadOnlyDictionary<string, bool> tableAvailability,
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken)
+    {
+        List<SlugDiagnosticRow> rows = [];
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "GrammarTopics", "grammar-topic", TargetScoped(dbContext.GrammarTopics.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "ExpressionEntries", "expression", TargetScoped(dbContext.ExpressionEntries.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "DialogueLessons", "dialogue", TargetScoped(dbContext.DialogueLessons.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "TalkTopics", "talk-topic", TargetScoped(dbContext.TalkTopics.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "RoleplayScenarios", "roleplay", TargetScoped(dbContext.RoleplayScenarios.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "Exercises", "exercise", TargetScoped(dbContext.Exercises.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "ExerciseSets", "exercise-set", TargetScoped(dbContext.ExerciseSets.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "CoursePaths", "course", TargetScoped(dbContext.CoursePaths.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "CourseModules", "course-module", TargetScoped(dbContext.CourseModules.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "CourseLessons", "course-lesson", TargetScoped(dbContext.CourseLessons.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "ExamProfiles", "exam-profile", TargetScoped(dbContext.ExamProfiles.AsNoTracking(), targetLearningLanguageCode), cancellationToken, "Key").ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "ExamPrepUnits", "exam-prep-unit", TargetScoped(dbContext.ExamPrepUnits.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "WritingTemplates", "writing-template", TargetScoped(dbContext.WritingTemplates.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+        await AddSlugRowsIfTableExistsAsync(rows, tableAvailability, "CountryGuidanceNotes", "country-guidance", TargetScoped(dbContext.CountryGuidanceNotes.AsNoTracking(), targetLearningLanguageCode), cancellationToken).ConfigureAwait(false);
+
+        return rows;
+    }
+
+    private static async Task AddSlugRowsIfTableExistsAsync<T>(
+        List<SlugDiagnosticRow> rows,
+        IReadOnlyDictionary<string, bool> tableAvailability,
+        string tableName,
+        string module,
+        IQueryable<T> query,
+        CancellationToken cancellationToken,
+        string slugPropertyName = "Slug")
+        where T : class
+    {
+        if (!HasTable(tableAvailability, tableName))
+        {
+            return;
+        }
+
+        var data = await query
+            .Select(item => new
+            {
+                TargetLearningLanguageCode = EF.Property<string>(item, "TargetLearningLanguageCode"),
+                Slug = EF.Property<string>(item, slugPropertyName),
+            })
+            .ToArrayAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        rows.AddRange(data.Select(row => new SlugDiagnosticRow(module, row.TargetLearningLanguageCode, row.Slug)));
+    }
+
+    private static DuplicateSlugQuality CountDuplicateSlugQuality(
+        IReadOnlyList<SlugDiagnosticRow> slugRows,
+        List<AdminLearningPortalIssueRowResponse> issues,
+        int issueLimit)
+    {
+        Dictionary<string, int> counts = new(StringComparer.Ordinal);
+        foreach (var group in slugRows
+            .GroupBy(static row => $"{row.Module}:{row.TargetLearningLanguageCode}:{row.Slug}", StringComparer.Ordinal)
+            .Where(static group => group.Count() > 1))
+        {
+            counts[$"within-module:{group.Key}"] = group.Count();
+            AddDetailedQualityIssue("Slug namespace", group.Key, "Duplicate slug inside one target-language module namespace", group.Key, issues, issueLimit);
+        }
+
+        foreach (var group in slugRows
+            .GroupBy(static row => $"{row.TargetLearningLanguageCode}:{row.Slug}", StringComparer.Ordinal)
+            .Where(static group => group.Select(static row => row.Module).Distinct(StringComparer.Ordinal).Count() > 1))
+        {
+            int moduleCount = group.Select(static row => row.Module).Distinct(StringComparer.Ordinal).Count();
+            counts[$"cross-module:{group.Key}"] = moduleCount;
+            AddDetailedQualityIssue("Slug namespace", group.Key, "Same slug appears in multiple module namespaces", string.Join(",", group.Select(static row => row.Module).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal)), issues, issueLimit);
+        }
+
+        return new DuplicateSlugQuality(counts.Values.Sum(), ToCountRows(counts));
+    }
+
+    private static IReadOnlyList<AdminLearningPortalCountRowResponse> ToCountRows(IReadOnlyDictionary<string, int> counts) =>
+        counts
+            .Select(static item => new AdminLearningPortalCountRowResponse(item.Key, item.Value))
+            .OrderBy(static row => row.Key, StringComparer.Ordinal)
+            .ToArray();
 
     private static RoleplayQualityCounts CountRoleplayQuality(IReadOnlyList<RoleplayScenario> scenarios)
     {
@@ -1528,7 +2092,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         IReadOnlySet<string> courseLessonSlugs,
         IReadOnlySet<string> roleplaySlugs,
         IReadOnlySet<string> writingTemplateSlugs,
-        IReadOnlySet<string> culturalNoteSlugs,
+        IReadOnlySet<string> countryGuidanceNoteSlugs,
         IReadOnlySet<string> examPrepSlugs,
         List<AdminLearningPortalIssueRowResponse> issues,
         int issueLimit)
@@ -1589,7 +2153,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
                     "exercise" => exerciseSlugs,
                     "roleplay" => roleplaySlugs,
                     "writing-template" => writingTemplateSlugs,
-                    "life-in-germany" => culturalNoteSlugs,
+                    "country-guidance" => countryGuidanceNoteSlugs,
                     "exam-prep-unit" => examPrepSlugs,
                     _ => EmptyStringSet,
                 };
@@ -2193,6 +2757,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
     private static async Task<int> CountMissingExpressionLinksAsync(
         DarwinLinguaDbContext dbContext,
         IReadOnlyDictionary<string, bool> tableAvailability,
+        IReadOnlyCollection<Guid> expressionEntryIds,
         IReadOnlySet<string> expressionSlugs,
         IReadOnlySet<string> exerciseSlugs,
         List<AdminLearningPortalIssueRowResponse> issues,
@@ -2204,6 +2769,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         {
             RelatedExpressionLink[] relatedExpressions = await dbContext.Set<RelatedExpressionLink>()
                 .AsNoTracking()
+                .Where(link => expressionEntryIds.Contains(link.ExpressionEntryId))
                 .ToArrayAsync(cancellationToken)
                 .ConfigureAwait(false);
             foreach (RelatedExpressionLink link in relatedExpressions)
@@ -2216,6 +2782,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         {
             ExpressionLinkedExercise[] linkedExercises = await dbContext.Set<ExpressionLinkedExercise>()
                 .AsNoTracking()
+                .Where(link => expressionEntryIds.Contains(link.ExpressionEntryId))
                 .ToArrayAsync(cancellationToken)
                 .ConfigureAwait(false);
             foreach (ExpressionLinkedExercise link in linkedExercises)
@@ -2230,6 +2797,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
     private static async Task<int> CountJsonLinkIssuesAsync(
         DarwinLinguaDbContext dbContext,
         IReadOnlyDictionary<string, bool> tableAvailability,
+        string targetLearningLanguageCode,
         IReadOnlySet<string> grammarSlugs,
         IReadOnlySet<string> expressionSlugs,
         IReadOnlySet<string> dialogueSlugs,
@@ -2248,7 +2816,9 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
 
         if (HasTable(tableAvailability, "CourseLessons"))
         {
-            CourseLesson[] lessons = await dbContext.CourseLessons.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
+            CourseLesson[] lessons = await TargetScoped(dbContext.CourseLessons.AsNoTracking(), targetLearningLanguageCode)
+                .ToArrayAsync(cancellationToken)
+                .ConfigureAwait(false);
             foreach (CourseLesson lesson in lessons)
             {
                 count += CountJsonTargets(lesson.LinkedGrammarTopicSlugsJson, grammarSlugs, "Lesson linked grammar", lesson.Slug, issues, issueLimit);
@@ -2269,7 +2839,9 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
 
         if (HasTable(tableAvailability, "WritingTemplates"))
         {
-            WritingTemplate[] writingTemplates = await dbContext.WritingTemplates.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
+            WritingTemplate[] writingTemplates = await TargetScoped(dbContext.WritingTemplates.AsNoTracking(), targetLearningLanguageCode)
+                .ToArrayAsync(cancellationToken)
+                .ConfigureAwait(false);
             foreach (WritingTemplate template in writingTemplates)
             {
                 count += CountJsonTargets(template.LinkedGrammarTopicSlugsJson, grammarSlugs, "Writing linked grammar", template.Slug, issues, issueLimit);
@@ -2280,22 +2852,26 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             }
         }
 
-        if (HasTable(tableAvailability, "CulturalNotes"))
+        if (HasTable(tableAvailability, "CountryGuidanceNotes"))
         {
-            CulturalNote[] culturalNotes = await dbContext.CulturalNotes.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
-            foreach (CulturalNote note in culturalNotes)
+            CountryGuidanceNote[] countryGuidanceNotes = await TargetScoped(dbContext.CountryGuidanceNotes.AsNoTracking(), targetLearningLanguageCode)
+                .ToArrayAsync(cancellationToken)
+                .ConfigureAwait(false);
+            foreach (CountryGuidanceNote note in countryGuidanceNotes)
             {
-                count += CountJsonTargets(note.LinkedDialogueSlugsJson, dialogueSlugs, "Cultural linked dialogue", note.Slug, issues, issueLimit);
-                count += CountJsonTargets(note.LinkedExpressionSlugsJson, expressionSlugs, "Cultural linked expression", note.Slug, issues, issueLimit);
-                count += CountJsonTargets(note.LinkedWritingTemplateSlugsJson, writingTemplateSlugs, "Cultural linked writing template", note.Slug, issues, issueLimit);
-                count += CountJsonTargets(note.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Cultural linked Talk Topic", note.Slug, issues, issueLimit);
-                count += CountJsonTargets(note.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Cultural linked lesson", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedDialogueSlugsJson, dialogueSlugs, "Country Guidance linked dialogue", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedExpressionSlugsJson, expressionSlugs, "Country Guidance linked expression", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedWritingTemplateSlugsJson, writingTemplateSlugs, "Country Guidance linked writing template", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedTalkTopicSlugsJson, talkTopicSlugs, "Country Guidance linked Talk Topic", note.Slug, issues, issueLimit);
+                count += CountJsonTargets(note.LinkedCourseLessonSlugsJson, courseLessonSlugs, "Country Guidance linked lesson", note.Slug, issues, issueLimit);
             }
         }
 
         if (HasTable(tableAvailability, "ExamPrepUnits"))
         {
-            ExamPrepUnit[] examPrepUnits = await dbContext.ExamPrepUnits.AsNoTracking().ToArrayAsync(cancellationToken).ConfigureAwait(false);
+            ExamPrepUnit[] examPrepUnits = await TargetScoped(dbContext.ExamPrepUnits.AsNoTracking(), targetLearningLanguageCode)
+                .ToArrayAsync(cancellationToken)
+                .ConfigureAwait(false);
             foreach (ExamPrepUnit unit in examPrepUnits)
             {
                 count += CountJsonTargets(unit.LinkedDialogueSlugsJson, dialogueSlugs, "Exam linked dialogue", unit.Slug, issues, issueLimit);
@@ -2467,7 +3043,7 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             "ExamProfiles",
             "ExamPrepUnits",
             "WritingTemplates",
-            "CulturalNotes",
+            "CountryGuidanceNotes",
             "RoleplayScenarios",
             "RoleplayScenarioTopics",
         ];
@@ -2544,6 +3120,10 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int UnresolvedLinkedWordCount,
         int UnresolvedLinkedContentReferenceCount,
         int MissingTranslationCount,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> MissingTranslationsByHelperLanguage,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> MissingTranslationsByModule,
+        int DuplicateSlugCount,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> DuplicateSlugsByType,
         int UnpublishedDraftCount,
         int GrammarTopicsMissingExercises,
         int CourseLessonsMissingExerciseSets,
@@ -2598,6 +3178,26 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
         int WithoutAnswerChoices,
         int WithoutStaticFeedback,
         int InvalidPlayableSequence);
+
+    private sealed record TranslationCoverageItem(
+        string Module,
+        string Owner,
+        string Field,
+        string Json,
+        bool IsTextList);
+
+    private sealed record TranslationCoverageCounts(
+        IReadOnlyList<AdminLearningPortalCountRowResponse> ByHelperLanguage,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> ByModule);
+
+    private sealed record SlugDiagnosticRow(
+        string Module,
+        string TargetLearningLanguageCode,
+        string Slug);
+
+    private sealed record DuplicateSlugQuality(
+        int DuplicateSlugCount,
+        IReadOnlyList<AdminLearningPortalCountRowResponse> ByType);
 
     private sealed record CourseQualityCounts(
         int CoursePathsMissingTranslations,

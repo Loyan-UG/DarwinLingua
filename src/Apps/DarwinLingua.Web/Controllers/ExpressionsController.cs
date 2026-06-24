@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("expressions")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Expressions)]
 public sealed class ExpressionsController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -29,6 +29,7 @@ public sealed class ExpressionsController(
         CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
 
         ExpressionListFilterModel filter = new(
             LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel),
@@ -46,7 +47,9 @@ public sealed class ExpressionsController(
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(10));
-            expressions = await catalogApiClient.GetExpressionsAsync(filter, catalogTimeout.Token).ConfigureAwait(false);
+            expressions = await catalogApiClient
+                .GetExpressionsAsync(filter, targetLearningLanguageCode, catalogTimeout.Token)
+                .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && IsCatalogApiFailure(ex))
         {
@@ -75,9 +78,10 @@ public sealed class ExpressionsController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
@@ -88,7 +92,12 @@ public sealed class ExpressionsController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             expression = await catalogApiClient
-                .GetExpressionBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1, profile.AllowsRudeSlangContent, catalogTimeout.Token)
+                .GetExpressionBySlugAsync(
+                    normalizedSlug,
+                    targetLearningLanguageCode,
+                    profile.PreferredMeaningLanguage1,
+                    profile.AllowsRudeSlangContent,
+                    catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && IsCatalogApiFailure(ex))

@@ -12,6 +12,10 @@ internal sealed class TalkTopicConfiguration : IEntityTypeConfiguration<TalkTopi
         builder.ToTable("TalkTopics");
         builder.HasKey(topic => topic.Id);
         builder.Property(topic => topic.Id).ValueGeneratedNever();
+        builder.Property(topic => topic.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(topic => topic.Slug).HasMaxLength(128).IsRequired();
         builder.Property(topic => topic.TopicGroupKey).HasMaxLength(128).IsRequired();
         builder.Property(topic => topic.Title).HasMaxLength(256).IsRequired();
@@ -31,8 +35,8 @@ internal sealed class TalkTopicConfiguration : IEntityTypeConfiguration<TalkTopi
         builder.Property(topic => topic.UpdatedAtUtc).IsRequired();
         builder.Ignore(topic => topic.WarmupQuestions);
         builder.Ignore(topic => topic.DiscussionQuestions);
-        builder.HasIndex(topic => topic.Slug).IsUnique();
-        builder.HasIndex(topic => new { topic.CefrLevel, topic.ContentType, topic.Category });
+        builder.HasIndex(topic => new { topic.TargetLearningLanguageCode, topic.Slug }).IsUnique();
+        builder.HasIndex(topic => new { topic.TargetLearningLanguageCode, topic.CefrLevel, topic.ContentType, topic.Category });
 
         builder.HasMany(topic => topic.Topics).WithOne().HasForeignKey(link => link.TalkTopicId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(topic => topic.ArticleTranslations).WithOne().HasForeignKey(translation => translation.OwnerId).OnDelete(DeleteBehavior.Cascade);

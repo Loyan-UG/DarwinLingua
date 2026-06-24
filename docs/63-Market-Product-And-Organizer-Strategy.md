@@ -233,7 +233,7 @@ First meeting for language practice in a cafe.
 
 #### Goal
 
-The learner can introduce themselves, explain their German level, suggest a topic, ask for gentle correction, and arrange a next meeting.
+The learner can introduce themselves, explain their target-language learning level, suggest a topic, ask for gentle correction, and arrange a next meeting.
 
 #### Dialogue
 

@@ -48,15 +48,26 @@ public sealed class AdminReportsSummaryStructuralTests
         Assert.Contains("Open reports", view, StringComparison.Ordinal);
         Assert.Contains("Email failures", view, StringComparison.Ordinal);
         Assert.Contains("Learning issues", view, StringComparison.Ordinal);
+        Assert.Contains("Learning scope: target language", view, StringComparison.Ordinal);
+        Assert.Contains("Counts by target language", view, StringComparison.Ordinal);
+        Assert.Contains("Country Guidance by country context", view, StringComparison.Ordinal);
+        Assert.Contains("Target-language activation gate", view, StringComparison.Ordinal);
+        Assert.Contains("Missing translations by helper language", view, StringComparison.Ordinal);
+        Assert.Contains("Duplicate slug diagnostics", view, StringComparison.Ordinal);
         Assert.Contains("Top Web analytics counters", view, StringComparison.Ordinal);
+        Assert.Contains("Helper translation gaps", controller, StringComparison.Ordinal);
+        Assert.Contains("Duplicate slug diagnostics", controller, StringComparison.Ordinal);
         Assert.Contains("Course activity gaps", controller, StringComparison.Ordinal);
         Assert.Contains("Exercise set quality gaps", controller, StringComparison.Ordinal);
         Assert.Contains("Exam prep quality gaps", controller, StringComparison.Ordinal);
         Assert.Contains("Sensitive policy gaps", controller, StringComparison.Ordinal);
 
         Assert.Contains("GetAdminSystemReportAsync", webClient, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", webClient, StringComparison.Ordinal);
+        Assert.Contains("MissingTranslationsByHelperLanguage", webClient, StringComparison.Ordinal);
+        Assert.Contains("DuplicateSlugsByType", webClient, StringComparison.Ordinal);
         Assert.Contains("\"/api/admin/catalog/system-report\"", apiProgram, StringComparison.Ordinal);
-        Assert.Contains("GetSystemReportAsync(cancellationToken)", apiProgram, StringComparison.Ordinal);
+        Assert.Contains("ResolveTargetLearningLanguageCode(targetLearningLanguageCode)", apiProgram, StringComparison.Ordinal);
         Assert.Contains("GetCatalogSystemReportAsync", adminQueryService, StringComparison.Ordinal);
         Assert.Contains("GetSocialSystemReportAsync", adminQueryService, StringComparison.Ordinal);
         Assert.Contains("GetModerationSystemReportAsync", adminQueryService, StringComparison.Ordinal);

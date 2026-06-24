@@ -11,9 +11,9 @@
             @T["Darwin Lingua turns German study into a focused workflow: curated workplace collections, CEFR-aware browsing, searchable word detail, pronunciation support, favorites, and recent activity in one calm learning space."]
         </p>
         <div class="action-row">
-            <a class="button button--primary" asp-controller="Browse" asp-action="Index">@T["Start learning"]</a>
-            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">@T["Explore collections"]</a>
-            <a class="button button--secondary" asp-controller="Search" asp-action="Index">@T["Search vocabulary"]</a>
+            <a class="button button--primary" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Start learning"]</a>
+            <a class="button button--secondary" asp-controller="Collections" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Explore collections"]</a>
+            <a class="button button--secondary" asp-controller="Search" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Search vocabulary"]</a>
         </div>
     </div>
     <div class="hero__aside">
@@ -39,7 +39,7 @@
             <span class="eyebrow">@T["Guided study"]</span>
             <h2 class="headline-md">@T["Featured collections"]</h2>
         </div>
-        <a class="button button--secondary" asp-controller="Collections" asp-action="Index">@T["Browse all collections"]</a>
+        <a class="button button--secondary" asp-controller="Collections" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Browse all collections"]</a>
     </div>
 
     @if (Model.FeaturedCollections.Count == 0)
@@ -62,19 +62,19 @@
         <span class="eyebrow">@T["Browse"]</span>
         <h2 class="headline-sm">@T["Find the right words fast"]</h2>
         <p>@T["Filter by CEFR level, topic, and learning context so every session starts from a useful set of vocabulary."]</p>
-        <a class="text-link" asp-controller="Browse" asp-action="Index">@T["Open browse"]</a>
+        <a class="text-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open browse"]</a>
     </article>
     <article class="panel stack-md">
         <span class="eyebrow">@T["Practice"]</span>
         <h2 class="headline-sm">@T["Keep useful words close"]</h2>
         <p>@T["Mark favorites, revisit recent words, hear pronunciation, and keep your practice tied to real examples."]</p>
-        <a class="text-link" asp-controller="Favorites" asp-action="Index">@T["View favorites"]</a>
+        <a class="text-link" asp-controller="Favorites" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["View favorites"]</a>
     </article>
     <article class="panel stack-md">
         <span class="eyebrow">@T["Connect"]</span>
         <h2 class="headline-sm">@T["Prepare for conversation"]</h2>
         <p>@T["Use starters, dialogues, events, and partner matching to move vocabulary from recognition into speaking."]</p>
-        <a class="text-link" asp-controller="Dialogues" asp-action="Index">@T["Open dialogues"]</a>
+        <a class="text-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open dialogues"]</a>
     </article>
 </section>
 
@@ -84,7 +84,7 @@
             <span class="eyebrow">@T["Continue"]</span>
             <h2 class="headline-md">@T["Pick up where you left off"]</h2>
         </div>
-        <a class="button button--secondary" asp-controller="Recent" asp-action="Index">@T["Open history"]</a>
+        <a class="button button--secondary" asp-controller="Recent" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open history"]</a>
     </div>
     <div
         hx-get="@Url.Action("Panel", "Recent")"

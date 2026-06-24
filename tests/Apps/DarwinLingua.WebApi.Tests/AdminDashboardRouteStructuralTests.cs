@@ -37,7 +37,7 @@ public sealed class AdminDashboardRouteStructuralTests
         Assert.Contains("asp-controller=\"Courses\"", source, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"ExamPrep\"", source, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"WritingTemplates\"", source, StringComparison.Ordinal);
-        Assert.Contains("asp-controller=\"CulturalNotes\"", source, StringComparison.Ordinal);
+        Assert.Contains("asp-controller=\"CountryGuidance\"", source, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"OrganizerProfiles\"", source, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"ConversationEvents\"", source, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"Imports\"", source, StringComparison.Ordinal);

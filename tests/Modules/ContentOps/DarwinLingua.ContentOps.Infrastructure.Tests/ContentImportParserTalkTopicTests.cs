@@ -22,6 +22,8 @@ public sealed class ContentImportParserTalkTopicTests
               "packageVersion": "1.0",
               "packageId": "talk-topic-contract-test",
               "packageName": "Talk Topic Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [],

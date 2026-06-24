@@ -7,6 +7,7 @@ using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -96,26 +97,31 @@ public sealed class ConversationEventRepositoryTests
             IConversationEventRepository repository = serviceProvider.GetRequiredService<IConversationEventRepository>();
             IReadOnlyList<ConversationEventListItemModel> events = await repository.GetPublishedEventsAsync(
                 new ConversationEventListFilterModel("Berlin", "A1", "en", false, "free", "conversation-cafe"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
 
             ConversationEventListItemModel conversationEvent = Assert.Single(events);
             Assert.Equal("berlin-cafe-a1", conversationEvent.Slug);
+            Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, conversationEvent.TargetLearningLanguageCode);
             Assert.Equal(["A1"], conversationEvent.SupportedLearnerLevels);
             Assert.Equal(["en"], conversationEvent.HelperLanguageCodes);
             Assert.Equal(["a1-cafe-first-meeting-prep"], conversationEvent.LinkedEventPreparationPackSlugs);
 
             IReadOnlyList<ConversationEventListItemModel> onlineEvents = await repository.GetPublishedEventsAsync(
                 new ConversationEventListFilterModel(null, "A2", "en", true, "paid", null),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             Assert.Equal("online-club-a2", Assert.Single(onlineEvents).Slug);
 
             IReadOnlyList<ConversationEventListItemModel> germanHelperEvents = await repository.GetPublishedEventsAsync(
                 new ConversationEventListFilterModel("berlin", "a1", "de", false, "free", "conversation-cafe"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             Assert.Equal("berlin-cafe-a1-de", Assert.Single(germanHelperEvents).Slug);
 
             IReadOnlyList<ConversationEventListItemModel> dateFilteredEvents = await repository.GetPublishedEventsAsync(
                 new ConversationEventListFilterModel(null, null, null, null, null, null, new DateTime(2026, 6, 18, 0, 0, 0, DateTimeKind.Utc), new DateTime(2026, 6, 18, 23, 59, 59, DateTimeKind.Utc)),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             ConversationEventListItemModel dateFilteredEvent = Assert.Single(dateFilteredEvents);
             Assert.Equal("berlin-cafe-a1", dateFilteredEvent.Slug);
@@ -165,9 +171,13 @@ public sealed class ConversationEventRepositoryTests
             }
 
             IConversationEventRepository repository = serviceProvider.GetRequiredService<IConversationEventRepository>();
-            ConversationEventDetailModel? detail = await repository.GetPublishedEventBySlugAsync("berlin-cafe-a1", CancellationToken.None);
+            ConversationEventDetailModel? detail = await repository.GetPublishedEventBySlugAsync(
+                "berlin-cafe-a1",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                CancellationToken.None);
 
             Assert.NotNull(detail);
+            Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, detail.TargetLearningLanguageCode);
             Assert.Equal("Berlin cafe A1", detail.Name);
             Assert.Equal("Berlin", detail.City);
             Assert.False(detail.IsOnline);
@@ -175,7 +185,10 @@ public sealed class ConversationEventRepositoryTests
             Assert.Equal(["fa"], detail.HelperLanguageCodes);
             Assert.Equal(["a1-cafe-first-meeting-prep"], detail.LinkedEventPreparationPackSlugs);
 
-            ConversationEventDetailModel? draftDetail = await repository.GetPublishedEventBySlugAsync("missing-event", CancellationToken.None);
+            ConversationEventDetailModel? draftDetail = await repository.GetPublishedEventBySlugAsync(
+                "missing-event",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                CancellationToken.None);
             Assert.Null(draftDetail);
         }
         finally

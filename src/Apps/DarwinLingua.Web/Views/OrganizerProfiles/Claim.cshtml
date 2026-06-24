@@ -7,7 +7,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Profile.OrganizerType · @Model.Profile.VerificationStatus</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Profile.Slug">@T["Organizer page"]</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@Model.Profile.TargetLearningLanguageCode" asp-route-slug="@Model.Profile.Slug">@T["Organizer page"]</a>
         </div>
     </div>
     <h1 class="headline-md">@T["Claim {0}", Model.Profile.DisplayName]</h1>

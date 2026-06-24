@@ -58,7 +58,7 @@ The product should be divided into the following bounded contexts:
 - Courses / Learning Paths
 - Exam Preparation
 - Writing Templates
-- Cultural Notes
+- Country Guidance
 - Unified Learning Search
 - Learning Progress
 - Events and Organizers
@@ -708,13 +708,13 @@ Exam Prep links to Dialogues, Exercises, Grammar, Expressions, Writing Templates
 
 Owns the implemented `WritingTemplate` aggregate, template variables, filled examples, register, and practical writing categories.
 
-Writing Templates may link to Grammar, Words, Expressions, Exercises, and Cultural Notes.
+Writing Templates may link to Grammar, Words, Expressions, Exercises, and Country Guidance.
 
-## 8E.7 Cultural Notes
+## 8E.7 Country Guidance
 
-Owns the implemented `CulturalNote` aggregate, communication-norm sections, practical examples, do/don't notes, sensitivity warnings, and controlled cultural-note categories.
+Owns the implemented `CountryGuidanceNote` aggregate, communication-norm sections, practical examples, do/don't notes, sensitivity warnings, and controlled country-guidance categories.
 
-Cultural Notes may link to Dialogues, Expressions, Writing Templates, Talk Topics, and Course Lessons.
+Country Guidance may link to Dialogues, Expressions, Writing Templates, Talk Topics, and Course Lessons.
 
 ## 8E.8 Unified Learning Search
 
@@ -764,8 +764,8 @@ Recommended dependency direction:
 - Exam Preparation -> Writing Templates
 - Writing Templates -> Grammar / Learning Reference
 - Writing Templates -> Content Catalog
-- Cultural Notes -> Expressions
-- Cultural Notes -> Dialogue Learning
+- Country Guidance -> Expressions
+- Country Guidance -> Dialogue Learning
 - Unified Learning Search -> Content Catalog
 - Unified Learning Search -> Grammar / Learning Reference
 - Unified Learning Search -> Expressions
@@ -1011,7 +1011,7 @@ This is normal and healthy.
 - exam profile
 - exam prep unit
 - writing template
-- cultural note
+- country guidance note
 - unified search result
 - content progress
 
@@ -1146,7 +1146,7 @@ Darwin Deutsch should be treated as a modular monolith with clear bounded contex
 - Courses / Learning Paths
 - Exam Preparation
 - Writing Templates
-- Cultural Notes
+- Country Guidance
 - Unified Learning Search
 - Learning Progress
 - Events and Organizers
@@ -1156,3 +1156,4 @@ Darwin Deutsch should be treated as a modular monolith with clear bounded contex
 This boundary is critical.
 
 It allows the first version to remain clean while keeping the long-term direction intact.
+

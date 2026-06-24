@@ -350,13 +350,13 @@ When a content-quality problem is found, add a short note here with:
 ### 2026-06-13: Life in Germany requires culturally aware helper translations
 
 - What can fail: Cultural explanations can become misleading if helper translations are word-for-word or if examples assume one cultural background for all speakers of a language.
-- Where it applies: Life in Germany notes from the first A1 pilot onward, using the current `CulturalNote` backing store.
+- Where it applies: Life in Germany notes from the first A1 pilot onward, using the current `CountryGuidanceNote` backing store.
 - Why it matters: Life in Germany notes teach German communication norms, civic/legal concepts, and everyday systems, but learners understand them through their own language and social expectations. A literal helper translation may hide the practical contrast the learner needs.
 - Prevention rule: Keep the German source note canonical, but write helper translations semantically. When a comparison helps, adapt the explanation to the target language audience in a careful, non-stereotyping way, such as "in some familiar informal contexts..." rather than broad claims about a whole country or language community. RTL helper languages must render with explicit direction metadata in Web views.
 
 ### 2026-06-13: Life in Germany is broader than culture notes
 
-- What changed: The former public Cultural Notes feature was too narrow for the next content phase. Learners also need civic, legal, social-system, geography, and Orientierungskurs/Leben-in-Deutschland knowledge in their own languages.
+- What changed: The former public Country Guidance feature was too narrow for the next content phase. Learners also need civic, legal, social-system, geography, and Orientierungskurs/Leben-in-Deutschland knowledge in their own languages.
 - Where it applies: The renamed `Life in Germany` feature and all future packages using the `culturalNotes` backing store.
 - Why it matters: Many learners memorize the fixed German test questions but do not understand the underlying concepts. The product should teach the concepts clearly and safely, not just reproduce a question bank.
 - Prevention rule: Treat official LiD/Einbuergerungstest material as source orientation, not as bulk copied app content. Write original explanatory notes, keep legal topics as general education rather than individual legal advice, and use target-language helper translations to make the German civic/social concept understandable without stereotyping.
@@ -388,3 +388,4 @@ When a content-quality problem is found, add a short note here with:
 - Where it appeared: Course A2 Module 1 activity-flow import.
 - Why it matters: `ImportNoInit` is acceptable for a content-only repair when the target schema is already present, but it should not become the normal path. A broken primary import tool creates operational uncertainty and hides migration/snapshot drift.
 - Prevention rule: Before each Course backfill batch, verify that `dotnet ef migrations has-pending-model-changes` is clean and that the standard shared ImportTool can process the cumulative package. If a diagnostic migration suggests adding a column that already exists in both an older hand-written migration and PostgreSQL, inspect the snapshot/designer files and use an idempotent sync migration rather than accepting a duplicate unsafe migration.
+

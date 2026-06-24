@@ -148,7 +148,7 @@ public sealed class EventPreparationPacksControllerFeatureGateTests
         public string? RequestedSlug { get; private set; }
         public string? RequestedActorEmail { get; private set; }
 
-        public override Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, string actorEmail, CancellationToken cancellationToken)
+        public override Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(string slug, string targetLearningLanguageCode, string actorEmail, CancellationToken cancellationToken)
         {
             RequestedSlug = slug;
             RequestedActorEmail = actorEmail;

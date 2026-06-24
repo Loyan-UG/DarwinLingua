@@ -7,7 +7,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Profile.OrganizerType · @(Model.Profile.IsOnlineAvailable ? T["Online available"] : Model.Profile.CityRegion)</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Index">@T["All organizers"]</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Index" asp-route-targetLearningLanguageCode="@Model.Profile.TargetLearningLanguageCode">@T["All organizers"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Profile.DisplayName</h1>
@@ -55,13 +55,13 @@
     {
         <div class="detail-toolbar__actions">
             <a class="button button--primary button--compact" href="@Model.Profile.WebsiteUrl" rel="noopener noreferrer" target="_blank">@T["Website"]</a>
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">@T["Claim profile"]</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-targetLearningLanguageCode="@Model.Profile.TargetLearningLanguageCode" asp-route-slug="@Model.Profile.Slug">@T["Claim profile"]</a>
         </div>
     }
     else
     {
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-slug="@Model.Profile.Slug">@T["Claim profile"]</a>
+            <a class="button button--secondary button--compact" asp-controller="OrganizerProfiles" asp-action="Claim" asp-route-targetLearningLanguageCode="@Model.Profile.TargetLearningLanguageCode" asp-route-slug="@Model.Profile.Slug">@T["Claim profile"]</a>
         </div>
     }
     <form method="post" asp-controller="Moderation" asp-action="Report" class="panel report-panel stack-sm">
@@ -101,7 +101,7 @@
                 <article class="panel stack-md">
                     <span class="eyebrow">@item.Category · @(item.IsOnline ? T["Online"] : item.City ?? item.CountryRegion)</span>
                     <h3 class="headline-sm">
-                        <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@item.Slug">@item.Name</a>
+                        <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-targetLearningLanguageCode="@item.TargetLearningLanguageCode" asp-route-slug="@item.Slug">@item.Name</a>
                     </h3>
                     <p>@item.Description</p>
                     <p>@item.ScheduleText</p>

@@ -78,6 +78,7 @@ public sealed class GrammarTopicRepositoryTests
 
             IReadOnlyList<GrammarTopicListItemModel> filtered = await repository.GetPublishedGrammarTopicsAsync(
                 new GrammarTopicListFilterModel("A1", "pronouns", "personal-identity", "pronouns"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
 
             GrammarTopicListItemModel grammarTopic = Assert.Single(filtered);
@@ -88,11 +89,13 @@ public sealed class GrammarTopicRepositoryTests
 
             IReadOnlyList<GrammarTopicListItemModel> caseInsensitiveSearch = await repository.GetPublishedGrammarTopicsAsync(
                 new GrammarTopicListFilterModel(null, null, null, "TIME PHRASES"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             Assert.Equal("a2-word-order", Assert.Single(caseInsensitiveSearch).Slug);
 
             IReadOnlyList<GrammarTopicListItemModel> hiddenDrafts = await repository.GetPublishedGrammarTopicsAsync(
                 new GrammarTopicListFilterModel("A1", "pronouns", "personal-identity", "draft"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             Assert.Empty(hiddenDrafts);
         }
@@ -161,6 +164,7 @@ public sealed class GrammarTopicRepositoryTests
             IGrammarTopicRepository repository = serviceProvider.GetRequiredService<IGrammarTopicRepository>();
             GrammarTopicDetailModel? detail = await repository.GetPublishedGrammarTopicBySlugAsync(
                 "a1-personal-pronouns",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 "fa",
                 CancellationToken.None);
 

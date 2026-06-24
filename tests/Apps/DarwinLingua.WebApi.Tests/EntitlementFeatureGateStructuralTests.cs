@@ -189,12 +189,12 @@ public sealed class EntitlementFeatureGateStructuralTests
         Assert.Contains("string actorEmail", catalogApiClientSource, StringComparison.Ordinal);
         Assert.Contains("CanUseEventPreparationPacksAsync", eventPreparationSource, StringComparison.Ordinal);
         Assert.Contains("WebUserIdentity.GetRequiredEmail", eventPreparationSource, StringComparison.Ordinal);
-        Assert.Contains("GetEventPreparationPackBySlugAsync(normalizedSlug, actorEmail", eventPreparationSource, StringComparison.Ordinal);
+        Assert.Contains("GetEventPreparationPackBySlugAsync(normalizedSlug, targetLearningLanguageCode, actorEmail", eventPreparationSource, StringComparison.Ordinal);
         Assert.Contains("PremiumFeatureDenied", eventPreparationSource, StringComparison.Ordinal);
         Assert.Contains("EnsureCanUsePartnerMatchingAsync", partnerMatchingSource, StringComparison.Ordinal);
         Assert.Contains("PremiumFeatureDenied", partnerMatchingSource, StringComparison.Ordinal);
         Assert.Contains("CanUseEventPreparationPacksAsync", scenariosSource, StringComparison.Ordinal);
-        Assert.Contains("GetEventPreparationPacksForDialogueAsync(dialogueSlug, actorEmail", scenariosSource, StringComparison.Ordinal);
+        Assert.Contains("GetEventPreparationPacksForDialogueAsync(dialogueSlug, targetLearningLanguageCode, actorEmail", scenariosSource, StringComparison.Ordinal);
         Assert.Contains("ResolveSecondaryMeaningLanguageAsync", wordsSource, StringComparison.Ordinal);
     }
 

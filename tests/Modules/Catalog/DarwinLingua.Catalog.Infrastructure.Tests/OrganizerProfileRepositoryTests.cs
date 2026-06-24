@@ -7,6 +7,7 @@ using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -45,7 +46,9 @@ public sealed class OrganizerProfileRepositoryTests
             }
 
             IOrganizerProfileRepository repository = serviceProvider.GetRequiredService<IOrganizerProfileRepository>();
-            IReadOnlyList<OrganizerProfileListItemModel> profiles = await repository.GetPublishedOrganizerProfilesAsync(CancellationToken.None);
+            IReadOnlyList<OrganizerProfileListItemModel> profiles = await repository.GetPublishedOrganizerProfilesAsync(
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                CancellationToken.None);
 
             OrganizerProfileListItemModel profile = Assert.Single(profiles);
             Assert.Equal("berlin-language-club", profile.Slug);
@@ -90,14 +93,20 @@ public sealed class OrganizerProfileRepositoryTests
             }
 
             IOrganizerProfileRepository repository = serviceProvider.GetRequiredService<IOrganizerProfileRepository>();
-            OrganizerProfileDetailModel? detail = await repository.GetPublishedOrganizerProfileBySlugAsync("berlin-language-club", CancellationToken.None);
+            OrganizerProfileDetailModel? detail = await repository.GetPublishedOrganizerProfileBySlugAsync(
+                "berlin-language-club",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                CancellationToken.None);
 
             Assert.NotNull(detail);
             ConversationEventListItemModel linkedEvent = Assert.Single(detail.ActiveEvents);
             Assert.Equal("berlin-cafe-a1", linkedEvent.Slug);
             Assert.Equal("berlin-language-club", linkedEvent.OrganizerProfileSlug);
 
-            OrganizerProfileDetailModel? missingDetail = await repository.GetPublishedOrganizerProfileBySlugAsync("missing-club", CancellationToken.None);
+            OrganizerProfileDetailModel? missingDetail = await repository.GetPublishedOrganizerProfileBySlugAsync(
+                "missing-club",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                CancellationToken.None);
             Assert.Null(missingDetail);
         }
         finally

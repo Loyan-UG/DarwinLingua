@@ -120,6 +120,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<DateTime?>("StartsAtUtc")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("TEXT");
 
@@ -130,16 +137,21 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrganizerProfileSlug");
+                    b.HasIndex("TargetLearningLanguageCode", "OrganizerProfileSlug")
+                        .HasDatabaseName("IX_ConversationEvents_Target_Organizer");
 
-                    b.HasIndex("Slug")
-                        .IsUnique();
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
+                        .IsUnique()
+                        .HasDatabaseName("IX_ConversationEvents_Target_Slug");
 
-                    b.HasIndex("Category", "PublicationStatus");
+                    b.HasIndex("TargetLearningLanguageCode", "Category", "PublicationStatus")
+                        .HasDatabaseName("IX_ConversationEvents_Target_CategoryStatus");
 
-                    b.HasIndex("StartsAtUtc", "PublicationStatus");
+                    b.HasIndex("TargetLearningLanguageCode", "StartsAtUtc", "PublicationStatus")
+                        .HasDatabaseName("IX_ConversationEvents_Target_StartStatus");
 
-                    b.HasIndex("City", "IsOnline", "PriceType");
+                    b.HasIndex("TargetLearningLanguageCode", "City", "IsOnline", "PriceType")
+                        .HasDatabaseName("IX_ConversationEvents_Target_CityOnlinePrice");
 
                     b.ToTable("ConversationEvents", (string)null);
                 });
@@ -325,6 +337,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -340,10 +359,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "Situation", "Tone", "ConversationGoal");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "Situation", "Tone", "ConversationGoal");
 
                     b.ToTable("ConversationStarterPacks", (string)null);
                 });
@@ -487,6 +506,153 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.ToTable("ConversationStarterPhraseTranslations", (string)null);
                 });
 
+            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.CountryGuidanceNote", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(96)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CefrLevel")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Context")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContextTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CountryContextCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("DE");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DoNotesJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DoNotesTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DontNotesJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DontNotesTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExamplesJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExamplesTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LinkedCourseLessonSlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LinkedDialogueSlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LinkedExpressionSlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LinkedTalkTopicSlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LinkedWritingTemplateSlugsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PublicationStatus")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SectionsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SectionsTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SensitivityWarning")
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SensitivityWarningTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ShortDescriptionTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TitleTranslationsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TargetLearningLanguageCode", "CountryContextCode", "Slug")
+                        .IsUnique()
+                        .HasDatabaseName("IX_CountryGuidanceNotes_TargetCountrySlug");
+
+                    b.HasIndex("TargetLearningLanguageCode", "CountryContextCode", "CefrLevel", "Category")
+                        .HasDatabaseName("IX_CountryGuidanceNotes_TargetCountryFilters");
+
+                    b.ToTable("CountryGuidanceNotes", (string)null);
+                });
+
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.CourseLesson", b =>
                 {
                     b.Property<Guid>("Id")
@@ -614,6 +780,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -628,13 +801,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
-                        .IsUnique();
-
                     b.HasIndex("CourseModuleId", "LessonNumber")
                         .IsUnique();
 
-                    b.HasIndex("CoursePathSlug", "ModuleSlug");
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
+                        .IsUnique();
+
+                    b.HasIndex("TargetLearningLanguageCode", "CoursePathSlug", "ModuleSlug");
 
                     b.ToTable("CourseLessons", (string)null);
                 });
@@ -685,6 +858,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -699,10 +879,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("CoursePathId", "ModuleNumber")
                         .IsUnique();
 
-                    b.HasIndex("CoursePathId", "ModuleNumber")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
                     b.ToTable("CourseModules", (string)null);
@@ -747,6 +927,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -763,141 +950,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("CefrLevel");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
                     b.ToTable("CoursePaths", (string)null);
-                });
-
-            modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.CulturalNote", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasMaxLength(96)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CefrLevel")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Context")
-                        .IsRequired()
-                        .HasMaxLength(512)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ContextTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DoNotesJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DoNotesTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DontNotesJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DontNotesTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ExamplesJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ExamplesTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LinkedCourseLessonSlugsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LinkedDialogueSlugsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LinkedExpressionSlugsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LinkedTalkTopicSlugsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LinkedWritingTemplateSlugsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PublicationStatus")
-                        .IsRequired()
-                        .HasMaxLength(32)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SectionsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SectionsTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SensitivityWarning")
-                        .HasMaxLength(1000)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SensitivityWarningTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ShortDescription")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ShortDescriptionTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TitleTranslationsJson")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Slug")
-                        .IsUnique();
-
-                    b.HasIndex("CefrLevel", "Category");
-
-                    b.ToTable("CulturalNotes", (string)null);
                 });
 
             modelBuilder.Entity("DarwinLingua.Catalog.Domain.Entities.DialogueAnswer", b =>
@@ -1067,6 +1123,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("TaskType")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
@@ -1084,23 +1147,23 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Category")
-                        .HasDatabaseName("IX_DialogueLessons_Category");
+                    b.HasIndex("TargetLearningLanguageCode", "Category")
+                        .HasDatabaseName("IX_DialogueLessons_TargetLanguage_Category");
 
-                    b.HasIndex("CefrLevel")
-                        .HasDatabaseName("IX_DialogueLessons_CefrLevel");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel")
+                        .HasDatabaseName("IX_DialogueLessons_TargetLanguage_CefrLevel");
 
-                    b.HasIndex("InteractionMode")
-                        .HasDatabaseName("IX_DialogueLessons_InteractionMode");
+                    b.HasIndex("TargetLearningLanguageCode", "InteractionMode")
+                        .HasDatabaseName("IX_DialogueLessons_TargetLanguage_InteractionMode");
 
-                    b.HasIndex("Register")
-                        .HasDatabaseName("IX_DialogueLessons_Register");
+                    b.HasIndex("TargetLearningLanguageCode", "Register")
+                        .HasDatabaseName("IX_DialogueLessons_TargetLanguage_Register");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("TaskType")
-                        .HasDatabaseName("IX_DialogueLessons_TaskType");
+                    b.HasIndex("TargetLearningLanguageCode", "TaskType")
+                        .HasDatabaseName("IX_DialogueLessons_TargetLanguage_TaskType");
 
                     b.ToTable("DialogueLessons", (string)null);
                 });
@@ -1590,6 +1653,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -1600,10 +1670,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "Category", "EventType");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "Category", "EventType");
 
                     b.ToTable("EventPreparationPacks", (string)null);
                 });
@@ -1736,15 +1806,24 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ConversationEventSlug", "ParticipantEmail")
-                        .IsUnique();
+                    b.HasIndex("TargetLearningLanguageCode", "ConversationEventSlug", "ParticipantEmail")
+                        .IsUnique()
+                        .HasDatabaseName("IX_EventRsvps_Target_EventEmail");
 
-                    b.HasIndex("ConversationEventSlug", "Status");
+                    b.HasIndex("TargetLearningLanguageCode", "ConversationEventSlug", "Status")
+                        .HasDatabaseName("IX_EventRsvps_Target_EventStatus");
 
                     b.ToTable("EventRsvps", (string)null);
                 });
@@ -1855,6 +1934,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("TaskType")
                         .IsRequired()
                         .HasMaxLength(96)
@@ -1874,10 +1960,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("ExamProfileKey", "CefrLevel", "ExamSection");
+                    b.HasIndex("TargetLearningLanguageCode", "ExamProfileKey", "CefrLevel", "ExamSection");
 
                     b.ToTable("ExamPrepUnits", (string)null);
                 });
@@ -1926,12 +2012,19 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Key")
+                    b.HasIndex("TargetLearningLanguageCode", "Key")
                         .IsUnique();
 
                     b.ToTable("ExamProfiles", (string)null);
@@ -2098,6 +2191,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("TargetSkill")
                         .IsRequired()
                         .HasMaxLength(64)
@@ -2117,12 +2217,12 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("OwnerType", "OwnerSlug");
+                    b.HasIndex("TargetLearningLanguageCode", "OwnerType", "OwnerSlug");
 
-                    b.HasIndex("CefrLevel", "ExerciseType", "TargetSkill");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "ExerciseType", "TargetSkill");
 
                     b.ToTable("Exercises", (string)null);
                 });
@@ -2171,6 +2271,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -2185,10 +2292,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("OwnerType", "OwnerSlug");
+                    b.HasIndex("TargetLearningLanguageCode", "OwnerType", "OwnerSlug");
 
                     b.ToTable("ExerciseSets", (string)null);
                 });
@@ -2327,6 +2434,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("TeachingReason")
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
@@ -2347,10 +2461,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "ExpressionType", "Register", "Category");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "ExpressionType", "Register", "Category");
 
                     b.ToTable("ExpressionEntries", (string)null);
                 });
@@ -3184,6 +3298,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -3197,10 +3318,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "GrammarCategory");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "GrammarCategory");
 
                     b.ToTable("GrammarTopics", (string)null);
                 });
@@ -3330,11 +3451,6 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("GermanLevel")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("TEXT");
-
                     b.Property<bool>("HasConfirmedAdult")
                         .HasColumnType("INTEGER");
 
@@ -3346,6 +3462,11 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("InteractionPreference")
                         .IsRequired()
                         .HasMaxLength(32)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LearningLevel")
+                        .IsRequired()
+                        .HasMaxLength(8)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerEmail")
@@ -3366,7 +3487,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.HasIndex("OwnerEmail")
                         .IsUnique();
 
-                    b.HasIndex("Visibility", "CityRegion", "GermanLevel");
+                    b.HasIndex("Visibility", "CityRegion", "LearningLevel");
 
                     b.ToTable("LearnerConversationProfiles", (string)null);
                 });
@@ -3641,10 +3762,18 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("OrganizerProfileId", "CefrLevel")
-                        .IsUnique();
+                    b.HasIndex("OrganizerProfileId", "TargetLearningLanguageCode", "CefrLevel")
+                        .IsUnique()
+                        .HasDatabaseName("IX_OrganizerProfileLevels_Target_Level");
 
                     b.ToTable("OrganizerProfileSupportedLevels", (string)null);
                 });
@@ -3852,6 +3981,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("TaskType")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -3875,10 +4011,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "Category", "TaskType", "InteractionMode", "Register");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "Category", "TaskType", "InteractionMode", "Register");
 
                     b.ToTable("RoleplayScenarios", (string)null);
                 });
@@ -4012,6 +4148,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -4027,10 +4170,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "ContentType", "Category");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "ContentType", "Category");
 
                     b.ToTable("TalkTopics", (string)null);
                 });
@@ -4361,6 +4504,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -4368,7 +4518,8 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId", "ExerciseSlug", "AttemptedAtUtc");
+                    b.HasIndex("UserId", "TargetLearningLanguageCode", "ExerciseSlug", "AttemptedAtUtc")
+                        .HasDatabaseName("IX_UserExerciseAttempts_UserTargetExerciseAttempted");
 
                     b.ToTable("UserExerciseAttempts", (string)null);
                 });
@@ -4658,21 +4809,21 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedLemma")
-                        .HasDatabaseName("IX_WordEntries_Search_NormalizedLemma");
-
                     b.HasIndex("PublicId")
                         .IsUnique();
 
-                    b.HasIndex("PrimaryCefrLevel", "NormalizedLemma")
-                        .HasDatabaseName("IX_WordEntries_Browse_Cefr_NormalizedLemma");
+                    b.HasIndex("LanguageCode", "NormalizedLemma")
+                        .HasDatabaseName("IX_WordEntries_Search_Language_NormalizedLemma");
 
-                    b.HasIndex("PublicationStatus", "NormalizedLemma")
-                        .HasDatabaseName("IX_WordEntries_Search_ActiveNormalizedLemma");
+                    b.HasIndex("LanguageCode", "PrimaryCefrLevel", "NormalizedLemma")
+                        .HasDatabaseName("IX_WordEntries_Browse_Language_Cefr_NormalizedLemma");
 
-                    b.HasIndex("NormalizedLemma", "PartOfSpeech", "PrimaryCefrLevel")
+                    b.HasIndex("LanguageCode", "PublicationStatus", "NormalizedLemma")
+                        .HasDatabaseName("IX_WordEntries_Search_Language_ActiveNormalizedLemma");
+
+                    b.HasIndex("LanguageCode", "NormalizedLemma", "PartOfSpeech", "PrimaryCefrLevel")
                         .IsUnique()
-                        .HasDatabaseName("IX_WordEntries_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel");
+                        .HasDatabaseName("IX_WordEntries_Language_NormalizedLemma_PartOfSpeech_PrimaryCefrLevel");
 
                     b.ToTable("WordEntries", (string)null);
                 });
@@ -5046,6 +5197,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<int>("SortOrder")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<string>("TemplateText")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -5072,10 +5230,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
+                    b.HasIndex("TargetLearningLanguageCode", "Slug")
                         .IsUnique();
 
-                    b.HasIndex("CefrLevel", "Category", "Register");
+                    b.HasIndex("TargetLearningLanguageCode", "CefrLevel", "Category", "Register");
 
                     b.ToTable("WritingTemplates", (string)null);
                 });
@@ -5083,6 +5241,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("DarwinLingua.ContentOps.Domain.Entities.ContentPackage", b =>
                 {
                     b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CountryContextCode")
+                        .HasMaxLength(8)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAtUtc")
@@ -5098,6 +5260,10 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.Property<int>("InvalidEntries")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("LevelSystemCode")
+                        .HasMaxLength(32)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PackageId")
                         .IsRequired()
@@ -5127,6 +5293,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<int>("TotalEntries")
                         .HasColumnType("INTEGER");
 
@@ -5138,7 +5311,7 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PackageId")
+                    b.HasIndex("TargetLearningLanguageCode", "PackageId")
                         .IsUnique();
 
                     b.ToTable("ContentPackages", (string)null);
@@ -5231,6 +5404,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
+
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("TEXT");
 
@@ -5244,12 +5424,15 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId", "State");
+                    b.HasIndex("UserId", "TargetLearningLanguageCode", "State")
+                        .HasDatabaseName("IX_UserContentProgress_UserTargetState");
 
-                    b.HasIndex("UserId", "UpdatedAtUtc");
+                    b.HasIndex("UserId", "TargetLearningLanguageCode", "UpdatedAtUtc")
+                        .HasDatabaseName("IX_UserContentProgress_UserTargetUpdated");
 
-                    b.HasIndex("UserId", "ContentOwnerType", "ContentOwnerSlug")
-                        .IsUnique();
+                    b.HasIndex("UserId", "TargetLearningLanguageCode", "ContentOwnerType", "ContentOwnerSlug")
+                        .IsUnique()
+                        .HasDatabaseName("IX_UserContentProgress_UserTargetOwner");
 
                     b.ToTable("UserContentProgress", (string)null);
                 });
@@ -5294,6 +5477,13 @@ namespace DarwinLingua.Infrastructure.Persistence.Migrations
                     b.Property<string>("PreferredMeaningLanguage2")
                         .HasMaxLength(16)
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("TargetLearningLanguageCode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("de");
 
                     b.Property<string>("UiLanguageCode")
                         .IsRequired()

@@ -10,14 +10,17 @@ internal sealed class UserContentProgressRepository(IDbContextFactory<DarwinLing
 {
     public async Task<UserContentProgress?> GetByUserAndContentAsync(
         string userId,
+        string targetLearningLanguageCode,
         string contentOwnerType,
         string contentOwnerSlug,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(userId);
+        ArgumentException.ThrowIfNullOrWhiteSpace(targetLearningLanguageCode);
         ArgumentException.ThrowIfNullOrWhiteSpace(contentOwnerType);
         ArgumentException.ThrowIfNullOrWhiteSpace(contentOwnerSlug);
 
+        string normalizedTargetLearningLanguageCode = targetLearningLanguageCode.Trim().ToLowerInvariant();
         string normalizedOwnerType = contentOwnerType.Trim().ToLowerInvariant();
         string normalizedOwnerSlug = contentOwnerSlug.Trim().ToLowerInvariant();
 
@@ -29,6 +32,7 @@ internal sealed class UserContentProgressRepository(IDbContextFactory<DarwinLing
             .SingleOrDefaultAsync(
                 item =>
                     item.UserId == userId &&
+                    item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
                     item.ContentOwnerType == normalizedOwnerType &&
                     item.ContentOwnerSlug == normalizedOwnerSlug,
                 cancellationToken)
@@ -61,10 +65,12 @@ internal sealed class UserContentProgressRepository(IDbContextFactory<DarwinLing
 
     public async Task<IReadOnlyList<UserContentProgress>> GetUserProgressAsync(
         string userId,
+        string targetLearningLanguageCode,
         int recentItemCount,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(userId);
+        ArgumentException.ThrowIfNullOrWhiteSpace(targetLearningLanguageCode);
         if (recentItemCount <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(recentItemCount), "Recent item count must be positive.");
@@ -74,9 +80,12 @@ internal sealed class UserContentProgressRepository(IDbContextFactory<DarwinLing
             .CreateDbContextAsync(cancellationToken)
             .ConfigureAwait(false);
 
+        string normalizedTargetLearningLanguageCode = targetLearningLanguageCode.Trim().ToLowerInvariant();
         return await dbContext.UserContentProgress
             .AsNoTracking()
-            .Where(item => item.UserId == userId)
+            .Where(item =>
+                item.UserId == userId &&
+                item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode)
             .OrderByDescending(item => item.UpdatedAtUtc)
             .Take(recentItemCount)
             .ToArrayAsync(cancellationToken)

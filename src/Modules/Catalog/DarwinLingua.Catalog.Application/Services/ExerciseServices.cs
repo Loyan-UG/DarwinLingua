@@ -12,14 +12,26 @@ internal sealed class ExerciseQueryService(IExerciseRepository repository) : IEx
     public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
         repository.GetPublishedExerciseSetsAsync(filter, primaryMeaningLanguageCode, cancellationToken);
 
+    public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExerciseSetsAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
+
     public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
         repository.GetPublishedExerciseSetBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
+
+    public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExerciseSetBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
 
     public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
         repository.GetPublishedExercisesAsync(filter, primaryMeaningLanguageCode, cancellationToken);
 
+    public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExercisesAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
+
     public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
         repository.GetPublishedExerciseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
+
+    public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedExerciseBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
 }
 
 internal sealed class ExerciseAttemptService(IExerciseRepository repository) : IExerciseAttemptService
@@ -32,13 +44,28 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
         ExerciseAttemptRequestModel request,
         string userId,
         string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        await SubmitAttemptAsync(
+            slug,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            request,
+            userId,
+            primaryMeaningLanguageCode,
+            cancellationToken).ConfigureAwait(false);
+
+    public async Task<ExerciseAttemptResultModel?> SubmitAttemptAsync(
+        string slug,
+        string targetLearningLanguageCode,
+        ExerciseAttemptRequestModel request,
+        string userId,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request);
 
         string normalizedUserId = NormalizeRequiredUserId(userId);
         string submittedAnswerJson = NormalizeSubmittedAnswerJson(request.SubmittedAnswerJson);
-        Exercise? exercise = await repository.GetPublishedExerciseEntityBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+        Exercise? exercise = await repository.GetPublishedExerciseEntityBySlugAsync(slug, targetLearningLanguageCode, cancellationToken).ConfigureAwait(false);
         if (exercise is null)
         {
             return null;
@@ -55,6 +82,7 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
         UserExerciseAttempt attempt = new(
             Guid.NewGuid(),
             normalizedUserId,
+            exercise.TargetLearningLanguageCode,
             exercise.Slug,
             submittedAnswerJson,
             isCorrect,
@@ -79,12 +107,25 @@ internal sealed class ExerciseAttemptService(IExerciseRepository repository) : I
         string slug,
         ExerciseAttemptRequestModel request,
         string primaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        await EvaluateAttemptAsync(
+            slug,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            request,
+            primaryMeaningLanguageCode,
+            cancellationToken).ConfigureAwait(false);
+
+    public async Task<ExerciseAttemptResultModel?> EvaluateAttemptAsync(
+        string slug,
+        string targetLearningLanguageCode,
+        ExerciseAttemptRequestModel request,
+        string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request);
 
         string submittedAnswerJson = NormalizeSubmittedAnswerJson(request.SubmittedAnswerJson);
-        Exercise? exercise = await repository.GetPublishedExerciseEntityBySlugAsync(slug, cancellationToken).ConfigureAwait(false);
+        Exercise? exercise = await repository.GetPublishedExerciseEntityBySlugAsync(slug, targetLearningLanguageCode, cancellationToken).ConfigureAwait(false);
         if (exercise is null)
         {
             return null;

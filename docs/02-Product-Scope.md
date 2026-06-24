@@ -34,7 +34,7 @@ This document should be read together with:
 
 ### 1.2 Product Boundary
 
-Darwin Deutsch is a practical German-learning product focused on structured vocabulary learning for real-life usage.
+Darwin Deutsch is the first practical German-learning product on the Darwin Lingua platform, focused on structured vocabulary learning for real-life usage.
 
 It is not a generic social platform, not a broad AI tutor, and not a full migrant-service portal in Phase 1.
 
@@ -171,7 +171,7 @@ These features must not ship publicly without:
 
 ### 4.6 Complete Learning Portal
 
-Darwin Lingua is expanding into a complete German-learning portal with Web-first implementation, dynamic educational content, reusable exercises, structured courses, exam preparation, and later mobile parity.
+Darwin Lingua is expanding into a Web-first multilingual learning platform. German remains the first complete target-language baseline; later target languages such as English, Spanish, and French must use native authored content, target-language scoped storage, and country-context-aware guidance.
 
 ---
 

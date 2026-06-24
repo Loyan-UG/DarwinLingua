@@ -6,7 +6,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("words")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Words)]
 public sealed class WordsController(
     IWebCatalogApiClient catalogApiClient,
     IWebFavoriteWordService userFavoriteWordService,
@@ -25,6 +25,7 @@ public sealed class WordsController(
             return NotFound();
         }
 
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string? effectiveSecondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
@@ -58,10 +59,10 @@ public sealed class WordsController(
         string canonicalWordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma);
         if (!string.Equals(wordSlug, canonicalWordSlug, StringComparison.OrdinalIgnoreCase))
         {
-            return RedirectToActionPermanent(nameof(Detail), "Words", new { wordSlug = canonicalWordSlug });
+            return RedirectToActionPermanent(nameof(Detail), "Words", new { targetLearningLanguageCode, wordSlug = canonicalWordSlug });
         }
 
-        var wordState = await userWordStateService.TrackWordViewedAsync(word.PublicId, cancellationToken);
+        var wordState = await userWordStateService.TrackWordViewedAsync(word.PublicId, targetLearningLanguageCode, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(word.PublicId, cancellationToken);
         bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
         return View(CreatePageViewModel(word, isFavorite, wordState, profile, effectiveSecondaryMeaningLanguageCode, canUseFavorites, canUseFavorites ? null : localizer["Favorites require an active trial or premium plan."].Value));
@@ -120,15 +121,16 @@ public sealed class WordsController(
 
         if (id != Guid.Empty)
         {
-            var state = await userWordStateService.GetWordStateAsync(id, cancellationToken);
+            string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+            var state = await userWordStateService.GetWordStateAsync(id, targetLearningLanguageCode, cancellationToken);
 
             if (state?.IsKnown == true)
             {
-                await userWordStateService.ClearWordKnownStateAsync(id, cancellationToken);
+                await userWordStateService.ClearWordKnownStateAsync(id, targetLearningLanguageCode, cancellationToken);
             }
             else
             {
-                await userWordStateService.MarkWordKnownAsync(id, cancellationToken);
+                await userWordStateService.MarkWordKnownAsync(id, targetLearningLanguageCode, cancellationToken);
             }
         }
 
@@ -152,15 +154,16 @@ public sealed class WordsController(
 
         if (id != Guid.Empty)
         {
-            var state = await userWordStateService.GetWordStateAsync(id, cancellationToken);
+            string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+            var state = await userWordStateService.GetWordStateAsync(id, targetLearningLanguageCode, cancellationToken);
 
             if (state?.IsDifficult == true)
             {
-                await userWordStateService.ClearWordDifficultStateAsync(id, cancellationToken);
+                await userWordStateService.ClearWordDifficultStateAsync(id, targetLearningLanguageCode, cancellationToken);
             }
             else
             {
-                await userWordStateService.MarkWordDifficultAsync(id, cancellationToken);
+                await userWordStateService.MarkWordDifficultAsync(id, targetLearningLanguageCode, cancellationToken);
             }
         }
 
@@ -181,8 +184,9 @@ public sealed class WordsController(
         bool canUseFavorites,
         string? favoriteLockedMessage)
     {
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string wordSlug = WordRouteBuilder.CreateRouteSlug(word.Lemma);
-        string returnUrl = Url.Action(nameof(Detail), "Words", new { wordSlug }) ?? $"/words/{wordSlug}";
+        string returnUrl = Url.Action(nameof(Detail), "Words", new { targetLearningLanguageCode, wordSlug }) ?? $"/learn/{targetLearningLanguageCode}/words/{wordSlug}";
 
         return new WordDetailPageViewModel(
             new WordDetailContentViewModel(
@@ -196,15 +200,16 @@ public sealed class WordsController(
     private async Task<PartialViewResult> RenderInteractionPanelAsync(Guid id, string? returnUrl, CancellationToken cancellationToken, string? favoriteLockedMessage = null)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        var wordState = await userWordStateService.GetWordStateAsync(id, cancellationToken)
-            ?? await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        var wordState = await userWordStateService.GetWordStateAsync(id, targetLearningLanguageCode, cancellationToken)
+            ?? await userWordStateService.TrackWordViewedAsync(id, targetLearningLanguageCode, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
         bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
 
         string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
         string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
             ? normalizedReturnUrl
-            : Url.Action("Index", "Browse") ?? "/browse";
+            : Url.Action("Index", "Browse", new { targetLearningLanguageCode }) ?? $"/learn/{targetLearningLanguageCode}/browse";
 
         return PartialView(
             "_InteractionPanel",
@@ -219,15 +224,16 @@ public sealed class WordsController(
 
     private async Task<PartialViewResult> RenderFavoriteToggleAsync(Guid id, string? returnUrl, CancellationToken cancellationToken, string? favoriteLockedMessage = null)
     {
-        var wordState = await userWordStateService.GetWordStateAsync(id, cancellationToken)
-            ?? await userWordStateService.TrackWordViewedAsync(id, cancellationToken);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        var wordState = await userWordStateService.GetWordStateAsync(id, targetLearningLanguageCode, cancellationToken)
+            ?? await userWordStateService.TrackWordViewedAsync(id, targetLearningLanguageCode, cancellationToken);
         bool isFavorite = await userFavoriteWordService.IsFavoriteAsync(id, cancellationToken);
         bool canUseFavorites = await featureAccessService.CanUseFavoritesAsync(cancellationToken);
 
         string? normalizedReturnUrl = WebRouteInput.NormalizeLocalReturnUrl(returnUrl);
         string resolvedReturnUrl = normalizedReturnUrl is not null && Url.IsLocalUrl(normalizedReturnUrl)
             ? normalizedReturnUrl
-            : Url.Action("Index", "Browse") ?? "/browse";
+            : Url.Action("Index", "Browse", new { targetLearningLanguageCode }) ?? $"/learn/{targetLearningLanguageCode}/browse";
 
         return PartialView(
             "~/Views/Shared/_FavoriteToggle.cshtml",
@@ -248,7 +254,8 @@ public sealed class WordsController(
             return LocalRedirect(normalizedReturnUrl);
         }
 
-        return RedirectToAction("Index", "Browse");
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        return RedirectToAction("Index", "Browse", new { targetLearningLanguageCode });
     }
 
     private IActionResult HandleInvalidWordPost() =>

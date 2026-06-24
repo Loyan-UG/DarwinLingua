@@ -1,10 +1,18 @@
 # Course Content Package Contract
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+
 ## Purpose
 
 This document defines the initial JSON import contract for Web-first Course Lessons and CEFR Learning Paths.
 
-Courses are dynamic content. They link to existing grammar topics, words, expressions, dialogues, Talk Topics, exercise sets, roleplays, writing templates, Life in Germany notes, and exam prep units instead of duplicating full teaching content. Course lesson activity blocks define the ordered learning route through those resources.
+Courses are dynamic content. They link to existing grammar topics, words, expressions, dialogues, Talk Topics, exercise sets, roleplays, writing templates, country guidance notes, and exam prep units instead of duplicating full teaching content. Course lesson activity blocks define the ordered learning route through those resources.
 
 ## Root Arrays
 
@@ -82,12 +90,12 @@ Activity blocks are the primary future source for the lesson reading flow. They 
 
 Each activity block contains:
 
-- `kind`: one of `read`, `listen`, `grammar`, `expression`, `practice`, `roleplay`, `write`, `life-in-germany`, `exam-prep`, `review`.
+- `kind`: one of `read`, `listen`, `grammar`, `expression`, `practice`, `roleplay`, `write`, `country-guidance`, `exam-prep`, `review`.
 - `title`: German canonical activity title.
 - `titleTranslations`: helper translations for active learner languages.
 - `instruction`: German canonical instruction that explains the learner action.
 - `instructionTranslations`: helper translations for active learner languages.
-- `targetType`: one of `course-lesson`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise-set`, `exercise`, `roleplay`, `writing-template`, `life-in-germany`, `exam-prep-unit`, or `none`.
+- `targetType`: one of `course-lesson`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise-set`, `exercise`, `roleplay`, `writing-template`, `country-guidance`, `exam-prep-unit`, or `none`.
 - `targetSlug`: slug of the target content when `targetType` is not `none`.
 - `estimatedMinutes`: estimated time for this activity.
 - `sortOrder`: unique ordering value inside the lesson.

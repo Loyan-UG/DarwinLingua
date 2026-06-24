@@ -24,8 +24,8 @@
             <p class="body-lg">@Model.Collection.Description</p>
         }
         <div class="action-row">
-            <a class="button button--secondary" asp-controller="Collections" asp-action="Index">@T["Back to collections"]</a>
-            <a class="button button--secondary" asp-controller="Browse" asp-action="Index">@T["Browse catalog"]</a>
+            <a class="button button--secondary" asp-controller="Collections" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Back to collections"]</a>
+            <a class="button button--secondary" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Browse catalog"]</a>
         </div>
     </div>
 </section>

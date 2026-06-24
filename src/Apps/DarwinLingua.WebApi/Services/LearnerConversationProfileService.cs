@@ -130,7 +130,7 @@ public sealed class LearnerConversationProfileService(IDbContextFactory<DarwinLi
         CancellationToken cancellationToken)
     {
         string normalizedEmail = LearnerConversationProfile.NormalizeEmail(ownerEmail);
-        string germanLevel = NormalizeCefrLevel(request.GermanLevel);
+        string learningLevel = NormalizeCefrLevel(request.LearningLevel);
         string helperLanguageCodes = NormalizeLanguageCodes(request.HelperLanguageCodes);
         ValidateSafetyBoundary(request.Visibility, request.HasConfirmedAdult);
 
@@ -151,7 +151,7 @@ public sealed class LearnerConversationProfileService(IDbContextFactory<DarwinLi
                 request.DisplayName,
                 request.CityRegion,
                 request.InteractionPreference,
-                germanLevel,
+                learningLevel,
                 helperLanguageCodes,
                 request.ConversationGoals,
                 request.AvailabilityNotes,
@@ -167,7 +167,7 @@ public sealed class LearnerConversationProfileService(IDbContextFactory<DarwinLi
                 request.DisplayName,
                 request.CityRegion,
                 request.InteractionPreference,
-                germanLevel,
+                learningLevel,
                 helperLanguageCodes,
                 request.ConversationGoals,
                 request.AvailabilityNotes,
@@ -226,7 +226,7 @@ public sealed class LearnerConversationProfileService(IDbContextFactory<DarwinLi
             profile.DisplayName,
             profile.CityRegion,
             profile.InteractionPreference,
-            profile.GermanLevel,
+            profile.LearningLevel,
             SplitLanguageCodes(profile.HelperLanguageCodes),
             profile.ConversationGoals,
             profile.AvailabilityNotes,
@@ -240,7 +240,7 @@ public sealed class LearnerConversationProfileService(IDbContextFactory<DarwinLi
             profile.DisplayName,
             profile.CityRegion,
             profile.InteractionPreference,
-            profile.GermanLevel,
+            profile.LearningLevel,
             SplitLanguageCodes(profile.HelperLanguageCodes),
             profile.ConversationGoals);
 

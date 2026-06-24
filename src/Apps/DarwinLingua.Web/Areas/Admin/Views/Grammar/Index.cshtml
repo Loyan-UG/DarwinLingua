@@ -9,7 +9,7 @@
             <span class="eyebrow">@T["Content"]</span>
             <h1>@T["Grammar Guide"]</h1>
         </div>
-        <a class="button button--secondary button--compact" asp-area="" asp-controller="Grammar" asp-action="Index">@T["Open learner view"]</a>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open learner view"]</a>
     </div>
 
     @if (Model.GrammarTopics.Count == 0)
@@ -33,7 +33,7 @@
                     {
                         <tr>
                             <td>
-                                <a asp-area="" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@topic.Slug">@topic.Title</a>
+                                <a asp-area="" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@topic.Slug">@topic.Title</a>
                                 <small>@topic.Slug</small>
                             </td>
                             <td>@topic.CefrLevel</td>

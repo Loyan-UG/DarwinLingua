@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +15,11 @@ public sealed class CoursesController(IWebCatalogApiClient catalogApiClient) : C
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<CoursePathListItemModel> courses = await catalogApiClient
-            .GetCoursesAsync(new CoursePathListFilterModel(null, null), "en", cancellationToken)
+            .GetCoursesAsync(
+                new CoursePathListFilterModel(null, null),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                "en",
+                cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminCoursesPageViewModel(courses));

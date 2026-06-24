@@ -1506,8 +1506,8 @@ Phase 7 expands Darwin Lingua into a complete Web-first learning portal. The det
 - `CoursePath`, `CourseModule`, and `CourseLesson` represent implemented structured learning paths. Course lessons orchestrate references to grammar, words, expressions, dialogues, Talk Topics, exercise sets, and future exam-prep units instead of duplicating that content.
 - `ExamProfile` and `ExamPrepUnit` represent implemented exam taxonomies and original preparation units linked to dialogues, exercises, grammar topics, expressions, writing templates, Talk Topics, and course lessons.
 - `WritingTemplate` represents implemented practical German message/email and exam-writing templates with variables, filled examples, register, linked grammar, linked words, linked expressions, and linked exercises.
-- `CulturalNote` represents implemented German communication and culture guidance with body sections, practical examples, optional do/don't notes, sensitivity warnings, and links to dialogues, expressions, writing templates, Talk Topics, and course lessons.
-- `UnifiedLearningSearchResult` is an implemented projection model for deterministic search results across words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, cultural notes, events, and organizers.
+- `CountryGuidanceNote` represents implemented German communication and culture guidance with body sections, practical examples, optional do/don't notes, sensitivity warnings, and links to dialogues, expressions, writing templates, Talk Topics, and course lessons.
+- `UnifiedLearningSearchResult` is an implemented projection model for deterministic search results across words, grammar, expressions, dialogues, Talk Topics, exercises, lessons, exam prep, writing templates, country guidance notes, events, and organizers.
 
 ## 11B.2 User State Concept
 
@@ -1515,7 +1515,7 @@ Phase 7 expands Darwin Lingua into a complete Web-first learning portal. The det
 - `UserExerciseAttempt` tracks submitted deterministic exercise attempts separately from shared exercise definitions.
 
 User progress must remain separate from content entities. Content records are shared and importable; progress records are per user.
-Supported `UserContentProgress` owner types are `word`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise`, `exercise-set`, `course`, `course-module`, `course-lesson`, `exam-prep-unit`, `writing-template`, and `cultural-note`.
+Supported `UserContentProgress` owner types are `word`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise`, `exercise-set`, `course`, `course-module`, `course-lesson`, `exam-prep-unit`, `writing-template`, and `country-guidance`.
 Supported progress states are `not-started`, `viewed`, `in-progress`, `completed`, `needs-review`, and `skipped`.
 Basic personalization is deterministic: it can recommend next incomplete course lessons and grammar topics, but it must not introduce AI ranking until explicit product rules exist.
 
@@ -1711,7 +1711,7 @@ If you want to design broadly from the start, these are the most likely long-ter
 - ExamProfile
 - ExamPrepUnit
 - WritingTemplate
-- CulturalNote
+- CountryGuidanceNote
 - UnifiedLearningSearchResult
 - UserContentProgress
 - EventListing
@@ -1773,3 +1773,4 @@ For the future shared backend, also see:
 
 - `36-Server-Content-Distribution.md`
 - `37-Shared-Content-Server-Domain.md`
+

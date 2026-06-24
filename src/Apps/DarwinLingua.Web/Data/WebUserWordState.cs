@@ -6,6 +6,8 @@ public sealed class WebUserWordState
 
     public string ActorId { get; set; } = string.Empty;
 
+    public string TargetLearningLanguageCode { get; set; } = "de";
+
     public Guid WordPublicId { get; set; }
 
     public bool IsKnown { get; set; }

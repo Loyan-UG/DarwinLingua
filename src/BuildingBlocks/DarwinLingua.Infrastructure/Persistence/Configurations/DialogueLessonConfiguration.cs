@@ -12,6 +12,10 @@ internal sealed class DialogueLessonConfiguration : IEntityTypeConfiguration<Dia
         builder.ToTable("DialogueLessons");
         builder.HasKey(lesson => lesson.Id);
         builder.Property(lesson => lesson.Id).ValueGeneratedNever();
+        builder.Property(lesson => lesson.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(lesson => lesson.Slug).HasMaxLength(128).IsRequired();
         builder.Property(lesson => lesson.Title).HasMaxLength(256).IsRequired();
         builder.Property(lesson => lesson.Description).HasMaxLength(4000).IsRequired();
@@ -28,12 +32,12 @@ internal sealed class DialogueLessonConfiguration : IEntityTypeConfiguration<Dia
         builder.Property(lesson => lesson.SortOrder).IsRequired();
         builder.Property(lesson => lesson.CreatedAtUtc).IsRequired();
         builder.Property(lesson => lesson.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(lesson => lesson.Slug).IsUnique();
-        builder.HasIndex(lesson => lesson.CefrLevel).HasDatabaseName("IX_DialogueLessons_CefrLevel");
-        builder.HasIndex(lesson => lesson.Category).HasDatabaseName("IX_DialogueLessons_Category");
-        builder.HasIndex(lesson => lesson.TaskType).HasDatabaseName("IX_DialogueLessons_TaskType");
-        builder.HasIndex(lesson => lesson.InteractionMode).HasDatabaseName("IX_DialogueLessons_InteractionMode");
-        builder.HasIndex(lesson => lesson.Register).HasDatabaseName("IX_DialogueLessons_Register");
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.Slug }).IsUnique();
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.CefrLevel }).HasDatabaseName("IX_DialogueLessons_TargetLanguage_CefrLevel");
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.Category }).HasDatabaseName("IX_DialogueLessons_TargetLanguage_Category");
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.TaskType }).HasDatabaseName("IX_DialogueLessons_TargetLanguage_TaskType");
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.InteractionMode }).HasDatabaseName("IX_DialogueLessons_TargetLanguage_InteractionMode");
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.Register }).HasDatabaseName("IX_DialogueLessons_TargetLanguage_Register");
 
         builder.HasMany(lesson => lesson.Topics).WithOne().HasForeignKey(topic => topic.DialogueLessonId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(lesson => lesson.ExamProfiles).WithOne().HasForeignKey(profile => profile.DialogueLessonId).OnDelete(DeleteBehavior.Cascade);

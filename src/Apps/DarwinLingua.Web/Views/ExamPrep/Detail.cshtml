@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.ExamPrepDetailPageViewModel
 @{
     ViewData["Title"] = Model.Unit.Title;
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
@@ -63,13 +64,13 @@
 <section class="panel stack-md">
     <h2 class="headline-sm">@T["Linked practice materials"]</h2>
     <div class="grid-two-col">
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Dialogues"].Value, Model.Unit.LinkedDialogueSlugs, "dialogue")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Unit.LinkedWritingTemplateSlugs, "writing-template")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Grammar Guide"].Value, Model.Unit.LinkedGrammarTopicSlugs, "grammar-topic")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Exercises"].Value, Model.Unit.LinkedExerciseSlugs, "exercise")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Roleplays"].Value, Model.Unit.LinkedRoleplaySlugs, "roleplay")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Unit.LinkedTalkTopicSlugs, "talk-topic")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Unit.LinkedExpressionSlugs, "expression")' />
-        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Unit.LinkedCourseLessonSlugs, "course-lesson")' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Dialogues"].Value, Model.Unit.LinkedDialogueSlugs, "dialogue", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Writing Templates"].Value, Model.Unit.LinkedWritingTemplateSlugs, "writing-template", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Grammar Guide"].Value, Model.Unit.LinkedGrammarTopicSlugs, "grammar-topic", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Exercises"].Value, Model.Unit.LinkedExerciseSlugs, "exercise", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Roleplays"].Value, Model.Unit.LinkedRoleplaySlugs, "roleplay", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Talk Topics"].Value, Model.Unit.LinkedTalkTopicSlugs, "talk-topic", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Everyday Expressions"].Value, Model.Unit.LinkedExpressionSlugs, "expression", targetLearningLanguageCode, (string?)null)' />
+        <partial name="~/Views/WritingTemplates/_SlugList.cshtml" model='(T["Course Lessons"].Value, Model.Unit.LinkedCourseLessonSlugs, "course-lesson", targetLearningLanguageCode, (string?)null)' />
     </div>
 </section>

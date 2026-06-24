@@ -29,8 +29,10 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             await SeedLearningPortalContentAsync(serviceProvider, CancellationToken.None);
 
             IWebsiteAdminQueryService service = serviceProvider.GetRequiredService<IWebsiteAdminQueryService>();
-            AdminSystemReportResponse report = await service.GetSystemReportAsync(CancellationToken.None);
+            AdminSystemReportResponse report = await service.GetSystemReportAsync("de", CancellationToken.None);
 
+            Assert.Equal("de", report.LearningPortal.TargetLearningLanguageCode);
+            Assert.Equal("DE", report.LearningPortal.CountryContextCode);
             Assert.Contains(report.LearningPortal.CountsByType, row => row.Key == "grammar-topic" && row.Count == 2);
             Assert.Contains(report.LearningPortal.CountsByType, row => row.Key == "roleplay" && row.Count == 1);
             Assert.Contains(report.LearningPortal.CountsByCefr, row => row.Key == "A1" && row.Count >= 1);
@@ -41,6 +43,20 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Contains(report.LearningPortal.ExpressionsByMeaningTransparency, row => row.Key == "pragmatic-formula" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExpressionsBySafetyRating, row => row.Key == "general" && row.Count == 1);
             Assert.Contains(report.LearningPortal.ExercisesByType, row => row.Key == "multiple-choice" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.CountsByTargetLanguage, row => row.Key == "grammar-topic:de" && row.Count == 2);
+            Assert.Contains(report.LearningPortal.CountsByTargetLanguage, row => row.Key == "course-lesson:de" && row.Count == 6);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "selected-target-active:de" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "planned-target-languages" && row.Count >= 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-active:de" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-content-items:de" && row.Count > 0);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-active:en" && row.Count == 0);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-planned:en" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-content-items:en" && row.Count == 0);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-planned-country-contexts:en" && row.Count >= 1);
+            Assert.Contains(report.LearningPortal.MissingTranslationsByHelperLanguage, row => row.Key == "fa" && row.Count > 0);
+            Assert.Contains(report.LearningPortal.MissingTranslationsByModule, row => row.Key == "course-lesson" && row.Count > 0);
+            Assert.Contains(report.LearningPortal.DuplicateSlugsByType, row => row.Key == "cross-module:de:a1-articles" && row.Count == 2);
+            Assert.True(report.LearningPortal.DuplicateSlugCount >= 2);
             Assert.Equal(1, report.LearningPortal.MissingTranslationCount);
             Assert.Equal(1, report.LearningPortal.UnresolvedLinkedContentReferenceCount);
             Assert.Equal(1, report.LearningPortal.GrammarTopicsMissingExercises);
@@ -66,20 +82,22 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Equal(1, report.LearningPortal.ExerciseSetsWithUnresolvedOwnerReferences);
             Assert.NotEmpty(report.LearningPortal.SampleIssues);
 
-            AdminLearningPortalIssuesResponse issues = await service.GetLearningPortalIssuesAsync("Grammar linked exercise", "missing", 10, CancellationToken.None);
+            AdminLearningPortalIssuesResponse issues = await service.GetLearningPortalIssuesAsync("Grammar linked exercise", "missing", "de", 10, CancellationToken.None);
+            Assert.Equal("de", issues.TargetLearningLanguageCode);
+            Assert.Equal("DE", issues.CountryContextCode);
             Assert.True(issues.TotalCount >= report.LearningPortal.SampleIssues.Count);
             Assert.True(issues.FilteredCount >= 1);
             Assert.Equal("Grammar linked exercise", issues.AreaFilter);
             Assert.Equal("missing", issues.Query);
             Assert.Contains(issues.Issues, issue => issue.Area == "Grammar linked exercise" && issue.Target == "missing-exercise");
 
-            AdminLearningPortalIssuesResponse activityIssues = await service.GetLearningPortalIssuesAsync("CourseLesson activity", "missing-activity-exercise", 10, CancellationToken.None);
+            AdminLearningPortalIssuesResponse activityIssues = await service.GetLearningPortalIssuesAsync("CourseLesson activity", "missing-activity-exercise", "de", 10, CancellationToken.None);
             Assert.Contains(activityIssues.Issues, issue =>
                 issue.Area == "CourseLesson activity" &&
                 issue.Owner == "a1-activity-unresolved" &&
                 issue.Target == "exercise:missing-activity-exercise");
 
-            AdminLearningPortalIssuesResponse exerciseSetOwnerIssues = await service.GetLearningPortalIssuesAsync("ExerciseSet owner", "missing-owner-lesson", 10, CancellationToken.None);
+            AdminLearningPortalIssuesResponse exerciseSetOwnerIssues = await service.GetLearningPortalIssuesAsync("ExerciseSet owner", "missing-owner-lesson", "de", 10, CancellationToken.None);
             Assert.Contains(exerciseSetOwnerIssues.Issues, issue =>
                 issue.Area == "ExerciseSet owner" &&
                 issue.Owner == "a1-article-practice-set" &&
@@ -109,7 +127,7 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             await DropTableAsync(serviceProvider, "Exercises", CancellationToken.None);
 
             IWebsiteAdminQueryService service = serviceProvider.GetRequiredService<IWebsiteAdminQueryService>();
-            AdminSystemReportResponse report = await service.GetSystemReportAsync(CancellationToken.None);
+            AdminSystemReportResponse report = await service.GetSystemReportAsync("de", CancellationToken.None);
 
             Assert.Contains(report.LearningPortal.CountsByType, row => row.Key == "expression" && row.Count == 1);
             Assert.Contains(report.LearningPortal.CountsByType, row => row.Key == "exercise" && row.Count == 0);
@@ -380,11 +398,28 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
                     },
                 },
                 new JsonSerializerOptions(JsonSerializerDefaults.Web)));
+        CourseLesson crossModuleDuplicateSlugLesson = CreateCourseLesson(
+            "a1-articles",
+            6,
+            PublicationStatus.Active,
+            now,
+            JsonSerializer.Serialize(
+                new[]
+                {
+                    new
+                    {
+                        kind = "read",
+                        targetType = "grammar-topic",
+                        targetSlug = "a1-articles",
+                    },
+                },
+                new JsonSerializerOptions(JsonSerializerDefaults.Web)));
         activityReadyLesson.AttachToCourseModule(courseModule.Id);
         missingActivityLesson.AttachToCourseModule(courseModule.Id);
         malformedActivityLesson.AttachToCourseModule(courseModule.Id);
         unsupportedActivityLesson.AttachToCourseModule(courseModule.Id);
         unresolvedActivityLesson.AttachToCourseModule(courseModule.Id);
+        crossModuleDuplicateSlugLesson.AttachToCourseModule(courseModule.Id);
 
         dbContext.GrammarTopics.Add(grammarTopic);
         dbContext.GrammarTopics.Add(grammarTopicWithoutExercise);
@@ -401,7 +436,8 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             missingActivityLesson,
             malformedActivityLesson,
             unsupportedActivityLesson,
-            unresolvedActivityLesson);
+            unresolvedActivityLesson,
+            crossModuleDuplicateSlugLesson);
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
 

@@ -216,24 +216,24 @@ public sealed class WordsControllerDualMeaningLanguageTests
         public Task<IReadOnlySet<Guid>> GetFavoriteWordIdsAsync(IReadOnlyCollection<Guid> wordPublicIds, CancellationToken cancellationToken) =>
             Task.FromResult<IReadOnlySet<Guid>>(isFavorite ? wordPublicIds.ToHashSet() : new HashSet<Guid>());
 
-        public Task<IReadOnlyList<FavoriteWordListItemModel>> GetFavoriteWordsAsync(string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
+        public Task<IReadOnlyList<FavoriteWordListItemModel>> GetFavoriteWordsAsync(string targetLearningLanguageCode, string meaningLanguageCode, CancellationToken cancellationToken) => throw new NotSupportedException();
     }
 
     private sealed class StaticWordStateService(Guid wordId) : IWebUserWordStateService
     {
         private UserWordStateModel State => new(wordId, false, false, DateTime.UtcNow, DateTime.UtcNow, 1);
 
-        public Task<UserWordStateModel?> GetWordStateAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult<UserWordStateModel?>(State);
+        public Task<UserWordStateModel?> GetWordStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult<UserWordStateModel?>(State);
 
-        public Task<UserWordStateModel> TrackWordViewedAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(State);
+        public Task<UserWordStateModel> TrackWordViewedAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult(State);
 
-        public Task<UserWordStateModel> MarkWordKnownAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(State);
+        public Task<UserWordStateModel> MarkWordKnownAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult(State);
 
-        public Task<UserWordStateModel> MarkWordDifficultAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(State);
+        public Task<UserWordStateModel> MarkWordDifficultAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult(State);
 
-        public Task<UserWordStateModel> ClearWordKnownStateAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(State);
+        public Task<UserWordStateModel> ClearWordKnownStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult(State);
 
-        public Task<UserWordStateModel> ClearWordDifficultStateAsync(Guid wordPublicId, CancellationToken cancellationToken) => Task.FromResult(State);
+        public Task<UserWordStateModel> ClearWordDifficultStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult(State);
     }
 
     private sealed class StaticUrlHelper(string detailUrl) : IUrlHelper

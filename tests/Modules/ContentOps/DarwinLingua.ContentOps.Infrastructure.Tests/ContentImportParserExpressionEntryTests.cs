@@ -108,6 +108,8 @@ public sealed class ContentImportParserExpressionEntryTests
               "packageVersion": "1.0",
               "packageId": "expression-contract-test",
               "packageName": "Expression Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "defaultMeaningLanguages": ["en"],
               "entries": [],
               "expressionEntries": [

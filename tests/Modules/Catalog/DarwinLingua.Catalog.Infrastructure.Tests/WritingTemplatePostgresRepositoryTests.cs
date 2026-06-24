@@ -83,7 +83,7 @@ public sealed class WritingTemplatePostgresRepositoryTests
 
             UnifiedLearningSearchResultModel result = Assert.Single(results);
             Assert.Equal("writing-template", result.ResultType);
-            Assert.Equal("/writing-templates/a1-kurze-vorstellung-nachricht", result.Url);
+            Assert.Equal("/learn/de/writing-templates/a1-kurze-vorstellung-nachricht", result.Url);
         }
         finally
         {

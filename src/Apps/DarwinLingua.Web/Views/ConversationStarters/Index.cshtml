@@ -56,7 +56,7 @@ else
                     <span>@T["{0} topics", starterPack.TopicKeys.Count]</span>
                 </div>
                 <h2 class="headline-sm">
-                    <a asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
+                    <a asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
                 </h2>
                 <p>@starterPack.Description</p>
                 <p class="body-lg">@starterPack.ConversationGoal</p>
@@ -65,12 +65,12 @@ else
                     <div class="chip-grid">
                         @foreach (string topicKey in starterPack.TopicKeys)
                         {
-                            <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                            <a class="chip-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
                         }
                     </div>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
+                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
                 </div>
             </article>
         }

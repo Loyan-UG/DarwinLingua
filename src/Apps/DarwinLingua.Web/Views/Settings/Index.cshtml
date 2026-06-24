@@ -6,7 +6,7 @@
 <section class="panel stack-lg">
     <span class="eyebrow">@T["Settings"]</span>
     <h1 class="headline-md">@T["Language preferences"]</h1>
-    <p class="body-lg">@T["These preferences control the site language and the meanings shown across word pages, lists, dialogues, and practice content."]</p>
+    <p class="body-lg">@T["These preferences keep the language you are learning separate from the interface language and helper translations."]</p>
 
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
@@ -15,6 +15,26 @@
 
     <form class="stack-lg" method="post" asp-action="Update">
         @Html.AntiForgeryToken()
+        <section class="settings-preference-group">
+            <div class="settings-preference-group__intro">
+                <span class="eyebrow">@T["Learning language"]</span>
+                <h2 class="headline-sm">@T["I want to learn"]</h2>
+                <p class="body-sm">@T["This controls which authored learning content, courses, search results, progress, and country guidance you see."]</p>
+            </div>
+            <label class="field">
+                <span>@T["Target learning language"]</span>
+                <select asp-for="Input.TargetLearningLanguageCode" asp-items="Model.TargetLearningLanguageOptions"></select>
+                <small class="body-sm">@T["Planned languages stay disabled until native reviewed content is available."]</small>
+                <span asp-validation-for="Input.TargetLearningLanguageCode" class="validation-message"></span>
+            </label>
+        </section>
+
+        <section class="settings-preference-group">
+            <div class="settings-preference-group__intro">
+                <span class="eyebrow">@T["Interface and helper languages"]</span>
+                <h2 class="headline-sm">@T["Show and explain"]</h2>
+                <p class="body-sm">@T["UI language changes site chrome. Meaning languages explain learning content without replacing the target-language source."]</p>
+            </div>
         <div class="form-grid">
             <label class="field">
                 <span>@T["UI language"]</span>
@@ -36,10 +56,18 @@
                 <small class="body-sm">@T["Optional second meaning column for comparison. It appears beside the primary helper language on supported learning pages."]</small>
                 @if (!Model.CanUseDualMeaningLanguage && !string.IsNullOrWhiteSpace(Model.DualMeaningLanguageLockedMessage))
                 {
-                    <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">@T["View billing"]</a></span>
-                }
+                <span class="validation-message">@Model.DualMeaningLanguageLockedMessage <a asp-controller="Billing" asp-action="Index">@T["View billing"]</a></span>
+            }
             </label>
+        </div>
+        </section>
 
+        <section class="settings-preference-group">
+            <div class="settings-preference-group__intro">
+                <span class="eyebrow">@T["Content safety"]</span>
+                <h2 class="headline-sm">@T["Sensitive educational language"]</h2>
+            </div>
+            <div class="form-grid">
             <input type="hidden" asp-for="Input.AdultContentAccessState" />
             <label class="field field--checkbox">
                 <input asp-for="Input.AllowsRudeSlangContent" />
@@ -49,6 +77,7 @@
                 <small class="body-sm">@T["Sensitive entries include warnings and should be used carefully."]</small>
             </label>
         </div>
+        </section>
 
         <div class="action-row">
             <button type="submit" class="button button--primary">@T["Save preferences"]</button>

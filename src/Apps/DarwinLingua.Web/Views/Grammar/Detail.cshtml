@@ -10,7 +10,7 @@
         <div class="detail-toolbar">
             <span class="eyebrow">@Model.GrammarTopic.CefrLevel · @T[Model.GrammarTopic.GrammarCategory]</span>
             <div class="detail-toolbar__actions">
-                <a class="button button--secondary button--compact" asp-controller="Grammar" asp-action="Index">@T["All Grammar Topics"]</a>
+                <a class="button button--secondary button--compact" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All Grammar Topics"]</a>
             </div>
         </div>
         <h1 class="headline-md">@Model.GrammarTopic.Title</h1>
@@ -241,7 +241,7 @@
                     var word = Model.GrammarTopic.LinkedWords[index];
                     if (!string.IsNullOrWhiteSpace(word.WordSlug))
                     {
-                        <a asp-controller="Words" asp-action="Detail" asp-route-slug="@word.WordSlug">@word.Lemma</a>
+                        <a asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@word.WordSlug">@word.Lemma</a>
                     }
                     else
                     {
@@ -260,7 +260,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.GrammarTopic.LinkedDialogueSlugs)
                 {
-                    <a class="chip-link" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }
@@ -270,7 +270,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.GrammarTopic.LinkedTalkTopicSlugs)
                 {
-                    <a class="chip-link" asp-controller="TalkTopics" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="TalkTopics" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }
@@ -280,7 +280,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.GrammarTopic.LinkedExerciseSlugs)
                 {
-                    <a class="chip-link" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }
@@ -297,7 +297,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.GrammarTopic.PrerequisiteSlugs)
                 {
-                    <a class="chip-link" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }
@@ -307,7 +307,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.GrammarTopic.RelatedTopicSlugs)
                 {
-                    <a class="chip-link" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }

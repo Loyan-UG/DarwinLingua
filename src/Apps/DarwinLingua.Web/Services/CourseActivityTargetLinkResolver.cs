@@ -4,13 +4,22 @@ namespace DarwinLingua.Web.Services;
 
 public static class CourseActivityTargetLinkResolver
 {
-    public static string? ResolveHref(CourseLessonActivityBlockModel activity, string currentCourseSlug)
+    public static string? ResolveHref(
+        CourseLessonActivityBlockModel activity,
+        string currentCourseSlug,
+        string targetLearningLanguageCode,
+        string? countryContextCode = null)
     {
         if (string.Equals(activity.TargetType, "none", StringComparison.OrdinalIgnoreCase))
         {
             return null;
         }
 
-        return LearningContentLinkResolver.ResolveHref(activity.TargetType, activity.TargetSlug, currentCourseSlug);
+        return LearningContentLinkResolver.ResolveHref(
+            activity.TargetType,
+            activity.TargetSlug,
+            targetLearningLanguageCode,
+            currentCourseSlug,
+            countryContextCode);
     }
 }

@@ -29,7 +29,8 @@ public sealed partial class ConversationStarterPack
         string conversationGoal,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -37,6 +38,7 @@ public sealed partial class ConversationStarterPack
         }
 
         Id = id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         Slug = NormalizeKey(slug, "Conversation starter pack slug");
         Title = NormalizeRequiredText(title, nameof(title), 256);
         Description = NormalizeRequiredText(description, nameof(description), 4000);
@@ -52,6 +54,8 @@ public sealed partial class ConversationStarterPack
     }
 
     public Guid Id { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
 
     public string Slug { get; private set; } = string.Empty;
 

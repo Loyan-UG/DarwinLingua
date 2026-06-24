@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -35,6 +36,7 @@ public sealed class WritingTemplate
         LinkedExpressionSlugsJson = "[]";
         LinkedExerciseSlugsJson = "[]";
         LinkedCourseLessonSlugsJson = "[]";
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public WritingTemplate(
@@ -63,9 +65,11 @@ public sealed class WritingTemplate
         string situationTranslationsJson = "[]",
         string explanationTranslationsJson = "[]",
         string templateTextTranslationsJson = "[]",
-        string sampleFilledVersionTranslationsJson = "[]")
+        string sampleFilledVersionTranslationsJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Writing template id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Writing template target learning language");
         Slug = NormalizeKebabKey(slug, "Writing template slug");
         Title = RequireText(title, "Writing template title", 256);
         ShortDescription = RequireText(shortDescription, "Writing template short description", 1000);
@@ -95,6 +99,7 @@ public sealed class WritingTemplate
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; }
     public string Title { get; private set; }
     public string ShortDescription { get; private set; }

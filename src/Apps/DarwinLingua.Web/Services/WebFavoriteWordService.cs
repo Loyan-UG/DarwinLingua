@@ -15,6 +15,7 @@ public interface IWebFavoriteWordService
     Task ToggleFavoriteAsync(Guid wordPublicId, CancellationToken cancellationToken);
 
     Task<IReadOnlyList<FavoriteWordListItemModel>> GetFavoriteWordsAsync(
+        string targetLearningLanguageCode,
         string meaningLanguageCode,
         CancellationToken cancellationToken);
 }
@@ -100,6 +101,7 @@ internal sealed class WebFavoriteWordService(
     }
 
     public async Task<IReadOnlyList<FavoriteWordListItemModel>> GetFavoriteWordsAsync(
+        string targetLearningLanguageCode,
         string meaningLanguageCode,
         CancellationToken cancellationToken)
     {
@@ -121,7 +123,7 @@ internal sealed class WebFavoriteWordService(
         }
 
         IReadOnlyList<DarwinLingua.Catalog.Application.Models.WordListItemModel> projections = await catalogApiClient
-            .GetWordsByIdsAsync(favoriteWordIds, meaningLanguageCode, cancellationToken)
+            .GetWordsByIdsAsync(favoriteWordIds, targetLearningLanguageCode, meaningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
         Dictionary<Guid, DarwinLingua.Catalog.Application.Models.WordListItemModel> map = projections.ToDictionary(item => item.PublicId);

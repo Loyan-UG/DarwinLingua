@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.CourseLessonPageViewModel
 @{
     ViewData["Title"] = Model.Lesson.Title;
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
     var activityBlocks = Model.Lesson.ActivityBlocks
         .OrderBy(static activity => activity.SortOrder)
@@ -25,7 +26,7 @@
             <div class="chip-grid">
                 <span class="chip-link chip-link--static">@T["Current progress"]: @T[Model.Progress.State]</span>
             </div>
-            <form class="course-progress-actions" method="post" asp-controller="Courses" asp-action="UpdateLessonProgress" asp-route-courseSlug="@Model.Lesson.CoursePathSlug" asp-route-lessonSlug="@Model.Lesson.Slug">
+            <form class="course-progress-actions" method="post" asp-controller="Courses" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="UpdateLessonProgress" asp-route-courseSlug="@Model.Lesson.CoursePathSlug" asp-route-lessonSlug="@Model.Lesson.Slug">
                 @Html.AntiForgeryToken()
                 <button class="button button--secondary button--compact" type="submit" name="state" value="in-progress">@T["Continue later"]</button>
                 <button class="button button--primary button--compact" type="submit" name="state" value="completed">@T["Mark completed"]</button>
@@ -54,7 +55,7 @@
             @for (int index = 0; index < activityBlocks.Length; index++)
             {
                 var activity = activityBlocks[index];
-                string? targetHref = CourseActivityTargetLinkResolver.ResolveHref(activity, Model.Lesson.CoursePathSlug);
+                string? targetHref = CourseActivityTargetLinkResolver.ResolveHref(activity, Model.Lesson.CoursePathSlug, targetLearningLanguageCode);
                 <li class="lesson-flow__item">
                     <div class="lesson-flow__step" aria-label="@T["Step {0}", index + 1]">@(index + 1)</div>
                     <div class="lesson-flow__body">
@@ -126,12 +127,12 @@
     <section class="panel stack-md">
         <h2 class="headline-sm">@T["Linked content"]</h2>
         <div class="grid-two-col">
-            <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "grammar-topic")' />
-            <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "word")' />
-            <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "expression")' />
-            <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "dialogue")' />
-            <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "talk-topic")' />
-            <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "exercise-set")' />
+            <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Lesson.LinkedGrammarTopicSlugs, "grammar-topic", targetLearningLanguageCode)' />
+            <partial name="_SlugList" model='(T["Words"].Value, Model.Lesson.LinkedWordSlugs, "word", targetLearningLanguageCode)' />
+            <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Lesson.LinkedExpressionSlugs, "expression", targetLearningLanguageCode)' />
+            <partial name="_SlugList" model='(T["Dialogues"].Value, Model.Lesson.LinkedDialogueSlugs, "dialogue", targetLearningLanguageCode)' />
+            <partial name="_SlugList" model='(T["Talk Topics"].Value, Model.Lesson.LinkedTalkTopicSlugs, "talk-topic", targetLearningLanguageCode)' />
+            <partial name="_SlugList" model='(T["Exercise sets"].Value, Model.Lesson.LinkedExerciseSetSlugs, "exercise-set", targetLearningLanguageCode)' />
         </div>
     </section>
 }
@@ -143,6 +144,6 @@
     }
     @if (!string.IsNullOrWhiteSpace(Model.Lesson.NextLessonSlug))
     {
-        <a class="button button--secondary" asp-controller="Courses" asp-action="Lesson" asp-route-courseSlug="@Model.Lesson.CoursePathSlug" asp-route-lessonSlug="@Model.Lesson.NextLessonSlug">@T["Next lesson"]</a>
+        <a class="button button--secondary" asp-controller="Courses" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Lesson" asp-route-courseSlug="@Model.Lesson.CoursePathSlug" asp-route-lessonSlug="@Model.Lesson.NextLessonSlug">@T["Next lesson"]</a>
     }
 </nav>

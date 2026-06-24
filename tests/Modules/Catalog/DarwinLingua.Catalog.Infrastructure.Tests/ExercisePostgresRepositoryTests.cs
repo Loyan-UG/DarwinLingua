@@ -93,7 +93,7 @@ public sealed class ExercisePostgresRepositoryTests
 
             UnifiedLearningSearchResultModel result = Assert.Single(results);
             Assert.Equal("exercise", result.ResultType);
-            Assert.Equal("/exercises/a1-article-choice", result.Url);
+            Assert.Equal("/learn/de/exercises/a1-article-choice", result.Url);
         }
         finally
         {

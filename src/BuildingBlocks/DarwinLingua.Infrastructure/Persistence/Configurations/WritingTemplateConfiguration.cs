@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,10 @@ internal sealed class WritingTemplateConfiguration : IEntityTypeConfiguration<Wr
         builder.ToTable("WritingTemplates");
         builder.HasKey(template => template.Id);
         builder.Property(template => template.Id).ValueGeneratedNever();
+        builder.Property(template => template.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(template => template.Slug).HasMaxLength(128).IsRequired();
         builder.Property(template => template.Title).HasMaxLength(256).IsRequired();
         builder.Property(template => template.ShortDescription).HasMaxLength(1000).IsRequired();
@@ -37,7 +42,7 @@ internal sealed class WritingTemplateConfiguration : IEntityTypeConfiguration<Wr
         builder.Property(template => template.SortOrder).IsRequired();
         builder.Property(template => template.CreatedAtUtc).IsRequired();
         builder.Property(template => template.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(template => template.Slug).IsUnique();
-        builder.HasIndex(template => new { template.CefrLevel, template.Category, template.Register });
+        builder.HasIndex(template => new { template.TargetLearningLanguageCode, template.Slug }).IsUnique();
+        builder.HasIndex(template => new { template.TargetLearningLanguageCode, template.CefrLevel, template.Category, template.Register });
     }
 }

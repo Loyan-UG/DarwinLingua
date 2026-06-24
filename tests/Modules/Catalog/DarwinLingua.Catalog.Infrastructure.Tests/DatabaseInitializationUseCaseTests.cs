@@ -81,7 +81,7 @@ public sealed class DatabaseInitializationUseCaseTests
         Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExamProfiles\"", source, StringComparison.Ordinal);
         Assert.Contains("CREATE TABLE IF NOT EXISTS \"ExamPrepUnits\"", source, StringComparison.Ordinal);
         Assert.Contains("CREATE TABLE IF NOT EXISTS \"WritingTemplates\"", source, StringComparison.Ordinal);
-        Assert.Contains("CREATE TABLE IF NOT EXISTS \"CulturalNotes\"", source, StringComparison.Ordinal);
+        Assert.Contains("CREATE TABLE IF NOT EXISTS \"CountryGuidanceNotes\"", source, StringComparison.Ordinal);
     }
 
     /// <summary>

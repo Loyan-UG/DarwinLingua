@@ -2,6 +2,7 @@ using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 
 namespace DarwinLingua.WebApi.Services;
@@ -54,6 +55,7 @@ public interface IWebsiteCatalogQueryService
 
     Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(
         IReadOnlyCollection<Guid> wordIds,
+        string? targetLearningLanguageCode,
         string meaningLanguageCode,
         CancellationToken cancellationToken);
 }
@@ -129,6 +131,7 @@ internal sealed class WebsiteCatalogQueryService(
 
     public async Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(
         IReadOnlyCollection<Guid> wordIds,
+        string? targetLearningLanguageCode,
         string meaningLanguageCode,
         CancellationToken cancellationToken)
     {
@@ -145,6 +148,7 @@ internal sealed class WebsiteCatalogQueryService(
             .Where(static id => id != Guid.Empty)
             .Distinct()
             .ToArray();
+        LanguageCode targetLanguageCode = LanguageCode.From(TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode));
 
         if (normalizedWordIds.Length == 0)
         {
@@ -156,7 +160,10 @@ internal sealed class WebsiteCatalogQueryService(
             .AsSplitQuery()
             .Include(word => word.Senses)
                 .ThenInclude(sense => sense.Translations)
-            .Where(word => normalizedWordIds.Contains(word.PublicId) && word.PublicationStatus == PublicationStatus.Active)
+            .Where(word =>
+                normalizedWordIds.Contains(word.PublicId) &&
+                word.PublicationStatus == PublicationStatus.Active &&
+                word.LanguageCode == targetLanguageCode)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 

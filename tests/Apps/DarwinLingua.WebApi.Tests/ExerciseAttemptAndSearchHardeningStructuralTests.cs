@@ -12,7 +12,7 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
 
         Assert.Contains("MapPost(", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/learning/exercises/{slug}/attempts\"", program, StringComparison.Ordinal);
-        Assert.Contains("attemptService.SubmitAttemptAsync( slug, request, GetRequiredUserId(principal), primaryMeaningLanguageCode ?? \"en\", cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("attemptService.SubmitAttemptAsync( slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), request, GetRequiredUserId(principal), primaryMeaningLanguageCode ?? \"en\", cancellationToken)", normalized, StringComparison.Ordinal);
         Assert.Contains(".RequireAuthorization()", program, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"ExerciseAttempts\")", program, StringComparison.Ordinal);
         Assert.DoesNotContain("Identity?.Name ?? \"anonymous\"", program, StringComparison.Ordinal);
@@ -26,7 +26,7 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
 
         Assert.Contains("MapPost(", program, StringComparison.Ordinal);
         Assert.Contains("\"/api/catalog/exercises/{slug}/evaluate\"", program, StringComparison.Ordinal);
-        Assert.Contains("attemptService.EvaluateAttemptAsync( slug, request, primaryMeaningLanguageCode ?? \"en\", cancellationToken)", normalized, StringComparison.Ordinal);
+        Assert.Contains("attemptService.EvaluateAttemptAsync( slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), request, primaryMeaningLanguageCode ?? \"en\", cancellationToken)", normalized, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"ExerciseAttempts\")", program, StringComparison.Ordinal);
     }
 
@@ -42,7 +42,9 @@ public sealed class ExerciseAttemptAndSearchHardeningStructuralTests
         Assert.Contains("string? resultType", program, StringComparison.Ordinal);
         Assert.Contains("string? category", program, StringComparison.Ordinal);
         Assert.Contains("string? topicKey", program, StringComparison.Ordinal);
+        Assert.Contains("string? targetLearningLanguageCode", program, StringComparison.Ordinal);
         Assert.Contains("bool? includeSensitiveEducationalLanguage", program, StringComparison.Ordinal);
+        Assert.Contains("ResolveTargetLearningLanguageCode(targetLearningLanguageCode)", program, StringComparison.Ordinal);
         Assert.Contains(".RequireRateLimiting(\"CatalogSearch\")", program, StringComparison.Ordinal);
         Assert.Contains("AddPolicy(\"CatalogSearch\"", program, StringComparison.Ordinal);
     }

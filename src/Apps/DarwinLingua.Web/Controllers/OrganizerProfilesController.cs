@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("organizers")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.OrganizerProfiles)]
 public sealed class OrganizerProfilesController(
     IWebCatalogApiClient catalogApiClient,
     ICommunityNotificationEmailService notificationEmailService,
@@ -22,13 +22,14 @@ public sealed class OrganizerProfilesController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<OrganizerProfileListItemModel> profiles;
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
 
         try
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             profiles = await catalogApiClient
-                .GetOrganizerProfilesAsync(catalogTimeout.Token)
+                .GetOrganizerProfilesAsync(targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -44,9 +45,10 @@ public sealed class OrganizerProfilesController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         OrganizerProfileDetailModel? profile;
@@ -56,7 +58,7 @@ public sealed class OrganizerProfilesController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             profile = await catalogApiClient
-                .GetOrganizerProfileBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .GetOrganizerProfileBySlugAsync(normalizedSlug, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -76,9 +78,10 @@ public sealed class OrganizerProfilesController(
     public async Task<IActionResult> Claim(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         OrganizerProfileDetailModel? profile;
@@ -88,7 +91,7 @@ public sealed class OrganizerProfilesController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             profile = await catalogApiClient
-                .GetOrganizerProfileBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .GetOrganizerProfileBySlugAsync(normalizedSlug, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -119,9 +122,10 @@ public sealed class OrganizerProfilesController(
         CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         OrganizerProfileDetailModel? profile;
@@ -131,14 +135,14 @@ public sealed class OrganizerProfilesController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             profile = await catalogApiClient
-                .GetOrganizerProfileBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .GetOrganizerProfileBySlugAsync(normalizedSlug, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Organizer claim submit could not load profile {Slug}.", normalizedSlug);
             TempData["ErrorMessage"] = localizer["Claim request could not be submitted right now. Please try again."].Value;
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         if (profile is null)
@@ -193,7 +197,7 @@ public sealed class OrganizerProfilesController(
                 .ConfigureAwait(false);
 
             TempData["StatusMessage"] = localizer["Claim request submitted for review."].Value;
-            return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
+            return RedirectToAction(nameof(Detail), new { targetLearningLanguageCode, slug = normalizedSlug });
         }
         catch (InvalidOperationException exception)
         {

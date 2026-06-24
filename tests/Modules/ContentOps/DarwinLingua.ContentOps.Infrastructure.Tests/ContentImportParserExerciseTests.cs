@@ -19,6 +19,8 @@ public sealed class ContentImportParserExerciseTests
               "packageVersion": "1.0",
               "packageId": "exercise-contract-test",
               "packageName": "Exercise Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "defaultMeaningLanguages": ["en"],
               "entries": [],
               "exercises": [

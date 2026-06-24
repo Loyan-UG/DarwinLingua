@@ -34,6 +34,7 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
                 "UiLanguageCode" character varying(16) NOT NULL,
                 "PrimaryMeaningLanguageCode" character varying(16) NOT NULL,
                 "SecondaryMeaningLanguageCode" character varying(16) NULL,
+                "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de',
                 "AllowsRudeSlangContent" boolean NOT NULL DEFAULT FALSE,
                 "AdultContentAccessState" character varying(64) NOT NULL DEFAULT 'not-requested',
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
@@ -50,6 +51,7 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             CREATE TABLE IF NOT EXISTS "WebUserWordStates" (
                 "Id" uuid NOT NULL CONSTRAINT "PK_WebUserWordStates" PRIMARY KEY,
                 "ActorId" character varying(128) NOT NULL,
+                "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de',
                 "WordPublicId" uuid NOT NULL,
                 "IsKnown" boolean NOT NULL,
                 "IsDifficult" boolean NOT NULL,
@@ -166,6 +168,8 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ALTER TABLE "WebEmailDeliveryLogs" ADD COLUMN IF NOT EXISTS "ProviderLastEventReason" character varying(512) NULL;
             ALTER TABLE "WebUserPreferences" ADD COLUMN IF NOT EXISTS "AllowsRudeSlangContent" boolean NOT NULL DEFAULT FALSE;
             ALTER TABLE "WebUserPreferences" ADD COLUMN IF NOT EXISTS "AdultContentAccessState" character varying(64) NOT NULL DEFAULT 'not-requested';
+            ALTER TABLE "WebUserPreferences" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+            ALTER TABLE "WebUserWordStates" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
             """,
             cancellationToken)
             .ConfigureAwait(false);
@@ -176,10 +180,12 @@ public sealed class WebUserStateDatabaseBootstrapper(WebIdentityDbContext dbCont
             ON "WebUserPreferences" ("ActorId");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebUserFavoriteWords_ActorId_WordPublicId"
             ON "WebUserFavoriteWords" ("ActorId", "WordPublicId");
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebUserWordStates_ActorId_WordPublicId"
-            ON "WebUserWordStates" ("ActorId", "WordPublicId");
-            CREATE INDEX IF NOT EXISTS "IX_WebUserWordStates_ActorId_LastViewedAtUtc"
-            ON "WebUserWordStates" ("ActorId", "LastViewedAtUtc");
+            DROP INDEX IF EXISTS "IX_WebUserWordStates_ActorId_WordPublicId";
+            DROP INDEX IF EXISTS "IX_WebUserWordStates_ActorId_LastViewedAtUtc";
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_WebUserWordStates_Actor_Target_Word"
+            ON "WebUserWordStates" ("ActorId", "TargetLearningLanguageCode", "WordPublicId");
+            CREATE INDEX IF NOT EXISTS "IX_WebUserWordStates_Actor_Target_LastViewed"
+            ON "WebUserWordStates" ("ActorId", "TargetLearningLanguageCode", "LastViewedAtUtc");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_CreatedAtUtc_Status"
             ON "WebEmailDeliveryLogs" ("CreatedAtUtc", "Status");
             CREATE INDEX IF NOT EXISTS "IX_WebEmailDeliveryLogs_Status_CreatedAtUtc"

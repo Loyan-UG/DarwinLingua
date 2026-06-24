@@ -11,9 +11,15 @@ internal sealed class WritingTemplateQueryService(IWritingTemplateRepository rep
     public Task<IReadOnlyList<WritingTemplateListItemModel>> GetPublishedWritingTemplatesAsync(WritingTemplateListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
         repository.GetPublishedWritingTemplatesAsync(filter, primaryMeaningLanguageCode, cancellationToken);
 
+    public Task<IReadOnlyList<WritingTemplateListItemModel>> GetPublishedWritingTemplatesAsync(WritingTemplateListFilterModel filter, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedWritingTemplatesAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
+
     public Task<WritingTemplateDetailModel?> GetPublishedWritingTemplateBySlugAsync(string slug, CancellationToken cancellationToken) =>
         repository.GetPublishedWritingTemplateBySlugAsync(slug, null, cancellationToken);
 
     public Task<WritingTemplateDetailModel?> GetPublishedWritingTemplateBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
         repository.GetPublishedWritingTemplateBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
+
+    public Task<WritingTemplateDetailModel?> GetPublishedWritingTemplateBySlugAsync(string slug, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        repository.GetPublishedWritingTemplateBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
 }

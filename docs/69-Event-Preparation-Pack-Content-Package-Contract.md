@@ -1,5 +1,12 @@
 # Event Preparation Pack Content Package Contract
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
 This document defines the Phase 6 JSON contract for event preparation packs before event-directory UI work.
 
 Event Preparation Packs can include lightweight `roleplayPrompts`, but those prompts are not standalone RoleplayScenario content. They are short preparation instructions for a real-life event context. Standalone scripted roleplays use the top-level `roleplayScenarios` array and are governed by `docs/70-Roleplay-Content-Package-Contract.md`.

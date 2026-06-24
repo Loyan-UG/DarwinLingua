@@ -1,6 +1,7 @@
 using DarwinLingua.ContentOps.Domain.Enums;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.ContentOps.Domain.Entities;
 
@@ -23,7 +24,10 @@ public sealed class ContentPackage
         ContentSourceType sourceType,
         string inputFileName,
         int totalEntries,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null,
+        string? levelSystemCode = null,
+        string? countryContextCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -39,6 +43,11 @@ public sealed class ContentPackage
         PackageId = NormalizeRequiredText(packageId, nameof(packageId));
         PackageVersion = NormalizeRequiredText(packageVersion, nameof(packageVersion));
         PackageName = NormalizeRequiredText(packageName, nameof(packageName));
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(
+            targetLearningLanguageCode,
+            "Content package target learning language");
+        LevelSystemCode = NormalizeOptionalText(levelSystemCode);
+        CountryContextCode = NormalizeOptionalText(countryContextCode)?.ToUpperInvariant();
         SourceType = sourceType;
         InputFileName = NormalizeRequiredText(inputFileName, nameof(inputFileName));
         TotalEntries = totalEntries;
@@ -54,6 +63,12 @@ public sealed class ContentPackage
     public string PackageVersion { get; private set; } = string.Empty;
 
     public string PackageName { get; private set; } = string.Empty;
+
+    public string TargetLearningLanguageCode { get; private set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
+
+    public string? LevelSystemCode { get; private set; }
+
+    public string? CountryContextCode { get; private set; }
 
     public ContentSourceType SourceType { get; private set; }
 
@@ -158,6 +173,9 @@ public sealed class ContentPackage
 
         return value.Trim();
     }
+
+    private static string? NormalizeOptionalText(string? value) =>
+        string.IsNullOrWhiteSpace(value) ? null : value.Trim();
 
     private static DateTime NormalizeUtc(DateTime value, string parameterName)
     {

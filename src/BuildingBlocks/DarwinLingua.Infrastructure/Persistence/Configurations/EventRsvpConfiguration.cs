@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,12 +13,19 @@ internal sealed class EventRsvpConfiguration : IEntityTypeConfiguration<EventRsv
         builder.HasKey(rsvp => rsvp.Id);
         builder.Property(rsvp => rsvp.Id).ValueGeneratedNever();
         builder.Property(rsvp => rsvp.ConversationEventSlug).HasMaxLength(128).IsRequired();
+        builder.Property(rsvp => rsvp.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .IsRequired()
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
         builder.Property(rsvp => rsvp.ParticipantName).HasMaxLength(256).IsRequired();
         builder.Property(rsvp => rsvp.ParticipantEmail).HasMaxLength(320).IsRequired();
         builder.Property(rsvp => rsvp.Status).HasMaxLength(64).IsRequired();
         builder.Property(rsvp => rsvp.CreatedAtUtc).IsRequired();
         builder.Property(rsvp => rsvp.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(rsvp => new { rsvp.ConversationEventSlug, rsvp.ParticipantEmail }).IsUnique();
-        builder.HasIndex(rsvp => new { rsvp.ConversationEventSlug, rsvp.Status });
+        builder.HasIndex(rsvp => new { rsvp.TargetLearningLanguageCode, rsvp.ConversationEventSlug, rsvp.ParticipantEmail })
+            .HasDatabaseName("IX_EventRsvps_Target_EventEmail")
+            .IsUnique();
+        builder.HasIndex(rsvp => new { rsvp.TargetLearningLanguageCode, rsvp.ConversationEventSlug, rsvp.Status })
+            .HasDatabaseName("IX_EventRsvps_Target_EventStatus");
     }
 }

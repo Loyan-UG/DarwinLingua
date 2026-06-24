@@ -3,6 +3,7 @@ using DarwinLingua.Learning.Application.DependencyInjection;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Learning.Domain.Entities;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.Learning.Application.Tests;
@@ -18,9 +19,11 @@ public sealed class UserContentProgressServiceTests
 
         UserContentProgressModel result = await service.UpdateContentProgressAsync(
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             new UpdateUserContentProgressRequestModel("course-lesson", "a1-lesson-1", "viewed"),
             CancellationToken.None);
 
+        Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, result.TargetLearningLanguageCode);
         Assert.Equal("viewed", result.State);
         Assert.Equal(1, result.ViewCount);
     }
@@ -34,6 +37,7 @@ public sealed class UserContentProgressServiceTests
 
         await Assert.ThrowsAsync<DomainRuleException>(() => service.UpdateContentProgressAsync(
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             new UpdateUserContentProgressRequestModel("unknown", "a1-lesson-1", "viewed"),
             CancellationToken.None));
     }
@@ -47,14 +51,19 @@ public sealed class UserContentProgressServiceTests
 
         await service.UpdateContentProgressAsync(
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             new UpdateUserContentProgressRequestModel("grammar-topic", "a1-articles", "completed"),
             CancellationToken.None);
         await service.UpdateContentProgressAsync(
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             new UpdateUserContentProgressRequestModel("expression", "guten-morgen", "needs-review"),
             CancellationToken.None);
 
-        LearningProgressSummaryModel summary = await service.GetSummaryAsync("user-1", CancellationToken.None);
+        LearningProgressSummaryModel summary = await service.GetSummaryAsync(
+            "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            CancellationToken.None);
 
         Assert.Equal(2, summary.TotalTracked);
         Assert.Equal(1, summary.CompletedCount);
@@ -71,10 +80,15 @@ public sealed class UserContentProgressServiceTests
 
         await service.UpdateContentProgressAsync(
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             new UpdateUserContentProgressRequestModel("course-lesson", "a1-lesson-1", "completed"),
             CancellationToken.None);
 
-        IReadOnlyList<LearningRecommendationModel> result = await service.GetRecommendationsAsync("user-1", 5, CancellationToken.None);
+        IReadOnlyList<LearningRecommendationModel> result = await service.GetRecommendationsAsync(
+            "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            5,
+            CancellationToken.None);
 
         Assert.Single(result);
         Assert.Equal("a1-lesson-2", result[0].ContentOwnerSlug);
@@ -97,6 +111,7 @@ public sealed class UserContentProgressServiceTests
 
         public Task<UserContentProgress?> GetByUserAndContentAsync(
             string userId,
+            string targetLearningLanguageCode,
             string contentOwnerType,
             string contentOwnerSlug,
             CancellationToken cancellationToken)
@@ -104,10 +119,11 @@ public sealed class UserContentProgressServiceTests
             string normalizedType = contentOwnerType.Trim().ToLowerInvariant();
             string normalizedSlug = contentOwnerSlug.Trim().ToLowerInvariant();
             return Task.FromResult(_items.SingleOrDefault(
-                item =>
-                    item.UserId == userId &&
-                    item.ContentOwnerType == normalizedType &&
-                    item.ContentOwnerSlug == normalizedSlug));
+                    item =>
+                        item.UserId == userId &&
+                        item.TargetLearningLanguageCode == targetLearningLanguageCode &&
+                        item.ContentOwnerType == normalizedType &&
+                        item.ContentOwnerSlug == normalizedSlug));
         }
 
         public Task AddAsync(UserContentProgress progress, CancellationToken cancellationToken)
@@ -121,11 +137,12 @@ public sealed class UserContentProgressServiceTests
 
         public Task<IReadOnlyList<UserContentProgress>> GetUserProgressAsync(
             string userId,
+            string targetLearningLanguageCode,
             int recentItemCount,
             CancellationToken cancellationToken)
         {
             IReadOnlyList<UserContentProgress> result = _items
-                .Where(item => item.UserId == userId)
+                .Where(item => item.UserId == userId && item.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .OrderByDescending(item => item.UpdatedAtUtc)
                 .Take(recentItemCount)
                 .ToArray();
@@ -138,6 +155,7 @@ public sealed class UserContentProgressServiceTests
     {
         public Task<IReadOnlyList<LearningRecommendationModel>> GetDeterministicRecommendationsAsync(
             string userId,
+            string targetLearningLanguageCode,
             IReadOnlySet<string> completedContentKeys,
             int maxRecommendations,
             CancellationToken cancellationToken)

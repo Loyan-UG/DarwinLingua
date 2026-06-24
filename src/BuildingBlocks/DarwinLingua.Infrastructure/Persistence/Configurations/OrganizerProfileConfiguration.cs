@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -50,9 +51,15 @@ internal sealed class OrganizerProfileSupportedLevelConfiguration : IEntityTypeC
         builder.Property(level => level.Id).ValueGeneratedNever();
         builder.Property(level => level.OrganizerProfileId).IsRequired();
         builder.Property(level => level.CefrLevel).HasConversion<string>().HasMaxLength(8).IsRequired();
+        builder.Property(level => level.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .IsRequired()
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
         builder.Property(level => level.SortOrder).IsRequired();
         builder.Property(level => level.CreatedAtUtc).IsRequired();
-        builder.HasIndex(level => new { level.OrganizerProfileId, level.CefrLevel }).IsUnique();
+        builder.HasIndex(level => new { level.OrganizerProfileId, level.TargetLearningLanguageCode, level.CefrLevel })
+            .HasDatabaseName("IX_OrganizerProfileLevels_Target_Level")
+            .IsUnique();
     }
 }
 

@@ -19,6 +19,8 @@ public sealed class ContentImportParserExamPrepTests
               "packageVersion": "1.0",
               "packageId": "exam-prep-contract-test",
               "packageName": "Exam Prep Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "defaultMeaningLanguages": ["en"],
               "entries": [],
               "examProfiles": [

@@ -9,7 +9,8 @@ public sealed record UserLearningProfileModel(
     string? PreferredMeaningLanguage2,
     string UiLanguageCode,
     bool AllowsRudeSlangContent = false,
-    string AdultContentAccessState = "not-requested")
+    string AdultContentAccessState = "not-requested",
+    string TargetLearningLanguageCode = "de")
 {
     /// <summary>
     /// Gets the active meaning-language codes in display order.

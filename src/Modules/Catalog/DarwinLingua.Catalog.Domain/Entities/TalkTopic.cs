@@ -19,6 +19,7 @@ public sealed partial class TalkTopic
 
     private TalkTopic()
     {
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public TalkTopic(
@@ -38,9 +39,11 @@ public sealed partial class TalkTopic
         bool recommendedForModeratedGroupsOnly,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Talk topic identifier cannot be empty.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Talk topic target learning language");
         Slug = NormalizeKey(slug, "Talk topic slug");
         TopicGroupKey = NormalizeKey(topicGroupKey, "Talk topic group key");
         Title = NormalizeRequiredText(title, nameof(title), 256);
@@ -61,6 +64,8 @@ public sealed partial class TalkTopic
     }
 
     public Guid Id { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; }
 
     public string Slug { get; private set; } = string.Empty;
 

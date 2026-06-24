@@ -8,7 +8,7 @@
     <h1 class="headline-md">@T["Reading topics for real conversation"]</h1>
     <p class="body-lg">@T["Read a short German text, review important words, then discuss opinions and ideas together."]</p>
 
-    <form class="search-form" method="get" asp-controller="TalkTopics" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="TalkTopics" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
@@ -52,7 +52,7 @@ else
                     <span>@T["{0} min read", talkTopic.EstimatedReadingMinutes]</span>
                 </div>
                 <h2 class="headline-sm">
-                    <a asp-controller="TalkTopics" asp-action="Detail" asp-route-slug="@talkTopic.Slug">@talkTopic.Title</a>
+                    <a asp-controller="TalkTopics" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@talkTopic.Slug">@talkTopic.Title</a>
                 </h2>
                 <p>@talkTopic.Description</p>
                 @if (talkTopic.IsSensitive)
@@ -64,12 +64,12 @@ else
                     <div class="chip-grid">
                         @foreach (string topicKey in talkTopic.TopicKeys)
                         {
-                            <a class="chip-link" asp-controller="TalkTopics" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                            <a class="chip-link" asp-controller="TalkTopics" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
                         }
                     </div>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="TalkTopics" asp-action="Detail" asp-route-slug="@talkTopic.Slug">@T["Open Talk Topic"]</a>
+                    <a class="button button--secondary" asp-controller="TalkTopics" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@talkTopic.Slug">@T["Open Talk Topic"]</a>
                 </div>
             </article>
         }

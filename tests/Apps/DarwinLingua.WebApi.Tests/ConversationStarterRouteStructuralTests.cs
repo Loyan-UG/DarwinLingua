@@ -14,7 +14,9 @@ public sealed class ConversationStarterRouteStructuralTests
 
         Assert.Contains("\"/api/catalog/conversation-starters\"", apiProgramSource, StringComparison.Ordinal);
         Assert.Contains("\"/api/catalog/conversation-starters/{slug}\"", apiProgramSource, StringComparison.Ordinal);
-        Assert.Contains("[Route(\"conversation-starters\")", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("[Route(DarwinLingua.Web.Services.LearningRouteConventions.ConversationStarters)]", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("ResolveTargetLearningLanguageCode(HttpContext)", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", apiProgramSource, StringComparison.Ordinal);
         Assert.Contains("GetConversationStarterPacksAsync", controllerSource, StringComparison.Ordinal);
         Assert.Contains("GetConversationStarterPackBySlugAsync", controllerSource, StringComparison.Ordinal);
         Assert.Contains("ResolveSecondaryMeaningLanguageAsync", controllerSource, StringComparison.Ordinal);

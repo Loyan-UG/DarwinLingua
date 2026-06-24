@@ -10,6 +10,9 @@ public sealed record ParsedContentPackageModel(
     string PackageId,
     string PackageName,
     string? Source,
+    string TargetLearningLanguageCode,
+    string? LevelSystemCode,
+    string? CountryContextCode,
     IReadOnlyList<string> DefaultMeaningLanguages,
     IReadOnlyList<ParsedContentEntryModel> Entries,
     IReadOnlyList<ParsedContentLabelDefinitionModel> Labels,
@@ -23,7 +26,42 @@ public sealed record ParsedContentPackageModel(
         IReadOnlyList<string> defaultMeaningLanguages,
         IReadOnlyList<ParsedContentEntryModel> entries,
         IReadOnlyList<ParsedContentCollectionModel> collections)
-        : this(packageVersion, packageId, packageName, source, defaultMeaningLanguages, entries, CreateCompatibilityLabels(), collections)
+        : this(
+            packageVersion,
+            packageId,
+            packageName,
+            source,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            LearningLevelSystemCatalog.CefrCode,
+            null,
+            defaultMeaningLanguages,
+            entries,
+            CreateCompatibilityLabels(),
+            collections)
+    {
+    }
+
+    public ParsedContentPackageModel(
+        string packageVersion,
+        string packageId,
+        string packageName,
+        string? source,
+        IReadOnlyList<string> defaultMeaningLanguages,
+        IReadOnlyList<ParsedContentEntryModel> entries,
+        IReadOnlyList<ParsedContentLabelDefinitionModel> labels,
+        IReadOnlyList<ParsedContentCollectionModel> collections)
+        : this(
+            packageVersion,
+            packageId,
+            packageName,
+            source,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+            LearningLevelSystemCatalog.CefrCode,
+            null,
+            defaultMeaningLanguages,
+            entries,
+            labels,
+            collections)
     {
     }
 
@@ -68,7 +106,7 @@ public sealed record ParsedContentPackageModel(
 
     public IReadOnlyList<ParsedWritingTemplateModel> WritingTemplates { get; init; } = [];
 
-    public IReadOnlyList<ParsedCulturalNoteModel> CulturalNotes { get; init; } = [];
+    public IReadOnlyList<ParsedCountryGuidanceNoteModel> CountryGuidanceNotes { get; init; } = [];
 
     public IReadOnlyList<ParsedExamProfileModel> ExamProfiles { get; init; } = [];
 

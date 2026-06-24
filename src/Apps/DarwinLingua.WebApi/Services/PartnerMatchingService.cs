@@ -45,10 +45,10 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
             query = query.Where(profile => profile.InteractionPreference == interactionPreference || profile.InteractionPreference == "both");
         }
 
-        if (!string.IsNullOrWhiteSpace(request.GermanLevel))
+        if (!string.IsNullOrWhiteSpace(request.LearningLevel))
         {
-            string germanLevel = NormalizeCefrLevel(request.GermanLevel);
-            query = query.Where(profile => profile.GermanLevel == germanLevel);
+            string learningLevel = NormalizeCefrLevel(request.LearningLevel);
+            query = query.Where(profile => profile.LearningLevel == learningLevel);
         }
 
         if (!string.IsNullOrWhiteSpace(request.HelperLanguageCode))
@@ -65,7 +65,7 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
 
         LearnerConversationProfile[] profiles = await query
             .OrderBy(profile => profile.CityRegion)
-            .ThenBy(profile => profile.GermanLevel)
+            .ThenBy(profile => profile.LearningLevel)
             .ThenBy(profile => profile.DisplayName)
             .Take(50)
             .ToArrayAsync(cancellationToken)
@@ -420,7 +420,7 @@ public sealed class PartnerMatchingService(IDbContextFactory<DarwinLinguaDbConte
             profile.DisplayName,
             profile.CityRegion,
             profile.InteractionPreference,
-            profile.GermanLevel,
+            profile.LearningLevel,
             SplitLanguageCodes(profile.HelperLanguageCodes),
             profile.ConversationGoals,
             profile.Visibility);

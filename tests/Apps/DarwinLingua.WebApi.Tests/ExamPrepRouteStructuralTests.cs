@@ -33,9 +33,10 @@ public sealed class ExamPrepRouteStructuralTests
         Assert.Contains("[HttpGet(\"profile/{examProfileKey}\"", controllerSource, StringComparison.Ordinal);
         Assert.Contains("RenderIndexAsync(filter", controllerSource, StringComparison.Ordinal);
         Assert.Contains("View(\"Index\"", controllerSource, StringComparison.Ordinal);
-        Assert.Contains("GetExamProfilesAsync(primaryMeaningLanguageCode", controllerSource, StringComparison.Ordinal);
-        Assert.Contains("GetExamPrepUnitsAsync(filter, primaryMeaningLanguageCode", controllerSource, StringComparison.Ordinal);
-        Assert.Contains("GetExamPrepUnitBySlugAsync(slug, primaryMeaningLanguageCode", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("GetExamProfilesAsync(targetLearningLanguageCode, primaryMeaningLanguageCode", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("GetExamPrepUnitsAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("GetExamPrepUnitBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode", controllerSource, StringComparison.Ordinal);
         Assert.Contains("PrimaryMeaningLanguageCode", viewModelSource, StringComparison.Ordinal);
         Assert.Contains("selectedProfile", indexSource, StringComparison.Ordinal);
         Assert.Contains("selectedProfile.DisplayName", indexSource, StringComparison.Ordinal);

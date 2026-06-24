@@ -1,4 +1,5 @@
 using DarwinLingua.ContentOps.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -32,6 +33,17 @@ internal sealed class ContentPackageConfiguration : IEntityTypeConfiguration<Con
             .HasMaxLength(256)
             .IsRequired();
 
+        builder.Property(contentPackage => contentPackage.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
+
+        builder.Property(contentPackage => contentPackage.LevelSystemCode)
+            .HasMaxLength(32);
+
+        builder.Property(contentPackage => contentPackage.CountryContextCode)
+            .HasMaxLength(8);
+
         builder.Property(contentPackage => contentPackage.SourceType)
             .HasConversion<string>()
             .HasMaxLength(32)
@@ -52,7 +64,7 @@ internal sealed class ContentPackageConfiguration : IEntityTypeConfiguration<Con
         builder.Property(contentPackage => contentPackage.UpdatedAtUtc)
             .IsRequired();
 
-        builder.HasIndex(contentPackage => contentPackage.PackageId)
+        builder.HasIndex(contentPackage => new { contentPackage.TargetLearningLanguageCode, contentPackage.PackageId })
             .IsUnique();
 
         builder.HasMany(contentPackage => contentPackage.Entries)

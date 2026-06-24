@@ -24,7 +24,8 @@ public sealed class UserLearningProfile
         LanguageCode preferredMeaningLanguage1,
         LanguageCode? preferredMeaningLanguage2,
         LanguageCode uiLanguageCode,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        LanguageCode? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -36,6 +37,7 @@ public sealed class UserLearningProfile
         PreferredMeaningLanguage1 = preferredMeaningLanguage1;
         PreferredMeaningLanguage2 = NormalizeSecondaryMeaningLanguage(preferredMeaningLanguage1, preferredMeaningLanguage2);
         UiLanguageCode = uiLanguageCode;
+        TargetLearningLanguageCode = targetLearningLanguageCode ?? LanguageCode.From(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
         CreatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
         UpdatedAtUtc = CreatedAtUtc;
     }
@@ -64,6 +66,11 @@ public sealed class UserLearningProfile
     /// Gets the selected UI language code.
     /// </summary>
     public LanguageCode UiLanguageCode { get; private set; }
+
+    /// <summary>
+    /// Gets the language this learner is currently learning.
+    /// </summary>
+    public LanguageCode TargetLearningLanguageCode { get; private set; } = LanguageCode.From(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
 
     /// <summary>
     /// Gets the UTC creation timestamp.
@@ -106,6 +113,15 @@ public sealed class UserLearningProfile
     public void UpdateUiLanguage(LanguageCode uiLanguageCode, DateTime updatedAtUtc)
     {
         UiLanguageCode = uiLanguageCode;
+        UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
+    }
+
+    /// <summary>
+    /// Updates the persisted target learning language preference.
+    /// </summary>
+    public void UpdateTargetLearningLanguage(LanguageCode targetLearningLanguageCode, DateTime updatedAtUtc)
+    {
+        TargetLearningLanguageCode = targetLearningLanguageCode;
         UpdatedAtUtc = NormalizeUtc(updatedAtUtc, nameof(updatedAtUtc));
     }
 

@@ -2,6 +2,7 @@ namespace DarwinLingua.WebApi.Models;
 
 public sealed record AdminSaveConversationEventRequest(
     string Slug,
+    string TargetLearningLanguageCode,
     string Name,
     string Description,
     string? City,

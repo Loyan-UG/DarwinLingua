@@ -209,6 +209,7 @@ internal sealed class UserLearningProfileService : IUserLearningProfileService
             profile.UserId,
             profile.PreferredMeaningLanguage1.Value,
             profile.PreferredMeaningLanguage2?.Value,
-            profile.UiLanguageCode.Value);
+            profile.UiLanguageCode.Value,
+            TargetLearningLanguageCode: profile.TargetLearningLanguageCode.Value);
     }
 }

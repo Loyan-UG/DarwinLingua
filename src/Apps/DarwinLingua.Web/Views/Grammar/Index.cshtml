@@ -8,7 +8,7 @@
     <h1 class="headline-md">@T["Grammar topics for structured German learning"]</h1>
     <p class="body-lg">@T["Review grammar explanations in your learning language while keeping German examples at the center."]</p>
 
-    <form class="search-form" method="get" asp-controller="Grammar" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search grammar"]" aria-label="@T["Search grammar"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
@@ -47,7 +47,7 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@topic.CefrLevel · @T[topic.GrammarCategory]</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="Grammar" asp-action="Detail" asp-route-slug="@topic.Slug">@topic.Title</a>
+                    <a asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@topic.Slug">@topic.Title</a>
                 </h2>
                 <p>@topic.ShortDescription</p>
                 @if (topic.TopicKeys.Count > 0)
@@ -55,12 +55,12 @@ else
                     <div class="chip-grid">
                         @foreach (string topicKey in topic.TopicKeys)
                         {
-                            <a class="chip-link" asp-controller="Grammar" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                            <a class="chip-link" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
                         }
                     </div>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="Grammar" asp-action="Detail" asp-route-slug="@topic.Slug">@T["Open Grammar Topic"]</a>
+                    <a class="button button--secondary" asp-controller="Grammar" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@topic.Slug">@T["Open Grammar Topic"]</a>
                 </div>
             </article>
         }

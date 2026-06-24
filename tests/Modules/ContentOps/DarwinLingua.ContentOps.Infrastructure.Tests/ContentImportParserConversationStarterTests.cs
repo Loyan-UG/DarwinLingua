@@ -22,6 +22,8 @@ public sealed class ContentImportParserConversationStarterTests
               "packageVersion": "1.0",
               "packageId": "conversation-starter-contract-test",
               "packageName": "Conversation Starter Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en", "fa"],
               "entries": [],

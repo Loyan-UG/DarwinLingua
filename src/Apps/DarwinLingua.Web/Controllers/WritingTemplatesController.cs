@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("writing-templates")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.WritingTemplates)]
 public sealed class WritingTemplatesController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -36,6 +36,7 @@ public sealed class WritingTemplatesController(
             string.IsNullOrWhiteSpace(q) ? null : q.Trim());
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = string.IsNullOrWhiteSpace(profile.PreferredMeaningLanguage1) ? "en" : profile.PreferredMeaningLanguage1;
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
@@ -43,10 +44,10 @@ public sealed class WritingTemplatesController(
         IReadOnlyList<WritingTemplateListItemModel> secondaryTemplates = [];
         try
         {
-            templates = await catalogApiClient.GetWritingTemplatesAsync(filter, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+            templates = await catalogApiClient.GetWritingTemplatesAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
             if (!string.IsNullOrWhiteSpace(secondaryMeaningLanguageCode))
             {
-                secondaryTemplates = await catalogApiClient.GetWritingTemplatesAsync(filter, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+                secondaryTemplates = await catalogApiClient.GetWritingTemplatesAsync(filter, targetLearningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
             }
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or OperationCanceledException)
@@ -83,10 +84,11 @@ public sealed class WritingTemplatesController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = string.IsNullOrWhiteSpace(profile.PreferredMeaningLanguage1) ? "en" : profile.PreferredMeaningLanguage1;
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
-        WritingTemplateDetailModel? template = await catalogApiClient.GetWritingTemplateBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        WritingTemplateDetailModel? template = await catalogApiClient.GetWritingTemplateBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         if (template is null)
         {
             return NotFound();
@@ -94,7 +96,7 @@ public sealed class WritingTemplatesController(
 
         WritingTemplateDetailModel? secondaryLanguageTemplate = string.IsNullOrWhiteSpace(secondaryMeaningLanguageCode)
             ? null
-            : await catalogApiClient.GetWritingTemplateBySlugAsync(slug, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+            : await catalogApiClient.GetWritingTemplateBySlugAsync(slug, targetLearningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
 
         return View(new WritingTemplateDetailPageViewModel(template, secondaryLanguageTemplate, primaryMeaningLanguageCode, secondaryMeaningLanguageCode));
     }

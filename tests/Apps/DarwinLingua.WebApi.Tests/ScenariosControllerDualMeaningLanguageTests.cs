@@ -182,23 +182,27 @@ public sealed class DialoguesControllerDualMeaningLanguageTests
 
         public string? SecondaryMeaningLanguageCode { get; private set; }
 
+        public string? TargetLearningLanguageCode { get; private set; }
+
         public bool EventPreparationPacksWereRequested { get; private set; }
 
         public override Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
             string slug,
+            string targetLearningLanguageCode,
             string primaryMeaningLanguageCode,
             string? secondaryMeaningLanguageCode,
             CancellationToken cancellationToken)
         {
             Slug = slug;
+            TargetLearningLanguageCode = targetLearningLanguageCode;
             PrimaryMeaningLanguageCode = primaryMeaningLanguageCode;
             SecondaryMeaningLanguageCode = secondaryMeaningLanguageCode;
             return Task.FromResult<DialogueLessonDetailModel?>(dialogue);
         }
 
-        public override Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(string dialogueSlug, CancellationToken cancellationToken) => Task.FromResult<IReadOnlyList<ConversationStarterPackListItemModel>>([]);
+        public override Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(string dialogueSlug, string targetLearningLanguageCode, CancellationToken cancellationToken) => Task.FromResult<IReadOnlyList<ConversationStarterPackListItemModel>>([]);
 
-        public override Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, string actorEmail, CancellationToken cancellationToken)
+        public override Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(string dialogueSlug, string targetLearningLanguageCode, string actorEmail, CancellationToken cancellationToken)
         {
             EventPreparationPacksWereRequested = true;
             return Task.FromResult<IReadOnlyList<EventPreparationPackListItemModel>>([]);

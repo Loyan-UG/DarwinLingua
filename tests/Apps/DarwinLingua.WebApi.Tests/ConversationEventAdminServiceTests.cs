@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,7 @@ public sealed class ConversationEventAdminServiceTests
             IConversationEventQueryService queryService = serviceProvider.GetRequiredService<IConversationEventQueryService>();
             IReadOnlyList<ConversationEventListItemModel> events = await queryService.GetPublishedEventsAsync(
                 new ConversationEventListFilterModel("Berlin", "A1", "en", false, "free", "conversation-cafe"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
 
             Assert.Single(events);
@@ -131,6 +133,7 @@ public sealed class ConversationEventAdminServiceTests
         string verificationStatus) =>
         new(
             slug,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             name,
             "A manually reviewed language-practice event.",
             "Berlin",

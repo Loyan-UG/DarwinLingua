@@ -534,7 +534,7 @@ internal static class Program
             "courseModules",
             "courseLessons",
             "writingTemplates",
-            "culturalNotes",
+            "countryGuidanceNotes",
             "examProfiles",
             "examPrepUnits",
             "conversationStarterPacks",

@@ -1,4 +1,5 @@
 using DarwinLingua.Learning.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,38 +7,45 @@ namespace DarwinLingua.Web.Services;
 
 public interface IWebUserWordStateService
 {
-    Task<UserWordStateModel?> GetWordStateAsync(Guid wordPublicId, CancellationToken cancellationToken);
+    Task<UserWordStateModel?> GetWordStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken);
 
-    Task<UserWordStateModel> TrackWordViewedAsync(Guid wordPublicId, CancellationToken cancellationToken);
+    Task<UserWordStateModel> TrackWordViewedAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken);
 
-    Task<UserWordStateModel> MarkWordKnownAsync(Guid wordPublicId, CancellationToken cancellationToken);
+    Task<UserWordStateModel> MarkWordKnownAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken);
 
-    Task<UserWordStateModel> MarkWordDifficultAsync(Guid wordPublicId, CancellationToken cancellationToken);
+    Task<UserWordStateModel> MarkWordDifficultAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken);
 
-    Task<UserWordStateModel> ClearWordKnownStateAsync(Guid wordPublicId, CancellationToken cancellationToken);
+    Task<UserWordStateModel> ClearWordKnownStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken);
 
-    Task<UserWordStateModel> ClearWordDifficultStateAsync(Guid wordPublicId, CancellationToken cancellationToken);
+    Task<UserWordStateModel> ClearWordDifficultStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken);
 }
 
 internal sealed class WebUserWordStateService(
     IWebActorContextAccessor actorContextAccessor,
     WebIdentityDbContext dbContext) : IWebUserWordStateService
 {
-    public async Task<UserWordStateModel?> GetWordStateAsync(Guid wordPublicId, CancellationToken cancellationToken)
+    public async Task<UserWordStateModel?> GetWordStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken)
     {
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
+        string normalizedTargetLearningLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
 
         WebUserWordState? state = await dbContext.UserWordStates
             .AsNoTracking()
-            .SingleOrDefaultAsync(item => item.ActorId == actor.ActorId && item.WordPublicId == wordPublicId, cancellationToken)
+            .SingleOrDefaultAsync(
+                item =>
+                    item.ActorId == actor.ActorId &&
+                    item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                    item.WordPublicId == wordPublicId,
+                cancellationToken)
             .ConfigureAwait(false);
 
         return state is null ? null : Map(state);
     }
 
-    public Task<UserWordStateModel> TrackWordViewedAsync(Guid wordPublicId, CancellationToken cancellationToken) =>
+    public Task<UserWordStateModel> TrackWordViewedAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) =>
         UpdateAsync(
             wordPublicId,
+            targetLearningLanguageCode,
             static state =>
             {
                 DateTime now = DateTime.UtcNow;
@@ -48,9 +56,10 @@ internal sealed class WebUserWordStateService(
             },
             cancellationToken);
 
-    public Task<UserWordStateModel> MarkWordKnownAsync(Guid wordPublicId, CancellationToken cancellationToken) =>
+    public Task<UserWordStateModel> MarkWordKnownAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) =>
         UpdateAsync(
             wordPublicId,
+            targetLearningLanguageCode,
             static state =>
             {
                 state.IsKnown = true;
@@ -58,9 +67,10 @@ internal sealed class WebUserWordStateService(
             },
             cancellationToken);
 
-    public Task<UserWordStateModel> MarkWordDifficultAsync(Guid wordPublicId, CancellationToken cancellationToken) =>
+    public Task<UserWordStateModel> MarkWordDifficultAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) =>
         UpdateAsync(
             wordPublicId,
+            targetLearningLanguageCode,
             static state =>
             {
                 state.IsDifficult = true;
@@ -68,9 +78,10 @@ internal sealed class WebUserWordStateService(
             },
             cancellationToken);
 
-    public Task<UserWordStateModel> ClearWordKnownStateAsync(Guid wordPublicId, CancellationToken cancellationToken) =>
+    public Task<UserWordStateModel> ClearWordKnownStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) =>
         UpdateAsync(
             wordPublicId,
+            targetLearningLanguageCode,
             static state =>
             {
                 state.IsKnown = false;
@@ -78,9 +89,10 @@ internal sealed class WebUserWordStateService(
             },
             cancellationToken);
 
-    public Task<UserWordStateModel> ClearWordDifficultStateAsync(Guid wordPublicId, CancellationToken cancellationToken) =>
+    public Task<UserWordStateModel> ClearWordDifficultStateAsync(Guid wordPublicId, string targetLearningLanguageCode, CancellationToken cancellationToken) =>
         UpdateAsync(
             wordPublicId,
+            targetLearningLanguageCode,
             static state =>
             {
                 state.IsDifficult = false;
@@ -90,13 +102,20 @@ internal sealed class WebUserWordStateService(
 
     private async Task<UserWordStateModel> UpdateAsync(
         Guid wordPublicId,
+        string targetLearningLanguageCode,
         Action<WebUserWordState> update,
         CancellationToken cancellationToken)
     {
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
+        string normalizedTargetLearningLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
 
         WebUserWordState? state = await dbContext.UserWordStates
-            .SingleOrDefaultAsync(item => item.ActorId == actor.ActorId && item.WordPublicId == wordPublicId, cancellationToken)
+            .SingleOrDefaultAsync(
+                item =>
+                    item.ActorId == actor.ActorId &&
+                    item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                    item.WordPublicId == wordPublicId,
+                cancellationToken)
             .ConfigureAwait(false);
 
         if (state is null)
@@ -105,6 +124,7 @@ internal sealed class WebUserWordStateService(
             {
                 Id = Guid.NewGuid(),
                 ActorId = actor.ActorId,
+                TargetLearningLanguageCode = normalizedTargetLearningLanguageCode,
                 WordPublicId = wordPublicId,
                 CreatedAtUtc = DateTime.UtcNow,
                 UpdatedAtUtc = DateTime.UtcNow
@@ -118,6 +138,11 @@ internal sealed class WebUserWordStateService(
 
         return Map(state);
     }
+
+    private static string NormalizeTargetLearningLanguageCode(string targetLearningLanguageCode) =>
+        TargetLearningLanguageScope.NormalizeOrDefault(
+            targetLearningLanguageCode,
+            "Web user word state target learning language");
 
     private static UserWordStateModel Map(WebUserWordState state) =>
         new(

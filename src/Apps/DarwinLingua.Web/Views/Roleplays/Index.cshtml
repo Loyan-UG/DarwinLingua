@@ -12,7 +12,7 @@
     <h1 class="headline-md">@T["Roleplays"]</h1>
     <p class="body-lg">@T["Practice scripted situations with deterministic answer choices and static feedback."]</p>
 
-    <form method="get" class="search-form" asp-controller="Roleplays" asp-action="Index">
+    <form method="get" class="search-form" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
@@ -40,7 +40,7 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@roleplay.CefrLevel · @T[roleplay.Category] · @T[roleplay.TaskType]</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="Roleplays" asp-action="Detail" asp-route-slug="@roleplay.Slug">@roleplay.Title</a>
+                    <a asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@roleplay.Slug">@roleplay.Title</a>
                 </h2>
                 @if (!string.IsNullOrWhiteSpace(roleplay.LearnerLanguageTitle))
                 {
@@ -66,7 +66,7 @@ else
                     }
                 </div>
                 <div class="action-row">
-                    <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-action="Detail" asp-route-slug="@roleplay.Slug">@T["Start roleplay"]</a>
+                    <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@roleplay.Slug">@T["Start roleplay"]</a>
                 </div>
             </article>
         }

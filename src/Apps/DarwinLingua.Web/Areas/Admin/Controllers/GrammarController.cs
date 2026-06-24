@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +15,10 @@ public sealed class GrammarController(IWebCatalogApiClient catalogApiClient) : C
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<GrammarTopicListItemModel> topics = await catalogApiClient
-            .GetGrammarTopicsAsync(new GrammarTopicListFilterModel(null, null, null, null), cancellationToken)
+            .GetGrammarTopicsAsync(
+                new GrammarTopicListFilterModel(null, null, null, null),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminGrammarPageViewModel(topics));

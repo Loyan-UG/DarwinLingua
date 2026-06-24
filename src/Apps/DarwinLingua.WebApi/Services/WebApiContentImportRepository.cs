@@ -47,19 +47,30 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         return new HashSet<LanguageCode>(languageCodes);
     }
 
-    public async Task<bool> PackageExistsAsync(string packageId, CancellationToken cancellationToken)
+    public async Task<bool> PackageExistsAsync(
+        string packageId,
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(packageId);
+        string normalizedTargetLanguage = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
 
         return await dbContext.ContentPackages
             .AsNoTracking()
-            .AnyAsync(contentPackage => contentPackage.PackageId == packageId.Trim(), cancellationToken)
+            .AnyAsync(
+                contentPackage =>
+                    contentPackage.TargetLearningLanguageCode == normalizedTargetLanguage &&
+                    contentPackage.PackageId == packageId.Trim(),
+                cancellationToken)
             .ConfigureAwait(false);
     }
 
-    public async Task<bool> WordExistsAsync(string normalizedLemma, CancellationToken cancellationToken)
+    public async Task<bool> WordExistsAsync(
+        string normalizedLemma,
+        LanguageCode languageCode,
+        CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(normalizedLemma);
 
@@ -67,15 +78,22 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
 
         return await dbContext.WordEntries
             .AsNoTracking()
-            .AnyAsync(word => word.NormalizedLemma == normalizedLemma, cancellationToken)
+            .AnyAsync(
+                word =>
+                    word.LanguageCode == languageCode &&
+                    word.NormalizedLemma == normalizedLemma,
+                cancellationToken)
             .ConfigureAwait(false);
     }
 
     public async Task<IReadOnlyList<WordEntry>> GetActiveWordsByNormalizedLemmasAsync(
         IReadOnlyCollection<string> normalizedLemmas,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(normalizedLemmas);
+        string normalizedTargetLanguage = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
+        LanguageCode targetLanguage = LanguageCode.From(normalizedTargetLanguage);
 
         if (normalizedLemmas.Count == 0)
         {
@@ -98,6 +116,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         return await dbContext.WordEntries
             .AsNoTracking()
             .Where(word => word.PublicationStatus == PublicationStatus.Active)
+            .Where(word => word.LanguageCode == targetLanguage)
             .Where(word => normalizedLemmaArray.Contains(word.NormalizedLemma))
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
@@ -118,7 +137,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         IReadOnlyList<CourseModule> importedCourseModules,
         IReadOnlyList<CourseLesson> importedCourseLessons,
         IReadOnlyList<WritingTemplate> importedWritingTemplates,
-        IReadOnlyList<CulturalNote> importedCulturalNotes,
+        IReadOnlyList<CountryGuidanceNote> importedCountryGuidanceNotes,
         IReadOnlyList<ExamProfile> importedExamProfiles,
         IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
         IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
@@ -140,12 +159,14 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         ArgumentNullException.ThrowIfNull(importedCourseModules);
         ArgumentNullException.ThrowIfNull(importedCourseLessons);
         ArgumentNullException.ThrowIfNull(importedWritingTemplates);
-        ArgumentNullException.ThrowIfNull(importedCulturalNotes);
+        ArgumentNullException.ThrowIfNull(importedCountryGuidanceNotes);
         ArgumentNullException.ThrowIfNull(importedExamProfiles);
         ArgumentNullException.ThrowIfNull(importedExamPrepUnits);
         ArgumentNullException.ThrowIfNull(importedConversationStarterPacks);
         ArgumentNullException.ThrowIfNull(importedEventPreparationPacks);
         ArgumentNullException.ThrowIfNull(importedRoleplayScenarios);
+
+        string targetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(contentPackage.TargetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await _dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         await using Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
@@ -266,6 +287,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<DialogueLesson> existingDialogues = await dbContext.DialogueLessons
+                .Where(dialogue => dialogue.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(dialogue => importedSlugs.Contains(dialogue.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -288,6 +310,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<TalkTopic> existingTalkTopics = await dbContext.TalkTopics
+                .Where(topic => topic.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(topic => importedSlugs.Contains(topic.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -310,6 +333,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<GrammarTopic> existingGrammarTopics = await dbContext.GrammarTopics
+                .Where(topic => topic.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(topic => importedSlugs.Contains(topic.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -332,6 +356,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<ExpressionEntry> existingExpressions = await dbContext.ExpressionEntries
+                .Where(expression => expression.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(expression => importedSlugs.Contains(expression.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -349,7 +374,11 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         if (importedExercises.Count > 0)
         {
             string[] importedSlugs = importedExercises.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<Exercise> existingExercises = await dbContext.Exercises.Where(exercise => importedSlugs.Contains(exercise.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            List<Exercise> existingExercises = await dbContext.Exercises
+                .Where(exercise => exercise.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(exercise => importedSlugs.Contains(exercise.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingExercises.Count > 0)
             {
                 dbContext.Exercises.RemoveRange(existingExercises);
@@ -362,7 +391,11 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         if (importedExerciseSets.Count > 0)
         {
             string[] importedSlugs = importedExerciseSets.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<ExerciseSet> existingSets = await dbContext.ExerciseSets.Where(set => importedSlugs.Contains(set.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            List<ExerciseSet> existingSets = await dbContext.ExerciseSets
+                .Where(set => set.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(set => importedSlugs.Contains(set.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingSets.Count > 0)
             {
                 dbContext.ExerciseSets.RemoveRange(existingSets);
@@ -375,7 +408,11 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         if (importedCoursePaths.Count > 0)
         {
             string[] importedSlugs = importedCoursePaths.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<CoursePath> existingCourses = await dbContext.CoursePaths.Where(course => importedSlugs.Contains(course.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            List<CoursePath> existingCourses = await dbContext.CoursePaths
+                .Where(course => course.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(course => importedSlugs.Contains(course.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingCourses.Count > 0)
             {
                 dbContext.CoursePaths.RemoveRange(existingCourses);
@@ -407,7 +444,11 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         if (importedWritingTemplates.Count > 0)
         {
             string[] importedSlugs = importedWritingTemplates.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<WritingTemplate> existingTemplates = await dbContext.WritingTemplates.Where(template => importedSlugs.Contains(template.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            List<WritingTemplate> existingTemplates = await dbContext.WritingTemplates
+                .Where(template => template.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(template => importedSlugs.Contains(template.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingTemplates.Count > 0)
             {
                 dbContext.WritingTemplates.RemoveRange(existingTemplates);
@@ -418,24 +459,37 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        if (importedCulturalNotes.Count > 0)
+        if (importedCountryGuidanceNotes.Count > 0)
         {
-            string[] importedSlugs = importedCulturalNotes.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<CulturalNote> existingNotes = await dbContext.CulturalNotes.Where(note => importedSlugs.Contains(note.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            string[] importedSlugs = importedCountryGuidanceNotes.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+            string[] importedCountryContextCodes = importedCountryGuidanceNotes
+                .Select(item => item.CountryContextCode)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+            List<CountryGuidanceNote> existingNotes = await dbContext.CountryGuidanceNotes
+                .Where(note => note.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(note => importedCountryContextCodes.Contains(note.CountryContextCode))
+                .Where(note => importedSlugs.Contains(note.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingNotes.Count > 0)
             {
-                dbContext.CulturalNotes.RemoveRange(existingNotes);
+                dbContext.CountryGuidanceNotes.RemoveRange(existingNotes);
                 await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             }
 
-            dbContext.CulturalNotes.AddRange(importedCulturalNotes);
+            dbContext.CountryGuidanceNotes.AddRange(importedCountryGuidanceNotes);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
         if (importedExamProfiles.Count > 0)
         {
             string[] importedKeys = importedExamProfiles.Select(item => item.Key).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<ExamProfile> existingProfiles = await dbContext.ExamProfiles.Where(profile => importedKeys.Contains(profile.Key)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            List<ExamProfile> existingProfiles = await dbContext.ExamProfiles
+                .Where(profile => profile.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(profile => importedKeys.Contains(profile.Key))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingProfiles.Count > 0)
             {
                 dbContext.ExamProfiles.RemoveRange(existingProfiles);
@@ -449,7 +503,11 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
         if (importedExamPrepUnits.Count > 0)
         {
             string[] importedSlugs = importedExamPrepUnits.Select(item => item.Slug).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            List<ExamPrepUnit> existingUnits = await dbContext.ExamPrepUnits.Where(unit => importedSlugs.Contains(unit.Slug)).ToListAsync(cancellationToken).ConfigureAwait(false);
+            List<ExamPrepUnit> existingUnits = await dbContext.ExamPrepUnits
+                .Where(unit => unit.TargetLearningLanguageCode == targetLearningLanguageCode)
+                .Where(unit => importedSlugs.Contains(unit.Slug))
+                .ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
             if (existingUnits.Count > 0)
             {
                 dbContext.ExamPrepUnits.RemoveRange(existingUnits);
@@ -468,6 +526,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<ConversationStarterPack> existingStarterPacks = await dbContext.ConversationStarterPacks
+                .Where(pack => pack.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(pack => importedSlugs.Contains(pack.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -490,6 +549,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<EventPreparationPack> existingEventPreparationPacks = await dbContext.EventPreparationPacks
+                .Where(pack => pack.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(pack => importedSlugs.Contains(pack.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);
@@ -512,6 +572,7 @@ public sealed class WebApiContentImportRepository : IContentImportRepository
                 .ToArray();
 
             List<RoleplayScenario> existingRoleplayScenarios = await dbContext.RoleplayScenarios
+                .Where(scenario => scenario.TargetLearningLanguageCode == targetLearningLanguageCode)
                 .Where(scenario => importedSlugs.Contains(scenario.Slug))
                 .ToListAsync(cancellationToken)
                 .ConfigureAwait(false);

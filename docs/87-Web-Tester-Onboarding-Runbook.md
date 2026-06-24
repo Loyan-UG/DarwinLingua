@@ -10,7 +10,7 @@ The goal is not to generate more content during testing. The goal is to find pra
 
 - Public Web: `https://darwinlingua.com`
 - Public API health: `https://api.darwinlingua.com/health`
-- Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CulturalNotes=30`
+- Current content counts: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, `LifeInGermany/CountryGuidanceNotes=30`
 - Course lesson activity flow is complete for A1-C2: `560/560` lessons have `activityBlocks`.
 - Latest phase backup: `X:\Projects\DarwinLingua.Backup\20260623-181445-web-readiness-evidence-sync-pre-user-testing`
 - Latest readiness commit: `ad0bb9cb Refresh web readiness evidence references`; the phase backup manifest and `repo-overlay/darwinlingua-current-head.bundle` can restore the matching local state.
@@ -306,3 +306,4 @@ The first controlled Web tester pass is complete when:
 - AI scoring or AI feedback
 - public marketing launch
 - official exam question-bank reproduction
+

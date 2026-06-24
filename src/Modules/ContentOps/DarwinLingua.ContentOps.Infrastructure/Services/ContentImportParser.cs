@@ -47,6 +47,9 @@ internal sealed class ContentImportParser : IContentImportParser
             document.PackageId ?? string.Empty,
             document.PackageName ?? string.Empty,
             document.Source,
+            document.TargetLearningLanguageCode ?? string.Empty,
+            document.LevelSystemCode,
+            document.CountryContextCode,
             (document.DefaultMeaningLanguages ?? document.TargetLanguages ?? []).Select(language => language ?? string.Empty).ToArray(),
             (document.Entries ?? []).Select(Map).ToArray(),
             (document.Labels ?? []).Select(Map).ToArray(),
@@ -62,7 +65,7 @@ internal sealed class ContentImportParser : IContentImportParser
             CourseModules = (document.CourseModules ?? []).Select(Map).ToArray(),
             CourseLessons = (document.CourseLessons ?? []).Select(Map).ToArray(),
             WritingTemplates = (document.WritingTemplates ?? []).Select(Map).ToArray(),
-            CulturalNotes = (document.CulturalNotes ?? []).Select(Map).ToArray(),
+            CountryGuidanceNotes = (document.CountryGuidanceNotes ?? []).Select(Map).ToArray(),
             ExamProfiles = (document.ExamProfiles ?? []).Select(Map).ToArray(),
             ExamPrepUnits = (document.ExamPrepUnits ?? []).Select(Map).ToArray(),
             ConversationStarterPacks = (document.ConversationStarterPacks ?? []).Select(Map).ToArray(),
@@ -603,7 +606,7 @@ internal sealed class ContentImportParser : IContentImportParser
             template.IsPublished ?? true,
             template.SortOrder ?? 0);
 
-    private static ParsedCulturalNoteModel Map(CulturalNoteDocument note) =>
+    private static ParsedCountryGuidanceNoteModel Map(CountryGuidanceNoteDocument note) =>
         new(
             note.Slug ?? string.Empty,
             note.Title ?? string.Empty,
@@ -616,7 +619,7 @@ internal sealed class ContentImportParser : IContentImportParser
             MapTranslations(note.ContextTranslations),
             (note.Sections ?? []).Select(item => item ?? string.Empty).ToArray(),
             MapListTranslations(note.SectionsTranslations),
-            (note.Examples ?? []).Select(example => new ParsedCulturalNoteExampleModel(
+            (note.Examples ?? []).Select(example => new ParsedCountryGuidanceNoteExampleModel(
                 example.GermanText ?? string.Empty,
                 example.Explanation,
                 MapTranslations(example.ExplanationTranslations))).ToArray(),
@@ -871,10 +874,10 @@ internal sealed class ContentImportParser : IContentImportParser
             .ToArray();
     }
 
-    private static ParsedCulturalNoteListTranslationModel[] MapListTranslations(CulturalNoteListTranslationDocument[]? translations)
+    private static ParsedCountryGuidanceNoteListTranslationModel[] MapListTranslations(CountryGuidanceNoteListTranslationDocument[]? translations)
     {
         return (translations ?? [])
-            .Select(translation => new ParsedCulturalNoteListTranslationModel(
+            .Select(translation => new ParsedCountryGuidanceNoteListTranslationModel(
                 translation.Language ?? string.Empty,
                 (translation.Items ?? []).Select(item => item ?? string.Empty).ToArray()))
             .ToArray();
@@ -889,6 +892,12 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? PackageName { get; set; }
 
         public string? Source { get; set; }
+
+        public string? TargetLearningLanguageCode { get; set; }
+
+        public string? LevelSystemCode { get; set; }
+
+        public string? CountryContextCode { get; set; }
 
         public string?[]? DefaultMeaningLanguages { get; set; }
 
@@ -920,7 +929,7 @@ internal sealed class ContentImportParser : IContentImportParser
 
         public WritingTemplateDocument[]? WritingTemplates { get; set; }
 
-        public CulturalNoteDocument[]? CulturalNotes { get; set; }
+        public CountryGuidanceNoteDocument[]? CountryGuidanceNotes { get; set; }
 
         public ExamProfileDocument[]? ExamProfiles { get; set; }
 
@@ -1736,7 +1745,7 @@ internal sealed class ContentImportParser : IContentImportParser
         public int? SortOrder { get; set; }
     }
 
-    private sealed class CulturalNoteDocument
+    private sealed class CountryGuidanceNoteDocument
     {
         public string? Slug { get; set; }
         public string? Title { get; set; }
@@ -1748,14 +1757,14 @@ internal sealed class ContentImportParser : IContentImportParser
         public string? Context { get; set; }
         public ContentMeaningDocument[]? ContextTranslations { get; set; }
         public string?[]? Sections { get; set; }
-        public CulturalNoteListTranslationDocument[]? SectionsTranslations { get; set; }
-        public CulturalNoteExampleDocument[]? Examples { get; set; }
+        public CountryGuidanceNoteListTranslationDocument[]? SectionsTranslations { get; set; }
+        public CountryGuidanceNoteExampleDocument[]? Examples { get; set; }
         public string?[]? DoNotes { get; set; }
         public string?[]? Dos { get; set; }
-        public CulturalNoteListTranslationDocument[]? DoNotesTranslations { get; set; }
+        public CountryGuidanceNoteListTranslationDocument[]? DoNotesTranslations { get; set; }
         public string?[]? DontNotes { get; set; }
         public string?[]? Donts { get; set; }
-        public CulturalNoteListTranslationDocument[]? DontNotesTranslations { get; set; }
+        public CountryGuidanceNoteListTranslationDocument[]? DontNotesTranslations { get; set; }
         public string? SensitivityWarning { get; set; }
         public ContentMeaningDocument[]? SensitivityWarningTranslations { get; set; }
         public string?[]? LinkedDialogueSlugs { get; set; }
@@ -1767,14 +1776,14 @@ internal sealed class ContentImportParser : IContentImportParser
         public int? SortOrder { get; set; }
     }
 
-    private sealed class CulturalNoteExampleDocument
+    private sealed class CountryGuidanceNoteExampleDocument
     {
         public string? GermanText { get; set; }
         public string? Explanation { get; set; }
         public ContentMeaningDocument[]? ExplanationTranslations { get; set; }
     }
 
-    private sealed class CulturalNoteListTranslationDocument
+    private sealed class CountryGuidanceNoteListTranslationDocument
     {
         public string? Language { get; set; }
         public string?[]? Items { get; set; }

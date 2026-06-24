@@ -29,7 +29,7 @@
         <partial name="~/Views/Shared/_SectionHeading.cshtml" model='new DarwinLingua.Web.Models.SectionHeadingViewModel(Model.Lemma, T["Word editor"].Value, T["Edit the full admin record. Learner language preferences do not limit the languages shown here."].Value)' />
         <div class="cluster">
             <a class="button button--secondary" asp-action="Index">@T["Back to words"]</a>
-            <a class="button button--secondary" asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@Model.PublicId">@T["View learner page"]</a>
+            <a class="button button--secondary" asp-area="" asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-id="@Model.PublicId">@T["View learner page"]</a>
         </div>
     </div>
 

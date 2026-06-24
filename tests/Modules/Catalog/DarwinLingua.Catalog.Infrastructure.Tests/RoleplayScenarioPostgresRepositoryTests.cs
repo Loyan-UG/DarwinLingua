@@ -123,7 +123,7 @@ public sealed class RoleplayScenarioPostgresRepositoryTests
             UnifiedLearningSearchResultModel result = Assert.Single(results);
             Assert.Equal("roleplay", result.ResultType);
             Assert.Equal("Termin verschieben", result.Title);
-            Assert.Equal("/roleplays/a2-termin-verschieben", result.Url);
+            Assert.Equal("/learn/de/roleplays/a2-termin-verschieben", result.Url);
         }
         finally
         {

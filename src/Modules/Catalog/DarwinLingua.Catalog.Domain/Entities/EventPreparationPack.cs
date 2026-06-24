@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -27,7 +28,8 @@ public sealed partial class EventPreparationPack
         string eventType,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -35,6 +37,7 @@ public sealed partial class EventPreparationPack
         }
 
         Id = id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         Slug = NormalizeKey(slug, "Event preparation pack slug");
         Title = NormalizeRequiredText(title, nameof(title), 256);
         Description = NormalizeRequiredText(description, nameof(description), 4000);
@@ -48,6 +51,8 @@ public sealed partial class EventPreparationPack
     }
 
     public Guid Id { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
 
     public string Slug { get; private set; } = string.Empty;
 

@@ -46,6 +46,14 @@ internal sealed class UserLearningProfileConfiguration : IEntityTypeConfiguratio
             .HasMaxLength(16)
             .IsRequired();
 
+        builder.Property(profile => profile.TargetLearningLanguageCode)
+            .HasConversion(
+                languageCode => languageCode.Value,
+                value => LanguageCode.From(value))
+            .HasMaxLength(16)
+            .HasDefaultValue(LanguageCode.From(ContentLanguageRequirements.DefaultTargetLearningLanguageCode))
+            .IsRequired();
+
         builder.Property(profile => profile.CreatedAtUtc)
             .IsRequired();
 

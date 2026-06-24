@@ -7,11 +7,13 @@ internal sealed class ConversationEventQueryService(IConversationEventRepository
 {
     public Task<IReadOnlyList<ConversationEventListItemModel>> GetPublishedEventsAsync(
         ConversationEventListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
-        conversationEventRepository.GetPublishedEventsAsync(filter, cancellationToken);
+        conversationEventRepository.GetPublishedEventsAsync(filter, targetLearningLanguageCode, cancellationToken);
 
     public Task<ConversationEventDetailModel?> GetPublishedEventBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
-        conversationEventRepository.GetPublishedEventBySlugAsync(slug, cancellationToken);
+        conversationEventRepository.GetPublishedEventBySlugAsync(slug, targetLearningLanguageCode, cancellationToken);
 }

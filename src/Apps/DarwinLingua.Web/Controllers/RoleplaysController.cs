@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("roleplays")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Roleplays)]
 public sealed class RoleplaysController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -32,11 +32,12 @@ public sealed class RoleplaysController(
         RoleplayScenarioListFilterModel filter = new(cefrLevel, category, topicKey, examProfile, skillFocus, taskType, interactionMode, register, q);
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
 
         try
         {
             IReadOnlyList<RoleplayScenarioListItemModel> roleplays = await catalogApiClient
-                .GetRoleplaysAsync(filter, primaryMeaningLanguageCode, cancellationToken)
+                .GetRoleplaysAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
 
             return View(new RoleplayIndexPageViewModel(roleplays, filter, primaryMeaningLanguageCode));
@@ -55,9 +56,10 @@ public sealed class RoleplaysController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         try
@@ -65,7 +67,7 @@ public sealed class RoleplaysController(
             var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
             string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
             RoleplayScenarioDetailModel? roleplay = await catalogApiClient
-                .GetRoleplayBySlugAsync(normalizedSlug, primaryMeaningLanguageCode, cancellationToken)
+                .GetRoleplayBySlugAsync(normalizedSlug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
 
             return roleplay is null ? NotFound() : View(new RoleplayDetailPageViewModel(roleplay, primaryMeaningLanguageCode));

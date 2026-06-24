@@ -26,7 +26,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IExerciseRepository, ExerciseRepository>();
         services.AddScoped<ICourseRepository, CourseRepository>();
         services.AddScoped<IWritingTemplateRepository, WritingTemplateRepository>();
-        services.AddScoped<ICulturalNoteRepository, CulturalNoteRepository>();
+        services.AddScoped<ICountryGuidanceNoteRepository, CountryGuidanceNoteRepository>();
         services.AddScoped<IExamPrepRepository, ExamPrepRepository>();
         services.AddScoped<IUnifiedLearningSearchRepository, UnifiedLearningSearchRepository>();
         services.AddScoped<IWordEntryRepository, WordEntryRepository>();

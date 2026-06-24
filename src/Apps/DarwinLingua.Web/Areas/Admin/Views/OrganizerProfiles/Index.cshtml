@@ -20,6 +20,10 @@
             <span class="eyebrow">@T["Profiles"]</span>
             <strong>@Model.Profiles.Count</strong>
         </a>
+        <a href="#organizer-profile-scope" class="admin-summary-tile">
+            <span class="eyebrow">@T["Target language"]</span>
+            <strong>@Model.Input.TargetLearningLanguageCode.ToUpperInvariant()</strong>
+        </a>
         <a href="#organizer-claims" class="admin-summary-tile">
             <span class="eyebrow">@T["Open claims"]</span>
             <strong>@actionableClaimCount</strong>
@@ -31,6 +35,7 @@
     </div>
 
     <nav class="admin-anchor-nav" aria-label="@T["Organizer profile sections"]">
+        <a href="#organizer-profile-scope">@T["Scope"]</a>
         <a href="#organizer-edit">@T["Create/edit"]</a>
         <a href="#organizer-owner-assign">@T["Assign owner"]</a>
         <a href="#organizer-owners">@T["Owners"]</a>
@@ -39,10 +44,38 @@
     </nav>
 </section>
 
+<section id="organizer-profile-scope" class="panel stack-md">
+    <h2 class="headline-sm">@T["Target-language scope"]</h2>
+    <p class="text-muted">@T["Organizer identity is global, but supported levels and active event views are scoped to the learning language. Choose the scope before reviewing or saving language-specific organizer coverage."]</p>
+    <form method="get" class="form-grid">
+        <label class="field">
+            <span>@T["Target learning language"]</span>
+            <select name="targetLearningLanguageCode">
+                @foreach (TargetLearningLanguageDefinition language in TargetLearningLanguageCatalog.Active)
+                {
+                    <option value="@language.Code" selected="@(string.Equals(Model.Input.TargetLearningLanguageCode, language.Code, StringComparison.OrdinalIgnoreCase))">@language.EnglishName (@language.Code)</option>
+                }
+            </select>
+        </label>
+        <div class="action-row">
+            <button type="submit" class="button button--secondary">@T["Apply scope"]</button>
+        </div>
+    </form>
+</section>
+
 <section id="organizer-edit" class="panel stack-md">
     <h2 class="headline-sm">@T["Create or replace organizer"]</h2>
     <form method="post" class="form-grid" data-confirm-submit="@T["Save this public organizer profile?"]">
         @Html.AntiForgeryToken()
+        <label class="field">
+            <span>@T["Target learning language"]</span>
+            <select name="TargetLearningLanguageCode">
+                @foreach (TargetLearningLanguageDefinition language in TargetLearningLanguageCatalog.Active)
+                {
+                    <option value="@language.Code" selected="@(string.Equals(Model.Input.TargetLearningLanguageCode, language.Code, StringComparison.OrdinalIgnoreCase))">@language.EnglishName (@language.Code)</option>
+                }
+            </select>
+        </label>
         <label class="field">
             <span>@T["Slug"]</span>
             <input name="Slug" value="@Model.Input.Slug" placeholder="berlin-language-club" />
@@ -118,6 +151,7 @@
     <h2 class="headline-sm">@T["Assign owner"]</h2>
     <form method="post" asp-action="AssignOwner" class="form-grid" data-confirm-submit="@T["Assign this owner email to the organizer profile?"]">
         @Html.AntiForgeryToken()
+        <input type="hidden" name="targetLearningLanguageCode" value="@Model.Input.TargetLearningLanguageCode" />
         <label class="field">
             <span>@T["Organizer profile slug"]</span>
             <input name="OrganizerProfileSlug" value="@Model.OwnerInput.OrganizerProfileSlug" placeholder="berlin-language-club" />
@@ -158,7 +192,7 @@
                     {
                         <tr>
                             <td>
-                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@Model.Input.TargetLearningLanguageCode" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
                             </td>
                             <td>@item.OwnerEmail</td>
                             <td>@item.AssignedBy</td>
@@ -200,7 +234,7 @@
                     {
                         <tr>
                             <td>
-                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@Model.Input.TargetLearningLanguageCode" asp-route-slug="@item.OrganizerProfileSlug">@item.OrganizerProfileSlug</a>
                             </td>
                             <td>
                                 <strong>@item.RequesterName</strong>
@@ -216,16 +250,19 @@
                                     {
                                         <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="@T["Mark this organizer claim as reviewing?"]">
                                             @Html.AntiForgeryToken()
+                                            <input type="hidden" name="targetLearningLanguageCode" value="@Model.Input.TargetLearningLanguageCode" />
                                             <input type="hidden" name="Status" value="reviewing" />
                                             <button type="submit" class="button button--secondary">@T["Reviewing"]</button>
                                         </form>
                                         <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="@T["Approve this organizer claim and notify the requester?"]">
                                             @Html.AntiForgeryToken()
+                                            <input type="hidden" name="targetLearningLanguageCode" value="@Model.Input.TargetLearningLanguageCode" />
                                             <input type="hidden" name="Status" value="approved" />
                                             <button type="submit" class="button button--primary">@T["Approve"]</button>
                                         </form>
                                         <form method="post" asp-action="SetClaimStatus" asp-route-claimRequestId="@item.Id" class="inline-form" data-confirm-submit="@T["Reject this organizer claim and notify the requester?"]">
                                             @Html.AntiForgeryToken()
+                                            <input type="hidden" name="targetLearningLanguageCode" value="@Model.Input.TargetLearningLanguageCode" />
                                             <input type="hidden" name="Status" value="rejected" />
                                             <button type="submit" class="button button--secondary">@T["Reject"]</button>
                                         </form>
@@ -273,7 +310,7 @@
                             <td>
                                 <strong>@item.DisplayName</strong>
                                 <div>@item.Slug</div>
-                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Slug">@T["View public page"]</a>
+                                <a asp-area="" asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@item.TargetLearningLanguageCode" asp-route-slug="@item.Slug">@T["View public page"]</a>
                             </td>
                             <td>@item.OrganizerType</td>
                             <td>@string.Join(", ", item.SupportedLearnerLevels)</td>

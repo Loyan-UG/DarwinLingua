@@ -385,10 +385,10 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         ("IX_WritingTemplates_Description_Trgm", "WritingTemplates", "ShortDescription"),
         ("IX_WritingTemplates_Situation_Trgm", "WritingTemplates", "Situation"),
         ("IX_WritingTemplates_Slug_Trgm", "WritingTemplates", "Slug"),
-        ("IX_CulturalNotes_Title_Trgm", "CulturalNotes", "Title"),
-        ("IX_CulturalNotes_Description_Trgm", "CulturalNotes", "ShortDescription"),
-        ("IX_CulturalNotes_Context_Trgm", "CulturalNotes", "Context"),
-        ("IX_CulturalNotes_Slug_Trgm", "CulturalNotes", "Slug"),
+        ("IX_CountryGuidanceNotes_Title_Trgm", "CountryGuidanceNotes", "Title"),
+        ("IX_CountryGuidanceNotes_Description_Trgm", "CountryGuidanceNotes", "ShortDescription"),
+        ("IX_CountryGuidanceNotes_Context_Trgm", "CountryGuidanceNotes", "Context"),
+        ("IX_CountryGuidanceNotes_Slug_Trgm", "CountryGuidanceNotes", "Slug"),
         ("IX_ConversationEvents_Name_Trgm", "ConversationEvents", "Name"),
         ("IX_ConversationEvents_Description_Trgm", "ConversationEvents", "Description"),
         ("IX_ConversationEvents_Organizer_Trgm", "ConversationEvents", "OrganizerName"),
@@ -406,7 +406,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         ("IX_CourseLessons_SearchFilters", "CourseLessons", @"""PublicationStatus"", ""CefrLevel"", ""CoursePathSlug"", ""ModuleSlug"", ""SortOrder"""),
         ("IX_ExamPrepUnits_SearchFilters", "ExamPrepUnits", @"""PublicationStatus"", ""CefrLevel"", ""ExamProfileKey"", ""ExamSection"", ""TaskType"", ""SortOrder"""),
         ("IX_WritingTemplates_SearchFilters", "WritingTemplates", @"""PublicationStatus"", ""CefrLevel"", ""Category"", ""Register"", ""SortOrder"""),
-        ("IX_CulturalNotes_SearchFilters", "CulturalNotes", @"""PublicationStatus"", ""CefrLevel"", ""Category"", ""SortOrder"""),
+        ("IX_CountryGuidanceNotes_SearchFilters", "CountryGuidanceNotes", @"""PublicationStatus"", ""TargetLearningLanguageCode"", ""CountryContextCode"", ""CefrLevel"", ""Category"", ""SortOrder"""),
     ];
 
     private static async Task ApplyPostgresUnifiedSearchIndexesAsync(
@@ -527,7 +527,10 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
     {
         ArgumentNullException.ThrowIfNull(dbContext);
 
+        await EnsureContentPackageManifestSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureTalkTopicRetrofitSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureConversationSupportTargetLanguageSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureConversationEventTargetLanguageSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
 
         if (!await TableExistsAsync(dbContext, "WordLexicalForms", cancellationToken).ConfigureAwait(false))
         {
@@ -734,6 +737,98 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
         await EnsureLearningPortalExtensionSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureCourseLocalizationSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
         await EnsureRoleplayScenarioSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+        await EnsureTargetScopedUserStateSchemaAsync(dbContext, cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureContentPackageManifestSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        if (!await TableExistsAsync(dbContext, "ContentPackages", cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        if (dbContext.Database.IsSqlite())
+        {
+            if (!await ColumnExistsAsync(dbContext, "ContentPackages", "LevelSystemCode", cancellationToken).ConfigureAwait(false))
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """ALTER TABLE ContentPackages ADD COLUMN LevelSystemCode TEXT NULL;""",
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            if (!await ColumnExistsAsync(dbContext, "ContentPackages", "CountryContextCode", cancellationToken).ConfigureAwait(false))
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """ALTER TABLE ContentPackages ADD COLUMN CountryContextCode TEXT NULL;""",
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "ContentPackages" ADD COLUMN IF NOT EXISTS "LevelSystemCode" character varying(32);
+            ALTER TABLE "ContentPackages" ADD COLUMN IF NOT EXISTS "CountryContextCode" character varying(8);
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureTargetScopedUserStateSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        bool userExerciseAttemptsReady =
+            await ColumnExistsAsync(dbContext, "UserExerciseAttempts", "TargetLearningLanguageCode", cancellationToken).ConfigureAwait(false) &&
+            await IndexExistsAsync(dbContext, "IX_UserExerciseAttempts_UserTargetExerciseAttempted", cancellationToken).ConfigureAwait(false);
+
+        bool userContentProgressReady =
+            await ColumnExistsAsync(dbContext, "UserContentProgress", "TargetLearningLanguageCode", cancellationToken).ConfigureAwait(false) &&
+            await IndexExistsAsync(dbContext, "IX_UserContentProgress_UserTargetOwner", cancellationToken).ConfigureAwait(false) &&
+            await IndexExistsAsync(dbContext, "IX_UserContentProgress_UserTargetState", cancellationToken).ConfigureAwait(false) &&
+            await IndexExistsAsync(dbContext, "IX_UserContentProgress_UserTargetUpdated", cancellationToken).ConfigureAwait(false);
+
+        if (userExerciseAttemptsReady && userContentProgressReady)
+        {
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "UserExerciseAttempts" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+            ALTER TABLE "UserContentProgress" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+
+            DROP INDEX IF EXISTS "IX_UserExerciseAttempts_UserId_ExerciseSlug_AttemptedAtUtc";
+            DROP INDEX IF EXISTS "IX_UserContentProgress_UserId_ContentOwnerType_ContentOwnerSlug";
+            DROP INDEX IF EXISTS "IX_UserContentProgress_UserId_State";
+            DROP INDEX IF EXISTS "IX_UserContentProgress_UserId_UpdatedAtUtc";
+
+            DROP INDEX IF EXISTS "IX_UserExerciseAttempts_UserId_TargetLearningLanguageCode_Exerc";
+            DROP INDEX IF EXISTS "IX_UserContentProgress_UserId_TargetLearningLanguageCode_Conten";
+            DROP INDEX IF EXISTS "IX_UserContentProgress_UserId_TargetLearningLanguageCode_Update";
+
+            CREATE INDEX IF NOT EXISTS "IX_UserExerciseAttempts_UserTargetExerciseAttempted"
+                ON "UserExerciseAttempts" ("UserId", "TargetLearningLanguageCode", "ExerciseSlug", "AttemptedAtUtc");
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_UserContentProgress_UserTargetOwner"
+                ON "UserContentProgress" ("UserId", "TargetLearningLanguageCode", "ContentOwnerType", "ContentOwnerSlug");
+
+            CREATE INDEX IF NOT EXISTS "IX_UserContentProgress_UserTargetState"
+                ON "UserContentProgress" ("UserId", "TargetLearningLanguageCode", "State");
+
+            CREATE INDEX IF NOT EXISTS "IX_UserContentProgress_UserTargetUpdated"
+                ON "UserContentProgress" ("UserId", "TargetLearningLanguageCode", "UpdatedAtUtc");
+            """,
+            cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task EnsureLearningPortalExtensionSchemaAsync(
@@ -759,6 +854,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "DescriptionTranslationsJson" text NOT NULL DEFAULT '[]',
                 "PublicationStatus" character varying(32) NOT NULL,
                 "SortOrder" integer NOT NULL,
+                "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de',
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
                 CONSTRAINT "PK_ExamProfiles" PRIMARY KEY ("Id")
@@ -828,9 +924,26 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 CONSTRAINT "PK_WritingTemplates" PRIMARY KEY ("Id")
             );
 
-            CREATE TABLE IF NOT EXISTS "CulturalNotes" (
+            DO $$
+            BEGIN
+                IF to_regclass('"CountryGuidanceNotes"') IS NULL AND to_regclass('"CulturalNotes"') IS NOT NULL THEN
+                    ALTER TABLE "CulturalNotes" RENAME TO "CountryGuidanceNotes";
+                END IF;
+
+                IF EXISTS (
+                    SELECT 1 FROM pg_constraint
+                    WHERE conname = 'PK_CulturalNotes'
+                      AND conrelid = '"CountryGuidanceNotes"'::regclass
+                ) THEN
+                    ALTER TABLE "CountryGuidanceNotes" RENAME CONSTRAINT "PK_CulturalNotes" TO "PK_CountryGuidanceNotes";
+                END IF;
+            END $$;
+
+            CREATE TABLE IF NOT EXISTS "CountryGuidanceNotes" (
                 "Id" uuid NOT NULL,
                 "Slug" character varying(128) NOT NULL,
+                "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de',
+                "CountryContextCode" character varying(8) NOT NULL DEFAULT 'DE',
                 "Title" character varying(256) NOT NULL,
                 "ShortDescription" character varying(1000) NOT NULL,
                 "CefrLevel" character varying(8) NOT NULL,
@@ -858,7 +971,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
-                CONSTRAINT "PK_CulturalNotes" PRIMARY KEY ("Id")
+                CONSTRAINT "PK_CountryGuidanceNotes" PRIMARY KEY ("Id")
             );
 
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExamProfiles_Key"
@@ -883,24 +996,241 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "TemplateTextTranslationsJson" text NOT NULL DEFAULT '[]';
             ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "SampleFilledVersionTranslationsJson" text NOT NULL DEFAULT '[]';
             ALTER TABLE "WritingTemplates" ADD COLUMN IF NOT EXISTS "LinkedCourseLessonSlugsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "ContextTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "SectionsTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "ExamplesTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "DoNotesTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "DontNotesTranslationsJson" text NOT NULL DEFAULT '[]';
-            ALTER TABLE "CulturalNotes" ADD COLUMN IF NOT EXISTS "SensitivityWarningTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "CountryContextCode" character varying(8) NOT NULL DEFAULT 'DE';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "TitleTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "ShortDescriptionTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "ContextTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "SectionsTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "ExamplesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "DoNotesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "DontNotesTranslationsJson" text NOT NULL DEFAULT '[]';
+            ALTER TABLE "CountryGuidanceNotes" ADD COLUMN IF NOT EXISTS "SensitivityWarningTranslationsJson" text NOT NULL DEFAULT '[]';
 
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_WritingTemplates_Slug"
                 ON "WritingTemplates" ("Slug");
             CREATE INDEX IF NOT EXISTS "IX_WritingTemplates_CefrLevel_Category_Register"
                 ON "WritingTemplates" ("CefrLevel", "Category", "Register");
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CulturalNotes_Slug"
-                ON "CulturalNotes" ("Slug");
-            CREATE INDEX IF NOT EXISTS "IX_CulturalNotes_CefrLevel_Category"
-                ON "CulturalNotes" ("CefrLevel", "Category");
+            DROP INDEX IF EXISTS "IX_CountryGuidanceNotes_Slug";
+            DROP INDEX IF EXISTS "IX_CountryGuidanceNotes_CefrLevel_Category";
+            DROP INDEX IF EXISTS "IX_CountryGuidanceNotes_TargetLearningLanguageCode_Slug";
+            DROP INDEX IF EXISTS "IX_CountryGuidanceNotes_TargetLearningLanguageCode_CefrLevel_Category";
+            DROP INDEX IF EXISTS "IX_CulturalNotes_TargetCountrySlug";
+            DROP INDEX IF EXISTS "IX_CulturalNotes_TargetCountryFilters";
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_CountryGuidanceNotes_TargetCountrySlug"
+                ON "CountryGuidanceNotes" ("TargetLearningLanguageCode", "CountryContextCode", "Slug");
+            CREATE INDEX IF NOT EXISTS "IX_CountryGuidanceNotes_TargetCountryFilters"
+                ON "CountryGuidanceNotes" ("TargetLearningLanguageCode", "CountryContextCode", "CefrLevel", "Category");
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureConversationSupportTargetLanguageSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (!await TableExistsAsync(dbContext, "ConversationStarterPacks", cancellationToken).ConfigureAwait(false) ||
+            !await TableExistsAsync(dbContext, "EventPreparationPacks", cancellationToken).ConfigureAwait(false))
+        {
+            return;
+        }
+
+        if (dbContext.Database.IsSqlite())
+        {
+            bool hasConversationTargetColumn = await ColumnExistsAsync(
+                dbContext,
+                "ConversationStarterPacks",
+                "TargetLearningLanguageCode",
+                cancellationToken).ConfigureAwait(false);
+            bool hasEventPreparationTargetColumn = await ColumnExistsAsync(
+                dbContext,
+                "EventPreparationPacks",
+                "TargetLearningLanguageCode",
+                cancellationToken).ConfigureAwait(false);
+
+            if (!hasConversationTargetColumn)
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    ALTER TABLE "ConversationStarterPacks"
+                    ADD COLUMN "TargetLearningLanguageCode" TEXT NOT NULL DEFAULT 'de';
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            if (!hasEventPreparationTargetColumn)
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    ALTER TABLE "EventPreparationPacks"
+                    ADD COLUMN "TargetLearningLanguageCode" TEXT NOT NULL DEFAULT 'de';
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                DROP INDEX IF EXISTS "IX_ConversationStarterPacks_Slug";
+                DROP INDEX IF EXISTS "IX_ConversationStarterPacks_CefrLevel_Situation_Tone_ConversationGoal";
+                DROP INDEX IF EXISTS "IX_EventPreparationPacks_Slug";
+                DROP INDEX IF EXISTS "IX_EventPreparationPacks_CefrLevel_Category_EventType";
+
+                CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPacks_TargetLearningLanguageCode_Slug"
+                    ON "ConversationStarterPacks" ("TargetLearningLanguageCode", "Slug");
+                CREATE INDEX IF NOT EXISTS "IX_ConversationStarterPacks_TargetLearningLanguageCode_CefrLevel_Situation_Tone_ConversationGoal"
+                    ON "ConversationStarterPacks" ("TargetLearningLanguageCode", "CefrLevel", "Situation", "Tone", "ConversationGoal");
+                CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationPacks_TargetLearningLanguageCode_Slug"
+                    ON "EventPreparationPacks" ("TargetLearningLanguageCode", "Slug");
+                CREATE INDEX IF NOT EXISTS "IX_EventPreparationPacks_TargetLearningLanguageCode_CefrLevel_Category_EventType"
+                    ON "EventPreparationPacks" ("TargetLearningLanguageCode", "CefrLevel", "Category", "EventType");
+                """,
+                cancellationToken).ConfigureAwait(false);
+
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "ConversationStarterPacks" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+            ALTER TABLE "EventPreparationPacks" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+
+            DROP INDEX IF EXISTS "IX_ConversationStarterPacks_Slug";
+            DROP INDEX IF EXISTS "IX_ConversationStarterPacks_CefrLevel_Situation_Tone_ConversationGoal";
+            DROP INDEX IF EXISTS "IX_EventPreparationPacks_Slug";
+            DROP INDEX IF EXISTS "IX_EventPreparationPacks_CefrLevel_Category_EventType";
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationStarterPacks_TargetLearningLanguageCode_Slug"
+                ON "ConversationStarterPacks" ("TargetLearningLanguageCode", "Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationStarterPacks_TargetLearningLanguageCode_CefrLevel_Situation_Tone_ConversationGoal"
+                ON "ConversationStarterPacks" ("TargetLearningLanguageCode", "CefrLevel", "Situation", "Tone", "ConversationGoal");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventPreparationPacks_TargetLearningLanguageCode_Slug"
+                ON "EventPreparationPacks" ("TargetLearningLanguageCode", "Slug");
+            CREATE INDEX IF NOT EXISTS "IX_EventPreparationPacks_TargetLearningLanguageCode_CefrLevel_Category_EventType"
+                ON "EventPreparationPacks" ("TargetLearningLanguageCode", "CefrLevel", "Category", "EventType");
+            """,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private static async Task EnsureConversationEventTargetLanguageSchemaAsync(
+        DarwinLinguaDbContext dbContext,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            if (!await ColumnExistsAsync(dbContext, "ConversationEvents", "TargetLearningLanguageCode", cancellationToken).ConfigureAwait(false))
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    ALTER TABLE "ConversationEvents"
+                    ADD COLUMN "TargetLearningLanguageCode" TEXT NOT NULL DEFAULT 'de';
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            if (!await ColumnExistsAsync(dbContext, "OrganizerProfileSupportedLevels", "TargetLearningLanguageCode", cancellationToken).ConfigureAwait(false))
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    ALTER TABLE "OrganizerProfileSupportedLevels"
+                    ADD COLUMN "TargetLearningLanguageCode" TEXT NOT NULL DEFAULT 'de';
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            if (!await ColumnExistsAsync(dbContext, "EventRsvps", "TargetLearningLanguageCode", cancellationToken).ConfigureAwait(false))
+            {
+                await dbContext.Database.ExecuteSqlRawAsync(
+                    """
+                    ALTER TABLE "EventRsvps"
+                    ADD COLUMN "TargetLearningLanguageCode" TEXT NOT NULL DEFAULT 'de';
+                    """,
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            await dbContext.Database.ExecuteSqlRawAsync(
+                """
+                DROP INDEX IF EXISTS "IX_ConversationEvents_Slug";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_OrganizerProfileSlug";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_City_IsOnline_PriceType";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_Category_PublicationStatus";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_StartsAtUtc_PublicationStatus";
+                DROP INDEX IF EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_CefrLevel";
+                DROP INDEX IF EXISTS "IX_EventRsvps_ConversationEventSlug_ParticipantEmail";
+                DROP INDEX IF EXISTS "IX_EventRsvps_ConversationEventSlug_Status";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_Category_Publi";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_City_IsOnline_";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_OrganizerProfi";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_Slug";
+                DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_StartsAtUtc_Pu";
+                DROP INDEX IF EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_TargetLea";
+                DROP INDEX IF EXISTS "IX_EventRsvps_TargetLearningLanguageCode_ConversationEventSlug_";
+
+                CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_Slug"
+                    ON "ConversationEvents" ("TargetLearningLanguageCode", "Slug");
+                CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_Organizer"
+                    ON "ConversationEvents" ("TargetLearningLanguageCode", "OrganizerProfileSlug");
+                CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_CityOnlinePrice"
+                    ON "ConversationEvents" ("TargetLearningLanguageCode", "City", "IsOnline", "PriceType");
+                CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_CategoryStatus"
+                    ON "ConversationEvents" ("TargetLearningLanguageCode", "Category", "PublicationStatus");
+                CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_StartStatus"
+                    ON "ConversationEvents" ("TargetLearningLanguageCode", "StartsAtUtc", "PublicationStatus");
+                CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileLevels_Target_Level"
+                    ON "OrganizerProfileSupportedLevels" ("OrganizerProfileId", "TargetLearningLanguageCode", "CefrLevel");
+                CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventRsvps_Target_EventEmail"
+                    ON "EventRsvps" ("TargetLearningLanguageCode", "ConversationEventSlug", "ParticipantEmail");
+                CREATE INDEX IF NOT EXISTS "IX_EventRsvps_Target_EventStatus"
+                    ON "EventRsvps" ("TargetLearningLanguageCode", "ConversationEventSlug", "Status");
+                """,
+                cancellationToken).ConfigureAwait(false);
+
+            return;
+        }
+
+        await dbContext.Database.ExecuteSqlRawAsync(
+            """
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+            ALTER TABLE "OrganizerProfileSupportedLevels" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+            ALTER TABLE "EventRsvps" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+
+            DROP INDEX IF EXISTS "IX_ConversationEvents_Slug";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_OrganizerProfileSlug";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_City_IsOnline_PriceType";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_Category_PublicationStatus";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_StartsAtUtc_PublicationStatus";
+            DROP INDEX IF EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_CefrLevel";
+            DROP INDEX IF EXISTS "IX_EventRsvps_ConversationEventSlug_ParticipantEmail";
+            DROP INDEX IF EXISTS "IX_EventRsvps_ConversationEventSlug_Status";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_Category_Publi";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_City_IsOnline_";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_OrganizerProfi";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_Slug";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_TargetLearningLanguageCode_StartsAtUtc_Pu";
+            DROP INDEX IF EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_TargetLea";
+            DROP INDEX IF EXISTS "IX_EventRsvps_TargetLearningLanguageCode_ConversationEventSlug_";
+
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_Slug"
+                ON "ConversationEvents" ("TargetLearningLanguageCode", "Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_Organizer"
+                ON "ConversationEvents" ("TargetLearningLanguageCode", "OrganizerProfileSlug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_CityOnlinePrice"
+                ON "ConversationEvents" ("TargetLearningLanguageCode", "City", "IsOnline", "PriceType");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_CategoryStatus"
+                ON "ConversationEvents" ("TargetLearningLanguageCode", "Category", "PublicationStatus");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_StartStatus"
+                ON "ConversationEvents" ("TargetLearningLanguageCode", "StartsAtUtc", "PublicationStatus");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileLevels_Target_Level"
+                ON "OrganizerProfileSupportedLevels" ("OrganizerProfileId", "TargetLearningLanguageCode", "CefrLevel");
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventRsvps_Target_EventEmail"
+                ON "EventRsvps" ("TargetLearningLanguageCode", "ConversationEventSlug", "ParticipantEmail");
+            CREATE INDEX IF NOT EXISTS "IX_EventRsvps_Target_EventStatus"
+                ON "EventRsvps" ("TargetLearningLanguageCode", "ConversationEventSlug", "Status");
             """,
             cancellationToken).ConfigureAwait(false);
     }
@@ -2242,6 +2572,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "SourceName" character varying(256);
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "SourceUrl" character varying(1024);
             ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "LastVerifiedAtUtc" timestamp with time zone;
+            ALTER TABLE "ConversationEvents" ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
 
             CREATE TABLE IF NOT EXISTS "ConversationEventLevels" (
                 "Id" uuid NOT NULL,
@@ -2293,10 +2624,14 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "Id" uuid NOT NULL,
                 "OrganizerProfileId" uuid NOT NULL,
                 "CefrLevel" character varying(8) NOT NULL,
+                "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de',
                 "SortOrder" integer NOT NULL,
                 "CreatedAtUtc" timestamp with time zone NOT NULL,
                 CONSTRAINT "PK_OrganizerProfileSupportedLevels" PRIMARY KEY ("Id")
             );
+
+            ALTER TABLE "OrganizerProfileSupportedLevels"
+                ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
 
             CREATE TABLE IF NOT EXISTS "OrganizerProfileHelperLanguages" (
                 "Id" uuid NOT NULL,
@@ -2332,6 +2667,7 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             CREATE TABLE IF NOT EXISTS "EventRsvps" (
                 "Id" uuid NOT NULL,
                 "ConversationEventSlug" character varying(128) NOT NULL,
+                "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de',
                 "ParticipantName" character varying(256) NOT NULL,
                 "ParticipantEmail" character varying(320) NOT NULL,
                 "Status" character varying(64) NOT NULL,
@@ -2340,13 +2676,16 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 CONSTRAINT "PK_EventRsvps" PRIMARY KEY ("Id")
             );
 
+            ALTER TABLE "EventRsvps"
+                ADD COLUMN IF NOT EXISTS "TargetLearningLanguageCode" character varying(16) NOT NULL DEFAULT 'de';
+
             CREATE TABLE IF NOT EXISTS "LearnerConversationProfiles" (
                 "Id" uuid NOT NULL,
                 "OwnerEmail" character varying(320) NOT NULL,
                 "DisplayName" character varying(128) NOT NULL,
                 "CityRegion" character varying(128),
                 "InteractionPreference" character varying(32) NOT NULL,
-                "GermanLevel" character varying(8) NOT NULL,
+                "LearningLevel" character varying(8) NOT NULL,
                 "HelperLanguageCodes" character varying(256) NOT NULL,
                 "ConversationGoals" character varying(1000) NOT NULL,
                 "AvailabilityNotes" character varying(1000),
@@ -2356,6 +2695,35 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 "UpdatedAtUtc" timestamp with time zone NOT NULL,
                 CONSTRAINT "PK_LearnerConversationProfiles" PRIMARY KEY ("Id")
             );
+
+            DO $$
+            BEGIN
+                IF EXISTS (
+                    SELECT 1 FROM information_schema.columns
+                    WHERE table_name = 'LearnerConversationProfiles' AND column_name = 'GermanLevel')
+                AND NOT EXISTS (
+                    SELECT 1 FROM information_schema.columns
+                    WHERE table_name = 'LearnerConversationProfiles' AND column_name = 'LearningLevel')
+                THEN
+                    ALTER TABLE "LearnerConversationProfiles" RENAME COLUMN "GermanLevel" TO "LearningLevel";
+                END IF;
+            END $$;
+
+            ALTER TABLE "LearnerConversationProfiles"
+                ADD COLUMN IF NOT EXISTS "LearningLevel" character varying(8) NOT NULL DEFAULT 'A1';
+
+            DO $$
+            BEGIN
+                IF EXISTS (
+                    SELECT 1 FROM information_schema.columns
+                    WHERE table_name = 'LearnerConversationProfiles' AND column_name = 'GermanLevel')
+                THEN
+                    UPDATE "LearnerConversationProfiles"
+                    SET "LearningLevel" = "GermanLevel"
+                    WHERE "LearningLevel" IS NULL OR "LearningLevel" = 'A1';
+                    ALTER TABLE "LearnerConversationProfiles" DROP COLUMN "GermanLevel";
+                END IF;
+            END $$;
 
             CREATE TABLE IF NOT EXISTS "PartnerRequests" (
                 "Id" uuid NOT NULL,
@@ -2428,11 +2796,16 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
                 CONSTRAINT "PK_ListingReviews" PRIMARY KEY ("Id")
             );
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEvents_Slug" ON "ConversationEvents" ("Slug");
-            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_OrganizerProfileSlug" ON "ConversationEvents" ("OrganizerProfileSlug");
-            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_City_IsOnline_PriceType" ON "ConversationEvents" ("City", "IsOnline", "PriceType");
-            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Category_PublicationStatus" ON "ConversationEvents" ("Category", "PublicationStatus");
-            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_StartsAtUtc_PublicationStatus" ON "ConversationEvents" ("StartsAtUtc", "PublicationStatus");
+            DROP INDEX IF EXISTS "IX_ConversationEvents_Slug";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_OrganizerProfileSlug";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_City_IsOnline_PriceType";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_Category_PublicationStatus";
+            DROP INDEX IF EXISTS "IX_ConversationEvents_StartsAtUtc_PublicationStatus";
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_Slug" ON "ConversationEvents" ("TargetLearningLanguageCode", "Slug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_Organizer" ON "ConversationEvents" ("TargetLearningLanguageCode", "OrganizerProfileSlug");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_CityOnlinePrice" ON "ConversationEvents" ("TargetLearningLanguageCode", "City", "IsOnline", "PriceType");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_CategoryStatus" ON "ConversationEvents" ("TargetLearningLanguageCode", "Category", "PublicationStatus");
+            CREATE INDEX IF NOT EXISTS "IX_ConversationEvents_Target_StartStatus" ON "ConversationEvents" ("TargetLearningLanguageCode", "StartsAtUtc", "PublicationStatus");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventLevels_ConversationEventId_CefrLevel" ON "ConversationEventLevels" ("ConversationEventId", "CefrLevel");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventHelperLanguages_ConversationEventId_LanguageCode" ON "ConversationEventHelperLanguages" ("ConversationEventId", "LanguageCode");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_ConversationEventPreparationPackLinks_ConversationEventId_PreparationPackSlug" ON "ConversationEventPreparationPackLinks" ("ConversationEventId", "PreparationPackSlug");
@@ -2440,17 +2813,21 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfiles_Slug" ON "OrganizerProfiles" ("Slug");
             CREATE INDEX IF NOT EXISTS "IX_OrganizerProfiles_OrganizerType_PublicationStatus" ON "OrganizerProfiles" ("OrganizerType", "PublicationStatus");
             CREATE INDEX IF NOT EXISTS "IX_OrganizerProfiles_CityRegion_PublicationStatus" ON "OrganizerProfiles" ("CityRegion", "PublicationStatus");
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_CefrLevel" ON "OrganizerProfileSupportedLevels" ("OrganizerProfileId", "CefrLevel");
+            DROP INDEX IF EXISTS "IX_OrganizerProfileSupportedLevels_OrganizerProfileId_CefrLevel";
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileLevels_Target_Level" ON "OrganizerProfileSupportedLevels" ("OrganizerProfileId", "TargetLearningLanguageCode", "CefrLevel");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileHelperLanguages_OrganizerProfileId_LanguageCode" ON "OrganizerProfileHelperLanguages" ("OrganizerProfileId", "LanguageCode");
             CREATE INDEX IF NOT EXISTS "IX_OrganizerClaimRequests_OrganizerProfileSlug_Status" ON "OrganizerClaimRequests" ("OrganizerProfileSlug", "Status");
             CREATE INDEX IF NOT EXISTS "IX_OrganizerClaimRequests_RequesterEmail_OrganizerProfileSlug_Status" ON "OrganizerClaimRequests" ("RequesterEmail", "OrganizerProfileSlug", "Status");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_OrganizerProfileOwners_OrganizerProfileSlug_OwnerEmail" ON "OrganizerProfileOwners" ("OrganizerProfileSlug", "OwnerEmail");
             CREATE INDEX IF NOT EXISTS "IX_OrganizerProfileOwners_OwnerEmail" ON "OrganizerProfileOwners" ("OwnerEmail");
 
-            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventRsvps_ConversationEventSlug_ParticipantEmail" ON "EventRsvps" ("ConversationEventSlug", "ParticipantEmail");
-            CREATE INDEX IF NOT EXISTS "IX_EventRsvps_ConversationEventSlug_Status" ON "EventRsvps" ("ConversationEventSlug", "Status");
+            DROP INDEX IF EXISTS "IX_EventRsvps_ConversationEventSlug_ParticipantEmail";
+            DROP INDEX IF EXISTS "IX_EventRsvps_ConversationEventSlug_Status";
+            CREATE UNIQUE INDEX IF NOT EXISTS "IX_EventRsvps_Target_EventEmail" ON "EventRsvps" ("TargetLearningLanguageCode", "ConversationEventSlug", "ParticipantEmail");
+            CREATE INDEX IF NOT EXISTS "IX_EventRsvps_Target_EventStatus" ON "EventRsvps" ("TargetLearningLanguageCode", "ConversationEventSlug", "Status");
             CREATE UNIQUE INDEX IF NOT EXISTS "IX_LearnerConversationProfiles_OwnerEmail" ON "LearnerConversationProfiles" ("OwnerEmail");
-            CREATE INDEX IF NOT EXISTS "IX_LearnerConversationProfiles_Visibility_CityRegion_GermanLevel" ON "LearnerConversationProfiles" ("Visibility", "CityRegion", "GermanLevel");
+            DROP INDEX IF EXISTS "IX_LearnerConversationProfiles_Visibility_CityRegion_GermanLevel";
+            CREATE INDEX IF NOT EXISTS "IX_LearnerConversationProfiles_Visibility_CityRegion_LearningLevel" ON "LearnerConversationProfiles" ("Visibility", "CityRegion", "LearningLevel");
             CREATE INDEX IF NOT EXISTS "IX_PartnerRequests_RequesterEmail_TargetLearnerProfileId_Status" ON "PartnerRequests" ("RequesterEmail", "TargetLearnerProfileId", "Status");
             CREATE INDEX IF NOT EXISTS "IX_PartnerRequests_TargetLearnerProfileId_Status" ON "PartnerRequests" ("TargetLearnerProfileId", "Status");
             CREATE INDEX IF NOT EXISTS "IX_PartnerRequests_RequesterEmail_CreatedAtUtc" ON "PartnerRequests" ("RequesterEmail", "CreatedAtUtc");
@@ -2853,6 +3230,117 @@ internal sealed class DarwinLinguaDatabaseInitializer : IDatabaseInitializer
             DbParameter parameter = command.CreateParameter();
             parameter.ParameterName = isSqlite ? "$tableName" : "@tableName";
             parameter.Value = tableName;
+            command.Parameters.Add(parameter);
+
+            object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+            return result is not null;
+        }
+        finally
+        {
+            if (shouldCloseConnection)
+            {
+                await connection.CloseAsync().ConfigureAwait(false);
+            }
+        }
+    }
+
+    private static async Task<bool> ColumnExistsAsync(
+        DarwinLinguaDbContext dbContext,
+        string tableName,
+        string columnName,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+        ArgumentException.ThrowIfNullOrWhiteSpace(tableName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(columnName);
+
+        DbConnection connection = dbContext.Database.GetDbConnection();
+        bool shouldCloseConnection = connection.State != System.Data.ConnectionState.Open;
+
+        if (shouldCloseConnection)
+        {
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        try
+        {
+            await using DbCommand command = connection.CreateCommand();
+            command.CommandText = dbContext.Database.IsSqlite()
+                ? """
+                  SELECT 1
+                  FROM pragma_table_info($tableName)
+                  WHERE name = $columnName
+                  LIMIT 1;
+                  """
+                : """
+                  SELECT 1
+                  FROM information_schema.columns
+                  WHERE table_schema = current_schema()
+                    AND table_name = @tableName
+                    AND column_name = @columnName
+                  LIMIT 1;
+                  """;
+
+            DbParameter tableParameter = command.CreateParameter();
+            tableParameter.ParameterName = dbContext.Database.IsSqlite() ? "$tableName" : "@tableName";
+            tableParameter.Value = tableName;
+            command.Parameters.Add(tableParameter);
+
+            DbParameter columnParameter = command.CreateParameter();
+            columnParameter.ParameterName = dbContext.Database.IsSqlite() ? "$columnName" : "@columnName";
+            columnParameter.Value = columnName;
+            command.Parameters.Add(columnParameter);
+
+            object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
+            return result is not null;
+        }
+        finally
+        {
+            if (shouldCloseConnection)
+            {
+                await connection.CloseAsync().ConfigureAwait(false);
+            }
+        }
+    }
+
+    private static async Task<bool> IndexExistsAsync(
+        DarwinLinguaDbContext dbContext,
+        string indexName,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(dbContext);
+        ArgumentException.ThrowIfNullOrWhiteSpace(indexName);
+
+        DbConnection connection = dbContext.Database.GetDbConnection();
+        bool shouldCloseConnection = connection.State != System.Data.ConnectionState.Open;
+
+        if (shouldCloseConnection)
+        {
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        try
+        {
+            await using DbCommand command = connection.CreateCommand();
+            command.CommandText = dbContext.Database.IsSqlite()
+                ? """
+                  SELECT 1
+                  FROM sqlite_master
+                  WHERE type = 'index'
+                    AND name = $indexName
+                  LIMIT 1;
+                  """
+                : """
+                  SELECT 1
+                  FROM pg_indexes
+                  WHERE schemaname = current_schema()
+                    AND indexname = @indexName
+                  LIMIT 1;
+                  """;
+
+            DbParameter parameter = command.CreateParameter();
+            parameter.ParameterName = dbContext.Database.IsSqlite() ? "$indexName" : "@indexName";
+            parameter.Value = indexName;
             command.Parameters.Add(parameter);
 
             object? result = await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);

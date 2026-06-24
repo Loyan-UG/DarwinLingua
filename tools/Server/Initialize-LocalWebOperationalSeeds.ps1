@@ -475,7 +475,7 @@ try {
             displayName = Get-SeedValue -Item $learner -PropertyName "displayName" -Required
             cityRegion = Get-SeedValue -Item $learner -PropertyName "cityRegion" -Default (Get-SeedValue -Item $learner -PropertyName "city")
             interactionPreference = Get-SeedValue -Item $learner -PropertyName "interactionPreference" -Default "both"
-            germanLevel = Get-SeedValue -Item $learner -PropertyName "germanLevel" -Default "B1"
+            learningLevel = Get-SeedValue -Item $learner -PropertyName "learningLevel" -Default "B1"
             helperLanguageCodes = Get-SeedArray -Item $learner -PropertyName "helperLanguageCodes"
             conversationGoals = Get-SeedValue -Item $learner -PropertyName "conversationGoals" -Default ((Get-SeedArray -Item $learner -PropertyName "practiceGoals") -join ", ")
             availabilityNotes = Get-SeedValue -Item $learner -PropertyName "availabilityNotes"

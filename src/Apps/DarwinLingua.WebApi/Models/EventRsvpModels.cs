@@ -11,6 +11,7 @@ public sealed record AdminSetEventRsvpStatusRequest(
 public sealed record EventRsvpResponse(
     Guid Id,
     string ConversationEventSlug,
+    string TargetLearningLanguageCode,
     string ParticipantName,
     string ParticipantEmail,
     string Status,
@@ -19,6 +20,7 @@ public sealed record EventRsvpResponse(
 
 public sealed record EventRsvpSummaryResponse(
     string ConversationEventSlug,
+    string TargetLearningLanguageCode,
     int InterestedCount,
     int GoingCount,
     int CancelledCount,

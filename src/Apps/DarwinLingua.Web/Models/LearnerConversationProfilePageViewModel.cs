@@ -24,7 +24,7 @@ public sealed class LearnerConversationProfileInputModel
 
     [Required]
     [StringLength(8)]
-    public string GermanLevel { get; set; } = "A1";
+    public string LearningLevel { get; set; } = "A1";
 
     [Required]
     [StringLength(256)]

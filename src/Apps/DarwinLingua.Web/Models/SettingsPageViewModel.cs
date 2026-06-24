@@ -5,6 +5,7 @@ namespace DarwinLingua.Web.Models;
 
 public sealed record SettingsPageViewModel(
     SettingsUpdateInputModel Input,
+    IReadOnlyList<SelectListItem> TargetLearningLanguageOptions,
     IReadOnlyList<SelectListItem> UiLanguageOptions,
     IReadOnlyList<SelectListItem> MeaningLanguageOptions,
     IReadOnlyList<SelectListItem> SecondaryMeaningLanguageOptions,
@@ -16,6 +17,10 @@ public sealed record SettingsPageViewModel(
 
 public sealed class SettingsUpdateInputModel
 {
+    [Required]
+    [StringLength(16)]
+    public string TargetLearningLanguageCode { get; init; } = "de";
+
     [Required]
     [StringLength(8)]
     public string UiLanguageCode { get; init; } = "en";

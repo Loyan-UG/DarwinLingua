@@ -250,7 +250,7 @@
                 <div class="chip-grid">
                     @foreach (string topic in Model.Content.Word.Topics)
                     {
-                        <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topic">@topic</a>
+                        <a class="chip-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Topic" asp-route-id="@topic">@topic</a>
                     }
                 </div>
             </article>

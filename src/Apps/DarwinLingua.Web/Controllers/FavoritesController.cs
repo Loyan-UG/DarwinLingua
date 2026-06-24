@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("favorites")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Favorites)]
 public sealed class FavoritesController(
     IWebFavoriteWordService userFavoriteWordService,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -16,12 +16,13 @@ public sealed class FavoritesController(
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (!await featureAccessService.CanUseFavoritesAsync(cancellationToken))
         {
             return View(new FavoritesPageViewModel([], profile.PreferredMeaningLanguage1, true, "Favorites are available during an active trial or premium plan."));
         }
 
-        var words = await userFavoriteWordService.GetFavoriteWordsAsync(profile.PreferredMeaningLanguage1, cancellationToken);
+        var words = await userFavoriteWordService.GetFavoriteWordsAsync(targetLearningLanguageCode, profile.PreferredMeaningLanguage1, cancellationToken);
         return View(new FavoritesPageViewModel(words, profile.PreferredMeaningLanguage1, false, null));
     }
 }

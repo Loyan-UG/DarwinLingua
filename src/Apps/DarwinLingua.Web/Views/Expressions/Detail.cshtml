@@ -9,7 +9,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Expression.CefrLevel · @T[Model.Expression.ExpressionType] · @T[Model.Expression.Register]</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="Expressions" asp-action="Index">@T["All Expressions"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All Expressions"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Expression.ExpressionText</h1>
@@ -139,7 +139,7 @@
                     var word = Model.Expression.LinkedWords[index];
                     if (!string.IsNullOrWhiteSpace(word.WordSlug))
                     {
-                        <a asp-controller="Words" asp-action="Detail" asp-route-slug="@word.WordSlug">@word.Lemma</a>
+                        <a asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@word.WordSlug">@word.Lemma</a>
                     }
                     else
                     {
@@ -158,7 +158,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.Expression.RelatedExpressionSlugs)
                 {
-                    <a class="chip-link" asp-controller="Expressions" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }
@@ -168,7 +168,7 @@
             <div class="chip-grid">
                 @foreach (string slug in Model.Expression.LinkedExerciseSlugs)
                 {
-                    <a class="chip-link" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@slug">@slug</a>
+                    <a class="chip-link" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@slug">@slug</a>
                 }
             </div>
         }

@@ -5,6 +5,7 @@ param(
     [string]$PostgresContainer = "darwinlingua-postgres",
     [string]$PostgresUser = "postgres",
     [switch]$SkipDatabaseDump,
+    [switch]$SkipRestoreDryRun,
     [switch]$SkipRepoOverlay
 )
 
@@ -50,6 +51,89 @@ function Invoke-Checked {
     }
 }
 
+function Invoke-DockerPostgresSqlFile {
+    param(
+        [string]$Database,
+        [string]$SqlPath,
+        [string]$OutputPath
+    )
+
+    $containerSqlPath = "/tmp/$(Split-Path -Leaf $SqlPath)"
+    Invoke-Checked "docker" @("cp", $SqlPath, "$PostgresContainer`:$containerSqlPath") (Join-Path $verificationPath "docker-copy-$(Split-Path -Leaf $SqlPath).log")
+    Invoke-Checked "docker" @("exec", $PostgresContainer, "psql", "-U", $PostgresUser, "-d", $Database, "-f", $containerSqlPath) $OutputPath
+}
+
+function Write-DatabaseInventorySql {
+    param([string]$Path)
+
+    $sql = @'
+\pset format unaligned
+\pset fieldsep |
+\pset tuples_only on
+
+select
+    'content_by_target_language' as section,
+    table_name,
+    target_language_code,
+    row_count::text
+from (
+    select 'ContentPackages' as table_name, coalesce("TargetLearningLanguageCode", '<null>') as target_language_code, count(*) as row_count from "ContentPackages" group by 2
+    union all select 'ConversationEvents', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "ConversationEvents" group by 2
+    union all select 'ConversationStarterPacks', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "ConversationStarterPacks" group by 2
+    union all select 'CoursePaths', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "CoursePaths" group by 2
+    union all select 'CourseModules', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "CourseModules" group by 2
+    union all select 'CourseLessons', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "CourseLessons" group by 2
+    union all select 'CountryGuidanceNotes', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "CountryGuidanceNotes" group by 2
+    union all select 'DialogueLessons', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "DialogueLessons" group by 2
+    union all select 'EventPreparationPacks', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "EventPreparationPacks" group by 2
+    union all select 'EventRsvps', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "EventRsvps" group by 2
+    union all select 'ExamProfiles', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "ExamProfiles" group by 2
+    union all select 'ExamPrepUnits', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "ExamPrepUnits" group by 2
+    union all select 'ExerciseSets', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "ExerciseSets" group by 2
+    union all select 'Exercises', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "Exercises" group by 2
+    union all select 'ExpressionEntries', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "ExpressionEntries" group by 2
+    union all select 'GrammarTopics', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "GrammarTopics" group by 2
+    union all select 'OrganizerProfileSupportedLevels', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "OrganizerProfileSupportedLevels" group by 2
+    union all select 'RoleplayScenarios', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "RoleplayScenarios" group by 2
+    union all select 'TalkTopics', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "TalkTopics" group by 2
+    union all select 'UserContentProgress', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "UserContentProgress" group by 2
+    union all select 'UserExerciseAttempts', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "UserExerciseAttempts" group by 2
+    union all select 'UserLearningProfiles', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "UserLearningProfiles" group by 2
+    union all select 'WebUserPreferences', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "WebUserPreferences" group by 2
+    union all select 'WritingTemplates', coalesce("TargetLearningLanguageCode", '<null>'), count(*) from "WritingTemplates" group by 2
+) as counts
+order by section, table_name, target_language_code;
+
+select
+    'country_guidance_by_target_country' as section,
+    coalesce("TargetLearningLanguageCode", '<null>') as target_language_code,
+    coalesce("CountryContextCode", '<null>') as country_context_code,
+    count(*)::text as row_count
+from "CountryGuidanceNotes"
+group by 2, 3
+order by 2, 3;
+
+select
+    'helper_translation_json_nonempty' as section,
+    table_name,
+    field_name,
+    nonempty_count::text
+from (
+    select 'CourseLessons' as table_name, 'TitleTranslationsJson' as field_name, count(*) filter (where coalesce("TitleTranslationsJson", '') <> '') as nonempty_count from "CourseLessons"
+    union all select 'CourseLessons', 'NarrativeTranslationsJson', count(*) filter (where coalesce("NarrativeTranslationsJson", '') <> '') from "CourseLessons"
+    union all select 'CountryGuidanceNotes', 'TitleTranslationsJson', count(*) filter (where coalesce("TitleTranslationsJson", '') <> '') from "CountryGuidanceNotes"
+    union all select 'CountryGuidanceNotes', 'SectionsTranslationsJson', count(*) filter (where coalesce("SectionsTranslationsJson", '') <> '') from "CountryGuidanceNotes"
+    union all select 'ExamPrepUnits', 'TitleTranslationsJson', count(*) filter (where coalesce("TitleTranslationsJson", '') <> '') from "ExamPrepUnits"
+    union all select 'WritingTemplates', 'TitleTranslationsJson', count(*) filter (where coalesce("TitleTranslationsJson", '') <> '') from "WritingTemplates"
+    union all select 'Exercises', 'TitleTranslationsJson', count(*) filter (where coalesce("TitleTranslationsJson", '') <> '') from "Exercises"
+    union all select 'RoleplayScenarios', 'TitleTranslationsJson', count(*) filter (where coalesce("TitleTranslationsJson", '') <> '') from "RoleplayScenarios"
+) as translation_counts
+order by section, table_name, field_name;
+'@
+
+    Write-TextFile -Path $Path -Content $sql
+}
+
 $gitHead = (& git -C $repoRoot rev-parse HEAD).Trim()
 $gitBranch = (& git -C $repoRoot branch --show-current).Trim()
 $gitStatus = & git -C $repoRoot status --short
@@ -61,6 +145,7 @@ if (-not $SkipDatabaseDump) {
     $dumpPath = Join-Path $dbPath $dumpFileName
     $restoreListPath = Join-Path $dbPath "$DatabaseName`_$timestamp.restore-list.txt"
     $globalsPath = Join-Path $dbPath "postgres-globals_$timestamp.sql"
+    $containerDumpForRestore = "/tmp/$dumpFileName"
 
     $pgDump = Get-Command pg_dump -ErrorAction SilentlyContinue
     $pgDumpAll = Get-Command pg_dumpall -ErrorAction SilentlyContinue
@@ -70,6 +155,7 @@ if (-not $SkipDatabaseDump) {
         Invoke-Checked $pgDump.Source @("-Fc", "-d", $DatabaseName, "-f", $dumpPath) (Join-Path $verificationPath "pg-dump.log")
         Invoke-Checked $pgDumpAll.Source @("--globals-only", "-f", $globalsPath) (Join-Path $verificationPath "pg-dumpall-globals.log")
         Invoke-Checked $pgRestore.Source @("--list", $dumpPath) $restoreListPath
+        Invoke-Checked "docker" @("cp", $dumpPath, "$PostgresContainer`:$containerDumpForRestore") (Join-Path $verificationPath "docker-copy-local-dump-for-restore.log")
     }
     else {
         $containerDump = "/tmp/$dumpFileName"
@@ -79,6 +165,24 @@ if (-not $SkipDatabaseDump) {
         Invoke-Checked "docker" @("cp", "$PostgresContainer`:$containerDump", $dumpPath) (Join-Path $verificationPath "docker-copy-dump.log")
         Invoke-Checked "docker" @("cp", "$PostgresContainer`:$containerGlobals", $globalsPath) (Join-Path $verificationPath "docker-copy-globals.log")
         Invoke-Checked "docker" @("exec", $PostgresContainer, "pg_restore", "--list", $containerDump) $restoreListPath
+        $containerDumpForRestore = $containerDump
+    }
+
+    $databaseInventorySqlPath = Join-Path $verificationPath "database-inventory.sql"
+    Write-DatabaseInventorySql -Path $databaseInventorySqlPath
+    Invoke-DockerPostgresSqlFile -Database $DatabaseName -SqlPath $databaseInventorySqlPath -OutputPath (Join-Path $verificationPath "database-inventory.txt")
+
+    if (-not $SkipRestoreDryRun) {
+        $restoreDatabaseName = "$($DatabaseName)_restore_verify_$($timestamp -replace '-', '_')"
+        Invoke-Checked "docker" @("exec", $PostgresContainer, "createdb", "-U", $PostgresUser, $restoreDatabaseName) (Join-Path $verificationPath "restore-dry-run-createdb.log")
+
+        try {
+            Invoke-Checked "docker" @("exec", $PostgresContainer, "pg_restore", "-U", $PostgresUser, "-d", $restoreDatabaseName, $containerDumpForRestore) (Join-Path $verificationPath "restore-dry-run-pg-restore.log")
+            Invoke-DockerPostgresSqlFile -Database $restoreDatabaseName -SqlPath $databaseInventorySqlPath -OutputPath (Join-Path $verificationPath "restore-dry-run-database-inventory.txt")
+        }
+        finally {
+            docker exec $PostgresContainer dropdb -U $PostgresUser --if-exists $restoreDatabaseName *> (Join-Path $verificationPath "restore-dry-run-dropdb.log")
+        }
     }
 }
 
@@ -239,6 +343,7 @@ $manifest = @"
 - Git commit: $gitHead
 - Database: $DatabaseName
 - Database dump skipped: $($SkipDatabaseDump.IsPresent)
+- Restore dry-run skipped: $($SkipRestoreDryRun.IsPresent)
 - Repo overlay skipped: $($SkipRepoOverlay.IsPresent)
 
 ## Restore Outline
@@ -255,6 +360,8 @@ $manifest = @"
 
 - `checksums.sha256` was generated after backup collection.
 - `db/*.restore-list.txt` exists when database dump was enabled.
+- ``verification/database-inventory.txt`` records source counts by target language, Country Guidance country context, and helper-translation JSON coverage.
+- ``verification/restore-dry-run-database-inventory.txt`` records the same counts after a temporary restore unless dry-run was skipped.
 - ``verification/git-status.txt`` records dirty/untracked state at backup time.
 "@
 

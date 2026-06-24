@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -35,13 +36,23 @@ internal sealed class ConversationEventConfiguration : IEntityTypeConfiguration<
         builder.Property(conversationEvent => conversationEvent.LastVerifiedAtUtc);
         builder.Property(conversationEvent => conversationEvent.PublicationStatus).HasConversion<string>().HasMaxLength(32).IsRequired();
         builder.Property(conversationEvent => conversationEvent.SortOrder).IsRequired();
+        builder.Property(conversationEvent => conversationEvent.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .IsRequired()
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
         builder.Property(conversationEvent => conversationEvent.CreatedAtUtc).IsRequired();
         builder.Property(conversationEvent => conversationEvent.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(conversationEvent => conversationEvent.Slug).IsUnique();
-        builder.HasIndex(conversationEvent => conversationEvent.OrganizerProfileSlug);
-        builder.HasIndex(conversationEvent => new { conversationEvent.City, conversationEvent.IsOnline, conversationEvent.PriceType });
-        builder.HasIndex(conversationEvent => new { conversationEvent.Category, conversationEvent.PublicationStatus });
-        builder.HasIndex(conversationEvent => new { conversationEvent.StartsAtUtc, conversationEvent.PublicationStatus });
+        builder.HasIndex(conversationEvent => new { conversationEvent.TargetLearningLanguageCode, conversationEvent.Slug })
+            .HasDatabaseName("IX_ConversationEvents_Target_Slug")
+            .IsUnique();
+        builder.HasIndex(conversationEvent => new { conversationEvent.TargetLearningLanguageCode, conversationEvent.OrganizerProfileSlug })
+            .HasDatabaseName("IX_ConversationEvents_Target_Organizer");
+        builder.HasIndex(conversationEvent => new { conversationEvent.TargetLearningLanguageCode, conversationEvent.City, conversationEvent.IsOnline, conversationEvent.PriceType })
+            .HasDatabaseName("IX_ConversationEvents_Target_CityOnlinePrice");
+        builder.HasIndex(conversationEvent => new { conversationEvent.TargetLearningLanguageCode, conversationEvent.Category, conversationEvent.PublicationStatus })
+            .HasDatabaseName("IX_ConversationEvents_Target_CategoryStatus");
+        builder.HasIndex(conversationEvent => new { conversationEvent.TargetLearningLanguageCode, conversationEvent.StartsAtUtc, conversationEvent.PublicationStatus })
+            .HasDatabaseName("IX_ConversationEvents_Target_StartStatus");
 
         builder.HasMany(conversationEvent => conversationEvent.SupportedLevels)
             .WithOne()

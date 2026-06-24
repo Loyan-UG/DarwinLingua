@@ -1,4 +1,5 @@
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Learning.Domain.Entities;
 
@@ -21,7 +22,7 @@ public sealed class UserContentProgress
         "course-lesson",
         "exam-prep-unit",
         "writing-template",
-        "cultural-note",
+        "country-guidance",
     };
 
     public static readonly IReadOnlySet<string> ValidStates = new HashSet<string>(StringComparer.Ordinal)
@@ -37,6 +38,7 @@ public sealed class UserContentProgress
     private UserContentProgress()
     {
         UserId = string.Empty;
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
         ContentOwnerType = string.Empty;
         ContentOwnerSlug = string.Empty;
         State = "not-started";
@@ -45,6 +47,7 @@ public sealed class UserContentProgress
     public UserContentProgress(
         Guid id,
         string userId,
+        string targetLearningLanguageCode,
         string contentOwnerType,
         string contentOwnerSlug,
         DateTime createdAtUtc)
@@ -56,6 +59,9 @@ public sealed class UserContentProgress
 
         Id = id;
         UserId = NormalizeRequiredText(userId, nameof(userId), 256);
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(
+            targetLearningLanguageCode,
+            "User content progress target learning language");
         ContentOwnerType = NormalizeControlledValue(contentOwnerType, ValidOwnerTypes, nameof(contentOwnerType));
         ContentOwnerSlug = NormalizeRequiredText(contentOwnerSlug, nameof(contentOwnerSlug), 256).ToLowerInvariant();
         State = "not-started";
@@ -66,6 +72,8 @@ public sealed class UserContentProgress
     public Guid Id { get; private set; }
 
     public string UserId { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; }
 
     public string ContentOwnerType { get; private set; }
 

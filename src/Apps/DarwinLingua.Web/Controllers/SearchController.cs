@@ -7,7 +7,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("search")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Search)]
 public sealed class SearchController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -22,7 +22,7 @@ public sealed class SearchController(
     private static readonly string[] ResultTypes =
     [
         "word", "grammar", "expression", "dialogue", "talk-topic", "exercise",
-        "course-lesson", "exam-prep", "writing-template", "cultural-note", "event", "organizer"
+        "course-lesson", "exam-prep", "writing-template", "country-guidance", "event", "organizer"
     ];
 
     [HttpGet("", Name = "Search_Index")]
@@ -30,6 +30,7 @@ public sealed class SearchController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string query = NormalizeQuery(q);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
@@ -47,7 +48,7 @@ public sealed class SearchController(
                 secondaryMeaningLanguageCode,
                 cancellationToken)
             .ConfigureAwait(false);
-        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, profile.AllowsRudeSlangContent, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, targetLearningLanguageCode, profile.AllowsRudeSlangContent, cancellationToken).ConfigureAwait(false);
 
         return View(new SearchPageViewModel(
             query,
@@ -68,6 +69,7 @@ public sealed class SearchController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
         string query = NormalizeQuery(q);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
@@ -85,7 +87,7 @@ public sealed class SearchController(
                 secondaryMeaningLanguageCode,
                 cancellationToken)
             .ConfigureAwait(false);
-        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, profile.AllowsRudeSlangContent, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<UnifiedLearningSearchResultModel> learningResults = await SearchLearningSafelyAsync(query, resultType, cefrLevel, targetLearningLanguageCode, profile.AllowsRudeSlangContent, cancellationToken).ConfigureAwait(false);
 
         return PartialView("_SearchResults", new SearchPageViewModel(
             query,
@@ -195,6 +197,7 @@ public sealed class SearchController(
         string query,
         string? resultType,
         string? cefrLevel,
+        string targetLearningLanguageCode,
         bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken)
     {
@@ -215,6 +218,7 @@ public sealed class SearchController(
                         null,
                         null,
                         includeSensitiveEducationalLanguage),
+                    targetLearningLanguageCode,
                     searchTimeout.Token)
                 .ConfigureAwait(false);
         }

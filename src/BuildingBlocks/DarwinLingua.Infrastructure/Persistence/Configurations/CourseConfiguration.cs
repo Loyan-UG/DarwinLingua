@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,10 @@ internal sealed class CoursePathConfiguration : IEntityTypeConfiguration<CourseP
         builder.ToTable("CoursePaths");
         builder.HasKey(course => course.Id);
         builder.Property(course => course.Id).ValueGeneratedNever();
+        builder.Property(course => course.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(course => course.Slug).HasMaxLength(128).IsRequired();
         builder.Property(course => course.Title).HasMaxLength(256).IsRequired();
         builder.Property(course => course.Description).HasMaxLength(2000).IsRequired();
@@ -22,7 +27,7 @@ internal sealed class CoursePathConfiguration : IEntityTypeConfiguration<CourseP
         builder.Property(course => course.SortOrder).IsRequired();
         builder.Property(course => course.CreatedAtUtc).IsRequired();
         builder.Property(course => course.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(course => course.Slug).IsUnique();
+        builder.HasIndex(course => new { course.TargetLearningLanguageCode, course.Slug }).IsUnique();
         builder.HasIndex(course => course.CefrLevel);
         builder.HasMany(course => course.Modules).WithOne().HasForeignKey(module => module.CoursePathId).OnDelete(DeleteBehavior.Cascade);
     }
@@ -36,6 +41,10 @@ internal sealed class CourseModuleConfiguration : IEntityTypeConfiguration<Cours
         builder.HasKey(module => module.Id);
         builder.Property(module => module.Id).ValueGeneratedNever();
         builder.Property(module => module.CoursePathId).IsRequired();
+        builder.Property(module => module.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(module => module.CoursePathSlug).HasMaxLength(128).IsRequired();
         builder.Property(module => module.Slug).HasMaxLength(128).IsRequired();
         builder.Property(module => module.Title).HasMaxLength(256).IsRequired();
@@ -48,7 +57,7 @@ internal sealed class CourseModuleConfiguration : IEntityTypeConfiguration<Cours
         builder.Property(module => module.SortOrder).IsRequired();
         builder.Property(module => module.CreatedAtUtc).IsRequired();
         builder.Property(module => module.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(module => module.Slug).IsUnique();
+        builder.HasIndex(module => new { module.TargetLearningLanguageCode, module.Slug }).IsUnique();
         builder.HasIndex(module => new { module.CoursePathId, module.ModuleNumber }).IsUnique();
         builder.HasMany(module => module.Lessons).WithOne().HasForeignKey(lesson => lesson.CourseModuleId).OnDelete(DeleteBehavior.Cascade);
     }
@@ -62,6 +71,10 @@ internal sealed class CourseLessonConfiguration : IEntityTypeConfiguration<Cours
         builder.HasKey(lesson => lesson.Id);
         builder.Property(lesson => lesson.Id).ValueGeneratedNever();
         builder.Property(lesson => lesson.CourseModuleId).IsRequired();
+        builder.Property(lesson => lesson.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(lesson => lesson.CoursePathSlug).HasMaxLength(128).IsRequired();
         builder.Property(lesson => lesson.ModuleSlug).HasMaxLength(128).IsRequired();
         builder.Property(lesson => lesson.Slug).HasMaxLength(128).IsRequired();
@@ -94,8 +107,8 @@ internal sealed class CourseLessonConfiguration : IEntityTypeConfiguration<Cours
         builder.Property(lesson => lesson.SortOrder).IsRequired();
         builder.Property(lesson => lesson.CreatedAtUtc).IsRequired();
         builder.Property(lesson => lesson.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(lesson => lesson.Slug).IsUnique();
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.Slug }).IsUnique();
         builder.HasIndex(lesson => new { lesson.CourseModuleId, lesson.LessonNumber }).IsUnique();
-        builder.HasIndex(lesson => new { lesson.CoursePathSlug, lesson.ModuleSlug });
+        builder.HasIndex(lesson => new { lesson.TargetLearningLanguageCode, lesson.CoursePathSlug, lesson.ModuleSlug });
     }
 }

@@ -10,6 +10,7 @@ public interface IWebUserPreferenceService
     Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken);
 
     Task<UserLearningProfileModel> UpdatePreferencesAsync(
+        string targetLearningLanguageCode,
         string uiLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
@@ -42,6 +43,10 @@ internal sealed class WebUserPreferenceService(
         "tr",
     };
 
+    private static readonly HashSet<string> SupportedTargetLearningLanguageCodes = new(
+        ContentLanguageRequirements.SupportedTargetLearningLanguageCodes,
+        StringComparer.OrdinalIgnoreCase);
+
     public async Task<UserLearningProfileModel> GetProfileAsync(CancellationToken cancellationToken)
     {
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
@@ -67,6 +72,7 @@ internal sealed class WebUserPreferenceService(
             ActorId = actor.ActorId,
             UiLanguageCode = "en",
             PrimaryMeaningLanguageCode = "en",
+            TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             AllowsRudeSlangContent = false,
             AdultContentAccessState = AdultContentAccessStates.NotRequested,
             CreatedAtUtc = DateTime.UtcNow,
@@ -80,6 +86,7 @@ internal sealed class WebUserPreferenceService(
     }
 
     public async Task<UserLearningProfileModel> UpdatePreferencesAsync(
+        string targetLearningLanguageCode,
         string uiLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
@@ -87,7 +94,7 @@ internal sealed class WebUserPreferenceService(
         string adultContentAccessState,
         CancellationToken cancellationToken)
     {
-        await ValidateAsync(uiLanguageCode, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, adultContentAccessState, cancellationToken)
+        await ValidateAsync(targetLearningLanguageCode, uiLanguageCode, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, adultContentAccessState, cancellationToken)
             .ConfigureAwait(false);
 
         WebActorContext actor = actorContextAccessor.GetCurrentActor();
@@ -113,6 +120,7 @@ internal sealed class WebUserPreferenceService(
         preference.SecondaryMeaningLanguageCode = string.IsNullOrWhiteSpace(secondaryMeaningLanguageCode)
             ? null
             : secondaryMeaningLanguageCode.Trim().ToLowerInvariant();
+        preference.TargetLearningLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
         preference.AllowsRudeSlangContent = allowsRudeSlangContent;
         preference.AdultContentAccessState = ResolveUserWritableAdultAccessState(adultContentAccessState, preference.AdultContentAccessState);
         preference.UpdatedAtUtc = DateTime.UtcNow;
@@ -123,6 +131,7 @@ internal sealed class WebUserPreferenceService(
     }
 
     private async Task ValidateAsync(
+        string targetLearningLanguageCode,
         string uiLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
@@ -131,8 +140,14 @@ internal sealed class WebUserPreferenceService(
     {
         LanguageCode uiLanguage = LanguageCode.From(uiLanguageCode);
         LanguageCode primaryMeaningLanguage = LanguageCode.From(primaryMeaningLanguageCode);
+        string normalizedTargetLearningLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
 
         cancellationToken.ThrowIfCancellationRequested();
+
+        if (!TargetLearningLanguageCatalog.IsActive(normalizedTargetLearningLanguageCode))
+        {
+            throw new InvalidOperationException($"Inactive target learning language code '{targetLearningLanguageCode}' cannot be selected.");
+        }
 
         if (!SupportedUiLanguageCodes.Contains(uiLanguage.Value))
         {
@@ -168,7 +183,8 @@ internal sealed class WebUserPreferenceService(
             preference.SecondaryMeaningLanguageCode,
             preference.UiLanguageCode,
             preference.AllowsRudeSlangContent,
-            NormalizeAdultContentAccessState(preference.AdultContentAccessState));
+            NormalizeAdultContentAccessState(preference.AdultContentAccessState),
+            NormalizeTargetLearningLanguageCode(preference.TargetLearningLanguageCode));
 
     private static UserLearningProfileModel CreateDefaultProfile(string actorId) =>
         new(
@@ -177,7 +193,8 @@ internal sealed class WebUserPreferenceService(
             null,
             "en",
             false,
-            AdultContentAccessStates.NotRequested);
+            AdultContentAccessStates.NotRequested,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
 
     private static string ResolveUserWritableAdultAccessState(string requestedState, string currentState)
     {
@@ -198,4 +215,18 @@ internal sealed class WebUserPreferenceService(
             AdultContentAccessStates.Blocked => AdultContentAccessStates.Blocked,
             _ => AdultContentAccessStates.NotRequested,
         };
+
+    private static string NormalizeTargetLearningLanguageCode(string? value)
+    {
+        string normalized = string.IsNullOrWhiteSpace(value)
+            ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+            : LanguageCode.From(value).Value;
+
+        if (!SupportedTargetLearningLanguageCodes.Contains(normalized))
+        {
+            throw new InvalidOperationException($"Unsupported target learning language code '{value}'.");
+        }
+
+        return normalized;
+    }
 }

@@ -7,7 +7,7 @@
 <section class="panel stack-lg">
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.ExerciseSet.CefrLevel · @T[Model.ExerciseSet.OwnerType]</span>
-        <a class="button button--secondary button--compact" asp-controller="Exercises" asp-action="Index">@T["All exercise sets"]</a>
+        <a class="button button--secondary button--compact" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All exercise sets"]</a>
     </div>
     <h1 class="headline-md">@Model.ExerciseSet.Title</h1>
     @if (!string.IsNullOrWhiteSpace(Model.ExerciseSet.LearnerLanguageTitle))
@@ -26,7 +26,7 @@
     {
         <article class="panel stack-md">
             <span class="eyebrow">@T[exercise.ExerciseType] · @T[exercise.TargetSkill]</span>
-            <h2 class="headline-sm"><a asp-controller="Exercises" asp-action="Detail" asp-route-slug="@exercise.Slug">@exercise.Title</a></h2>
+            <h2 class="headline-sm"><a asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@exercise.Slug">@exercise.Title</a></h2>
             @if (!string.IsNullOrWhiteSpace(exercise.LearnerLanguageTitle))
             {
                 <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @exercise.LearnerLanguageTitle</p>
@@ -36,7 +36,7 @@
             {
                 <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @exercise.LearnerLanguageInstruction</p>
             }
-            <a class="button button--secondary" asp-controller="Exercises" asp-action="Detail" asp-route-slug="@exercise.Slug">@T["Start exercise"]</a>
+            <a class="button button--secondary" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@exercise.Slug">@T["Start exercise"]</a>
         </article>
     }
 </section>

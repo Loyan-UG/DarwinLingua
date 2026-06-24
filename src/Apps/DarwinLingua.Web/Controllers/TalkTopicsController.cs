@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("talk-topics")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.TalkTopics)]
 public sealed class TalkTopicsController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -34,13 +34,14 @@ public sealed class TalkTopicsController(
             WebRouteInput.NormalizeSlug(contentType ?? string.Empty),
             WebRouteInput.NormalizeSlug(speakingGoal ?? string.Empty),
             null);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
 
         IReadOnlyList<TalkTopicListItemModel> talkTopics;
         try
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
-            talkTopics = await catalogApiClient.GetTalkTopicsAsync(filter, catalogTimeout.Token).ConfigureAwait(false);
+            talkTopics = await catalogApiClient.GetTalkTopicsAsync(filter, targetLearningLanguageCode, catalogTimeout.Token).ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
@@ -67,9 +68,10 @@ public sealed class TalkTopicsController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
@@ -85,6 +87,7 @@ public sealed class TalkTopicsController(
             talkTopic = await catalogApiClient
                 .GetTalkTopicBySlugAsync(
                     normalizedSlug,
+                    targetLearningLanguageCode,
                     profile.PreferredMeaningLanguage1,
                     effectiveSecondaryMeaningLanguageCode,
                     catalogTimeout.Token)

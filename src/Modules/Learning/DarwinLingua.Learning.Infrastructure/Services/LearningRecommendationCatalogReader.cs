@@ -3,6 +3,7 @@ using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,12 +14,15 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
 {
     public async Task<IReadOnlyList<LearningRecommendationModel>> GetDeterministicRecommendationsAsync(
         string userId,
+        string targetLearningLanguageCode,
         IReadOnlySet<string> completedContentKeys,
         int maxRecommendations,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(userId);
+        ArgumentException.ThrowIfNullOrWhiteSpace(targetLearningLanguageCode);
         ArgumentNullException.ThrowIfNull(completedContentKeys);
+        string targetLanguageCode = targetLearningLanguageCode.Trim().ToLowerInvariant();
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -29,6 +33,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
         await AddWeakExerciseRecommendationsAsync(
                 dbContext,
                 userId,
+                targetLanguageCode,
                 completedContentKeys,
                 maxRecommendations,
                 recommendations,
@@ -40,6 +45,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
             await AddDifficultWordRecommendationsAsync(
                     dbContext,
                     userId,
+                    targetLanguageCode,
                     completedContentKeys,
                     maxRecommendations,
                     recommendations,
@@ -49,7 +55,9 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
 
         CourseLesson[] courseLessons = await dbContext.CourseLessons
             .AsNoTracking()
-            .Where(static lesson => lesson.PublicationStatus == PublicationStatus.Active)
+            .Where(lesson =>
+                lesson.PublicationStatus == PublicationStatus.Active &&
+                lesson.TargetLearningLanguageCode == targetLanguageCode)
             .OrderBy(static lesson => lesson.SortOrder)
             .ThenBy(static lesson => lesson.LessonNumber)
             .Take(maxRecommendations * 2)
@@ -79,7 +87,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
                 "course-lesson",
                 lesson.Slug,
                 lesson.Title,
-                $"/courses/{lesson.CoursePathSlug}/{lesson.Slug}",
+                $"/learn/{targetLanguageCode}/courses/{lesson.CoursePathSlug}/{lesson.Slug}",
                 "Continue with the next available course lesson.",
                 lesson.CefrLevel.ToString()));
         }
@@ -88,7 +96,9 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
         {
             GrammarTopic[] grammarTopics = await dbContext.GrammarTopics
                 .AsNoTracking()
-                .Where(static topic => topic.PublicationStatus == PublicationStatus.Active)
+                .Where(topic =>
+                    topic.PublicationStatus == PublicationStatus.Active &&
+                    topic.TargetLearningLanguageCode == targetLanguageCode)
                 .OrderBy(static topic => topic.SortOrder)
                 .Take(maxRecommendations * 2)
                 .ToArrayAsync(cancellationToken)
@@ -117,7 +127,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
                     "grammar-topic",
                     topic.Slug,
                     topic.Title,
-                    $"/grammar/{topic.Slug}",
+                    $"/learn/{targetLanguageCode}/grammar/{topic.Slug}",
                     "Review a grammar topic that is not completed yet.",
                     topic.CefrLevel.ToString()));
             }
@@ -129,6 +139,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
     private static async Task AddWeakExerciseRecommendationsAsync(
         DarwinLinguaDbContext dbContext,
         string userId,
+        string targetLanguageCode,
         IReadOnlySet<string> completedContentKeys,
         int maxRecommendations,
         List<LearningRecommendationModel> recommendations,
@@ -136,7 +147,9 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
     {
         UserExerciseAttemptRow[] recentAttempts = await dbContext.UserExerciseAttempts
             .AsNoTracking()
-            .Where(attempt => attempt.UserId == userId)
+            .Where(attempt =>
+                attempt.UserId == userId &&
+                attempt.TargetLearningLanguageCode == targetLanguageCode)
             .OrderByDescending(attempt => attempt.AttemptedAtUtc)
             .ThenByDescending(attempt => attempt.CreatedAtUtc)
             .Select(attempt => new UserExerciseAttemptRow(
@@ -167,6 +180,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
             .AsNoTracking()
             .Where(exercise =>
                 weakExerciseSlugs.Contains(exercise.Slug) &&
+                exercise.TargetLearningLanguageCode == targetLanguageCode &&
                 exercise.PublicationStatus == PublicationStatus.Active)
             .ToDictionaryAsync(exercise => exercise.Slug, StringComparer.Ordinal, cancellationToken)
             .ConfigureAwait(false);
@@ -194,7 +208,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
                 "exercise",
                 exercise.Slug,
                 exercise.Title,
-                $"/exercises/{exercise.Slug}",
+                $"/learn/{targetLanguageCode}/exercises/{exercise.Slug}",
                 "Repeat this exercise because your latest saved attempt was not correct.",
                 exercise.CefrLevel.ToString()));
         }
@@ -203,11 +217,13 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
     private static async Task AddDifficultWordRecommendationsAsync(
         DarwinLinguaDbContext dbContext,
         string userId,
+        string targetLanguageCode,
         IReadOnlySet<string> completedContentKeys,
         int maxRecommendations,
         List<LearningRecommendationModel> recommendations,
         CancellationToken cancellationToken)
     {
+        LanguageCode targetLanguage = LanguageCode.From(targetLanguageCode);
         DifficultWordRow[] difficultWords = await (
                 from state in dbContext.UserWordStates.AsNoTracking()
                 join word in dbContext.WordEntries.AsNoTracking()
@@ -216,6 +232,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
                     state.UserId == userId &&
                     state.IsDifficult &&
                     !state.IsKnown &&
+                    word.LanguageCode == targetLanguage &&
                     word.PublicationStatus == PublicationStatus.Active
                 orderby state.UpdatedAtUtc descending
                 select new DifficultWordRow(
@@ -251,7 +268,7 @@ internal sealed class LearningRecommendationCatalogReader(IDbContextFactory<Darw
                 "word",
                 wordSlug,
                 title,
-                $"/words/{wordSlug}",
+                $"/learn/{targetLanguageCode}/words/{wordSlug}",
                 "Review this word because you marked it as difficult.",
                 word.CefrLevel));
         }

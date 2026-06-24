@@ -65,7 +65,7 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@conversationEvent.Category · @(conversationEvent.IsOnline ? T["Online"] : conversationEvent.City ?? conversationEvent.CountryRegion)</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">@conversationEvent.Name</a>
+                    <a asp-controller="ConversationEvents" asp-action="Detail" asp-route-targetLearningLanguageCode="@conversationEvent.TargetLearningLanguageCode" asp-route-slug="@conversationEvent.Slug">@conversationEvent.Name</a>
                 </h2>
                 <p>@conversationEvent.Description</p>
                 <dl class="detail-list">
@@ -101,7 +101,7 @@ else
                         }
                     </div>
                 }
-                <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Detail" asp-route-slug="@conversationEvent.Slug">@T["Open event"]</a>
+                <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Detail" asp-route-targetLearningLanguageCode="@conversationEvent.TargetLearningLanguageCode" asp-route-slug="@conversationEvent.Slug">@T["Open event"]</a>
             </article>
         }
     </section>

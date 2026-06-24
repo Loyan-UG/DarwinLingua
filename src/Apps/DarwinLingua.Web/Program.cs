@@ -28,7 +28,10 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services
-    .AddControllersWithViews()
+    .AddControllersWithViews(options =>
+    {
+        options.Filters.Add<TargetLearningLanguageRouteFilter>();
+    })
     .AddViewLocalization()
     .AddDataAnnotationsLocalization(options =>
     {

@@ -1,5 +1,6 @@
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -87,9 +88,9 @@ public sealed class OrganizerProfile
 
     public IReadOnlyCollection<OrganizerProfileHelperLanguage> HelperLanguages => _helperLanguages.AsReadOnly();
 
-    public void AddSupportedLevel(Guid id, CefrLevel cefrLevel, int sortOrder, DateTime createdAtUtc)
+    public void AddSupportedLevel(Guid id, CefrLevel cefrLevel, int sortOrder, DateTime createdAtUtc, string? targetLearningLanguageCode = null)
     {
-        _supportedLevels.Add(new OrganizerProfileSupportedLevel(id, Id, cefrLevel, sortOrder, createdAtUtc));
+        _supportedLevels.Add(new OrganizerProfileSupportedLevel(id, Id, cefrLevel, sortOrder, createdAtUtc, targetLearningLanguageCode));
         UpdatedAtUtc = ConversationEvent.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
 
@@ -106,12 +107,19 @@ public sealed class OrganizerProfileSupportedLevel
     {
     }
 
-    internal OrganizerProfileSupportedLevel(Guid id, Guid organizerProfileId, CefrLevel cefrLevel, int sortOrder, DateTime createdAtUtc)
+    internal OrganizerProfileSupportedLevel(
+        Guid id,
+        Guid organizerProfileId,
+        CefrLevel cefrLevel,
+        int sortOrder,
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Organizer profile level identifier cannot be empty.") : id;
         OrganizerProfileId = organizerProfileId == Guid.Empty ? throw new DomainRuleException("Organizer profile level profile identifier cannot be empty.") : organizerProfileId;
         CefrLevel = cefrLevel;
         SortOrder = ConversationEvent.NormalizeSortOrder(sortOrder);
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         CreatedAtUtc = ConversationEvent.NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
     }
 
@@ -120,6 +128,8 @@ public sealed class OrganizerProfileSupportedLevel
     public Guid OrganizerProfileId { get; private set; }
 
     public CefrLevel CefrLevel { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
 
     public int SortOrder { get; private set; }
 

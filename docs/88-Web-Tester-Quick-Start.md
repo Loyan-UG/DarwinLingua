@@ -40,7 +40,7 @@ Notice:
 
 ### 2. Courses
 
-Open `/courses`, choose a level near your current German level, then open one lesson.
+Open `/courses`, choose a level near your current target-language level, then open one lesson.
 
 Notice:
 

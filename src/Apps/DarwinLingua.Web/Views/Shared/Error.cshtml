@@ -1,4 +1,4 @@
-﻿@model ErrorViewModel
+@model ErrorViewModel
 @{
     ViewData["Title"] = Model.Title;
 }
@@ -17,6 +17,6 @@
 
     <div class="action-row">
         <a class="button button--primary" asp-controller="Home" asp-action="Index">@T["Home"]</a>
-        <a class="button button--secondary" asp-controller="Browse" asp-action="Index">@T["Browse words"]</a>
+        <a class="button button--secondary" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Browse words"]</a>
     </div>
 </section>

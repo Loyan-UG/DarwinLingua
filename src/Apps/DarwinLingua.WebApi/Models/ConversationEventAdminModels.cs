@@ -5,6 +5,7 @@ public sealed record AdminSetConversationEventPublicationStatusRequest(
 
 public sealed record OrganizerManagedConversationEventModel(
     string Slug,
+    string TargetLearningLanguageCode,
     string Name,
     string Description,
     string? City,

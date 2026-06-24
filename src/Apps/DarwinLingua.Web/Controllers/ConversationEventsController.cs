@@ -9,7 +9,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("conversation-events")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.ConversationEvents)]
 public sealed class ConversationEventsController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
@@ -43,6 +43,7 @@ public sealed class ConversationEventsController(
             NormalizeFilter(category),
             NormalizeDateFilter(dateFromUtc, endOfDay: false),
             NormalizeDateFilter(dateToUtc, endOfDay: true));
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         IReadOnlyList<ConversationEventListItemModel> events;
 
         try
@@ -50,7 +51,7 @@ public sealed class ConversationEventsController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             events = await catalogApiClient
-                .GetConversationEventsAsync(filter, catalogTimeout.Token)
+                .GetConversationEventsAsync(filter, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -67,9 +68,10 @@ public sealed class ConversationEventsController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         ConversationEventDetailModel? conversationEvent;
@@ -79,7 +81,7 @@ public sealed class ConversationEventsController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             conversationEvent = await catalogApiClient
-                .GetConversationEventBySlugAsync(normalizedSlug, catalogTimeout.Token)
+                .GetConversationEventBySlugAsync(normalizedSlug, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -98,7 +100,7 @@ public sealed class ConversationEventsController(
         analyticsService?.Record(WebProductAnalyticsEvents.EventViewed, $"event:{conversationEvent.Slug}");
 
         IReadOnlyList<EventPreparationPackListItemModel> preparationPacks = [];
-        EventRsvpSummaryModel rsvpSummary = new(normalizedSlug, 0, 0, 0, conversationEvent.Capacity ?? 0, conversationEvent.Capacity);
+        EventRsvpSummaryModel rsvpSummary = new(normalizedSlug, targetLearningLanguageCode, 0, 0, 0, conversationEvent.Capacity ?? 0, conversationEvent.Capacity);
 
         try
         {
@@ -106,7 +108,7 @@ public sealed class ConversationEventsController(
                 conversationEvent.LinkedEventPreparationPackSlugs,
                 cancellationToken);
             Task<EventRsvpSummaryModel> rsvpSummaryTask = catalogApiClient
-                .GetEventRsvpSummaryAsync(normalizedSlug, cancellationToken);
+                .GetEventRsvpSummaryAsync(normalizedSlug, targetLearningLanguageCode, cancellationToken);
             await Task.WhenAll(preparationPacksTask, rsvpSummaryTask).ConfigureAwait(false);
             preparationPacks = await preparationPacksTask.ConfigureAwait(false);
             rsvpSummary = await rsvpSummaryTask.ConfigureAwait(false);
@@ -136,39 +138,44 @@ public sealed class ConversationEventsController(
         CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         if (!ModelState.IsValid)
         {
             TempData["ErrorMessage"] = localizer["Required RSVP fields are missing or invalid."].Value;
-            return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
+            return RedirectToAction(nameof(Detail), new { targetLearningLanguageCode, slug = normalizedSlug });
         }
 
         if (!IsAllowedRsvpStatus(input.Status))
         {
             TempData["ErrorMessage"] = localizer["The selected RSVP status is not supported."].Value;
-            return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
+            return RedirectToAction(nameof(Detail), new { targetLearningLanguageCode, slug = normalizedSlug });
         }
 
         string participantEmail = input.ParticipantEmail.Trim();
         if (!rateLimiter.TryConsume("event-rsvp", $"{normalizedSlug}:{participantEmail}", 5, TimeSpan.FromMinutes(15)))
         {
             TempData["ErrorMessage"] = localizer["Too many RSVP attempts. Please wait a few minutes and try again."].Value;
-            return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
+            return RedirectToAction(nameof(Detail), new { targetLearningLanguageCode, slug = normalizedSlug });
         }
 
         try
         {
             EventRsvpModel rsvp = await catalogApiClient.SubmitEventRsvpAsync(
                     normalizedSlug,
+                    targetLearningLanguageCode,
                     new SubmitEventRsvpRequest(input.ParticipantName.Trim(), participantEmail, input.Status),
                     cancellationToken)
                 .ConfigureAwait(false);
             ConversationEventDetailModel? conversationEvent = await catalogApiClient
-                .GetConversationEventBySlugAsync(normalizedSlug, cancellationToken)
+                .GetConversationEventBySlugAsync(
+                    normalizedSlug,
+                    targetLearningLanguageCode,
+                    cancellationToken)
                 .ConfigureAwait(false);
             await notificationEmailService.SendEventRsvpConfirmationAsync(
                     rsvp.ParticipantEmail,
@@ -192,7 +199,7 @@ public sealed class ConversationEventsController(
             TempData["ErrorMessage"] = localizer["The RSVP could not be saved right now. Please try again."].Value;
         }
 
-        return RedirectToAction(nameof(Detail), new { slug = normalizedSlug });
+        return RedirectToAction(nameof(Detail), new { targetLearningLanguageCode, slug = normalizedSlug });
     }
 
     private ViewResult ServiceUnavailableView(string title, string message)
@@ -228,8 +235,9 @@ public sealed class ConversationEventsController(
             return [];
         }
 
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         Task<EventPreparationPackDetailModel?>[] packTasks = preparationPackSlugs
-            .Select(preparationPackSlug => catalogApiClient.GetEventPreparationPackBySlugAsync(preparationPackSlug, actorEmail, cancellationToken))
+            .Select(preparationPackSlug => catalogApiClient.GetEventPreparationPackBySlugAsync(preparationPackSlug, targetLearningLanguageCode, actorEmail, cancellationToken))
             .ToArray();
         EventPreparationPackDetailModel?[] packs = await Task.WhenAll(packTasks).ConfigureAwait(false);
 

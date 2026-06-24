@@ -38,7 +38,7 @@ public sealed class LearnerConversationProfilesController(
         IReadOnlyList<string> helperLanguageCodes = SplitLanguageCodes(input.HelperLanguageCodesText);
         if (!ModelState.IsValid ||
             !IsAllowedInteractionPreference(input.InteractionPreference) ||
-            !IsAllowedGermanLevel(input.GermanLevel) ||
+            !IsAllowedLearningLevel(input.LearningLevel) ||
             !IsAllowedVisibility(input.Visibility) ||
             !HasAllowedLanguageCodes(helperLanguageCodes))
         {
@@ -61,7 +61,7 @@ public sealed class LearnerConversationProfilesController(
                         input.DisplayName.Trim(),
                         TrimToNull(input.CityRegion),
                         input.InteractionPreference,
-                        input.GermanLevel,
+                        input.LearningLevel,
                         helperLanguageCodes,
                         input.ConversationGoals.Trim(),
                         TrimToNull(input.AvailabilityNotes),
@@ -144,7 +144,7 @@ public sealed class LearnerConversationProfilesController(
             DisplayName = profile.DisplayName,
             CityRegion = profile.CityRegion,
             InteractionPreference = profile.InteractionPreference,
-            GermanLevel = profile.GermanLevel,
+            LearningLevel = profile.LearningLevel,
             HelperLanguageCodesText = string.Join(", ", profile.HelperLanguageCodes),
             ConversationGoals = profile.ConversationGoals,
             AvailabilityNotes = profile.AvailabilityNotes,
@@ -173,13 +173,8 @@ public sealed class LearnerConversationProfilesController(
         string.Equals(value, "in-person", StringComparison.OrdinalIgnoreCase) ||
         string.Equals(value, "both", StringComparison.OrdinalIgnoreCase);
 
-    private static bool IsAllowedGermanLevel(string value) =>
-        string.Equals(value, "A1", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(value, "A2", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(value, "B1", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(value, "B2", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(value, "C1", StringComparison.OrdinalIgnoreCase) ||
-        string.Equals(value, "C2", StringComparison.OrdinalIgnoreCase);
+    private static bool IsAllowedLearningLevel(string value) =>
+        LearningPortalFilterConventions.NormalizeCefrLevel(value) is not null;
 
     private static bool IsAllowedVisibility(string value) =>
         string.Equals(value, "private", StringComparison.OrdinalIgnoreCase) ||

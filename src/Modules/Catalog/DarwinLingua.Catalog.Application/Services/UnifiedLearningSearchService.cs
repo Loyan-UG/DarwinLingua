@@ -1,6 +1,7 @@
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Catalog.Application.Services;
 
@@ -21,7 +22,7 @@ internal sealed class UnifiedLearningSearchService(IUnifiedLearningSearchReposit
         "course-lesson",
         "exam-prep",
         "writing-template",
-        "cultural-note",
+        "country-guidance",
         "event",
         "organizer",
     };
@@ -42,7 +43,17 @@ internal sealed class UnifiedLearningSearchService(IUnifiedLearningSearchReposit
         string? cefrLevel = NormalizeOptionalFilter(filter.CefrLevel, nameof(filter.CefrLevel));
         string? category = NormalizeOptionalFilter(filter.Category, nameof(filter.Category));
         string? topicKey = NormalizeOptionalFilter(filter.TopicKey, nameof(filter.TopicKey));
-        return new UnifiedLearningSearchFilterModel(query, cefrLevel, resultType, category, topicKey, filter.IncludeSensitiveEducationalLanguage);
+        string targetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(
+            filter.TargetLearningLanguageCode,
+            nameof(filter.TargetLearningLanguageCode));
+        return new UnifiedLearningSearchFilterModel(
+            query,
+            cefrLevel,
+            resultType,
+            category,
+            topicKey,
+            filter.IncludeSensitiveEducationalLanguage,
+            targetLearningLanguageCode);
     }
 
     private static string? NormalizeSearchQuery(string? value)

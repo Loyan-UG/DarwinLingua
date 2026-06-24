@@ -2,19 +2,25 @@
 @{
     ViewData["Title"] = T["Courses"];
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
+    IReadOnlyDictionary<string, LearningLevelDefinition> levelDefinitions = Model.LevelDefinitions
+        .GroupBy(level => level.Code, StringComparer.OrdinalIgnoreCase)
+        .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
 }
 
 <section class="panel stack-lg">
     <span class="eyebrow">@T["Learn"]</span>
     <h1 class="headline-md">@T["Courses"]</h1>
     <p class="body-lg">@T["Structured CEFR learning paths built from linked grammar, words, expressions, dialogues, Talk Topics, and exercises."]</p>
-    <form class="search-form" method="get" asp-controller="Courses" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="Courses" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search courses"]" aria-label="@T["Search courses"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
             {
-                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                string optionText = levelDefinitions.TryGetValue(level, out LearningLevelDefinition? optionLevel)
+                    ? $"{optionLevel.Code} · {T[optionLevel.DisplayTitle].Value}"
+                    : level;
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@optionText</option>
             }
         </select>
         <button type="submit" class="button button--secondary">@T["Filter"]</button>
@@ -30,8 +36,15 @@ else
     <section class="course-level-grid">
         @foreach (var course in Model.Courses)
         {
-            <a class="course-level-card panel" asp-controller="Courses" asp-action="Detail" asp-route-slug="@course.Slug">
-                <span class="course-level-card__level">@(course.CefrLevel ?? course.CefrRange)</span>
+            string levelCode = course.CefrLevel ?? course.CefrRange;
+            levelDefinitions.TryGetValue(levelCode, out LearningLevelDefinition? levelDefinition);
+            <a class="course-level-card panel" asp-controller="Courses" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@course.Slug">
+                <span class="course-level-card__level">@levelCode</span>
+                @if (levelDefinition is not null)
+                {
+                    <span class="course-level-card__label">@T[levelDefinition.DisplayTitle]</span>
+                    <p class="course-level-card__level-description">@T[levelDefinition.LearnerDescription]</p>
+                }
                 <h2 class="headline-sm">@course.Title</h2>
                 @if (!string.IsNullOrWhiteSpace(course.LearnerLanguageTitle))
                 {

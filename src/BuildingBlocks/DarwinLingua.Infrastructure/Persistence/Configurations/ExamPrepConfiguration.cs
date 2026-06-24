@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,10 @@ internal sealed class ExamProfileConfiguration : IEntityTypeConfiguration<ExamPr
         builder.ToTable("ExamProfiles");
         builder.HasKey(profile => profile.Id);
         builder.Property(profile => profile.Id).ValueGeneratedNever();
+        builder.Property(profile => profile.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(profile => profile.Key).HasMaxLength(96).IsRequired();
         builder.Property(profile => profile.DisplayName).HasMaxLength(256).IsRequired();
         builder.Property(profile => profile.DisplayNameTranslationsJson).HasColumnType("TEXT").IsRequired();
@@ -21,7 +26,7 @@ internal sealed class ExamProfileConfiguration : IEntityTypeConfiguration<ExamPr
         builder.Property(profile => profile.SortOrder).IsRequired();
         builder.Property(profile => profile.CreatedAtUtc).IsRequired();
         builder.Property(profile => profile.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(profile => profile.Key).IsUnique();
+        builder.HasIndex(profile => new { profile.TargetLearningLanguageCode, profile.Key }).IsUnique();
     }
 }
 
@@ -32,6 +37,10 @@ internal sealed class ExamPrepUnitConfiguration : IEntityTypeConfiguration<ExamP
         builder.ToTable("ExamPrepUnits");
         builder.HasKey(unit => unit.Id);
         builder.Property(unit => unit.Id).ValueGeneratedNever();
+        builder.Property(unit => unit.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(unit => unit.Slug).HasMaxLength(128).IsRequired();
         builder.Property(unit => unit.ExamProfileKey).HasMaxLength(96).IsRequired();
         builder.Property(unit => unit.Title).HasMaxLength(256).IsRequired();
@@ -60,7 +69,7 @@ internal sealed class ExamPrepUnitConfiguration : IEntityTypeConfiguration<ExamP
         builder.Property(unit => unit.SortOrder).IsRequired();
         builder.Property(unit => unit.CreatedAtUtc).IsRequired();
         builder.Property(unit => unit.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(unit => unit.Slug).IsUnique();
-        builder.HasIndex(unit => new { unit.ExamProfileKey, unit.CefrLevel, unit.ExamSection });
+        builder.HasIndex(unit => new { unit.TargetLearningLanguageCode, unit.Slug }).IsUnique();
+        builder.HasIndex(unit => new { unit.TargetLearningLanguageCode, unit.ExamProfileKey, unit.CefrLevel, unit.ExamSection });
     }
 }

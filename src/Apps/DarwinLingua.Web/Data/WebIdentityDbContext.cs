@@ -41,6 +41,7 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.Property(preference => preference.UiLanguageCode).HasMaxLength(16).IsRequired();
             entity.Property(preference => preference.PrimaryMeaningLanguageCode).HasMaxLength(16).IsRequired();
             entity.Property(preference => preference.SecondaryMeaningLanguageCode).HasMaxLength(16);
+            entity.Property(preference => preference.TargetLearningLanguageCode).HasMaxLength(16).HasDefaultValue("de").IsRequired();
             entity.Property(preference => preference.AllowsRudeSlangContent).HasDefaultValue(false).IsRequired();
             entity.Property(preference => preference.AdultContentAccessState).HasMaxLength(64).HasDefaultValue(AdultContentAccessStates.NotRequested).IsRequired();
             entity.HasIndex(preference => preference.ActorId).IsUnique();
@@ -59,8 +60,12 @@ public sealed class WebIdentityDbContext(DbContextOptions<WebIdentityDbContext> 
             entity.ToTable("WebUserWordStates");
             entity.HasKey(wordState => wordState.Id);
             entity.Property(wordState => wordState.ActorId).HasMaxLength(128).IsRequired();
-            entity.HasIndex(wordState => new { wordState.ActorId, wordState.WordPublicId }).IsUnique();
-            entity.HasIndex(wordState => new { wordState.ActorId, wordState.LastViewedAtUtc });
+            entity.Property(wordState => wordState.TargetLearningLanguageCode).HasMaxLength(16).HasDefaultValue("de").IsRequired();
+            entity.HasIndex(wordState => new { wordState.ActorId, wordState.TargetLearningLanguageCode, wordState.WordPublicId })
+                .IsUnique()
+                .HasDatabaseName("IX_WebUserWordStates_Actor_Target_Word");
+            entity.HasIndex(wordState => new { wordState.ActorId, wordState.TargetLearningLanguageCode, wordState.LastViewedAtUtc })
+                .HasDatabaseName("IX_WebUserWordStates_Actor_Target_LastViewed");
         });
 
         builder.Entity<WebEmailDeliveryLog>(entity =>

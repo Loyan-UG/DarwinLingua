@@ -51,7 +51,7 @@
   <data name="Resources" xml:space="preserve"><value>Ressourcen</value></data>
   <data name="Dialogues" xml:space="preserve"><value>Szenarien</value></data>
   <data name="Search" xml:space="preserve"><value>Suche</value></data>
-  <data name="Search German lemmas" xml:space="preserve"><value>Deutsche Lemmata suchen</value></data>
+  <data name="Search learning content" xml:space="preserve"><value>Lerninhalte suchen</value></data>
   <data name="Secondary meaning language" xml:space="preserve"><value>Zweite Bedeutungssprache</value></data>
   <data name="Select a CEFR level or topic to preview matching words here." xml:space="preserve"><value>Wähle ein GER-Niveau oder Thema, um passende Wörter hier anzuzeigen.</value></data>
   <data name="Save preferences" xml:space="preserve"><value>Einstellungen speichern</value></data>
@@ -64,7 +64,7 @@
   <data name="Synonyms" xml:space="preserve"><value>Synonyme</value></data>
   <data name="Topics" xml:space="preserve"><value>Themen</value></data>
   <data name="Topics will appear here as curated vocabulary becomes available." xml:space="preserve"><value>Themen erscheinen hier, sobald kuratierter Wortschatz verfügbar ist.</value></data>
-  <data name="Type a German lemma" xml:space="preserve"><value>Deutsches Lemma eingeben</value></data>
+  <data name="Type a word, title, topic, or phrase" xml:space="preserve"><value>Wort, Titel, Thema oder Wendung eingeben</value></data>
   <data name="These preferences control the site language and the meanings shown across word pages, lists, dialogues, and practice content." xml:space="preserve"><value>Diese Einstellungen steuern die Sprache der Oberfläche und die Bedeutungen auf Wortseiten, Listen, Szenarien und Lerninhalten.</value></data>
   <data name="UI language" xml:space="preserve"><value>Oberflächensprache</value></data>
   <data name="Updating results..." xml:space="preserve"><value>Ergebnisse werden aktualisiert...</value></data>
@@ -111,7 +111,7 @@
   <data name="Suggest adding {0}" xml:space="preserve"><value>{0} vorschlagen</value></data>
   <data name="Today's focus" xml:space="preserve"><value>Fokus heute</value></data>
   <data name="Try a broader level or topic to continue browsing." xml:space="preserve"><value>Wähle ein breiteres Niveau oder Thema, um weiterzusuchen.</value></data>
-  <data name="Type a German lemma to search the catalog." xml:space="preserve"><value>Gib ein deutsches Lemma ein, um den Katalog zu durchsuchen.</value></data>
+  <data name="Type a word or phrase to search the catalog." xml:space="preserve"><value>Gib ein Wort oder eine Wendung ein, um den Katalog zu durchsuchen.</value></data>
   <data name="Use starters, dialogues, events, and partner matching to move vocabulary from recognition into speaking." xml:space="preserve"><value>Nutze Gesprächseinstiege, Szenarien, Veranstaltungen und Partnersuche, um Wortschatz vom Erkennen ins Sprechen zu bringen.</value></data>
   <data name="View favorites" xml:space="preserve"><value>Favoriten anzeigen</value></data>
   <data name="We could not find {0} in Darwin Lingua." xml:space="preserve"><value>Wir konnten {0} in Darwin Lingua nicht finden.</value></data>
@@ -141,7 +141,7 @@
   <data name="Second meanings" xml:space="preserve"><value>Zweite Bedeutungen</value></data>
   <data name="Security" xml:space="preserve"><value>Sicherheit</value></data>
   <data name="Set languages" xml:space="preserve"><value>Sprachen festlegen</value></data>
-  <data name="Set your display name, location, German level, helper languages, goals, availability, and visibility for conversation practice." xml:space="preserve"><value>Lege Anzeigenamen, Standort, Deutschniveau, Hilfssprachen, Ziele, Verfügbarkeit und Sichtbarkeit für Gesprächsübungen fest.</value></data>
+  <data name="Set your display name, location, target-language level, helper languages, goals, availability, and visibility for conversation practice." xml:space="preserve"><value>Lege Anzeigenamen, Standort, Lernniveau der Zielsprache, Hilfssprachen, Ziele, Verfügbarkeit und Sichtbarkeit für Gesprächsübungen fest.</value></data>
   <data name="Step 1" xml:space="preserve"><value>Schritt 1</value></data>
   <data name="Step 2" xml:space="preserve"><value>Schritt 2</value></data>
   <data name="Step 3" xml:space="preserve"><value>Schritt 3</value></data>
@@ -427,7 +427,7 @@
   <data name="Disabled" xml:space="preserve"><value>Deaktiviert</value></data>
   <data name="Display name" xml:space="preserve"><value>Anzeigename</value></data>
   <data name="Enable as private" xml:space="preserve"><value>Als privat aktivieren</value></data>
-  <data name="German level" xml:space="preserve"><value>Deutschniveau</value></data>
+  <data name="Learning level" xml:space="preserve"><value>Lernniveau</value></data>
   <data name="Helper languages" xml:space="preserve"><value>Hilfssprachen</value></data>
   <data name="I confirm this learner profile is for an adult learner." xml:space="preserve"><value>Ich bestätige, dass dieses Lernendenprofil für eine erwachsene Person ist.</value></data>
   <data name="In-person" xml:space="preserve"><value>Vor Ort</value></data>
@@ -736,6 +736,10 @@
   <data name="Infinitive form" xml:space="preserve"><value>Infinitivform</value></data>
   <data name="Label" xml:space="preserve"><value>Label</value></data>
   <data name="Language" xml:space="preserve"><value>Sprache</value></data>
+  <data name="Learning" xml:space="preserve"><value>Lernen</value></data>
+  <data name="Target learning language" xml:space="preserve"><value>Zielsprache</value></data>
+  <data name="Planned" xml:space="preserve"><value>Geplant</value></data>
+  <data name="Target learning language is separate from UI language and helper translations." xml:space="preserve"><value>Die Zielsprache ist getrennt von Oberflaechensprache und Hilfsuebersetzungen.</value></data>
   <data name="Manage labels" xml:space="preserve"><value>Labels verwalten</value></data>
   <data name="Manage topics" xml:space="preserve"><value>Themen verwalten</value></data>
   <data name="Meanings and examples" xml:space="preserve"><value>Bedeutungen und Beispiele</value></data>
@@ -1198,7 +1202,7 @@
   <data name="exam-opinion-text" xml:space="preserve"><value>Pruefungsmeinungstext</value></data>
   <data name="official" xml:space="preserve"><value>Offiziell</value></data>
   <data name="exam" xml:space="preserve"><value>Pruefung</value></data>
-  <data name="Cultural Notes" xml:space="preserve"><value>Kulturnotizen</value></data>
+  <data name="Country Guidance - Germany" xml:space="preserve"><value>Laenderwissen Deutschland</value></data>
   <data name="Life in Germany" xml:space="preserve"><value>Leben in Deutschland</value></data>
   <data name="Culture, law, society, everyday systems, and civic knowledge for living in Germany." xml:space="preserve"><value>Kultur, Recht, Gesellschaft, Alltagssysteme und Buergerwissen fuer das Leben in Deutschland.</value></data>
   <data name="Search Life in Germany" xml:space="preserve"><value>Leben in Deutschland suchen</value></data>
@@ -1206,10 +1210,10 @@
   <data name="Culture, law, society, and civic knowledge notes will appear here after the first validated package is imported." xml:space="preserve"><value>Notizen zu Kultur, Recht, Gesellschaft und Buergerwissen erscheinen hier nach dem ersten validierten Paket.</value></data>
   <data name="Open note" xml:space="preserve"><value>Notiz oeffnen</value></data>
   <data name="German communication norms, social expectations, and practical cultural context for learners." xml:space="preserve"><value>Deutsche Kommunikationsnormen, soziale Erwartungen und praktischer kultureller Kontext fuer Lernende.</value></data>
-  <data name="Search cultural notes" xml:space="preserve"><value>Kulturnotizen suchen</value></data>
-  <data name="Cultural notes are being prepared" xml:space="preserve"><value>Kulturnotizen werden vorbereitet</value></data>
-  <data name="Dynamic cultural notes will appear here after the first validated cultural-note package is imported." xml:space="preserve"><value>Dynamische Kulturnotizen erscheinen hier, nachdem das erste validierte Kulturnotizen-Paket importiert wurde.</value></data>
-  <data name="Open cultural note" xml:space="preserve"><value>Kulturnotiz oeffnen</value></data>
+  <data name="Search country guidance" xml:space="preserve"><value>Laenderwissen suchen</value></data>
+  <data name="Country guidance notes are being prepared" xml:space="preserve"><value>Laenderwissen wird vorbereitet</value></data>
+  <data name="Country guidance notes will appear here after the first validated country-guidance package is imported." xml:space="preserve"><value>Laenderwissen-Notizen erscheinen hier, nachdem das erste validierte Country-Guidance-Paket importiert wurde.</value></data>
+  <data name="Open country guidance note" xml:space="preserve"><value>Laenderwissen-Notiz oeffnen</value></data>
   <data name="Context" xml:space="preserve"><value>Kontext</value></data>
   <data name="Practical explanation" xml:space="preserve"><value>Praktische Erklaerung</value></data>
   <data name="Examples" xml:space="preserve"><value>Beispiele</value></data>
@@ -1218,7 +1222,7 @@
   <data name="Do" xml:space="preserve"><value>Do</value></data>
   <data name="Don't" xml:space="preserve"><value>Don't</value></data>
   <data name="Course Lessons" xml:space="preserve"><value>Kurslektionen</value></data>
-  <data name="No cultural notes have been imported yet." xml:space="preserve"><value>Es wurden noch keine Kulturnotizen importiert.</value></data>
+  <data name="No country guidance notes have been imported yet." xml:space="preserve"><value>Es wurden noch keine Laenderwissen-Notizen importiert.</value></data>
   <data name="No Life in Germany notes have been imported yet." xml:space="preserve"><value>Es wurden noch keine Notizen zu Leben in Deutschland importiert.</value></data>
   <data name="du-vs-sie" xml:space="preserve"><value>Du vs. Sie</value></data>
   <data name="politeness" xml:space="preserve"><value>Hoeflichkeit</value></data>
@@ -1270,14 +1274,14 @@
   <data name="reading-task" xml:space="preserve"><value>Leseaufgabe</value></data>
   <data name="listening-task" xml:space="preserve"><value>Hoeraufgabe</value></data>
   <data name="scoring-checklist" xml:space="preserve"><value>Bewertungscheckliste</value></data>
-  <data name="Find vocabulary and learning content across the German learning portal." xml:space="preserve"><value>Wortschatz und Lerninhalte im Deutsch-Lernportal finden.</value></data>
-  <data name="Type a German word, title, topic, or phrase to search the learning portal." xml:space="preserve"><value>Gib ein deutsches Wort, einen Titel, ein Thema oder eine Wendung ein.</value></data>
+  <data name="Find vocabulary and learning content for the selected learning language." xml:space="preserve"><value>Wortschatz und Lerninhalte fuer die ausgewaehlte Lernsprache finden.</value></data>
+  <data name="Type a word, title, topic, or phrase to search the learning portal." xml:space="preserve"><value>Gib ein Wort, einen Titel, ein Thema oder eine Wendung ein.</value></data>
   <data name="Learning results" xml:space="preserve"><value>Lernergebnisse</value></data>
   <data name="Matched" xml:space="preserve"><value>Treffer in</value></data>
   <data name="exercise" xml:space="preserve"><value>Uebung</value></data>
   <data name="exam-prep" xml:space="preserve"><value>Pruefungsvorbereitung</value></data>
   <data name="writing-template" xml:space="preserve"><value>Schreibvorlage</value></data>
-  <data name="cultural-note" xml:space="preserve"><value>Kulturnotiz</value></data>
+  <data name="country-guidance" xml:space="preserve"><value>Laenderwissen</value></data>
   <data name="title" xml:space="preserve"><value>Titel</value></data>
   <data name="snippet" xml:space="preserve"><value>Textauszug</value></data>
   <data name="Learning progress" xml:space="preserve"><value>Lernfortschritt</value></data>
@@ -1479,4 +1483,41 @@
   <data name="Your data controls" xml:space="preserve">
     <value>Deine Datenkontrollen</value>
   </data>
+  <data name="Einstieg" xml:space="preserve">
+    <value>Einstieg</value>
+  </data>
+  <data name="Grundlagen" xml:space="preserve">
+    <value>Grundlagen</value>
+  </data>
+  <data name="Selbststaendig" xml:space="preserve">
+    <value>Selbststaendig</value>
+  </data>
+  <data name="Kompetent" xml:space="preserve">
+    <value>Kompetent</value>
+  </data>
+  <data name="Souveraen" xml:space="preserve">
+    <value>Souveraen</value>
+  </data>
+  <data name="Meisterschaft" xml:space="preserve">
+    <value>Meisterschaft</value>
+  </data>
+  <data name="Erste Schritte" xml:space="preserve">
+    <value>Erste Schritte</value>
+  </data>
+  <data name="Sicherer Alltag" xml:space="preserve">
+    <value>Sicherer Alltag</value>
+  </data>
+  <data name="Alltag und Arbeit" xml:space="preserve">
+    <value>Alltag und Arbeit</value>
+  </data>
+  <data name="Kompetente Anwendung" xml:space="preserve">
+    <value>Kompetente Anwendung</value>
+  </data>
+  <data name="Souveraene Kommunikation" xml:space="preserve">
+    <value>Souveraene Kommunikation</value>
+  </data>
+  <data name="Stil und Praezision" xml:space="preserve">
+    <value>Stil und Praezision</value>
+  </data>
 </root>
+

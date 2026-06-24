@@ -12,6 +12,8 @@ public sealed class WebUserPreference
 
     public string? SecondaryMeaningLanguageCode { get; set; }
 
+    public string TargetLearningLanguageCode { get; set; } = "de";
+
     public bool AllowsRudeSlangContent { get; set; }
 
     public string AdultContentAccessState { get; set; } = "not-requested";

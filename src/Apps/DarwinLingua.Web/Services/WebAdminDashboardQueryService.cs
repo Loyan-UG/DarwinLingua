@@ -1,4 +1,5 @@
 using DarwinLingua.Web.Models;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Web.Services;
 
@@ -12,7 +13,7 @@ internal sealed class WebAdminDashboardQueryService(IWebCatalogApiClient catalog
     public async Task<AdminDashboardViewModel> GetDashboardAsync(CancellationToken cancellationToken)
     {
         AdminSystemReportResponse report = await catalogApiClient
-            .GetAdminSystemReportAsync(cancellationToken)
+            .GetAdminSystemReportAsync(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, cancellationToken)
             .ConfigureAwait(false);
 
         return new AdminDashboardViewModel(

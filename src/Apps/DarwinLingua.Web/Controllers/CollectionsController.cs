@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("collections")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Collections)]
 public sealed class CollectionsController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -52,6 +52,7 @@ public sealed class CollectionsController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);
@@ -66,6 +67,7 @@ public sealed class CollectionsController(
 
         IReadOnlyList<WordBrowseCardViewModel> words = await CreateWordCardsAsync(
                 collection.Words,
+                targetLearningLanguageCode,
                 profile.PreferredMeaningLanguage1,
                 secondaryMeaningLanguageCode,
                 cancellationToken)
@@ -80,12 +82,14 @@ public sealed class CollectionsController(
 
     private async Task<IReadOnlyList<WordBrowseCardViewModel>> CreateWordCardsAsync(
         IReadOnlyList<WordListItemModel> words,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         IReadOnlyList<WordListItemModel> secondaryWords = await LoadSecondaryWordsAsync(
                 words,
+                targetLearningLanguageCode,
                 primaryMeaningLanguageCode,
                 secondaryMeaningLanguageCode,
                 cancellationToken)
@@ -119,6 +123,7 @@ public sealed class CollectionsController(
 
     private async Task<IReadOnlyList<WordListItemModel>> LoadSecondaryWordsAsync(
         IReadOnlyList<WordListItemModel> words,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken)
@@ -133,7 +138,7 @@ public sealed class CollectionsController(
         try
         {
             return await catalogApiClient
-                .GetWordsByIdsAsync(words.Select(word => word.PublicId).ToArray(), secondaryMeaningLanguageCode, cancellationToken)
+                .GetWordsByIdsAsync(words.Select(word => word.PublicId).ToArray(), targetLearningLanguageCode, secondaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))

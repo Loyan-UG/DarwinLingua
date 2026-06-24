@@ -22,6 +22,8 @@ public sealed class ContentImportParserEventPreparationTests
               "packageVersion": "1.0",
               "packageId": "event-preparation-contract-test",
               "packageName": "Event Preparation Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en", "fa"],
               "entries": [],

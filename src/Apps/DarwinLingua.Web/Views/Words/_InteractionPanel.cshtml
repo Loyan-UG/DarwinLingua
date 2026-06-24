@@ -56,6 +56,6 @@
                 @(Model.WordState.IsDifficult ? T["Difficult"] : T["Mark difficult"])
             </button>
         </form>
-        <a class="button button--secondary" asp-controller="Favorites" asp-action="Index">@T["Open favorites"]</a>
+        <a class="button button--secondary" asp-controller="Favorites" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open favorites"]</a>
     </div>
 </div>

@@ -3,6 +3,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
 {
     public async Task<IReadOnlyList<ConversationEventListItemModel>> GetPublishedEventsAsync(
         ConversationEventListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(filter);
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -26,7 +29,9 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
             .Include(conversationEvent => conversationEvent.SupportedLevels)
             .Include(conversationEvent => conversationEvent.HelperLanguages)
             .Include(conversationEvent => conversationEvent.PreparationPackLinks)
-            .Where(conversationEvent => conversationEvent.PublicationStatus == PublicationStatus.Active);
+            .Where(conversationEvent =>
+                conversationEvent.PublicationStatus == PublicationStatus.Active &&
+                conversationEvent.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode);
 
         if (!string.IsNullOrWhiteSpace(filter.City))
         {
@@ -87,10 +92,12 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
 
     public async Task<ConversationEventDetailModel?> GetPublishedEventBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(slug);
         string normalizedSlug = slug.Trim().ToLowerInvariant();
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -102,7 +109,10 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
             .Include(item => item.SupportedLevels)
             .Include(item => item.HelperLanguages)
             .Include(item => item.PreparationPackLinks)
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item =>
+                item.PublicationStatus == PublicationStatus.Active &&
+                item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                item.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -110,6 +120,7 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
             ? null
             : new ConversationEventDetailModel(
                 conversationEvent.Slug,
+                conversationEvent.TargetLearningLanguageCode,
                 conversationEvent.Name,
                 conversationEvent.Description,
                 conversationEvent.City,
@@ -141,6 +152,7 @@ internal sealed class ConversationEventRepository(IDbContextFactory<DarwinLingua
     private static ConversationEventListItemModel CreateListItem(ConversationEvent conversationEvent) =>
         new(
             conversationEvent.Slug,
+            conversationEvent.TargetLearningLanguageCode,
             conversationEvent.Name,
             conversationEvent.Description,
             conversationEvent.City,

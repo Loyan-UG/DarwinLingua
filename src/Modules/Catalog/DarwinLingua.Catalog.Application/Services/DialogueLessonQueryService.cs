@@ -10,6 +10,12 @@ internal sealed class DialogueLessonQueryService(IDialogueLessonRepository dialo
         CancellationToken cancellationToken) =>
         dialogueLessonRepository.GetPublishedDialoguesAsync(filter, cancellationToken);
 
+    public Task<IReadOnlyList<DialogueLessonListItemModel>> GetPublishedDialoguesAsync(
+        DialogueLessonListFilterModel filter,
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken) =>
+        dialogueLessonRepository.GetPublishedDialoguesAsync(filter, targetLearningLanguageCode, cancellationToken);
+
     public Task<DialogueLessonDetailModel?> GetPublishedDialogueBySlugAsync(
         string slug,
         string primaryMeaningLanguageCode,
@@ -17,6 +23,19 @@ internal sealed class DialogueLessonQueryService(IDialogueLessonRepository dialo
         CancellationToken cancellationToken) =>
         dialogueLessonRepository.GetPublishedDialogueBySlugAsync(
             slug,
+            primaryMeaningLanguageCode,
+            secondaryMeaningLanguageCode,
+            cancellationToken);
+
+    public Task<DialogueLessonDetailModel?> GetPublishedDialogueBySlugAsync(
+        string slug,
+        string targetLearningLanguageCode,
+        string primaryMeaningLanguageCode,
+        string? secondaryMeaningLanguageCode,
+        CancellationToken cancellationToken) =>
+        dialogueLessonRepository.GetPublishedDialogueBySlugAsync(
+            slug,
+            targetLearningLanguageCode,
             primaryMeaningLanguageCode,
             secondaryMeaningLanguageCode,
             cancellationToken);

@@ -3,7 +3,7 @@ namespace DarwinLingua.WebApi.Models;
 public sealed record PartnerMatchSearchRequest(
     string? CityRegion,
     string? InteractionPreference,
-    string? GermanLevel,
+    string? LearningLevel,
     string? HelperLanguageCode,
     string? GoalKeyword);
 
@@ -12,7 +12,7 @@ public sealed record PartnerMatchProfileResponse(
     string DisplayName,
     string? CityRegion,
     string InteractionPreference,
-    string GermanLevel,
+    string LearningLevel,
     IReadOnlyList<string> HelperLanguageCodes,
     string ConversationGoals,
     string Visibility);

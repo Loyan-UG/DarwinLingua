@@ -3,6 +3,8 @@
     ViewData["Title"] = T["Learner profile"];
     bool hasProfile = Model.SavedProfile is not null;
     bool isDisabled = string.Equals(Model.SavedProfile?.Visibility, "disabled", StringComparison.Ordinal);
+    IReadOnlyList<DarwinLingua.SharedKernel.Globalization.LearningLevelDefinition> levelDefinitions =
+        DarwinLingua.Web.Models.LearningPortalFilterConventions.CefrLevelDefinitions;
 }
 
 <section class="panel stack-lg">
@@ -58,15 +60,14 @@
             </label>
 
             <label class="form-field">
-                <span>@T["German level"]</span>
-                <select asp-for="Input.GermanLevel">
-                    <option value="A1">A1</option>
-                    <option value="A2">A2</option>
-                    <option value="B1">B1</option>
-                    <option value="B2">B2</option>
-                    <option value="C1">C1</option>
-                    <option value="C2">C2</option>
+                <span>@T["Learning level"]</span>
+                <select asp-for="Input.LearningLevel">
+                    @foreach (var level in levelDefinitions)
+                    {
+                        <option value="@level.Code">@level.Code · @level.DisplayTitle</option>
+                    }
                 </select>
+                <small class="body-sm">@T["Choose the level you want to practice in the selected learning language."]</small>
             </label>
 
             <label class="form-field">

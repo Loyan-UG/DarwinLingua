@@ -2,6 +2,7 @@ namespace DarwinLingua.Catalog.Application.Models;
 
 public sealed record OrganizerProfileListItemModel(
     string Slug,
+    string TargetLearningLanguageCode,
     string DisplayName,
     string OrganizerType,
     string Description,
@@ -16,6 +17,7 @@ public sealed record OrganizerProfileListItemModel(
 
 public sealed record OrganizerProfileDetailModel(
     string Slug,
+    string TargetLearningLanguageCode,
     string DisplayName,
     string OrganizerType,
     string Description,

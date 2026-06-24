@@ -1,5 +1,6 @@
 namespace DarwinLingua.Localization.Application.Tests;
 
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 /// <summary>
@@ -13,12 +14,14 @@ public sealed class WebLearnerShellStructureTests
         string repositoryRoot = ResolveRepositoryRoot();
         string layoutPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Shared/_Layout.cshtml");
         string mobileNavPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Shared/_MobileNav.cshtml");
+        string targetLanguageSwitcherPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Shared/_TargetLearningLanguageSwitcher.cshtml");
         string filterConventionsPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Models/LearningPortalFilterConventions.cs");
         string homeViewPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Home/Index.cshtml");
         string recentViewPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views/Recent/Index.cshtml");
 
         string layoutSource = File.ReadAllText(layoutPath);
         string mobileNavSource = File.ReadAllText(mobileNavPath);
+        string targetLanguageSwitcherSource = File.ReadAllText(targetLanguageSwitcherPath);
         string filterConventionsSource = File.ReadAllText(filterConventionsPath);
         string homeViewSource = File.ReadAllText(homeViewPath);
         string recentViewSource = File.ReadAllText(recentViewPath);
@@ -40,17 +43,25 @@ public sealed class WebLearnerShellStructureTests
         Assert.Contains("Exercises", mobileNavSource, StringComparison.Ordinal);
         Assert.Contains("Courses", layoutSource, StringComparison.Ordinal);
         Assert.Contains("Courses", mobileNavSource, StringComparison.Ordinal);
+        Assert.Contains("asp-route-targetLearningLanguageCode", layoutSource, StringComparison.Ordinal);
+        Assert.Contains("asp-route-targetLearningLanguageCode", mobileNavSource, StringComparison.Ordinal);
         Assert.Contains("WritingTemplates", layoutSource, StringComparison.Ordinal);
         Assert.Contains("WritingTemplates", mobileNavSource, StringComparison.Ordinal);
         Assert.Contains("ExamPrep", layoutSource, StringComparison.Ordinal);
         Assert.Contains("ExamPrep", mobileNavSource, StringComparison.Ordinal);
-        Assert.Contains("CulturalNotes", layoutSource, StringComparison.Ordinal);
-        Assert.Contains("CulturalNotes", mobileNavSource, StringComparison.Ordinal);
+        Assert.Contains("CountryGuidance", layoutSource, StringComparison.Ordinal);
+        Assert.Contains("CountryGuidance", mobileNavSource, StringComparison.Ordinal);
+        Assert.Contains("_TargetLearningLanguageSwitcher", layoutSource, StringComparison.Ordinal);
+        Assert.Contains("_TargetLearningLanguageSwitcher", mobileNavSource, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.All", targetLanguageSwitcherSource, StringComparison.Ordinal);
+        Assert.Contains("target-language-switcher__option--disabled", targetLanguageSwitcherSource, StringComparison.Ordinal);
+        Assert.Contains("Target learning language is separate from UI language and helper translations.", targetLanguageSwitcherSource, StringComparison.Ordinal);
         Assert.Contains("ConversationEvents", layoutSource, StringComparison.Ordinal);
         Assert.Contains("OrganizerProfiles", layoutSource, StringComparison.Ordinal);
         Assert.Contains("@T[\"Learn\"]", mobileNavSource, StringComparison.Ordinal);
         Assert.Contains("@T[\"Prepare\"]", mobileNavSource, StringComparison.Ordinal);
-        Assert.Contains("CefrLevels = [\"A1\", \"A2\", \"B1\", \"B2\", \"C1\", \"C2\"]", filterConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("LearningLevelSystemCatalog.GermanCefrLevels", filterConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("CefrLevelDefinitions", filterConventionsSource, StringComparison.Ordinal);
         Assert.Contains("NormalizeCefrLevel", filterConventionsSource, StringComparison.Ordinal);
         Assert.Contains("@T[\"Settings\"]", layoutSource, StringComparison.Ordinal);
         Assert.Contains("hx-get", homeViewSource, StringComparison.Ordinal);
@@ -66,15 +77,19 @@ public sealed class WebLearnerShellStructureTests
 
         string webApiProgramSource = File.ReadAllText(webApiProgramPath);
 
-        AssertControllerRoute(webControllersPath, "GrammarController.cs", "[Route(\"grammar\")");
-        AssertControllerRoute(webControllersPath, "ExpressionsController.cs", "[Route(\"expressions\")");
-        AssertControllerRoute(webControllersPath, "ExercisesController.cs", "[Route(\"exercises\")");
-        AssertControllerRoute(webControllersPath, "CoursesController.cs", "[Route(\"courses\")");
-        AssertControllerRoute(webControllersPath, "ExamPrepController.cs", "[Route(\"exam-prep\")");
-        AssertControllerRoute(webControllersPath, "WritingTemplatesController.cs", "[Route(\"writing-templates\")");
-        AssertControllerRoute(webControllersPath, "CulturalNotesController.cs", "[Route(\"life-in-germany\")");
-        AssertControllerDoesNotContainRoute(webControllersPath, "CulturalNotesController.cs", "[Route(\"cultural-notes\")");
-        AssertControllerRoute(webControllersPath, "SearchController.cs", "[Route(\"search\")");
+        AssertControllerRoute(webControllersPath, "GrammarController.cs", "LearningRouteConventions.Grammar");
+        AssertControllerRoute(webControllersPath, "ExpressionsController.cs", "LearningRouteConventions.Expressions");
+        AssertControllerRoute(webControllersPath, "ExercisesController.cs", "LearningRouteConventions.Exercises");
+        AssertControllerRoute(webControllersPath, "CoursesController.cs", "LearningRouteConventions.Courses");
+        AssertControllerRoute(webControllersPath, "ExamPrepController.cs", "LearningRouteConventions.ExamPrep");
+        AssertControllerRoute(webControllersPath, "WritingTemplatesController.cs", "LearningRouteConventions.WritingTemplates");
+        AssertControllerRoute(webControllersPath, "CountryGuidanceController.cs", "LearningRouteConventions.CountryGuidance");
+        AssertControllerRoute(webControllersPath, "ConversationEventsController.cs", "LearningRouteConventions.ConversationEvents");
+        AssertControllerRoute(webControllersPath, "OrganizerProfilesController.cs", "LearningRouteConventions.OrganizerProfiles");
+        AssertControllerDoesNotContainRoute(webControllersPath, "CountryGuidanceController.cs", "[Route(\"life-in-germany\")");
+        AssertControllerDoesNotContainRoute(webControllersPath, "ConversationEventsController.cs", "[Route(\"conversation-events\")");
+        AssertControllerDoesNotContainRoute(webControllersPath, "OrganizerProfilesController.cs", "[Route(\"organizers\")");
+        AssertControllerRoute(webControllersPath, "SearchController.cs", "LearningRouteConventions.Search");
 
         string[] expectedApiRoutes =
         [
@@ -91,8 +106,8 @@ public sealed class WebLearnerShellStructureTests
             "\"/api/catalog/course-lessons/{slug}\"",
             "\"/api/catalog/writing-templates\"",
             "\"/api/catalog/writing-templates/{slug}\"",
-            "\"/api/catalog/cultural-notes\"",
-            "\"/api/catalog/cultural-notes/{slug}\"",
+            "\"/api/catalog/country-guidance/{countryContextCode}\"",
+            "\"/api/catalog/country-guidance/{countryContextCode}/{slug}\"",
             "\"/api/catalog/exam-profiles\"",
             "\"/api/catalog/exam-prep\"",
             "\"/api/catalog/exam-prep/{slug}\"",
@@ -108,6 +123,94 @@ public sealed class WebLearnerShellStructureTests
         }
 
         Assert.Contains("primaryMeaningLanguageCode", webApiProgramSource, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LearnerRouteInfrastructure_ShouldUseExplicitTargetLanguageContext()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string routeConventionsPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Services/LearningRouteConventions.cs");
+        string routeFilterPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Services/TargetLearningLanguageRouteFilter.cs");
+        string programPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Program.cs");
+
+        string routeConventionsSource = File.ReadAllText(routeConventionsPath);
+        string routeFilterSource = File.ReadAllText(routeFilterPath);
+        string programSource = File.ReadAllText(programPath);
+
+        Assert.Contains("TargetLearningLanguageRouteKey = \"targetLearningLanguageCode\"", routeConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("LearnPrefix = \"learn/{\" + TargetLearningLanguageRouteKey + \"}\"", routeConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.TryFindActive", routeConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("ContentLanguageRequirements.DefaultTargetLearningLanguageCode", routeConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.TryFindActive", routeFilterSource, StringComparison.Ordinal);
+        Assert.Contains("new NotFoundResult()", routeFilterSource, StringComparison.Ordinal);
+        Assert.Contains("options.Filters.Add<TargetLearningLanguageRouteFilter>()", programSource, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PublicLearnerLinks_ShouldCarryTargetLearningLanguageRouteValue()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string[] viewRoots =
+        [
+            Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views"),
+            Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Areas/Admin/Views")
+        ];
+
+        Regex learnerControllerPattern = new("asp-controller=\"(Browse|Grammar|Expressions|Courses|Collections|Search|Exercises|Roleplays|Favorites|Recent|TalkTopics|Dialogues|ConversationStarters|ExamPrep|WritingTemplates|CountryGuidance|Words|EventPreparationPacks|ConversationEvents|OrganizerProfiles)\"", RegexOptions.Compiled);
+        List<string> violations = [];
+
+        foreach (string viewPath in viewRoots.SelectMany(root => Directory.EnumerateFiles(root, "*.cshtml", SearchOption.AllDirectories)))
+        {
+            string[] lines = File.ReadAllLines(viewPath);
+            for (int lineIndex = 0; lineIndex < lines.Length; lineIndex++)
+            {
+                string line = lines[lineIndex];
+                if (!learnerControllerPattern.IsMatch(line)
+                    || line.Contains("asp-area=\"Admin\"", StringComparison.Ordinal)
+                    || line.Contains("asp-route-targetLearningLanguageCode", StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                string relativePath = Path.GetRelativePath(repositoryRoot, viewPath).Replace('\\', '/');
+                violations.Add($"{relativePath}:{lineIndex + 1}: {line.Trim()}");
+            }
+        }
+
+        Assert.Empty(violations);
+    }
+
+    [Fact]
+    public void WebCatalogApiClientAndControllers_ShouldPassTargetLearningLanguageForCoreCatalog()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string clientPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Services/WebCatalogApiClient.cs");
+        string grammarControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/GrammarController.cs");
+        string expressionsControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/ExpressionsController.cs");
+        string coursesControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/CoursesController.cs");
+        string searchControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/SearchController.cs");
+
+        string clientSource = File.ReadAllText(clientPath);
+        string grammarControllerSource = File.ReadAllText(grammarControllerPath);
+        string expressionsControllerSource = File.ReadAllText(expressionsControllerPath);
+        string coursesControllerSource = File.ReadAllText(coursesControllerPath);
+        string searchControllerSource = File.ReadAllText(searchControllerPath);
+
+        Assert.Contains("new(\"targetLearningLanguageCode\", targetLearningLanguageCode)", clientSource, StringComparison.Ordinal);
+        Assert.Matches("GetGrammarTopicsAsync\\s*\\(\\s*GrammarTopicListFilterModel filter,\\s*string targetLearningLanguageCode", clientSource);
+        Assert.Matches("GetExpressionsAsync\\s*\\(\\s*ExpressionListFilterModel filter,\\s*string targetLearningLanguageCode", clientSource);
+        Assert.Matches("GetCoursesAsync\\s*\\(\\s*CoursePathListFilterModel filter,\\s*string targetLearningLanguageCode", clientSource);
+        Assert.Matches("SearchLearningContentAsync\\s*\\(\\s*UnifiedLearningSearchFilterModel filter,\\s*string targetLearningLanguageCode", clientSource);
+        Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", grammarControllerSource, StringComparison.Ordinal);
+        Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", expressionsControllerSource, StringComparison.Ordinal);
+        Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", coursesControllerSource, StringComparison.Ordinal);
+        Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", searchControllerSource, StringComparison.Ordinal);
+        Assert.Contains("GetGrammarTopicsAsync(filter, targetLearningLanguageCode", grammarControllerSource, StringComparison.Ordinal);
+        Assert.Matches("GetExpressionBySlugAsync\\s*\\(\\s*normalizedSlug,\\s*targetLearningLanguageCode", expressionsControllerSource);
+        Assert.Contains("GetCoursesAsync(filter, targetLearningLanguageCode", coursesControllerSource, StringComparison.Ordinal);
+        Assert.Contains("SearchLearningContentAsync(", searchControllerSource, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode,", searchControllerSource, StringComparison.Ordinal);
+        Assert.Contains("new { targetLearningLanguageCode, courseSlug", coursesControllerSource, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -176,8 +279,23 @@ public sealed class WebLearnerShellStructureTests
             "Courses",
             "Exam Prep",
             "Writing Templates",
-            "Cultural Notes",
+            "Country Guidance - Germany",
             "Life in Germany",
+            "Target learning language",
+            "Target learning language is separate from UI language and helper translations.",
+            "Planned",
+            "Einstieg",
+            "Grundlagen",
+            "Selbststaendig",
+            "Kompetent",
+            "Souveraen",
+            "Meisterschaft",
+            "Erste Schritte",
+            "Sicherer Alltag",
+            "Alltag und Arbeit",
+            "Kompetente Anwendung",
+            "Souveraene Kommunikation",
+            "Stil und Praezision",
             "Learning Portal",
             "Unified learning search",
             "Learning progress",

@@ -11,8 +11,8 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Dialogue.CefrLevel · @Model.Dialogue.Category · @T["roleplay"]</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@Model.Dialogue.Slug">@T["Dialogue"]</a>
-            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-action="Index">@T["All dialogues"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@Model.Dialogue.Slug">@T["Dialogue"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All dialogues"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Dialogue.Title</h1>
@@ -29,7 +29,7 @@ else
     <section class="panel stack-md">
         <div class="detail-toolbar">
             <h2 class="headline-sm">@T["Scripted practice"]</h2>
-            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-action="Roleplay" asp-route-slug="@Model.Dialogue.Slug">@T["Replay"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Roleplay" asp-route-slug="@Model.Dialogue.Slug">@T["Replay"]</a>
         </div>
         <div class="stack-md">
             @foreach (var step in Model.Steps)

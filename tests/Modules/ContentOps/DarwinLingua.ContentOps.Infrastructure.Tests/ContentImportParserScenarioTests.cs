@@ -22,6 +22,8 @@ public sealed class ContentImportParserDialogueTests
               "packageVersion": "1.0",
               "packageId": "Dialogue-contract-test",
               "packageName": "Dialogue Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en", "fa"],
               "entries": [],

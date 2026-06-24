@@ -95,7 +95,7 @@ public sealed class ExamPrepPostgresRepositoryTests
 
             UnifiedLearningSearchResultModel result = Assert.Single(results);
             Assert.Equal("exam-prep", result.ResultType);
-            Assert.Equal("/exam-prep/a2-goethe-speaking-roleplay", result.Url);
+            Assert.Equal("/learn/de/exam-prep/a2-goethe-speaking-roleplay", result.Url);
         }
         finally
         {

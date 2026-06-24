@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("dialogues")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Dialogues)]
 public sealed class DialoguesController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -40,13 +40,14 @@ public sealed class DialoguesController(
             null,
             null,
             string.IsNullOrWhiteSpace(q) ? null : q.Trim());
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
 
         try
         {
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             dialogues = await catalogApiClient
-                .GetDialoguesAsync(filter, catalogTimeout.Token)
+                .GetDialoguesAsync(filter, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -72,9 +73,10 @@ public sealed class DialoguesController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
@@ -91,6 +93,7 @@ public sealed class DialoguesController(
             dialogue = await catalogApiClient
                 .GetDialogueBySlugAsync(
                     normalizedSlug,
+                    targetLearningLanguageCode,
                     profile.PreferredMeaningLanguage1,
                     effectiveSecondaryMeaningLanguageCode,
                     catalogTimeout.Token)
@@ -117,9 +120,9 @@ public sealed class DialoguesController(
         try
         {
             Task<IReadOnlyList<ConversationStarterPackListItemModel>> relatedStarterPacksTask = catalogApiClient
-                .GetConversationStarterPacksForDialogueAsync(normalizedSlug, cancellationToken);
+                .GetConversationStarterPacksForDialogueAsync(normalizedSlug, targetLearningLanguageCode, cancellationToken);
             Task<IReadOnlyList<EventPreparationPackListItemModel>> relatedEventPreparationPacksTask =
-                LoadRelatedEventPreparationPacksAsync(normalizedSlug, cancellationToken);
+                LoadRelatedEventPreparationPacksAsync(normalizedSlug, targetLearningLanguageCode, cancellationToken);
             await Task.WhenAll(relatedStarterPacksTask, relatedEventPreparationPacksTask).ConfigureAwait(false);
             relatedStarterPacks = await relatedStarterPacksTask.ConfigureAwait(false);
             relatedEventPreparationPacks = await relatedEventPreparationPacksTask.ConfigureAwait(false);
@@ -142,9 +145,10 @@ public sealed class DialoguesController(
     public async Task<IActionResult> Roleplay(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
@@ -161,6 +165,7 @@ public sealed class DialoguesController(
             dialogue = await catalogApiClient
                 .GetDialogueBySlugAsync(
                     normalizedSlug,
+                    targetLearningLanguageCode,
                     profile.PreferredMeaningLanguage1,
                     effectiveSecondaryMeaningLanguageCode,
                     catalogTimeout.Token)
@@ -240,6 +245,7 @@ public sealed class DialoguesController(
 
     private async Task<IReadOnlyList<EventPreparationPackListItemModel>> LoadRelatedEventPreparationPacksAsync(
         string dialogueSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
@@ -250,6 +256,6 @@ public sealed class DialoguesController(
         string? actorEmail = WebUserIdentity.TryGetEmail(User);
         return string.IsNullOrWhiteSpace(actorEmail)
             ? []
-            : await catalogApiClient.GetEventPreparationPacksForDialogueAsync(dialogueSlug, actorEmail, cancellationToken).ConfigureAwait(false);
+            : await catalogApiClient.GetEventPreparationPacksForDialogueAsync(dialogueSlug, targetLearningLanguageCode, actorEmail, cancellationToken).ConfigureAwait(false);
     }
 }

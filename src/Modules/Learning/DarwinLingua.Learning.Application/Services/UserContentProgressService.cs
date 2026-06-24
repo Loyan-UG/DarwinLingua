@@ -2,6 +2,7 @@ using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Learning.Domain.Entities;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Learning.Application.Services;
 
@@ -11,11 +12,13 @@ internal sealed class UserContentProgressService(
 {
     public async Task<LearningProgressSummaryModel> GetSummaryAsync(
         string userId,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         string normalizedUserId = NormalizeUserId(userId);
+        string targetLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
         IReadOnlyList<UserContentProgress> progressItems = await repository
-            .GetUserProgressAsync(normalizedUserId, 12, cancellationToken)
+            .GetUserProgressAsync(normalizedUserId, targetLanguageCode, 12, cancellationToken)
             .ConfigureAwait(false);
 
         return new LearningProgressSummaryModel(
@@ -33,18 +36,21 @@ internal sealed class UserContentProgressService(
 
     public async Task<UserContentProgressModel> UpdateContentProgressAsync(
         string userId,
+        string targetLearningLanguageCode,
         UpdateUserContentProgressRequestModel request,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request);
 
         string normalizedUserId = NormalizeUserId(userId);
+        string targetLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
         ValidateOwnerType(request.ContentOwnerType);
         ValidateState(request.State);
 
         UserContentProgress? progress = await repository
             .GetByUserAndContentAsync(
                 normalizedUserId,
+                targetLanguageCode,
                 request.ContentOwnerType,
                 request.ContentOwnerSlug,
                 cancellationToken)
@@ -55,6 +61,7 @@ internal sealed class UserContentProgressService(
             progress = new UserContentProgress(
                 Guid.NewGuid(),
                 normalizedUserId,
+                targetLanguageCode,
                 request.ContentOwnerType,
                 request.ContentOwnerSlug,
                 DateTime.UtcNow);
@@ -72,17 +79,19 @@ internal sealed class UserContentProgressService(
 
     public async Task<IReadOnlyList<LearningRecommendationModel>> GetRecommendationsAsync(
         string userId,
+        string targetLearningLanguageCode,
         int maxRecommendations,
         CancellationToken cancellationToken)
     {
         string normalizedUserId = NormalizeUserId(userId);
+        string targetLanguageCode = NormalizeTargetLearningLanguageCode(targetLearningLanguageCode);
         if (maxRecommendations <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(maxRecommendations), "Recommendation count must be positive.");
         }
 
         IReadOnlyList<UserContentProgress> progressItems = await repository
-            .GetUserProgressAsync(normalizedUserId, 1000, cancellationToken)
+            .GetUserProgressAsync(normalizedUserId, targetLanguageCode, 1000, cancellationToken)
             .ConfigureAwait(false);
         HashSet<string> completedContentKeys = progressItems
             .Where(static item => item.State == "completed")
@@ -92,6 +101,7 @@ internal sealed class UserContentProgressService(
         return await recommendationCatalogReader
             .GetDeterministicRecommendationsAsync(
                 normalizedUserId,
+                targetLanguageCode,
                 completedContentKeys,
                 maxRecommendations,
                 cancellationToken)
@@ -100,6 +110,7 @@ internal sealed class UserContentProgressService(
 
     private static UserContentProgressModel Map(UserContentProgress progress) =>
         new(
+            progress.TargetLearningLanguageCode,
             progress.ContentOwnerType,
             progress.ContentOwnerSlug,
             progress.State,
@@ -117,6 +128,11 @@ internal sealed class UserContentProgressService(
 
         return userId.Trim();
     }
+
+    private static string NormalizeTargetLearningLanguageCode(string targetLearningLanguageCode) =>
+        TargetLearningLanguageScope.NormalizeOrDefault(
+            targetLearningLanguageCode,
+            "User content progress target learning language");
 
     private static void ValidateOwnerType(string ownerType)
     {

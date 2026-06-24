@@ -12,6 +12,7 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
 
         Assert.Contains("learningPortalIssueArea", controllerSource, StringComparison.Ordinal);
         Assert.Contains("learningPortalIssueSearch", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", controllerSource, StringComparison.Ordinal);
         Assert.Contains("export", controllerSource, StringComparison.Ordinal);
         Assert.Contains("FilterLearningPortalIssues", controllerSource, StringComparison.Ordinal);
         Assert.Contains("LearningPortalIssues(", controllerSource, StringComparison.Ordinal);
@@ -39,7 +40,7 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
         Assert.Contains("Course lessons by module", viewSource, StringComparison.Ordinal);
         Assert.Contains("Exam prep units by profile", viewSource, StringComparison.Ordinal);
         Assert.Contains("Writing templates by category", viewSource, StringComparison.Ordinal);
-        Assert.Contains("Life in Germany notes by category", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Country Guidance notes by category", viewSource, StringComparison.Ordinal);
         Assert.Contains("No rows available yet.", viewSource, StringComparison.Ordinal);
         Assert.Contains("@foreach (var row in table.Rows)", viewSource, StringComparison.Ordinal);
         Assert.Contains("@row.Key", viewSource, StringComparison.Ordinal);
@@ -47,6 +48,7 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
         Assert.Contains("learning-portal-issues", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"learningPortalIssueArea\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"learningPortalIssueSearch\"", viewSource, StringComparison.Ordinal);
+        Assert.Contains("name=\"targetLearningLanguageCode\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"export\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("value=\"learning-portal-issues\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("Model.FilteredLearningPortalIssues", viewSource, StringComparison.Ordinal);
@@ -67,10 +69,14 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
 
         Assert.Contains("\"/api/admin/catalog/learning-portal-issues\"", programSource, StringComparison.Ordinal);
         Assert.Contains("GetLearningPortalIssuesAsync", programSource, StringComparison.Ordinal);
+        Assert.Contains("ResolveTargetLearningLanguageCode(targetLearningLanguageCode)", programSource, StringComparison.Ordinal);
         Assert.Contains("GetAdminLearningPortalIssuesAsync", webClientSource, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", webClientSource, StringComparison.Ordinal);
         Assert.Contains("Learning Portal issue drill-down", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Learning scope: target language", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"area\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"q\"", viewSource, StringComparison.Ordinal);
+        Assert.Contains("name=\"targetLearningLanguageCode\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"take\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("name=\"export\"", viewSource, StringComparison.Ordinal);
         Assert.Contains("value=\"csv\"", viewSource, StringComparison.Ordinal);

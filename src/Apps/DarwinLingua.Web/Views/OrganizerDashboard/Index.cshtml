@@ -30,7 +30,7 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@item.Profile.OrganizerType · @item.Profile.VerificationStatus</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@item.Profile.Slug">@item.Profile.DisplayName</a>
+                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@ContentLanguageRequirements.DefaultTargetLearningLanguageCode" asp-route-slug="@item.Profile.Slug">@item.Profile.DisplayName</a>
                 </h2>
                 <p>@item.Profile.Description</p>
                 <dl class="detail-list">

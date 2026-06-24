@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,13 +15,17 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
     public async Task<IReadOnlyList<CoursePathListItemModel>> GetPublishedCoursePathsAsync(CoursePathListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+        => await GetPublishedCoursePathsAsync(filter, ContentLanguageRequirements.DefaultTargetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+
+    public async Task<IReadOnlyList<CoursePathListItemModel>> GetPublishedCoursePathsAsync(CoursePathListFilterModel filter, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         IQueryable<CoursePath> query = dbContext.CoursePaths
             .AsNoTracking()
             .Include(course => course.Modules)
             .ThenInclude(module => module.Lessons)
-            .Where(course => course.PublicationStatus == PublicationStatus.Active);
+            .Where(course => course.PublicationStatus == PublicationStatus.Active && course.TargetLearningLanguageCode == targetLanguageCode);
 
         query = ApplyFilters(query, filter);
 
@@ -45,14 +50,18 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
     }
 
     public async Task<CoursePathDetailModel?> GetPublishedCoursePathBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+        => await GetPublishedCoursePathBySlugAsync(slug, ContentLanguageRequirements.DefaultTargetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+
+    public async Task<CoursePathDetailModel?> GetPublishedCoursePathBySlugAsync(string slug, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = Normalize(slug) ?? string.Empty;
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         CoursePath? course = await dbContext.CoursePaths
             .AsNoTracking()
             .Include(item => item.Modules)
             .ThenInclude(module => module.Lessons)
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.TargetLearningLanguageCode == targetLanguageCode && item.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -93,12 +102,16 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
     }
 
     public async Task<CourseLessonDetailModel?> GetPublishedCourseLessonBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+        => await GetPublishedCourseLessonBySlugAsync(slug, ContentLanguageRequirements.DefaultTargetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+
+    public async Task<CourseLessonDetailModel?> GetPublishedCourseLessonBySlugAsync(string slug, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = Normalize(slug) ?? string.Empty;
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         CourseLesson? lesson = await dbContext.CourseLessons
             .AsNoTracking()
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.TargetLearningLanguageCode == targetLanguageCode && item.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -250,6 +263,11 @@ internal sealed class CourseRepository(IDbContextFactory<DarwinLinguaDbContext> 
     private static string? Normalize(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim().ToLowerInvariant();
 
     private static string? NormalizeSearch(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static string NormalizeRequiredLanguageCode(string value) =>
+        string.IsNullOrWhiteSpace(value)
+            ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+            : value.Trim().ToLowerInvariant();
 
     private sealed record TranslationRow(string Language, string Text);
 

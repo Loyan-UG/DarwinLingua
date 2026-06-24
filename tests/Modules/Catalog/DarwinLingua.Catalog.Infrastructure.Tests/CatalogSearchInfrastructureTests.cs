@@ -185,6 +185,7 @@ public sealed class CatalogSearchInfrastructureTests
             IExpressionRepository repository = serviceProvider.GetRequiredService<IExpressionRepository>();
             IReadOnlyList<ExpressionListItemModel> expressions = await repository.GetPublishedExpressionsAsync(
                 new ExpressionListFilterModel("A2", "polite-formula", "polite", "shopping-and-service", "shopping-and-services", false, "gern", "fa"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
 
             ExpressionListItemModel item = Assert.Single(expressions);
@@ -234,7 +235,11 @@ public sealed class CatalogSearchInfrastructureTests
             }
 
             IExpressionRepository repository = serviceProvider.GetRequiredService<IExpressionRepository>();
-            ExpressionDetailModel? detail = await repository.GetPublishedExpressionBySlugAsync("na-ja", "fa", CancellationToken.None);
+            ExpressionDetailModel? detail = await repository.GetPublishedExpressionBySlugAsync(
+                "na-ja",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                "fa",
+                CancellationToken.None);
 
             Assert.NotNull(detail);
             Assert.Equal("خب، کاملاً نه.", detail.ActualMeaning);
@@ -284,7 +289,7 @@ public sealed class CatalogSearchInfrastructureTests
             UnifiedLearningSearchResultModel result = Assert.Single(results);
             Assert.Equal("expression", result.ResultType);
             Assert.Equal("Einen Moment bitte.", result.Title);
-            Assert.Equal("/expressions/einen-moment-bitte", result.Url);
+            Assert.Equal("/learn/de/expressions/einen-moment-bitte", result.Url);
         }
         finally
         {
@@ -329,9 +334,11 @@ public sealed class CatalogSearchInfrastructureTests
             IExpressionRepository expressionRepository = serviceProvider.GetRequiredService<IExpressionRepository>();
             IReadOnlyList<ExpressionListItemModel> expressions = await expressionRepository.GetPublishedExpressionsAsync(
                 new ExpressionListFilterModel(null, null, null, null, null, null, null, "fa"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             ExpressionDetailModel? restrictedDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
                 "restricted-expression",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 "fa",
                 CancellationToken.None);
 
@@ -409,21 +416,26 @@ public sealed class CatalogSearchInfrastructureTests
             IExpressionRepository expressionRepository = serviceProvider.GetRequiredService<IExpressionRepository>();
             IReadOnlyList<ExpressionListItemModel> defaultExpressions = await expressionRepository.GetPublishedExpressionsAsync(
                 new ExpressionListFilterModel(null, null, null, null, null, null, null, "fa"),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             IReadOnlyList<ExpressionListItemModel> optedInExpressions = await expressionRepository.GetPublishedExpressionsAsync(
                 new ExpressionListFilterModel(null, null, null, null, null, null, null, "fa", IncludeSensitiveEducationalLanguage: true),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 CancellationToken.None);
             ExpressionDetailModel? defaultDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
                 "sensitive-formula",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 "fa",
                 CancellationToken.None);
             ExpressionDetailModel? optedInDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
                 "sensitive-formula",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 "fa",
                 true,
                 CancellationToken.None);
             ExpressionDetailModel? verifiedAdultDetail = await expressionRepository.GetPublishedExpressionBySlugAsync(
                 "verified-adult-only",
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
                 "fa",
                 true,
                 CancellationToken.None);
@@ -444,7 +456,7 @@ public sealed class CatalogSearchInfrastructureTests
             Assert.Equal("use-with-care", optedInDetail.UsagePolicy);
             Assert.Null(verifiedAdultDetail);
             Assert.Empty(defaultSearch);
-            Assert.Contains(optedInSearch, item => item.Url == "/expressions/sensitive-formula");
+            Assert.Contains(optedInSearch, item => item.Url == "/learn/de/expressions/sensitive-formula");
         }
         finally
         {

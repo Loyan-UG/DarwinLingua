@@ -10,7 +10,7 @@ using System.Text.Json;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("exercises")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Exercises)]
 public sealed class ExercisesController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor profileAccessor,
@@ -26,10 +26,11 @@ public sealed class ExercisesController(
         ExerciseSetListFilterModel filter = new(LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel), null, null, string.IsNullOrWhiteSpace(q) ? null : q.Trim());
         UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         IReadOnlyList<ExerciseSetListItemModel> sets;
         try
         {
-            sets = await catalogApiClient.GetExerciseSetsAsync(filter, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+            sets = await catalogApiClient.GetExerciseSetsAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or OperationCanceledException)
         {
@@ -45,7 +46,8 @@ public sealed class ExercisesController(
     {
         UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
-        ExerciseSetDetailModel? set = await catalogApiClient.GetExerciseSetBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        ExerciseSetDetailModel? set = await catalogApiClient.GetExerciseSetBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         return set is null ? NotFound() : View("Set", new ExerciseSetPageViewModel(set, primaryMeaningLanguageCode));
     }
 
@@ -54,7 +56,8 @@ public sealed class ExercisesController(
     {
         UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
-        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         return exercise is null ? NotFound() : View(new ExerciseRunnerPageViewModel(exercise, null, null, primaryMeaningLanguageCode));
     }
 
@@ -72,7 +75,8 @@ public sealed class ExercisesController(
     {
         UserLearningProfileModel profile = await profileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = ResolveMeaningLanguage(profile.PreferredMeaningLanguage1);
-        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        ExerciseDetailModel? exercise = await catalogApiClient.GetExerciseBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         if (exercise is null)
         {
             return NotFound();
@@ -103,7 +107,7 @@ public sealed class ExercisesController(
         try
         {
             result = await catalogApiClient
-                .SubmitExerciseAttemptAsync(slug, new ExerciseAttemptRequestModel(normalizedSubmittedAnswerJson.Trim()), primaryMeaningLanguageCode, cancellationToken)
+                .SubmitExerciseAttemptAsync(slug, targetLearningLanguageCode, new ExerciseAttemptRequestModel(normalizedSubmittedAnswerJson.Trim()), primaryMeaningLanguageCode, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or InvalidOperationException)

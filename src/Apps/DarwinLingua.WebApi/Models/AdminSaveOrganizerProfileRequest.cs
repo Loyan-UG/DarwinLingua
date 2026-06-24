@@ -2,6 +2,7 @@ namespace DarwinLingua.WebApi.Models;
 
 public sealed record AdminSaveOrganizerProfileRequest(
     string Slug,
+    string TargetLearningLanguageCode,
     string DisplayName,
     string OrganizerType,
     string Description,

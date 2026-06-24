@@ -1,5 +1,6 @@
 using DarwinLingua.Learning.Domain.Entities;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Learning.Domain.Tests;
 
@@ -11,6 +12,7 @@ public sealed class UserContentProgressTests
         Assert.Throws<DomainRuleException>(() => new UserContentProgress(
             Guid.NewGuid(),
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             "unsupported",
             "a1-lesson",
             DateTime.UtcNow));
@@ -22,12 +24,14 @@ public sealed class UserContentProgressTests
         UserContentProgress progress = new(
             Guid.NewGuid(),
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             "course-lesson",
             "a1-lesson",
             DateTime.UtcNow);
 
         progress.ApplyState("viewed", DateTime.UtcNow.AddMinutes(1));
 
+        Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, progress.TargetLearningLanguageCode);
         Assert.Equal("viewed", progress.State);
         Assert.Equal(1, progress.ViewCount);
         Assert.NotNull(progress.FirstViewedAtUtc);
@@ -40,6 +44,7 @@ public sealed class UserContentProgressTests
         UserContentProgress progress = new(
             Guid.NewGuid(),
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             "grammar-topic",
             "a1-articles",
             DateTime.UtcNow);
@@ -58,6 +63,7 @@ public sealed class UserContentProgressTests
         UserContentProgress progress = new(
             Guid.NewGuid(),
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             "course-lesson",
             "a1-lesson",
             DateTime.UtcNow);
@@ -75,6 +81,7 @@ public sealed class UserContentProgressTests
         UserContentProgress progress = new(
             Guid.NewGuid(),
             "user-1",
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             "expression",
             "guten-morgen",
             DateTime.UtcNow);

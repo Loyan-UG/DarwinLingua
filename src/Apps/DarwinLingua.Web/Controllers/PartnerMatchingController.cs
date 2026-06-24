@@ -194,7 +194,7 @@ public sealed class PartnerMatchingController(
         new(
             NormalizeSearchText(search.CityRegion),
             NormalizeInteractionPreference(search.InteractionPreference),
-            NormalizeGermanLevel(search.GermanLevel),
+            NormalizeLearningLevel(search.LearningLevel),
             NormalizeLanguageCode(search.HelperLanguageCode),
             NormalizeSearchText(search.GoalKeyword));
 
@@ -241,22 +241,14 @@ public sealed class PartnerMatchingController(
             : null;
     }
 
-    private static string? NormalizeGermanLevel(string? value)
+    private static string? NormalizeLearningLevel(string? value)
     {
         if (string.IsNullOrWhiteSpace(value))
         {
             return null;
         }
 
-        string trimmed = value.Trim();
-        return string.Equals(trimmed, "A1", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(trimmed, "A2", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(trimmed, "B1", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(trimmed, "B2", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(trimmed, "C1", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(trimmed, "C2", StringComparison.OrdinalIgnoreCase)
-            ? trimmed
-            : null;
+        return LearningPortalFilterConventions.NormalizeCefrLevel(value);
     }
 
     private static string? NormalizeLanguageCode(string? value)

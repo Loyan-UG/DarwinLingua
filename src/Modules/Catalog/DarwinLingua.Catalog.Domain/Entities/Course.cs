@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -21,6 +22,7 @@ public sealed class CoursePath
         TitleTranslationsJson = "[]";
         DescriptionTranslationsJson = "[]";
         CefrRange = string.Empty;
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public CoursePath(
@@ -34,9 +36,11 @@ public sealed class CoursePath
         int sortOrder,
         DateTime timestampUtc,
         string titleTranslationsJson = "[]",
-        string descriptionTranslationsJson = "[]")
+        string descriptionTranslationsJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course path id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Course path target learning language");
         Slug = NormalizeKebabKey(slug, "Course path slug");
         Title = RequireText(title, "Course path title", 256);
         Description = RequireText(description, "Course path description", 2000);
@@ -56,6 +60,7 @@ public sealed class CoursePath
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; }
     public string Title { get; private set; }
     public string Description { get; private set; }
@@ -78,8 +83,10 @@ public sealed class CoursePath
         int sortOrder,
         DateTime timestampUtc,
         string titleTranslationsJson = "[]",
-        string descriptionTranslationsJson = "[]")
+        string descriptionTranslationsJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Course path target learning language");
         Title = RequireText(title, "Course path title", 256);
         Description = RequireText(description, "Course path description", 2000);
         TitleTranslationsJson = RequireText(titleTranslationsJson, "Course path title translations JSON", 12000);
@@ -158,6 +165,7 @@ public sealed class CourseModule
         Description = string.Empty;
         TitleTranslationsJson = "[]";
         DescriptionTranslationsJson = "[]";
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public CourseModule(
@@ -172,9 +180,11 @@ public sealed class CourseModule
         int sortOrder,
         DateTime timestampUtc,
         string titleTranslationsJson = "[]",
-        string descriptionTranslationsJson = "[]")
+        string descriptionTranslationsJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course module id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Course module target learning language");
         CoursePathSlug = CoursePath.NormalizeKebabKey(coursePathSlug, "Course path slug");
         Slug = CoursePath.NormalizeKebabKey(slug, "Course module slug");
         Title = CoursePath.RequireText(title, "Course module title", 256);
@@ -191,6 +201,7 @@ public sealed class CourseModule
 
     public Guid Id { get; private set; }
     public Guid CoursePathId { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string CoursePathSlug { get; private set; }
     public string Slug { get; private set; }
     public string Title { get; private set; }
@@ -245,6 +256,7 @@ public sealed class CourseLesson
         ActivityBlocksJson = "[]";
         ReviewSummaryTranslationsJson = "[]";
         HomeworkTaskTranslationsJson = "[]";
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public CourseLesson(
@@ -279,9 +291,11 @@ public sealed class CourseLesson
         string learningGoalsTranslationsJson = "[]",
         string reviewSummaryTranslationsJson = "[]",
         string homeworkTaskTranslationsJson = "[]",
-        string activityBlocksJson = "[]")
+        string activityBlocksJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Course lesson id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Course lesson target learning language");
         CoursePathSlug = CoursePath.NormalizeKebabKey(coursePathSlug, "Course path slug");
         ModuleSlug = CoursePath.NormalizeKebabKey(moduleSlug, "Course module slug");
         Slug = CoursePath.NormalizeKebabKey(slug, "Course lesson slug");
@@ -318,6 +332,7 @@ public sealed class CourseLesson
 
     public Guid Id { get; private set; }
     public Guid CourseModuleId { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string CoursePathSlug { get; private set; }
     public string ModuleSlug { get; private set; }
     public string Slug { get; private set; }

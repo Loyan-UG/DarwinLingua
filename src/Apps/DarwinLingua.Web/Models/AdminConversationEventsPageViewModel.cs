@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 
 namespace DarwinLingua.Web.Models;
 
@@ -15,6 +16,11 @@ public sealed class AdminConversationEventInputModel
     [StringLength(128)]
     [RegularExpression("^[a-z0-9]+(?:-[a-z0-9]+)*$")]
     public string Slug { get; set; } = string.Empty;
+
+    [Required]
+    [StringLength(16)]
+    [RegularExpression("^[a-z]{2,3}(?:-[a-z0-9]{2,8})?$")]
+    public string TargetLearningLanguageCode { get; set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
 
     [Required]
     [StringLength(160)]

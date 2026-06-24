@@ -1,6 +1,10 @@
 @model DarwinLingua.Web.Models.PartnerMatchingPageViewModel
 @{
     ViewData["Title"] = T["Partners"];
+    IReadOnlyList<DarwinLingua.SharedKernel.Globalization.LearningLevelDefinition> levelDefinitions =
+        DarwinLingua.Web.Models.LearningPortalFilterConventions.CefrLevelDefinitions;
+    IReadOnlyDictionary<string, DarwinLingua.SharedKernel.Globalization.LearningLevelDefinition> levelDefinitionsByCode =
+        levelDefinitions.ToDictionary(static level => level.Code, StringComparer.OrdinalIgnoreCase);
 }
 
 <section class="panel stack-lg">
@@ -35,15 +39,13 @@
                 </select>
             </label>
             <label class="form-field">
-                <span>@T["German level"]</span>
-                <select asp-for="Search.GermanLevel" name="GermanLevel">
+                <span>@T["Learning level"]</span>
+                <select asp-for="Search.LearningLevel" name="LearningLevel">
                     <option value="">@T["Any"]</option>
-                    <option value="A1">A1</option>
-                    <option value="A2">A2</option>
-                    <option value="B1">B1</option>
-                    <option value="B2">B2</option>
-                    <option value="C1">C1</option>
-                    <option value="C2">C2</option>
+                    @foreach (var level in levelDefinitions)
+                    {
+                        <option value="@level.Code">@level.Code · @level.DisplayTitle</option>
+                    }
                 </select>
             </label>
             <label class="form-field">
@@ -84,7 +86,7 @@
                         <p class="body-sm">@profile.CityRegion</p>
                     </div>
                     <div class="chip-grid">
-                        <span class="chip-link chip-link--static">@profile.GermanLevel</span>
+                        <span class="chip-link chip-link--static">@(levelDefinitionsByCode.TryGetValue(profile.LearningLevel, out var levelDefinition) ? $"{levelDefinition.Code} · {levelDefinition.DisplayTitle}" : profile.LearningLevel)</span>
                         <span class="chip-link chip-link--static">@profile.InteractionPreference</span>
                         <span class="chip-link chip-link--static">@profile.Visibility</span>
                     </div>

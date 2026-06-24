@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Controllers;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
@@ -115,6 +116,7 @@ public sealed class OrganizerDashboardControllerTests
     private static OrganizerProfileDetailModel CreateProfile(string slug, string planKey = "free") =>
         new(
             slug,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             $"Organizer {slug}",
             "club",
             "A reviewed organizer profile.",
@@ -135,6 +137,7 @@ public sealed class OrganizerDashboardControllerTests
         string publicationStatus) =>
         new(
             slug,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             $"Event {slug}",
             "A reviewed conversation event.",
             "Berlin",
@@ -177,6 +180,7 @@ public sealed class OrganizerDashboardControllerTests
 
         public override Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(
             string slug,
+            string targetLearningLanguageCode,
             CancellationToken cancellationToken) =>
             Task.FromResult(profiles.FirstOrDefault(profile => string.Equals(profile.Slug, slug, StringComparison.OrdinalIgnoreCase)));
 

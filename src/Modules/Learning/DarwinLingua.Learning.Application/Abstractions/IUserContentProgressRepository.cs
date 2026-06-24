@@ -6,6 +6,7 @@ public interface IUserContentProgressRepository
 {
     Task<UserContentProgress?> GetByUserAndContentAsync(
         string userId,
+        string targetLearningLanguageCode,
         string contentOwnerType,
         string contentOwnerSlug,
         CancellationToken cancellationToken);
@@ -16,6 +17,7 @@ public interface IUserContentProgressRepository
 
     Task<IReadOnlyList<UserContentProgress>> GetUserProgressAsync(
         string userId,
+        string targetLearningLanguageCode,
         int recentItemCount,
         CancellationToken cancellationToken);
 }

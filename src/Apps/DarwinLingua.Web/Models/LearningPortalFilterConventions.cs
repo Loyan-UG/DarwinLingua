@@ -1,3 +1,5 @@
+using DarwinLingua.SharedKernel.Globalization;
+
 namespace DarwinLingua.Web.Models;
 
 /// <summary>
@@ -6,9 +8,16 @@ namespace DarwinLingua.Web.Models;
 public static class LearningPortalFilterConventions
 {
     /// <summary>
+    /// Gets the learner-facing CEFR level definitions for the current German baseline.
+    /// </summary>
+    public static IReadOnlyList<LearningLevelDefinition> CefrLevelDefinitions =>
+        LearningLevelSystemCatalog.GermanCefrLevels;
+
+    /// <summary>
     /// Gets the stable CEFR level order used by Web filters.
     /// </summary>
-    public static readonly IReadOnlyList<string> CefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
+    public static IReadOnlyList<string> CefrLevels =>
+        CefrLevelDefinitions.Select(static level => level.Code).ToArray();
 
     /// <summary>
     /// Normalizes a CEFR level for filter values and rejects unsupported levels.

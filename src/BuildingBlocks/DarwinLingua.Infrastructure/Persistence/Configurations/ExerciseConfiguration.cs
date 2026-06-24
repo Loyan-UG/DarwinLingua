@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,10 @@ internal sealed class ExerciseConfiguration : IEntityTypeConfiguration<Exercise>
         builder.ToTable("Exercises");
         builder.HasKey(exercise => exercise.Id);
         builder.Property(exercise => exercise.Id).ValueGeneratedNever();
+        builder.Property(exercise => exercise.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(exercise => exercise.Slug).HasMaxLength(128).IsRequired();
         builder.Property(exercise => exercise.Title).HasMaxLength(256).IsRequired();
         builder.Property(exercise => exercise.Instruction).HasMaxLength(2000).IsRequired();
@@ -35,9 +40,9 @@ internal sealed class ExerciseConfiguration : IEntityTypeConfiguration<Exercise>
         builder.Property(exercise => exercise.SortOrder).IsRequired();
         builder.Property(exercise => exercise.CreatedAtUtc).IsRequired();
         builder.Property(exercise => exercise.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(exercise => exercise.Slug).IsUnique();
-        builder.HasIndex(exercise => new { exercise.CefrLevel, exercise.ExerciseType, exercise.TargetSkill });
-        builder.HasIndex(exercise => new { exercise.OwnerType, exercise.OwnerSlug });
+        builder.HasIndex(exercise => new { exercise.TargetLearningLanguageCode, exercise.Slug }).IsUnique();
+        builder.HasIndex(exercise => new { exercise.TargetLearningLanguageCode, exercise.CefrLevel, exercise.ExerciseType, exercise.TargetSkill });
+        builder.HasIndex(exercise => new { exercise.TargetLearningLanguageCode, exercise.OwnerType, exercise.OwnerSlug });
     }
 }
 
@@ -48,6 +53,10 @@ internal sealed class ExerciseSetConfiguration : IEntityTypeConfiguration<Exerci
         builder.ToTable("ExerciseSets");
         builder.HasKey(set => set.Id);
         builder.Property(set => set.Id).ValueGeneratedNever();
+        builder.Property(set => set.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(set => set.Slug).HasMaxLength(128).IsRequired();
         builder.Property(set => set.Title).HasMaxLength(256).IsRequired();
         builder.Property(set => set.TitleTranslationsJson).HasColumnType("TEXT").IsRequired();
@@ -60,8 +69,8 @@ internal sealed class ExerciseSetConfiguration : IEntityTypeConfiguration<Exerci
         builder.Property(set => set.SortOrder).IsRequired();
         builder.Property(set => set.CreatedAtUtc).IsRequired();
         builder.Property(set => set.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(set => set.Slug).IsUnique();
-        builder.HasIndex(set => new { set.OwnerType, set.OwnerSlug });
+        builder.HasIndex(set => new { set.TargetLearningLanguageCode, set.Slug }).IsUnique();
+        builder.HasIndex(set => new { set.TargetLearningLanguageCode, set.OwnerType, set.OwnerSlug });
         builder.HasMany(set => set.Items).WithOne().HasForeignKey(item => item.ExerciseSetId).OnDelete(DeleteBehavior.Cascade);
     }
 }
@@ -90,12 +99,17 @@ internal sealed class UserExerciseAttemptConfiguration : IEntityTypeConfiguratio
         builder.HasKey(attempt => attempt.Id);
         builder.Property(attempt => attempt.Id).ValueGeneratedNever();
         builder.Property(attempt => attempt.UserId).HasMaxLength(256).IsRequired();
+        builder.Property(attempt => attempt.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(attempt => attempt.ExerciseSlug).HasMaxLength(128).IsRequired();
         builder.Property(attempt => attempt.SubmittedAnswerJson).HasColumnType("TEXT").IsRequired();
         builder.Property(attempt => attempt.IsCorrect).IsRequired();
         builder.Property(attempt => attempt.FeedbackExplanation).HasMaxLength(2000).IsRequired();
         builder.Property(attempt => attempt.AttemptedAtUtc).IsRequired();
         builder.Property(attempt => attempt.CreatedAtUtc).IsRequired();
-        builder.HasIndex(attempt => new { attempt.UserId, attempt.ExerciseSlug, attempt.AttemptedAtUtc });
+        builder.HasIndex(attempt => new { attempt.UserId, attempt.TargetLearningLanguageCode, attempt.ExerciseSlug, attempt.AttemptedAtUtc })
+            .HasDatabaseName("IX_UserExerciseAttempts_UserTargetExerciseAttempted");
     }
 }

@@ -11,8 +11,8 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Dialogue.CefrLevel · @Model.Dialogue.Category</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--primary button--compact" asp-controller="Dialogues" asp-action="Roleplay" asp-route-slug="@Model.Dialogue.Slug">@T["Start roleplay"]</a>
-            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-action="Index">@T["All dialogues"]</a>
+            <a class="button button--primary button--compact" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Roleplay" asp-route-slug="@Model.Dialogue.Slug">@T["Start roleplay"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All dialogues"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Dialogue.Title</h1>
@@ -45,7 +45,7 @@
         <div class="chip-grid">
             @foreach (string topicKey in Model.Dialogue.TopicKeys)
             {
-                <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
             }
         </div>
     }
@@ -60,7 +60,7 @@
             {
                 if (!string.IsNullOrWhiteSpace(word.WordSlug))
                 {
-                    <a class="chip-link" asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@word.WordSlug">@word.Lemma</a>
+                    <a class="chip-link" asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-wordSlug="@word.WordSlug">@word.Lemma</a>
                 }
                 else
                 {
@@ -115,10 +115,10 @@
                 <article class="panel stack-md">
                     <span class="eyebrow">@starterPack.CefrLevel · @starterPack.Situation · @starterPack.Tone</span>
                     <h3 class="headline-sm">
-                        <a asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
+                        <a asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
                     </h3>
                     <p>@starterPack.Description</p>
-                    <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
+                    <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
                 </article>
             }
         </div>
@@ -135,16 +135,16 @@
                 <article class="panel stack-md">
                     <span class="eyebrow">@preparationPack.CefrLevel · @preparationPack.EventType · @preparationPack.Category</span>
                     <h3 class="headline-sm">
-                        <a asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
+                        <a asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
                     </h3>
                     <p>@preparationPack.Description</p>
-                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@T["Prepare for this event"]</a>
+                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@T["Prepare for this event"]</a>
                     @if (preparationPack.LinkedConversationStarterPackSlugs.Count > 0)
                     {
                         <div class="chip-grid">
                             @foreach (string starterPackSlug in preparationPack.LinkedConversationStarterPackSlugs)
                             {
-                                <a class="chip-link" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPackSlug">@starterPackSlug</a>
+                                <a class="chip-link" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPackSlug">@starterPackSlug</a>
                             }
                         </div>
                     }

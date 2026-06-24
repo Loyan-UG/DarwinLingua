@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the complete Web-first roadmap for turning Darwin Lingua into a full German-learning portal.
+This document defines the complete Web-first roadmap for the current German target-language baseline and the transition path toward a multi-target-language learning platform.
 
 It covers:
 
@@ -12,14 +12,14 @@ It covers:
 - Course Lessons and structured CEFR learning paths
 - Exam Preparation
 - Writing Templates and real-life communication support
-- Life in Germany guidance backed by the current CulturalNote store
+- Life in Germany guidance backed by the current Country Guidance store
 - unified learning search
 - learning progress and personalization
 - admin and content operations
 - Web-first implementation; mobile parity is deferred until the Web product is mature after tester feedback
 - documentation consolidation rules
 
-This is the single planning source for the learning-portal expansion. Do not create separate roadmap documents for each feature unless implementation proves that a dedicated contract document is required.
+This is the single planning source for the learning-portal expansion. The project-wide execution checklist for the multi-target-language refactor is tracked in `04-Implementation-Backlog.md` under Phase 8, with the architecture contract in `94-Multi-Target-Language-Architecture.md`. Do not create separate roadmap documents for each feature unless implementation proves that a dedicated contract document is required.
 
 ---
 
@@ -30,18 +30,18 @@ Last updated: 2026-06-24.
 - Grammar Guide A1-C2 content is generated and validated against the official syllabus and package contract. The latest validation report is `artifacts/validation/grammar-a1-c2-validation-report.md` and records 225 topics with zero issues.
 - Post-Grammar Conversation audit blockers are repaired. The latest conversation audit report is `artifacts/validation/conversation-content-audit-report.md` and records zero P0 blockers, zero unresolved Dialogue word references, and zero unresolved Talk Topic word references.
 - Existing Conversation content remains protected. Dialogues and Talk Topics were not deleted; only malformed JSON, malformed word references, duplicate useful-word references, and weak active seed dialogue metadata were repaired.
-- A small importable Conversation support baseline exists at `content/generated/conversation-support/conversation-support-baseline-v1.json`. It contains 6 Conversation Starter Packs and 8 Event Preparation Packs across A1-C2 with all target learner languages.
-- The first real Everyday Expressions pilot package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`. It contains 12 A1/A2-focused expressions with all target learner languages and is covered by parser, import-validation, repository/query, Unified Search, Web route/render-structure, admin-report tests, shared PostgreSQL import, and local Web/API/admin smoke validation.
-- The next small Everyday Expressions package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-01-v1.json`. It contains 25 A1/A2 practical expression candidates with all target learner languages. After the stricter eligibility pass, 23 entries remain published and 2 ordinary-literal entries are unpublished archive findings.
-- The A2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-a2-core-v1.json`. It contains 30 published A2 idioms, semi-idiomatic phrases, and pragmatic formulas with all target learner languages; no ordinary-literal entry is published.
-- The B1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b1-core-v1.json`. It contains 40 published B1 idioms, semi-idiomatic phrases, pragmatic formulas, and mild-frustration expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-v1.json`. It contains 40 published B2 idioms, semi-idiomatic phrases, workplace/social nuance expressions, and mild-frustration expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The second B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-02-v1.json`. It contains 40 additional published B2 idioms and pragmatic expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The third B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-03-v1.json`. It contains 40 additional published B2 idioms and semi-idiomatic workplace/social nuance expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The C1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c1-core-v1.json`. It contains 40 published C1 idioms, cultural phrases, nuanced workplace/social expressions, indirect criticism patterns, and mild-risk expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The second C1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c1-core-02-v1.json`. It contains 40 additional published C1 idioms and advanced pragmatic expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The C2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c2-core-v1.json`. It contains 40 published C2 idioms, culturally loaded phrases, advanced pragmatic expressions, irony/social-risk expressions, and high-context discussion phrases with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
-- The second C2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c2-core-02-v1.json`. It contains 40 additional published C2 high-context idioms, rhetorical/cultural expressions, and workplace/social-risk expressions with all target learner languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- A small importable Conversation support baseline exists at `content/generated/conversation-support/conversation-support-baseline-v1.json`. It contains 6 Conversation Starter Packs and 8 Event Preparation Packs across A1-C2 with all active helper/meaning languages.
+- The first real Everyday Expressions pilot package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-pilot-v1.json`. It contains 12 A1/A2-focused expressions with all active helper/meaning languages and is covered by parser, import-validation, repository/query, Unified Search, Web route/render-structure, admin-report tests, shared PostgreSQL import, and local Web/API/admin smoke validation.
+- The next small Everyday Expressions package exists at `content/learning-portal/expressions/packages/expressions-a1-a2-core-01-v1.json`. It contains 25 A1/A2 practical expression candidates with all active helper/meaning languages. After the stricter eligibility pass, 23 entries remain published and 2 ordinary-literal entries are unpublished archive findings.
+- The A2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-a2-core-v1.json`. It contains 30 published A2 idioms, semi-idiomatic phrases, and pragmatic formulas with all active helper/meaning languages; no ordinary-literal entry is published.
+- The B1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b1-core-v1.json`. It contains 40 published B1 idioms, semi-idiomatic phrases, pragmatic formulas, and mild-frustration expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-v1.json`. It contains 40 published B2 idioms, semi-idiomatic phrases, workplace/social nuance expressions, and mild-frustration expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The second B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-02-v1.json`. It contains 40 additional published B2 idioms and pragmatic expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The third B2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-b2-core-03-v1.json`. It contains 40 additional published B2 idioms and semi-idiomatic workplace/social nuance expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The C1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c1-core-v1.json`. It contains 40 published C1 idioms, cultural phrases, nuanced workplace/social expressions, indirect criticism patterns, and mild-risk expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The second C1 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c1-core-02-v1.json`. It contains 40 additional published C1 idioms and advanced pragmatic expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The C2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c2-core-v1.json`. It contains 40 published C2 idioms, culturally loaded phrases, advanced pragmatic expressions, irony/social-risk expressions, and high-context discussion phrases with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
+- The second C2 Everyday Expressions core package exists at `content/learning-portal/expressions/packages/expressions-c2-core-02-v1.json`. It contains 40 additional published C2 high-context idioms, rhetorical/cultural expressions, and workplace/social-risk expressions with all active helper/meaning languages; no ordinary-literal entry is published and no explicit-adult content is included.
 - The first mixed Everyday Expressions supplement exists at `content/learning-portal/expressions/packages/expressions-mixed-supplement-01-v1.json`. It contains 14 additional A2-C1 idioms, cultural phrases, and social/workplace expressions that were not already published; no ordinary-literal entry is published and no explicit-adult content is included.
 - Everyday Expressions now has a stricter eligibility policy: it is for expressions whose real meaning, tone, or social function is not obvious from literal words. It is not a general sentence bank. Ordinary literal situational sentences belong in Dialogues, Courses, Exercises, Writing Templates, or Grammar examples. `tools/Content/Audit-ExpressionContentQuality.js` generated `artifacts/validation/expression-content-quality-report.md`; the latest pass reports zero issues. Five ordinary-literal entries across earlier packages are unpublished archive findings.
 - Everyday Expressions now has a Sensitive Educational Language policy in `docs/85-Sensitive-Educational-Language-Policy.md`. Sensitive educational entries are hidden by default, warning-labeled, opt-in controlled, and non-pornographic. The current system rejects explicit-adult, blocked-illegal, verified-adult-required, and blocked/slur educational entries until a separate legal/access workflow exists.
@@ -53,8 +53,8 @@ Last updated: 2026-06-24.
 - Course Lessons now have a Web/API v1 foundation with German-first source fields, learner-helper translations, PostgreSQL retrofit support, Web/API localized projection, and admin quality counters for missing course translations. The Course lesson reading-flow UI uses `activityBlocks` as the primary lesson flow, with legacy linked-content fallback retained only for compatibility. Admin diagnostics report published lessons without activity blocks, malformed activity JSON, unsupported target types, and unresolved activity target slugs. The shared PostgreSQL database now contains the completed and imported Course levels A1-C2: 6 course paths, 56 modules, and 560 lessons total (`A1=60`, `A2=80`, `B1=100`, `B2=80`, `C1=120`, `C2=120`). Controlled activity-flow backfill is complete for all Course levels: A1 `60/60` lessons with 297 ordered activities, A2 `80/80` with 400, B1 `100/100` with 500, B2 `80/80` with 400, C1 `120/120` with 600, and C2 `120/120` with 600. Current PostgreSQL verification reports `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, zero unresolved C2 activity targets, and the runtime progress table `UserContentProgress` present. The standard ImportTool pending-model blocker was resolved by syncing the EF migration snapshot through an idempotent PostgreSQL migration. The current source packages are `content/learning-portal/courses/packages/course-a1-foundation-pilot-v1.json`, `course-a2-alltag-und-integration-v1.json`, `course-b1-selbststaendig-im-alltag-v1.json`, `course-b2-kompetent-argumentieren-und-handeln-v1.json`, `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json`, and `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json`. Course planning exists for every CEFR level through C2 and is now fully materialized for the first Web Course baseline. Public Web/API smoke passed for the final C2 lesson and Persian helper projection after the C2 Module 12 import. The current external restore checkpoint is `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`; the backup contains the PostgreSQL dump, restore list, dry-run restore evidence, repo overlay, separate secret bundle, Docker metadata, manifest, and SHA256 checksums verified at the external target. Because Course imports replace an existing path tree, any follow-up repair batch for the same path must be cumulative and must retain earlier reviewed lessons.
 - Exam Prep Web/API v1 is German-first and learner-language aware. Reviewed foundation and depth content is now generated and imported for A1/A2/DTZ, C1, B1, B2, and Goethe C2: 17 exam profiles and 246 exam-prep units total. Goethe C2 currently has 86 units with a balanced depth cycle: reading 17, listening 17, speaking 17, writing 17, strategy 17, and overview 1. Source packages live under `content/learning-portal/exam-prep/packages`, with level/profile planning under `artifacts/planning`. The current external restore checkpoint is `X:\Projects\DarwinLingua.Backup\20260612-142146-exam-prep-complete-pre-writing-templates`.
 - Writing Templates now have a German-first, learner-language-aware v1 infrastructure slice and a complete first Web content baseline. `WritingTemplate` supports helper translations for title, short description, situation, explanation, template text, and sample filled version. ContentOps validates active helper languages, duplicate/unsupported translation languages, English fallback, CEFR/category/register values, declared/used variables in both directions, and linked slug shapes. Reviewed packages under `content/learning-portal/writing-templates/packages` are imported into `darwinlingua_shared` with `WritingTemplates=120`, distributed evenly across A1-C2 (`20` templates per CEFR level). Local Web/API smoke passed for list, A1 detail, C2 detail, Persian API detail, and Unified Search `resultType=writing-template` on 2026-06-13.
-- Life in Germany has replaced the public Cultural Notes surface. The canonical Web route is `/life-in-germany`; the current internal backing store and import root remain `CulturalNotes` / `culturalNotes` until a deliberate internal migration is scheduled. The first imported content baseline covers practical A1/A2 orientation and B1 civic/orientation-course concepts: 30 notes total in `darwinlingua_shared` (`A1=10`, `A2=10`, `B1=10`). Source packages live under `content/learning-portal/life-in-germany/packages`. The content teaches German everyday systems, civic/legal basics, Orientierungskurs/Leben-in-Deutschland concepts, and social expectations in original explanatory notes, not by copying the official question bank.
-- The Web readiness checkpoint for the current Learning Portal baseline is closed locally, but controlled tester invitation is still blocked by external/operator gates. On 2026-06-14, targeted Web/WebApi builds and Phase 7 tests passed; in-app Chromium manual smoke covered learner routes, account/admin authorization redirects, Unified Search, `/recent`, and a 390px mobile viewport without horizontal overflow. Shared PostgreSQL counts matched the baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30`. On 2026-06-23, the current Brevo-ready tester bundle `artifacts/validation/web-tester-runs/20260623-172706-web-tester-pass-brevo-ready` passed 25/25 public-routed preflight checks, including browse, word detail, favorites, settings, anonymous admin login redirects, public API health, Course Persian helper projection, and representative search queries. The empty feedback CSV triage dry-run for that bundle passed with 0 validation errors at `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260623-181053.md`. The manual external review checklist is now part of tester bundles as `ManualExternalReviewChecklist.md`, with source at `docs/91-Web-Manual-External-Review-Checklist.md`. The latest operator-facing external action packet is `artifacts/validation/web-external-action-packet/web-external-action-packet-20260624-000221.md`; it records `Automated ready=False`, `Controlled tester ready=False`, Brevo status `needs-authorized-ip-or-review`, and five open human-start gates.
+- Country Guidance is the stable platform feature. For German/Germany it appears to learners as Life in Germany, but the canonical Web route is `/learn/de/country-guidance/de`; the canonical API route is `/api/catalog/country-guidance/{countryContextCode}`. The internal model/table rename is complete: `CountryGuidanceNote` maps to `CountryGuidanceNotes`, with old names retained only in historical migrations and explicit rename SQL. The first imported content baseline covers practical A1/A2 orientation and B1 civic/orientation-course concepts: 30 notes total in `darwinlingua_shared` (`A1=10`, `A2=10`, `B1=10`) under `targetLearningLanguageCode=de` and `countryContextCode=DE`. Source packages live under `content/learning-portal/country-guidance/packages` and use the `countryGuidanceNotes` root array. The content teaches German everyday systems, civic/legal basics, Orientierungskurs/Leben-in-Deutschland concepts, and social expectations in original explanatory notes, not by copying the official question bank.
+- The Web readiness checkpoint for the current Learning Portal baseline is closed locally, but controlled tester invitation is still blocked by external/operator gates. On 2026-06-14, targeted Web/WebApi builds and Phase 7 tests passed; in-app Chromium manual smoke covered learner routes, account/admin authorization redirects, Unified Search, `/recent`, and a 390px mobile viewport without horizontal overflow. Shared PostgreSQL counts matched the baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CountryGuidanceNotes=30`. On 2026-06-23, the current Brevo-ready tester bundle `artifacts/validation/web-tester-runs/20260623-172706-web-tester-pass-brevo-ready` passed 25/25 public-routed preflight checks, including browse, word detail, favorites, settings, anonymous admin login redirects, public API health, Course Persian helper projection, and representative search queries. The empty feedback CSV triage dry-run for that bundle passed with 0 validation errors at `artifacts/validation/web-tester-feedback/web-tester-feedback-triage-20260623-181053.md`. The manual external review checklist is now part of tester bundles as `ManualExternalReviewChecklist.md`, with source at `docs/91-Web-Manual-External-Review-Checklist.md`. The latest operator-facing external action packet is `artifacts/validation/web-external-action-packet/web-external-action-packet-20260624-000221.md`; it records `Automated ready=False`, `Controlled tester ready=False`, Brevo status `needs-authorized-ip-or-review`, and five open human-start gates.
 - Transactional email has a Brevo API provider path, sandbox behavior, webhook event handling, delivery logs, diagnostics, suppression handling, branded HTML/plain-text templates, safe local template previews, and a configured Brevo-ready controlled public Web stack. Prior live evidence includes `brevo-production-readiness-20260623-173205.md` with `0` blockers and `0` warnings, `brevo-real-delivery-smoke-20260623-173204.md` with status `sent`, `brevo-webhook-suppression-smoke-20260623-173642.md` with `Passed: True`, `brevo-transactional-log-check-20260623-173654.md` with `Passed: True`, and `web-account-email-link-smoke-20260623-173710.md` with `Passed: True`. Current readiness evidence is not closed because Brevo rejects the current host until its IP is added under Brevo `Security -> Authorised IPs`; manual mailbox rendering review and ongoing provider event monitoring remain operational checks before broad public launch.
 - Mobile/MAUI parity is no longer part of the active implementation path. It remains explicitly deferred until the Web product is validated with real testers and follow-up Web improvements are complete.
 - Web and WebApi production persistence is PostgreSQL-only. SQLite is allowed only for mobile/local surfaces where SQLite is the actual runtime store; it must not drive Web/API production query behavior.
@@ -72,12 +72,13 @@ Immediate next order:
 9. Consider Life in Germany B2+ expansion only after the current Web readiness/user-testing checkpoint is closed or a tester/content review identifies a concrete gap.
 10. Expand Conversation Starter/Event Preparation only for audit-proven gaps.
 11. After every completed Web/content phase, update docs and create a restorable external backup under `X:\Projects\DarwinLingua.Backup` before moving to the next phase.
+12. Before adding English, Spanish, French, or any other non-German target-learning-language content, complete the Phase 8 target-language architecture refactor in `04-Implementation-Backlog.md`.
 
 ---
 
 ## Product Direction
 
-Darwin Lingua should become a complete practical German-learning portal, not a collection of isolated features.
+Darwin Lingua should first deliver a complete practical German target-language baseline, then evolve into a multi-target-language learning platform without turning the product into a collection of isolated features.
 
 The platform should help learners:
 
@@ -97,6 +98,32 @@ The platform should help learners:
 The Web platform is the primary implementation surface for this expansion. Mobile parity comes after the Web model, Web API contracts, content model, tests, and content operations are stable.
 
 Existing vocabulary, dialogue, Talk Topic, event, organizer, and conversation content must not be deleted. Existing content may be linked, enriched, corrected, or extended only when needed.
+
+### Future Multi-Target-Language Direction
+
+The current production baseline remains German by default, but Darwin Lingua must be prepared to teach additional target languages. This is different from the existing helper/meaning-language system.
+
+The stable terminology is:
+
+- `targetLearningLanguage`: the language the learner wants to learn, such as German, English, Spanish, or French.
+- `uiLanguage`: the language of site chrome, account pages, and admin UI.
+- `meaningLanguage`: the learner's explanation/helper language or languages.
+- `countryContext`: the country or region whose everyday life, civic orientation, law, culture, and social systems are being taught.
+- `levelSystem`: the learning-level framework, such as CEFR, with learner-friendly labels in addition to compact level codes.
+
+Life in Germany remains part of the German target-learning-language experience because Germany is a German-speaking country. The stable platform concept is `Country Guidance`; `Life in Germany` is the German/Germany-facing label. The future country-guidance model must also support Germany, Austria, Switzerland, and other German-speaking contexts for German; United States, United Kingdom, Australia, and other contexts for English; and countries that belong under more than one target language, such as Switzerland under German, French, and Italian. Each target-language/country-context combination requires its own original source content, with helper translations layered on top for learner support. Country Guidance is broader than official exam support: for German/Germany it may cover Orientierungskurs and Leben-in-Deutschland concepts, but its main product purpose is practical integration, civic/legal basics, everyday systems, communication norms, and culture for people living in the selected country context.
+
+Because the product is still pre-customer and under active development, Phase 8 should prefer a clean target-language-aware route, schema, import, search, progress, and admin design over preserving legacy route compatibility that would create technical debt. Temporary redirects are acceptable only as development aids; final learner routes should make target language explicit.
+
+Before activating a new target language, the team must define its target-language capability profile: script/direction, level system, search normalization, grammar and morphology assumptions, punctuation/capitalization behavior, input guidance, TTS expectations, country contexts, exam ecosystem, writing conventions, and first-pilot module coverage.
+
+The target-language capability profile must also identify language-specific risks before content generation starts. Examples include German cases and DACH variants, English spelling/pronunciation and US/UK/Australia contexts, Spanish regional forms and accent handling, French liaison/accent/register behavior, and right-to-left or non-Latin rendering/input requirements for any future target language that needs them.
+
+Level selection must stay learner-friendly. CEFR codes such as `A1` and `B2` should remain visible, but every level card or picker must also show a plain label and short explanation from level-system reference data so learners who do not know CEFR can still choose correctly.
+
+Because the product is still pre-customer, remaining Phase 8 implementation should choose clean target-language-aware routes, schemas, model names, package roots, admin labels, and tests over permanent compatibility shims. Old top-level learner routes or old public names are acceptable only as temporary migration aids and should not be part of the final acceptance gate when they create ambiguity.
+
+Phase 8 progress: the architecture contract, active German target-language reference data, planned inactive target-language definitions, CEFR level definitions with learner-friendly labels, Germany country context reference data, default `TargetLearningLanguageCode = de` user-profile foundation, target-language schema/index scope for the main Web learning content roots, canonical `/learn/{targetLearningLanguageCode}/...` learner routes, Country Guidance country-context partitioning, Conversation Starter Pack/Event Preparation Pack target-language partitioning, Conversation Event/Event RSVP target-language partitioning, target-scoped organizer supported-level and active-event views, explicit admin target-language scope selectors for operator-managed community resources, target-scoped search/progress/admin report foundations, and the visible Web target-language switcher are now implemented. Remaining Phase 8 work is concentrated on final API contract cleanup, broader cross-target isolation tests, backup manifest updates, and final regression evidence before non-German content can be added safely.
 
 ---
 
@@ -139,7 +166,7 @@ Not allowed as hardcoded static pages:
 - exercises
 - exam-preparation content
 - writing templates
-- cultural notes
+- country guidance notes
 
 ### Content References Instead Of Duplication
 
@@ -712,7 +739,7 @@ Writing Templates help learners produce practical German texts for real-life sit
 - 2026-06-13: Writing Templates A1-C2 content is complete for the first Web baseline. Planning files exist for A1, A2, B1, B2, C1, and C2 under `artifacts/planning`; package files exist under `content/learning-portal/writing-templates/packages`.
 - Current shared PostgreSQL count: `WritingTemplates=120`, distributed as `A1=20`, `A2=20`, `B1=20`, `B2=20`, `C1=20`, and `C2=20`.
 - Latest verification: targeted WritingTemplate ContentOps tests passed; local Web/API smoke returned HTTP 200 for `/writing-templates`, A1 detail, C2 detail, Persian API detail, and `/api/catalog/search?q=Abschlussstatement&resultType=writing-template`.
-- Next content step: start `Life in Germany` planning and content generation. This feature replaces the narrow public Cultural Notes scope while keeping the existing `CulturalNotes` backing store for now.
+- Next content step: expand Country Guidance only after the current Web readiness and target-language architecture gates are closed. German/Germany content appears as `Life in Germany`; the internal backing model is `CountryGuidanceNote`.
 
 ---
 
@@ -752,7 +779,7 @@ Life in Germany teaches German communication behavior, social expectations, ever
 ### Suggested Aggregate
 
 - Public feature: `Life in Germany`
-- Current backing aggregate: `CulturalNote`
+- Current backing aggregate: `CountryGuidanceNote`
 
 ### Relationship Rules
 
@@ -784,7 +811,7 @@ Search targets:
 - course lessons
 - exam prep units
 - writing templates
-- cultural notes
+- country guidance notes
 - events and organizers where appropriate
 
 ### Search Result Model
@@ -854,7 +881,7 @@ The portal should track learner progress across content types without mixing use
 - [x] define shared learning portal navigation structure
   - Progress: Web learner navigation is grouped as Learn, Practice, Speak, Prepare, and Resources using only implemented routes.
 - [x] add content-type taxonomy for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, and Life in Germany
-  - Progress: Unified Search and Web link resolution now use the canonical content-type keys `word`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise-set`, `exercise`, `roleplay`, `course-lesson`, `exam-prep-unit`/search `exam-prep`, `writing-template`, and public `life-in-germany`/internal search `cultural-note`.
+  - Progress: Unified Search and Web link resolution now use the canonical content-type keys `word`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise-set`, `exercise`, `roleplay`, `course-lesson`, `exam-prep-unit`/search `exam-prep`, `writing-template`, and `country-guidance`.
   - Evidence: `UnifiedLearningSearchService` validates supported result types, `UnifiedLearningSearchRepository` maps each searchable type to its Web URL, and `LearningContentLinkResolver` maps reusable linked-content targets for Web rendering.
 - [x] define cross-content linking model
   - Progress: Cross-content links are stored as typed slug references on each content family, rendered through the shared Web resolver, and reported through admin diagnostics instead of being shown as raw slug text.
@@ -869,7 +896,7 @@ The portal should track learner progress across content types without mixing use
 - [x] define Web-first/mobile-later parity rule in docs
 - [x] add admin/system report placeholders for new content families
   - Progress: Admin system reports now include real learning-portal counts, distribution rows, quality counters, and issue drilldown for current persisted Web content families instead of documentation-only placeholders.
-  - Evidence: `WebsiteAdminQueryService` reports counts for `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise`, `course-path`, `course-module`, `course-lesson`, `exam-prep-unit`, `writing-template`, and `cultural-note`; it also reports missing translations, unpublished drafts, malformed JSON/variables/activity blocks, unresolved linked targets, and owner/profile issues where applicable.
+  - Evidence: `WebsiteAdminQueryService` reports counts for `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise`, `course-path`, `course-module`, `course-lesson`, `exam-prep-unit`, `writing-template`, and `country-guidance`; it also reports missing translations, unpublished drafts, malformed JSON/variables/activity blocks, unresolved linked targets, and owner/profile issues where applicable.
 - [x] add test backlog entries for all new modules
   - Progress: `71-Web-Test-Backlog.md` contains Learning Portal Expansion coverage for foundation and future Phase 7 modules.
 - [x] document recurring content-generation lessons
@@ -1023,7 +1050,7 @@ The portal should track learner progress across content types without mixing use
 - [x] complete controlled B2 Module 8 activity-flow backfill
   - Progress: lessons 71-80 in `course-b2-kompetent-argumentieren-und-handeln-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `B2Module8ActivityEnabled=10`, `B2ActivityEnabled=80`, `TotalActivityEnabled=320`, `ActiveLessonsWithoutActivityBlocks=240`, and zero unresolved B2 activity targets.
 - [x] create `course-b2-activity-flow-complete-pre-c1-activity-flow` phase backup
-  - Progress: restore-ready checkpoint created at `X:\Projects\DarwinLingua.Backup\20260617-183717-course-b2-activity-flow-complete-pre-c1-activity-flow`. Verification includes refreshed `darwinlingua_shared` custom dump, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `B2ActivityEnabled=80`, `TotalActivityEnabled=320`, `ActiveLessonsWithoutActivityBlocks=240`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `UserContentProgress=true`), repo overlay, separate secret bundle, docker metadata, manifest, and SHA256 checksums.
+  - Progress: restore-ready checkpoint created at `X:\Projects\DarwinLingua.Backup\20260617-183717-course-b2-activity-flow-complete-pre-c1-activity-flow`. Verification includes refreshed `darwinlingua_shared` custom dump, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `B2ActivityEnabled=80`, `TotalActivityEnabled=320`, `ActiveLessonsWithoutActivityBlocks=240`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CountryGuidanceNotes=30`, `UserContentProgress=true`), repo overlay, separate secret bundle, docker metadata, manifest, and SHA256 checksums.
 - [x] complete controlled C1 Module 1 activity-flow backfill
   - Progress: lessons 1-10 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module1ActivityEnabled=10`, `C1ActivityEnabled=10`, `TotalActivityEnabled=330`, `ActiveLessonsWithoutActivityBlocks=230`, and zero unresolved C1 Module 1 activity targets.
 - [x] complete controlled C1 Module 2 activity-flow backfill
@@ -1049,7 +1076,7 @@ The portal should track learner progress across content types without mixing use
 - [x] complete controlled C1 Module 12 activity-flow backfill
   - Progress: lessons 111-120 in `course-c1-souveraen-in-studium-beruf-und-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C1Module12ActivityEnabled=10`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, and zero unresolved C1 Module 12 activity targets.
 - [x] create `course-c1-activity-flow-complete-pre-c2-activity-flow` phase backup
-  - Evidence: `X:\Projects\DarwinLingua.Backup\20260617-210237-course-c1-activity-flow-complete-pre-c2-activity-flow` contains the refreshed `darwinlingua_shared` custom dump, globals, database inventory, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`), repo overlay, separate secret bundle, docker metadata, manifest, and SHA256 checksums.
+  - Evidence: `X:\Projects\DarwinLingua.Backup\20260617-210237-course-c1-activity-flow-complete-pre-c2-activity-flow` contains the refreshed `darwinlingua_shared` custom dump, globals, database inventory, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `C1ActivityEnabled=120`, `TotalActivityEnabled=440`, `ActiveLessonsWithoutActivityBlocks=120`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CountryGuidanceNotes=30`), repo overlay, separate secret bundle, docker metadata, manifest, and SHA256 checksums.
 - [x] complete controlled C2 Module 1 activity-flow backfill
   - Progress: lessons 1-10 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification reports `C2Module1ActivityEnabled=10`, `C2ActivityEnabled=10`, `TotalActivityEnabled=450`, `ActiveLessonsWithoutActivityBlocks=110`, and zero unresolved C2 Module 1 activity targets.
 - [x] complete controlled C2 Module 2 activity-flow backfill
@@ -1075,7 +1102,7 @@ The portal should track learner progress across content types without mixing use
 - [x] complete controlled C2 Module 12 activity-flow backfill
   - Progress: lessons 111-120 in `course-c2-stil-souveraenitaet-und-komplexer-diskurs-v1.json` now include reviewed `activityBlocks`; PostgreSQL verification after import reports `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, and zero unresolved C2 activity targets. Public smoke passed for `/courses/c2-stil-souveraenitaet-und-komplexer-diskurs/c2-abschluss-und-meisterschaftspflege`; API detail with `primaryMeaningLanguageCode=fa` returns 5 activity blocks.
 - [x] create `course-c2-activity-flow-complete-pre-user-testing` phase backup
-  - Evidence: restore-ready backup synced to `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing` after initial local staging at `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`. It contains PostgreSQL dump, globals, database inventory, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CulturalNotes=30`, `UserContentProgress=true`), repo overlay, separate secret bundle, Docker metadata, manifest, external sync verification note, and SHA256 checksums. External target verification matched staging with hidden files included (`617` files, `239493739` bytes), and SHA256 verification passed for all `616` listed files.
+  - Evidence: restore-ready backup synced to `X:\Projects\DarwinLingua.Backup\20260618-073641-course-c2-activity-flow-complete-pre-user-testing` after initial local staging at `D:\_Projects\DarwinLingua.Backup.Staging\20260618-073641-course-c2-activity-flow-complete-pre-user-testing`. It contains PostgreSQL dump, globals, database inventory, `pg_restore --list`, dry-run restore counts matching live counts (`CourseLessons=560`, `C2ActivityEnabled=120`, `TotalActivityEnabled=560`, `ActiveLessonsWithoutActivityBlocks=0`, `WritingTemplates=120`, `ExamPrepUnits=246`, `CountryGuidanceNotes=30`, `UserContentProgress=true`), repo overlay, separate secret bundle, Docker metadata, manifest, external sync verification note, and SHA256 checksums. External target verification matched staging with hidden files included (`617` files, `239493739` bytes), and SHA256 verification passed for all `616` listed files.
 
 ### Phase 7.6: Exam Preparation
 
@@ -1101,13 +1128,13 @@ The portal should track learner progress across content types without mixing use
 
 ### Phase 7.8: Life in Germany
 
-- [x] implement cultural note model
+- [x] implement country guidance note model
 - [x] add Web list/detail pages
 - [x] link to dialogues, expressions, writing templates, Talk Topics, and course lessons
-- [x] add initial tests for cultural-note parsing, navigation, and localization
-- [x] document cultural note content contract in `82-Cultural-Note-Content-Package-Contract.md`
-- [x] add broader filtering, Web API, Web rendering, and linked-content coverage after first real cultural-note package is available
-  - Progress: the public feature is now `Life in Germany` at `/life-in-germany`, with the internal `CulturalNote` aggregate retained. A1/A2 and B1 foundation packages are generated and imported with `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`). PostgreSQL repository coverage now verifies stable list/detail filtering, helper translation projection, and Unified Search URLs. The next expansion should start with B2 planning/content only after this Web readiness checkpoint is closed.
+- [x] add initial tests for country-guidance parsing, navigation, and localization
+- [x] document country guidance note content contract in `82-Country-Guidance-Content-Package-Contract.md`
+- [x] add broader filtering, Web API, Web rendering, and linked-content coverage after first real country-guidance package is available
+  - Progress: the stable feature is now `Country Guidance`, with Life in Germany as the German/Germany display label at `/learn/de/country-guidance/de`; the internal model/table naming is now `CountryGuidanceNote` / `CountryGuidanceNotes`, with old names retained only in historical migrations and explicit rename SQL. A1/A2 and B1 Germany foundation packages are generated and imported with `CountryGuidanceNotes=30` (`A1=10`, `A2=10`, `B1=10`) under `de|DE`. PostgreSQL repository coverage now verifies stable list/detail filtering, helper translation projection, and Unified Search URLs. The next expansion should start with B2 planning/content only after this Web readiness checkpoint is closed.
 
 ### Phase 7.9: Unified Learning Search
 
@@ -1166,7 +1193,7 @@ Mobile/MAUI work is deferred until the Web product has been validated with teste
 
 - [x] define mobile navigation update after Web sign-off
   - Progress: MAUI shell now aligns the primary learner navigation around Learn, Practice, Speak, Prepare, and Resources.
-- [x] update mobile content package export for grammar, expressions, exercises, courses, exam prep, writing templates, and cultural notes
+- [x] update mobile content package export for grammar, expressions, exercises, courses, exam prep, writing templates, and country guidance notes
   - Progress: full/all mobile packages carry Phase 7 content arrays and linked references; WebApi also publishes `catalog-module` slices for selective module downloads.
 - [x] remove Web local SQLite learning/content startup path
   - Progress: DarwinLingua.Web no longer registers the shared SQLite infrastructure initializer or local `darwin-lingua.web.db` path; Web user state uses PostgreSQL through `WebIdentityDbContext`.
@@ -1259,3 +1286,4 @@ After this roadmap is accepted, implementation prompts should be produced in thi
 18. Cultural notes content generation prompt
 
 Do not generate bulk content before the corresponding implementation and validation rules exist.
+

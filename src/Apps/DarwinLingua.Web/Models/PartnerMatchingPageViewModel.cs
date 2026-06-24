@@ -17,7 +17,7 @@ public sealed class PartnerMatchSearchInputModel
 
     public string? InteractionPreference { get; set; }
 
-    public string? GermanLevel { get; set; }
+    public string? LearningLevel { get; set; }
 
     [StringLength(32)]
     public string? HelperLanguageCode { get; set; }

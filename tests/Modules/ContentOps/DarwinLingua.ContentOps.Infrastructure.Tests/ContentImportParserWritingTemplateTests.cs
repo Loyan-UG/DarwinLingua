@@ -19,6 +19,8 @@ public sealed class ContentImportParserWritingTemplateTests
               "packageVersion": "1.0",
               "packageId": "writing-template-contract-test",
               "packageName": "Writing Template Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "defaultMeaningLanguages": ["en"],
               "entries": [],
               "writingTemplates": [

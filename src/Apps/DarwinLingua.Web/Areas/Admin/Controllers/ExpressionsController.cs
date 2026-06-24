@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +15,10 @@ public sealed class ExpressionsController(IWebCatalogApiClient catalogApiClient)
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         IReadOnlyList<ExpressionListItemModel> expressions = await catalogApiClient
-            .GetExpressionsAsync(new ExpressionListFilterModel(null, null, null, null, null, null, null, null, true), cancellationToken)
+            .GetExpressionsAsync(
+                new ExpressionListFilterModel(null, null, null, null, null, null, null, null, true),
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                cancellationToken)
             .ConfigureAwait(false);
 
         return View(new AdminExpressionsPageViewModel(expressions));

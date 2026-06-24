@@ -15,6 +15,7 @@ using DarwinLingua.Learning.Application.Models;
 using DarwinLingua.Learning.Infrastructure.DependencyInjection;
 using DarwinLingua.Localization.Infrastructure.DependencyInjection;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.WebApi.Configuration;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Persistence;
@@ -382,19 +383,21 @@ app.MapGet(
         string? interactionMode,
         string? register,
         string? q,
+        string? targetLearningLanguageCode,
         IDialogueLessonQueryService dialogueQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await dialogueQueryService.GetPublishedDialoguesAsync(
                     new DialogueLessonListFilterModel(cefrLevel, category, topicKey, examProfile, skillFocus, taskType, interactionMode, register, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/dialogues/{slug}",
-    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IDialogueLessonQueryService dialogueQueryService, CancellationToken cancellationToken) =>
+    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, string? targetLearningLanguageCode, IDialogueLessonQueryService dialogueQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await dialogueQueryService.GetPublishedDialogueBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+                async () => await dialogueQueryService.GetPublishedDialogueBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -410,20 +413,22 @@ app.MapGet(
         string? register,
         string? q,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IRoleplayScenarioQueryService roleplayQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await roleplayQueryService.GetPublishedRoleplayScenariosAsync(
                     new RoleplayScenarioListFilterModel(cefrLevel, category, topicKey, examProfile, skillFocus, taskType, interactionMode, register, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/roleplays/{slug}",
-    async (string slug, string? primaryMeaningLanguageCode, IRoleplayScenarioQueryService roleplayQueryService, CancellationToken cancellationToken) =>
+    async (string slug, string? primaryMeaningLanguageCode, string? targetLearningLanguageCode, IRoleplayScenarioQueryService roleplayQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await roleplayQueryService.GetPublishedRoleplayScenarioBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await roleplayQueryService.GetPublishedRoleplayScenarioBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -435,11 +440,13 @@ app.MapGet(
         string? contentType,
         string? speakingGoal,
         bool? isSensitive,
+        string? targetLearningLanguageCode,
         ITalkTopicQueryService talkTopicQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await talkTopicQueryService.GetPublishedTalkTopicsAsync(
                     new TalkTopicListFilterModel(cefrLevel, category, topicKey, contentType, speakingGoal, isSensitive),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -449,11 +456,13 @@ app.MapGet(
         string slug,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         ITalkTopicQueryService talkTopicQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await talkTopicQueryService.GetPublishedTalkTopicBySlugAsync(
                     slug,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode,
                     secondaryMeaningLanguageCode,
                     cancellationToken).ConfigureAwait(false))
@@ -466,11 +475,13 @@ app.MapGet(
         string? grammarCategory,
         string? topicKey,
         string? q,
+        string? targetLearningLanguageCode,
         IGrammarTopicQueryService grammarQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await grammarQueryService.GetPublishedGrammarTopicsAsync(
                     new GrammarTopicListFilterModel(cefrLevel, grammarCategory, topicKey, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -479,11 +490,13 @@ app.MapGet(
     async (
         string slug,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IGrammarTopicQueryService grammarQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
                     slug,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
@@ -495,11 +508,13 @@ app.MapGet(
         string? grammarCategory,
         string? topicKey,
         string? q,
+        string? targetLearningLanguageCode,
         IGrammarTopicQueryService grammarQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await grammarQueryService.GetPublishedGrammarTopicsAsync(
                     new GrammarTopicListFilterModel(cefrLevel, grammarCategory, topicKey, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -508,11 +523,13 @@ app.MapGet(
     async (
         string slug,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IGrammarTopicQueryService grammarQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await grammarQueryService.GetPublishedGrammarTopicBySlugAsync(
                     slug,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
@@ -528,6 +545,7 @@ app.MapGet(
         bool? isRisky,
         string? q,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         bool? includeSensitiveEducationalLanguage,
         HttpContext httpContext,
         IExpressionQueryService expressionQueryService,
@@ -544,6 +562,7 @@ app.MapGet(
                         q,
                         primaryMeaningLanguageCode,
                         IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage)),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -552,6 +571,7 @@ app.MapGet(
     async (
         string slug,
         string primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         bool? includeSensitiveEducationalLanguage,
         HttpContext httpContext,
         IExpressionQueryService expressionQueryService,
@@ -559,6 +579,7 @@ app.MapGet(
         await ResolveQueryRequestAsync(
                 async () => await expressionQueryService.GetPublishedExpressionBySlugAsync(
                     slug,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode,
                     IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage),
                     cancellationToken).ConfigureAwait(false))
@@ -572,11 +593,13 @@ app.MapGet(
         string? ownerSlug,
         string? q,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExerciseQueryService exerciseQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await exerciseQueryService.GetPublishedExerciseSetsAsync(
                     new ExerciseSetListFilterModel(cefrLevel, ownerType, ownerSlug, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
@@ -586,10 +609,11 @@ app.MapGet(
     async (
         string slug,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExerciseQueryService exerciseQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await exerciseQueryService.GetPublishedExerciseSetBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await exerciseQueryService.GetPublishedExerciseSetBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -597,10 +621,11 @@ app.MapGet(
     async (
         string slug,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExerciseQueryService exerciseQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await exerciseQueryService.GetPublishedExerciseBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await exerciseQueryService.GetPublishedExerciseBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
@@ -609,11 +634,13 @@ app.MapPost(
             string slug,
             ExerciseAttemptRequestModel request,
             string? primaryMeaningLanguageCode,
+            string? targetLearningLanguageCode,
             IExerciseAttemptService attemptService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
                     async () => await attemptService.EvaluateAttemptAsync(
                         slug,
+                        ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                         request,
                         primaryMeaningLanguageCode ?? "en",
                         cancellationToken).ConfigureAwait(false))
@@ -626,12 +653,14 @@ app.MapPost(
         string slug,
         ExerciseAttemptRequestModel request,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExerciseAttemptService attemptService,
         ClaimsPrincipal principal,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await attemptService.SubmitAttemptAsync(
                     slug,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     request,
                     GetRequiredUserId(principal),
                     primaryMeaningLanguageCode ?? "en",
@@ -644,11 +673,15 @@ app.MapGet(
         "/api/learning/progress/summary",
         async (
             ClaimsPrincipal principal,
+            string? targetLearningLanguageCode,
             IUserContentProgressService progressService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
                     async () => await progressService
-                        .GetSummaryAsync(GetRequiredUserId(principal), cancellationToken)
+                        .GetSummaryAsync(
+                            GetRequiredUserId(principal),
+                            ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                            cancellationToken)
                         .ConfigureAwait(false))
                 .ConfigureAwait(false))
     .RequireAuthorization();
@@ -657,12 +690,17 @@ app.MapPost(
         "/api/learning/progress/content",
         async (
             UpdateUserContentProgressRequestModel request,
+            string? targetLearningLanguageCode,
             ClaimsPrincipal principal,
             IUserContentProgressService progressService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
                     async () => await progressService
-                        .UpdateContentProgressAsync(GetRequiredUserId(principal), request, cancellationToken)
+                        .UpdateContentProgressAsync(
+                            GetRequiredUserId(principal),
+                            ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                            request,
+                            cancellationToken)
                         .ConfigureAwait(false))
                 .ConfigureAwait(false))
     .RequireAuthorization();
@@ -672,11 +710,16 @@ app.MapGet(
         async (
             ClaimsPrincipal principal,
             int? take,
+            string? targetLearningLanguageCode,
             IUserContentProgressService progressService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
                     async () => await progressService
-                        .GetRecommendationsAsync(GetRequiredUserId(principal), Math.Clamp(take ?? 6, 1, 20), cancellationToken)
+                        .GetRecommendationsAsync(
+                            GetRequiredUserId(principal),
+                            ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                            Math.Clamp(take ?? 6, 1, 20),
+                            cancellationToken)
                         .ConfigureAwait(false))
                 .ConfigureAwait(false))
     .RequireAuthorization();
@@ -687,11 +730,13 @@ app.MapGet(
             string? cefrLevel,
             string? q,
             string? primaryMeaningLanguageCode,
+            string? targetLearningLanguageCode,
             ICourseQueryService courseQueryService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
                 async () => await courseQueryService.GetPublishedCoursePathsAsync(
                     new CoursePathListFilterModel(cefrLevel, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
                 .ConfigureAwait(false));
@@ -701,10 +746,11 @@ app.MapGet(
         async (
             string slug,
             string? primaryMeaningLanguageCode,
+            string? targetLearningLanguageCode,
             ICourseQueryService courseQueryService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
-                async () => await courseQueryService.GetPublishedCoursePathBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await courseQueryService.GetPublishedCoursePathBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
                 .ConfigureAwait(false));
 
 app.MapGet(
@@ -712,10 +758,11 @@ app.MapGet(
         async (
             string slug,
             string? primaryMeaningLanguageCode,
+            string? targetLearningLanguageCode,
             ICourseQueryService courseQueryService,
             CancellationToken cancellationToken) =>
             await ResolveQueryRequestAsync(
-                async () => await courseQueryService.GetPublishedCourseLessonBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await courseQueryService.GetPublishedCourseLessonBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
                 .ConfigureAwait(false));
 
 app.MapGet(
@@ -727,11 +774,13 @@ app.MapGet(
         string? situation,
         string? q,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IWritingTemplateQueryService writingTemplateQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await writingTemplateQueryService.GetPublishedWritingTemplatesAsync(
                     new WritingTemplateListFilterModel(cefrLevel, category, register, situation, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode,
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
@@ -741,48 +790,61 @@ app.MapGet(
     async (
         string slug,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IWritingTemplateQueryService writingTemplateQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await writingTemplateQueryService.GetPublishedWritingTemplateBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+                async () => await writingTemplateQueryService.GetPublishedWritingTemplateBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/catalog/cultural-notes",
+    "/api/catalog/country-guidance/{countryContextCode}",
     async (
+        string countryContextCode,
         string? cefrLevel,
         string? category,
         string? context,
         string? q,
         string? primaryMeaningLanguageCode,
-        ICulturalNoteQueryService culturalNoteQueryService,
+        string? targetLearningLanguageCode,
+        ICountryGuidanceNoteQueryService countryGuidanceNoteQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await culturalNoteQueryService.GetPublishedCulturalNotesAsync(
-                    new CulturalNoteListFilterModel(cefrLevel, category, context, q),
+                async () => await countryGuidanceNoteQueryService.GetPublishedCountryGuidanceNotesAsync(
+                    new CountryGuidanceNoteListFilterModel(cefrLevel, category, context, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                    ResolveCountryContextCode(countryContextCode, targetLearningLanguageCode),
                     primaryMeaningLanguageCode,
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
-    "/api/catalog/cultural-notes/{slug}",
+    "/api/catalog/country-guidance/{countryContextCode}/{slug}",
     async (
+        string countryContextCode,
         string slug,
         string? primaryMeaningLanguageCode,
-        ICulturalNoteQueryService culturalNoteQueryService,
+        string? targetLearningLanguageCode,
+        ICountryGuidanceNoteQueryService countryGuidanceNoteQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await culturalNoteQueryService.GetPublishedCulturalNoteBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+                async () => await countryGuidanceNoteQueryService.GetPublishedCountryGuidanceNoteBySlugAsync(
+                    slug,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                    ResolveCountryContextCode(countryContextCode, targetLearningLanguageCode),
+                    primaryMeaningLanguageCode,
+                    cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/exam-profiles",
     async (
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExamPrepQueryService examPrepQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await examPrepQueryService.GetPublishedExamProfilesAsync(primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await examPrepQueryService.GetPublishedExamProfilesAsync(ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -795,11 +857,13 @@ app.MapGet(
         string? section,
         string? q,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExamPrepQueryService examPrepQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await examPrepQueryService.GetPublishedExamPrepUnitsAsync(
                     new ExamPrepListFilterModel(examProfile, cefrLevel, skillFocus, taskType, section, q),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     primaryMeaningLanguageCode ?? "en",
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
@@ -809,10 +873,11 @@ app.MapGet(
     async (
         string slug,
         string? primaryMeaningLanguageCode,
+        string? targetLearningLanguageCode,
         IExamPrepQueryService examPrepQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await examPrepQueryService.GetPublishedExamPrepUnitBySlugAsync(slug, primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
+                async () => await examPrepQueryService.GetPublishedExamPrepUnitBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode ?? "en", cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -823,6 +888,7 @@ app.MapGet(
         string? resultType,
         string? category,
         string? topicKey,
+        string? targetLearningLanguageCode,
         bool? includeSensitiveEducationalLanguage,
         HttpContext httpContext,
         IUnifiedLearningSearchService searchService,
@@ -835,7 +901,8 @@ app.MapGet(
                         resultType,
                         category,
                         topicKey,
-                        IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage)),
+                        IsSensitiveEducationalLanguageRequestAllowed(httpContext, includeSensitiveEducationalLanguage),
+                        ResolveTargetLearningLanguageCode(targetLearningLanguageCode)),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false))
     .RequireRateLimiting("CatalogSearch");
@@ -848,26 +915,28 @@ app.MapGet(
         string? tone,
         string? conversationGoal,
         string? topicKey,
+        string? targetLearningLanguageCode,
         IConversationStarterQueryService conversationStarterQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await conversationStarterQueryService.GetPublishedStarterPacksAsync(
                     new ConversationStarterListFilterModel(cefrLevel, situation, tone, conversationGoal, topicKey),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/dialogues/{slug}/conversation-starters",
-    async (string slug, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
+    async (string slug, string? targetLearningLanguageCode, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await conversationStarterQueryService.GetPublishedStarterPacksForDialogueAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await conversationStarterQueryService.GetPublishedStarterPacksForDialogueAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/conversation-starters/{slug}",
-    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
+    async (string slug, string primaryMeaningLanguageCode, string? secondaryMeaningLanguageCode, string? targetLearningLanguageCode, IConversationStarterQueryService conversationStarterQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await conversationStarterQueryService.GetPublishedStarterPackBySlugAsync(slug, primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+                async () => await conversationStarterQueryService.GetPublishedStarterPackBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), primaryMeaningLanguageCode, secondaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -877,6 +946,7 @@ app.MapGet(
         string? category,
         string? eventType,
         string? topicKey,
+        string? targetLearningLanguageCode,
         HttpContext httpContext,
         IEventPreparationQueryService eventPreparationQueryService,
         UserManager<DarwinLinguaIdentityUser> userManager,
@@ -889,6 +959,7 @@ app.MapGet(
                 DarwinLinguaFeatureKeys.EventPreparationPacks,
                 async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksAsync(
                     new EventPreparationListFilterModel(cefrLevel, category, eventType, topicKey),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -896,6 +967,7 @@ app.MapGet(
     "/api/catalog/dialogues/{slug}/event-preparation-packs",
     async (
         string slug,
+        string? targetLearningLanguageCode,
         HttpContext httpContext,
         IEventPreparationQueryService eventPreparationQueryService,
         UserManager<DarwinLinguaIdentityUser> userManager,
@@ -906,13 +978,14 @@ app.MapGet(
                 userManager,
                 userEntitlementService,
                 DarwinLinguaFeatureKeys.EventPreparationPacks,
-                async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksForDialogueAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await eventPreparationQueryService.GetPublishedEventPreparationPacksForDialogueAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/event-preparation-packs/{slug}",
     async (
         string slug,
+        string? targetLearningLanguageCode,
         HttpContext httpContext,
         IEventPreparationQueryService eventPreparationQueryService,
         UserManager<DarwinLinguaIdentityUser> userManager,
@@ -923,7 +996,7 @@ app.MapGet(
                 userManager,
                 userEntitlementService,
                 DarwinLinguaFeatureKeys.EventPreparationPacks,
-                async () => await eventPreparationQueryService.GetPublishedEventPreparationPackBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await eventPreparationQueryService.GetPublishedEventPreparationPackBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -937,51 +1010,54 @@ app.MapGet(
         string? category,
         DateTime? dateFromUtc,
         DateTime? dateToUtc,
+        string? targetLearningLanguageCode,
         IConversationEventQueryService conversationEventQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await conversationEventQueryService.GetPublishedEventsAsync(
                     new ConversationEventListFilterModel(city, cefrLevel, helperLanguageCode, isOnline, priceType, category, dateFromUtc, dateToUtc),
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/conversation-events/{slug}",
-    async (string slug, IConversationEventQueryService conversationEventQueryService, CancellationToken cancellationToken) =>
+    async (string slug, string? targetLearningLanguageCode, IConversationEventQueryService conversationEventQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await conversationEventQueryService.GetPublishedEventBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await conversationEventQueryService.GetPublishedEventBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/conversation-events/{slug}/rsvp-summary",
-    async (string slug, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
+    async (string slug, string? targetLearningLanguageCode, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await eventRsvpService.GetSummaryAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await eventRsvpService.GetSummaryAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/catalog/conversation-events/{slug}/rsvps",
     async (
         string slug,
+        string? targetLearningLanguageCode,
         SubmitEventRsvpRequest request,
         IEventRsvpService eventRsvpService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await eventRsvpService.SubmitAsync(slug, request, cancellationToken).ConfigureAwait(false))
+                async () => await eventRsvpService.SubmitAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), request, cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/organizer-profiles",
-    async (IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
+    async (string? targetLearningLanguageCode, IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await organizerProfileQueryService.GetPublishedOrganizerProfilesAsync(cancellationToken).ConfigureAwait(false))
+                async () => await organizerProfileQueryService.GetPublishedOrganizerProfilesAsync(ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
     "/api/catalog/organizer-profiles/{slug}",
-    async (string slug, IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
+    async (string slug, string? targetLearningLanguageCode, IOrganizerProfileQueryService organizerProfileQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await organizerProfileQueryService.GetPublishedOrganizerProfileBySlugAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await organizerProfileQueryService.GetPublishedOrganizerProfileBySlugAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
@@ -1160,7 +1236,11 @@ app.MapPost(
     "/api/catalog/words/by-ids",
     async (CatalogWordLookupRequest request, IWebsiteCatalogQueryService catalogQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await catalogQueryService.GetWordsByIdsAsync(request.WordIds, request.MeaningLanguageCode, cancellationToken).ConfigureAwait(false))
+                async () => await catalogQueryService.GetWordsByIdsAsync(
+                    request.WordIds,
+                    ResolveTargetLearningLanguageCode(request.TargetLearningLanguageCode),
+                    request.MeaningLanguageCode,
+                    cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -1172,9 +1252,11 @@ app.MapGet(
 
 app.MapGet(
     "/api/admin/catalog/system-report",
-    async (IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+    async (string? targetLearningLanguageCode, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await adminQueryService.GetSystemReportAsync(cancellationToken).ConfigureAwait(false))
+                async () => await adminQueryService.GetSystemReportAsync(
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                    cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -1186,9 +1268,14 @@ app.MapGet(
 
 app.MapGet(
     "/api/admin/catalog/learning-portal-issues",
-    async (string? area, string? q, int? take, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
+    async (string? area, string? q, int? take, string? targetLearningLanguageCode, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await adminQueryService.GetLearningPortalIssuesAsync(area, q, take ?? 250, cancellationToken).ConfigureAwait(false))
+                async () => await adminQueryService.GetLearningPortalIssuesAsync(
+                    area,
+                    q,
+                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                    take ?? 250,
+                    cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -1665,21 +1752,22 @@ app.MapPost(
 
 app.MapGet(
     "/api/admin/catalog/conversation-events/{slug}/rsvps",
-    async (string slug, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
+    async (string slug, string? targetLearningLanguageCode, IEventRsvpService eventRsvpService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await eventRsvpService.GetByEventAsync(slug, cancellationToken).ConfigureAwait(false))
+                async () => await eventRsvpService.GetByEventAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
 app.MapPost(
     "/api/admin/catalog/conversation-events/{slug}/rsvps/{rsvpId:guid}/status",
     async (
         string slug,
+        string? targetLearningLanguageCode,
         Guid rsvpId,
         AdminSetEventRsvpStatusRequest request,
         IEventRsvpService eventRsvpService,
         CancellationToken cancellationToken) =>
         await ResolveMutationRequestAsync(
-                async () => await eventRsvpService.SetStatusAsync(slug, rsvpId, request, cancellationToken).ConfigureAwait(false),
+                async () => await eventRsvpService.SetStatusAsync(slug, ResolveTargetLearningLanguageCode(targetLearningLanguageCode), rsvpId, request, cancellationToken).ConfigureAwait(false),
                 static response => response.Id != Guid.Empty)
             .ConfigureAwait(false));
 
@@ -2255,6 +2343,34 @@ static bool IsSensitiveEducationalLanguageRequestAllowed(HttpContext context, bo
 
     string? suppliedKey = context.Request.Headers[options.HeaderName].FirstOrDefault();
     return IsMatchingSecret(suppliedKey, options.ApiKey);
+}
+
+static string ResolveTargetLearningLanguageCode(string? requested)
+{
+    if (string.IsNullOrWhiteSpace(requested))
+    {
+        return ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
+    }
+
+    if (TargetLearningLanguageCatalog.TryFindActive(requested, out TargetLearningLanguageDefinition language))
+    {
+        return language.Code;
+    }
+
+    throw new DomainRuleException($"Unsupported target learning language '{requested}'.");
+}
+
+static string ResolveCountryContextCode(string requested, string? requestedTargetLearningLanguageCode)
+{
+    string targetLearningLanguageCode = ResolveTargetLearningLanguageCode(requestedTargetLearningLanguageCode);
+    string normalized = string.IsNullOrWhiteSpace(requested) ? string.Empty : requested.Trim().ToUpperInvariant();
+
+    if (CountryContextCatalog.TryFindActive(normalized, targetLearningLanguageCode, out CountryContextDefinition countryContext))
+    {
+        return countryContext.Code;
+    }
+
+    throw new DomainRuleException($"Unsupported country context '{requested}' for target learning language '{targetLearningLanguageCode}'.");
 }
 
 static async Task<Dictionary<string, string[]>> LoadRolesByUserIdAsync(

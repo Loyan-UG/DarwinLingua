@@ -7,12 +7,14 @@ internal sealed class GrammarTopicQueryService(IGrammarTopicRepository repositor
 {
     public Task<IReadOnlyList<GrammarTopicListItemModel>> GetPublishedGrammarTopicsAsync(
         GrammarTopicListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
-        repository.GetPublishedGrammarTopicsAsync(filter, cancellationToken);
+        repository.GetPublishedGrammarTopicsAsync(filter, targetLearningLanguageCode, cancellationToken);
 
     public Task<GrammarTopicDetailModel?> GetPublishedGrammarTopicBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        repository.GetPublishedGrammarTopicBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
+        repository.GetPublishedGrammarTopicBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
 }

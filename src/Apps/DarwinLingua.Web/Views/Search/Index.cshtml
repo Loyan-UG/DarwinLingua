@@ -5,8 +5,8 @@
 
 <section class="panel stack-lg">
     <span class="eyebrow">@T["Search"]</span>
-    <h1 class="headline-md">@T["Search German lemmas"]</h1>
-    <p class="body-lg">@T["Find vocabulary and learning content across the German learning portal."]</p>
+    <h1 class="headline-md">@T["Search learning content"]</h1>
+    <p class="body-lg">@T["Find vocabulary and learning content for the selected learning language."]</p>
     @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
     {
         <div class="status-banner status-banner--success">@Model.StatusMessage</div>
@@ -22,7 +22,7 @@
             type="search"
             name="q"
             value="@Model.Query"
-            placeholder="@T["Type a German lemma"]"
+            placeholder="@T["Type a word, title, topic, or phrase"]"
             hx-get="@Url.Action("Results", "Search")"
             hx-trigger="keyup changed delay:250ms, search"
             hx-target="#search-results"

@@ -11,7 +11,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.StarterPack.CefrLevel · @Model.StarterPack.Situation · @Model.StarterPack.Tone</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-action="Index">@T["All starters"]</a>
+            <a class="button button--secondary button--compact" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All starters"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.StarterPack.Title</h1>
@@ -22,7 +22,7 @@
         <div class="chip-grid">
             @foreach (string topicKey in Model.StarterPack.TopicKeys)
             {
-                <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                <a class="chip-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
             }
         </div>
     }
@@ -88,7 +88,7 @@
         <div class="chip-grid">
             @foreach (string dialogueSlug in Model.StarterPack.LinkedDialogueSlugs)
             {
-                <a class="chip-link" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogueSlug">@dialogueSlug</a>
+                <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@dialogueSlug">@dialogueSlug</a>
             }
         </div>
     </section>

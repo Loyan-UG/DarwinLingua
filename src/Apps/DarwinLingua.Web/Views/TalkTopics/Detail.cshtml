@@ -14,7 +14,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.TalkTopic.CefrLevel · @T[contentTypeLabelKey] · @Model.TalkTopic.Category</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="TalkTopics" asp-action="Index">@T["All Talk Topics"]</a>
+            <a class="button button--secondary button--compact" asp-controller="TalkTopics" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All Talk Topics"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.TalkTopic.Title</h1>
@@ -105,7 +105,7 @@
                 var item = Model.TalkTopic.VocabularyItems[index];
                 if (item.IsResolved && !string.IsNullOrWhiteSpace(item.WordSlug))
                 {
-                    <a asp-controller="Words" asp-action="Detail" asp-route-wordSlug="@item.WordSlug">@item.Lemma</a>
+                    <a asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-wordSlug="@item.WordSlug">@item.Lemma</a>
                 }
                 else
                 {

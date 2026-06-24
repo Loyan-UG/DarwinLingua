@@ -2,6 +2,7 @@ using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 {
     public async Task<EventRsvpResponse> SubmitAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         SubmitEventRsvpRequest request,
         CancellationToken cancellationToken)
     {
@@ -24,9 +26,15 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
                 .ConfigureAwait(false);
 
             string normalizedEventSlug = ConversationEvent.NormalizeKey(eventSlug, "Conversation event slug");
+            string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
             bool eventExists = await dbContext.ConversationEvents
                 .AsNoTracking()
-                .AnyAsync(item => item.Slug == normalizedEventSlug && item.PublicationStatus == PublicationStatus.Active, cancellationToken)
+                .AnyAsync(
+                    item =>
+                        item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                        item.Slug == normalizedEventSlug &&
+                        item.PublicationStatus == PublicationStatus.Active,
+                    cancellationToken)
                 .ConfigureAwait(false);
 
             if (!eventExists)
@@ -37,7 +45,10 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             string participantEmail = EventRsvp.NormalizeEmail(request.ParticipantEmail);
             EventRsvp? existingRsvp = await dbContext.EventRsvps
                 .SingleOrDefaultAsync(
-                    item => item.ConversationEventSlug == normalizedEventSlug && item.ParticipantEmail == participantEmail,
+                    item =>
+                        item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                        item.ConversationEventSlug == normalizedEventSlug &&
+                        item.ParticipantEmail == participantEmail,
                     cancellationToken)
                 .ConfigureAwait(false);
 
@@ -45,6 +56,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             await EnsureCapacityAllowsStatusChangeAsync(
                     dbContext,
                     normalizedEventSlug,
+                    normalizedTargetLearningLanguageCode,
                     existingRsvp?.Id,
                     request.Status,
                     cancellationToken)
@@ -55,6 +67,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
                 existingRsvp = new EventRsvp(
                     Guid.NewGuid(),
                     normalizedEventSlug,
+                    normalizedTargetLearningLanguageCode,
                     request.ParticipantName,
                     participantEmail,
                     request.Status,
@@ -78,9 +91,11 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
     public async Task<EventRsvpSummaryResponse> GetSummaryAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         string normalizedEventSlug = ConversationEvent.NormalizeKey(eventSlug, "Conversation event slug");
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -88,7 +103,9 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
         ConversationEvent? conversationEvent = await dbContext.ConversationEvents
             .AsNoTracking()
-            .SingleOrDefaultAsync(item => item.Slug == normalizedEventSlug, cancellationToken)
+            .SingleOrDefaultAsync(
+                item => item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode && item.Slug == normalizedEventSlug,
+                cancellationToken)
             .ConfigureAwait(false);
 
         if (conversationEvent is null)
@@ -98,7 +115,9 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
         EventRsvpStatusCount[] statusCounts = await dbContext.EventRsvps
             .AsNoTracking()
-            .Where(item => item.ConversationEventSlug == normalizedEventSlug)
+            .Where(item =>
+                item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                item.ConversationEventSlug == normalizedEventSlug)
             .GroupBy(item => item.Status)
             .Select(group => new EventRsvpStatusCount(group.Key, group.Count()))
             .ToArrayAsync(cancellationToken)
@@ -112,6 +131,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
         return new EventRsvpSummaryResponse(
             normalizedEventSlug,
+            normalizedTargetLearningLanguageCode,
             GetStatusCount(statusCounts, EventRsvpStatuses.Interested),
             goingCount,
             GetStatusCount(statusCounts, EventRsvpStatuses.Cancelled),
@@ -121,9 +141,11 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
     public async Task<IReadOnlyList<EventRsvpResponse>> GetByEventAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         string normalizedEventSlug = ConversationEvent.NormalizeKey(eventSlug, "Conversation event slug");
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -131,7 +153,9 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
         EventRsvp[] rsvps = await dbContext.EventRsvps
             .AsNoTracking()
-            .Where(item => item.ConversationEventSlug == normalizedEventSlug)
+            .Where(item =>
+                item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                item.ConversationEventSlug == normalizedEventSlug)
             .OrderBy(item => item.Status)
             .ThenBy(item => item.ParticipantName)
             .Take(500)
@@ -143,6 +167,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
     public async Task<EventRsvpResponse> SetStatusAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         Guid rsvpId,
         AdminSetEventRsvpStatusRequest request,
         CancellationToken cancellationToken)
@@ -157,6 +182,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
         try
         {
             string normalizedEventSlug = ConversationEvent.NormalizeKey(eventSlug, "Conversation event slug");
+            string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
 
             await using DarwinLinguaDbContext dbContext = await dbContextFactory
                 .CreateDbContextAsync(cancellationToken)
@@ -164,7 +190,10 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
             EventRsvp rsvp = await dbContext.EventRsvps
                 .SingleOrDefaultAsync(
-                    item => item.Id == rsvpId && item.ConversationEventSlug == normalizedEventSlug,
+                    item =>
+                        item.Id == rsvpId &&
+                        item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                        item.ConversationEventSlug == normalizedEventSlug,
                     cancellationToken)
                 .ConfigureAwait(false)
                 ?? throw new KeyNotFoundException($"No RSVP was found for event '{normalizedEventSlug}'.");
@@ -172,6 +201,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             await EnsureCapacityAllowsStatusChangeAsync(
                     dbContext,
                     normalizedEventSlug,
+                    normalizedTargetLearningLanguageCode,
                     rsvp.Id,
                     request.Status,
                     cancellationToken)
@@ -191,6 +221,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
         new(
             rsvp.Id,
             rsvp.ConversationEventSlug,
+            rsvp.TargetLearningLanguageCode,
             rsvp.ParticipantName,
             rsvp.ParticipantEmail,
             rsvp.Status,
@@ -203,6 +234,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
     private static async Task EnsureCapacityAllowsStatusChangeAsync(
         DarwinLinguaDbContext dbContext,
         string normalizedEventSlug,
+        string normalizedTargetLearningLanguageCode,
         Guid? currentRsvpId,
         string requestedStatus,
         CancellationToken cancellationToken)
@@ -215,7 +247,9 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
 
         int? capacity = await dbContext.ConversationEvents
             .AsNoTracking()
-            .Where(item => item.Slug == normalizedEventSlug)
+            .Where(item =>
+                item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
+                item.Slug == normalizedEventSlug)
             .Select(item => item.Capacity)
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
@@ -229,6 +263,7 @@ public sealed class EventRsvpService(IDbContextFactory<DarwinLinguaDbContext> db
             .AsNoTracking()
             .CountAsync(
                 item => item.ConversationEventSlug == normalizedEventSlug &&
+                    item.TargetLearningLanguageCode == normalizedTargetLearningLanguageCode &&
                     item.Status == EventRsvpStatuses.Going &&
                     (!currentRsvpId.HasValue || item.Id != currentRsvpId.Value),
                 cancellationToken)

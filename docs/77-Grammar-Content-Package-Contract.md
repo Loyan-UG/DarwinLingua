@@ -1,5 +1,12 @@
 # Grammar Content Package Contract
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
 This document defines the Phase 7 Grammar Guide package contract. Grammar content is dynamic and importable; Razor views must render imported `GrammarTopic` data instead of hardcoded lessons.
 
 Reference roadmap: `76-Learning-Portal-Roadmap-And-Backlog.md`.

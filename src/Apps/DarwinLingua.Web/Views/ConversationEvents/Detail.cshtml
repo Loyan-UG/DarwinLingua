@@ -7,7 +7,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Event.Category · @(Model.Event.IsOnline ? T["Online"] : Model.Event.City ?? Model.Event.CountryRegion)</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Index">@T["All events"]</a>
+            <a class="button button--secondary button--compact" asp-controller="ConversationEvents" asp-action="Index" asp-route-targetLearningLanguageCode="@Model.Event.TargetLearningLanguageCode">@T["All events"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Event.Name</h1>
@@ -26,7 +26,7 @@
             <dd>
                 @if (!string.IsNullOrWhiteSpace(Model.Event.OrganizerProfileSlug))
                 {
-                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-slug="@Model.Event.OrganizerProfileSlug">@Model.Event.OrganizerName</a>
+                    <a asp-controller="OrganizerProfiles" asp-action="Detail" asp-route-targetLearningLanguageCode="@Model.Event.TargetLearningLanguageCode" asp-route-slug="@Model.Event.OrganizerProfileSlug">@Model.Event.OrganizerName</a>
                 }
                 else
                 {
@@ -141,7 +141,7 @@
             </div>
         }
     </dl>
-    <form method="post" asp-action="Rsvp" asp-route-slug="@Model.Event.Slug" class="form-grid">
+    <form method="post" asp-action="Rsvp" asp-route-targetLearningLanguageCode="@Model.Event.TargetLearningLanguageCode" asp-route-slug="@Model.Event.Slug" class="form-grid">
         @Html.AntiForgeryToken()
         <label class="field">
             <span>@T["Name"]</span>
@@ -175,10 +175,10 @@
                 <article class="panel stack-md">
                     <span class="eyebrow">@preparationPack.CefrLevel · @preparationPack.EventType · @preparationPack.Category</span>
                     <h3 class="headline-sm">
-                        <a asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
+                        <a asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
                     </h3>
                     <p>@preparationPack.Description</p>
-                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@T["Prepare for this event"]</a>
+                    <a class="button button--secondary button--compact" asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@T["Prepare for this event"]</a>
                 </article>
             }
         </div>

@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,10 +14,15 @@ internal sealed class WritingTemplateRepository(IDbContextFactory<DarwinLinguaDb
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
-    public async Task<IReadOnlyList<WritingTemplateListItemModel>> GetPublishedWritingTemplatesAsync(WritingTemplateListFilterModel filter, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<WritingTemplateListItemModel>> GetPublishedWritingTemplatesAsync(WritingTemplateListFilterModel filter, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
-        IQueryable<WritingTemplate> query = dbContext.WritingTemplates.AsNoTracking().Where(template => template.PublicationStatus == PublicationStatus.Active);
+        IQueryable<WritingTemplate> query = dbContext.WritingTemplates
+            .AsNoTracking()
+            .Where(template =>
+                template.PublicationStatus == PublicationStatus.Active &&
+                template.TargetLearningLanguageCode == targetLanguageCode);
         query = ApplyFilters(query, filter);
 
         List<WritingTemplate> templates = await query
@@ -40,13 +46,17 @@ internal sealed class WritingTemplateRepository(IDbContextFactory<DarwinLinguaDb
             .ToArray();
     }
 
-    public async Task<WritingTemplateDetailModel?> GetPublishedWritingTemplateBySlugAsync(string slug, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
+    public async Task<WritingTemplateDetailModel?> GetPublishedWritingTemplateBySlugAsync(string slug, string targetLearningLanguageCode, string? primaryMeaningLanguageCode, CancellationToken cancellationToken)
     {
         string normalizedSlug = Normalize(slug) ?? string.Empty;
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         await using DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(cancellationToken).ConfigureAwait(false);
         WritingTemplate? template = await dbContext.WritingTemplates
             .AsNoTracking()
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item =>
+                item.PublicationStatus == PublicationStatus.Active &&
+                item.TargetLearningLanguageCode == targetLanguageCode &&
+                item.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -126,6 +136,11 @@ internal sealed class WritingTemplateRepository(IDbContextFactory<DarwinLinguaDb
     }
 
     private static string? Normalize(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim().ToLowerInvariant();
+
+    private static string NormalizeRequiredLanguageCode(string value) =>
+        string.IsNullOrWhiteSpace(value)
+            ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+            : value.Trim().ToLowerInvariant();
 
     private static string? NormalizeSearch(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
 

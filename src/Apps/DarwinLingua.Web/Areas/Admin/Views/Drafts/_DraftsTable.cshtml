@@ -21,7 +21,7 @@ else
                     @foreach (var item in Model.Words)
                     {
                         <tr>
-                            <td><a asp-area="" asp-controller="Words" asp-action="Detail" asp-route-id="@item.PublicId">@item.Lemma</a></td>
+                            <td><a asp-area="" asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-id="@item.PublicId">@item.Lemma</a></td>
                             <td>@item.PartOfSpeech</td>
                             <td>@item.CefrLevel</td>
                             <td>@item.PublicationStatus</td>

@@ -7,21 +7,25 @@ internal sealed class ConversationStarterQueryService(IConversationStarterReposi
 {
     public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksAsync(
         ConversationStarterListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
-        conversationStarterRepository.GetPublishedStarterPacksAsync(filter, cancellationToken);
+        conversationStarterRepository.GetPublishedStarterPacksAsync(filter, targetLearningLanguageCode, cancellationToken);
 
     public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetPublishedStarterPacksForDialogueAsync(
         string dialogueSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
-        conversationStarterRepository.GetPublishedStarterPacksForDialogueAsync(dialogueSlug, cancellationToken);
+        conversationStarterRepository.GetPublishedStarterPacksForDialogueAsync(dialogueSlug, targetLearningLanguageCode, cancellationToken);
 
     public Task<ConversationStarterPackDetailModel?> GetPublishedStarterPackBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         conversationStarterRepository.GetPublishedStarterPackBySlugAsync(
             slug,
+            targetLearningLanguageCode,
             primaryMeaningLanguageCode,
             secondaryMeaningLanguageCode,
             cancellationToken);

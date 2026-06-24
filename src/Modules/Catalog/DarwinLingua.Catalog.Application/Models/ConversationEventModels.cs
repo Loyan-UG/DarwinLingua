@@ -12,6 +12,7 @@ public sealed record ConversationEventListFilterModel(
 
 public sealed record ConversationEventListItemModel(
     string Slug,
+    string TargetLearningLanguageCode,
     string Name,
     string Description,
     string? City,
@@ -31,6 +32,7 @@ public sealed record ConversationEventListItemModel(
 
 public sealed record ConversationEventDetailModel(
     string Slug,
+    string TargetLearningLanguageCode,
     string Name,
     string Description,
     string? City,

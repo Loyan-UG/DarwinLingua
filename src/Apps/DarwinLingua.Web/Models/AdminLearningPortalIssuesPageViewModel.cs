@@ -1,6 +1,8 @@
 namespace DarwinLingua.Web.Models;
 
 public sealed record AdminLearningPortalIssuesPageViewModel(
+    string TargetLearningLanguageCode,
+    string? CountryContextCode,
     string? AreaFilter,
     string? Query,
     int Take,

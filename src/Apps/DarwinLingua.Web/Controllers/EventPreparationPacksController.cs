@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("event-preparation-packs")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.EventPreparationPacks)]
 public sealed class EventPreparationPacksController(
     IWebCatalogApiClient catalogApiClient,
     IWebEntitledFeatureAccessService featureAccessService,
@@ -21,9 +21,10 @@ public sealed class EventPreparationPacksController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction("Index", "Dialogues");
+            return RedirectToAction("Index", "Dialogues", new { targetLearningLanguageCode });
         }
 
         if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
@@ -40,7 +41,7 @@ public sealed class EventPreparationPacksController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             preparationPack = await catalogApiClient
-                .GetEventPreparationPackBySlugAsync(normalizedSlug, actorEmail, catalogTimeout.Token)
+                .GetEventPreparationPackBySlugAsync(normalizedSlug, targetLearningLanguageCode, actorEmail, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -70,9 +71,10 @@ public sealed class EventPreparationPacksController(
     public async Task<IActionResult> Complete(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction("Index", "Dialogues");
+            return RedirectToAction("Index", "Dialogues", new { targetLearningLanguageCode });
         }
 
         if (!await featureAccessService.CanUseEventPreparationPacksAsync(cancellationToken).ConfigureAwait(false))
@@ -89,14 +91,14 @@ public sealed class EventPreparationPacksController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             preparationPack = await catalogApiClient
-                .GetEventPreparationPackBySlugAsync(normalizedSlug, actorEmail, catalogTimeout.Token)
+                .GetEventPreparationPackBySlugAsync(normalizedSlug, targetLearningLanguageCode, actorEmail, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
         {
             logger.LogWarning(ex, "Event preparation completion could not load pack {Slug}.", normalizedSlug);
             TempData["ErrorMessage"] = localizer["Preparation progress could not be saved right now. Please try again."].Value;
-            return RedirectToAction("Index", "Dialogues");
+            return RedirectToAction("Index", "Dialogues", new { targetLearningLanguageCode });
         }
 
         if (preparationPack is null)
@@ -107,7 +109,7 @@ public sealed class EventPreparationPacksController(
         analyticsService?.Record(WebProductAnalyticsEvents.EventPreparationPackCompleted, $"pack:{preparationPack.Slug}");
         TempData["PreparationPackCompleted"] = preparationPack.Slug;
 
-        return RedirectToAction(nameof(Detail), new { slug = preparationPack.Slug });
+        return RedirectToAction(nameof(Detail), new { targetLearningLanguageCode, slug = preparationPack.Slug });
     }
 
     private ViewResult ServiceUnavailableView(string title, string message)

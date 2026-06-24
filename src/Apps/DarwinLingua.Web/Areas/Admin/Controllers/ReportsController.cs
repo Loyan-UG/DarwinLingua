@@ -1,6 +1,7 @@
 using DarwinLingua.Identity;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -22,10 +23,14 @@ public sealed class ReportsController(
     public async Task<IActionResult> Index(
         string? learningPortalIssueArea,
         string? learningPortalIssueSearch,
+        string? targetLearningLanguageCode,
         string? export,
         CancellationToken cancellationToken)
     {
-        Task<AdminSystemReportResponse> reportTask = catalogApiClient.GetAdminSystemReportAsync(cancellationToken);
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
+        Task<AdminSystemReportResponse> reportTask = catalogApiClient.GetAdminSystemReportAsync(
+            normalizedTargetLearningLanguageCode,
+            cancellationToken);
         AdminSystemReportResponse report = await reportTask.ConfigureAwait(false);
         IReadOnlyList<AdminLearningPortalIssueRowResponse> filteredLearningPortalIssues = FilterLearningPortalIssues(
             report.LearningPortal.SampleIssues,
@@ -75,12 +80,14 @@ public sealed class ReportsController(
     public async Task<IActionResult> LearningPortalIssues(
         string? area,
         string? q,
+        string? targetLearningLanguageCode,
         int? take,
         string? export,
         CancellationToken cancellationToken)
     {
+        string normalizedTargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         AdminLearningPortalIssuesPageViewModel model = await catalogApiClient
-            .GetAdminLearningPortalIssuesAsync(area, q, take ?? 250, cancellationToken)
+            .GetAdminLearningPortalIssuesAsync(area, q, normalizedTargetLearningLanguageCode, take ?? 250, cancellationToken)
             .ConfigureAwait(false);
 
         if (string.Equals(export, "csv", StringComparison.OrdinalIgnoreCase))
@@ -177,6 +184,8 @@ public sealed class ReportsController(
             new("Unresolved linked words", learningPortal.UnresolvedLinkedWordCount.ToString(), "Linked word references that do not resolve to a known catalog word key."),
             new("Unresolved content links", learningPortal.UnresolvedLinkedContentReferenceCount.ToString(), "Cross-content slug references that do not resolve to implemented learning content."),
             new("Missing translations", learningPortal.MissingTranslationCount.ToString(), "Localized child records without learner-language translation rows."),
+            new("Helper translation gaps", learningPortal.MissingTranslationsByHelperLanguage.Sum(static row => row.Count).ToString(), "Required helper-language fields missing by target language, module, and helper language."),
+            new("Duplicate slug diagnostics", learningPortal.DuplicateSlugCount.ToString(), "Slug namespace collisions inside a target language or across learning modules for operator review."),
             new("Unpublished drafts", learningPortal.UnpublishedDraftCount.ToString(), "Learning Portal content rows not marked Active."),
             new("Grammar without exercises", learningPortal.GrammarTopicsMissingExercises.ToString(), "Grammar topics without linked exercises."),
             new("Lessons without exercise sets", learningPortal.CourseLessonsMissingExerciseSets.ToString(), "Course lessons without linked exercise sets."),

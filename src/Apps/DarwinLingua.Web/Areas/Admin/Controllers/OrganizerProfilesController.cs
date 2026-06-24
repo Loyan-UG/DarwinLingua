@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -14,10 +15,15 @@ public sealed class OrganizerProfilesController(
     ICommunityNotificationEmailService notificationEmailService) : Controller
 {
     [HttpGet("", Name = "Admin_OrganizerProfiles")]
-    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(
+        string? targetLearningLanguageCode,
+        CancellationToken cancellationToken)
     {
         AdminOrganizerProfilesPageViewModel viewModel = await BuildViewModelAsync(
-            new AdminOrganizerProfileInputModel(),
+            new AdminOrganizerProfileInputModel
+            {
+                TargetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode),
+            },
             new AdminOrganizerProfileOwnerInputModel(),
             TempData["StatusMessage"] as string,
             TempData["ErrorMessage"] as string,
@@ -33,6 +39,7 @@ public sealed class OrganizerProfilesController(
         CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid ||
+            !IsAllowedTargetLearningLanguage(input.TargetLearningLanguageCode) ||
             !IsAllowedOrganizerVerificationStatus(input.VerificationStatus) ||
             !IsAllowedOrganizerPlan(input.PlanKey))
         {
@@ -40,7 +47,7 @@ public sealed class OrganizerProfilesController(
                 input,
                 new AdminOrganizerProfileOwnerInputModel(),
                 null,
-                "Required organizer profile fields are missing.",
+                "Required organizer profile fields are missing or the target language is not active.",
                 cancellationToken));
         }
 
@@ -60,6 +67,7 @@ public sealed class OrganizerProfilesController(
         string displayName = input.DisplayName.Trim();
         AdminSaveOrganizerProfileRequest request = new(
             slug,
+            input.TargetLearningLanguageCode.Trim().ToLowerInvariant(),
             displayName,
             input.OrganizerType.Trim(),
             input.Description.Trim(),
@@ -80,7 +88,7 @@ public sealed class OrganizerProfilesController(
                 .ConfigureAwait(false);
 
             TempData["StatusMessage"] = $"Saved organizer profile '{savedProfile.DisplayName}'.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode = savedProfile.TargetLearningLanguageCode });
         }
         catch (InvalidOperationException exception)
         {
@@ -97,12 +105,16 @@ public sealed class OrganizerProfilesController(
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> AssignOwner(
         AdminOrganizerProfileOwnerInputModel input,
+        string? targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid)
         {
             return View("Index", await BuildViewModelAsync(
-                new AdminOrganizerProfileInputModel(),
+                new AdminOrganizerProfileInputModel
+                {
+                    TargetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode),
+                },
                 input,
                 null,
                 "Required owner assignment fields are missing.",
@@ -130,12 +142,15 @@ public sealed class OrganizerProfilesController(
                 .ConfigureAwait(false);
 
             TempData["StatusMessage"] = $"Assigned {owner.OwnerEmail} to {owner.OrganizerProfileSlug}.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode) });
         }
         catch (InvalidOperationException exception)
         {
             return View("Index", await BuildViewModelAsync(
-                new AdminOrganizerProfileInputModel(),
+                new AdminOrganizerProfileInputModel
+                {
+                    TargetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode),
+                },
                 input,
                 null,
                 BuildAdminOperationErrorMessage(exception, "owner assignment"),
@@ -148,12 +163,13 @@ public sealed class OrganizerProfilesController(
     public async Task<IActionResult> SetClaimStatus(
         Guid claimRequestId,
         AdminOrganizerClaimDecisionInputModel input,
+        string? targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid || !IsAllowedClaimDecisionStatus(input.Status))
         {
             TempData["ErrorMessage"] = "Required claim decision fields are missing.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode) });
         }
 
         try
@@ -169,7 +185,7 @@ public sealed class OrganizerProfilesController(
                 string.Equals(claimRequest.Status, "rejected", StringComparison.OrdinalIgnoreCase))
             {
                 OrganizerProfileListItemModel? profile = (await catalogApiClient
-                        .GetOrganizerProfilesAsync(cancellationToken)
+                        .GetOrganizerProfilesAsync(ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode), cancellationToken)
                         .ConfigureAwait(false))
                     .FirstOrDefault(profile => string.Equals(profile.Slug, claimRequest.OrganizerProfileSlug, StringComparison.OrdinalIgnoreCase));
                 await notificationEmailService.SendOrganizerClaimDecisionAsync(
@@ -183,12 +199,12 @@ public sealed class OrganizerProfilesController(
             }
 
             TempData["StatusMessage"] = BuildClaimDecisionStatusMessage(claimRequest.Status);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode) });
         }
         catch (InvalidOperationException exception)
         {
             TempData["ErrorMessage"] = BuildAdminOperationErrorMessage(exception, "claim decision");
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode = ResolveAdminTargetLearningLanguageCode(targetLearningLanguageCode) });
         }
     }
 
@@ -199,7 +215,9 @@ public sealed class OrganizerProfilesController(
         string? errorMessage,
         CancellationToken cancellationToken)
     {
-        Task<IReadOnlyList<OrganizerProfileListItemModel>> profilesTask = catalogApiClient.GetOrganizerProfilesAsync(cancellationToken);
+        Task<IReadOnlyList<OrganizerProfileListItemModel>> profilesTask = catalogApiClient.GetOrganizerProfilesAsync(
+            ResolveAdminTargetLearningLanguageCode(input.TargetLearningLanguageCode),
+            cancellationToken);
         Task<IReadOnlyList<OrganizerClaimRequestModel>> claimRequestsTask = catalogApiClient.GetAdminOrganizerClaimRequestsAsync(cancellationToken);
         Task<IReadOnlyList<OrganizerProfileOwnerModel>> ownersTask = catalogApiClient.GetAdminOrganizerProfileOwnersAsync(cancellationToken);
 
@@ -219,6 +237,21 @@ public sealed class OrganizerProfilesController(
         string.IsNullOrWhiteSpace(value)
             ? []
             : value.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+    private static string ResolveAdminTargetLearningLanguageCode(string? targetLearningLanguageCode) =>
+        TargetLearningLanguageCatalog.TryFindActive(
+            TargetLearningLanguageScope.NormalizeOrDefault(
+                string.IsNullOrWhiteSpace(targetLearningLanguageCode)
+                    ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+                    : targetLearningLanguageCode),
+            out TargetLearningLanguageDefinition language)
+            ? language.Code
+            : ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
+
+    private static bool IsAllowedTargetLearningLanguage(string? targetLearningLanguageCode) =>
+        TargetLearningLanguageCatalog.TryFindActive(
+            TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode),
+            out _);
 
     private static string? TrimToNull(string? value)
     {

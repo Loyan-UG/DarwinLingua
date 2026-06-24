@@ -14,7 +14,7 @@ public sealed class MobileLearningPortalParityStructuralTests
         Assert.Contains("ExerciseSets", source);
         Assert.Contains("CourseLessons", source);
         Assert.Contains("WritingTemplates", source);
-        Assert.Contains("CulturalNotes", source);
+        Assert.Contains("CountryGuidanceNotes", source);
         Assert.Contains("ExamPrepUnits", source);
     }
 
@@ -28,7 +28,7 @@ public sealed class MobileLearningPortalParityStructuralTests
         Assert.Contains("INSERT INTO ExerciseSets SELECT * FROM remote.ExerciseSets;", source);
         Assert.Contains("INSERT INTO CourseLessons SELECT * FROM remote.CourseLessons;", source);
         Assert.Contains("INSERT INTO WritingTemplates SELECT * FROM remote.WritingTemplates;", source);
-        Assert.Contains("INSERT INTO CulturalNotes SELECT * FROM remote.CulturalNotes;", source);
+        Assert.Contains("INSERT INTO CountryGuidanceNotes SELECT * FROM remote.CountryGuidanceNotes;", source);
         Assert.Contains("INSERT INTO ExamPrepUnits SELECT * FROM remote.ExamPrepUnits;", source);
     }
 

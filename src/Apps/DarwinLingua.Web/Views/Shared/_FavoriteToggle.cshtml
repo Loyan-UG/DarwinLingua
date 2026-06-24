@@ -6,7 +6,7 @@
 <div id="@favoriteToggleId">
     @if (Model.CanUseFavorites)
     {
-        <form method="post" asp-controller="Words" asp-action="ToggleFavorite" class="inline-form">
+        <form method="post" asp-controller="Words" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="ToggleFavorite" class="inline-form">
             @Html.AntiForgeryToken()
             <input type="hidden" name="id" value="@Model.WordPublicId" />
             <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />

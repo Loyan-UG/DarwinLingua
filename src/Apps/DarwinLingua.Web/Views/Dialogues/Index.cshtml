@@ -11,7 +11,7 @@
     {
         <div class="chip-grid">
             <a class="chip-link @(string.IsNullOrWhiteSpace(Model.Filter.TopicKey) ? "is-active" : string.Empty)"
-               asp-controller="Dialogues"
+               asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)"
                asp-action="Index"
                asp-route-cefrLevel="@Model.Filter.CefrLevel"
                asp-route-category="@Model.Filter.Category"
@@ -22,7 +22,7 @@
             @foreach (string topicKey in Model.TopicKeys)
             {
                 <a class="chip-link @(string.Equals(Model.Filter.TopicKey, topicKey, StringComparison.OrdinalIgnoreCase) ? "is-active" : string.Empty)"
-                   asp-controller="Dialogues"
+                   asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)"
                    asp-action="Index"
                    asp-route-topic="@topicKey"
                    asp-route-cefrLevel="@Model.Filter.CefrLevel"
@@ -34,7 +34,7 @@
             }
         </div>
     }
-    <form class="search-form" method="get" asp-controller="Dialogues" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in LearningPortalFilterConventions.CefrLevels)
@@ -70,7 +70,7 @@ else
                     <span>@dialogue.TaskType · @dialogue.Register</span>
                 </div>
                 <h2 class="headline-sm">
-                    <a asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogue.Slug">@dialogue.Title</a>
+                    <a asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@dialogue.Slug">@dialogue.Title</a>
                 </h2>
                 <p>@dialogue.Description</p>
                 <p class="body-lg">@dialogue.LearnerGoal</p>
@@ -79,7 +79,7 @@ else
                     <div class="chip-grid">
                         @foreach (string topicKey in dialogue.TopicKeys)
                         {
-                            <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
+                            <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index" asp-route-topic="@topicKey">@topicKey</a>
                         }
                     </div>
                 }
@@ -88,16 +88,16 @@ else
                     <div class="chip-grid">
                         @foreach (string examProfile in dialogue.ExamProfiles.Take(3))
                         {
-                            <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-examProfile="@examProfile">@examProfile</a>
+                            <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index" asp-route-examProfile="@examProfile">@examProfile</a>
                         }
                         @foreach (string focus in dialogue.SkillFocus.Take(3))
                         {
-                            <a class="chip-link" asp-controller="Dialogues" asp-action="Index" asp-route-skillFocus="@focus">@focus</a>
+                            <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index" asp-route-skillFocus="@focus">@focus</a>
                         }
                     </div>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogue.Slug">@T["Open dialogue"]</a>
+                    <a class="button button--secondary" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@dialogue.Slug">@T["Open dialogue"]</a>
                 </div>
             </article>
         }

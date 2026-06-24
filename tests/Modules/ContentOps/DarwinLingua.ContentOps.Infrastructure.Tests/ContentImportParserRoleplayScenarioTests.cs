@@ -22,6 +22,8 @@ public sealed class ContentImportParserRoleplayScenarioTests
               "packageVersion": "1.0",
               "packageId": "roleplay-contract-test",
               "packageName": "Roleplay Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en", "fa"],
               "entries": [],

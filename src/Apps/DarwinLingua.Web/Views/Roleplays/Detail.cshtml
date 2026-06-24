@@ -11,7 +11,7 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.Roleplay.CefrLevel · @T[Model.Roleplay.Category] · @T[Model.Roleplay.TaskType]</span>
         <div class="detail-toolbar__actions">
-            <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-action="Index">@T["All Roleplays"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["All Roleplays"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.Roleplay.Title</h1>

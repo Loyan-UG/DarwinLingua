@@ -6,7 +6,8 @@ public sealed record UnifiedLearningSearchFilterModel(
     string? ResultType,
     string? Category,
     string? TopicKey,
-    bool IncludeSensitiveEducationalLanguage = false);
+    bool IncludeSensitiveEducationalLanguage = false,
+    string? TargetLearningLanguageCode = null);
 
 public sealed record UnifiedLearningSearchResultModel(
     string ResultType,

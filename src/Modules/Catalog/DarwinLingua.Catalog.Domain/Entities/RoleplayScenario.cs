@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -11,6 +12,7 @@ public sealed partial class RoleplayScenario
 
     private RoleplayScenario()
     {
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public RoleplayScenario(
@@ -38,9 +40,11 @@ public sealed partial class RoleplayScenario
         string imageSlotsJson,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime createdAtUtc)
+        DateTime createdAtUtc,
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Roleplay scenario id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Roleplay scenario target learning language");
         Slug = NormalizeKey(slug, "Roleplay scenario slug");
         LinkedDialogueSlug = NormalizeOptionalKey(linkedDialogueSlug, "Roleplay linked dialogue slug");
         Title = NormalizeRequiredText(title, "Roleplay title", 256);
@@ -69,6 +73,7 @@ public sealed partial class RoleplayScenario
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; } = string.Empty;
     public string? LinkedDialogueSlug { get; private set; }
     public string Title { get; private set; } = string.Empty;

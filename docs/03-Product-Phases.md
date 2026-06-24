@@ -236,7 +236,7 @@ This phase adds dialogue-based learning, conversation preparation, event discove
 
 ### Goals
 
-- turn Darwin Lingua into a complete German-learning portal
+- turn Darwin Lingua into a complete first target-language learning portal, with German as the baseline product
 - expand beyond vocabulary, dialogues, Talk Topics, and events into a structured learning system
 - implement Web-first and move mobile parity after Web sign-off
 - avoid hardcoded educational pages

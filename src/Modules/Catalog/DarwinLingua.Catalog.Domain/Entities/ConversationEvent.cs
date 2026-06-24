@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -36,7 +37,8 @@ public sealed partial class ConversationEvent
         int sortOrder,
         DateTime createdAtUtc,
         DateTime? startsAtUtc = null,
-        DateTime? endsAtUtc = null)
+        DateTime? endsAtUtc = null,
+        string? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -61,6 +63,7 @@ public sealed partial class ConversationEvent
         VerificationStatus = NormalizeTaxonomyKey(verificationStatus, ConversationEventTaxonomy.VerificationStatuses, "Conversation event verification status");
         PublicationStatus = publicationStatus;
         SortOrder = NormalizeSortOrder(sortOrder);
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode);
         SetEventTiming(startsAtUtc, endsAtUtc);
         CreatedAtUtc = NormalizeUtc(createdAtUtc, nameof(createdAtUtc));
         UpdatedAtUtc = CreatedAtUtc;
@@ -115,6 +118,8 @@ public sealed partial class ConversationEvent
     public PublicationStatus PublicationStatus { get; private set; }
 
     public int SortOrder { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; } = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
 
     public DateTime CreatedAtUtc { get; private set; }
 

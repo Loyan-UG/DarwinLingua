@@ -20,6 +20,7 @@ public sealed class SettingsControllerLanguagePreferenceTests
         IActionResult result = await controller.Update(
             new()
             {
+                TargetLearningLanguageCode = "de",
                 UiLanguageCode = "en",
                 PrimaryMeaningLanguageCode = "fa",
                 SecondaryMeaningLanguageCode = "en",
@@ -28,6 +29,7 @@ public sealed class SettingsControllerLanguagePreferenceTests
             CancellationToken.None);
 
         Assert.IsType<RedirectToActionResult>(result);
+        Assert.Equal("de", preferenceService.TargetLearningLanguageCode);
         Assert.Equal("fa", preferenceService.PrimaryMeaningLanguageCode);
         Assert.Equal("en", preferenceService.SecondaryMeaningLanguageCode);
     }
@@ -41,6 +43,7 @@ public sealed class SettingsControllerLanguagePreferenceTests
         IActionResult result = await controller.Update(
             new()
             {
+                TargetLearningLanguageCode = "de",
                 UiLanguageCode = "en",
                 PrimaryMeaningLanguageCode = "fa",
                 SecondaryMeaningLanguageCode = "en",
@@ -65,6 +68,8 @@ public sealed class SettingsControllerLanguagePreferenceTests
             "Index.cshtml"));
 
         Assert.Contains("It appears beside the primary helper language", viewSource, StringComparison.Ordinal);
+        Assert.Contains("Target learning language", viewSource, StringComparison.Ordinal);
+        Assert.Contains("I want to learn", viewSource, StringComparison.Ordinal);
         Assert.Contains("disabled=\"@(!Model.CanUseDualMeaningLanguage)\"", viewSource, StringComparison.Ordinal);
     }
 
@@ -108,6 +113,8 @@ public sealed class SettingsControllerLanguagePreferenceTests
     {
         public string? UiLanguageCode { get; private set; }
 
+        public string? TargetLearningLanguageCode { get; private set; }
+
         public string? PrimaryMeaningLanguageCode { get; private set; }
 
         public string? SecondaryMeaningLanguageCode { get; private set; }
@@ -116,6 +123,7 @@ public sealed class SettingsControllerLanguagePreferenceTests
             Task.FromResult(new UserLearningProfileModel("local", "en", null, "en"));
 
         public Task<UserLearningProfileModel> UpdatePreferencesAsync(
+            string targetLearningLanguageCode,
             string uiLanguageCode,
             string primaryMeaningLanguageCode,
             string? secondaryMeaningLanguageCode,
@@ -123,6 +131,7 @@ public sealed class SettingsControllerLanguagePreferenceTests
             string adultContentAccessState,
             CancellationToken cancellationToken)
         {
+            TargetLearningLanguageCode = targetLearningLanguageCode;
             UiLanguageCode = uiLanguageCode;
             PrimaryMeaningLanguageCode = primaryMeaningLanguageCode;
             SecondaryMeaningLanguageCode = secondaryMeaningLanguageCode;
@@ -133,7 +142,8 @@ public sealed class SettingsControllerLanguagePreferenceTests
                 secondaryMeaningLanguageCode,
                 uiLanguageCode,
                 allowsRudeSlangContent,
-                adultContentAccessState));
+                adultContentAccessState,
+                targetLearningLanguageCode));
         }
     }
 

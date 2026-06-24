@@ -1,6 +1,7 @@
 @model DarwinLingua.Web.Models.WritingTemplateDetailPageViewModel
 @{
     ViewData["Title"] = Model.Template.Title;
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
     string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
         ? "ltr"
@@ -145,10 +146,10 @@
 <section class="panel stack-md">
     <h2 class="headline-sm">@T["Linked content"]</h2>
     <div class="grid-two-col">
-        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Template.LinkedGrammarTopicSlugs, "grammar-topic")' />
-        <partial name="_SlugList" model='(T["Words"].Value, Model.Template.LinkedWordSlugs, "word")' />
-        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Template.LinkedExpressionSlugs, "expression")' />
-        <partial name="_SlugList" model='(T["Exercises"].Value, Model.Template.LinkedExerciseSlugs, "exercise")' />
-        <partial name="_SlugList" model='(T["Course Lessons"].Value, Model.Template.LinkedCourseLessonSlugs, "course-lesson")' />
+        <partial name="_SlugList" model='(T["Grammar Guide"].Value, Model.Template.LinkedGrammarTopicSlugs, "grammar-topic", targetLearningLanguageCode, (string?)null)' />
+        <partial name="_SlugList" model='(T["Words"].Value, Model.Template.LinkedWordSlugs, "word", targetLearningLanguageCode, (string?)null)' />
+        <partial name="_SlugList" model='(T["Everyday Expressions"].Value, Model.Template.LinkedExpressionSlugs, "expression", targetLearningLanguageCode, (string?)null)' />
+        <partial name="_SlugList" model='(T["Exercises"].Value, Model.Template.LinkedExerciseSlugs, "exercise", targetLearningLanguageCode, (string?)null)' />
+        <partial name="_SlugList" model='(T["Course Lessons"].Value, Model.Template.LinkedCourseLessonSlugs, "course-lesson", targetLearningLanguageCode, (string?)null)' />
     </div>
 </section>

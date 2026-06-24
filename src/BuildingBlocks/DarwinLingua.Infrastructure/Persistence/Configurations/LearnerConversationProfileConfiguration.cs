@@ -15,7 +15,7 @@ internal sealed class LearnerConversationProfileConfiguration : IEntityTypeConfi
         builder.Property(profile => profile.DisplayName).HasMaxLength(128).IsRequired();
         builder.Property(profile => profile.CityRegion).HasMaxLength(128);
         builder.Property(profile => profile.InteractionPreference).HasMaxLength(32).IsRequired();
-        builder.Property(profile => profile.GermanLevel).HasMaxLength(8).IsRequired();
+        builder.Property(profile => profile.LearningLevel).HasMaxLength(8).IsRequired();
         builder.Property(profile => profile.HelperLanguageCodes).HasMaxLength(256).IsRequired();
         builder.Property(profile => profile.ConversationGoals).HasMaxLength(1000).IsRequired();
         builder.Property(profile => profile.AvailabilityNotes).HasMaxLength(1000);
@@ -24,6 +24,6 @@ internal sealed class LearnerConversationProfileConfiguration : IEntityTypeConfi
         builder.Property(profile => profile.CreatedAtUtc).IsRequired();
         builder.Property(profile => profile.UpdatedAtUtc).IsRequired();
         builder.HasIndex(profile => profile.OwnerEmail).IsUnique();
-        builder.HasIndex(profile => new { profile.Visibility, profile.CityRegion, profile.GermanLevel });
+        builder.HasIndex(profile => new { profile.Visibility, profile.CityRegion, profile.LearningLevel });
     }
 }

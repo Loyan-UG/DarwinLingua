@@ -1,4 +1,5 @@
 using DarwinLingua.Catalog.Domain.Entities;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,7 @@ internal sealed class EventPreparationPackConfiguration : IEntityTypeConfigurati
         builder.ToTable("EventPreparationPacks");
         builder.HasKey(pack => pack.Id);
         builder.Property(pack => pack.Id).ValueGeneratedNever();
+        builder.Property(pack => pack.TargetLearningLanguageCode).HasMaxLength(16).IsRequired().HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
         builder.Property(pack => pack.Slug).HasMaxLength(128).IsRequired();
         builder.Property(pack => pack.Title).HasMaxLength(256).IsRequired();
         builder.Property(pack => pack.Description).HasMaxLength(4000).IsRequired();
@@ -21,8 +23,8 @@ internal sealed class EventPreparationPackConfiguration : IEntityTypeConfigurati
         builder.Property(pack => pack.SortOrder).IsRequired();
         builder.Property(pack => pack.CreatedAtUtc).IsRequired();
         builder.Property(pack => pack.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(pack => pack.Slug).IsUnique();
-        builder.HasIndex(pack => new { pack.CefrLevel, pack.Category, pack.EventType });
+        builder.HasIndex(pack => new { pack.TargetLearningLanguageCode, pack.Slug }).IsUnique();
+        builder.HasIndex(pack => new { pack.TargetLearningLanguageCode, pack.CefrLevel, pack.Category, pack.EventType });
 
         builder.HasMany(pack => pack.Topics).WithOne().HasForeignKey(topic => topic.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.LinkedDialogues).WithOne().HasForeignKey(link => link.EventPreparationPackId).OnDelete(DeleteBehavior.Cascade);

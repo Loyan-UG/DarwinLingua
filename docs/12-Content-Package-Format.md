@@ -58,12 +58,31 @@ A package must contain at least one content item overall. Vocabulary packages us
 - `packageVersion`
 - `packageId`
 - `packageName`
+- `targetLearningLanguageCode`
 - `entries`
+
+### 3.1.1 Target Learning Language
+
+`targetLearningLanguageCode` is required for all import packages. It identifies the language being taught, not the language used to explain meanings.
+
+Current official German-learning packages use:
+
+```json
+"targetLearningLanguageCode": "de"
+```
+
+`defaultMeaningLanguages` and all `...Translations` fields remain helper/meaning-language metadata. For example, a German package may teach German (`de`) while explaining the content in English, Persian, Arabic, Turkish, Russian, Central Kurdish, Northern Kurdish, Polish, Romanian, and Albanian.
+
+Helper-language coverage can expand independently from target-language support. A future German package may still teach German while adding new helper languages beyond the current active set; that must not change the package target-language identity.
+
+Packages that use levels may also declare `levelSystemCode`; current German content uses CEFR (`cefr`). Country Guidance packages must additionally declare `countryContextCode`, because a country guidance stream is identified by both `targetLearningLanguageCode` and `countryContextCode`, such as `de|DE`, `de|AT`, `de|CH`, `en|US`, `en|GB`, or `fr|CH`.
 
 ### 3.2 Recommended Package Fields
 
 - `source`
 - `defaultMeaningLanguages`
+- `levelSystemCode`
+- `countryContextCode`
 - `collections`
 - `notes`
 

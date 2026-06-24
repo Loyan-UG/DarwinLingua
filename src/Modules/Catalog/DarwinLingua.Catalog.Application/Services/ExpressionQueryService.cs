@@ -7,19 +7,22 @@ internal sealed class ExpressionQueryService(IExpressionRepository repository) :
 {
     public Task<IReadOnlyList<ExpressionListItemModel>> GetPublishedExpressionsAsync(
         ExpressionListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
-        repository.GetPublishedExpressionsAsync(filter, cancellationToken);
+        repository.GetPublishedExpressionsAsync(filter, targetLearningLanguageCode, cancellationToken);
 
     public Task<ExpressionDetailModel?> GetPublishedExpressionBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        repository.GetPublishedExpressionBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken);
+        repository.GetPublishedExpressionBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken);
 
     public Task<ExpressionDetailModel?> GetPublishedExpressionBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken) =>
-        repository.GetPublishedExpressionBySlugAsync(slug, primaryMeaningLanguageCode, includeSensitiveEducationalLanguage, cancellationToken);
+        repository.GetPublishedExpressionBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, includeSensitiveEducationalLanguage, cancellationToken);
 }

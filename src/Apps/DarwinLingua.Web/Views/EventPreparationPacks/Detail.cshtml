@@ -7,11 +7,11 @@
     <div class="detail-toolbar">
         <span class="eyebrow">@Model.PreparationPack.CefrLevel · @Model.PreparationPack.EventType · @Model.PreparationPack.Category</span>
         <div class="detail-toolbar__actions">
-            <form asp-controller="EventPreparationPacks" asp-action="Complete" asp-route-slug="@Model.PreparationPack.Slug" method="post">
+            <form asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Complete" asp-route-slug="@Model.PreparationPack.Slug" method="post">
                 @Html.AntiForgeryToken()
                 <button type="submit" class="button button--primary button--compact">@T["Mark prepared"]</button>
             </form>
-            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-action="Index">@T["Dialogues"]</a>
+            <a class="button button--secondary button--compact" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Dialogues"]</a>
         </div>
     </div>
     <h1 class="headline-md">@Model.PreparationPack.Title</h1>
@@ -27,7 +27,7 @@
         <div class="chip-grid">
             @foreach (string topicKey in Model.PreparationPack.TopicKeys)
             {
-                <a class="chip-link" asp-controller="Browse" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                <a class="chip-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
             }
         </div>
     }
@@ -76,11 +76,11 @@
         <div class="chip-grid">
             @foreach (string dialogueSlug in Model.PreparationPack.LinkedDialogueSlugs)
             {
-                <a class="chip-link" asp-controller="Dialogues" asp-action="Detail" asp-route-slug="@dialogueSlug">@dialogueSlug</a>
+                <a class="chip-link" asp-controller="Dialogues" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@dialogueSlug">@dialogueSlug</a>
             }
             @foreach (string starterPackSlug in Model.PreparationPack.LinkedConversationStarterPackSlugs)
             {
-                <a class="chip-link" asp-controller="ConversationStarters" asp-action="Detail" asp-route-slug="@starterPackSlug">@starterPackSlug</a>
+                <a class="chip-link" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPackSlug">@starterPackSlug</a>
             }
         </div>
     </section>

@@ -2,13 +2,13 @@
 
 ## Product Overview
 
-This product is a cross-platform learning application focused on German language learning for immigrants, newcomers, international students, foreign workers, and other learners who need practical and structured German support in daily life.
+This product is a cross-platform language-learning application. Its first complete target-language experience is German for immigrants, newcomers, international students, foreign workers, and other learners who need practical and structured support in daily life.
 
 The first core of the product is vocabulary learning with multilingual meanings, example sentences, audio playback, CEFR-based categorization, and topic-based organization.
 
 The long-term vision expands beyond vocabulary learning into a broader practical platform that supports learners in real-world situations such as work, government offices, healthcare, transportation, housing, education, social integration, and guided conversation practice.
 
-Darwin Lingua is expanding into a complete German-learning portal with Web-first implementation, dynamic educational content, reusable exercises, structured courses, exam preparation, and later mobile parity.
+Darwin Lingua is expanding into a Web-first multilingual learning platform with dynamic educational content, reusable exercises, structured courses, exam preparation, country guidance, and later mobile parity after Web maturity.
 
 The application will be built for:
 
@@ -23,7 +23,7 @@ The product should be designed from the beginning in a way that maximizes code s
 
 ## Core Vision
 
-The product should help users not only learn German as an academic subject, but also use German in real life.
+The product should help users not only learn a target language as an academic subject, but also use it in real life. German is the first complete target-language baseline.
 
 This means the system should eventually combine:
 
@@ -47,15 +47,15 @@ This means the system should eventually combine:
 
 ### Primary Goals
 
-- Help users learn German vocabulary from A1 to C2.
-- Support multiple meaning languages for the same German word.
+- Help users learn German vocabulary from A1 to C2 first, then support additional target languages after reviewed native content exists.
+- Support multiple meaning/helper languages for the same target-language word.
 - Allow users to select one or two target meaning languages at the same time.
 - Treat dual meaning-language learning as a strategic feature, not only as a translation convenience.
 - Provide practical example sentences for each word.
 - Provide pronunciation support for words and sentences.
 - Support learning by CEFR level.
 - Support learning by real-world topics.
-- Support practical German usage for daily life in Germany.
+- Support practical German usage for daily life in Germany first, then add country-context guidance for other target-language/country pairs.
 
 ### Secondary Goals
 

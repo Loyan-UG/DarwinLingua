@@ -75,7 +75,7 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
                     20,
                     nowUtc));
 
-                dbContext.CulturalNotes.Add(new CulturalNote(
+                dbContext.CountryGuidanceNotes.Add(new CountryGuidanceNote(
                     Guid.NewGuid(),
                     "b1-integration-im-alltag",
                     "Integration",
@@ -98,6 +98,8 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
                     nowUtc));
 
                 await dbContext.SaveChangesAsync(CancellationToken.None);
+
+                await InsertWrongLanguageGrammarTopicAsync(dbContext, nowUtc);
             }
 
             IUnifiedLearningSearchRepository repository = serviceProvider.GetRequiredService<IUnifiedLearningSearchRepository>();
@@ -105,12 +107,14 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
                 new UnifiedLearningSearchFilterModel("Integration", "B1", null, null, null),
                 CancellationToken.None);
 
-            Assert.Equal("cultural-note", allResults[0].ResultType);
-            Assert.Equal("/life-in-germany/b1-integration-im-alltag", allResults[0].Url);
+            Assert.Equal("country-guidance", allResults[0].ResultType);
+            Assert.Equal("/learn/de/country-guidance/de/b1-integration-im-alltag", allResults[0].Url);
             Assert.Equal(4, allResults.Count);
-            Assert.Contains(allResults, result => result.ResultType == "grammar" && result.Url == "/grammar/b1-integration-nebensaetze");
-            Assert.Contains(allResults, result => result.ResultType == "course-lesson" && result.Url == "/courses/b1-integration/b1-integration-im-alltag-verstehen");
-            Assert.Contains(allResults, result => result.ResultType == "writing-template" && result.Url == "/writing-templates/b1-integration-kursleitung-fragen");
+            Assert.DoesNotContain(allResults, result => result.Url.StartsWith("/learn/en/", StringComparison.Ordinal));
+            Assert.DoesNotContain(allResults, result => string.Equals(result.Title, "Integration in English", StringComparison.Ordinal));
+            Assert.Contains(allResults, result => result.ResultType == "grammar" && result.Url == "/learn/de/grammar/b1-integration-nebensaetze");
+            Assert.Contains(allResults, result => result.ResultType == "course-lesson" && result.Url == "/learn/de/courses/b1-integration/b1-integration-im-alltag-verstehen");
+            Assert.Contains(allResults, result => result.ResultType == "writing-template" && result.Url == "/learn/de/writing-templates/b1-integration-kursleitung-fragen");
 
             IReadOnlyList<UnifiedLearningSearchResultModel> courseResults = await repository.SearchAsync(
                 new UnifiedLearningSearchFilterModel("Integration", "B1", "course-lesson", "b1-integration", null),
@@ -236,6 +240,45 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
         dbContext.CourseLessons.Add(lesson);
     }
 
+    private static async Task InsertWrongLanguageGrammarTopicAsync(DarwinLinguaDbContext dbContext, DateTime nowUtc)
+    {
+        await dbContext.Database.ExecuteSqlInterpolatedAsync(
+            $"""
+            INSERT INTO "GrammarTopics" (
+                "Id",
+                "TargetLearningLanguageCode",
+                "Slug",
+                "Title",
+                "ShortDescription",
+                "ContentRevision",
+                "TitleLocalizedJson",
+                "ShortDescriptionLocalizedJson",
+                "ImageSlotsJson",
+                "CefrLevel",
+                "GrammarCategory",
+                "PublicationStatus",
+                "SortOrder",
+                "CreatedAtUtc",
+                "UpdatedAtUtc")
+            VALUES (
+                {Guid.NewGuid()},
+                {"en"},
+                {"b1-integration-english-leakage"},
+                {"Integration in English"},
+                {"This row simulates wrong-language content that must not appear in German search."},
+                {0},
+                {"[]"},
+                {"[]"},
+                {"[]"},
+                {"B1"},
+                {"sentence-structure"},
+                {"Active"},
+                {1},
+                {nowUtc},
+                {nowUtc});
+            """).ConfigureAwait(false);
+    }
+
     private static void SeedBulkSearchCorpus(DarwinLinguaDbContext dbContext, DateTime nowUtc)
     {
         CoursePath path = new(
@@ -329,7 +372,7 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
                 index,
                 nowUtc));
 
-            dbContext.CulturalNotes.Add(new CulturalNote(
+            dbContext.CountryGuidanceNotes.Add(new CountryGuidanceNote(
                 Guid.NewGuid(),
                 $"b1-integration-performance-note-{index:D2}",
                 $"Integration verstehen {index:D2}",

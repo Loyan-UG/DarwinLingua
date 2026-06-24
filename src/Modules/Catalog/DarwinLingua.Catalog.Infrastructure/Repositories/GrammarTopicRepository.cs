@@ -16,9 +16,11 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
 
     public async Task<IReadOnlyList<GrammarTopicListItemModel>> GetPublishedGrammarTopicsAsync(
         GrammarTopicListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(filter);
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
             .CreateDbContextAsync(cancellationToken)
@@ -27,7 +29,7 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
         IQueryable<GrammarTopic> query = dbContext.GrammarTopics
             .AsNoTracking()
             .Include(topic => topic.Topics)
-            .Where(topic => topic.PublicationStatus == PublicationStatus.Active);
+            .Where(topic => topic.PublicationStatus == PublicationStatus.Active && topic.TargetLearningLanguageCode == targetLanguageCode);
 
         if (Enum.TryParse(filter.CefrLevel, true, out CefrLevel cefrLevel))
         {
@@ -82,12 +84,14 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
 
     public async Task<GrammarTopicDetailModel?> GetPublishedGrammarTopicBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(slug);
 
         string normalizedSlug = slug.Trim().ToLowerInvariant();
+        string targetLanguageCode = NormalizeRequiredLanguageCode(targetLearningLanguageCode);
         LanguageCode primaryLanguage = LanguageCode.From(primaryMeaningLanguageCode);
 
         await using DarwinLinguaDbContext dbContext = await dbContextFactory
@@ -109,7 +113,7 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
             .Include(item => item.LinkedExercises)
             .Include(item => item.Prerequisites)
             .Include(item => item.RelatedTopics)
-            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.Slug == normalizedSlug)
+            .Where(item => item.PublicationStatus == PublicationStatus.Active && item.TargetLearningLanguageCode == targetLanguageCode && item.Slug == normalizedSlug)
             .SingleOrDefaultAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -408,4 +412,9 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
 
     private static string? NormalizeOptionalSearch(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private static string NormalizeRequiredLanguageCode(string value) =>
+        string.IsNullOrWhiteSpace(value)
+            ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
+            : value.Trim().ToLowerInvariant();
 }

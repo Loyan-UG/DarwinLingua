@@ -29,6 +29,7 @@ public sealed class GrammarTopic
         Title = string.Empty;
         ShortDescription = string.Empty;
         GrammarCategory = string.Empty;
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public GrammarTopic(
@@ -40,7 +41,8 @@ public sealed class GrammarTopic
         string grammarCategory,
         PublicationStatus publicationStatus,
         int sortOrder,
-        DateTime timestampUtc)
+        DateTime timestampUtc,
+        string? targetLearningLanguageCode = null)
     {
         if (id == Guid.Empty)
         {
@@ -48,6 +50,7 @@ public sealed class GrammarTopic
         }
 
         Id = id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Grammar topic target learning language");
         Slug = NormalizeKebabKey(slug, "Grammar topic slug");
         Title = RequireText(title, "Grammar topic title", 256);
         ShortDescription = RequireText(shortDescription, "Grammar topic short description", 1024);
@@ -60,6 +63,8 @@ public sealed class GrammarTopic
     }
 
     public Guid Id { get; private set; }
+
+    public string TargetLearningLanguageCode { get; private set; }
 
     public string Slug { get; private set; }
 

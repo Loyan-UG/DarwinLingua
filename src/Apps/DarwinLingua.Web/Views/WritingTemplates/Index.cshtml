@@ -11,7 +11,7 @@
     <span class="eyebrow">@T["Resources"]</span>
     <h1 class="headline-md">@T["Writing Templates"]</h1>
     <p class="body-lg">@T["Practical German message and exam-writing templates with variables, examples, and linked learning content."]</p>
-    <form class="search-form" method="get" asp-controller="WritingTemplates" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search writing templates"]" aria-label="@T["Search writing templates"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
@@ -51,7 +51,7 @@ else
             var secondaryTemplate = template.SecondaryLanguageTemplate;
             <article class="panel stack-md">
                 <span class="eyebrow">@primaryTemplate.CefrLevel · @T[primaryTemplate.Category] · @T[primaryTemplate.Register == "workplace" ? "Workplace" : primaryTemplate.Register]</span>
-                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@primaryTemplate.Title</a></h2>
+                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@primaryTemplate.Title</a></h2>
                 <p>@primaryTemplate.ShortDescription</p>
                 @if (!string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageTitle) ||
                     !string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageShortDescription) ||
@@ -86,7 +86,7 @@ else
                 {
                     <p class="meaning-line text-muted" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @secondaryTemplate.LearnerLanguageSituation</p>
                 }
-                <a class="button button--secondary" asp-controller="WritingTemplates" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@T["Open writing template"]</a>
+                <a class="button button--secondary" asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@T["Open writing template"]</a>
             </article>
         }
     </section>

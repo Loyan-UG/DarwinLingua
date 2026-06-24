@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using DarwinLingua.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,7 @@ public sealed class OrganizerProfileAdminService(
         CancellationToken cancellationToken)
     {
         DateTime nowUtc = DateTime.UtcNow;
+        string targetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(request.TargetLearningLanguageCode);
         CefrLevel[] levels = ParseLevels(request.SupportedLearnerLevels);
         string[] helperLanguageCodes = NormalizeKeys(request.HelperLanguageCodes, "helper language code");
 
@@ -56,7 +58,7 @@ public sealed class OrganizerProfileAdminService(
 
         for (int index = 0; index < levels.Length; index++)
         {
-            organizerProfile.AddSupportedLevel(Guid.NewGuid(), levels[index], index + 1, nowUtc);
+            organizerProfile.AddSupportedLevel(Guid.NewGuid(), levels[index], index + 1, nowUtc, targetLearningLanguageCode);
         }
 
         for (int index = 0; index < helperLanguageCodes.Length; index++)
@@ -77,6 +79,19 @@ public sealed class OrganizerProfileAdminService(
 
         if (existingProfile is not null)
         {
+            foreach (OrganizerProfileSupportedLevel existingLevel in existingProfile.SupportedLevels
+                         .Where(level => level.TargetLearningLanguageCode != targetLearningLanguageCode)
+                         .OrderBy(level => level.TargetLearningLanguageCode, StringComparer.Ordinal)
+                         .ThenBy(level => level.SortOrder))
+            {
+                organizerProfile.AddSupportedLevel(
+                    Guid.NewGuid(),
+                    existingLevel.CefrLevel,
+                    existingLevel.SortOrder,
+                    existingLevel.CreatedAtUtc,
+                    existingLevel.TargetLearningLanguageCode);
+            }
+
             dbContext.OrganizerProfiles.Remove(existingProfile);
             await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
@@ -85,7 +100,7 @@ public sealed class OrganizerProfileAdminService(
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         return await organizerProfileQueryService
-            .GetPublishedOrganizerProfileBySlugAsync(normalizedSlug, cancellationToken)
+            .GetPublishedOrganizerProfileBySlugAsync(normalizedSlug, targetLearningLanguageCode, cancellationToken)
             .ConfigureAwait(false)
             ?? throw new InvalidOperationException("The saved organizer profile could not be loaded.");
     }

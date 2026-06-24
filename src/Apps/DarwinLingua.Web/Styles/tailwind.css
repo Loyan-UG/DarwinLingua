@@ -209,6 +209,75 @@ code {
   transform: none;
 }
 
+.target-language-switcher__summary {
+  display: inline-flex;
+  min-height: 2.45rem;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0 0.78rem;
+  border: 1px solid rgba(47, 111, 187, 0.22);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--ink-strong);
+}
+
+.target-language-switcher__summary strong {
+  font-size: 0.95rem;
+  font-weight: 820;
+  line-height: 1;
+}
+
+.target-language-switcher__label,
+.target-language-switcher__section {
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.target-language-switcher__panel {
+  min-width: 15rem;
+  gap: 0.2rem;
+}
+
+.target-language-switcher__option {
+  display: grid;
+  gap: 0.08rem;
+  min-height: 2.75rem;
+  align-content: center;
+  overflow-wrap: anywhere;
+}
+
+.target-language-switcher__option small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.target-language-switcher__option.is-active {
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+}
+
+.target-language-switcher__option--disabled {
+  width: 100%;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.74;
+}
+
+.target-language-switcher__hint {
+  margin: 0.28rem 0 0;
+  padding: 0.48rem 0.7rem 0.18rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
 .shell-links a:hover,
 .shell-footer__actions a:hover,
 .nav-button:hover {
@@ -663,7 +732,7 @@ code {
 
 .course-level-card {
   display: grid;
-  gap: 0.72rem;
+  gap: 0.62rem;
   align-content: start;
   min-height: 20rem;
   text-align: center;
@@ -675,6 +744,22 @@ code {
   font-size: clamp(3rem, 7vw, 5.6rem);
   font-weight: 900;
   line-height: 0.95;
+}
+
+.course-level-card__label {
+  display: block;
+  color: var(--ink-strong);
+  font-size: 1.1rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.course-level-card__level-description {
+  max-width: 24ch;
+  color: var(--muted-strong);
+  font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.45;
 }
 
 .course-level-card .headline-sm {
@@ -691,6 +776,20 @@ code {
   color: var(--muted-strong);
   font-size: 0.92rem;
   font-weight: 800;
+}
+
+.settings-preference-group {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.settings-preference-group__intro {
+  display: grid;
+  gap: 0.38rem;
 }
 
 .course-module-card {
@@ -2705,6 +2804,16 @@ code {
 
   .mobile-nav .account-menu {
     flex: 0 0 auto;
+  }
+
+  .mobile-nav .target-language-switcher__summary {
+    min-height: 2.35rem;
+  }
+
+  .mobile-nav .target-language-switcher__panel {
+    inset-inline-start: 1rem;
+    inset-inline-end: auto;
+    max-width: calc(100vw - 2rem);
   }
 
   .mobile-nav .nav-icon-link {

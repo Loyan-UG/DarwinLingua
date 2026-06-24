@@ -1,6 +1,7 @@
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Learning.Application.Abstractions;
 using DarwinLingua.Learning.Application.Models;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("courses")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.Courses)]
 public sealed class CoursesController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -29,10 +30,13 @@ public sealed class CoursesController(
         CoursePathListFilterModel filter = new(LearningPortalFilterConventions.NormalizeCefrLevel(cefrLevel), string.IsNullOrWhiteSpace(q) ? null : q.Trim());
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         IReadOnlyList<CoursePathListItemModel> courses;
         try
         {
-            courses = await catalogApiClient.GetCoursesAsync(filter, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+            courses = await catalogApiClient
+                .GetCoursesAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken)
+                .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or OperationCanceledException)
         {
@@ -40,7 +44,13 @@ public sealed class CoursesController(
             courses = [];
         }
 
-        return View(new CourseIndexPageViewModel(courses, LearningPortalFilterConventions.CefrLevels, filter.CefrLevel, filter.Query, primaryMeaningLanguageCode ?? "en"));
+        return View(new CourseIndexPageViewModel(
+            courses,
+            LearningPortalFilterConventions.CefrLevels,
+            ResolveLevelDefinitions(targetLearningLanguageCode),
+            filter.CefrLevel,
+            filter.Query,
+            primaryMeaningLanguageCode ?? "en"));
     }
 
     [HttpGet("{slug}", Name = "Courses_Detail")]
@@ -48,7 +58,10 @@ public sealed class CoursesController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
-        CoursePathDetailModel? course = await catalogApiClient.GetCourseBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        CoursePathDetailModel? course = await catalogApiClient
+            .GetCourseBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
         return course is null ? NotFound() : View(new CourseDetailPageViewModel(course, primaryMeaningLanguageCode ?? "en"));
     }
 
@@ -57,13 +70,16 @@ public sealed class CoursesController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
-        CourseLessonDetailModel? lesson = await catalogApiClient.GetCourseLessonBySlugAsync(lessonSlug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        CourseLessonDetailModel? lesson = await catalogApiClient
+            .GetCourseLessonBySlugAsync(lessonSlug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
         if (lesson is null)
         {
             return NotFound();
         }
 
-        return RedirectToAction(nameof(Lesson), new { courseSlug = lesson.CoursePathSlug, lessonSlug = lesson.Slug });
+        return RedirectToAction(nameof(Lesson), new { targetLearningLanguageCode, courseSlug = lesson.CoursePathSlug, lessonSlug = lesson.Slug });
     }
 
     [HttpGet("{courseSlug}/{lessonSlug}", Name = "CourseLessons_Detail")]
@@ -71,7 +87,10 @@ public sealed class CoursesController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string? primaryMeaningLanguageCode = profile.PreferredMeaningLanguage1;
-        CourseLessonDetailModel? lesson = await catalogApiClient.GetCourseLessonBySlugAsync(lessonSlug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        CourseLessonDetailModel? lesson = await catalogApiClient
+            .GetCourseLessonBySlugAsync(lessonSlug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken)
+            .ConfigureAwait(false);
         if (lesson is null || !string.Equals(lesson.CoursePathSlug, courseSlug, StringComparison.OrdinalIgnoreCase))
         {
             return NotFound();
@@ -83,6 +102,7 @@ public sealed class CoursesController(
             progress = await progressService
                 .UpdateContentProgressAsync(
                     profile.UserId,
+                    targetLearningLanguageCode,
                     new UpdateUserContentProgressRequestModel("course-lesson", lesson.Slug, "viewed"),
                     cancellationToken)
                 .ConfigureAwait(false);
@@ -110,11 +130,13 @@ public sealed class CoursesController(
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         try
         {
             await progressService
                 .UpdateContentProgressAsync(
                     profile.UserId,
+                    targetLearningLanguageCode,
                     new UpdateUserContentProgressRequestModel("course-lesson", lessonSlug, normalizedState),
                     cancellationToken)
                 .ConfigureAwait(false);
@@ -125,6 +147,18 @@ public sealed class CoursesController(
             return BadRequest();
         }
 
-        return RedirectToAction(nameof(Lesson), new { courseSlug, lessonSlug });
+        return RedirectToAction(nameof(Lesson), new { targetLearningLanguageCode, courseSlug, lessonSlug });
+    }
+
+    private static IReadOnlyList<LearningLevelDefinition> ResolveLevelDefinitions(string targetLearningLanguageCode)
+    {
+        if (!TargetLearningLanguageCatalog.TryFindActive(targetLearningLanguageCode, out TargetLearningLanguageDefinition targetLanguage))
+        {
+            return LearningLevelSystemCatalog.GermanCefrLevels;
+        }
+
+        return string.Equals(targetLanguage.DefaultLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.OrdinalIgnoreCase)
+            ? LearningLevelSystemCatalog.GermanCefrLevels
+            : [];
     }
 }

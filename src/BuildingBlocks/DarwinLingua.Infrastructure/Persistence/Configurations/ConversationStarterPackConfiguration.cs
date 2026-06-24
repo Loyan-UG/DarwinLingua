@@ -12,6 +12,7 @@ internal sealed class ConversationStarterPackConfiguration : IEntityTypeConfigur
         builder.ToTable("ConversationStarterPacks");
         builder.HasKey(pack => pack.Id);
         builder.Property(pack => pack.Id).ValueGeneratedNever();
+        builder.Property(pack => pack.TargetLearningLanguageCode).HasMaxLength(16).IsRequired().HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode);
         builder.Property(pack => pack.Slug).HasMaxLength(128).IsRequired();
         builder.Property(pack => pack.Title).HasMaxLength(256).IsRequired();
         builder.Property(pack => pack.Description).HasMaxLength(4000).IsRequired();
@@ -24,8 +25,8 @@ internal sealed class ConversationStarterPackConfiguration : IEntityTypeConfigur
         builder.Property(pack => pack.SortOrder).IsRequired();
         builder.Property(pack => pack.CreatedAtUtc).IsRequired();
         builder.Property(pack => pack.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(pack => pack.Slug).IsUnique();
-        builder.HasIndex(pack => new { pack.CefrLevel, pack.Situation, pack.Tone, pack.ConversationGoal });
+        builder.HasIndex(pack => new { pack.TargetLearningLanguageCode, pack.Slug }).IsUnique();
+        builder.HasIndex(pack => new { pack.TargetLearningLanguageCode, pack.CefrLevel, pack.Situation, pack.Tone, pack.ConversationGoal });
 
         builder.HasMany(pack => pack.Topics).WithOne().HasForeignKey(topic => topic.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(pack => pack.LinkedDialogues).WithOne().HasForeignKey(link => link.ConversationStarterPackId).OnDelete(DeleteBehavior.Cascade);

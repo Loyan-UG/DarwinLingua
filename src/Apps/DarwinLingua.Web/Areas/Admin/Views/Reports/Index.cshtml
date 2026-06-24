@@ -29,7 +29,13 @@
         ("Exam prep units by profile", Model.LearningPortal.ExamPrepByProfile),
         ("Writing templates by category", Model.LearningPortal.WritingTemplatesByCategory),
         ("Writing templates by register", Model.LearningPortal.WritingTemplatesByRegister),
-        ("Life in Germany notes by category", Model.LearningPortal.CulturalNotesByCategory),
+        ("Country Guidance notes by category", Model.LearningPortal.CountryGuidanceNotesByCategory),
+        ("Counts by target language", Model.LearningPortal.CountsByTargetLanguage),
+        ("Country Guidance by country context", Model.LearningPortal.CountryGuidanceNotesByCountryContext),
+        ("Target-language activation gate", Model.LearningPortal.TargetLanguageActivationGate),
+        ("Missing translations by helper language", Model.LearningPortal.MissingTranslationsByHelperLanguage),
+        ("Missing translations by module", Model.LearningPortal.MissingTranslationsByModule),
+        ("Duplicate slug diagnostics", Model.LearningPortal.DuplicateSlugsByType),
     };
 }
 
@@ -38,13 +44,14 @@
     <h1 class="headline-md">System report</h1>
     <p class="body-lg">Current server-side summary for catalog, social learning, moderation, operations, users, and Web product counters.</p>
     <p class="body-sm">Generated: @Model.GeneratedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</p>
+    <p class="body-sm">Learning scope: target language <strong>@Model.LearningPortal.TargetLearningLanguageCode</strong>@(string.IsNullOrWhiteSpace(Model.LearningPortal.CountryContextCode) ? string.Empty : $", country context {Model.LearningPortal.CountryContextCode}"). Social, moderation, identity, and email sections are global.</p>
 </section>
 
 <div class="admin-summary-grid">
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Users", Model.IdentityUserCount.ToString(), "Identity users in the Web admin/user store.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Open reports", Model.ModerationMetrics.First(item => item.Label == "Pending reports").Value, "Moderation reports waiting for review.")' />
     <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Email failures", Model.EmailMetrics.First(item => item.Label == "Failed in 24h").Value, "Transactional email delivery failures in the last 24 hours.")' />
-    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Learning issues", (Model.LearningPortal.UnresolvedLinkedWordCount + Model.LearningPortal.UnresolvedLinkedContentReferenceCount + Model.LearningPortal.MissingTranslationCount).ToString(), "Learning Portal references and translations needing operator review.")' />
+    <partial name="~/Views/Shared/_MetricCard.cshtml" model='new DarwinLingua.Web.Models.MetricCardViewModel("Learning issues", (Model.LearningPortal.UnresolvedLinkedWordCount + Model.LearningPortal.UnresolvedLinkedContentReferenceCount + Model.LearningPortal.MissingTranslationCount + Model.LearningPortal.DuplicateSlugCount).ToString(), "Learning Portal references, translations, and namespace diagnostics needing operator review.")' />
 </div>
 
 <nav class="admin-anchor-nav" aria-label="System report sections">
@@ -84,7 +91,7 @@
 
 <section class="panel stack-lg">
     <h2 id="learning-portal-coverage" class="headline-sm">Learning Portal coverage</h2>
-    <p class="body-sm">Operator coverage view for implemented Learning Portal modules. Counts are grouped by content type, CEFR, category, register, target skill, course, module, and exam profile.</p>
+    <p class="body-sm">Operator coverage view for implemented Learning Portal modules. Counts are grouped by content type, CEFR, category, register, target skill, course, module, target language, country context, helper-language coverage, and activation readiness.</p>
     <div class="grid-two-col">
         @foreach (var table in learningPortalTables)
         {
@@ -119,9 +126,10 @@
     <h2 id="learning-portal-issues" class="headline-sm">Learning Portal issue samples</h2>
     <p class="body-sm">Filter reported issue samples by area or text, then export the current result set as CSV for cleanup tracking.</p>
     <p class="body-sm">
-        <a class="text-link" href="@Url.RouteUrl("Admin_Reports_LearningPortalIssues")">Open full issue drill-down</a>
+        <a class="text-link" href="@Url.RouteUrl("Admin_Reports_LearningPortalIssues", new { targetLearningLanguageCode = Model.LearningPortal.TargetLearningLanguageCode })">Open full issue drill-down</a>
     </p>
     <form method="get" action="@Url.RouteUrl("Admin_Reports_Index")" class="action-row" aria-label="Filter Learning Portal issue samples">
+        <input type="hidden" name="targetLearningLanguageCode" value="@Model.LearningPortal.TargetLearningLanguageCode" />
         <select class="form-select" name="learningPortalIssueArea" aria-label="Issue area">
             <option value="" selected="@(string.IsNullOrWhiteSpace(Model.LearningPortalIssueAreaFilter))">All areas</option>
             @foreach (var area in Model.LearningPortalIssueAreas)

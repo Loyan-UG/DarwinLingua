@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.DependencyInjection;
 using DarwinLingua.Infrastructure.Persistence.Abstractions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.WebApi.Models;
 using DarwinLingua.WebApi.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +36,9 @@ public sealed class OrganizerProfileAdminServiceTests
             Assert.Equal("reviewed", savedProfile.VerificationStatus);
 
             IOrganizerProfileQueryService queryService = serviceProvider.GetRequiredService<IOrganizerProfileQueryService>();
-            IReadOnlyList<OrganizerProfileListItemModel> profiles = await queryService.GetPublishedOrganizerProfilesAsync(CancellationToken.None);
+            IReadOnlyList<OrganizerProfileListItemModel> profiles = await queryService.GetPublishedOrganizerProfilesAsync(
+                ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
+                CancellationToken.None);
 
             Assert.Single(profiles);
         }
@@ -95,6 +98,7 @@ public sealed class OrganizerProfileAdminServiceTests
         string organizerType) =>
         new(
             slug,
+            ContentLanguageRequirements.DefaultTargetLearningLanguageCode,
             displayName,
             organizerType,
             "A reviewed German practice organizer.",

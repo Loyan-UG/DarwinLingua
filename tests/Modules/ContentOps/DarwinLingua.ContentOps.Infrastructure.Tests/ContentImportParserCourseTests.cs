@@ -19,6 +19,8 @@ public sealed class ContentImportParserCourseTests
               "packageVersion": "1.0",
               "packageId": "course-contract-test",
               "packageName": "Course Contract Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "defaultMeaningLanguages": ["en"],
               "entries": [],
               "coursePaths": [

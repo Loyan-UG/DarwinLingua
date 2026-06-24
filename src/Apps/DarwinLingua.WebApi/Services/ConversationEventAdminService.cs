@@ -4,6 +4,7 @@ using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Infrastructure.Persistence;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 using DarwinLingua.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -96,6 +97,7 @@ public sealed class ConversationEventAdminService(
         CancellationToken cancellationToken)
     {
         DateTime nowUtc = DateTime.UtcNow;
+        string targetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(request.TargetLearningLanguageCode);
         ValidateVerificationFreshness(request.VerificationStatus, request.LastVerifiedAtUtc, nowUtc);
         CefrLevel[] levels = ParseLevels(request.SupportedLearnerLevels);
         string[] helperLanguageCodes = NormalizeKeys(request.HelperLanguageCodes, "helper language code");
@@ -120,7 +122,8 @@ public sealed class ConversationEventAdminService(
             request.VerificationStatus,
             PublicationStatus.Active,
             0,
-            nowUtc);
+            nowUtc,
+            targetLearningLanguageCode: targetLearningLanguageCode);
 
         conversationEvent.SetSourceMetadata(request.SourceName, request.SourceUrl, request.LastVerifiedAtUtc);
         conversationEvent.SetOperationalDetails(request.RecurrenceRule, request.Capacity, nowUtc, request.StartsAtUtc, request.EndsAtUtc);
@@ -149,7 +152,9 @@ public sealed class ConversationEventAdminService(
             .Include(item => item.SupportedLevels)
             .Include(item => item.HelperLanguages)
             .Include(item => item.PreparationPackLinks)
-            .SingleOrDefaultAsync(item => item.Slug == normalizedSlug, cancellationToken)
+            .SingleOrDefaultAsync(
+                item => item.TargetLearningLanguageCode == targetLearningLanguageCode && item.Slug == normalizedSlug,
+                cancellationToken)
             .ConfigureAwait(false);
 
         if (existingEvent is not null)
@@ -162,7 +167,7 @@ public sealed class ConversationEventAdminService(
         await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         return await conversationEventQueryService
-            .GetPublishedEventBySlugAsync(normalizedSlug, cancellationToken)
+            .GetPublishedEventBySlugAsync(normalizedSlug, targetLearningLanguageCode, cancellationToken)
             .ConfigureAwait(false)
             ?? throw new InvalidOperationException("The saved conversation event could not be loaded.");
     }
@@ -199,6 +204,7 @@ public sealed class ConversationEventAdminService(
     private static OrganizerManagedConversationEventModel CreateManagedModel(ConversationEvent conversationEvent) =>
         new(
             conversationEvent.Slug,
+            conversationEvent.TargetLearningLanguageCode,
             conversationEvent.Name,
             conversationEvent.Description,
             conversationEvent.City,

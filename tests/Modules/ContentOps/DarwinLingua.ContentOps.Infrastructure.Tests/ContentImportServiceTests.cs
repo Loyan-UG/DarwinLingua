@@ -4563,6 +4563,7 @@ public sealed class ContentImportServiceTests
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> starterPacks =
                 await queryService.GetPublishedStarterPacksAsync(
                     new DarwinLingua.Catalog.Application.Models.ConversationStarterListFilterModel("A1", "cafe", "friendly", "introduction", "everyday-life"),
+                    "de",
                     CancellationToken.None);
 
             DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel listItem = Assert.Single(starterPacks);
@@ -4570,12 +4571,13 @@ public sealed class ContentImportServiceTests
             Assert.Equal(["doctor-appointment-a1"], listItem.LinkedDialogueSlugs);
 
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.ConversationStarterPackListItemModel> DialogueStarterPacks =
-                await queryService.GetPublishedStarterPacksForDialogueAsync("doctor-appointment-a1", CancellationToken.None);
+                await queryService.GetPublishedStarterPacksForDialogueAsync("doctor-appointment-a1", "de", CancellationToken.None);
             Assert.Equal("a1-cafe-first-meeting", Assert.Single(DialogueStarterPacks).Slug);
 
             DarwinLingua.Catalog.Application.Models.ConversationStarterPackDetailModel? detail =
                 await queryService.GetPublishedStarterPackBySlugAsync(
                     "a1-cafe-first-meeting",
+                    "de",
                     "fa",
                     "en",
                     CancellationToken.None);
@@ -4656,6 +4658,7 @@ public sealed class ContentImportServiceTests
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel> eventPreparationPacks =
                 await queryService.GetPublishedEventPreparationPacksAsync(
                     new DarwinLingua.Catalog.Application.Models.EventPreparationListFilterModel("A1", "social-event", "conversation-cafe", "everyday-life"),
+                    "de",
                     CancellationToken.None);
 
             DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel listItem = Assert.Single(eventPreparationPacks);
@@ -4664,11 +4667,11 @@ public sealed class ContentImportServiceTests
             Assert.Equal(["a1-cafe-first-meeting"], listItem.LinkedConversationStarterPackSlugs);
 
             IReadOnlyList<DarwinLingua.Catalog.Application.Models.EventPreparationPackListItemModel> DialoguePreparationPacks =
-                await queryService.GetPublishedEventPreparationPacksForDialogueAsync("cafe-first-meeting-a1", CancellationToken.None);
+                await queryService.GetPublishedEventPreparationPacksForDialogueAsync("cafe-first-meeting-a1", "de", CancellationToken.None);
             Assert.Equal("a1-first-cafe-event", Assert.Single(DialoguePreparationPacks).Slug);
 
             DarwinLingua.Catalog.Application.Models.EventPreparationPackDetailModel? detail =
-                await queryService.GetPublishedEventPreparationPackBySlugAsync("a1-first-cafe-event", CancellationToken.None);
+                await queryService.GetPublishedEventPreparationPackBySlugAsync("a1-first-cafe-event", "de", CancellationToken.None);
 
             Assert.NotNull(detail);
             Assert.Equal("Name", Assert.Single(detail!.LinkedVocabulary).Word);
@@ -4812,6 +4815,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "Course Module Slice Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Automated test fixture",
               "defaultMeaningLanguages": ["en"],
               "entries": [],
@@ -5159,6 +5164,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Shopping Import Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -5228,6 +5235,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Shopping Import Mixed Validity Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -5278,6 +5287,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Shopping Multi Lexical Forms Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -5333,6 +5344,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Shopping Collection Word Keys Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -5408,6 +5421,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Shopping Collection Only Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "labels": [],
@@ -5432,6 +5447,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Dialogue Import Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -5642,6 +5659,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Conversation Starter Import Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en", "fa"],
               "entries": [
@@ -5709,6 +5728,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Event Preparation Import Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [
@@ -5763,6 +5784,8 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "A1 Shopping Duplicate Entry Test",
+              "targetLearningLanguageCode": "de",
+              "levelSystemCode": "cefr",
               "source": "Hybrid",
               "defaultMeaningLanguages": ["en"],
               "entries": [

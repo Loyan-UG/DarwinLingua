@@ -12,6 +12,10 @@ internal sealed class ExpressionEntryConfiguration : IEntityTypeConfiguration<Ex
         builder.ToTable("ExpressionEntries");
         builder.HasKey(expression => expression.Id);
         builder.Property(expression => expression.Id).ValueGeneratedNever();
+        builder.Property(expression => expression.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(expression => expression.Slug).HasMaxLength(128).IsRequired();
         builder.Property(expression => expression.ExpressionText).HasMaxLength(512).IsRequired();
         builder.Property(expression => expression.LiteralMeaningText).HasMaxLength(1024);
@@ -37,8 +41,8 @@ internal sealed class ExpressionEntryConfiguration : IEntityTypeConfiguration<Ex
         builder.Property(expression => expression.SortOrder).IsRequired();
         builder.Property(expression => expression.CreatedAtUtc).IsRequired();
         builder.Property(expression => expression.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(expression => expression.Slug).IsUnique();
-        builder.HasIndex(expression => new { expression.CefrLevel, expression.ExpressionType, expression.Register, expression.Category });
+        builder.HasIndex(expression => new { expression.TargetLearningLanguageCode, expression.Slug }).IsUnique();
+        builder.HasIndex(expression => new { expression.TargetLearningLanguageCode, expression.CefrLevel, expression.ExpressionType, expression.Register, expression.Category });
 
         builder.HasMany(expression => expression.Topics).WithOne().HasForeignKey(link => link.ExpressionEntryId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(expression => expression.Meanings).WithOne().HasForeignKey(meaning => meaning.ExpressionEntryId).OnDelete(DeleteBehavior.Cascade);

@@ -26,186 +26,227 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(
         DialogueLessonListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<RoleplayScenarioListItemModel>> GetRoleplaysAsync(
         RoleplayScenarioListFilterModel filter,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<RoleplayScenarioDetailModel?> GetRoleplayBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<TalkTopicListItemModel>> GetTalkTopicsAsync(
         TalkTopicListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<TalkTopicDetailModel?> GetTalkTopicBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<GrammarTopicListItemModel>> GetGrammarTopicsAsync(
         GrammarTopicListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<GrammarTopicDetailModel?> GetGrammarTopicBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ExpressionListItemModel>> GetExpressionsAsync(
         ExpressionListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExpressionDetailModel?> GetExpressionBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
         ExerciseSetListFilterModel filter,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExerciseDetailModel?> GetExerciseBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(
         string slug,
+        string targetLearningLanguageCode,
         ExerciseAttemptRequestModel request,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(
         CoursePathListFilterModel filter,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<CoursePathDetailModel?> GetCourseBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
         WritingTemplateListFilterModel filter,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
-    Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(
-        CulturalNoteListFilterModel filter,
+    Task<IReadOnlyList<CountryGuidanceNoteListItemModel>> GetCountryGuidanceAsync(
+        CountryGuidanceNoteListFilterModel filter,
+        string targetLearningLanguageCode,
+        string countryContextCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
-    Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(
+    Task<CountryGuidanceNoteDetailModel?> GetCountryGuidanceBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
+        string countryContextCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(
         ExamPrepListFilterModel filter,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(
         UnifiedLearningSearchFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(
         ConversationStarterListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(
         string dialogueSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(
         string dialogueSlug,
+        string targetLearningLanguageCode,
         string actorEmail,
         CancellationToken cancellationToken);
 
     Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string actorEmail,
         CancellationToken cancellationToken);
 
     Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(
         ConversationEventListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<EventRsvpSummaryModel> GetEventRsvpSummaryAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
     Task<EventRsvpModel> SubmitEventRsvpAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         SubmitEventRsvpRequest request,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
     Task<IReadOnlyList<EventRsvpModel>> GetAdminEventRsvpsAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
     Task<EventRsvpModel> SetAdminEventRsvpStatusAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         Guid rsvpId,
         AdminSetEventRsvpStatusRequest request,
         CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
-    Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken);
+    Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken);
 
     Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<OrganizerClaimRequestModel> SubmitOrganizerClaimRequestAsync(
@@ -334,12 +375,15 @@ public interface IWebCatalogApiClient
 
     Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(
         IReadOnlyList<Guid> wordIds,
+        string targetLearningLanguageCode,
         string meaningLanguageCode,
         CancellationToken cancellationToken);
 
     Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken);
 
-    Task<AdminSystemReportResponse> GetAdminSystemReportAsync(CancellationToken cancellationToken) =>
+    Task<AdminSystemReportResponse> GetAdminSystemReportAsync(
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken) =>
         throw new NotSupportedException();
 
     Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken);
@@ -347,6 +391,7 @@ public interface IWebCatalogApiClient
     Task<AdminLearningPortalIssuesPageViewModel> GetAdminLearningPortalIssuesAsync(
         string? areaFilter,
         string? query,
+        string targetLearningLanguageCode,
         int take,
         CancellationToken cancellationToken);
 
@@ -613,6 +658,7 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<DialogueLessonListItemModel>> GetDialoguesAsync(
         DialogueLessonListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<DialogueLessonListItemModel>>(
             BuildPath(
@@ -626,12 +672,14 @@ internal sealed class WebCatalogApiClient(
                     new("taskType", filter.TaskType),
                     new("interactionMode", filter.InteractionMode),
                     new("register", filter.Register),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<DialogueLessonDetailModel?> GetDialogueBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
@@ -639,6 +687,7 @@ internal sealed class WebCatalogApiClient(
             BuildPath(
                 $"/api/catalog/dialogues/{Uri.EscapeDataString(slug)}",
                 [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
                 ]),
@@ -646,6 +695,7 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<TalkTopicListItemModel>> GetTalkTopicsAsync(
         TalkTopicListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<TalkTopicListItemModel>>(
             BuildPath(
@@ -656,12 +706,14 @@ internal sealed class WebCatalogApiClient(
                     new("topicKey", filter.TopicKey),
                     new("contentType", filter.ContentType),
                     new("speakingGoal", filter.SpeakingGoal),
-                    new("isSensitive", filter.IsSensitive?.ToString())
+                    new("isSensitive", filter.IsSensitive?.ToString()),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<TalkTopicDetailModel?> GetTalkTopicBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
@@ -669,6 +721,7 @@ internal sealed class WebCatalogApiClient(
             BuildPath(
                 $"/api/catalog/talk-topics/{Uri.EscapeDataString(slug)}",
                 [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
                     new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
                 ]),
@@ -676,6 +729,7 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<GrammarTopicListItemModel>> GetGrammarTopicsAsync(
         GrammarTopicListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<GrammarTopicListItemModel>>(
             BuildPath(
@@ -684,22 +738,28 @@ internal sealed class WebCatalogApiClient(
                     new("cefrLevel", filter.CefrLevel),
                     new("grammarCategory", filter.GrammarCategory),
                     new("topicKey", filter.TopicKey),
-                    new("q", filter.Query)
+                    new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<GrammarTopicDetailModel?> GetGrammarTopicBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<GrammarTopicDetailModel>(
             BuildPath(
                 $"/api/catalog/grammar-topics/{Uri.EscapeDataString(slug)}",
-                [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+                [
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<RoleplayScenarioListItemModel>> GetRoleplaysAsync(
         RoleplayScenarioListFilterModel filter,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<RoleplayScenarioListItemModel>>(
@@ -715,22 +775,28 @@ internal sealed class WebCatalogApiClient(
                     new("interactionMode", filter.InteractionMode),
                     new("register", filter.Register),
                     new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<RoleplayScenarioDetailModel?> GetRoleplayBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<RoleplayScenarioDetailModel>(
             BuildPath(
                 $"/api/catalog/roleplays/{Uri.EscapeDataString(slug)}",
-                [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ExpressionListItemModel>> GetExpressionsAsync(
         ExpressionListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ExpressionListItemModel>>(
             BuildPath(
@@ -744,12 +810,14 @@ internal sealed class WebCatalogApiClient(
                     new("isRisky", filter.IsRisky?.ToString()),
                     new("q", filter.Query),
                     new("primaryMeaningLanguageCode", filter.PrimaryMeaningLanguageCode),
-                    new("includeSensitiveEducationalLanguage", filter.IncludeSensitiveEducationalLanguage.ToString())
+                    new("includeSensitiveEducationalLanguage", filter.IncludeSensitiveEducationalLanguage.ToString()),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<ExpressionDetailModel?> GetExpressionBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         bool includeSensitiveEducationalLanguage,
         CancellationToken cancellationToken) =>
@@ -758,12 +826,14 @@ internal sealed class WebCatalogApiClient(
                 $"/api/catalog/expressions/{Uri.EscapeDataString(slug)}",
                 [
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
-                    new("includeSensitiveEducationalLanguage", includeSensitiveEducationalLanguage.ToString())
+                    new("includeSensitiveEducationalLanguage", includeSensitiveEducationalLanguage.ToString()),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ExerciseSetListItemModel>> GetExerciseSetsAsync(
         ExerciseSetListFilterModel filter,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ExerciseSetListItemModel>>(
@@ -774,35 +844,54 @@ internal sealed class WebCatalogApiClient(
                     new("ownerType", filter.OwnerType),
                     new("ownerSlug", filter.OwnerSlug),
                     new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<ExerciseSetDetailModel?> GetExerciseSetBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<ExerciseSetDetailModel>(
-            BuildPath($"/api/catalog/exercise-sets/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                $"/api/catalog/exercise-sets/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<ExerciseDetailModel?> GetExerciseBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<ExerciseDetailModel>(
-            BuildPath($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                $"/api/catalog/exercises/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public async Task<ExerciseAttemptResultModel?> SubmitExerciseAttemptAsync(
         string slug,
+        string targetLearningLanguageCode,
         ExerciseAttemptRequestModel request,
         string primaryMeaningLanguageCode,
         CancellationToken cancellationToken)
     {
         using HttpResponseMessage response = await httpClient
             .PostAsJsonAsync(
-                BuildPath($"/api/catalog/exercises/{Uri.EscapeDataString(slug)}/evaluate", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+                BuildPath(
+                    $"/api/catalog/exercises/{Uri.EscapeDataString(slug)}/evaluate",
+                    [
+                        new("targetLearningLanguageCode", targetLearningLanguageCode),
+                        new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                    ]),
                 request,
                 cancellationToken)
             .ConfigureAwait(false);
@@ -818,6 +907,7 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<CoursePathListItemModel>> GetCoursesAsync(
         CoursePathListFilterModel filter,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<CoursePathListItemModel>>(
@@ -826,28 +916,42 @@ internal sealed class WebCatalogApiClient(
                 [
                     new("cefrLevel", filter.CefrLevel),
                     new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<CoursePathDetailModel?> GetCourseBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<CoursePathDetailModel>(
-            BuildPath($"/api/catalog/courses/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                $"/api/catalog/courses/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<CourseLessonDetailModel?> GetCourseLessonBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<CourseLessonDetailModel>(
-            BuildPath($"/api/catalog/course-lessons/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                $"/api/catalog/course-lessons/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<WritingTemplateListItemModel>> GetWritingTemplatesAsync(
         WritingTemplateListFilterModel filter,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<WritingTemplateListItemModel>>(
@@ -859,51 +963,75 @@ internal sealed class WebCatalogApiClient(
                     new("register", filter.Register),
                     new("situation", filter.Situation),
                     new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<WritingTemplateDetailModel?> GetWritingTemplateBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<WritingTemplateDetailModel>(
-            BuildPath($"/api/catalog/writing-templates/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                $"/api/catalog/writing-templates/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
-    public Task<IReadOnlyList<CulturalNoteListItemModel>> GetCulturalNotesAsync(
-        CulturalNoteListFilterModel filter,
+    public Task<IReadOnlyList<CountryGuidanceNoteListItemModel>> GetCountryGuidanceAsync(
+        CountryGuidanceNoteListFilterModel filter,
+        string targetLearningLanguageCode,
+        string countryContextCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetRequiredAsync<IReadOnlyList<CulturalNoteListItemModel>>(
+        GetRequiredAsync<IReadOnlyList<CountryGuidanceNoteListItemModel>>(
             BuildPath(
-                "/api/catalog/cultural-notes",
+                $"/api/catalog/country-guidance/{Uri.EscapeDataString(countryContextCode.Trim().ToLowerInvariant())}",
                 [
                     new("cefrLevel", filter.CefrLevel),
                     new("category", filter.Category),
                     new("context", filter.Context),
                     new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
-    public Task<CulturalNoteDetailModel?> GetCulturalNoteBySlugAsync(
+    public Task<CountryGuidanceNoteDetailModel?> GetCountryGuidanceBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
+        string countryContextCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
-        GetAsync<CulturalNoteDetailModel>(
-            BuildPath($"/api/catalog/cultural-notes/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+        GetAsync<CountryGuidanceNoteDetailModel>(
+            BuildPath(
+                $"/api/catalog/country-guidance/{Uri.EscapeDataString(countryContextCode.Trim().ToLowerInvariant())}/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ExamProfileModel>> GetExamProfilesAsync(
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ExamProfileModel>>(
-            BuildPath("/api/catalog/exam-profiles", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                "/api/catalog/exam-profiles",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ExamPrepUnitListItemModel>> GetExamPrepUnitsAsync(
         ExamPrepListFilterModel filter,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ExamPrepUnitListItemModel>>(
@@ -916,20 +1044,28 @@ internal sealed class WebCatalogApiClient(
                     new("taskType", filter.TaskType),
                     new("section", filter.Section),
                     new("q", filter.Query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<ExamPrepUnitDetailModel?> GetExamPrepUnitBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string? primaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<ExamPrepUnitDetailModel>(
-            BuildPath($"/api/catalog/exam-prep/{Uri.EscapeDataString(slug)}", [new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)]),
+            BuildPath(
+                $"/api/catalog/exam-prep/{Uri.EscapeDataString(slug)}",
+                [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
+                    new("primaryMeaningLanguageCode", primaryMeaningLanguageCode)
+                ]),
             cancellationToken);
 
     public Task<IReadOnlyList<UnifiedLearningSearchResultModel>> SearchLearningContentAsync(
         UnifiedLearningSearchFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<UnifiedLearningSearchResultModel>>(
             BuildPath(
@@ -940,12 +1076,14 @@ internal sealed class WebCatalogApiClient(
                     new("resultType", filter.ResultType),
                     new("category", filter.Category),
                     new("topicKey", filter.TopicKey),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("includeSensitiveEducationalLanguage", filter.IncludeSensitiveEducationalLanguage.ToString())
                 ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksAsync(
         ConversationStarterListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ConversationStarterPackListItemModel>>(
             BuildPath(
@@ -955,19 +1093,24 @@ internal sealed class WebCatalogApiClient(
                     new("situation", filter.Situation),
                     new("tone", filter.Tone),
                     new("conversationGoal", filter.ConversationGoal),
-                    new("topicKey", filter.TopicKey)
+                    new("topicKey", filter.TopicKey),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<IReadOnlyList<ConversationStarterPackListItemModel>> GetConversationStarterPacksForDialogueAsync(
         string dialogueSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ConversationStarterPackListItemModel>>(
-            $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/conversation-starters",
+            BuildPath(
+                $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/conversation-starters",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public Task<ConversationStarterPackDetailModel?> GetConversationStarterPackBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string primaryMeaningLanguageCode,
         string? secondaryMeaningLanguageCode,
         CancellationToken cancellationToken) =>
@@ -976,35 +1119,44 @@ internal sealed class WebCatalogApiClient(
                 $"/api/catalog/conversation-starters/{Uri.EscapeDataString(slug)}",
                 [
                     new("primaryMeaningLanguageCode", primaryMeaningLanguageCode),
-                    new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode)
+                    new("secondaryMeaningLanguageCode", secondaryMeaningLanguageCode),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode)
                 ]),
             cancellationToken);
 
     public Task<IReadOnlyList<EventPreparationPackListItemModel>> GetEventPreparationPacksForDialogueAsync(
         string dialogueSlug,
+        string targetLearningLanguageCode,
         string actorEmail,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<EventPreparationPackListItemModel>>(
-            $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/event-preparation-packs",
+            BuildPath(
+                $"/api/catalog/dialogues/{Uri.EscapeDataString(dialogueSlug)}/event-preparation-packs",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             actorEmail,
             cancellationToken);
 
     public Task<EventPreparationPackDetailModel?> GetEventPreparationPackBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         string actorEmail,
         CancellationToken cancellationToken) =>
         GetAsync<EventPreparationPackDetailModel>(
-            $"/api/catalog/event-preparation-packs/{Uri.EscapeDataString(slug)}",
+            BuildPath(
+                $"/api/catalog/event-preparation-packs/{Uri.EscapeDataString(slug)}",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             actorEmail,
             cancellationToken);
 
     public Task<IReadOnlyList<ConversationEventListItemModel>> GetConversationEventsAsync(
         ConversationEventListFilterModel filter,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<ConversationEventListItemModel>>(
             BuildPath(
                 "/api/catalog/conversation-events",
                 [
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("city", filter.City),
                     new("cefrLevel", filter.CefrLevel),
                     new("helperLanguageCode", filter.HelperLanguageCode),
@@ -1018,54 +1170,76 @@ internal sealed class WebCatalogApiClient(
 
     public Task<ConversationEventDetailModel?> GetConversationEventBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<ConversationEventDetailModel>(
-            $"/api/catalog/conversation-events/{Uri.EscapeDataString(slug)}",
+            BuildPath(
+                $"/api/catalog/conversation-events/{Uri.EscapeDataString(slug)}",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public Task<EventRsvpSummaryModel> GetEventRsvpSummaryAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<EventRsvpSummaryModel>(
-            $"/api/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvp-summary",
+            BuildPath(
+                $"/api/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvp-summary",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public Task<EventRsvpModel> SubmitEventRsvpAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         SubmitEventRsvpRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<SubmitEventRsvpRequest, EventRsvpModel>(
-            $"/api/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+            BuildPath(
+                $"/api/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             request,
             cancellationToken);
 
     public Task<IReadOnlyList<EventRsvpModel>> GetAdminEventRsvpsAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<EventRsvpModel>>(
-            $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+            BuildPath(
+                $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public Task<EventRsvpModel> SetAdminEventRsvpStatusAsync(
         string eventSlug,
+        string targetLearningLanguageCode,
         Guid rsvpId,
         AdminSetEventRsvpStatusRequest request,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<AdminSetEventRsvpStatusRequest, EventRsvpModel>(
-            $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps/{rsvpId}/status",
+            BuildPath(
+                $"/api/admin/catalog/conversation-events/{Uri.EscapeDataString(eventSlug)}/rsvps/{rsvpId}/status",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             request,
             cancellationToken);
 
-    public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(CancellationToken cancellationToken) =>
+    public Task<IReadOnlyList<OrganizerProfileListItemModel>> GetOrganizerProfilesAsync(
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken) =>
         GetRequiredAsync<IReadOnlyList<OrganizerProfileListItemModel>>(
-            "/api/catalog/organizer-profiles",
+            BuildPath(
+                "/api/catalog/organizer-profiles",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public Task<OrganizerProfileDetailModel?> GetOrganizerProfileBySlugAsync(
         string slug,
+        string targetLearningLanguageCode,
         CancellationToken cancellationToken) =>
         GetAsync<OrganizerProfileDetailModel>(
-            $"/api/catalog/organizer-profiles/{Uri.EscapeDataString(slug)}",
+            BuildPath(
+                $"/api/catalog/organizer-profiles/{Uri.EscapeDataString(slug)}",
+                [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public Task<OrganizerClaimRequestModel> SubmitOrganizerClaimRequestAsync(
@@ -1300,11 +1474,12 @@ internal sealed class WebCatalogApiClient(
 
     public Task<IReadOnlyList<WordListItemModel>> GetWordsByIdsAsync(
         IReadOnlyList<Guid> wordIds,
+        string targetLearningLanguageCode,
         string meaningLanguageCode,
         CancellationToken cancellationToken) =>
         PostRequiredAsync<CatalogWordLookupRequest, IReadOnlyList<WordListItemModel>>(
             "/api/catalog/words/by-ids",
-            new CatalogWordLookupRequest(wordIds, meaningLanguageCode),
+            new CatalogWordLookupRequest(wordIds, targetLearningLanguageCode, meaningLanguageCode),
             cancellationToken);
 
     public async Task<AdminDashboardViewModel> GetAdminDashboardAsync(CancellationToken cancellationToken)
@@ -1322,9 +1497,11 @@ internal sealed class WebCatalogApiClient(
             response.LastImportAtUtc);
     }
 
-    public Task<AdminSystemReportResponse> GetAdminSystemReportAsync(CancellationToken cancellationToken) =>
+    public Task<AdminSystemReportResponse> GetAdminSystemReportAsync(
+        string targetLearningLanguageCode,
+        CancellationToken cancellationToken) =>
         GetRequiredAsync<AdminSystemReportResponse>(
-            "/api/admin/catalog/system-report",
+            BuildPath("/api/admin/catalog/system-report", [new("targetLearningLanguageCode", targetLearningLanguageCode)]),
             cancellationToken);
 
     public async Task<AdminImportsPageViewModel> GetAdminImportsAsync(string? statusFilter, CancellationToken cancellationToken)
@@ -1353,6 +1530,7 @@ internal sealed class WebCatalogApiClient(
     public async Task<AdminLearningPortalIssuesPageViewModel> GetAdminLearningPortalIssuesAsync(
         string? areaFilter,
         string? query,
+        string targetLearningLanguageCode,
         int take,
         CancellationToken cancellationToken)
     {
@@ -1362,11 +1540,14 @@ internal sealed class WebCatalogApiClient(
                 [
                     new("area", areaFilter),
                     new("q", query),
+                    new("targetLearningLanguageCode", targetLearningLanguageCode),
                     new("take", take.ToString(System.Globalization.CultureInfo.InvariantCulture)),
                 ]),
             cancellationToken).ConfigureAwait(false);
 
         return new AdminLearningPortalIssuesPageViewModel(
+            response.TargetLearningLanguageCode,
+            response.CountryContextCode,
             response.AreaFilter,
             response.Query,
             response.Take,
@@ -2955,6 +3136,7 @@ internal static class WebCatalogApiClientRegistration
 
 internal sealed record CatalogWordLookupRequest(
     IReadOnlyList<Guid> WordIds,
+    string TargetLearningLanguageCode,
     string MeaningLanguageCode);
 
 internal sealed record AdminCatalogDashboardResponse(
@@ -3006,6 +3188,8 @@ public sealed record AdminOperationsSystemReportResponse(
     DateTime? LastImportAtUtc);
 
 public sealed record AdminLearningPortalSystemReportResponse(
+    string TargetLearningLanguageCode,
+    string? CountryContextCode,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByType,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByCefr,
     IReadOnlyList<AdminLearningPortalCountRowResponse> GrammarByCategory,
@@ -3023,7 +3207,14 @@ public sealed record AdminLearningPortalSystemReportResponse(
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExamPrepByProfile,
     IReadOnlyList<AdminLearningPortalCountRowResponse> WritingTemplatesByCategory,
     IReadOnlyList<AdminLearningPortalCountRowResponse> WritingTemplatesByRegister,
-    IReadOnlyList<AdminLearningPortalCountRowResponse> CulturalNotesByCategory,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountryGuidanceNotesByCategory,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByTargetLanguage,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountryGuidanceNotesByCountryContext,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> TargetLanguageActivationGate,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> MissingTranslationsByHelperLanguage,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> MissingTranslationsByModule,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> DuplicateSlugsByType,
+    int DuplicateSlugCount,
     int UnresolvedLinkedWordCount,
     int UnresolvedLinkedContentReferenceCount,
     int MissingTranslationCount,
@@ -3085,6 +3276,8 @@ public sealed record AdminLearningPortalIssueRowResponse(
     string? Target);
 
 internal sealed record AdminLearningPortalIssuesResponse(
+    string TargetLearningLanguageCode,
+    string? CountryContextCode,
     string? AreaFilter,
     string? Query,
     int Take,
@@ -3385,6 +3578,7 @@ internal sealed record AdminCatalogRollbackPreviewResponse(
 
 public sealed record AdminSaveConversationEventRequest(
     string Slug,
+    string TargetLearningLanguageCode,
     string Name,
     string Description,
     string? City,
@@ -3418,6 +3612,7 @@ public sealed record AdminSetConversationEventPublicationStatusRequest(
 
 public sealed record OrganizerManagedConversationEventModel(
     string Slug,
+    string TargetLearningLanguageCode,
     string Name,
     string Description,
     string? City,
@@ -3458,6 +3653,7 @@ public sealed record AdminSetEventRsvpStatusRequest(
 public sealed record EventRsvpModel(
     Guid Id,
     string ConversationEventSlug,
+    string TargetLearningLanguageCode,
     string ParticipantName,
     string ParticipantEmail,
     string Status,
@@ -3466,6 +3662,7 @@ public sealed record EventRsvpModel(
 
 public sealed record EventRsvpSummaryModel(
     string ConversationEventSlug,
+    string TargetLearningLanguageCode,
     int InterestedCount,
     int GoingCount,
     int CancelledCount,
@@ -3474,6 +3671,7 @@ public sealed record EventRsvpSummaryModel(
 
 public sealed record AdminSaveOrganizerProfileRequest(
     string Slug,
+    string TargetLearningLanguageCode,
     string DisplayName,
     string OrganizerType,
     string Description,
@@ -3523,7 +3721,7 @@ public sealed record SaveLearnerConversationProfileRequest(
     string DisplayName,
     string? CityRegion,
     string InteractionPreference,
-    string GermanLevel,
+    string LearningLevel,
     IReadOnlyList<string> HelperLanguageCodes,
     string ConversationGoals,
     string? AvailabilityNotes,
@@ -3539,7 +3737,7 @@ public sealed record LearnerConversationProfileModel(
     string DisplayName,
     string? CityRegion,
     string InteractionPreference,
-    string GermanLevel,
+    string LearningLevel,
     IReadOnlyList<string> HelperLanguageCodes,
     string ConversationGoals,
     string? AvailabilityNotes,
@@ -3552,14 +3750,14 @@ public sealed record LearnerConversationProfilePublicModel(
     string DisplayName,
     string? CityRegion,
     string InteractionPreference,
-    string GermanLevel,
+    string LearningLevel,
     IReadOnlyList<string> HelperLanguageCodes,
     string ConversationGoals);
 
 public sealed record PartnerMatchSearchRequest(
     string? CityRegion,
     string? InteractionPreference,
-    string? GermanLevel,
+    string? LearningLevel,
     string? HelperLanguageCode,
     string? GoalKeyword);
 
@@ -3568,7 +3766,7 @@ public sealed record PartnerMatchProfileModel(
     string DisplayName,
     string? CityRegion,
     string InteractionPreference,
-    string GermanLevel,
+    string LearningLevel,
     IReadOnlyList<string> HelperLanguageCodes,
     string ConversationGoals,
     string Visibility);

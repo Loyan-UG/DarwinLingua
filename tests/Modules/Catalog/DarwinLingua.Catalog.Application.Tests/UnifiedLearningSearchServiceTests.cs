@@ -2,6 +2,7 @@ using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.Models;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DarwinLingua.Catalog.Application.Tests;
@@ -63,6 +64,19 @@ public sealed class UnifiedLearningSearchServiceTests
     }
 
     [Fact]
+    public async Task SearchAsync_ShouldRejectUnsupportedTargetLearningLanguage()
+    {
+        FakeUnifiedSearchRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
+        IUnifiedLearningSearchService service = serviceProvider.GetRequiredService<IUnifiedLearningSearchService>();
+
+        await Assert.ThrowsAsync<DomainRuleException>(() => service.SearchAsync(
+            new UnifiedLearningSearchFilterModel("word", null, null, null, null, TargetLearningLanguageCode: "en"),
+            CancellationToken.None));
+        Assert.False(repository.WasCalled);
+    }
+
+    [Fact]
     public async Task SearchAsync_ShouldReturnProjectedResults_FromRepository()
     {
         FakeUnifiedSearchRepository repository = new()
@@ -87,6 +101,7 @@ public sealed class UnifiedLearningSearchServiceTests
         Assert.Equal("grammar", repository.LastFilter?.ResultType);
         Assert.Equal("word-order", repository.LastFilter?.Category);
         Assert.Equal("sentence", repository.LastFilter?.TopicKey);
+        Assert.Equal(ContentLanguageRequirements.DefaultTargetLearningLanguageCode, repository.LastFilter?.TargetLearningLanguageCode);
         Assert.True(repository.WasCalled);
     }
 

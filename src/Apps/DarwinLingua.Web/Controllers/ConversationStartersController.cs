@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("conversation-starters")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.ConversationStarters)]
 public sealed class ConversationStartersController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -27,6 +27,7 @@ public sealed class ConversationStartersController(
         string? topicKey,
         CancellationToken cancellationToken)
     {
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         ConversationStarterListFilterModel filter = new(cefrLevel, situation, tone, conversationGoal, topicKey);
         IReadOnlyList<ConversationStarterPackListItemModel> starterPacks;
 
@@ -35,7 +36,7 @@ public sealed class ConversationStartersController(
             using CancellationTokenSource catalogTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             catalogTimeout.CancelAfter(TimeSpan.FromSeconds(2));
             starterPacks = await catalogApiClient
-                .GetConversationStarterPacksAsync(filter, catalogTimeout.Token)
+                .GetConversationStarterPacksAsync(filter, targetLearningLanguageCode, catalogTimeout.Token)
                 .ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is (HttpRequestException or OperationCanceledException))
@@ -52,9 +53,10 @@ public sealed class ConversationStartersController(
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
@@ -71,6 +73,7 @@ public sealed class ConversationStartersController(
             starterPack = await catalogApiClient
                 .GetConversationStarterPackBySlugAsync(
                     normalizedSlug,
+                    targetLearningLanguageCode,
                     profile.PreferredMeaningLanguage1,
                     effectiveSecondaryMeaningLanguageCode,
                     catalogTimeout.Token)

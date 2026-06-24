@@ -1852,9 +1852,9 @@ public sealed class ContentImportServiceApplicationTests
     }
 
     [Fact]
-    public async Task ImportAsync_ShouldImportCulturalNote_WhenContractIsValid()
+    public async Task ImportAsync_ShouldImportCountryGuidanceNote_WhenContractIsValid()
     {
-        ParsedContentPackageModel parsedPackage = CreatePackageWithCulturalNote(CreateValidCulturalNote());
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCountryGuidanceNote(CreateValidCountryGuidanceNote());
         FakeRepository repository = new();
         await using ServiceProvider serviceProvider = BuildServiceProvider(
             new StubFileReader("ignored"),
@@ -1864,19 +1864,19 @@ public sealed class ContentImportServiceApplicationTests
         IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
 
         ImportContentPackageResult result = await service.ImportAsync(
-            new ImportContentPackageRequest("cultural-notes.json"),
+            new ImportContentPackageRequest("country-guidance-notes.json"),
             CancellationToken.None);
 
         Assert.True(result.IsSuccess);
-        CulturalNote note = Assert.Single(repository.ImportedCulturalNotes);
+        CountryGuidanceNote note = Assert.Single(repository.ImportedCountryGuidanceNotes);
         Assert.Equal("a2-du-vs-sie-at-work", note.Slug);
     }
 
     [Fact]
-    public async Task ImportAsync_ShouldRejectCulturalNote_WhenCategoryIsInvalid()
+    public async Task ImportAsync_ShouldRejectCountryGuidanceNote_WhenCategoryIsInvalid()
     {
-        ParsedContentPackageModel parsedPackage = CreatePackageWithCulturalNote(
-            CreateValidCulturalNote() with { Category = "bad-category" });
+        ParsedContentPackageModel parsedPackage = CreatePackageWithCountryGuidanceNote(
+            CreateValidCountryGuidanceNote() with { Category = "bad-category" });
 
         await using ServiceProvider serviceProvider = BuildServiceProvider(
             new StubFileReader("ignored"),
@@ -1886,11 +1886,11 @@ public sealed class ContentImportServiceApplicationTests
         IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
 
         ImportContentPackageResult result = await service.ImportAsync(
-            new ImportContentPackageRequest("cultural-notes.json"),
+            new ImportContentPackageRequest("country-guidance-notes.json"),
             CancellationToken.None);
 
         Assert.False(result.IsSuccess);
-        Assert.Contains(result.Issues, issue => issue.Message.Contains("Cultural note category 'bad-category' is not supported.", StringComparison.Ordinal));
+        Assert.Contains(result.Issues, issue => issue.Message.Contains("Country guidance note category 'bad-category' is not supported.", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -2705,18 +2705,22 @@ public sealed class ContentImportServiceApplicationTests
                 languageCode == "fa" ? persian : $"{english} ({languageCode})"))
             .ToArray();
 
-    private static ParsedContentPackageModel CreatePackageWithCulturalNote(ParsedCulturalNoteModel note)
+    private static ParsedContentPackageModel CreatePackageWithCountryGuidanceNote(ParsedCountryGuidanceNoteModel note)
     {
         return new ParsedContentPackageModel(
             "1.0",
-            "cultural-note-test-package",
-            "Cultural Note Test Package",
+            "country-guidance-note-test-package",
+            "Country Guidance Note Test Package",
             "Manual",
+            "de",
+            "cefr",
+            "DE",
             ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [],
             [],
             [])
         {
-            CulturalNotes = [note],
+            CountryGuidanceNotes = [note],
         };
     }
 
@@ -2902,9 +2906,9 @@ public sealed class ContentImportServiceApplicationTests
             []);
     }
 
-    private static ParsedCulturalNoteModel CreateValidCulturalNote()
+    private static ParsedCountryGuidanceNoteModel CreateValidCountryGuidanceNote()
     {
-        return new ParsedCulturalNoteModel(
+        return new ParsedCountryGuidanceNoteModel(
             "a2-du-vs-sie-at-work",
             "Du vs. Sie at work",
             TestTranslations("Du vs. Sie at work", "تو یا شما در محیط کار"),
@@ -2915,15 +2919,15 @@ public sealed class ContentImportServiceApplicationTests
             "Workplace introductions",
             TestTranslations("Workplace introductions", "معرفی در محیط کار"),
             ["Use Sie until a colleague offers du."],
-            CulturalListTranslations("Use Sie until a colleague offers du."),
-            [new ParsedCulturalNoteExampleModel(
+            CountryGuidanceListTranslations("Use Sie until a colleague offers du."),
+            [new ParsedCountryGuidanceNoteExampleModel(
                 "Sollen wir uns duzen?",
                 "A polite question about switching to du.",
                 TestTranslations("A polite question about switching to du.", "پرسشی محترمانه برای اینکه آیا می‌توانید از du استفاده کنید."))],
             ["Start with Sie in formal settings."],
-            CulturalListTranslations("Start with Sie in formal settings."),
+            CountryGuidanceListTranslations("Start with Sie in formal settings."),
             ["Do not switch to du automatically."],
-            CulturalListTranslations("Do not switch to du automatically."),
+            CountryGuidanceListTranslations("Do not switch to du automatically."),
             "Address forms can feel personal in hierarchical contexts.",
             TestTranslations("Address forms can feel personal in hierarchical contexts.", "در موقعیت‌های سلسله‌مراتبی، شکل خطاب کردن می‌تواند جنبه شخصی پیدا کند."),
             ["a2-workplace-introduction"],
@@ -2935,9 +2939,9 @@ public sealed class ContentImportServiceApplicationTests
             10);
     }
 
-    private static ParsedCulturalNoteListTranslationModel[] CulturalListTranslations(params string[] englishItems) =>
+    private static ParsedCountryGuidanceNoteListTranslationModel[] CountryGuidanceListTranslations(params string[] englishItems) =>
         ContentLanguageRequirements.RequiredMeaningLanguageCodes
-            .Select(languageCode => new ParsedCulturalNoteListTranslationModel(
+            .Select(languageCode => new ParsedCountryGuidanceNoteListTranslationModel(
                 languageCode,
                 englishItems
                     .Select(item => languageCode == "fa" ? $"فارسی: {item}" : $"{item} ({languageCode})")
@@ -3253,7 +3257,7 @@ public sealed class ContentImportServiceApplicationTests
 
         public IReadOnlyList<ExpressionEntry> ImportedExpressions { get; private set; } = [];
 
-        public IReadOnlyList<CulturalNote> ImportedCulturalNotes { get; private set; } = [];
+        public IReadOnlyList<CountryGuidanceNote> ImportedCountryGuidanceNotes { get; private set; } = [];
 
         public IReadOnlyList<ExamProfile> ImportedExamProfiles { get; private set; } = [];
 
@@ -3295,13 +3299,17 @@ public sealed class ContentImportServiceApplicationTests
             return Task.FromResult(languages);
         }
 
-        public Task<bool> PackageExistsAsync(string packageId, CancellationToken cancellationToken)
+        public Task<bool> PackageExistsAsync(
+            string packageId,
+            string targetLearningLanguageCode,
+            CancellationToken cancellationToken)
         {
             return Task.FromResult(packageExists);
         }
 
         public Task<bool> WordExistsAsync(
             string normalizedLemma,
+            LanguageCode languageCode,
             CancellationToken cancellationToken)
         {
             return Task.FromResult(wordExists);
@@ -3309,6 +3317,7 @@ public sealed class ContentImportServiceApplicationTests
 
         public Task<IReadOnlyList<WordEntry>> GetActiveWordsByNormalizedLemmasAsync(
             IReadOnlyCollection<string> normalizedLemmas,
+            string targetLearningLanguageCode,
             CancellationToken cancellationToken)
         {
             IReadOnlyList<WordEntry> result = existingWords ?? [];
@@ -3330,7 +3339,7 @@ public sealed class ContentImportServiceApplicationTests
             IReadOnlyList<CourseModule> importedCourseModules,
             IReadOnlyList<CourseLesson> importedCourseLessons,
             IReadOnlyList<WritingTemplate> importedWritingTemplates,
-            IReadOnlyList<CulturalNote> importedCulturalNotes,
+            IReadOnlyList<CountryGuidanceNote> importedCountryGuidanceNotes,
             IReadOnlyList<ExamProfile> importedExamProfiles,
             IReadOnlyList<ExamPrepUnit> importedExamPrepUnits,
             IReadOnlyList<ConversationStarterPack> importedConversationStarterPacks,
@@ -3342,7 +3351,7 @@ public sealed class ContentImportServiceApplicationTests
             ImportedGrammarTopics = importedGrammarTopics;
             ImportedCollections = importedCollections;
             ImportedExpressions = importedExpressions;
-            ImportedCulturalNotes = importedCulturalNotes;
+            ImportedCountryGuidanceNotes = importedCountryGuidanceNotes;
             ImportedExamProfiles = importedExamProfiles;
             ImportedExamPrepUnits = importedExamPrepUnits;
             ImportedExercises = importedExercises;

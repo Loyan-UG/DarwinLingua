@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using DarwinLingua.SharedKernel.Content;
 using DarwinLingua.SharedKernel.Exceptions;
+using DarwinLingua.SharedKernel.Globalization;
 using DarwinLingua.SharedKernel.Lexicon;
 
 namespace DarwinLingua.Catalog.Domain.Entities;
@@ -20,6 +21,7 @@ public sealed class ExamProfile
         CefrRange = string.Empty;
         Description = string.Empty;
         DescriptionTranslationsJson = "[]";
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public ExamProfile(
@@ -32,9 +34,11 @@ public sealed class ExamProfile
         int sortOrder,
         DateTime timestampUtc,
         string displayNameTranslationsJson = "[]",
-        string descriptionTranslationsJson = "[]")
+        string descriptionTranslationsJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exam profile id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Exam profile target learning language");
         Key = NormalizeKebabKey(key, "Exam profile key");
         DisplayName = RequireText(displayName, "Exam profile display name", 256);
         DisplayNameTranslationsJson = RequireText(displayNameTranslationsJson, "Exam profile display name translations JSON", 12000);
@@ -48,6 +52,7 @@ public sealed class ExamProfile
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Key { get; private set; }
     public string DisplayName { get; private set; }
     public string DisplayNameTranslationsJson { get; private set; }
@@ -105,6 +110,7 @@ public sealed class ExamPrepUnit
         LinkedExerciseSlugsJson = "[]";
         LinkedRoleplaySlugsJson = "[]";
         LinkedCourseLessonSlugsJson = "[]";
+        TargetLearningLanguageCode = ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
     }
 
     public ExamPrepUnit(
@@ -135,9 +141,11 @@ public sealed class ExamPrepUnit
         string shortDescriptionTranslationsJson = "[]",
         string explanationTranslationsJson = "[]",
         string strategyNotesTranslationsJson = "[]",
-        string checklistTranslationsJson = "[]")
+        string checklistTranslationsJson = "[]",
+        string? targetLearningLanguageCode = null)
     {
         Id = id == Guid.Empty ? throw new DomainRuleException("Exam prep unit id is required.") : id;
+        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Exam prep unit target learning language");
         Slug = ExamProfile.NormalizeKebabKey(slug, "Exam prep unit slug");
         ExamProfileKey = ExamProfile.NormalizeKebabKey(examProfileKey, "Exam profile key");
         Title = ExamProfile.RequireText(title, "Exam prep unit title", 256);
@@ -169,6 +177,7 @@ public sealed class ExamPrepUnit
     }
 
     public Guid Id { get; private set; }
+    public string TargetLearningLanguageCode { get; private set; }
     public string Slug { get; private set; }
     public string ExamProfileKey { get; private set; }
     public string Title { get; private set; }

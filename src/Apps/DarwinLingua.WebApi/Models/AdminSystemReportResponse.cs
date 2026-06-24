@@ -41,6 +41,8 @@ public sealed record AdminOperationsSystemReportResponse(
     DateTime? LastImportAtUtc);
 
 public sealed record AdminLearningPortalSystemReportResponse(
+    string TargetLearningLanguageCode,
+    string? CountryContextCode,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByType,
     IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByCefr,
     IReadOnlyList<AdminLearningPortalCountRowResponse> GrammarByCategory,
@@ -58,7 +60,14 @@ public sealed record AdminLearningPortalSystemReportResponse(
     IReadOnlyList<AdminLearningPortalCountRowResponse> ExamPrepByProfile,
     IReadOnlyList<AdminLearningPortalCountRowResponse> WritingTemplatesByCategory,
     IReadOnlyList<AdminLearningPortalCountRowResponse> WritingTemplatesByRegister,
-    IReadOnlyList<AdminLearningPortalCountRowResponse> CulturalNotesByCategory,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountryGuidanceNotesByCategory,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountsByTargetLanguage,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> CountryGuidanceNotesByCountryContext,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> TargetLanguageActivationGate,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> MissingTranslationsByHelperLanguage,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> MissingTranslationsByModule,
+    IReadOnlyList<AdminLearningPortalCountRowResponse> DuplicateSlugsByType,
+    int DuplicateSlugCount,
     int UnresolvedLinkedWordCount,
     int UnresolvedLinkedContentReferenceCount,
     int MissingTranslationCount,
@@ -120,6 +129,8 @@ public sealed record AdminLearningPortalIssueRowResponse(
     string? Target);
 
 public sealed record AdminLearningPortalIssuesResponse(
+    string TargetLearningLanguageCode,
+    string? CountryContextCode,
     string? AreaFilter,
     string? Query,
     int Take,

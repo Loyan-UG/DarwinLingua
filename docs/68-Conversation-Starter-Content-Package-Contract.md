@@ -1,5 +1,12 @@
 # Conversation Starter Content Package Contract
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
 This document defines the Phase 6 JSON contract for conversation starter packs before persistence and UI work.
 
 ## Package Shape

@@ -236,19 +236,19 @@ public sealed class ExerciseAttemptServiceTests
     {
         public List<UserExerciseAttempt> Attempts { get; } = [];
 
-        public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        public Task<IReadOnlyList<ExerciseSetListItemModel>> GetPublishedExerciseSetsAsync(ExerciseSetListFilterModel filter, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        public Task<ExerciseSetDetailModel?> GetPublishedExerciseSetBySlugAsync(string slug, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        public Task<IReadOnlyList<ExerciseListItemModel>> GetPublishedExercisesAsync(ExerciseListFilterModel filter, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
+        public Task<ExerciseDetailModel?> GetPublishedExerciseBySlugAsync(string slug, string targetLearningLanguageCode, string primaryMeaningLanguageCode, CancellationToken cancellationToken) =>
             throw new NotSupportedException();
 
-        public Task<Exercise?> GetPublishedExerciseEntityBySlugAsync(string slug, CancellationToken cancellationToken) =>
+        public Task<Exercise?> GetPublishedExerciseEntityBySlugAsync(string slug, string targetLearningLanguageCode, CancellationToken cancellationToken) =>
             Task.FromResult(exercise is not null && string.Equals(exercise.Slug, slug, StringComparison.Ordinal) ? exercise : null);
 
         public Task SaveAttemptAsync(UserExerciseAttempt attempt, CancellationToken cancellationToken)

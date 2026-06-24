@@ -568,7 +568,7 @@ Latest local Web verification:
 
 - [x] Web learner navigation groups implemented routes under Learn, Practice, Speak, Prepare, and Resources.
 - [x] Web learner navigation avoids dead routes for future Phase 7 modules.
-- [x] Phase 7 Web learner routes are covered by structural route tests for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, Cultural Notes, and Unified Search.
+- [x] Phase 7 Web learner routes are covered by structural route tests for Grammar, Expressions, Exercises, Courses, Exam Prep, Writing Templates, Country Guidance, and Unified Search.
 - [x] Phase 7 WebApi route registrations are covered by structural route tests for module list/detail endpoints, exercise attempts, unified search, progress summary/update, and recommendations.
 - [x] Phase 7 English/German localization resource keys are covered by structural tests for the release route surface.
 - [x] Shared CEFR filter conventions expose stable A1-C2 values for reusable Web filters.
@@ -674,7 +674,7 @@ Latest local Web verification:
   - Evidence: `LearningProgressRouteStructuralTests` verifies authenticated progress/recommendation endpoint authorization, course lesson viewed/progress updates, antiforgery-protected manual controls, and recent/recommendation rendering.
 - [x] Browser smoke coverage exists for `/courses`, `/courses/{slug}`, and `/courses/{courseSlug}/{lessonSlug}` after reviewed Course imports.
 - [x] Run a broader Course Web/API/admin smoke pass after C2 is fully generated/imported.
-  - 2026-06-08 evidence: Web and WebApi were restarted locally after repairing PostgreSQL startup retrofit for `ExamProfiles`, `ExamPrepUnits`, `WritingTemplates`, and `CulturalNotes`. Course Web routes, WebApi course list/detail/lesson/search routes, and service-level admin report tests passed. The anonymous admin endpoint returns 401 as expected.
+  - 2026-06-08 evidence: Web and WebApi were restarted locally after repairing PostgreSQL startup retrofit for `ExamProfiles`, `ExamPrepUnits`, `WritingTemplates`, and the then-current Country Guidance table. Course Web routes, WebApi course list/detail/lesson/search routes, and service-level admin report tests passed. The anonymous admin endpoint returns 401 as expected.
 
 ### Exam Preparation
 
@@ -708,15 +708,15 @@ Latest local Web verification:
 
 ### Life in Germany
 
-- [x] Parser coverage exists for the CulturalNote content contract shape.
+- [x] Parser coverage exists for the Country Guidance content contract shape.
 - [x] Navigation/localization shell includes Life in Germany.
-- [x] Release route hardening covers public `/life-in-germany` Web routes and internal cultural-note API registrations.
-- [x] List/detail queries return published cultural notes in stable order.
+- [x] Release route hardening covers public `/life-in-germany` Web routes and internal country-guidance API registrations.
+- [x] List/detail queries return published country guidance notes in stable order.
 - [x] Filtering covers CEFR/category/context where supported.
-- [x] WebApi list/detail endpoint coverage exists for the internal `/api/catalog/cultural-notes` API.
+- [x] WebApi list/detail endpoint coverage exists for the canonical `/api/catalog/country-guidance/{countryContextCode}` API.
 - [x] Web list/detail rendering coverage exists for `/life-in-germany`.
 - [x] Linked content rendering covers dialogues, expressions, writing templates, Talk Topics, and course lessons.
-  - Evidence: `CulturalNoteRouteStructuralTests` covers public route naming, helper-language rendering, RTL direction hooks, and linked-content surface; `CulturalNotePostgresRepositoryTests` covers PostgreSQL filtering, stable ordering, localized helper projection, detail links, and Unified Search URL projection.
+  - Evidence: `CountryGuidanceNoteRouteStructuralTests` covers public route naming, helper-language rendering, RTL direction hooks, and linked-content surface; `CountryGuidanceNotePostgresRepositoryTests` covers PostgreSQL filtering, stable ordering, localized helper projection, detail links, and Unified Search URL projection.
 
 ### Unified Search
 
@@ -753,11 +753,11 @@ Latest local Web verification:
 
 ### 2026-06-14 Web Readiness Manual Smoke
 
-- [x] Desktop in-app Chromium smoke covers `/courses`, `/courses/a1-einstieg-in-den-alltag`, `/exercises`, `/exam-prep`, `/exam-prep/profile/goethe-c1`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, `/writing-templates`, `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/search?q=Demokratie&resultType=cultural-note`, and `/recent`.
+- [x] Desktop in-app Chromium smoke covers `/courses`, `/courses/a1-einstieg-in-den-alltag`, `/exercises`, `/exam-prep`, `/exam-prep/profile/goethe-c1`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, `/writing-templates`, `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/search?q=Demokratie&resultType=country-guidance`, and `/recent`.
 - [x] Account/admin anonymous smoke covers `/Identity/Account/Login`, `/Identity/Account/Register`, `/account`, `/admin`, `/admin/reports`, and `/admin/reports/learning-portal-issues`; protected routes redirect to Login with a local `ReturnUrl`.
-- [x] Narrow 390px viewport smoke covers the long-text pages `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, and `/search?q=Demokratie&resultType=cultural-note` with no horizontal overflow.
-- [x] Local API smoke covers Persian helper projection for Life in Germany, Writing Templates, and Exam Prep detail endpoints plus Unified Search result types `cultural-note` and `writing-template`.
-- [x] Shared PostgreSQL content counts match the Web-readiness baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CulturalNotes=30` (`A1=10`, `A2=10`, `B1=10`).
+- [x] Narrow 390px viewport smoke covers the long-text pages `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, and `/search?q=Demokratie&resultType=country-guidance` with no horizontal overflow.
+- [x] Local API smoke covers Persian helper projection for Life in Germany, Writing Templates, and Exam Prep detail endpoints plus Unified Search result types `country-guidance` and `writing-template`.
+- [x] Shared PostgreSQL content counts match the Web-readiness baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CountryGuidanceNotes=30` (`A1=10`, `A2=10`, `B1=10`).
 
 ### Deferred Mobile Parity Tracking
 
@@ -847,3 +847,4 @@ Mobile is outside the active Web-readiness path. These items remain post-Web wor
 - Mobile offline catalog validation.
 - Payment-provider integration.
 - AI roleplay or AI feedback.
+

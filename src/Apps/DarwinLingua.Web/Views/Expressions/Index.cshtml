@@ -8,7 +8,7 @@
     <h1 class="headline-md">@T["Idioms, phrases, and everyday German usage"]</h1>
     <p class="body-lg">@T["Learn what common German expressions really mean, when they fit, and when they need extra care."]</p>
 
-    <form class="search-form" method="get" asp-controller="Expressions" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search expressions"]" aria-label="@T["Search expressions"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
@@ -66,7 +66,7 @@ else
             <article class="panel stack-md">
                 <span class="eyebrow">@expression.CefrLevel · @T[expression.ExpressionType] · @T[expression.Register]</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="Expressions" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
+                    <a asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
                 </h2>
                 <p>@expression.ActualMeaning</p>
                 @if (!string.IsNullOrWhiteSpace(expression.LiteralMeaning))
@@ -78,7 +78,7 @@ else
                     <p class="status-pill status-pill--warning">@T["Tone warning"]</p>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="Expressions" asp-action="Detail" asp-route-slug="@expression.Slug">@T["Open Expression"]</a>
+                    <a class="button button--secondary" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@expression.Slug">@T["Open Expression"]</a>
                 </div>
             </article>
         }

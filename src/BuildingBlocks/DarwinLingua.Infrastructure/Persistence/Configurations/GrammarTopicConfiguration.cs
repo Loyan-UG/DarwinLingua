@@ -12,6 +12,10 @@ internal sealed class GrammarTopicConfiguration : IEntityTypeConfiguration<Gramm
         builder.ToTable("GrammarTopics");
         builder.HasKey(topic => topic.Id);
         builder.Property(topic => topic.Id).ValueGeneratedNever();
+        builder.Property(topic => topic.TargetLearningLanguageCode)
+            .HasMaxLength(16)
+            .HasDefaultValue(ContentLanguageRequirements.DefaultTargetLearningLanguageCode)
+            .IsRequired();
         builder.Property(topic => topic.Slug).HasMaxLength(128).IsRequired();
         builder.Property(topic => topic.Title).HasMaxLength(256).IsRequired();
         builder.Property(topic => topic.ShortDescription).HasMaxLength(1024).IsRequired();
@@ -25,8 +29,8 @@ internal sealed class GrammarTopicConfiguration : IEntityTypeConfiguration<Gramm
         builder.Property(topic => topic.SortOrder).IsRequired();
         builder.Property(topic => topic.CreatedAtUtc).IsRequired();
         builder.Property(topic => topic.UpdatedAtUtc).IsRequired();
-        builder.HasIndex(topic => topic.Slug).IsUnique();
-        builder.HasIndex(topic => new { topic.CefrLevel, topic.GrammarCategory });
+        builder.HasIndex(topic => new { topic.TargetLearningLanguageCode, topic.Slug }).IsUnique();
+        builder.HasIndex(topic => new { topic.TargetLearningLanguageCode, topic.CefrLevel, topic.GrammarCategory });
 
         builder.HasMany(topic => topic.Topics).WithOne().HasForeignKey(link => link.GrammarTopicId).OnDelete(DeleteBehavior.Cascade);
         builder.HasMany(topic => topic.Sections).WithOne().HasForeignKey(section => section.GrammarTopicId).OnDelete(DeleteBehavior.Cascade);

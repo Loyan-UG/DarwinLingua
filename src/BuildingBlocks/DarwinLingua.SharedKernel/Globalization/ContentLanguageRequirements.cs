@@ -5,7 +5,14 @@ namespace DarwinLingua.SharedKernel.Globalization;
 /// </summary>
 public static class ContentLanguageRequirements
 {
-    public const string LearningLanguageCode = "de";
+    public const string DefaultTargetLearningLanguageCode = "de";
+
+    public const string LearningLanguageCode = DefaultTargetLearningLanguageCode;
+
+    public static readonly IReadOnlyList<string> SupportedTargetLearningLanguageCodes =
+    [
+        DefaultTargetLearningLanguageCode
+    ];
 
     public static readonly IReadOnlyList<string> RequiredMeaningLanguageCodes =
     [
@@ -39,8 +46,15 @@ public static class ContentLanguageRequirements
     public static string FormatRequiredMeaningLanguages() =>
         string.Join(", ", RequiredMeaningLanguageCodes);
 
+    public static string FormatSupportedTargetLearningLanguages() =>
+        string.Join(", ", SupportedTargetLearningLanguageCodes);
+
     public static string FormatRequiredLocalizationLanguages() =>
         string.Join(", ", RequiredLocalizationLanguageCodes);
+
+    public static bool SupportsTargetLearningLanguage(string languageCode) =>
+        !string.IsNullOrWhiteSpace(languageCode) &&
+        SupportedTargetLearningLanguageCodes.Contains(languageCode.Trim(), StringComparer.OrdinalIgnoreCase);
 
     public static IReadOnlyList<string> FindMissingMeaningLanguages(IEnumerable<string> languageCodes) =>
         FindMissingLanguages(languageCodes, RequiredMeaningLanguageCodes);

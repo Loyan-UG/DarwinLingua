@@ -3,6 +3,7 @@ using DarwinLingua.Web.Models;
 using DarwinLingua.Web.Services;
 using DarwinLingua.Web.Localization;
 using DarwinLingua.Web.Data;
+using DarwinLingua.SharedKernel.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -65,6 +66,7 @@ public sealed class SettingsController(
             .ConfigureAwait(false);
 
         await webUserPreferenceService.UpdatePreferencesAsync(
+            input.TargetLearningLanguageCode.Trim(),
             input.UiLanguageCode.Trim(),
             input.PrimaryMeaningLanguageCode.Trim(),
             secondaryMeaningLanguageCode,
@@ -105,11 +107,23 @@ public sealed class SettingsController(
         SettingsUpdateInputModel formInput = input ?? new SettingsUpdateInputModel
         {
             UiLanguageCode = profile.UiLanguageCode,
+            TargetLearningLanguageCode = profile.TargetLearningLanguageCode,
             PrimaryMeaningLanguageCode = profile.PreferredMeaningLanguage1,
             SecondaryMeaningLanguageCode = effectiveSecondaryMeaningLanguageCode,
             AllowsRudeSlangContent = profile.AllowsRudeSlangContent,
             AdultContentAccessState = profile.AdultContentAccessState
         };
+
+        IReadOnlyList<SelectListItem> targetLearningLanguageOptions = TargetLearningLanguageCatalog.All
+            .OrderBy(static language => language.SortOrder)
+            .Select(language => new SelectListItem(
+                language.IsActive
+                    ? $"{language.NativeName} ({language.EnglishName})"
+                    : $"{language.NativeName} ({language.EnglishName}) - {localizer["Planned"].Value}",
+                language.Code,
+                string.Equals(language.Code, formInput.TargetLearningLanguageCode, StringComparison.OrdinalIgnoreCase),
+                disabled: !language.IsActive))
+            .ToArray();
 
         IReadOnlyList<SelectListItem> uiLanguageOptions = languages
             .Where(static language => language.SupportsUserInterface)
@@ -147,6 +161,7 @@ public sealed class SettingsController(
 
         return new SettingsPageViewModel(
             formInput,
+            targetLearningLanguageOptions,
             uiLanguageOptions,
             meaningLanguageOptions,
             secondaryMeaningOptions,
@@ -164,6 +179,8 @@ public sealed class SettingsController(
         bool hasUiLanguage = languages.Any(language =>
             language.SupportsUserInterface &&
             string.Equals(language.Code, input.UiLanguageCode, StringComparison.OrdinalIgnoreCase));
+        bool hasTargetLearningLanguage = TargetLearningLanguageCatalog.Active.Any(language =>
+            string.Equals(language.Code, input.TargetLearningLanguageCode, StringComparison.OrdinalIgnoreCase));
         bool hasPrimaryMeaningLanguage = languages.Any(language =>
             language.SupportsMeanings &&
             string.Equals(language.Code, input.PrimaryMeaningLanguageCode, StringComparison.OrdinalIgnoreCase));
@@ -175,7 +192,7 @@ public sealed class SettingsController(
             (string.Equals(input.AdultContentAccessState, AdultContentAccessStates.NotRequested, StringComparison.OrdinalIgnoreCase) ||
              string.Equals(input.AdultContentAccessState, AdultContentAccessStates.SelfDeclaredAdult, StringComparison.OrdinalIgnoreCase));
 
-        return hasUiLanguage && hasPrimaryMeaningLanguage && hasSecondaryMeaningLanguage && hasAdultAccessState;
+        return hasTargetLearningLanguage && hasUiLanguage && hasPrimaryMeaningLanguage && hasSecondaryMeaningLanguage && hasAdultAccessState;
     }
 
     private static string? TrimToNull(string? value)

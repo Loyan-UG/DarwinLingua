@@ -9,7 +9,7 @@
             <span class="eyebrow">@T["Content"]</span>
             <h1>@T["Everyday Expressions"]</h1>
         </div>
-        <a class="button button--secondary button--compact" asp-area="" asp-controller="Expressions" asp-action="Index">@T["Open learner view"]</a>
+        <a class="button button--secondary button--compact" asp-area="" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">@T["Open learner view"]</a>
     </div>
 
     @if (Model.Expressions.Count == 0)
@@ -34,7 +34,7 @@
                     {
                         <tr>
                             <td>
-                                <a asp-area="" asp-controller="Expressions" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
+                                <a asp-area="" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
                                 <small>@expression.Slug</small>
                             </td>
                             <td>@expression.CefrLevel</td>

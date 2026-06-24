@@ -23,15 +23,23 @@ public sealed class AdminOrganizerEventManagementStructuralTests
         Assert.Contains("IsAllowedOrganizerPlan", controller, StringComparison.Ordinal);
         Assert.Contains("HasAllowedCefrLevels", controller, StringComparison.Ordinal);
         Assert.Contains("HasAllowedLanguageCodes", controller, StringComparison.Ordinal);
+        Assert.Contains("IsAllowedTargetLearningLanguage", controller, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.TryFindActive", controller, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", controller, StringComparison.Ordinal);
         Assert.Contains("AssignAdminOrganizerProfileOwnerAsync", controller, StringComparison.Ordinal);
         Assert.Contains("SendOrganizerProfileOwnershipChangedAsync", controller, StringComparison.Ordinal);
         Assert.Contains("SetAdminOrganizerClaimRequestStatusAsync", controller, StringComparison.Ordinal);
         Assert.Contains("SendOrganizerClaimDecisionAsync", controller, StringComparison.Ordinal);
 
+        Assert.Contains("TargetLearningLanguageCode", viewModel, StringComparison.Ordinal);
         Assert.Contains("[RegularExpression(\"^[a-z0-9]+(?:-[a-z0-9]+)*$\")]", viewModel, StringComparison.Ordinal);
         Assert.Contains("[EmailAddress]", viewModel, StringComparison.Ordinal);
         Assert.Contains("[Range(0, 100000)]", viewModel, StringComparison.Ordinal);
 
+        Assert.Contains("id=\"organizer-profile-scope\"", view, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.Active", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"targetLearningLanguageCode\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"TargetLearningLanguageCode\"", view, StringComparison.Ordinal);
         Assert.Contains("id=\"organizer-edit\"", view, StringComparison.Ordinal);
         Assert.Contains("id=\"organizer-owner-assign\"", view, StringComparison.Ordinal);
         Assert.Contains("id=\"organizer-claims\"", view, StringComparison.Ordinal);
@@ -74,14 +82,22 @@ public sealed class AdminOrganizerEventManagementStructuralTests
         Assert.Contains("TryParseOptionalUtc(input.StartsAtUtc", controller, StringComparison.Ordinal);
         Assert.Contains("TryParseOptionalUtc(input.EndsAtUtc", controller, StringComparison.Ordinal);
         Assert.Contains("HasAllowedSlugs(linkedPreparationPackSlugs)", controller, StringComparison.Ordinal);
+        Assert.Contains("IsAllowedTargetLearningLanguage", controller, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.TryFindActive", controller, StringComparison.Ordinal);
+        Assert.Contains("targetLearningLanguageCode", controller, StringComparison.Ordinal);
         Assert.Contains("RecurrenceRule = TrimToNull(input.RecurrenceRule)", controller, StringComparison.Ordinal);
         Assert.Contains("Capacity = input.Capacity", controller, StringComparison.Ordinal);
         Assert.Contains("SaveAdminConversationEventAsync", controller, StringComparison.Ordinal);
 
+        Assert.Contains("TargetLearningLanguageCode", viewModel, StringComparison.Ordinal);
         Assert.Contains("[RegularExpression(\"^[a-z0-9]+(?:-[a-z0-9]+)*$\")]", viewModel, StringComparison.Ordinal);
         Assert.Contains("[Range(1, 100000)]", viewModel, StringComparison.Ordinal);
         Assert.Contains("[Url]", viewModel, StringComparison.Ordinal);
 
+        Assert.Contains("id=\"conversation-event-scope\"", view, StringComparison.Ordinal);
+        Assert.Contains("TargetLearningLanguageCatalog.Active", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"targetLearningLanguageCode\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"TargetLearningLanguageCode\"", view, StringComparison.Ordinal);
         Assert.Contains("id=\"conversation-event-edit\"", view, StringComparison.Ordinal);
         Assert.Contains("id=\"conversation-events-list\"", view, StringComparison.Ordinal);
         Assert.Contains("data-confirm-submit=\"Save this public conversation event listing?\"", view, StringComparison.Ordinal);

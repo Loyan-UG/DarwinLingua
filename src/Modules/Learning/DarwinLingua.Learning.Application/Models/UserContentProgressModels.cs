@@ -1,6 +1,7 @@
 namespace DarwinLingua.Learning.Application.Models;
 
 public sealed record UserContentProgressModel(
+    string TargetLearningLanguageCode,
     string ContentOwnerType,
     string ContentOwnerSlug,
     string State,

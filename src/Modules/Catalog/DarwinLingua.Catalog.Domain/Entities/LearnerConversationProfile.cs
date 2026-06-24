@@ -14,7 +14,7 @@ public sealed class LearnerConversationProfile
         string displayName,
         string? cityRegion,
         string interactionPreference,
-        string germanLevel,
+        string learningLevel,
         string helperLanguageCodes,
         string conversationGoals,
         string? availabilityNotes,
@@ -32,7 +32,7 @@ public sealed class LearnerConversationProfile
         DisplayName = ConversationEvent.NormalizeRequiredText(displayName, nameof(displayName), 128);
         CityRegion = ConversationEvent.NormalizeOptionalText(cityRegion, 128);
         InteractionPreference = ConversationEvent.NormalizeTaxonomyKey(interactionPreference, LearnerConversationProfileTaxonomy.InteractionPreferences, "Learner interaction preference");
-        GermanLevel = ConversationEvent.NormalizeRequiredText(germanLevel, nameof(germanLevel), 8).ToUpperInvariant();
+        LearningLevel = ConversationEvent.NormalizeRequiredText(learningLevel, nameof(learningLevel), 8).ToUpperInvariant();
         HelperLanguageCodes = ConversationEvent.NormalizeRequiredText(helperLanguageCodes, nameof(helperLanguageCodes), 256);
         ConversationGoals = ConversationEvent.NormalizeRequiredText(conversationGoals, nameof(conversationGoals), 1000);
         AvailabilityNotes = ConversationEvent.NormalizeOptionalText(availabilityNotes, 1000);
@@ -52,7 +52,7 @@ public sealed class LearnerConversationProfile
 
     public string InteractionPreference { get; private set; } = string.Empty;
 
-    public string GermanLevel { get; private set; } = string.Empty;
+    public string LearningLevel { get; private set; } = string.Empty;
 
     public string HelperLanguageCodes { get; private set; } = string.Empty;
 
@@ -72,7 +72,7 @@ public sealed class LearnerConversationProfile
         string displayName,
         string? cityRegion,
         string interactionPreference,
-        string germanLevel,
+        string learningLevel,
         string helperLanguageCodes,
         string conversationGoals,
         string? availabilityNotes,
@@ -83,7 +83,7 @@ public sealed class LearnerConversationProfile
         DisplayName = ConversationEvent.NormalizeRequiredText(displayName, nameof(displayName), 128);
         CityRegion = ConversationEvent.NormalizeOptionalText(cityRegion, 128);
         InteractionPreference = ConversationEvent.NormalizeTaxonomyKey(interactionPreference, LearnerConversationProfileTaxonomy.InteractionPreferences, "Learner interaction preference");
-        GermanLevel = ConversationEvent.NormalizeRequiredText(germanLevel, nameof(germanLevel), 8).ToUpperInvariant();
+        LearningLevel = ConversationEvent.NormalizeRequiredText(learningLevel, nameof(learningLevel), 8).ToUpperInvariant();
         HelperLanguageCodes = ConversationEvent.NormalizeRequiredText(helperLanguageCodes, nameof(helperLanguageCodes), 256);
         ConversationGoals = ConversationEvent.NormalizeRequiredText(conversationGoals, nameof(conversationGoals), 1000);
         AvailabilityNotes = ConversationEvent.NormalizeOptionalText(availabilityNotes, 1000);
@@ -103,7 +103,7 @@ public sealed class LearnerConversationProfile
         DisplayName = "Deleted learner";
         CityRegion = null;
         InteractionPreference = "online";
-        GermanLevel = "A1";
+        LearningLevel = "A1";
         HelperLanguageCodes = "en";
         ConversationGoals = "Profile deleted by learner.";
         AvailabilityNotes = null;

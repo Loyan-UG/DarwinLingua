@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.OutputCaching;
 
 namespace DarwinLingua.Web.Controllers;
 
-[Route("exam-prep")]
+[Route(DarwinLingua.Web.Services.LearningRouteConventions.ExamPrep)]
 public sealed class ExamPrepController(
     IWebCatalogApiClient catalogApiClient,
     IWebLearningProfileAccessor learningProfileAccessor,
@@ -37,7 +37,8 @@ public sealed class ExamPrepController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = string.IsNullOrWhiteSpace(profile.PreferredMeaningLanguage1) ? "en" : profile.PreferredMeaningLanguage1;
-        ExamPrepUnitDetailModel? unit = await catalogApiClient.GetExamPrepUnitBySlugAsync(slug, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
+        ExamPrepUnitDetailModel? unit = await catalogApiClient.GetExamPrepUnitBySlugAsync(slug, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         return unit is null ? NotFound() : View(new ExamPrepDetailPageViewModel(unit, primaryMeaningLanguageCode));
     }
 
@@ -45,12 +46,13 @@ public sealed class ExamPrepController(
     {
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken).ConfigureAwait(false);
         string primaryMeaningLanguageCode = string.IsNullOrWhiteSpace(profile.PreferredMeaningLanguage1) ? "en" : profile.PreferredMeaningLanguage1;
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         IReadOnlyList<ExamProfileModel> profiles;
         IReadOnlyList<ExamPrepUnitListItemModel> units;
         try
         {
-            profiles = await catalogApiClient.GetExamProfilesAsync(primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
-            units = await catalogApiClient.GetExamPrepUnitsAsync(filter, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+            profiles = await catalogApiClient.GetExamProfilesAsync(targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
+            units = await catalogApiClient.GetExamPrepUnitsAsync(filter, targetLearningLanguageCode, primaryMeaningLanguageCode, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception ex) when (!cancellationToken.IsCancellationRequested && ex is HttpRequestException or OperationCanceledException)
         {

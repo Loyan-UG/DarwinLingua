@@ -81,7 +81,7 @@ public sealed class WebReadinessSeedFixtureManifestTests
                 "ownerEmail",
                 "displayName",
                 "interactionPreference",
-                "germanLevel",
+                "learningLevel",
                 "conversationGoals",
                 "visibility");
             AssertAtLeast(learnerProfile.GetProperty("helperLanguageCodes"), 1, "learner helper languages");
