@@ -6,7 +6,11 @@ Every import package must declare package-level `targetLearningLanguageCode`. Cu
 
 `targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
 
-Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language. Future English, Spanish, or French roleplay packages must be new source content for those languages, not translated copies of German scenarios.
 
 ## Purpose
 
@@ -92,7 +96,7 @@ Required fields:
 - `isPublished`: boolean
 - `sortOrder`: non-negative integer
 
-The source `title`, `description`, and `learnerGoal` fields are German-first learner content. Official packages must also include `titleTranslations`, `descriptionTranslations`, and `learnerGoalTranslations` for active learner meaning languages. Web rendering shows the German source text and the learner's selected meaning-language translation; it must not fall back to English when the learner selected another language.
+The source `title`, `description`, and `learnerGoal` fields are target-language-first learner content. Current German packages therefore use German source text. Official packages must also include `titleTranslations`, `descriptionTranslations`, and `learnerGoalTranslations` for active learner meaning languages. Web rendering shows the target-language source text and the learner's selected meaning-language translation; it must not fall back to English when the learner selected another language.
 
 Do not duplicate a full Dialogue lesson into a `RoleplayScenario`. Link to the Dialogue with `linkedDialogueSlug` when the Dialogue is source material, and author only the extra deterministic practice flow needed for the roleplay.
 

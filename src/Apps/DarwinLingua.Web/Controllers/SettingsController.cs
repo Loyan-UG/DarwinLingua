@@ -119,7 +119,7 @@ public sealed class SettingsController(
             .Select(language => new SelectListItem(
                 language.IsActive
                     ? $"{language.NativeName} ({language.EnglishName})"
-                    : $"{language.NativeName} ({language.EnglishName}) - {localizer["Planned"].Value}",
+                    : $"{language.NativeName} ({language.EnglishName}) - {(language.IsPilot ? localizer["Pilot"].Value : localizer["Planned"].Value)}",
                 language.Code,
                 string.Equals(language.Code, formInput.TargetLearningLanguageCode, StringComparison.OrdinalIgnoreCase),
                 disabled: !language.IsActive))

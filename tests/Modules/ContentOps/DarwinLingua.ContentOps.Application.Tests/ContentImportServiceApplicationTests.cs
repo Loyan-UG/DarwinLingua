@@ -125,6 +125,75 @@ public sealed class ContentImportServiceApplicationTests
         Assert.Contains("Brot", result.ImportedLemmas);
     }
 
+    [Fact]
+    public async Task ImportAsync_ShouldSucceed_WhenTargetLanguageIsPilotContentImportable()
+    {
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "english-pilot-package",
+            "English Pilot Package",
+            "Manual",
+            "en",
+            LearningLevelSystemCatalog.CefrCode,
+            null,
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [CreateValidEntry("bread", "shopping", "en", "I buy bread.")],
+            [],
+            []);
+
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("english-pilot.json"),
+            CancellationToken.None);
+
+        Assert.True(result.IsSuccess, string.Join(Environment.NewLine, result.Issues.Select(issue => issue.Message)));
+        WordEntry importedWord = Assert.Single(repository.ImportedWords);
+        Assert.Equal(LanguageCode.From("en"), importedWord.LanguageCode);
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldFail_WhenTargetLanguageIsOnlyPlanned()
+    {
+        ParsedContentPackageModel parsedPackage = new(
+            "1.0",
+            "spanish-planned-package",
+            "Spanish Planned Package",
+            "Manual",
+            "es",
+            LearningLevelSystemCatalog.CefrCode,
+            null,
+            ContentLanguageRequirements.RequiredMeaningLanguageCodes,
+            [CreateValidEntry("pan", "shopping", "es", "Compro pan.")],
+            [],
+            []);
+
+        FakeRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(
+            new StubFileReader("ignored"),
+            new StubParser(_ => parsedPackage),
+            repository);
+
+        IContentImportService service = serviceProvider.GetRequiredService<IContentImportService>();
+
+        ImportContentPackageResult result = await service.ImportAsync(
+            new ImportContentPackageRequest("spanish-planned.json"),
+            CancellationToken.None);
+
+        Assert.False(result.IsSuccess);
+        Assert.Equal("Failed", result.Status);
+        Assert.Empty(repository.ImportedWords);
+        Assert.Contains(result.Issues, issue =>
+            issue.Severity == "Error" &&
+            issue.Message.Contains("targetLearningLanguageCode 'es' is not content-importable", StringComparison.Ordinal));
+    }
+
     /// <summary>
     /// Verifies that imports reject entries missing required meaning-language coverage.
     /// </summary>
@@ -3018,7 +3087,11 @@ public sealed class ContentImportServiceApplicationTests
                 englishTexts.Select(text => $"{text} [{language}]").ToArray()))
             .ToArray();
 
-    private static ParsedContentEntryModel CreateValidEntry(string word, string topicKey)
+    private static ParsedContentEntryModel CreateValidEntry(
+        string word,
+        string topicKey,
+        string language = "de",
+        string sourceExample = "Ich kaufe Brot.")
     {
         ParsedContentMeaningModel[] meanings = ContentLanguageRequirements.RequiredMeaningLanguageCodes
             .Select(languageCode => new ParsedContentMeaningModel(languageCode, $"meaning {languageCode}"))
@@ -3030,7 +3103,7 @@ public sealed class ContentImportServiceApplicationTests
 
         return new ParsedContentEntryModel(
             word,
-            "de",
+            language,
             "A1",
             "Noun",
             [],
@@ -3042,9 +3115,9 @@ public sealed class ContentImportServiceApplicationTests
             [],
             [],
             meanings,
-            [new ParsedContentExampleModel("Ich kaufe Brot.", exampleTranslations)],
-            "der",
-            "Brote",
+            [new ParsedContentExampleModel(sourceExample, exampleTranslations)],
+            string.Equals(language, "de", StringComparison.Ordinal) ? "der" : null,
+            string.Equals(language, "de", StringComparison.Ordinal) ? "Brote" : null,
             null,
             null,
             null);
@@ -3253,6 +3326,8 @@ public sealed class ContentImportServiceApplicationTests
 
         public IReadOnlyList<GrammarTopic> ImportedGrammarTopics { get; private set; } = [];
 
+        public IReadOnlyList<WordEntry> ImportedWords { get; private set; } = [];
+
         public IReadOnlyList<WordCollection> ImportedCollections { get; private set; } = [];
 
         public IReadOnlyList<ExpressionEntry> ImportedExpressions { get; private set; } = [];
@@ -3347,6 +3422,7 @@ public sealed class ContentImportServiceApplicationTests
             IReadOnlyList<RoleplayScenario> importedRoleplayScenarios,
             CancellationToken cancellationToken)
         {
+            ImportedWords = importedWords;
             ImportedTalkTopics = importedTalkTopics;
             ImportedGrammarTopics = importedGrammarTopics;
             ImportedCollections = importedCollections;

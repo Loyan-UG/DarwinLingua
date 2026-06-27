@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.ExpressionIndexPageViewModel
 @{
     ViewData["Title"] = T["Everyday Expressions"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
@@ -8,13 +10,13 @@
     <h1 class="headline-md">@T["Idioms, phrases, and everyday German usage"]</h1>
     <p class="body-lg">@T["Learn what common German expressions really mean, when they fit, and when they need extra care."]</p>
 
-    <form class="search-form" method="get" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search expressions"]" aria-label="@T["Search expressions"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
             {
-                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
             }
         </select>
         <select class="search-input" name="expressionType" aria-label="@T["Expression type"]">
@@ -64,9 +66,9 @@ else
         @foreach (var expression in Model.Expressions)
         {
             <article class="panel stack-md">
-                <span class="eyebrow">@expression.CefrLevel · @T[expression.ExpressionType] · @T[expression.Register]</span>
+                <span class="eyebrow">@FormatCefrLevel(expression.CefrLevel) · @T[expression.ExpressionType] · @T[expression.Register]</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
+                    <a asp-controller="Expressions" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@expression.Slug">@expression.ExpressionText</a>
                 </h2>
                 <p>@expression.ActualMeaning</p>
                 @if (!string.IsNullOrWhiteSpace(expression.LiteralMeaning))
@@ -78,7 +80,7 @@ else
                     <p class="status-pill status-pill--warning">@T["Tone warning"]</p>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@expression.Slug">@T["Open Expression"]</a>
+                    <a class="button button--secondary" asp-controller="Expressions" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@expression.Slug">@T["Open Expression"]</a>
                 </div>
             </article>
         }

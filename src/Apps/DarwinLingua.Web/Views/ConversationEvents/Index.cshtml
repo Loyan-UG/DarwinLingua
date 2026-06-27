@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.ConversationEventIndexPageViewModel
 @{
     ViewData["Title"] = T["Conversation events"];
+    string FormatCefrLevel(string level, string? targetLearningLanguageCode) =>
+        LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
@@ -93,7 +95,7 @@ else
                     <div class="chip-grid">
                         @foreach (string level in conversationEvent.SupportedLearnerLevels)
                         {
-                            <span class="chip-link">@level</span>
+                            <span class="chip-link">@FormatCefrLevel(level, conversationEvent.TargetLearningLanguageCode)</span>
                         }
                         @foreach (string languageCode in conversationEvent.HelperLanguageCodes)
                         {

@@ -127,8 +127,10 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
 
         return new GrammarTopicDetailModel(
             topic.Slug,
-            ResolveLocalizedText(topic.TitleLocalizedJson, primaryLanguage, topic.Title),
-            ResolveLocalizedText(topic.ShortDescriptionLocalizedJson, primaryLanguage, topic.ShortDescription),
+            topic.Title,
+            topic.ShortDescription,
+            ResolveLocalizedText(topic.TitleLocalizedJson, primaryLanguage),
+            ResolveLocalizedText(topic.ShortDescriptionLocalizedJson, primaryLanguage),
             topic.ContentRevision,
             topic.CefrLevel.ToString(),
             topic.GrammarCategory,
@@ -150,19 +152,22 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
     private static GrammarSectionModel MapSection(GrammarSection section, LanguageCode primaryLanguage)
     {
         GrammarSectionTranslation? translation = ResolveTranslation(section.Translations, primaryLanguage);
-        IReadOnlyList<GrammarContentBlockModel> blocks = ResolveRichBlocks(section.LocalizedBlocksJson, primaryLanguage);
+        IReadOnlyList<GrammarContentBlockModel> learnerLanguageBlocks = ResolveRichBlocks(section.LocalizedBlocksJson, primaryLanguage);
         return new GrammarSectionModel(
             section.SectionKey,
-            translation?.Heading ?? section.Heading,
-            translation?.Text ?? section.Explanation,
-            blocks,
+            section.Heading,
+            section.Explanation,
+            [],
+            translation?.Heading,
+            translation?.Text,
+            learnerLanguageBlocks,
             primaryLanguage.Value,
-            blocks.Count > 0
+            learnerLanguageBlocks.Count > 0
                 ? !HasLocalizedBlocksForLanguage(section.LocalizedBlocksJson, primaryLanguage)
                 : translation is null || translation.LanguageCode != primaryLanguage);
     }
 
-    private static string ResolveLocalizedText(string? localizedJson, LanguageCode primaryLanguage, string baseText)
+    private static string? ResolveLocalizedText(string? localizedJson, LanguageCode primaryLanguage)
     {
         Dictionary<string, string> values = DeserializeStringDictionary(localizedJson);
         if (values.TryGetValue(primaryLanguage.Value, out string? primary) && !string.IsNullOrWhiteSpace(primary))
@@ -175,9 +180,7 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
             return english;
         }
 
-        return string.IsNullOrWhiteSpace(baseText)
-            ? values.Values.FirstOrDefault(value => !string.IsNullOrWhiteSpace(value)) ?? string.Empty
-            : baseText;
+        return values.Values.FirstOrDefault(value => !string.IsNullOrWhiteSpace(value));
     }
 
     private static IReadOnlyList<GrammarContentBlockModel> ResolveRichBlocks(string? localizedBlocksJson, LanguageCode primaryLanguage)
@@ -342,6 +345,7 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
         GrammarExampleTranslation? translation = ResolveTranslation(example.Translations, primaryLanguage);
         return new GrammarExampleModel(
             example.GermanText,
+            example.GermanText,
             example.Note,
             translation?.Text,
             primaryLanguage.Value,
@@ -354,7 +358,8 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
         return new GrammarCommonMistakeModel(
             mistake.WrongText,
             mistake.CorrectedText,
-            translation?.Text ?? mistake.Explanation,
+            mistake.Explanation,
+            translation?.Text,
             primaryLanguage.Value,
             translation is null || translation.LanguageCode != primaryLanguage);
     }
@@ -367,7 +372,8 @@ internal sealed class GrammarTopicRepository(IDbContextFactory<DarwinLinguaDbCon
     {
         TTranslation? translation = ResolveTranslation(translations, primaryLanguage);
         return new GrammarTextItemModel(
-            translation?.Text ?? baseText,
+            baseText,
+            translation?.Text,
             primaryLanguage.Value,
             translation is null || translation.LanguageCode != primaryLanguage);
     }

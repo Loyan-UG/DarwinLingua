@@ -27,11 +27,17 @@ public sealed class GrammarRouteStructuralTests
         string detailSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Grammar", "Detail.cshtml"));
         string indexSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Grammar", "Index.cshtml"));
 
-        Assert.Contains("GetGrammarTopicBySlugAsync(normalizedSlug, profile.PreferredMeaningLanguage1", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("GetGrammarTopicBySlugAsync(normalizedSlug, targetLearningLanguageCode, profile.PreferredMeaningLanguage1", controllerSource, StringComparison.Ordinal);
+        Assert.Contains("LearnerLanguageTitle", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LearnerLanguageShortDescription", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LearnerLanguageHeading", detailSource, StringComparison.Ordinal);
+        Assert.Contains("LearnerLanguageText", detailSource, StringComparison.Ordinal);
         Assert.Contains("dir=\"@primaryMeaningDirection\"", detailSource, StringComparison.Ordinal);
         Assert.Contains("grammarSection.Blocks", detailSource, StringComparison.Ordinal);
+        Assert.Contains("grammarSection.LearnerLanguageBlocks", detailSource, StringComparison.Ordinal);
         Assert.Contains("example.Translation", detailSource, StringComparison.Ordinal);
         Assert.Contains("mistake.Explanation", detailSource, StringComparison.Ordinal);
+        Assert.Contains("mistake.LearnerLanguageExplanation", detailSource, StringComparison.Ordinal);
 
         Assert.Contains("Model.GrammarTopic.LinkedWords.Count > 0", detailSource, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"Words\"", detailSource, StringComparison.Ordinal);

@@ -9,10 +9,8 @@ public static class ContentLanguageRequirements
 
     public const string LearningLanguageCode = DefaultTargetLearningLanguageCode;
 
-    public static readonly IReadOnlyList<string> SupportedTargetLearningLanguageCodes =
-    [
-        DefaultTargetLearningLanguageCode
-    ];
+    public static IReadOnlyList<string> SupportedTargetLearningLanguageCodes =>
+        TargetLearningLanguageCatalog.ContentImportable.Select(static language => language.Code).ToArray();
 
     public static readonly IReadOnlyList<string> RequiredMeaningLanguageCodes =
     [

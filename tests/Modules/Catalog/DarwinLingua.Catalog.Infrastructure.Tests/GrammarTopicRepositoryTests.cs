@@ -141,6 +141,12 @@ public sealed class GrammarTopicRepositoryTests
                     PublicationStatus.Active,
                     identityTopicId,
                     nowUtc);
+                grammarTopic.SetRichContentMetadata(
+                    1,
+                    """{"fa":"ضمیرهای شخصی"}""",
+                    """{"fa":"از ich، du، er و sie در جمله‌های کوتاه استفاده کن."}""",
+                    null,
+                    nowUtc);
                 GrammarSection section = grammarTopic.Sections.Single();
                 section.AddTranslation(Guid.NewGuid(), LanguageCode.From("fa"), "قاعده", "از ضمیرهای شخصی برای گفتن اینکه چه کسی کاری را انجام می‌دهد استفاده کن.", nowUtc);
                 GrammarExample example = grammarTopic.AddExample(Guid.NewGuid(), 1, "Ich lerne Deutsch.", "Keep the verb second.", nowUtc);
@@ -169,13 +175,23 @@ public sealed class GrammarTopicRepositoryTests
                 CancellationToken.None);
 
             Assert.NotNull(detail);
-            Assert.Equal("قاعده", Assert.Single(detail.Sections).Heading);
-            Assert.Equal("از ضمیرهای شخصی برای گفتن اینکه چه کسی کاری را انجام می‌دهد استفاده کن.", Assert.Single(detail.Sections).Explanation);
-            Assert.False(Assert.Single(detail.Sections).UsedFallback);
+            Assert.Equal("Personal pronouns", detail.Title);
+            Assert.Equal("Use ich, du, er and sie in short sentences.", detail.ShortDescription);
+            Assert.Equal("ضمیرهای شخصی", detail.LearnerLanguageTitle);
+            Assert.Equal("از ich، du، er و sie در جمله‌های کوتاه استفاده کن.", detail.LearnerLanguageShortDescription);
+            GrammarSectionModel detailSection = Assert.Single(detail.Sections);
+            Assert.Equal("Rule", detailSection.Heading);
+            Assert.Equal("Use the pattern in short examples.", detailSection.Explanation);
+            Assert.Equal("قاعده", detailSection.LearnerLanguageHeading);
+            Assert.Equal("از ضمیرهای شخصی برای گفتن اینکه چه کسی کاری را انجام می‌دهد استفاده کن.", detailSection.LearnerLanguageExplanation);
+            Assert.False(detailSection.UsedFallback);
             Assert.Equal("من آلمانی یاد می‌گیرم.", Assert.Single(detail.Examples).Translation);
-            Assert.Equal("ضمیر همراه با فعل یک جمله ساده می‌سازد.", Assert.Single(detail.RuleSummaries).Text);
-            Assert.Equal("فعل صرف‌شده را در جایگاه دوم نگه دار.", Assert.Single(detail.CommonMistakes).Explanation);
-            Assert.Equal("در پرسش‌ها فعل می‌تواند اول بیاید.", Assert.Single(detail.ExceptionNotes).Text);
+            Assert.Equal("Pronoun plus verb creates a simple sentence.", Assert.Single(detail.RuleSummaries).Text);
+            Assert.Equal("ضمیر همراه با فعل یک جمله ساده می‌سازد.", Assert.Single(detail.RuleSummaries).LearnerLanguageText);
+            Assert.Equal("Keep the finite verb in position two.", Assert.Single(detail.CommonMistakes).Explanation);
+            Assert.Equal("فعل صرف‌شده را در جایگاه دوم نگه دار.", Assert.Single(detail.CommonMistakes).LearnerLanguageExplanation);
+            Assert.Equal("In questions, the verb can come first.", Assert.Single(detail.ExceptionNotes).Text);
+            Assert.Equal("در پرسش‌ها فعل می‌تواند اول بیاید.", Assert.Single(detail.ExceptionNotes).LearnerLanguageText);
             Assert.Contains(detail.LinkedWords, word => word.Lemma == "ich" && word.WordSlug == "ich");
             Assert.Contains(detail.LinkedWords, word => word.Lemma == "du" && word.WordSlug is null);
             Assert.Equal(["a1-greeting-dialogue"], detail.LinkedDialogueSlugs);

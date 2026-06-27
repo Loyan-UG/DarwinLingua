@@ -1,4 +1,4 @@
-# Life in Germany Content Plan
+# Country Guidance / Life in Germany Content Plan
 
 Status: started 2026-06-13 after renaming the former public Cultural Notes feature.
 
@@ -32,14 +32,30 @@ Do not include:
 
 ## Current Technical Decision
 
-The public feature name is `Life in Germany`.
+The stable platform feature is `Country Guidance`.
 
-The existing internal backing store and API remain `CulturalNotes` / `/api/catalog/cultural-notes` for now. This avoids a large table/entity migration while still allowing the feature scope to expand. The public learner route must not keep the old cultural-notes URL during active development, so route tests can catch missed rename work quickly.
+`Life in Germany` is the learner-facing display label only for the current German/Germany stream:
 
-Public route:
+- `targetLearningLanguageCode = de`
+- `countryContextCode = DE`
 
-- Canonical Web route: `/life-in-germany`
-- No legacy public Web route for `/cultural-notes`
+The implementation direction is no-debt and pre-customer: old public `Cultural Notes` naming must not be kept as compatibility behavior when it hides missing target-language or country-context scope.
+
+Current canonical route model:
+
+- Web route for German/Germany: `/learn/de/country-guidance/de`
+- API route: `/api/catalog/country-guidance/{countryContextCode}` with explicit target-language context
+- Package root: `content/learning-portal/country-guidance/packages`
+- JSON root array: `countryGuidanceNotes`
+- Internal model/table: `CountryGuidanceNote` / `CountryGuidanceNotes`
+
+Old `CulturalNote`, `CulturalNotes`, and `cultural-notes` wording is historical only and should remain only in old migrations, explicit rename SQL, or evidence notes.
+
+Future examples:
+
+- German can add Austria and Switzerland as `de|AT` and `de|CH`.
+- English can add United States, United Kingdom, and Australia as `en|US`, `en|GB`, and `en|AU`.
+- Switzerland can later appear under German, French, and Italian as separate original source-content streams, not as one shared note translated into multiple target languages.
 
 ## Categories
 

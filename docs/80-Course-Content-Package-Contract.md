@@ -6,7 +6,11 @@ Every import package must declare package-level `targetLearningLanguageCode`. Cu
 
 `targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
 
-Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language. Future English, Spanish, or French course packages must be new source content and sequencing for those languages, not translated copies of German courses.
 
 ## Purpose
 
@@ -91,9 +95,9 @@ Activity blocks are the primary future source for the lesson reading flow. They 
 Each activity block contains:
 
 - `kind`: one of `read`, `listen`, `grammar`, `expression`, `practice`, `roleplay`, `write`, `country-guidance`, `exam-prep`, `review`.
-- `title`: German canonical activity title.
+- `title`: target-language canonical activity title.
 - `titleTranslations`: helper translations for active learner languages.
-- `instruction`: German canonical instruction that explains the learner action.
+- `instruction`: target-language canonical instruction that explains the learner action.
 - `instructionTranslations`: helper translations for active learner languages.
 - `targetType`: one of `course-lesson`, `grammar-topic`, `expression`, `dialogue`, `talk-topic`, `exercise-set`, `exercise`, `roleplay`, `writing-template`, `country-guidance`, `exam-prep-unit`, or `none`.
 - `targetSlug`: slug of the target content when `targetType` is not `none`.
@@ -143,7 +147,7 @@ Example:
 Educational rules:
 
 - Activity blocks build the learning route; they must not copy full target content.
-- German source fields remain canonical. Translations are learner helper text, not replacements.
+- Target-language source fields remain canonical. Translations are learner helper text, not replacements.
 - Activity titles should describe the action clearly, without repeating metadata that already exists elsewhere, such as CEFR level or module number.
 - A lesson activity sequence should feel like a guided book page: read a short source, inspect language, listen or compare where relevant, practise, write or roleplay, and review.
 - The first activity should orient the learner. The last required activity should normally be `review`, unless the lesson itself is a short review lesson.
@@ -155,11 +159,11 @@ Compatibility rules:
 - Legacy slug lists remain available for fallback display, admin diagnostics, search indexing, and migration checks until the migration is complete.
 - Legacy lessons without activity blocks remain learner-usable through the old linked-content fallback until controlled backfill is complete.
 
-## German-First Localization Rule
+## Target-Language Source Localization Rule
 
-Course source fields are German-first and canonical. `title`, `description`, `shortDescription`, `narrative`, `learningGoals`, `reviewSummary`, and `homeworkTask` must be German source text.
+Course source fields are target-language-first and canonical. `title`, `description`, `shortDescription`, `narrative`, `learningGoals`, `reviewSummary`, and `homeworkTask` must be source text in the package `targetLearningLanguageCode`. Current German packages therefore use German source text.
 
-Learner-language fields are helper translations only. They must not replace the German source in Web/API responses.
+Learner-language fields are helper translations only. They must not replace the target-language source in Web/API responses.
 
 Translation arrays use:
 
@@ -217,9 +221,9 @@ Small Course batches may therefore import one reviewed module without deleting u
 
 Course API endpoints accept optional `primaryMeaningLanguageCode`.
 
-Responses include German source fields plus localized helper fields when available. Web rendering shows German first, then the learner helper text according to the user's selected content language.
+Responses include target-language source fields plus localized helper fields when available. Web rendering shows the target-language source first, then the learner helper text according to the user's selected content language.
 
-Course APIs expose ordered activity cards with German source text, learner helper translations, and target metadata.
+Course APIs expose ordered activity cards with target-language source text, learner helper translations, and target metadata.
 
 The Web lesson page renders those cards as the primary lesson flow when `activityBlocks` is non-empty. Activity links are resolved to learner-facing routes and raw target slugs are not shown in the main flow. Lessons without activity blocks keep the legacy linked-content fallback.
 

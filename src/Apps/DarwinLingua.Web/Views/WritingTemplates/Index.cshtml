@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.WritingTemplateIndexPageViewModel
 @{
     ViewData["Title"] = T["Writing Templates"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
     string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
         ? "ltr"
@@ -11,13 +13,13 @@
     <span class="eyebrow">@T["Resources"]</span>
     <h1 class="headline-md">@T["Writing Templates"]</h1>
     <p class="body-lg">@T["Practical German message and exam-writing templates with variables, examples, and linked learning content."]</p>
-    <form class="search-form" method="get" asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search writing templates"]" aria-label="@T["Search writing templates"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
             {
-                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
             }
         </select>
         <select class="search-input" name="category" aria-label="@T["Category"]">
@@ -50,8 +52,8 @@ else
             var primaryTemplate = template.Template;
             var secondaryTemplate = template.SecondaryLanguageTemplate;
             <article class="panel stack-md">
-                <span class="eyebrow">@primaryTemplate.CefrLevel · @T[primaryTemplate.Category] · @T[primaryTemplate.Register == "workplace" ? "Workplace" : primaryTemplate.Register]</span>
-                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@primaryTemplate.Title</a></h2>
+                <span class="eyebrow">@FormatCefrLevel(primaryTemplate.CefrLevel) · @T[primaryTemplate.Category] · @T[primaryTemplate.Register == "workplace" ? "Workplace" : primaryTemplate.Register]</span>
+                <h2 class="headline-sm"><a asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@primaryTemplate.Title</a></h2>
                 <p>@primaryTemplate.ShortDescription</p>
                 @if (!string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageTitle) ||
                     !string.IsNullOrWhiteSpace(primaryTemplate.LearnerLanguageShortDescription) ||
@@ -86,7 +88,7 @@ else
                 {
                     <p class="meaning-line text-muted" dir="@secondaryMeaningDirection"><span class="meaning-block__label">@Model.SecondaryMeaningLanguageCode</span> @secondaryTemplate.LearnerLanguageSituation</p>
                 }
-                <a class="button button--secondary" asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@T["Open writing template"]</a>
+                <a class="button button--secondary" asp-controller="WritingTemplates" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@primaryTemplate.Slug">@T["Open writing template"]</a>
             </article>
         }
     </section>

@@ -2028,7 +2028,7 @@ internal sealed class ContentImportService : IContentImportService
             Guid.NewGuid(),
             Guid.NewGuid(),
             NormalizeText(entry.Word),
-            LanguageCode.From("de"),
+            targetLearningLanguage,
             cefrLevel,
             primaryLexicalForm!.PartOfSpeech,
             PublicationStatus.Active,
@@ -3265,7 +3265,7 @@ internal sealed class ContentImportService : IContentImportService
         }
         else if (!ContentLanguageRequirements.SupportsTargetLearningLanguage(normalizedTargetLearningLanguage))
         {
-            issues.Add(new ImportIssueModel(null, "Error", $"Package targetLearningLanguageCode '{normalizedTargetLearningLanguage}' is not active."));
+            issues.Add(new ImportIssueModel(null, "Error", $"Package targetLearningLanguageCode '{normalizedTargetLearningLanguage}' is not content-importable."));
         }
 
         string? normalizedLevelSystemCode = NormalizeOptionalText(parsedPackage.LevelSystemCode)?.ToLowerInvariant();

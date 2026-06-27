@@ -1,6 +1,7 @@
 using DarwinLingua.Catalog.Application.Abstractions;
 using DarwinLingua.Catalog.Application.DependencyInjection;
 using DarwinLingua.Catalog.Application.Models;
+using DarwinLingua.Catalog.Domain.Entities;
 using DarwinLingua.Catalog.Infrastructure.DependencyInjection;
 using DarwinLingua.ContentOps.Application.Abstractions;
 using DarwinLingua.ContentOps.Application.DependencyInjection;
@@ -1608,6 +1609,91 @@ public sealed class ContentImportServiceTests
             if (File.Exists(moduleSlicePackagePath))
             {
                 File.Delete(moduleSlicePackagePath);
+            }
+
+            await DropPostgresDatabaseAsync(databaseName, CancellationToken.None);
+        }
+    }
+
+    [Fact]
+    public async Task ImportAsync_ShouldPreserveCoursePathTargetLearningLanguageWhenUpdatingNonGermanCourse()
+    {
+        string databaseName = $"darwin_course_target_{Guid.NewGuid():N}"[..47];
+        string connectionString = BuildPostgresConnectionString(databaseName);
+        string firstPackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-course-target-first-{Guid.NewGuid():N}.json");
+        string updatePackagePath = Path.Combine(Path.GetTempPath(), $"darwin-lingua-course-target-update-{Guid.NewGuid():N}.json");
+        ServiceProvider? serviceProvider = null;
+
+        await CreatePostgresDatabaseAsync(databaseName, CancellationToken.None);
+
+        try
+        {
+            await File.WriteAllTextAsync(
+                firstPackagePath,
+                CreateCourseSlicePackageJson(
+                    "course-target-language-first",
+                    includeSecondModule: false,
+                    firstModuleTitle: "First contacts",
+                    firstLessonTitle: "Say hello",
+                    secondModuleTitle: "Everyday life",
+                    secondLessonTitle: "Name a time",
+                    targetLearningLanguageCode: "en"));
+            await File.WriteAllTextAsync(
+                updatePackagePath,
+                CreateCourseSlicePackageJson(
+                    "course-target-language-update",
+                    includeSecondModule: false,
+                    firstModuleTitle: "First contacts updated",
+                    firstLessonTitle: "Say hello clearly",
+                    secondModuleTitle: "Everyday life",
+                    secondLessonTitle: "Name a time",
+                    targetLearningLanguageCode: "en"));
+
+            serviceProvider = BuildPostgresServiceProvider(connectionString);
+
+            IDatabaseInitializer databaseInitializer = serviceProvider.GetRequiredService<IDatabaseInitializer>();
+            await databaseInitializer.InitializeAsync(CancellationToken.None);
+
+            IContentImportService contentImportService = serviceProvider.GetRequiredService<IContentImportService>();
+            ImportContentPackageResult firstImportResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(firstPackagePath), CancellationToken.None);
+            Assert.True(firstImportResult.IsSuccess, string.Join(Environment.NewLine, firstImportResult.Issues.Select(issue => issue.Message)));
+
+            ImportContentPackageResult updateImportResult = await contentImportService
+                .ImportAsync(new ImportContentPackageRequest(updatePackagePath), CancellationToken.None);
+            Assert.True(updateImportResult.IsSuccess, string.Join(Environment.NewLine, updateImportResult.Issues.Select(issue => issue.Message)));
+
+            await using DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext dbContext = serviceProvider
+                .GetRequiredService<IDbContextFactory<DarwinLingua.Infrastructure.Persistence.DarwinLinguaDbContext>>()
+                .CreateDbContext();
+
+            CoursePath coursePath = await dbContext.CoursePaths.SingleAsync(course => course.Slug == "a1-slice-safe-course");
+            CourseModule courseModule = await dbContext.CourseModules.SingleAsync(module => module.Slug == "a1-slice-module-one");
+            CourseLesson courseLesson = await dbContext.CourseLessons.SingleAsync(lesson => lesson.Slug == "a1-slice-lesson-one");
+
+            Assert.Equal("en", coursePath.TargetLearningLanguageCode);
+            Assert.Equal("en", courseModule.TargetLearningLanguageCode);
+            Assert.Equal("en", courseLesson.TargetLearningLanguageCode);
+            Assert.Equal(coursePath.Id, courseModule.CoursePathId);
+            Assert.Equal("First contacts updated", courseModule.Title);
+            Assert.Equal("Say hello clearly", courseLesson.Title);
+            Assert.Equal(0, await dbContext.CoursePaths.CountAsync(course => course.Slug == "a1-slice-safe-course" && course.TargetLearningLanguageCode == "de"));
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            if (File.Exists(firstPackagePath))
+            {
+                File.Delete(firstPackagePath);
+            }
+
+            if (File.Exists(updatePackagePath))
+            {
+                File.Delete(updatePackagePath);
             }
 
             await DropPostgresDatabaseAsync(databaseName, CancellationToken.None);
@@ -4765,7 +4851,8 @@ public sealed class ContentImportServiceTests
         string firstModuleTitle,
         string firstLessonTitle,
         string secondModuleTitle,
-        string secondLessonTitle)
+        string secondLessonTitle,
+        string targetLearningLanguageCode = "de")
     {
         string secondModuleJson = includeSecondModule
             ? $$"""
@@ -4815,7 +4902,7 @@ public sealed class ContentImportServiceTests
               "packageVersion": "1.0",
               "packageId": "{{packageId}}",
               "packageName": "Course Module Slice Test",
-              "targetLearningLanguageCode": "de",
+              "targetLearningLanguageCode": "{{targetLearningLanguageCode}}",
               "levelSystemCode": "cefr",
               "source": "Automated test fixture",
               "defaultMeaningLanguages": ["en"],

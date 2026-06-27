@@ -15,7 +15,8 @@ public sealed class CountryGuidanceNoteRouteStructuralTests
         Assert.DoesNotContain("\"/api/catalog/cultural-notes\"", programSource, StringComparison.Ordinal);
         Assert.Contains("ICountryGuidanceNoteQueryService", programSource, StringComparison.Ordinal);
         Assert.Contains("CountryGuidanceNoteListFilterModel(cefrLevel, category, context, q)", programSource, StringComparison.Ordinal);
-        Assert.Contains("ResolveCountryContextCode(countryContextCode, targetLearningLanguageCode)", programSource, StringComparison.Ordinal);
+        Assert.Contains("string resolvedTargetLearningLanguageCode = ResolveTargetLearningLanguageCode(targetLearningLanguageCode);", programSource, StringComparison.Ordinal);
+        Assert.Contains("string resolvedCountryContextCode = ResolveCountryContextCode(countryContextCode, resolvedTargetLearningLanguageCode);", programSource, StringComparison.Ordinal);
         Assert.Contains("primaryMeaningLanguageCode", programSource, StringComparison.Ordinal);
         Assert.Contains("\"country-guidance\"", File.ReadAllText(ResolveRepositoryPath("src", "Modules", "Catalog", "DarwinLingua.Catalog.Application", "Services", "UnifiedLearningSearchService.cs")), StringComparison.Ordinal);
     }
@@ -71,6 +72,7 @@ public sealed class CountryGuidanceNoteRouteStructuralTests
         Assert.False(CountryContextCatalog.TryFindActive("at", "de", out _));
         Assert.False(CountryContextCatalog.TryFindActive("us", "en", out _));
         Assert.Equal("DE", CountryContextCatalog.ResolveDefaultActiveCode("de"));
+        Assert.Throws<DarwinLingua.SharedKernel.Exceptions.DomainRuleException>(() => CountryContextCatalog.ResolveDefaultActiveCode("en"));
     }
 
     [Fact]

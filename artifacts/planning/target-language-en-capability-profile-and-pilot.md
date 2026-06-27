@@ -1,10 +1,17 @@
 # English Target-Language Capability Profile And Pilot Plan
 
-Status: planned, not active.
+Status: pilot, not public active.
 
 Created: 2026-06-24.
 
-Purpose: define the first non-German target-language pilot before any English learning-content package is generated.
+Purpose: define and track the first non-German target-language pilot.
+
+Current implementation status:
+
+- The English A1 pilot package has been generated, expanded once, and imported as controlled pilot/staging data.
+- Package: `content/learning-portal/english/pilot/packages/english-a1-platform-pilot-01-v1.json`
+- Evidence: `artifacts/validation/english-a1-pilot-import-20260624.md`; `artifacts/validation/english-a1-expansion-02-import-20260624.md`
+- English remains non-public and must not appear in normal learner navigation unless a future activation goal explicitly approves it.
 
 ## Decision
 
@@ -17,7 +24,7 @@ Reasons:
 - It exercises country-context branching early because English has several major country contexts.
 - It validates that Darwin Lingua is a multilingual language-learning platform, not a German-only portal.
 
-English remains inactive until this profile is reviewed and the first pilot package is explicitly approved.
+English remains unavailable in normal public learner routes until the pilot is smoke-tested, reviewed, backed up, and explicitly activated. It may be used for reviewed pilot imports and internal diagnostics before public activation.
 
 ## Target-Language Scope
 
@@ -38,9 +45,10 @@ Initial country contexts for English:
 
 Country Guidance content must be written separately per country context. A United States note, a United Kingdom note, and an Australia note are not translations of the same source note. They may cover similar topics, but examples, institutions, spelling conventions, and everyday systems must match the selected country context.
 
-First pilot recommendation:
+First pilot country-context decision:
 
-- Start with `en|US` for Country Guidance only after the first English language-learning pilot proves routing, import, search, and helper-language projection.
+- `en|US` is the first English Country Guidance stream for the pilot scope.
+- Generate `en|US` guidance only after the first English language-learning pilot proves routing, import, search, and helper-language projection.
 - Keep `en|GB` and `en|AU` planned but inactive until a country-context pilot list is reviewed.
 
 ## Level System
@@ -78,11 +86,11 @@ The pilot must not simply mirror the German A1 syllabus. It should share the sam
 The first English pilot should be small enough to inspect manually but broad enough to prove the platform:
 
 - Course path: one A1 path
-- Course lessons: 10 planned candidates, first package should include 5
-- Grammar topics: 5 planned candidates, first package may include 2-3
-- Expressions: 20 planned candidates, first package may include 10
-- Exercises: 8 planned candidates, first package may include 4
-- Writing templates: 5 planned candidates, first package may include 2
+- Course lessons: 10 planned candidates, current pilot includes all 10
+- Grammar topics: 5 planned candidates, current pilot includes all 5
+- Expressions: 20 planned candidates, current pilot includes all 20
+- Exercises: 8 planned candidates, current pilot includes all 8
+- Writing templates: 5 planned candidates, current pilot includes all 5
 - Dialogue/talk-topic/roleplay: optional in the first package unless audio/dialogue UX is explicitly part of the pilot
 - Country Guidance: planned only; do not generate until English learning pilot is green
 
@@ -101,7 +109,7 @@ Course path slug: `en-a1-everyday-start`
 9. `en-a1-build-a-short-introduction` - Build a short introduction
 10. `en-a1-first-contact-review` - First contact review
 
-First package candidate: lessons 1-5 only.
+Current pilot coverage: lessons 1-10 are imported as a non-public staging slice.
 
 ## Grammar Candidate List
 
@@ -157,7 +165,7 @@ Slug namespace note: English slugs must be target-language scoped in storage and
 
 ## Validation Gates Before Activation
 
-- English target language remains inactive until routes, API, search, progress, admin reports, import, and backup all pass with English pilot data.
+- English target language remains non-public until routes, API, search, progress, admin reports, import, and backup all pass with English pilot data.
 - Inactive `/learn/en/...` must keep returning 404 until activation.
 - Admin diagnostics must show English content counts only after import and must not mix them with German counts.
 - Unified Search must return English URLs under `/learn/en/...` for English content and German URLs under `/learn/de/...` for German content.
@@ -165,9 +173,19 @@ Slug namespace note: English slugs must be target-language scoped in storage and
 - Same slug in two target languages must be allowed only when target language disambiguates the namespace.
 - Any Country Guidance pilot must include country context and must not reuse another country stream as source.
 
+Current post-import evidence:
+
+- English pilot import completed with zero warnings.
+- PostgreSQL counts for `en`: `CoursePaths=1`, `CourseModules=1`, `CourseLessons=10`, `GrammarTopics=5`, `ExpressionEntries=20`, `Exercises=8`, `ExerciseSets=1`, `WritingTemplates=5`.
+- Public smoke keeps English inactive: `/learn/en/courses` returns 404 while `/learn/de/courses` returns 200.
+- Admin report, issue drilldown, preview, and search smoke can inspect English pilot content while public learner routes keep English inactive.
+- Restore-ready checkpoint backup for the expanded pilot exists:
+  `X:\Projects\DarwinLingua.Backup\20260624-211627-english-a1-expansion-02-branch-checkpoint-pre-activation`.
+- Phase 9 decision: English is explicitly kept as pilot/non-public after the expanded checkpoint. Public activation and deeper English generation are future product-expansion decisions, not implicit follow-ups from this import.
+
 ## Explicit Non-Goals
 
-- Do not generate English packages in this phase.
-- Do not activate English in `TargetLearningLanguageCatalog` yet.
+- Do not generate broad English packages in this phase.
+- Do not make English public active in `TargetLearningLanguageCatalog` yet.
 - Do not translate existing German source content into English as English learning content.
 - Do not change MAUI/mobile UX.

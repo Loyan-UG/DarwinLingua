@@ -2,9 +2,21 @@
 
 Talk Topics are reading-based conversation materials for friendly learner groups, language cafes, online practice groups, and informal speaking sessions.
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language and conversation culture. Future English, Spanish, or French Talk Topic packages must be new source content for those languages, not translated copies of German topics.
+
 ## JSON Shape
 
-Packages may include a top-level `talkTopics` array. Each item stores metadata, one German article body, German-only warm-up questions, German-only discussion questions, vocabulary references, speaking goals, sensitivity metadata, sort order, and publication state.
+Packages may include a top-level `talkTopics` array. Each item stores metadata, one target-language article body, target-language warm-up questions, target-language discussion questions, vocabulary references, speaking goals, sensitivity metadata, sort order, and publication state.
 
 Required fields:
 
@@ -49,16 +61,16 @@ The normalized German `article.baseText` length is measured in characters, not w
 - `C1`: target 3000 characters, acceptable range 2900-3100
 - `C2`: target 3500 characters, acceptable range 3400-3600
 
-Article translations are not stored for Talk Topics. The main article is German-only for now.
+Article translations are not stored for Talk Topics. The main article is target-language source content; current German packages therefore store the article in German.
 
 ## Questions
 
-Warm-up questions are first-class content and must be German-only. They are for speaking before reading, not comprehension.
+Warm-up questions are first-class target-language source content. They are for speaking before reading, not comprehension.
 
 - `A1`, `A2`, and `B1`: at least 3 warm-up questions.
 - `B2`, `C1`, and `C2`: at least 4 warm-up questions.
 
-Discussion questions are required and must be German-only. Allowed question types are:
+Discussion questions are required target-language source content. Allowed question types are:
 
 - `opinion`
 - `imagination`

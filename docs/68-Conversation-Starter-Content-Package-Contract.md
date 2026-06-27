@@ -6,7 +6,12 @@ Every import package must declare package-level `targetLearningLanguageCode`. Cu
 
 `targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
 
-Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language. Future English, Spanish, or French conversation-starter packages must be new source content for those languages, not translated copies of German packs.
+
 This document defines the Phase 6 JSON contract for conversation starter packs before persistence and UI work.
 
 ## Package Shape

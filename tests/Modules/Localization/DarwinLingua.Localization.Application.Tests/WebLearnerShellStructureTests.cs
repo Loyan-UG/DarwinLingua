@@ -55,17 +55,44 @@ public sealed class WebLearnerShellStructureTests
         Assert.Contains("_TargetLearningLanguageSwitcher", mobileNavSource, StringComparison.Ordinal);
         Assert.Contains("TargetLearningLanguageCatalog.All", targetLanguageSwitcherSource, StringComparison.Ordinal);
         Assert.Contains("target-language-switcher__option--disabled", targetLanguageSwitcherSource, StringComparison.Ordinal);
+        Assert.Contains("language.IsPilot ? T[\"Pilot\"] : T[\"Planned\"]", targetLanguageSwitcherSource, StringComparison.Ordinal);
         Assert.Contains("Target learning language is separate from UI language and helper translations.", targetLanguageSwitcherSource, StringComparison.Ordinal);
         Assert.Contains("ConversationEvents", layoutSource, StringComparison.Ordinal);
         Assert.Contains("OrganizerProfiles", layoutSource, StringComparison.Ordinal);
         Assert.Contains("@T[\"Learn\"]", mobileNavSource, StringComparison.Ordinal);
         Assert.Contains("@T[\"Prepare\"]", mobileNavSource, StringComparison.Ordinal);
-        Assert.Contains("LearningLevelSystemCatalog.GermanCefrLevels", filterConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("LearningLevelSystemCatalog.GetCefrLevelsForTargetLanguage", filterConventionsSource, StringComparison.Ordinal);
         Assert.Contains("CefrLevelDefinitions", filterConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("GetCefrLevelDefinitions", filterConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("FormatCefrLevelOption", filterConventionsSource, StringComparison.Ordinal);
         Assert.Contains("NormalizeCefrLevel", filterConventionsSource, StringComparison.Ordinal);
         Assert.Contains("@T[\"Settings\"]", layoutSource, StringComparison.Ordinal);
         Assert.Contains("hx-get", homeViewSource, StringComparison.Ordinal);
         Assert.Contains("Recently viewed words", recentViewSource, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LearnerFacingLevelLabels_ShouldComeFromTargetLanguageMetadata()
+    {
+        string repositoryRoot = ResolveRepositoryRoot();
+        string viewsPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Views");
+        string filterConventionsPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Models/LearningPortalFilterConventions.cs");
+        string filterConventionsSource = File.ReadAllText(filterConventionsPath);
+
+        Assert.Contains("LearningLevelSystemCatalog.GetCefrLevelsForTargetLanguage", filterConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("FormatCefrLevelOption", filterConventionsSource, StringComparison.Ordinal);
+
+        string[] viewSources = Directory.EnumerateFiles(viewsPath, "*.cshtml", SearchOption.AllDirectories)
+            .Select(File.ReadAllText)
+            .ToArray();
+
+        Assert.DoesNotContain(viewSources, source => source.Contains("new[] { \"A1\", \"A2\", \"B1\", \"B2\", \"C1\", \"C2\" }", StringComparison.Ordinal));
+        Assert.DoesNotContain(viewSources, source => source.Contains("LearningPortalFilterConventions.CefrLevels", StringComparison.Ordinal));
+        Assert.DoesNotContain(viewSources, source => source.Contains(">@level</option>", StringComparison.Ordinal));
+        Assert.DoesNotContain(viewSources, source => source.Contains(">@level</a>", StringComparison.Ordinal));
+        Assert.DoesNotContain(viewSources, source => source.Contains(">@level</span>", StringComparison.Ordinal));
+        Assert.Contains(viewSources, source => source.Contains("FormatCefrLevel(level)", StringComparison.Ordinal));
+        Assert.Contains(viewSources, source => source.Contains("FormatCefrLevel(", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -141,6 +168,8 @@ public sealed class WebLearnerShellStructureTests
         Assert.Contains("LearnPrefix = \"learn/{\" + TargetLearningLanguageRouteKey + \"}\"", routeConventionsSource, StringComparison.Ordinal);
         Assert.Contains("TargetLearningLanguageCatalog.TryFindActive", routeConventionsSource, StringComparison.Ordinal);
         Assert.Contains("ContentLanguageRequirements.DefaultTargetLearningLanguageCode", routeConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("httpContext?.Items.TryGetValue(TargetLearningLanguageRouteKey", routeConventionsSource, StringComparison.Ordinal);
+        Assert.Contains("Inactive or unsupported target learning language route", routeConventionsSource, StringComparison.Ordinal);
         Assert.Contains("TargetLearningLanguageCatalog.TryFindActive", routeFilterSource, StringComparison.Ordinal);
         Assert.Contains("new NotFoundResult()", routeFilterSource, StringComparison.Ordinal);
         Assert.Contains("options.Filters.Add<TargetLearningLanguageRouteFilter>()", programSource, StringComparison.Ordinal);
@@ -189,12 +218,16 @@ public sealed class WebLearnerShellStructureTests
         string expressionsControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/ExpressionsController.cs");
         string coursesControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/CoursesController.cs");
         string searchControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/SearchController.cs");
+        string browseControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/BrowseController.cs");
+        string collectionsControllerPath = Path.Combine(repositoryRoot, "src/Apps/DarwinLingua.Web/Controllers/CollectionsController.cs");
 
         string clientSource = File.ReadAllText(clientPath);
         string grammarControllerSource = File.ReadAllText(grammarControllerPath);
         string expressionsControllerSource = File.ReadAllText(expressionsControllerPath);
         string coursesControllerSource = File.ReadAllText(coursesControllerPath);
         string searchControllerSource = File.ReadAllText(searchControllerPath);
+        string browseControllerSource = File.ReadAllText(browseControllerPath);
+        string collectionsControllerSource = File.ReadAllText(collectionsControllerPath);
 
         Assert.Contains("new(\"targetLearningLanguageCode\", targetLearningLanguageCode)", clientSource, StringComparison.Ordinal);
         Assert.Matches("GetGrammarTopicsAsync\\s*\\(\\s*GrammarTopicListFilterModel filter,\\s*string targetLearningLanguageCode", clientSource);
@@ -205,6 +238,10 @@ public sealed class WebLearnerShellStructureTests
         Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", expressionsControllerSource, StringComparison.Ordinal);
         Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", coursesControllerSource, StringComparison.Ordinal);
         Assert.Contains("LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext)", searchControllerSource, StringComparison.Ordinal);
+        Assert.Contains("return RedirectToAction(nameof(Index), new { targetLearningLanguageCode, q = NormalizeQuery(input.SourceQuery) });", searchControllerSource, StringComparison.Ordinal);
+        Assert.Contains("return RedirectToAction(nameof(Index), new { targetLearningLanguageCode, q = suggestedWord });", searchControllerSource, StringComparison.Ordinal);
+        Assert.Contains("return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });", browseControllerSource, StringComparison.Ordinal);
+        Assert.Contains("return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });", collectionsControllerSource, StringComparison.Ordinal);
         Assert.Contains("GetGrammarTopicsAsync(filter, targetLearningLanguageCode", grammarControllerSource, StringComparison.Ordinal);
         Assert.Matches("GetExpressionBySlugAsync\\s*\\(\\s*normalizedSlug,\\s*targetLearningLanguageCode", expressionsControllerSource);
         Assert.Contains("GetCoursesAsync(filter, targetLearningLanguageCode", coursesControllerSource, StringComparison.Ordinal);
@@ -284,6 +321,8 @@ public sealed class WebLearnerShellStructureTests
             "Target learning language",
             "Target learning language is separate from UI language and helper translations.",
             "Planned",
+            "Pilot",
+            "Pilot and planned languages stay disabled until reviewed content is available.",
             "Einstieg",
             "Grundlagen",
             "Selbststaendig",

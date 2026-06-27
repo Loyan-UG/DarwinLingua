@@ -1,3 +1,5 @@
+using DarwinLingua.SharedKernel.Exceptions;
+
 namespace DarwinLingua.SharedKernel.Globalization;
 
 /// <summary>
@@ -82,12 +84,17 @@ public static class CountryContextCatalog
         return false;
     }
 
-    public static string ResolveDefaultActiveCode(string targetLearningLanguageCode) =>
-        Active
+    public static string ResolveDefaultActiveCode(string targetLearningLanguageCode)
+    {
+        string? defaultCode = Active
             .Where(context => context.TargetLearningLanguageCodes.Contains(targetLearningLanguageCode, StringComparer.OrdinalIgnoreCase))
             .OrderBy(static context => context.SortOrder)
             .Select(static context => context.Code)
-            .FirstOrDefault() ?? Germany.Code;
+            .FirstOrDefault();
+
+        return defaultCode ?? throw new DomainRuleException(
+            $"No active country context is configured for target learning language '{targetLearningLanguageCode}'.");
+    }
 }
 
 /// <summary>

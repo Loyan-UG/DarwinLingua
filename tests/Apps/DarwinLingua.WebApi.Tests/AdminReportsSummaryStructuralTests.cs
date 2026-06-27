@@ -67,7 +67,8 @@ public sealed class AdminReportsSummaryStructuralTests
         Assert.Contains("MissingTranslationsByHelperLanguage", webClient, StringComparison.Ordinal);
         Assert.Contains("DuplicateSlugsByType", webClient, StringComparison.Ordinal);
         Assert.Contains("\"/api/admin/catalog/system-report\"", apiProgram, StringComparison.Ordinal);
-        Assert.Contains("ResolveTargetLearningLanguageCode(targetLearningLanguageCode)", apiProgram, StringComparison.Ordinal);
+        Assert.Contains("ResolveDiagnosticTargetLearningLanguageCode(targetLearningLanguageCode)", apiProgram, StringComparison.Ordinal);
+        Assert.Contains("TryFindContentImportable(requested", apiProgram, StringComparison.Ordinal);
         Assert.Contains("GetCatalogSystemReportAsync", adminQueryService, StringComparison.Ordinal);
         Assert.Contains("GetSocialSystemReportAsync", adminQueryService, StringComparison.Ordinal);
         Assert.Contains("GetModerationSystemReportAsync", adminQueryService, StringComparison.Ordinal);

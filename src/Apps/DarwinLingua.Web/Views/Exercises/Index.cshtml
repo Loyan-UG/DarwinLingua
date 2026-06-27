@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.ExerciseIndexPageViewModel
 @{
     ViewData["Title"] = T["Exercises"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
@@ -8,13 +10,13 @@
     <span class="eyebrow">@T["Practice"]</span>
     <h1 class="headline-md">@T["Exercise sets"]</h1>
     <p class="body-lg">@T["Practice with reusable exercises linked to grammar, vocabulary, expressions, dialogues, and lessons."]</p>
-    <form class="search-form" method="get" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search exercises"]" aria-label="@T["Search exercises"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
             {
-                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
             }
         </select>
         <button type="submit" class="button button--secondary">@T["Filter"]</button>
@@ -31,8 +33,8 @@ else
         @foreach (var set in Model.ExerciseSets)
         {
             <article class="panel stack-md">
-                <span class="eyebrow">@set.CefrLevel · @T[set.OwnerType]</span>
-                <h2 class="headline-sm"><a asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Set" asp-route-slug="@set.Slug">@set.Title</a></h2>
+                <span class="eyebrow">@FormatCefrLevel(set.CefrLevel) · @T[set.OwnerType]</span>
+                <h2 class="headline-sm"><a asp-controller="Exercises" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Set" asp-route-slug="@set.Slug">@set.Title</a></h2>
                 @if (!string.IsNullOrWhiteSpace(set.LearnerLanguageTitle))
                 {
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @set.LearnerLanguageTitle</p>
@@ -43,7 +45,7 @@ else
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @set.LearnerLanguageDescription</p>
                 }
                 <p>@T["{0} exercises", set.ExerciseCount]</p>
-                <a class="button button--secondary" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Set" asp-route-slug="@set.Slug">@T["Open exercise set"]</a>
+                <a class="button button--secondary" asp-controller="Exercises" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Set" asp-route-slug="@set.Slug">@T["Open exercise set"]</a>
             </article>
         }
     </section>

@@ -181,6 +181,66 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
         }
     }
 
+    [Fact]
+    public async Task SearchAsync_ShouldReturnPilotTargetResultsWithoutGermanFallback()
+    {
+        string databaseName = $"darwin_unified_search_en_{Guid.NewGuid():N}"[..48];
+        string connectionString = BuildAppConnectionString(databaseName);
+        ServiceProvider? serviceProvider = null;
+
+        await CreateDatabaseAsync(databaseName, CancellationToken.None);
+
+        try
+        {
+            serviceProvider = BuildServiceProvider(connectionString);
+            await serviceProvider.GetRequiredService<IDatabaseInitializer>().InitializeAsync(CancellationToken.None);
+
+            IDbContextFactory<DarwinLinguaDbContext> dbContextFactory =
+                serviceProvider.GetRequiredService<IDbContextFactory<DarwinLinguaDbContext>>();
+
+            await using (DarwinLinguaDbContext dbContext = await dbContextFactory.CreateDbContextAsync(CancellationToken.None))
+            {
+                DateTime nowUtc = DateTime.UtcNow;
+                await InsertSearchGrammarTopicAsync(
+                        dbContext,
+                        "de",
+                        "a1-hello-german-control",
+                        "Hello German control",
+                        "A German-target control row that must not appear in English pilot search.",
+                        "A1",
+                        nowUtc);
+                await InsertSearchGrammarTopicAsync(
+                        dbContext,
+                        "en",
+                        "a1-hello-in-english",
+                        "Hello in English",
+                        "A pilot English grammar row for English-target search diagnostics.",
+                        "A1",
+                        nowUtc);
+            }
+
+            IUnifiedLearningSearchRepository repository = serviceProvider.GetRequiredService<IUnifiedLearningSearchRepository>();
+            IReadOnlyList<UnifiedLearningSearchResultModel> results = await repository.SearchAsync(
+                new UnifiedLearningSearchFilterModel("Hello", "A1", "grammar", null, null, TargetLearningLanguageCode: "en"),
+                CancellationToken.None);
+
+            UnifiedLearningSearchResultModel result = Assert.Single(results);
+            Assert.Equal("grammar", result.ResultType);
+            Assert.Equal("Hello in English", result.Title);
+            Assert.Equal("/learn/en/grammar/a1-hello-in-english", result.Url);
+            Assert.DoesNotContain(results, searchResult => searchResult.Url.StartsWith("/learn/de/", StringComparison.Ordinal));
+        }
+        finally
+        {
+            if (serviceProvider is not null)
+            {
+                await serviceProvider.DisposeAsync();
+            }
+
+            await DropDatabaseAsync(databaseName, CancellationToken.None);
+        }
+    }
+
     private static void SeedCourse(DarwinLinguaDbContext dbContext, DateTime nowUtc)
     {
         CoursePath path = new(
@@ -242,6 +302,26 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
 
     private static async Task InsertWrongLanguageGrammarTopicAsync(DarwinLinguaDbContext dbContext, DateTime nowUtc)
     {
+        await InsertSearchGrammarTopicAsync(
+                dbContext,
+                "en",
+                "b1-integration-english-leakage",
+                "Integration in English",
+                "This row simulates wrong-language content that must not appear in German search.",
+                "B1",
+                nowUtc)
+            .ConfigureAwait(false);
+    }
+
+    private static async Task InsertSearchGrammarTopicAsync(
+        DarwinLinguaDbContext dbContext,
+        string targetLearningLanguageCode,
+        string slug,
+        string title,
+        string shortDescription,
+        string cefrLevel,
+        DateTime nowUtc)
+    {
         await dbContext.Database.ExecuteSqlInterpolatedAsync(
             $"""
             INSERT INTO "GrammarTopics" (
@@ -262,15 +342,15 @@ public sealed class UnifiedLearningSearchPostgresRepositoryTests
                 "UpdatedAtUtc")
             VALUES (
                 {Guid.NewGuid()},
-                {"en"},
-                {"b1-integration-english-leakage"},
-                {"Integration in English"},
-                {"This row simulates wrong-language content that must not appear in German search."},
+                {targetLearningLanguageCode},
+                {slug},
+                {title},
+                {shortDescription},
                 {0},
                 {"[]"},
                 {"[]"},
                 {"[]"},
-                {"B1"},
+                {cefrLevel},
                 {"sentence-structure"},
                 {"Active"},
                 {1},

@@ -24,7 +24,7 @@
             <label class="field">
                 <span>@T["Target learning language"]</span>
                 <select asp-for="Input.TargetLearningLanguageCode" asp-items="Model.TargetLearningLanguageOptions"></select>
-                <small class="body-sm">@T["Planned languages stay disabled until native reviewed content is available."]</small>
+                <small class="body-sm">@T["Pilot and planned languages stay disabled until reviewed content is available."]</small>
                 <span asp-validation-for="Input.TargetLearningLanguageCode" class="validation-message"></span>
             </label>
         </section>

@@ -706,17 +706,17 @@ Latest local Web verification:
 - [x] Variable rendering substitutes supported placeholders safely in an interactive editor flow.
   - Evidence: `WritingTemplateRouteStructuralTests` verifies the learner detail view renders a client-side variable editor, preview output, reset control, English/German copy, and JavaScript replacement logic that keeps empty placeholders visible and writes preview text via `textContent` rather than `innerHTML`.
 
-### Life in Germany
+### Country Guidance
 
 - [x] Parser coverage exists for the Country Guidance content contract shape.
-- [x] Navigation/localization shell includes Life in Germany.
-- [x] Release route hardening covers public `/life-in-germany` Web routes and internal country-guidance API registrations.
+- [x] Navigation/localization shell includes the German/Germany display label `Life in Germany` for the canonical Country Guidance module.
+- [x] Release route hardening covers canonical `/learn/{targetLearningLanguageCode}/country-guidance/{countryContextCode}` Web routes and internal country-guidance API registrations.
 - [x] List/detail queries return published country guidance notes in stable order.
 - [x] Filtering covers CEFR/category/context where supported.
 - [x] WebApi list/detail endpoint coverage exists for the canonical `/api/catalog/country-guidance/{countryContextCode}` API.
-- [x] Web list/detail rendering coverage exists for `/life-in-germany`.
+- [x] Web list/detail rendering coverage exists for `/learn/de/country-guidance/de`.
 - [x] Linked content rendering covers dialogues, expressions, writing templates, Talk Topics, and course lessons.
-  - Evidence: `CountryGuidanceNoteRouteStructuralTests` covers public route naming, helper-language rendering, RTL direction hooks, and linked-content surface; `CountryGuidanceNotePostgresRepositoryTests` covers PostgreSQL filtering, stable ordering, localized helper projection, detail links, and Unified Search URL projection.
+  - Evidence: `CountryGuidanceNoteRouteStructuralTests` covers canonical country-guidance route naming, helper-language rendering, RTL direction hooks, and linked-content surface; `CountryGuidanceNotePostgresRepositoryTests` covers PostgreSQL filtering, stable ordering, localized helper projection, detail links, and Unified Search URL projection.
 
 ### Unified Search
 
@@ -735,7 +735,7 @@ Latest local Web verification:
 - [x] Web rendering coverage exists for learning result cards and filters.
 - [x] Missing content references fail safely.
 - [x] Seeded performance coverage verifies bounded result counts and acceptable query plans before bulk content generation.
-  - Evidence: Unified Search structural tests cover endpoint/query/filter/card behavior; PostgreSQL repository tests cover cross-type ranking/filter/URL projection and seeded bulk-corpus bounds across Course, Grammar, Writing Templates, and Life in Germany.
+  - Evidence: Unified Search structural tests cover endpoint/query/filter/card behavior; PostgreSQL repository tests cover cross-type ranking/filter/URL projection and seeded bulk-corpus bounds across Course, Grammar, Writing Templates, and Country Guidance.
 
 ### Progress And Personalization
 
@@ -753,9 +753,9 @@ Latest local Web verification:
 
 ### 2026-06-14 Web Readiness Manual Smoke
 
-- [x] Desktop in-app Chromium smoke covers `/courses`, `/courses/a1-einstieg-in-den-alltag`, `/exercises`, `/exam-prep`, `/exam-prep/profile/goethe-c1`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, `/writing-templates`, `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/search?q=Demokratie&resultType=country-guidance`, and `/recent`.
+- [x] Desktop in-app Chromium smoke covers the current canonical learner routes including `/learn/de/courses`, `/learn/de/exercises`, `/learn/de/exam-prep`, `/learn/de/writing-templates`, `/learn/de/country-guidance/de`, `/learn/de/country-guidance/de/a1-sie-und-du-im-alltag`, `/learn/de/search?q=Demokratie&resultType=country-guidance`, and `/learn/de/recent`.
 - [x] Account/admin anonymous smoke covers `/Identity/Account/Login`, `/Identity/Account/Register`, `/account`, `/admin`, `/admin/reports`, and `/admin/reports/learning-portal-issues`; protected routes redirect to Login with a local `ReturnUrl`.
-- [x] Narrow 390px viewport smoke covers the long-text pages `/writing-templates/a1-kurze-vorstellung-nachricht`, `/life-in-germany/a1-sie-und-du-im-alltag`, `/exam-prep/c1-pruefungsanforderungen-einordnen`, and `/search?q=Demokratie&resultType=country-guidance` with no horizontal overflow.
+- [x] Narrow 390px viewport smoke covers long-text pages including `/learn/de/writing-templates/a1-kurze-vorstellung-nachricht`, `/learn/de/country-guidance/de/a1-sie-und-du-im-alltag`, `/learn/de/exam-prep/c1-pruefungsanforderungen-einordnen`, and `/learn/de/search?q=Demokratie&resultType=country-guidance` with no horizontal overflow.
 - [x] Local API smoke covers Persian helper projection for Life in Germany, Writing Templates, and Exam Prep detail endpoints plus Unified Search result types `country-guidance` and `writing-template`.
 - [x] Shared PostgreSQL content counts match the Web-readiness baseline: `CourseLessons=560`, `WritingTemplates=120`, `ExamPrepUnits=246`, and `CountryGuidanceNotes=30` (`A1=10`, `A2=10`, `B1=10`).
 

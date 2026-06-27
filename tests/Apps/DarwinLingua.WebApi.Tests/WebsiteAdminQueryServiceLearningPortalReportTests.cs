@@ -46,11 +46,13 @@ public sealed class WebsiteAdminQueryServiceLearningPortalReportTests
             Assert.Contains(report.LearningPortal.CountsByTargetLanguage, row => row.Key == "grammar-topic:de" && row.Count == 2);
             Assert.Contains(report.LearningPortal.CountsByTargetLanguage, row => row.Key == "course-lesson:de" && row.Count == 6);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "selected-target-active:de" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "pilot-target-languages" && row.Count == 1);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "planned-target-languages" && row.Count >= 1);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-active:de" && row.Count == 1);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-content-items:de" && row.Count > 0);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-active:en" && row.Count == 0);
-            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-planned:en" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-pilot:en" && row.Count == 1);
+            Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-planned:en" && row.Count == 0);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-content-items:en" && row.Count == 0);
             Assert.Contains(report.LearningPortal.TargetLanguageActivationGate, row => row.Key == "target-planned-country-contexts:en" && row.Count >= 1);
             Assert.Contains(report.LearningPortal.MissingTranslationsByHelperLanguage, row => row.Key == "fa" && row.Count > 0);

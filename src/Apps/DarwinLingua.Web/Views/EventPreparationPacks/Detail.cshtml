@@ -1,11 +1,13 @@
 @model DarwinLingua.Web.Models.EventPreparationDetailPageViewModel
 @{
     ViewData["Title"] = Model.PreparationPack.Title;
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
     <div class="detail-toolbar">
-        <span class="eyebrow">@Model.PreparationPack.CefrLevel · @Model.PreparationPack.EventType · @Model.PreparationPack.Category</span>
+        <span class="eyebrow">@FormatCefrLevel(Model.PreparationPack.CefrLevel) · @Model.PreparationPack.EventType · @Model.PreparationPack.Category</span>
         <div class="detail-toolbar__actions">
             <form asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Complete" asp-route-slug="@Model.PreparationPack.Slug" method="post">
                 @Html.AntiForgeryToken()

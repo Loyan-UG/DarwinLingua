@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.ConversationEventDetailPageViewModel
 @{
     ViewData["Title"] = Model.Event.Name;
+    string FormatCefrLevel(string level, string? targetLearningLanguageCode) =>
+        LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
@@ -82,7 +84,7 @@
     <div class="chip-grid">
         @foreach (string level in Model.Event.SupportedLearnerLevels)
         {
-            <span class="chip-link">@level</span>
+            <span class="chip-link">@FormatCefrLevel(level, Model.Event.TargetLearningLanguageCode)</span>
         }
         @foreach (string languageCode in Model.Event.HelperLanguageCodes)
         {
@@ -173,7 +175,7 @@
             @foreach (var preparationPack in Model.PreparationPacks)
             {
                 <article class="panel stack-md">
-                    <span class="eyebrow">@preparationPack.CefrLevel · @preparationPack.EventType · @preparationPack.Category</span>
+                    <span class="eyebrow">@FormatCefrLevel(preparationPack.CefrLevel, Model.Event.TargetLearningLanguageCode) · @preparationPack.EventType · @preparationPack.Category</span>
                     <h3 class="headline-sm">
                         <a asp-controller="EventPreparationPacks" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@preparationPack.Slug">@preparationPack.Title</a>
                     </h3>

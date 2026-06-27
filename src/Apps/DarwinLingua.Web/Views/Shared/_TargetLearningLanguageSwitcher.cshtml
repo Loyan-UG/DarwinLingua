@@ -26,7 +26,7 @@
             {
                 <span class="target-language-switcher__option target-language-switcher__option--disabled" aria-disabled="true">
                     <span>@language.NativeName</span>
-                    <small>@language.EnglishName · @T["Planned"]</small>
+                    <small>@language.EnglishName · @(language.IsPilot ? T["Pilot"] : T["Planned"])</small>
                 </span>
             }
         }

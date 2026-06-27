@@ -1,4 +1,8 @@
 @model DarwinLingua.Catalog.Application.Models.WordCollectionListItemModel
+@{
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
+}
 
 <article class="panel collection-card stack-md">
     @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
@@ -11,7 +15,7 @@
         <div class="chip-grid">
             @foreach (string level in Model.CefrLevels)
             {
-                <span class="chip-link chip-link--static">@level</span>
+                <span class="chip-link chip-link--static">@FormatCefrLevel(level)</span>
             }
         </div>
         <span class="eyebrow">@T["{0} words", Model.WordCount]</span>

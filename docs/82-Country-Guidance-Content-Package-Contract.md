@@ -8,9 +8,13 @@ Every import package must declare package-level `targetLearningLanguageCode`. Cu
 
 This feature is the stable platform concept `Country Guidance`. German/Germany content must use `targetLearningLanguageCode = "de"` and `countryContextCode = "DE"`. Future country guidance for Austria, Switzerland, the United States, the United Kingdom, and other countries must be authored separately for each target-language/country-context pair instead of being reused as translated copies.
 
-Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
 
 Every Country Guidance package must declare package-level `countryContextCode`. Import validation rejects a Country Guidance package that omits the country context or uses a country context that is not active for the package target learning language.
+
+All source fields must be authored natively for the package target language and country context. A Switzerland stream under German, French, and Italian is three separate original source streams, not one country note translated into three source languages.
 
 ## Purpose
 
@@ -57,7 +61,7 @@ Optional fields:
 
 ## Translation Fields
 
-German source fields are canonical. Helper translations explain the German note for learners and must not replace the German source behavior.
+Target-language source fields are canonical. Helper translations explain the country-context note for learners and must not replace the target-language source behavior. Current Germany guidance under `de|DE` therefore uses German source text.
 
 Required helper translation languages:
 
@@ -179,7 +183,7 @@ The German `context` field is intentionally compact and must stay within the sto
 ## Validation Rules
 
 - slugs must be lowercase kebab-case
-- package-level `targetLearningLanguageCode` is required and must be active
+- package-level `targetLearningLanguageCode` is required and must be content-importable
 - package-level `countryContextCode` is required for Country Guidance packages and must be active for the target learning language
 - CEFR levels must be valid
 - category must use a controlled value

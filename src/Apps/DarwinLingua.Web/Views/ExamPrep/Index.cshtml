@@ -2,6 +2,8 @@
 @{
     var selectedProfile = Model.Profiles.FirstOrDefault(profile => string.Equals(Model.SelectedProfile, profile.Key, StringComparison.OrdinalIgnoreCase));
     ViewData["Title"] = selectedProfile is null ? T["Exam Prep"].Value : $"{selectedProfile.DisplayName} - {T["Exam Prep"].Value}";
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
@@ -25,7 +27,7 @@
             <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @selectedProfile.LearnerLanguageDescription</p>
         }
     }
-    <form class="search-form" method="get" asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search exam prep"]" aria-label="@T["Search exam prep"]" />
         <select class="search-input" name="examProfile" aria-label="@T["Exam profile"]">
             <option value="">@T["All exam profiles"]</option>
@@ -38,7 +40,7 @@
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
             {
-                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
             }
         </select>
         <select class="search-input" name="section" aria-label="@T["Exam section"]">
@@ -66,7 +68,7 @@
         {
             <article class="panel stack-md">
                 <span class="eyebrow">@profile.CefrRange</span>
-                <h2 class="headline-sm"><a asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Profile" asp-route-examProfileKey="@profile.Key">@profile.DisplayName</a></h2>
+                <h2 class="headline-sm"><a asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Profile" asp-route-examProfileKey="@profile.Key">@profile.DisplayName</a></h2>
                 @if (!string.IsNullOrWhiteSpace(profile.LearnerLanguageDisplayName))
                 {
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @profile.LearnerLanguageDisplayName</p>
@@ -91,8 +93,8 @@ else
         @foreach (var unit in Model.Units)
         {
             <article class="panel stack-md">
-                <span class="eyebrow">@unit.CefrLevel · @unit.ExamProfileKey · @T[unit.ExamSection]</span>
-                <h2 class="headline-sm"><a asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@unit.Slug">@unit.Title</a></h2>
+                <span class="eyebrow">@FormatCefrLevel(unit.CefrLevel) · @unit.ExamProfileKey · @T[unit.ExamSection]</span>
+                <h2 class="headline-sm"><a asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@unit.Slug">@unit.Title</a></h2>
                 @if (!string.IsNullOrWhiteSpace(unit.LearnerLanguageTitle))
                 {
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @unit.LearnerLanguageTitle</p>
@@ -103,7 +105,7 @@ else
                     <p class="meaning-line" dir="@primaryMeaningDirection"><span class="meaning-block__label">@Model.PrimaryMeaningLanguageCode</span> @unit.LearnerLanguageShortDescription</p>
                 }
                 <p>@T[unit.TaskType] · @T[unit.SkillFocus]</p>
-                <a class="button button--secondary" asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@unit.Slug">@T["Open exam prep"]</a>
+                <a class="button button--secondary" asp-controller="ExamPrep" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@unit.Slug">@T["Open exam prep"]</a>
             </article>
         }
     </section>

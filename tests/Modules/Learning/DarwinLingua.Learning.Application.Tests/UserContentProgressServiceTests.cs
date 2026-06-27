@@ -94,6 +94,47 @@ public sealed class UserContentProgressServiceTests
         Assert.Equal("a1-lesson-2", result[0].ContentOwnerSlug);
     }
 
+    [Fact]
+    public async Task ProgressAndRecommendations_ShouldStayPartitionedByTargetLearningLanguage()
+    {
+        InMemoryUserContentProgressRepository repository = new();
+        FakeLearningRecommendationCatalogReader recommendations = new();
+        ServiceProvider serviceProvider = CreateServiceProvider(repository, recommendations);
+        IUserContentProgressService service = serviceProvider.GetRequiredService<IUserContentProgressService>();
+
+        await service.UpdateContentProgressAsync(
+            "user-1",
+            "de",
+            new UpdateUserContentProgressRequestModel("course-lesson", "a1-lesson-1", "completed"),
+            CancellationToken.None);
+
+        LearningProgressSummaryModel germanSummary = await service.GetSummaryAsync("user-1", "de", CancellationToken.None);
+        LearningProgressSummaryModel englishSummary = await service.GetSummaryAsync("user-1", "en", CancellationToken.None);
+
+        Assert.Equal(1, germanSummary.TotalTracked);
+        Assert.Equal(1, germanSummary.CompletedCount);
+        Assert.Equal(0, englishSummary.TotalTracked);
+
+        IReadOnlyList<LearningRecommendationModel> germanRecommendations = await service.GetRecommendationsAsync(
+            "user-1",
+            "de",
+            5,
+            CancellationToken.None);
+        IReadOnlyList<LearningRecommendationModel> englishRecommendations = await service.GetRecommendationsAsync(
+            "user-1",
+            "en",
+            5,
+            CancellationToken.None);
+
+        Assert.DoesNotContain(germanRecommendations, recommendation => recommendation.ContentOwnerSlug == "a1-lesson-1");
+        LearningRecommendationModel englishFirstLesson = Assert.Single(
+            englishRecommendations,
+            recommendation => recommendation.ContentOwnerSlug == "a1-lesson-1");
+        Assert.Equal("/learn/en/courses/a1/a1-lesson-1", englishFirstLesson.Url);
+        Assert.Contains(englishRecommendations, recommendation => recommendation.Url.StartsWith("/learn/en/", StringComparison.Ordinal));
+        Assert.DoesNotContain(englishRecommendations, recommendation => recommendation.Url.StartsWith("/learn/de/", StringComparison.Ordinal));
+    }
+
     private static ServiceProvider CreateServiceProvider(
         InMemoryUserContentProgressRepository repository,
         ILearningRecommendationCatalogReader? recommendationCatalogReader = null)
@@ -160,10 +201,11 @@ public sealed class UserContentProgressServiceTests
             int maxRecommendations,
             CancellationToken cancellationToken)
         {
+            string normalizedTarget = targetLearningLanguageCode.Trim().ToLowerInvariant();
             LearningRecommendationModel[] candidates =
             [
-                new("next-course-lesson", "course-lesson", "a1-lesson-1", "Lesson 1", "/courses/a1/a1-lesson-1", "Continue.", "A1"),
-                new("next-course-lesson", "course-lesson", "a1-lesson-2", "Lesson 2", "/courses/a1/a1-lesson-2", "Continue.", "A1"),
+                new("next-course-lesson", "course-lesson", "a1-lesson-1", "Lesson 1", $"/learn/{normalizedTarget}/courses/a1/a1-lesson-1", "Continue.", "A1"),
+                new("next-course-lesson", "course-lesson", "a1-lesson-2", "Lesson 2", $"/learn/{normalizedTarget}/courses/a1/a1-lesson-2", "Continue.", "A1"),
             ];
 
             IReadOnlyList<LearningRecommendationModel> result = candidates

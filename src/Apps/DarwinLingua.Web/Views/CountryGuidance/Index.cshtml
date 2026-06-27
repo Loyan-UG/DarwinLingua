@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.CountryGuidanceNoteIndexPageViewModel
 @{
     ViewData["Title"] = T["Life in Germany"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
     string secondaryMeaningDirection = string.IsNullOrWhiteSpace(Model.SecondaryMeaningLanguageCode)
         ? "ltr"
@@ -11,13 +13,13 @@
     <span class="eyebrow">@T["Resources"]</span>
     <h1 class="headline-md">@T["Life in Germany"]</h1>
     <p class="body-lg">@T["Culture, law, society, everyday systems, and civic knowledge for living in Germany."]</p>
-    <form class="search-form" method="get" asp-controller="CountryGuidance" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-route-countryContextCode="@Model.CountryContextCode.ToLowerInvariant()" asp-action="Index">
+    <form class="search-form" method="get" asp-controller="CountryGuidance" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-route-countryContextCode="@Model.CountryContextCode.ToLowerInvariant()" asp-action="Index">
         <input class="search-input" type="search" name="q" value="@Model.Query" placeholder="@T["Search Life in Germany"]" aria-label="@T["Search Life in Germany"]" />
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
             @foreach (string level in Model.CefrLevels)
             {
-                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                <option value="@level" selected="@(string.Equals(Model.SelectedCefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
             }
         </select>
         <select class="search-input" name="category" aria-label="@T["Category"]">
@@ -43,8 +45,8 @@ else
             var note = noteViewModel.Note;
             var secondaryNote = noteViewModel.SecondaryLanguageNote;
             <article class="panel stack-md">
-                <span class="eyebrow">@note.CefrLevel · @T[note.Category]</span>
-                <h2 class="headline-sm"><a asp-controller="CountryGuidance" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-route-countryContextCode="@Model.CountryContextCode.ToLowerInvariant()" asp-action="Detail" asp-route-slug="@note.Slug">@note.Title</a></h2>
+                <span class="eyebrow">@FormatCefrLevel(note.CefrLevel) · @T[note.Category]</span>
+                <h2 class="headline-sm"><a asp-controller="CountryGuidance" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-route-countryContextCode="@Model.CountryContextCode.ToLowerInvariant()" asp-action="Detail" asp-route-slug="@note.Slug">@note.Title</a></h2>
                 <p>@note.ShortDescription</p>
                 @if (!string.IsNullOrWhiteSpace(note.LearnerLanguageTitle) ||
                     !string.IsNullOrWhiteSpace(note.LearnerLanguageShortDescription) ||
@@ -83,7 +85,7 @@ else
                 {
                     <p class="status-badge status-badge--warning">@T["Sensitive topic"]</p>
                 }
-                <a class="button button--secondary" asp-controller="CountryGuidance" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-route-countryContextCode="@Model.CountryContextCode.ToLowerInvariant()" asp-action="Detail" asp-route-slug="@note.Slug">@T["Open note"]</a>
+                <a class="button button--secondary" asp-controller="CountryGuidance" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-route-countryContextCode="@Model.CountryContextCode.ToLowerInvariant()" asp-action="Detail" asp-route-slug="@note.Slug">@T["Open note"]</a>
             </article>
         }
     </section>

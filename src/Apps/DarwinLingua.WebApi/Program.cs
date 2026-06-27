@@ -810,12 +810,17 @@ app.MapGet(
         ICountryGuidanceNoteQueryService countryGuidanceNoteQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await countryGuidanceNoteQueryService.GetPublishedCountryGuidanceNotesAsync(
+                async () =>
+                {
+                    string resolvedTargetLearningLanguageCode = ResolveTargetLearningLanguageCode(targetLearningLanguageCode);
+                    string resolvedCountryContextCode = ResolveCountryContextCode(countryContextCode, resolvedTargetLearningLanguageCode);
+                    return await countryGuidanceNoteQueryService.GetPublishedCountryGuidanceNotesAsync(
                     new CountryGuidanceNoteListFilterModel(cefrLevel, category, context, q),
-                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
-                    ResolveCountryContextCode(countryContextCode, targetLearningLanguageCode),
+                    resolvedTargetLearningLanguageCode,
+                    resolvedCountryContextCode,
                     primaryMeaningLanguageCode,
-                    cancellationToken).ConfigureAwait(false))
+                    cancellationToken).ConfigureAwait(false);
+                })
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -828,12 +833,17 @@ app.MapGet(
         ICountryGuidanceNoteQueryService countryGuidanceNoteQueryService,
         CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
-                async () => await countryGuidanceNoteQueryService.GetPublishedCountryGuidanceNoteBySlugAsync(
+                async () =>
+                {
+                    string resolvedTargetLearningLanguageCode = ResolveTargetLearningLanguageCode(targetLearningLanguageCode);
+                    string resolvedCountryContextCode = ResolveCountryContextCode(countryContextCode, resolvedTargetLearningLanguageCode);
+                    return await countryGuidanceNoteQueryService.GetPublishedCountryGuidanceNoteBySlugAsync(
                     slug,
-                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
-                    ResolveCountryContextCode(countryContextCode, targetLearningLanguageCode),
+                    resolvedTargetLearningLanguageCode,
+                    resolvedCountryContextCode,
                     primaryMeaningLanguageCode,
-                    cancellationToken).ConfigureAwait(false))
+                    cancellationToken).ConfigureAwait(false);
+                })
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -1255,7 +1265,7 @@ app.MapGet(
     async (string? targetLearningLanguageCode, IWebsiteAdminQueryService adminQueryService, CancellationToken cancellationToken) =>
         await ResolveQueryRequestAsync(
                 async () => await adminQueryService.GetSystemReportAsync(
-                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                    ResolveDiagnosticTargetLearningLanguageCode(targetLearningLanguageCode),
                     cancellationToken).ConfigureAwait(false))
             .ConfigureAwait(false));
 
@@ -1273,9 +1283,82 @@ app.MapGet(
                 async () => await adminQueryService.GetLearningPortalIssuesAsync(
                     area,
                     q,
-                    ResolveTargetLearningLanguageCode(targetLearningLanguageCode),
+                    ResolveDiagnosticTargetLearningLanguageCode(targetLearningLanguageCode),
                     take ?? 250,
                     cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/learning-search",
+    async (
+        string? q,
+        string? cefrLevel,
+        string? resultType,
+        string? category,
+        string? topicKey,
+        string? targetLearningLanguageCode,
+        IUnifiedLearningSearchService searchService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () => await searchService.SearchAsync(
+                    new UnifiedLearningSearchFilterModel(
+                        q,
+                        cefrLevel,
+                        resultType,
+                        category,
+                        topicKey,
+                        IncludeSensitiveEducationalLanguage: false,
+                        TargetLearningLanguageCode: ResolveDiagnosticTargetLearningLanguageCode(targetLearningLanguageCode)),
+                    cancellationToken).ConfigureAwait(false))
+            .ConfigureAwait(false));
+
+app.MapGet(
+    "/api/admin/catalog/learning-content-preview/{contentType}/{slug}",
+    async (
+        string contentType,
+        string slug,
+        string? targetLearningLanguageCode,
+        string? primaryMeaningLanguageCode,
+        ICourseQueryService courseQueryService,
+        IGrammarTopicQueryService grammarTopicQueryService,
+        IExpressionQueryService expressionQueryService,
+        IExerciseQueryService exerciseQueryService,
+        IWritingTemplateQueryService writingTemplateQueryService,
+        CancellationToken cancellationToken) =>
+        await ResolveQueryRequestAsync(
+                async () =>
+                {
+                    string targetLanguageCode = ResolveDiagnosticTargetLearningLanguageCode(targetLearningLanguageCode);
+                    string helperLanguageCode = string.IsNullOrWhiteSpace(primaryMeaningLanguageCode)
+                        ? "en"
+                        : primaryMeaningLanguageCode.Trim().ToLowerInvariant();
+                    string normalizedContentType = contentType.Trim().ToLowerInvariant();
+
+                    object? detail = normalizedContentType switch
+                    {
+                        "course-lesson" => await courseQueryService.GetPublishedCourseLessonBySlugAsync(slug, targetLanguageCode, helperLanguageCode, cancellationToken).ConfigureAwait(false),
+                        "grammar-topic" or "grammar" => await grammarTopicQueryService.GetPublishedGrammarTopicBySlugAsync(slug, targetLanguageCode, helperLanguageCode, cancellationToken).ConfigureAwait(false),
+                        "expression" => await expressionQueryService.GetPublishedExpressionBySlugAsync(slug, targetLanguageCode, helperLanguageCode, cancellationToken).ConfigureAwait(false),
+                        "exercise" => await exerciseQueryService.GetPublishedExerciseBySlugAsync(slug, targetLanguageCode, helperLanguageCode, cancellationToken).ConfigureAwait(false),
+                        "exercise-set" => await exerciseQueryService.GetPublishedExerciseSetBySlugAsync(slug, targetLanguageCode, helperLanguageCode, cancellationToken).ConfigureAwait(false),
+                        "writing-template" => await writingTemplateQueryService.GetPublishedWritingTemplateBySlugAsync(slug, targetLanguageCode, helperLanguageCode, cancellationToken).ConfigureAwait(false),
+                        _ => throw new DomainRuleException($"Unsupported diagnostic content type '{contentType}'."),
+                    };
+
+                    if (detail is null)
+                    {
+                        throw new KeyNotFoundException($"No published {normalizedContentType} content was found for '{targetLanguageCode}:{slug}'.");
+                    }
+
+                    return new
+                    {
+                        targetLearningLanguageCode = targetLanguageCode,
+                        contentType = normalizedContentType,
+                        slug,
+                        primaryMeaningLanguageCode = helperLanguageCode,
+                        detail,
+                    };
+                })
             .ConfigureAwait(false));
 
 app.MapGet(
@@ -2360,9 +2443,23 @@ static string ResolveTargetLearningLanguageCode(string? requested)
     throw new DomainRuleException($"Unsupported target learning language '{requested}'.");
 }
 
-static string ResolveCountryContextCode(string requested, string? requestedTargetLearningLanguageCode)
+static string ResolveDiagnosticTargetLearningLanguageCode(string? requested)
 {
-    string targetLearningLanguageCode = ResolveTargetLearningLanguageCode(requestedTargetLearningLanguageCode);
+    if (string.IsNullOrWhiteSpace(requested))
+    {
+        return ContentLanguageRequirements.DefaultTargetLearningLanguageCode;
+    }
+
+    if (TargetLearningLanguageCatalog.TryFindContentImportable(requested, out TargetLearningLanguageDefinition language))
+    {
+        return language.Code;
+    }
+
+    throw new DomainRuleException($"Unsupported diagnostic target learning language '{requested}'.");
+}
+
+static string ResolveCountryContextCode(string requested, string targetLearningLanguageCode)
+{
     string normalized = string.IsNullOrWhiteSpace(requested) ? string.Empty : requested.Trim().ToUpperInvariant();
 
     if (CountryContextCatalog.TryFindActive(normalized, targetLearningLanguageCode, out CountryContextDefinition countryContext))

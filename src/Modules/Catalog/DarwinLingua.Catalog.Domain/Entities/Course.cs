@@ -86,7 +86,10 @@ public sealed class CoursePath
         string descriptionTranslationsJson = "[]",
         string? targetLearningLanguageCode = null)
     {
-        TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Course path target learning language");
+        if (!string.IsNullOrWhiteSpace(targetLearningLanguageCode))
+        {
+            TargetLearningLanguageCode = TargetLearningLanguageScope.NormalizeOrDefault(targetLearningLanguageCode, "Course path target learning language");
+        }
         Title = RequireText(title, "Course path title", 256);
         Description = RequireText(description, "Course path description", 2000);
         TitleTranslationsJson = RequireText(titleTranslationsJson, "Course path title translations JSON", 12000);

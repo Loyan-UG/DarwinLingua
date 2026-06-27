@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.BrowseIndexViewModel
 @{
     ViewData["Title"] = T["Browse"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
@@ -16,9 +18,9 @@
                 <a class="chip-link"
                    asp-action="Cefr"
                    asp-route-id="@level"
-                   hx-get="@Url.Action("Cefr", "Browse", new { id = level })"
+                   hx-get="@Url.Action("Cefr", "Browse", new { targetLearningLanguageCode, id = level })"
                    hx-target="#browse-results"
-                   hx-swap="innerHTML">@level</a>
+                   hx-swap="innerHTML">@FormatCefrLevel(level)</a>
             }
         </div>
     </article>

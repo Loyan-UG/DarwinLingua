@@ -165,6 +165,10 @@ These decisions are locked for the Phase 8 refactor:
 15. The target-language architecture must support future helper-language growth without schema redesign. A target language may have one reviewed helper-language set at launch and a larger set later.
 16. Country Guidance examples may be adapted inside helper translations when a cultural comparison needs a learner-specific explanation, but that does not change the source-content stream. The target-language source remains authored for the selected target language and country context.
 17. A new target language is not activated by adding a route or a label. It is activated only after its capability profile, level labels, native content pilot, helper translations, import validation, search isolation, progress isolation, admin diagnostics, and backup gate are complete.
+18. Country Guidance is target-language scoped but can have many country contexts per target language. German must show Germany now because Germany is a German-speaking country, and later it can add Austria and Switzerland. English can later add United States, United Kingdom, Australia, and other contexts. The same country can appear under multiple target languages only as separate original source content.
+19. Because the system is still pre-customer, route, package, model, and JSON-root cleanup should be done correctly instead of preserving old compatibility behavior. Old ambiguous routes should fail during development once canonical replacements are green, so missing migration work is discovered quickly.
+20. Helper-language expansion is independent from target-language expansion. A target language may start with one helper-language set and later add more helper languages, such as expanding German from ten helper languages to fifteen, without changing target-language source identity.
+21. The system must be designed for language-specific needs before content generation. Future target languages may require different scripts, direction, level systems, morphology rules, keyboard guidance, pronunciation metadata, exam ecosystems, country contexts, and writing conventions.
 
 ## Decision Addendum: Expansion-Ready Learning Languages
 
@@ -196,12 +200,12 @@ Helper translations can explain each stream in the learner's selected helper lan
 
 ## Target-Language Support Matrix
 
-This matrix is the planning baseline. A target language can move from `planned` to `active` only after its capability profile, schema/query isolation, route behavior, content contracts, smoke tests, and first reviewed content pilot are complete.
+This matrix is the planning baseline. A target language can move from `planned` to `pilot` only when content import and internal/tester routes can safely hold reviewed pilot data without public activation. It can move from `pilot` to `active` only after its capability profile, schema/query isolation, route behavior, content contracts, smoke tests, and first reviewed content pilot are complete.
 
 | Target language | Status | Level system | Default country contexts | Initial source-content rule | Notes |
 | --- | --- | --- | --- | --- | --- |
 | German (`de`) | Active baseline | CEFR A1-C2 | Germany (`DE`), later Austria (`AT`) and Switzerland (`CH`) | German-authored content | Current Web content remains German by default. `Life in Germany` appears inside German learning because Germany is a German-speaking country. |
-| English (`en`) | Planned first non-German pilot | CEFR initially, with room for business/academic tracks | United States (`US`), United Kingdom (`GB`), Australia (`AU`) | English-authored content | Do not translate German lessons. English needs its own grammar sequence, pronunciation expectations, writing conventions, exams, and country guidance. |
+| English (`en`) | First non-German pilot candidate | CEFR initially, with room for business/academic tracks | United States (`US`), United Kingdom (`GB`), Australia (`AU`) | English-authored content | Do not translate German lessons. English needs its own grammar sequence, pronunciation expectations, writing conventions, exams, and country guidance. |
 | Spanish (`es`) | Planned later | CEFR initially | Spain (`ES`), later Latin American country contexts where useful | Spanish-authored content | Must handle regional vocabulary/register differences and accent/diacritic search normalization. |
 | French (`fr`) | Planned later | CEFR initially | France (`FR`), later Switzerland (`CH`), Belgium (`BE`), Canada (`CA`) where useful | French-authored content | Switzerland under French is separate original French-target content, not a translation of German/Switzerland content. |
 | Italian (`it`) | Future candidate | CEFR initially | Italy (`IT`), Switzerland (`CH`) where useful | Italian-authored content | Switzerland under Italian is separate original Italian-target content if Italian becomes active. |
@@ -210,7 +214,7 @@ Helper/meaning languages are not listed as target languages unless they are also
 
 ## Target Language Capability Checklist
 
-Before a target language can move from planned to active, create a capability profile that answers these questions:
+Before a target language can move from planned to pilot or active, create a capability profile that answers these questions:
 
 - Source language and script: language code, native name, writing direction, alphabet/script variants, punctuation conventions, capitalization behavior, and keyboard/input guidance.
 - Level system: CEFR or other framework, learner-friendly labels, placement logic, and any target-language-specific level exceptions.
@@ -225,6 +229,8 @@ Before a target language can move from planned to active, create a capability pr
 
 The profile is not optional planning prose. It is the activation gate for a new target-learning-language. If a future language has a special writing system, country variants, morphology, placement model, exam ecosystem, or input problem, the system must model that before content generation starts.
 
+Every capability profile must include a short "language-specific design risk" section. It should call out which assumptions from German are invalid for that target language. Examples: English needs spelling-variant and phrasal-verb handling; Spanish needs regional pronoun and voseo/ustedes decisions; French needs liaison and accent behavior; right-to-left or non-Latin target languages need direction, fonts, keyboard, punctuation, and transliteration decisions before UI activation.
+
 Language-specific requirements to check before each activation:
 
 - German: cases, gender, separable verbs, verb-final clauses, formal/informal address, compound words, umlaut search normalization, DACH country contexts, and Goethe/telc/TestDaF/DSH/OeSD exam ecosystem.
@@ -235,7 +241,7 @@ Language-specific requirements to check before each activation:
 
 ## Target Language Activation Gate
 
-Before any target language changes from `planned` to `active`, the following gate must pass:
+Before any target language changes from `planned` to `pilot`, the safe-staging subset of the following gate must pass: reference data, level metadata, content contracts, import rules, route/API isolation, admin diagnostics, and backup discipline. Before it changes from `pilot` to `active`, the full gate must pass:
 
 1. Reference data exists for the target language.
    - Language code, native/display names, text direction, status, default level system, available country contexts, and default helper-language set are defined.
@@ -260,7 +266,7 @@ Before any target language changes from `planned` to `active`, the following gat
    - Web/API smoke proves the target language routes work and inactive/unsupported target languages do not silently fall back to German.
    - A restore-ready backup records counts by target language, level system, country context, module, and helper-language coverage.
 
-If any gate fails, the language remains `planned`. It can be visible as a disabled/planned option only when the UI clearly says that the language is not available yet.
+If the safe-staging gate fails, the language remains `planned`. If the full activation gate fails after pilot content exists, the language remains `pilot` and must stay hidden from normal public learner navigation. Planned languages can be visible as disabled/planned options only when the UI clearly says that the language is not available yet.
 
 ## German Level Label Baseline
 
@@ -294,6 +300,8 @@ Every level definition needs:
 
 German can currently use the baseline labels above. Future target languages may reuse CEFR codes, but they still need their own reviewed labels and explanations if the learning path, examples, literacy needs, or local exam ecosystem differs. The UI must read level labels from reference data and must not hard-code German labels into course cards, profile forms, filters, or onboarding.
 
+Level labels are required even for familiar systems such as CEFR. Learner surfaces must show a large compact code plus a plain label and short explanation. The label should be target-language reviewed, not merely translated from German. For example, German can use `A1 Einstieg`, while English can use `A1 First steps`; another future target language may use a different level framework or a mapped CEFR-like sequence.
+
 ## Product Rules
 
 1. The German baseline remains the default target-learning-language experience until another language has reviewed, imported, and smoke-tested content.
@@ -307,6 +315,9 @@ German can currently use the baseline labels above. Future target languages may 
 9. The product is still pre-customer; clean target-language-aware route and schema changes are preferred over preserving old route compatibility that creates technical debt.
 10. Old public route compatibility is not a product requirement during this refactor. Temporary redirects are allowed only as short-lived development aids and must not hide missing target-language context in tests.
 11. A future target language cannot be activated only by translating German content. It needs a reviewed capability profile, native source content, helper translations, import validation, search isolation, progress isolation, and admin diagnostics.
+12. If a future route, package root, or model name is ambiguous without target language or country context, the correct fix is to make the scope explicit, not to add hidden fallbacks.
+13. Country Guidance content can use helper-language-specific examples when that improves cultural comparison, but the target-language source stream still belongs to one `(targetLearningLanguageCode, countryContextCode)` pair.
+14. A new helper language is a coverage expansion for explanations. It is not a new target-learning-language and must not change source content identity.
 
 ## Canonical Route Direction
 
@@ -377,7 +388,7 @@ Every future content package must declare:
 Package import must reject:
 
 - missing target learning language
-- unsupported or inactive target learning language unless explicitly staging
+- target learning languages that are not content-importable; content-importable means public-active or explicitly approved pilot/staging
 - helper language codes that are not active helper languages
 - source fields that are clearly authored in the wrong target language
 - links that cross target-language boundaries without an explicit cross-language rule
@@ -443,11 +454,11 @@ Country Guidance content scope:
 - It can contain different examples per helper language when cultural comparison benefits comprehension, but the target-language source stream remains tied to the selected target language and country context.
 - Legal-adjacent or official-process content must carry refresh discipline: content generation should verify current source facts before publishing when facts are likely to change.
 
-Implementation progress as of 2026-06-24: Country Guidance now has persisted `countryContextCode` scope, canonical learner/API/admin routes, target/country-scoped repository projection, canonical Unified Search result type `country-guidance`, Course activity target support for `country-guidance`, source packages under `content/learning-portal/country-guidance/packages`, and the JSON root array `countryGuidanceNotes`. The internal model/table rename is complete. The Web shell now exposes a target-learning-language switcher that keeps German active and shows English, Spanish, and French as planned inactive targets, separate from UI language and helper translations. Conversation Starter Packs and Event Preparation Packs now persist `TargetLearningLanguageCode`, use target-scoped indexes, import/replace by package target language, and resolve Web/API list/detail/related lookups by target language. Conversation Events and Event RSVPs now persist `TargetLearningLanguageCode`, use target-aware indexes, and resolve public/admin Web/API calls by target language. Conversation Events and Organizer Profiles now use canonical learner routes under `/learn/{targetLearningLanguageCode}/...`; admin pages expose an explicit active target-language scope selector for operator-managed community resources. Organizer profiles remain global identity records, while supported levels and active event views are target-scoped. Package manifests and package receipt history now carry explicit target-language, level-system, and country-context metadata where applicable. The German baseline regression and restore-ready backup gate passed, and the first English target-language capability profile/pilot plan exists; English remains inactive until a separate reviewed implementation goal starts.
+Implementation progress as of 2026-06-24: Country Guidance now has persisted `countryContextCode` scope, canonical learner/API/admin routes, target/country-scoped repository projection, canonical Unified Search result type `country-guidance`, Course activity target support for `country-guidance`, source packages under `content/learning-portal/country-guidance/packages`, and the JSON root array `countryGuidanceNotes`. The internal model/table rename is complete. Country-context defaulting fails closed when a target language has no active country context, so future English or French guidance cannot silently fall back to Germany. The Web shell now exposes a target-learning-language switcher that keeps German active and shows English as pilot plus Spanish/French as planned inactive targets, separate from UI language and helper translations. Conversation Starter Packs and Event Preparation Packs now persist `TargetLearningLanguageCode`, use target-scoped indexes, import/replace by package target language, and resolve Web/API list/detail/related lookups by target language. Conversation Events and Event RSVPs now persist `TargetLearningLanguageCode`, use target-aware indexes, and resolve public/admin Web/API calls by target language. Conversation Events and Organizer Profiles now use canonical learner routes under `/learn/{targetLearningLanguageCode}/...`; admin pages expose an explicit active target-language scope selector for operator-managed community resources. Organizer profiles remain global identity records, while supported levels and active event views are target-scoped. Package manifests and package receipt history now carry explicit target-language, level-system, and country-context metadata where applicable. German, English, Spanish, and French CEFR level labels now exist as target-language-specific reference metadata. English, Spanish, and French capability profile artifacts exist before content generation. Helper-language expansion has a separate readiness plan and remains independent from target-language source identity. Content-package contracts now use the content-importable gate, require native target-language source authoring, keep helper translations separate, and scope Country Guidance by target language plus country context. Vocabulary import persists `WordEntry.LanguageCode` from the package target language instead of hardcoding German. German remains the only public active target language. English is pilot/content-importable for reviewed staging but not public active. The native English A1 pilot package is imported as staging data with `CourseLessons(en)=10`, `GrammarTopics(en)=5`, `ExpressionEntries(en)=20`, `Exercises(en)=8`, `ExerciseSets(en)=1`, and `WritingTemplates(en)=5`; public `/learn/en/...` routes still reject English. Spanish/French remain planned and not content-importable. The German baseline regression and restore-ready backup gate passed with the phase backup at `X:\Projects\DarwinLingua.Backup\20260624-174653-phase8-target-identity-regression-pre-english-pilot`; the expanded English pilot checkpoint is backed up at `X:\Projects\DarwinLingua.Backup\20260624-211627-english-a1-expansion-02-branch-checkpoint-pre-activation`. English remains hidden from normal public learner routes until an explicit activation decision.
 
 ## No-Debt Implementation Plan From Current State
 
-The next execution goal should close Phase 8 before any non-German content generation. The work must stay Web-first and avoid direct MAUI/mobile UX changes.
+Phase 8 is closed for the German baseline. The next execution goal can start the first reviewed non-German pilot plan, recommended as English, but it must stay small, native to English-learning needs, Web-first, and avoid direct MAUI/mobile UX changes.
 
 1. Close the current German target-language UX cleanup.
    - Finish any remaining learner-facing labels that still say "German level" where they should say target-language learning level.
@@ -480,25 +491,38 @@ The next execution goal should close Phase 8 before any non-German content gener
 
 ## Next Execution Plan For Multi-Target Expansion
 
-The next goal should not start broad English, Spanish, or French content generation immediately. It should close the remaining platform readiness gaps that determine whether adding another target language will be clean.
+The next goal should not start broad English, Spanish, or French content generation immediately. It should finish the explicit target-language activation framework, then execute only the first reviewed pilot. This keeps the platform clean while the product is still pre-customer and avoids preserving compatibility debt.
 
 Recommended order:
 
-1. Finish admin diagnostics and report coverage.
-   - Show counts by target language, level system, country context, module, and helper language.
-   - Add duplicate-slug diagnostics inside each target-language namespace and cross-namespace review diagnostics.
-   - Add wrong-target-language unresolved-link diagnostics.
-2. Finalize generated/package manifest contracts.
-   - Every generated or mobile-facing package manifest must include `targetLearningLanguageCode`, level-system metadata where relevant, and country context where relevant.
-   - Direct MAUI/mobile UX work remains deferred, but the exported data contract must not be German-only.
-3. Add activation-gate tests.
-   - Tests should prove inactive target languages do not display German content.
-   - Tests should prove German `de|DE` Country Guidance is visible under German and not as a global module.
-   - Tests should prove same-country/multiple-target design can be represented without schema changes.
-4. Prepare the first English pilot only after the gate is green.
-   - Use the existing English capability profile plan as the starting point.
-   - Keep the first pilot small and native: Course, Grammar, Expressions, Exercises, Writing Templates, and one minimal Country Guidance stream such as `en|US`.
-   - Do not add English bulk content before the pilot is imported, smoke-tested, reviewed, and backed up.
+1. Finish target-language status and activation semantics. `[done]`
+   - Model `planned`, `pilot`, and `active` consistently.
+   - Keep German active.
+   - Allow English to become a reviewed pilot only when imports/internal diagnostics can hold English data without public activation.
+   - Public learner routes and APIs must reject or explicitly hide non-active target languages; they must not fall back to German.
+2. Close Country Guidance as the long-term country-context module. `[done]`
+   - Keep `Life in Germany` as German/Germany display text only.
+   - Keep canonical model/package/admin/search identity as `Country Guidance`.
+   - Ensure future country streams such as `de|AT`, `de|CH`, `en|US`, `en|GB`, `en|AU`, `fr|CH`, and `it|CH` need no schema redesign.
+   - Keep Country Guidance broader than exam prep: everyday life, civic/legal basics, institutions, public processes, social norms, and integration.
+3. Finish target-language level metadata. `[done]`
+   - Every target language activation candidate needs compact code, friendly label, explanation, sort order, and level-system mapping.
+   - Every level picker/card/filter must read from reference data.
+   - No generic surface should hard-code German CEFR labels.
+4. Finish target-language capability profiles before content. `[done]`
+   - English first, then Spanish/French only when chosen.
+   - Each profile must document source language, script/direction, search, grammar, pronunciation/TTS, writing conventions, country contexts, exams, helper-language launch set, and current-source/legal refresh needs.
+5. Finish multi-target content-contract gates. `[done]`
+   - Packages must include target language, level system where relevant, and country context where relevant.
+   - Imports must reject wrong-language source fields, non-content-importable target languages, and unsafe cross-target links.
+6. Generate the first English pilot only after the above gates pass. `[next]`
+   - Use the existing English capability profile as the starting point.
+   - Keep the pilot small and native: Course, Grammar, Expressions, Exercises, Writing Templates.
+   - Add `en|US` Country Guidance only after the English language-learning pilot proves routing, import, search, helper-language projection, progress isolation, and admin diagnostics.
+7. After the English pilot is reviewed, choose the next direction deliberately.
+   - Expand English if tester demand confirms it.
+   - Add German Austria/Switzerland Country Guidance if German learners need DACH integration next.
+   - Start Spanish or French capability profiles if business demand shifts.
 
 ## Testing Gates
 
@@ -520,4 +544,96 @@ Phase 8 is not complete until tests prove:
 ## First Non-German Pilot Rule
 
 After the architecture is green, the recommended first non-German pilot is English. The pilot must be small, reviewed, and native to English-learning needs. It should not start before the German baseline works under the new target-language architecture.
+
+## Phase 9 Execution Map
+
+Phase 9 is the execution plan for expanding beyond German after the Phase 8 architecture gate. The work must remain no-debt: target language, UI language, helper language, level system, and country context stay separate in product copy, routes, database queries, import behavior, search, progress, recommendations, and admin diagnostics.
+
+The master refactor plan is `docs/95-Multi-Target-Platform-Refactor-Plan.md`. Use it as the cross-phase execution plan for data model, route, import, UI, Country Guidance, helper-language expansion, admin diagnostics, backup, and future activation gates.
+
+The executable next-goal work order is `artifacts/planning/multi-target-next-goal-work-order.md`. That work order is the source of truth for the immediate implementation sequence:
+
+1. Normalize source/helper projections.
+2. Close English pilot diagnostics while English remains non-public.
+3. Audit target-language scope across all Web learning roots.
+4. Close canonical route and naming cleanup without a permanent compatibility layer.
+5. Verify Country Guidance stream behavior.
+6. Verify learner-friendly level metadata on every relevant surface.
+7. Verify helper-language expansion readiness.
+8. Create a restore-ready backup.
+9. Choose the next business branch deliberately.
+
+The branch decision and product-ready options for the next goal are recorded in
+`artifacts/planning/multi-target-business-branch-plan-20260624.md`. That branch
+plan keeps English depth expansion as the recommended next branch, while keeping
+German DACH Country Guidance, Spanish, and French as explicitly scoped
+alternatives that each require their own implementation goal before content
+generation.
+
+### Current Starting State
+
+- German (`de`) is the only public active target-learning language.
+- English (`en`) is the first reviewed pilot target and now has a small imported A1 staging package, but it is not public active.
+- Spanish (`es`) and French (`fr`) remain planned and not content-importable.
+- German/Germany Country Guidance is displayed as Life in Germany inside the German target-language experience.
+- Country Guidance is the stable platform model for all future country-context streams.
+- Direct MAUI/mobile work remains deferred; Web and Web API are the active surfaces.
+
+### Required Order
+
+1. Run a final target-language scope audit.
+   - Confirm every learning-content root, progress query, recommendation query, recent-activity query, search query, import replacement path, linked-content resolver, and admin report has explicit target-language scope where required.
+   - Confirm global records are intentionally global, such as organizer identity records, and that only their language-specific views are target-scoped.
+2. Finish canonical-route acceptance.
+   - Learner routes use `/learn/{targetLearningLanguageCode}/...`.
+   - Country Guidance routes use `/learn/{targetLearningLanguageCode}/country-guidance/{countryContextCode}`.
+   - Permanent old top-level routes are removed when they would hide missing target-language context.
+3. Keep level selection learner-friendly.
+   - Every level card, picker, filter, progress summary, event/profile matching field, admin preview, and future package manifest uses level-system reference data.
+   - A compact code such as `A1` must appear with a plain label and short explanation.
+4. Complete review of the first small English pilot.
+   - The first imported pilot is English-native and must not be expanded into broad English content until reviewed.
+   - The initial package is small enough for manual review while proving Course, Grammar, Expressions, Exercises, and Writing Templates.
+   - `en|US` Country Guidance is deferred until the English learning-content pilot proves routing, import, helper projection, search isolation, progress isolation, admin diagnostics, and backup.
+5. Review and decide activation.
+   - English becomes public active only after pilot import, smoke, admin diagnostics, user-facing route review, search/progress isolation checks, and restore-ready backup.
+   - If the pilot is useful but incomplete, English remains pilot and hidden from normal public learner routes.
+6. Choose the next branch deliberately.
+   - Expand English depth if tester demand confirms it.
+   - Add German Austria/Switzerland Country Guidance if German learners need DACH integration next.
+   - Start Spanish or French only after a specific implementation goal approves that target language.
+
+### Country Guidance Rule
+
+Country Guidance is a `(targetLearningLanguageCode, countryContextCode)` source-content stream. The same country can appear under multiple target languages only as separate original source content.
+
+Examples:
+
+| Stream | Rule |
+| --- | --- |
+| `de|DE` | German-authored Germany content, displayed as Life in Germany. |
+| `de|AT` | German-authored Austria content, not a copy of Germany content. |
+| `de|CH` | German-authored Switzerland content, with Switzerland-specific language/civic context. |
+| `en|US` | English-authored United States content. |
+| `en|GB` | English-authored United Kingdom content. |
+| `en|AU` | English-authored Australia content. |
+| `fr|CH` | French-authored Switzerland content, not a translation of `de|CH`. |
+
+Helper translations may use culturally clearer explanations for learners, but they do not change the stream identity and must not become replacement source content.
+
+### Language-Specific Readiness Rule
+
+Every future target language must be designed for its own language system before content generation starts. At minimum, the capability profile and implementation plan must address:
+
+- script, direction, font/input support, and mixed-script rendering
+- level system and learner-friendly level labels
+- search normalization and tokenization
+- morphology, grammar, and exercise-validation assumptions
+- pronunciation/TTS and listening support
+- writing conventions, register, message length, and country-specific formats
+- exam ecosystem and country/provider boundaries
+- country contexts and legal/current-source refresh needs
+- helper-language launch set and future helper-language expansion
+
+This avoids hard-coding German assumptions into English, Spanish, French, or later target languages.
 

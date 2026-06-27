@@ -31,6 +31,12 @@ public sealed class TargetLearningLanguageApiStructureTests
         Assert.Equal("de", german.Code);
         Assert.False(TargetLearningLanguageCatalog.TryFindActive("en", out _));
         Assert.False(TargetLearningLanguageCatalog.TryFindActive("xx", out _));
+        Assert.True(TargetLearningLanguageCatalog.TryFindContentImportable("en", out TargetLearningLanguageDefinition english));
+        Assert.Equal(TargetLearningLanguageStatus.Pilot, english.Status);
+        Assert.True(english.IsPilot);
+        Assert.True(english.AllowsContentImport);
+        Assert.True(ContentLanguageRequirements.SupportsTargetLearningLanguage("en"));
+        Assert.False(ContentLanguageRequirements.SupportsTargetLearningLanguage("xx"));
 
         string programSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.WebApi", "Program.cs"));
         string resolverSource = ExtractMethod(programSource, "static string ResolveTargetLearningLanguageCode(string? requested)");
@@ -45,12 +51,32 @@ public sealed class TargetLearningLanguageApiStructureTests
     }
 
     [Fact]
+    public void TargetLearningLanguageCatalog_ShouldDistinguishActivePilotAndPlannedStates()
+    {
+        Assert.Equal(["de"], TargetLearningLanguageCatalog.Active.Select(language => language.Code).ToArray());
+        Assert.Equal(["en"], TargetLearningLanguageCatalog.Pilot.Select(language => language.Code).ToArray());
+        Assert.Equal(["de", "en"], TargetLearningLanguageCatalog.ContentImportable.Select(language => language.Code).ToArray());
+
+        TargetLearningLanguageDefinition spanish = Assert.Single(
+            TargetLearningLanguageCatalog.All,
+            language => string.Equals(language.Code, "es", StringComparison.OrdinalIgnoreCase));
+        TargetLearningLanguageDefinition french = Assert.Single(
+            TargetLearningLanguageCatalog.All,
+            language => string.Equals(language.Code, "fr", StringComparison.OrdinalIgnoreCase));
+
+        Assert.Equal(TargetLearningLanguageStatus.Planned, spanish.Status);
+        Assert.Equal(TargetLearningLanguageStatus.Planned, french.Status);
+        Assert.False(spanish.AllowsContentImport);
+        Assert.False(french.AllowsContentImport);
+    }
+
+    [Fact]
     public void CountryContextResolver_ShouldValidateAgainstResolvedActiveTargetLanguage()
     {
         string programSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.WebApi", "Program.cs"));
-        string resolverSource = ExtractMethod(programSource, "static string ResolveCountryContextCode(string requested, string? requestedTargetLearningLanguageCode)");
+        string resolverSource = ExtractMethod(programSource, "static string ResolveCountryContextCode(string requested, string targetLearningLanguageCode)");
 
-        Assert.Contains("string targetLearningLanguageCode = ResolveTargetLearningLanguageCode(requestedTargetLearningLanguageCode);", resolverSource, StringComparison.Ordinal);
+        Assert.DoesNotContain("ResolveTargetLearningLanguageCode", resolverSource, StringComparison.Ordinal);
         Assert.Contains("CountryContextCatalog.TryFindActive", resolverSource, StringComparison.Ordinal);
         Assert.Contains("normalized, targetLearningLanguageCode", resolverSource, StringComparison.Ordinal);
         Assert.Contains("throw new DomainRuleException", resolverSource, StringComparison.Ordinal);

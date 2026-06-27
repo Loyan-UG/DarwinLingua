@@ -71,11 +71,15 @@ Current official German-learning packages use:
 "targetLearningLanguageCode": "de"
 ```
 
+Import validation accepts only content-importable target learning languages. A content-importable language is either public-active or explicitly opened for reviewed pilot/staging imports. As of the current multi-target checkpoint, German (`de`) is public-active, English (`en`) is pilot/content-importable, and Spanish (`es`) plus French (`fr`) remain planned and must be rejected by import until their readiness gates are complete.
+
 `defaultMeaningLanguages` and all `...Translations` fields remain helper/meaning-language metadata. For example, a German package may teach German (`de`) while explaining the content in English, Persian, Arabic, Turkish, Russian, Central Kurdish, Northern Kurdish, Polish, Romanian, and Albanian.
 
 Helper-language coverage can expand independently from target-language support. A future German package may still teach German while adding new helper languages beyond the current active set; that must not change the package target-language identity.
 
 Packages that use levels may also declare `levelSystemCode`; current German content uses CEFR (`cefr`). Country Guidance packages must additionally declare `countryContextCode`, because a country guidance stream is identified by both `targetLearningLanguageCode` and `countryContextCode`, such as `de|DE`, `de|AT`, `de|CH`, `en|US`, `en|GB`, or `fr|CH`.
+
+Source fields must be authored natively in the package target language and for that language's learning needs. Future English, Spanish, or French packages must not be bulk translations of German packages. Helper translations explain the source content for learners; they do not change the package target language.
 
 ### 3.2 Recommended Package Fields
 
@@ -308,7 +312,7 @@ For new JSON packages, the recommended canonical shape is:
 
 ## 10. Format Rules
 
-- Phase 1 packages must contain German source entries only.
+- Vocabulary packages must contain source entries in the package `targetLearningLanguageCode`.
 - Controlled values such as topics and language codes must reference known reference data.
 - The package format must not silently coerce invalid values.
 - The package format is import-oriented, not edit-oriented.

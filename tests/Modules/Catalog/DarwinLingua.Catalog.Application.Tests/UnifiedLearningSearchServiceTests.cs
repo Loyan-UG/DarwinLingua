@@ -71,9 +71,24 @@ public sealed class UnifiedLearningSearchServiceTests
         IUnifiedLearningSearchService service = serviceProvider.GetRequiredService<IUnifiedLearningSearchService>();
 
         await Assert.ThrowsAsync<DomainRuleException>(() => service.SearchAsync(
-            new UnifiedLearningSearchFilterModel("word", null, null, null, null, TargetLearningLanguageCode: "en"),
+            new UnifiedLearningSearchFilterModel("word", null, null, null, null, TargetLearningLanguageCode: "xx"),
             CancellationToken.None));
         Assert.False(repository.WasCalled);
+    }
+
+    [Fact]
+    public async Task SearchAsync_ShouldAllowPilotTargetLearningLanguageForInternalQueries()
+    {
+        FakeUnifiedSearchRepository repository = new();
+        await using ServiceProvider serviceProvider = BuildServiceProvider(repository);
+        IUnifiedLearningSearchService service = serviceProvider.GetRequiredService<IUnifiedLearningSearchService>();
+
+        await service.SearchAsync(
+            new UnifiedLearningSearchFilterModel("word", null, null, null, null, TargetLearningLanguageCode: "en"),
+            CancellationToken.None);
+
+        Assert.True(repository.WasCalled);
+        Assert.Equal("en", repository.LastFilter?.TargetLearningLanguageCode);
     }
 
     [Fact]

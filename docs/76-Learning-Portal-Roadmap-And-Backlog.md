@@ -19,7 +19,7 @@ It covers:
 - Web-first implementation; mobile parity is deferred until the Web product is mature after tester feedback
 - documentation consolidation rules
 
-This is the single planning source for the learning-portal expansion. The project-wide execution checklist for the multi-target-language refactor is tracked in `04-Implementation-Backlog.md` under Phase 8, with the architecture contract in `94-Multi-Target-Language-Architecture.md`. Do not create separate roadmap documents for each feature unless implementation proves that a dedicated contract document is required.
+This is the single planning source for the learning-portal expansion. The project-wide execution checklist for the multi-target-language refactor is tracked in `04-Implementation-Backlog.md` under Phase 8 and Phase 9, with the architecture contract in `94-Multi-Target-Language-Architecture.md`. Do not create separate roadmap documents for each feature unless implementation proves that a dedicated contract document is required.
 
 ---
 
@@ -123,7 +123,7 @@ Level selection must stay learner-friendly. CEFR codes such as `A1` and `B2` sho
 
 Because the product is still pre-customer, remaining Phase 8 implementation should choose clean target-language-aware routes, schemas, model names, package roots, admin labels, and tests over permanent compatibility shims. Old top-level learner routes or old public names are acceptable only as temporary migration aids and should not be part of the final acceptance gate when they create ambiguity.
 
-Phase 8 progress: the architecture contract, active German target-language reference data, planned inactive target-language definitions, CEFR level definitions with learner-friendly labels, Germany country context reference data, default `TargetLearningLanguageCode = de` user-profile foundation, target-language schema/index scope for the main Web learning content roots, canonical `/learn/{targetLearningLanguageCode}/...` learner routes, Country Guidance country-context partitioning, Conversation Starter Pack/Event Preparation Pack target-language partitioning, Conversation Event/Event RSVP target-language partitioning, target-scoped organizer supported-level and active-event views, explicit admin target-language scope selectors for operator-managed community resources, target-scoped search/progress/admin report foundations, and the visible Web target-language switcher are now implemented. Remaining Phase 8 work is concentrated on final API contract cleanup, broader cross-target isolation tests, backup manifest updates, and final regression evidence before non-German content can be added safely.
+Phase 8 progress: the architecture contract, active German target-language reference data, planned inactive target-language definitions, CEFR level definitions with learner-friendly labels, Germany country context reference data, default `TargetLearningLanguageCode = de` user-profile foundation, target-language schema/index scope for the main Web learning content roots, canonical `/learn/{targetLearningLanguageCode}/...` learner routes, Country Guidance country-context partitioning, Conversation Starter Pack/Event Preparation Pack target-language partitioning, Conversation Event/Event RSVP target-language partitioning, target-scoped organizer supported-level and active-event views, explicit admin target-language scope selectors for operator-managed community resources, target-scoped search/progress/admin report foundations, and the visible Web target-language switcher are now implemented. Phase 9 tracks the no-debt rollout plan after German. The first small native English A1 pilot package is now imported as controlled staging data with English Course, Grammar, Expression, Exercise, Exercise Set, and Writing Template records, while English remains non-public and `/learn/en/...` remains inactive. Remaining Phase 9 work is internal/admin English smoke, target-isolated search/progress/admin diagnostics, restore-ready backup before any activation decision, Country Guidance expansion by target-language/country-context pair, helper-language expansion as a separate coverage project, and later Spanish/French activation only after reviewed capability-profile gates.
 
 ---
 
@@ -739,15 +739,15 @@ Writing Templates help learners produce practical German texts for real-life sit
 - 2026-06-13: Writing Templates A1-C2 content is complete for the first Web baseline. Planning files exist for A1, A2, B1, B2, C1, and C2 under `artifacts/planning`; package files exist under `content/learning-portal/writing-templates/packages`.
 - Current shared PostgreSQL count: `WritingTemplates=120`, distributed as `A1=20`, `A2=20`, `B1=20`, `B2=20`, `C1=20`, and `C2=20`.
 - Latest verification: targeted WritingTemplate ContentOps tests passed; local Web/API smoke returned HTTP 200 for `/writing-templates`, A1 detail, C2 detail, Persian API detail, and `/api/catalog/search?q=Abschlussstatement&resultType=writing-template`.
-- Next content step: expand Country Guidance only after the current Web readiness and target-language architecture gates are closed. German/Germany content appears as `Life in Germany`; the internal backing model is `CountryGuidanceNote`.
+- Next content step: expand Country Guidance only after the current Web readiness and target-language architecture gates are closed. German/Germany content appears to learners as `Life in Germany`; the stable module is `Country Guidance` and the current backing model/table is `CountryGuidanceNote` / `CountryGuidanceNotes`.
 
 ---
 
-## Module 7: Life in Germany
+## Module 7: Country Guidance
 
 ### Product Purpose
 
-Life in Germany teaches German communication behavior, social expectations, everyday systems, basic legal/civic knowledge, and context-specific language use. It also covers important concepts behind Orientierungskurs, Test Leben in Deutschland, and Einbuergerungstest, without copying the official question bank as product-owned test content.
+Country Guidance teaches country-specific communication behavior, social expectations, everyday systems, basic legal/civic knowledge, and integration context inside the selected target-learning-language. For the current German/Germany stream, the learner-facing display label is `Life in Germany`. It also covers important concepts behind Orientierungskurs, Test Leben in Deutschland, and Einbuergerungstest, without copying the official question bank as product-owned test content.
 
 ### Initial Categories
 
@@ -776,14 +776,17 @@ Life in Germany teaches German communication behavior, social expectations, ever
 - social-system
 - exam-orientation
 
-### Suggested Aggregate
+### Current Aggregate And Route
 
-- Public feature: `Life in Germany`
-- Current backing aggregate: `CountryGuidanceNote`
+- Stable module: `Country Guidance`
+- German/Germany display label: `Life in Germany`
+- Current backing aggregate/table: `CountryGuidanceNote` / `CountryGuidanceNotes`
+- Canonical route: `/learn/{targetLearningLanguageCode}/country-guidance/{countryContextCode}`
+- Current active stream: `de|DE` at `/learn/de/country-guidance/de`
 
 ### Relationship Rules
 
-Life in Germany notes may link to:
+Country Guidance notes may link to target-language-scoped:
 
 - dialogues
 - grammar topics
@@ -1126,7 +1129,7 @@ The portal should track learner progress across content types without mixing use
 - [x] add broader template rendering, Web API, and linked-content coverage after first real writing-template package is available
   - Progress: Writing Templates A1-C2 are generated and imported with `WritingTemplates=120`; local Web/API smoke covers list/detail, Persian helper projection, and Unified Search result type `writing-template`. The remaining template-specific backlog is an interactive variable-substitution editor flow, tracked in the Web Test Backlog.
 
-### Phase 7.8: Life in Germany
+### Phase 7.8: Country Guidance
 
 - [x] implement country guidance note model
 - [x] add Web list/detail pages
@@ -1148,9 +1151,9 @@ The portal should track learner progress across content types without mixing use
 - [x] rate-limit the public search endpoint
 - [x] add initial tests for query validation, result projection, route hardening, and search-index migration coverage
 - [x] add seeded repository, WebApi, Web rendering, and ranking coverage
-  - Progress: 2026-06-13 added PostgreSQL seeded Unified Search repository coverage for cross-type ranking/filter/URL projection across Life in Germany, Course Lessons, Grammar, and Writing Templates, plus structural WebApi/Web assertions for search query parameters, result filters, and learning-result cards.
+  - Progress: 2026-06-13 added PostgreSQL seeded Unified Search repository coverage for cross-type ranking/filter/URL projection across Country Guidance, Course Lessons, Grammar, and Writing Templates, plus structural WebApi/Web assertions for search query parameters, result filters, and learning-result cards.
 - [x] add seeded performance coverage before bulk content generation starts
-  - Progress: 2026-06-13 added a PostgreSQL seeded bulk-corpus performance guard for Unified Search. The test seeds 30 matching Course, Grammar, Writing Template, and Life in Germany records, verifies bounded cross-type result counts, positive relevance scores, and a conservative execution-time ceiling before larger bulk content runs.
+  - Progress: 2026-06-13 added a PostgreSQL seeded bulk-corpus performance guard for Unified Search. The test seeds 30 matching Course, Grammar, Writing Template, and Country Guidance records, verifies bounded cross-type result counts, positive relevance scores, and a conservative execution-time ceiling before larger bulk content runs.
 
 ### Phase 7.10: Progress And Personalization
 

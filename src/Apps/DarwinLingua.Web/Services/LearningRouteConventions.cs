@@ -34,11 +34,24 @@ public static class LearningRouteConventions
 
     public static string ResolveTargetLearningLanguageCode(HttpContext? httpContext)
     {
-        if (httpContext?.Request.RouteValues.TryGetValue(TargetLearningLanguageRouteKey, out object? routeValue) == true
-            && routeValue is not null
-            && TargetLearningLanguageCatalog.TryFindActive(routeValue.ToString() ?? string.Empty, out TargetLearningLanguageDefinition language))
+        if (httpContext?.Items.TryGetValue(TargetLearningLanguageRouteKey, out object? scopedValue) == true
+            && scopedValue is not null
+            && TargetLearningLanguageCatalog.TryFindActive(scopedValue.ToString() ?? string.Empty, out TargetLearningLanguageDefinition scopedLanguage))
         {
-            return language.Code;
+            return scopedLanguage.Code;
+        }
+
+        if (httpContext?.Request.RouteValues.TryGetValue(TargetLearningLanguageRouteKey, out object? routeValue) == true
+            && routeValue is not null)
+        {
+            string routeLanguageCode = routeValue.ToString() ?? string.Empty;
+            if (TargetLearningLanguageCatalog.TryFindActive(routeLanguageCode, out TargetLearningLanguageDefinition language))
+            {
+                return language.Code;
+            }
+
+            throw new InvalidOperationException(
+                $"Inactive or unsupported target learning language route '{routeLanguageCode}' reached learner route resolution.");
         }
 
         return ContentLanguageRequirements.DefaultTargetLearningLanguageCode;

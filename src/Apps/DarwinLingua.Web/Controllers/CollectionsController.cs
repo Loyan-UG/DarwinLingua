@@ -45,14 +45,14 @@ public sealed class CollectionsController(
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Detail(string slug, CancellationToken cancellationToken)
     {
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? normalizedSlug = WebRouteInput.NormalizeSlug(slug);
         if (normalizedSlug is null)
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
-        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string? secondaryMeaningLanguageCode = await featureAccessService
             .ResolveSecondaryMeaningLanguageAsync(profile.PreferredMeaningLanguage2, cancellationToken)
             .ConfigureAwait(false);

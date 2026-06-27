@@ -4,6 +4,18 @@ This document defines the JSON contract for Dialogue lessons. Dialogues are role
 
 Dialogue packages may include roleplay-related metadata, but a Dialogue is not a standalone RoleplayScenario. `skillFocus: "roleplay"` and speaking prompts with `promptType: "roleplay-task"` mark a Dialogue as useful for roleplay-style practice. The Web can derive a simple practice page from `dialogueTurns` at `/dialogues/{slug}/roleplay`. Standalone scripted roleplays live in top-level `roleplayScenarios` packages and are governed by `docs/70-Roleplay-Content-Package-Contract.md`.
 
+## Package Target Language
+
+Every import package must declare package-level `targetLearningLanguageCode`. Current official German-learning packages use `"de"`.
+
+`targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
+
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language. Future English, Spanish, or French dialogue packages must be new source content for those languages, not translated copies of German dialogues.
+
 ## Package Shape
 
 Dialogue lessons live beside vocabulary entries and collections:
@@ -13,6 +25,8 @@ Dialogue lessons live beside vocabulary entries and collections:
   "packageVersion": "1.0",
   "packageId": "a1-practical-dialogues",
   "packageName": "A1 Practical Dialogues",
+  "targetLearningLanguageCode": "de",
+  "levelSystemCode": "cefr",
   "source": "Hybrid",
   "defaultMeaningLanguages": ["en", "fa"],
   "entries": [],

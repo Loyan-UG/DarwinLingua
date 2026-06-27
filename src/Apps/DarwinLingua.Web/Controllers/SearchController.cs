@@ -107,11 +107,12 @@ public sealed class SearchController(
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Suggest(WordSuggestionInputModel input, CancellationToken cancellationToken)
     {
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         string suggestedWord = NormalizeQuery(input.SuggestedWord);
         if (string.IsNullOrWhiteSpace(suggestedWord))
         {
             TempData["ErrorMessage"] = localizer["Please enter a word before sending a suggestion."].Value;
-            return RedirectToAction(nameof(Index), new { q = NormalizeQuery(input.SourceQuery) });
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode, q = NormalizeQuery(input.SourceQuery) });
         }
 
         await wordSuggestionService
@@ -119,7 +120,7 @@ public sealed class SearchController(
             .ConfigureAwait(false);
 
         TempData["StatusMessage"] = localizer["Thanks. {0} was sent to the content team.", suggestedWord].Value;
-        return RedirectToAction(nameof(Index), new { q = suggestedWord });
+        return RedirectToAction(nameof(Index), new { targetLearningLanguageCode, q = suggestedWord });
     }
 
     private async Task<IReadOnlyList<WordListItemModel>> SearchSecondarySafelyAsync(

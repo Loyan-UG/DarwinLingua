@@ -6,11 +6,15 @@ Every import package must declare package-level `targetLearningLanguageCode`. Cu
 
 `targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
 
-Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language and writing culture. Future English, Spanish, or French writing-template packages must be new source content for those languages, not translated copies of German templates.
 
 ## Purpose
 
-Writing Templates teach learners how to produce practical German messages and exam-ready short texts. The German source is canonical. Helper translations explain the situation, structure, template, and sample in the learner's selected meaning language; they never replace the German template text as the target output.
+Writing Templates teach learners how to produce practical messages and exam-ready short texts in the package target language. The target-language source is canonical. Helper translations explain the situation, structure, template, and sample in the learner's selected meaning language; they never replace the target-language template text as the output learners practise.
 
 ## Root Array
 
@@ -31,7 +35,7 @@ Writing Templates teach learners how to produce practical German messages and ex
 - `sampleFilledVersion`
 - `sortOrder`
 
-All source fields above must be German-first, except controlled metadata values and slugs.
+All source fields above must be target-language-first, except controlled metadata values and slugs. Current German packages therefore use German source text.
 
 ## Required Helper Translation Fields
 

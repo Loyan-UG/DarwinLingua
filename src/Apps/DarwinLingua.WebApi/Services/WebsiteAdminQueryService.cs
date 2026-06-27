@@ -1195,15 +1195,19 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             .FirstOrDefault(language => string.Equals(language.Code, targetLearningLanguageCode, StringComparison.OrdinalIgnoreCase));
         int selectedCountryContextCount = CountryContextCatalog.Active.Count(context =>
             context.TargetLearningLanguageCodes.Contains(targetLearningLanguageCode, StringComparer.OrdinalIgnoreCase));
-        int selectedLevelDefinitionCount = string.Equals(selectedLanguage?.DefaultLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.OrdinalIgnoreCase)
-            ? LearningLevelSystemCatalog.GermanCefrLevels.Count
-            : 0;
+        int selectedLevelDefinitionCount = selectedLanguage is null
+            ? 0
+            : LearningLevelSystemCatalog.GetLevelDefinitionsForTargetLanguage(
+                selectedLanguage.Code,
+                selectedLanguage.DefaultLevelSystemCode).Count;
 
         List<AdminLearningPortalCountRowResponse> rows =
         [
             new("active-target-languages", TargetLearningLanguageCatalog.Active.Count),
-            new("planned-target-languages", TargetLearningLanguageCatalog.All.Count(language => !language.IsActive)),
+            new("pilot-target-languages", TargetLearningLanguageCatalog.Pilot.Count),
+            new("planned-target-languages", TargetLearningLanguageCatalog.All.Count(language => language.Status == TargetLearningLanguageStatus.Planned)),
             new($"selected-target-active:{targetLearningLanguageCode}", selectedLanguage?.IsActive == true ? 1 : 0),
+            new($"selected-target-pilot:{targetLearningLanguageCode}", selectedLanguage?.IsPilot == true ? 1 : 0),
             new($"selected-level-definitions:{targetLearningLanguageCode}", selectedLevelDefinitionCount),
             new($"selected-active-country-contexts:{targetLearningLanguageCode}", selectedCountryContextCount),
             new($"selected-content-items:{targetLearningLanguageCode}", scopedCountsByType.Sum(static row => row.Count)),
@@ -1220,12 +1224,13 @@ public sealed class WebsiteAdminQueryService(IDbContextFactory<DarwinLinguaDbCon
             int plannedCountryContexts = CountryContextCatalog.All.Count(context =>
                 !context.IsActive &&
                 context.TargetLearningLanguageCodes.Contains(language.Code, StringComparer.OrdinalIgnoreCase));
-            int levelDefinitionCount = string.Equals(language.DefaultLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.OrdinalIgnoreCase)
-                ? LearningLevelSystemCatalog.GermanCefrLevels.Count
-                : 0;
+            int levelDefinitionCount = LearningLevelSystemCatalog.GetLevelDefinitionsForTargetLanguage(
+                language.Code,
+                language.DefaultLevelSystemCode).Count;
 
             rows.Add(new($"target-active:{language.Code}", language.IsActive ? 1 : 0));
-            rows.Add(new($"target-planned:{language.Code}", language.IsActive ? 0 : 1));
+            rows.Add(new($"target-pilot:{language.Code}", language.IsPilot ? 1 : 0));
+            rows.Add(new($"target-planned:{language.Code}", language.Status == TargetLearningLanguageStatus.Planned ? 1 : 0));
             rows.Add(new($"target-level-definitions:{language.Code}", levelDefinitionCount));
             rows.Add(new($"target-active-country-contexts:{language.Code}", activeCountryContexts));
             rows.Add(new($"target-planned-country-contexts:{language.Code}", plannedCountryContexts));

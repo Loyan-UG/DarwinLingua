@@ -18,6 +18,8 @@ public sealed record GrammarTopicDetailModel(
     string Slug,
     string Title,
     string ShortDescription,
+    string? LearnerLanguageTitle,
+    string? LearnerLanguageShortDescription,
     int? ContentRevision,
     string CefrLevel,
     string GrammarCategory,
@@ -40,10 +42,14 @@ public sealed record GrammarSectionModel(
     string Heading,
     string Explanation,
     IReadOnlyList<GrammarContentBlockModel> Blocks,
+    string? LearnerLanguageHeading,
+    string? LearnerLanguageExplanation,
+    IReadOnlyList<GrammarContentBlockModel> LearnerLanguageBlocks,
     string? RequestedLanguageCode,
     bool UsedFallback);
 
 public sealed record GrammarExampleModel(
+    string SourceText,
     string GermanText,
     string? Note,
     string? Translation,
@@ -52,6 +58,7 @@ public sealed record GrammarExampleModel(
 
 public sealed record GrammarTextItemModel(
     string Text,
+    string? LearnerLanguageText,
     string? RequestedLanguageCode,
     bool UsedFallback);
 
@@ -59,6 +66,7 @@ public sealed record GrammarCommonMistakeModel(
     string WrongText,
     string CorrectedText,
     string Explanation,
+    string? LearnerLanguageExplanation,
     string? RequestedLanguageCode,
     bool UsedFallback);
 

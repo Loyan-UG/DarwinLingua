@@ -432,7 +432,8 @@ internal sealed class ContentImportRepository : IContentImportRepository
                         importedCourse.SortOrder,
                         importedCourse.UpdatedAtUtc,
                         importedCourse.TitleTranslationsJson,
-                        importedCourse.DescriptionTranslationsJson);
+                        importedCourse.DescriptionTranslationsJson,
+                        importedCourse.TargetLearningLanguageCode);
                     courseIdsBySlug[existingCourse.Slug] = existingCourse.Id;
                 }
             }

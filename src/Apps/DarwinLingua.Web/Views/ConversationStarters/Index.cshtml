@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.ConversationStarterIndexPageViewModel
 @{
     ViewData["Title"] = T["Conversation Starters"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
@@ -15,9 +17,9 @@
             <span>@T["CEFR"]</span>
             <select name="cefrLevel">
                 <option value="">@T["All"]</option>
-                @foreach (string level in LearningPortalFilterConventions.CefrLevels)
+                @foreach (string level in LearningPortalFilterConventions.GetCefrLevelDefinitions(targetLearningLanguageCode).Select(level => level.Code))
                 {
-                    <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                    <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
                 }
             </select>
         </label>
@@ -52,11 +54,11 @@ else
         {
             <article class="panel stack-md">
                 <div class="action-row collection-card__meta">
-                    <span class="eyebrow">@starterPack.CefrLevel · @starterPack.Situation · @starterPack.Tone</span>
+                    <span class="eyebrow">@FormatCefrLevel(starterPack.CefrLevel) · @starterPack.Situation · @starterPack.Tone</span>
                     <span>@T["{0} topics", starterPack.TopicKeys.Count]</span>
                 </div>
                 <h2 class="headline-sm">
-                    <a asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
+                    <a asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@starterPack.Slug">@starterPack.Title</a>
                 </h2>
                 <p>@starterPack.Description</p>
                 <p class="body-lg">@starterPack.ConversationGoal</p>
@@ -65,12 +67,12 @@ else
                     <div class="chip-grid">
                         @foreach (string topicKey in starterPack.TopicKeys)
                         {
-                            <a class="chip-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
+                            <a class="chip-link" asp-controller="Browse" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Topic" asp-route-id="@topicKey">@topicKey</a>
                         }
                     </div>
                 }
                 <div class="action-row">
-                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
+                    <a class="button button--secondary" asp-controller="ConversationStarters" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@starterPack.Slug">@T["Open starters"]</a>
                 </div>
             </article>
         }

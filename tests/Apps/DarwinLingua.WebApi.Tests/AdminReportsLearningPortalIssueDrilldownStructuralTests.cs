@@ -69,7 +69,7 @@ public sealed class AdminReportsLearningPortalIssueDrilldownStructuralTests
 
         Assert.Contains("\"/api/admin/catalog/learning-portal-issues\"", programSource, StringComparison.Ordinal);
         Assert.Contains("GetLearningPortalIssuesAsync", programSource, StringComparison.Ordinal);
-        Assert.Contains("ResolveTargetLearningLanguageCode(targetLearningLanguageCode)", programSource, StringComparison.Ordinal);
+        Assert.Contains("ResolveDiagnosticTargetLearningLanguageCode(targetLearningLanguageCode)", programSource, StringComparison.Ordinal);
         Assert.Contains("GetAdminLearningPortalIssuesAsync", webClientSource, StringComparison.Ordinal);
         Assert.Contains("targetLearningLanguageCode", webClientSource, StringComparison.Ordinal);
         Assert.Contains("Learning Portal issue drill-down", viewSource, StringComparison.Ordinal);

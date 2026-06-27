@@ -20,10 +20,6 @@ public static class LearningContentLinkResolver
         string encodedSlug = Uri.EscapeDataString(slug.Trim());
         string encodedTargetLearningLanguageCode = Uri.EscapeDataString(targetLearningLanguageCode.Trim().ToLowerInvariant());
         string normalizedTargetLearningLanguageCode = targetLearningLanguageCode.Trim().ToLowerInvariant();
-        string encodedCountryContextCode = Uri.EscapeDataString(
-            string.IsNullOrWhiteSpace(countryContextCode)
-                ? LearningRouteConventions.ResolveDefaultCountryContextRouteValue(normalizedTargetLearningLanguageCode)
-                : countryContextCode.Trim().ToLowerInvariant());
         string learnPrefix = "/learn/" + encodedTargetLearningLanguageCode;
 
         return normalizedType switch
@@ -40,9 +36,15 @@ public static class LearningContentLinkResolver
             "exercise" => $"{learnPrefix}/exercises/{encodedSlug}",
             "roleplay" => $"{learnPrefix}/roleplays/{encodedSlug}",
             "writing-template" => $"{learnPrefix}/writing-templates/{encodedSlug}",
-            "country-guidance" => $"{learnPrefix}/country-guidance/{encodedCountryContextCode}/{encodedSlug}",
+            "country-guidance" => $"{learnPrefix}/country-guidance/{ResolveCountryContextRouteValue(normalizedTargetLearningLanguageCode, countryContextCode)}/{encodedSlug}",
             "exam-prep-unit" => $"{learnPrefix}/exam-prep/{encodedSlug}",
             _ => null,
         };
     }
+
+    private static string ResolveCountryContextRouteValue(string targetLearningLanguageCode, string? countryContextCode) =>
+        Uri.EscapeDataString(
+            string.IsNullOrWhiteSpace(countryContextCode)
+                ? LearningRouteConventions.ResolveDefaultCountryContextRouteValue(targetLearningLanguageCode)
+                : countryContextCode.Trim().ToLowerInvariant());
 }

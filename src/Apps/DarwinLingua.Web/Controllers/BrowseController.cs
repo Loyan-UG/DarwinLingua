@@ -50,9 +50,10 @@ public sealed class BrowseController(
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Topic(string id, int skip = 0, CancellationToken cancellationToken = default)
     {
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (string.IsNullOrWhiteSpace(id))
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);
@@ -126,9 +127,10 @@ public sealed class BrowseController(
     [OutputCache(PolicyName = "CatalogBrowse")]
     public async Task<IActionResult> Cefr(string id, int skip = 0, CancellationToken cancellationToken = default)
     {
+        string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(HttpContext);
         if (string.IsNullOrWhiteSpace(id))
         {
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { targetLearningLanguageCode });
         }
 
         var profile = await learningProfileAccessor.GetProfileAsync(cancellationToken);

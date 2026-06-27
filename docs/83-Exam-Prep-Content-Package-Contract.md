@@ -6,7 +6,11 @@ Every import package must declare package-level `targetLearningLanguageCode`. Cu
 
 `targetLearningLanguageCode` is the language being taught. It is separate from `defaultMeaningLanguages` and from all `...Translations` fields, which remain helper/meaning languages for learner support.
 
-Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and missing or inactive target-learning languages before content is persisted.
+Import validation accepts only content-importable target learning languages: public-active languages plus explicitly approved pilot/staging languages. Current reviewed imports may use German (`de`) and pilot English (`en`); planned languages such as Spanish (`es`) and French (`fr`) must be rejected until their readiness gates are complete.
+
+Levelled packages must declare `levelSystemCode`; current German packages use CEFR (`"cefr"`). Import validation rejects missing `levelSystemCode`, unsupported level systems, and non-content-importable target-learning languages before content is persisted.
+
+All source fields must be authored natively in the package target language and exam ecosystem. Future English, Spanish, or French exam-prep packages must be new source content for those exams/providers, not translated copies of Goethe/telc German preparation.
 
 ## Purpose
 
@@ -14,7 +18,7 @@ This document defines the initial JSON import contract for Web-first Exam Prepar
 
 Exam Prep content must be original learning material. Do not copy raw provider exam pages, exam-book tasks, answer keys, prompts, audio transcripts, or copyrighted sample tests unless the project has a documented license and manual approval.
 
-Exam Prep is German-first. Source fields are canonical German learning text. Helper translations support the learner's selected meaning language and must not replace or dilute the German source.
+Exam Prep is target-language-first. Source fields are canonical learning text in the package target language. Helper translations support the learner's selected meaning language and must not replace or dilute the target-language source. Current German exam-prep packages therefore use German source text.
 
 ## Root Arrays
 
@@ -131,7 +135,7 @@ Text helper translations use the standard shape:
 { "language": "fa", "text": "..." }
 ```
 
-List helper translations use the text-list shape and must align one-to-one with the German source array:
+List helper translations use the text-list shape and must align one-to-one with the target-language source array:
 
 ```json
 { "language": "fa", "texts": ["...", "..."] }
@@ -152,9 +156,9 @@ Required active learner languages:
 
 Rules:
 
-- `displayName`, `description`, `title`, `shortDescription`, `explanation`, `strategyNotes`, and `checklist` are German source content.
+- `displayName`, `description`, `title`, `shortDescription`, `explanation`, `strategyNotes`, and `checklist` are target-language source content.
 - `displayNameTranslations`, `descriptionTranslations`, `titleTranslations`, `shortDescriptionTranslations`, and `explanationTranslations` must include all active learner languages.
-- `strategyNotesTranslations` and `checklistTranslations` must include all active learner languages and the same number of items as their German source arrays.
+- `strategyNotesTranslations` and `checklistTranslations` must include all active learner languages and the same number of items as their target-language source arrays.
 - Non-English helper translations must be real translations, not English fallback text.
 - UI chrome labels still come from Web resources; content helper translations are package data.
 
@@ -165,7 +169,7 @@ Exam Prep titles are learner-facing content titles, not metadata summaries.
 - Do not put CEFR level, exam profile, or exam section into `title` when the same information is already stored in `cefrLevel`, `examProfileKey`, `examSection`, or `taskType`.
 - Prefer natural task titles such as `Einen Termin oder ein Problem klaeren`, not `Im A2-Sprechen einen Termin oder ein Problem klaeren`.
 - Proper exam/provider names may appear in `displayName`, profile metadata, filters, and badges. They should appear in unit titles only when the unit is specifically about comparing or understanding that provider's format.
-- Helper translations must explain the German source naturally in the learner language. Literal translations that preserve awkward German or English word order are not acceptable.
+- Helper translations must explain the target-language source naturally in the learner language. Literal translations that preserve awkward source-language or English word order are not acceptable.
 - Non-English helper translations must not use English fallback or English education labels unless that borrowed term is genuinely the standard term in that target language.
 
 ## Linked Practice Rules
@@ -254,7 +258,7 @@ Linked practice fields should connect Exam Prep to already imported, reviewed le
 - `taskType` must use a controlled value
 - `skillFocus` must use a supported skill value
 - required helper translation fields must cover all active learner languages
-- list helper translations must have the same item count as the German source list
+- list helper translations must have the same item count as the target-language source list
 - non-English helper translations must not fall back to English
 - generated titles must not unnecessarily repeat CEFR/profile/section metadata
 - linked slugs must use lowercase kebab-case

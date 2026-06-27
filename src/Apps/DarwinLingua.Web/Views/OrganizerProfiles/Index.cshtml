@@ -1,6 +1,8 @@
 @model DarwinLingua.Web.Models.OrganizerProfileIndexPageViewModel
 @{
     ViewData["Title"] = T["Organizers"];
+    string FormatCefrLevel(string level, string? targetLearningLanguageCode) =>
+        LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
 }
 
 <section class="panel stack-lg">
@@ -28,7 +30,7 @@
                 <div class="chip-grid">
                     @foreach (string level in profile.SupportedLearnerLevels)
                     {
-                        <span class="chip-link">@level</span>
+                        <span class="chip-link">@FormatCefrLevel(level, profile.TargetLearningLanguageCode)</span>
                     }
                     @foreach (string languageCode in profile.HelperLanguageCodes)
                     {

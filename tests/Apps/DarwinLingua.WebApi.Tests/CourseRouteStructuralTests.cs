@@ -33,6 +33,56 @@ public sealed class CourseRouteStructuralTests
     }
 
     [Fact]
+    public void EnglishCefrLevelDefinitions_ShouldExposeNativePilotLabelsWithoutActivatingEnglish()
+    {
+        IReadOnlyDictionary<string, LearningLevelDefinition> levels = LearningLevelSystemCatalog.GetCefrLevelsForTargetLanguage("en")
+            .ToDictionary(level => level.Code, StringComparer.OrdinalIgnoreCase);
+
+        Assert.Equal(["A1", "A2", "B1", "B2", "C1", "C2"], levels.Keys.OrderBy(code => levels[code].SortOrder).ToArray());
+        Assert.Equal("First steps", levels["A1"].DisplayTitle);
+        Assert.Equal("Everyday basics", levels["A2"].DisplayTitle);
+        Assert.Equal("Independent use", levels["B1"].DisplayTitle);
+        Assert.Equal("Confident use", levels["B2"].DisplayTitle);
+        Assert.Equal("Advanced control", levels["C1"].DisplayTitle);
+        Assert.Equal("Expert style", levels["C2"].DisplayTitle);
+        Assert.Equal("Understand and use very simple everyday English.", levels["A1"].LearnerDescription);
+        Assert.Equal("Discuss familiar and professional topics with control.", levels["B2"].LearnerDescription);
+        Assert.Equal("Handle nuance, rhetoric, and complex discourse.", levels["C2"].LearnerDescription);
+        Assert.False(TargetLearningLanguageCatalog.TryFindActive("en", out _));
+        Assert.True(TargetLearningLanguageCatalog.TryFindContentImportable("en", out TargetLearningLanguageDefinition english));
+        Assert.True(english.IsPilot);
+        Assert.All(levels.Values, level =>
+        {
+            Assert.Equal(LearningLevelSystemCatalog.CefrCode, level.LevelSystemCode);
+            Assert.False(string.IsNullOrWhiteSpace(level.DisplayTitle));
+            Assert.False(string.IsNullOrWhiteSpace(level.LearnerDescription));
+            Assert.False(string.IsNullOrWhiteSpace(level.StandardMappingCode));
+        });
+    }
+
+    [Fact]
+    public void PlannedTargetLanguages_ShouldExposeOwnCefrLabelsBeforePilotGeneration()
+    {
+        IReadOnlyDictionary<string, LearningLevelDefinition> spanishLevels = LearningLevelSystemCatalog.GetCefrLevelsForTargetLanguage("es")
+            .ToDictionary(level => level.Code, StringComparer.OrdinalIgnoreCase);
+        IReadOnlyDictionary<string, LearningLevelDefinition> frenchLevels = LearningLevelSystemCatalog.GetCefrLevelsForTargetLanguage("fr")
+            .ToDictionary(level => level.Code, StringComparer.OrdinalIgnoreCase);
+
+        Assert.Equal(["A1", "A2", "B1", "B2", "C1", "C2"], spanishLevels.Keys.OrderBy(code => spanishLevels[code].SortOrder).ToArray());
+        Assert.Equal(["A1", "A2", "B1", "B2", "C1", "C2"], frenchLevels.Keys.OrderBy(code => frenchLevels[code].SortOrder).ToArray());
+        Assert.Equal("Primeros pasos", spanishLevels["A1"].DisplayTitle);
+        Assert.Equal("Dominio avanzado", spanishLevels["C1"].DisplayTitle);
+        Assert.Equal("Premiers pas", frenchLevels["A1"].DisplayTitle);
+        Assert.Equal("Maitrise avancee", frenchLevels["C1"].DisplayTitle);
+        Assert.NotEqual(LearningLevelSystemCatalog.GermanCefrLevels[0].DisplayTitle, spanishLevels["A1"].DisplayTitle);
+        Assert.NotEqual(LearningLevelSystemCatalog.GermanCefrLevels[0].DisplayTitle, frenchLevels["A1"].DisplayTitle);
+        Assert.False(TargetLearningLanguageCatalog.TryFindActive("es", out _));
+        Assert.False(TargetLearningLanguageCatalog.TryFindActive("fr", out _));
+        Assert.False(TargetLearningLanguageCatalog.TryFindContentImportable("es", out _));
+        Assert.False(TargetLearningLanguageCatalog.TryFindContentImportable("fr", out _));
+    }
+
+    [Fact]
     public void WebCourseViews_ShouldRenderLevelCardsAndSingleOpenModuleAccordion()
     {
         string indexSource = File.ReadAllText(ResolveRepositoryPath("src", "Apps", "DarwinLingua.Web", "Views", "Courses", "Index.cshtml"));

@@ -4,6 +4,8 @@
 
 @{
     ViewData["Title"] = T["Roleplays"];
+    string targetLearningLanguageCode = LearningRouteConventions.ResolveTargetLearningLanguageCode(Context);
+    string FormatCefrLevel(string level) => LearningPortalFilterConventions.FormatCefrLevelOption(level, targetLearningLanguageCode, key => T[key].Value);
     string primaryMeaningDirection = TextDirection.FromLanguageCode(Model.PrimaryMeaningLanguageCode);
 }
 
@@ -12,12 +14,12 @@
     <h1 class="headline-md">@T["Roleplays"]</h1>
     <p class="body-lg">@T["Practice scripted situations with deterministic answer choices and static feedback."]</p>
 
-    <form method="get" class="search-form" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Index">
+    <form method="get" class="search-form" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Index">
         <select class="search-input" name="cefrLevel" aria-label="@T["CEFR level"]">
             <option value="">@T["All levels"]</option>
-            @foreach (string level in new[] { "A1", "A2", "B1", "B2", "C1", "C2" })
+            @foreach (string level in LearningPortalFilterConventions.GetCefrLevelDefinitions(targetLearningLanguageCode).Select(level => level.Code))
             {
-                <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@level</option>
+                <option value="@level" selected="@(string.Equals(Model.Filter.CefrLevel, level, StringComparison.OrdinalIgnoreCase))">@FormatCefrLevel(level)</option>
             }
         </select>
         <input class="search-input" name="category" value="@Model.Filter.Category" placeholder="@T["Category"]" aria-label="@T["Category"]" />
@@ -38,9 +40,9 @@ else
         @foreach (var roleplay in Model.Roleplays)
         {
             <article class="panel stack-md">
-                <span class="eyebrow">@roleplay.CefrLevel · @T[roleplay.Category] · @T[roleplay.TaskType]</span>
+                <span class="eyebrow">@FormatCefrLevel(roleplay.CefrLevel) · @T[roleplay.Category] · @T[roleplay.TaskType]</span>
                 <h2 class="headline-sm">
-                    <a asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@roleplay.Slug">@roleplay.Title</a>
+                    <a asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@roleplay.Slug">@roleplay.Title</a>
                 </h2>
                 @if (!string.IsNullOrWhiteSpace(roleplay.LearnerLanguageTitle))
                 {
@@ -66,7 +68,7 @@ else
                     }
                 </div>
                 <div class="action-row">
-                    <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@LearningRouteConventions.ResolveTargetLearningLanguageCode(Context)" asp-action="Detail" asp-route-slug="@roleplay.Slug">@T["Start roleplay"]</a>
+                    <a class="button button--secondary button--compact" asp-controller="Roleplays" asp-route-targetLearningLanguageCode="@targetLearningLanguageCode" asp-action="Detail" asp-route-slug="@roleplay.Slug">@T["Start roleplay"]</a>
                 </div>
             </article>
         }

@@ -154,11 +154,11 @@ public sealed class CoursesController(
     {
         if (!TargetLearningLanguageCatalog.TryFindActive(targetLearningLanguageCode, out TargetLearningLanguageDefinition targetLanguage))
         {
-            return LearningLevelSystemCatalog.GermanCefrLevels;
+            return LearningLevelSystemCatalog.GetCefrLevelsForTargetLanguage(targetLearningLanguageCode);
         }
 
-        return string.Equals(targetLanguage.DefaultLevelSystemCode, LearningLevelSystemCatalog.CefrCode, StringComparison.OrdinalIgnoreCase)
-            ? LearningLevelSystemCatalog.GermanCefrLevels
-            : [];
+        return LearningLevelSystemCatalog.GetLevelDefinitionsForTargetLanguage(
+            targetLanguage.Code,
+            targetLanguage.DefaultLevelSystemCode);
     }
 }

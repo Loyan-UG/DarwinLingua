@@ -236,6 +236,8 @@ If you are new to the project, read the documents in this order:
 - `92-Web-Legal-Research-And-Risk-Audit.md` records the current-source Web legal and compliance risk audit for DDG/TDDDG/GDPR, self-service account controls, Brevo email, DSA, BFSG/accessibility, crime/content-risk guardrails, Life in Germany content, and deferred billing gates.
 - `93-Web-Human-Gate-Handoff.md` defines the generated operator handoff that maps current automated readiness evidence to exact remaining human-gate actions before tester invitations.
 - `94-Multi-Target-Language-Architecture.md` defines target learning language, UI language, meaning/helper language, country context, level-system, route, package, testing, and first non-German pilot rules for the Phase 8 platform refactor.
+- `95-Multi-Target-Platform-Refactor-Plan.md` turns the multi-target architecture into an executable no-debt refactor plan for target-language scope, Country Guidance streams, learner-friendly level metadata, helper-language expansion, canonical routes, diagnostics, backup gates, and future target-language activation.
+- `artifacts/planning/multi-target-language-expansion-roadmap.md` is the goal-ready roadmap for future target-language expansion, including Country Guidance streams, no-legacy route policy, learner-friendly level labels, helper-language expansion, and branch choices after the English pilot.
 - `04-Implementation-Backlog.md` turns that strategy into implementation-ready backlog items, including the active Phase 8 multi-target-language execution checklist.
 
 ### Learning Portal Planning Rule

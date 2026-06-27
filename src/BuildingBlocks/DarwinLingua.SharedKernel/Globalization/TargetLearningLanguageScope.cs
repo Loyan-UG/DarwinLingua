@@ -19,9 +19,9 @@ public static class TargetLearningLanguageScope
             ? ContentLanguageRequirements.DefaultTargetLearningLanguageCode
             : languageCode.Trim().ToLowerInvariant();
 
-        if (!ContentLanguageRequirements.SupportsTargetLearningLanguage(normalized))
+        if (!TargetLearningLanguageCatalog.TryFindContentImportable(normalized, out _))
         {
-            throw new DomainRuleException($"{fieldName} is not an active target learning language.");
+            throw new DomainRuleException($"{fieldName} is not a content-importable target learning language.");
         }
 
         return normalized;
